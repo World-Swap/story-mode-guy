@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story Mode Guy — Photography, Ebooks & Film</title>
+<meta name="description" content="Photography, original ebooks, and short films from Story Mode Guy — someone who treats everything like it has a plot.">
+<link rel="icon" type="image/png" href="smg-logo.png">
+
+<!-- ============================================================
+     FONTS
+     ppmondwest  → Fraunces  (display serif, weight 400)
+     af          → Inter     (utility sans)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* ---- Colors (from style reference) ---- */
+  --parchment:#fefffc;
+  --paper:#ffffff;
+  --linen:#f9faf7;
+  --ink-black:#171717;
+  --graphite:#2c2c2c;
+  --charcoal:#444141;
+  --ash:#646464;
+  --fog:#b4b8b4;
+  --mist:#dee2de;
+  --twilight:#282834;
+  --dusk:#1f1f29;
+  --signal-blue:#41a1cf;
+  --cerulean:#0081c0;
+
+  /* ---- Type ---- */
+  --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+  --sans:'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* ---- Radii ---- */
+  --r-btn:8px;
+  --r-card:12px;
+  --r-card-lg:16px;
+  --r-surface:24px;
+  --r-pill:50px;
+
+  /* ---- Shadows (used very sparingly) ---- */
+  --sh-nav:rgba(0,0,0,0.15) 0px 2px 6px 0px;
+  --sh-card:rgba(0,0,0,0.08) 0px 1px 1px 0px, rgba(0,0,0,0.08) 0px 4px 5px 0px;
+  --sh-soft:rgba(0,0,0,0.05) 0px 1px 8px 0px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+body{
+  margin:0;
+  background:var(--parchment);
+  color:var(--charcoal);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.5;
+  letter-spacing:-0.01em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:400;
+  color:var(--graphite);
+  font-feature-settings:"liga" 0;
+  margin:0;
+}
+
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+
+/* ---- Shared eyebrow / caption ---- */
+.eyebrow{
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--ash);
+  margin:0 0 var(--space,20px) 0;
+}
+
+/* ---- Buttons ---- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  font-family:var(--sans);
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:-0.01em;
+  border-radius:var(--r-btn);
+  padding:8px 16px;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+}
+.btn .arrow{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;border-radius:50%;
+  border:1px solid currentColor;font-size:11px;line-height:1;
+}
+.btn-primary{ color:var(--signal-blue); border-color:var(--signal-blue); background:transparent; }
+.btn-primary:hover{ background:rgba(65,161,207,0.08); }
+.btn-secondary{ color:var(--twilight); border-color:var(--twilight); background:transparent; }
+.btn-secondary:hover{ background:rgba(40,40,52,0.05); }
+.btn-filled{ color:#fff; background:var(--dusk); border-color:var(--twilight); }
+.btn-filled:hover{ transform:translateY(-1px); }
+.btn-onblue{ color:#fff; border-color:rgba(255,255,255,0.7); background:transparent; }
+.btn-onblue:hover{ background:rgba(255,255,255,0.14); }
+
+a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outline-offset:3px; border-radius:var(--r-btn); }
+
+/* ============================================================
+   NAVIGATION — frosted pill, top center
+   ============================================================ */
+.nav-wrap{ position:fixed; top:18px; left:0; right:0; z-index:50; display:flex; justify-content:center; padding:0 16px; pointer-events:none; }
+.nav{
+  pointer-events:auto;
+  display:flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(40,40,52,0.5);
+  border-radius:var(--r-pill);
+  padding:7px 8px 7px 16px;
+  box-shadow:var(--sh-nav);
+  max-width:100%;
+}
+.brand{ display:flex; align-items:center; gap:9px; margin-right:6px; }
+.brand .brand-logo{ width:30px; height:30px; border-radius:50%; display:block; }
+.brand .glyph{ color:var(--twilight); }
+.brand .brand-name{ font-family:var(--serif); font-size:16px; color:var(--graphite); white-space:nowrap; letter-spacing:-0.01em; }
+.nav-links{ display:flex; align-items:center; gap:2px; }
+.nav-links a{
+  font-size:15px; font-weight:500; color:var(--charcoal);
+  padding:7px 12px; border-radius:var(--r-pill); white-space:nowrap;
+  transition:background-color .16s ease, color .16s ease;
+}
+.nav-links a:hover{ background:rgba(40,40,52,0.06); color:var(--graphite); }
+.nav-cta{ margin-left:4px; }
+.nav-toggle{ display:none; }
+
+@media (max-width:860px){
+  .nav-links{ display:none; }
+  .brand{ margin-right:0; }
+  .nav{ padding:8px 10px 8px 16px; }
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.wrap{ max-width:1200px; margin:0 auto; padding:0 24px; }
+.chapter{ padding:96px 0; }
+@media (max-width:720px){ .chapter{ padding:64px 0; } }
+
+/* ============================================================
+   HERO — full-bleed atmospheric, frosted overlay card
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex; align-items:flex-end;
+  padding:24px;
+  overflow:hidden;
+}
+.hero-art{
+  position:absolute; inset:12px;
+  border-radius:var(--r-surface);
+  /* painterly moonlit dusk — cool blues with a warm horizon glow */
+  background:
+    radial-gradient(120% 80% at 78% 108%, rgba(240,168,90,0.35), rgba(240,168,90,0) 55%),
+    radial-gradient(90% 70% at 15% 8%, rgba(120,150,210,0.35), rgba(120,150,210,0) 60%),
+    linear-gradient(180deg, #1b2138 0%, #232a45 38%, #3a3350 72%, #5a4a55 100%);
+  overflow:hidden;
+}
+.hero-art::after{ /* grain */
+  content:""; position:absolute; inset:0; opacity:0.5; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+.hero-card{
+  position:relative;
+  max-width:620px;
+  background:rgba(20,22,36,0.42);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:var(--r-surface);
+  padding:48px;
+  color:#fff;
+}
+.hero-card .eyebrow{ color:rgba(255,255,255,0.72); }
+.hero-card h1{
+  color:#fff;
+  font-size:clamp(48px, 8vw, 84px);
+  line-height:1.02;
+  letter-spacing:-0.03em;
+  margin:0 0 20px 0;
+}
+.hero-card p.lead{
+  font-size:18px; line-height:1.5; color:rgba(255,255,255,0.86);
+  margin:0 0 32px 0; max-width:46ch;
+}
+.hero-actions{ display:flex; flex-wrap:wrap; gap:12px; }
+@media (max-width:720px){
+  .hero-art{ inset:8px; }
+  .hero-card{ padding:32px 24px; }
+}
+
+/* ============================================================
+   EDITORIAL SECTION HEAD
+   ============================================================ */
+.sec-head{ max-width:720px; margin-bottom:48px; }
+.sec-head h2{
+  font-size:clamp(36px, 5vw, 54px);
+  line-height:1.08; letter-spacing:-0.02em;
+  margin:0 0 16px 0;
+}
+.sec-head p{ font-size:18px; color:var(--ash); line-height:1.5; margin:0; max-width:52ch; }
+
+/* ============================================================
+   PHOTOGRAPHY GALLERY — media cards
+   ============================================================ */
+.gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.frame{
+  position:relative;
+  border:1px solid var(--mist);
+  border-radius:var(--r-card);
+  overflow:hidden;
+  aspect-ratio:4/5;
+  background:var(--linen);
+  box-shadow:var(--sh-card);
+}
+.frame.wide{ grid-column:span 2; aspect-ratio:16/10; }
+/* Painterly placeholder washes — REPLACE with your photos (see note in gallery) */
+.frame .wash{ position:absolute; inset:0; }
+.frame .wash::after{ content:""; position:absolute; inset:0; opacity:0.4; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.w1{ background:radial-gradient(90% 90% at 30% 20%, #f0c078, #b8763a 60%, #6b3f2a); }
+.w2{ background:radial-gradient(90% 90% at 70% 20%, #7fa6c9, #3f6390 60%, #232a45); }
+.w3{ background:radial-gradient(90% 90% at 40% 80%, #8bb98a, #4a7a5c 60%, #24402f); }
+.w4{ background:radial-gradient(100% 90% at 60% 30%, #caa6c9, #7a5a8c 60%, #3a2c4a); }
+.w5{ background:radial-gradient(90% 90% at 20% 40%, #f0d090, #c98a4a 60%, #6b4a2a); }
+.w6{ background:linear-gradient(160deg, #2b3350, #4a4560 55%, #7a5a55); }
+.frame .tag{
+  position:absolute; left:12px; bottom:12px; z-index:2;
+  font-size:11px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase;
+  color:rgba(255,255,255,0.9);
+  background:rgba(20,22,36,0.35); backdrop-filter:blur(4px);
+  padding:4px 9px; border-radius:6px; border:1px solid rgba(255,255,255,0.18);
+}
+.gallery-foot{ margin-top:32px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+@media (max-width:720px){
+  .gallery{ grid-template-columns:repeat(2,1fr); }
+  .frame.wide{ grid-column:span 2; }
+}
+
+/* ============================================================
+   WORLD SWAP — the single Cerulean atmospheric moment
+   ============================================================ */
+.feature{
+  position:relative;
+  border-radius:var(--r-surface);
+  background:var(--cerulean);
+  color:#fff;
+  overflow:hidden;
+  box-shadow:rgba(0,0,0,0.06) 0px 2px 2px 0px, rgba(0,0,0,0.04) 0px 0px 0px 5px;
+}
+.feature::before{ content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(80% 90% at 88% 10%, rgba(255,255,255,0.22), rgba(255,255,255,0) 55%),
+    radial-gradient(70% 80% at 6% 100%, rgba(0,40,70,0.4), rgba(0,40,70,0) 60%); }
+.feature::after{ content:""; position:absolute; inset:0; opacity:0.35; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.feature-inner{ position:relative; padding:80px; max-width:640px; }
+.feature .eyebrow{ color:rgba(255,255,255,0.8); }
+.feature h2{ color:#fff; font-size:clamp(40px,6vw,64px); line-height:1.03; letter-spacing:-0.02em; margin:0 0 20px 0; }
+.feature p{ font-size:18px; color:rgba(255,255,255,0.9); line-height:1.55; margin:0 0 32px 0; max-width:44ch; }
+@media (max-width:720px){ .feature-inner{ padding:40px 28px; } }
+
+/* ============================================================
+   SHOP — product cards
+   ============================================================ */
+.cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.card{
+  display:flex; flex-direction:column;
+  background:var(--paper);
+  border:1px solid var(--mist);
+  border-radius:var(--r-card-lg);
+  overflow:hidden;
+  box-shadow:var(--sh-card);
+  transition:transform .18s ease;
+}
+.card:hover{ transform:translateY(-3px); }
+.card .cover{ aspect-ratio:1692/2584; position:relative; background:var(--linen); }
+.card .cover img{ width:100%; height:100%; object-fit:cover; display:block; }
+.card .cover .wash::after{ content:""; position:absolute; inset:0; opacity:0.35; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.card .cover .wash{ position:absolute; inset:0; }
+.card .body{ padding:20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.card .kicker{ font-size:13px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--ash); }
+.card h3{ font-size:24px; line-height:1.2; letter-spacing:-0.01em; }
+.card p{ font-size:15px; color:var(--ash); margin:0; flex:1; }
+.card .card-link{ font-size:15px; font-weight:500; color:var(--signal-blue); display:inline-flex; align-items:center; gap:6px; }
+.card .card-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:10px; }
+.card .price{ font-family:var(--serif); font-size:19px; color:var(--graphite); }
+.shop-foot{ margin-top:32px; }
+@media (max-width:720px){ .cards{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   THE FEED — social + video
+   ============================================================ */
+.feed{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:16px; }
+.social{
+  position:relative;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  border:1px solid var(--mist);
+  border-radius:var(--r-card-lg);
+  overflow:hidden;
+  min-height:280px;
+  padding:20px;
+  color:#fff;
+  box-shadow:var(--sh-card);
+  transition:transform .18s ease;
+}
+.social:hover{ transform:translateY(-3px); }
+.social .bg{ position:absolute; inset:0; z-index:0; }
+.social .bg::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 100%); }
+.social .content{ position:relative; z-index:1; }
+.social .plat{ font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; opacity:0.85; }
+.social .handle{ font-family:var(--serif); font-size:26px; margin:4px 0 6px; letter-spacing:-0.01em; }
+.social .meta{ font-size:14px; opacity:0.82; display:inline-flex; align-items:center; gap:7px; }
+.social.tall{ grid-row:span 2; min-height:0; }
+.plat-badge{ position:absolute; top:20px; left:20px; z-index:1; width:44px; height:44px; border-radius:50%;
+  background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.4); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  display:flex; align-items:center; justify-content:center; color:#fff; }
+.plat-badge svg{ width:22px; height:22px; display:block; }
+/* platform tints */
+.bg-yt{ background:linear-gradient(150deg,#3a2140,#6b2436 55%,#c23b2e); }
+.bg-tt{ background:linear-gradient(150deg,#101418,#1c2b33 55%,#0a5a63); }
+.bg-ig{ background:linear-gradient(150deg,#3a2450,#8a2f6a 55%,#e08a3a); }
+.bg-fb{ background:linear-gradient(150deg,#1b2444,#25417a 60%,#3b6ec2); }
+@media (max-width:860px){
+  .feed{ grid-template-columns:1fr 1fr; }
+  .social.tall{ grid-row:auto; }
+}
+@media (max-width:520px){ .feed{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   FOOTER — white band, editorial colophon
+   ============================================================ */
+.footer{ background:var(--paper); border-top:1px solid var(--mist); }
+.footer-inner{ padding:80px 0 40px; }
+.footer h2{ font-size:clamp(32px,5vw,54px); line-height:1.08; letter-spacing:-0.02em; max-width:16ch; margin:0 0 40px; }
+.footer-grid{ display:flex; flex-wrap:wrap; gap:48px 80px; align-items:flex-start; }
+.foot-col h4{ font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--ash); margin:0 0 14px; }
+.foot-col a{ display:block; font-size:16px; color:var(--charcoal); padding:4px 0; transition:color .15s ease; }
+.foot-col a:hover{ color:var(--signal-blue); }
+.foot-cta{ margin-left:auto; }
+.colophon{ margin-top:64px; padding-top:24px; border-top:1px solid var(--mist); display:flex; flex-wrap:wrap; gap:12px 24px; justify-content:space-between; align-items:center; }
+.colophon span{ font-size:13px; color:var(--fog); }
+@media (max-width:720px){ .foot-cta{ margin-left:0; } }
+</style>
+</head>
+<body>
+
+<!-- ========================= NAV ========================= -->
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="Story Mode Guy — home">
+      <img class="brand-logo" src="smg-logo.png" alt="Story Mode Guy logo">
+      <span class="brand-name">Story Mode Guy</span>
+    </a>
+    <div class="nav-links">
+      <a href="#photography">Photography</a>
+      <a href="#worldswap">World Swap</a>
+      <a href="#shop">Shop</a>
+      <a href="#feed">The Feed</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Shop <span class="arrow">→</span></a>
+  </nav>
+</div>
+
+<!-- ========================= HERO ========================= -->
+<header class="hero" id="top">
+  <div class="hero-art" aria-hidden="true"></div>
+  <div class="hero-card">
+    <p class="eyebrow">Photography · Ebooks · Film</p>
+    <h1>Story Mode Guy</h1>
+    <p class="lead">Real life shot like a film, and whole worlds built from scratch. Photography, original ebooks, and short films from someone who treats everything like it has a plot.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#photography">See the photography <span class="arrow">→</span></a>
+      <a class="btn btn-onblue" href="#worldswap">Enter World Swap</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========================= CH.01 PHOTOGRAPHY ========================= -->
+<section class="chapter" id="photography">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Chapter 01 — The Frames</p>
+      <h2>Photography</h2>
+      <p>A running record of light, place, and the small moments that turn a walk into a scene. Every frame is a still from a story that's still being written.</p>
+    </div>
+
+    <!--
+      ============================================================
+      HOW TO ADD YOUR PHOTOS
+      Each .frame below shows a painterly placeholder. To use a real
+      photo, replace the <div class="wash ..."></div> inside a frame with:
+          <img src="your-photo.jpg" alt="short description"
+               style="width:100%;height:100%;object-fit:cover;">
+      Keep the .tag label or delete it. Portrait shots fit the tall
+      frames; the "wide" frame suits a landscape.
+      ============================================================
+    -->
+    <div class="gallery">
+      <div class="frame wide"><div class="wash w6"></div><span class="tag">Golden hour</span></div>
+      <div class="frame"><div class="wash w1"></div><span class="tag">Street</span></div>
+      <div class="frame"><div class="wash w2"></div><span class="tag">Night</span></div>
+      <div class="frame"><div class="wash w3"></div><span class="tag">Landscape</span></div>
+      <div class="frame"><div class="wash w4"></div><span class="tag">Portrait</span></div>
+      <div class="frame wide"><div class="wash w5"></div><span class="tag">On location</span></div>
+    </div>
+
+    <div class="gallery-foot">
+      <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1e5MBFuIErfgRU6FVN7C_b369IrgFag2a?usp=sharing" target="_blank" rel="noopener">View the full gallery <span class="arrow">→</span></a>
+      <a class="btn btn-secondary" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Prints &amp; downloads</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= WORLD SWAP (FEATURED) ========================= -->
+<section class="chapter" id="worldswap">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature-inner">
+        <p class="eyebrow">Featured · Escrow marketplace</p>
+        <h2>World Swap</h2>
+        <p>A marketplace for buying goods and hiring people, paid in stablecoins. Every payment locks in escrow until you get exactly what you paid for — no bank, no chargebacks, open worldwide.</p>
+        <a class="btn btn-onblue" href="https://www.topworldmedia.world" target="_blank" rel="noopener">Enter World Swap <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CH.02 SHOP ========================= -->
+<section class="chapter" id="shop">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Chapter 02 — The Shop</p>
+      <h2>Emberwild</h2>
+      <p>An original illustrated series. Act I — The Burning opens with three episodes, each a quick read delivered instantly as a PDF for just $0.99.</p>
+    </div>
+
+    <div class="cards">
+      <a class="card" href="https://payhip.com/b/bMoJ7" target="_blank" rel="noopener">
+        <div class="cover"><img src="ep-1cover.png" alt="Emberwild Episode One — The Bonding cover"></div>
+        <div class="body">
+          <span class="kicker">Episode One</span>
+          <h3>The Bonding</h3>
+          <p>To bond is to stop being alone. A young Vael makes a first bond with a flame-lynx — the world, its rituals, and a fragile peace.</p>
+          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
+        </div>
+      </a>
+      <a class="card" href="https://payhip.com/b/hLtPf" target="_blank" rel="noopener">
+        <div class="cover"><img src="ep-2cover.png" alt="Emberwild Episode Two — Strangers in the Reeds cover"></div>
+        <div class="body">
+          <span class="kicker">Episode Two</span>
+          <h3>Strangers in the Reeds</h3>
+          <p>Not the last of their kind. Scattered by fire, the survivors cross unknown lands and learn they are not alone out here.</p>
+          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
+        </div>
+      </a>
+      <a class="card" href="https://payhip.com/b/Lip5f" target="_blank" rel="noopener">
+        <div class="cover"><img src="ep-3cover.png" alt="Emberwild Episode Three — Old Wounds cover"></div>
+        <div class="body">
+          <span class="kicker">Episode Three</span>
+          <h3>Old Wounds</h3>
+          <p>A wound with two people holding it closed bleeds slower. Grief and ruins that shouldn't exist plant the first seed of the origin mystery.</p>
+          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="shop-foot">
+      <a class="btn btn-filled" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Browse everything on Payhip <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CH.03 THE FEED ========================= -->
+<section class="chapter" id="feed">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Chapter 03 — The Feed</p>
+      <h2>Where the story continues</h2>
+      <p>New scenes daily. Follow along for the video side of the work across every platform.</p>
+    </div>
+
+    <div class="feed">
+      <a class="social tall" href="https://www.youtube.com/@Story-Mode-Guy" target="_blank" rel="noopener">
+        <div class="bg bg-yt" aria-hidden="true"></div>
+        <div class="plat-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 3.9 12 3.9 12 3.9s-7.5 0-9.4.5A3 3 0 0 0 .5 6.5 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.5 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.5zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></div>
+        <div class="content">
+          <span class="plat">YouTube · Video</span>
+          <div class="handle">@Story-Mode-Guy</div>
+          <span class="meta">Watch the films →</span>
+        </div>
+      </a>
+      <a class="social" href="https://www.tiktok.com/@storymodeguy" target="_blank" rel="noopener">
+        <div class="bg bg-tt" aria-hidden="true"></div>
+        <div class="plat-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.9 5.6a4.6 4.6 0 0 1-1.1-3H12.3v13.4a2.7 2.7 0 1 1-2.7-2.7c.28 0 .55.05.8.13V9.7a6.2 6.2 0 0 0-.8-.05 6.2 6.2 0 1 0 6.2 6.2V8.9a7.9 7.9 0 0 0 4.5 1.4V6.7a4.6 4.6 0 0 1-3.4-1.1z"/></svg></div>
+        <div class="content">
+          <span class="plat">TikTok · Video</span>
+          <div class="handle">@storymodeguy</div>
+          <span class="meta">Short films →</span>
+        </div>
+      </a>
+      <a class="social" href="https://www.instagram.com/storymodeguy" target="_blank" rel="noopener">
+        <div class="bg bg-ig" aria-hidden="true"></div>
+        <div class="plat-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+        <div class="content">
+          <span class="plat">Instagram</span>
+          <div class="handle">@storymodeguy</div>
+          <span class="meta">Frames &amp; reels →</span>
+        </div>
+      </a>
+      <a class="social" href="https://www.facebook.com/profile.php?id=61572467301840" target="_blank" rel="noopener">
+        <div class="bg bg-fb" aria-hidden="true"></div>
+        <div class="plat-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.6 4.5-4.6 1.3 0 2.6.23 2.6.23v2.9h-1.5c-1.5 0-1.9.9-1.9 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></div>
+        <div class="content">
+          <span class="plat">Facebook</span>
+          <div class="handle">Story Mode Guy</div>
+          <span class="meta">Follow the page →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <h2>Everything's a story if you shoot it right.</h2>
+    <div class="footer-grid">
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#photography">Photography</a>
+        <a href="#worldswap">World Swap</a>
+        <a href="#shop">Shop</a>
+        <a href="#feed">The Feed</a>
+      </div>
+      <div class="foot-col">
+        <h4>Follow</h4>
+        <a href="https://www.youtube.com/@Story-Mode-Guy" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@storymodeguy" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/storymodeguy" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61572467301840" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="foot-col">
+        <h4>Shop &amp; work</h4>
+        <a href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Payhip store</a>
+        <a href="https://drive.google.com/drive/folders/1e5MBFuIErfgRU6FVN7C_b369IrgFag2a?usp=sharing" target="_blank" rel="noopener">Photo gallery</a>
+      </div>
+      <div class="foot-col foot-cta">
+        <a class="btn btn-filled" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Visit the shop <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© 2026 Story Mode Guy · storymodeguy.com</span>
+      <span>Photography · Ebooks · Film</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
