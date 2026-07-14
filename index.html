@@ -174,15 +174,16 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 .hero-art{
   position:absolute; inset:12px;
   border-radius:var(--r-surface);
-  /* painterly moonlit dusk — cool blues with a warm horizon glow */
-  background:
-    radial-gradient(120% 80% at 78% 108%, rgba(240,168,90,0.35), rgba(240,168,90,0) 55%),
-    radial-gradient(90% 70% at 15% 8%, rgba(120,150,210,0.35), rgba(120,150,210,0) 60%),
-    linear-gradient(180deg, #1b2138 0%, #232a45 38%, #3a3350 72%, #5a4a55 100%);
+  /* Boardwalk sunset photo, with a soft dark wash at bottom-left for card legibility */
+  background-image:
+    linear-gradient(to top right, rgba(10,12,20,0.62) 0%, rgba(10,12,20,0.18) 55%, rgba(10,12,20,0.05) 100%),
+    url('hero.jpg');
+  background-size:cover, cover;
+  background-position:center, center;
   overflow:hidden;
 }
 .hero-art::after{ /* grain */
-  content:""; position:absolute; inset:0; opacity:0.5; mix-blend-mode:overlay;
+  content:""; position:absolute; inset:0; opacity:0.14; mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 .hero-card{
