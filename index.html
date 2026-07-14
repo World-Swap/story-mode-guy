@@ -233,33 +233,15 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   border:1px solid var(--mist);
   border-radius:var(--r-card);
   overflow:hidden;
-  aspect-ratio:4/5;
+  aspect-ratio:3/2;
   background:var(--linen);
   box-shadow:var(--sh-card);
 }
-.frame.wide{ grid-column:span 2; aspect-ratio:16/10; }
-/* Painterly placeholder washes — REPLACE with your photos (see note in gallery) */
-.frame .wash{ position:absolute; inset:0; }
-.frame .wash::after{ content:""; position:absolute; inset:0; opacity:0.4; mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-.w1{ background:radial-gradient(90% 90% at 30% 20%, #f0c078, #b8763a 60%, #6b3f2a); }
-.w2{ background:radial-gradient(90% 90% at 70% 20%, #7fa6c9, #3f6390 60%, #232a45); }
-.w3{ background:radial-gradient(90% 90% at 40% 80%, #8bb98a, #4a7a5c 60%, #24402f); }
-.w4{ background:radial-gradient(100% 90% at 60% 30%, #caa6c9, #7a5a8c 60%, #3a2c4a); }
-.w5{ background:radial-gradient(90% 90% at 20% 40%, #f0d090, #c98a4a 60%, #6b4a2a); }
-.w6{ background:linear-gradient(160deg, #2b3350, #4a4560 55%, #7a5a55); }
-.frame .tag{
-  position:absolute; left:12px; bottom:12px; z-index:2;
-  font-size:11px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase;
-  color:rgba(255,255,255,0.9);
-  background:rgba(20,22,36,0.35); backdrop-filter:blur(4px);
-  padding:4px 9px; border-radius:6px; border:1px solid rgba(255,255,255,0.18);
-}
+.frame img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
+.frame:hover img{ transform:scale(1.04); }
 .gallery-foot{ margin-top:32px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-@media (max-width:720px){
-  .gallery{ grid-template-columns:repeat(2,1fr); }
-  .frame.wide{ grid-column:span 2; }
-}
+@media (max-width:900px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:520px){ .gallery{ grid-template-columns:1fr; } }
 
 /* ============================================================
    WORLD SWAP — the single Cerulean atmospheric moment
@@ -415,24 +397,25 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <p>A running record of light, place, and the small moments that turn a walk into a scene. Every frame is a still from a story that's still being written.</p>
     </div>
 
-    <!--
-      ============================================================
-      HOW TO ADD YOUR PHOTOS
-      Each .frame below shows a painterly placeholder. To use a real
-      photo, replace the <div class="wash ..."></div> inside a frame with:
-          <img src="your-photo.jpg" alt="short description"
-               style="width:100%;height:100%;object-fit:cover;">
-      Keep the .tag label or delete it. Portrait shots fit the tall
-      frames; the "wide" frame suits a landscape.
-      ============================================================
-    -->
     <div class="gallery">
-      <div class="frame wide"><div class="wash w6"></div><span class="tag">Golden hour</span></div>
-      <div class="frame"><div class="wash w1"></div><span class="tag">Street</span></div>
-      <div class="frame"><div class="wash w2"></div><span class="tag">Night</span></div>
-      <div class="frame"><div class="wash w3"></div><span class="tag">Landscape</span></div>
-      <div class="frame"><div class="wash w4"></div><span class="tag">Portrait</span></div>
-      <div class="frame wide"><div class="wash w5"></div><span class="tag">On location</span></div>
+      <div class="frame"><img src="photo-01.jpg" alt="Fiery sunset over Walton Lighthouse, Santa Cruz" loading="lazy"></div>
+      <div class="frame"><img src="photo-14.jpg" alt="Sunrise breaking over the harbor" loading="lazy"></div>
+      <div class="frame"><img src="photo-15.jpg" alt="Deep red dusk along the shoreline" loading="lazy"></div>
+      <div class="frame"><img src="photo-06.jpg" alt="Boardwalk under a magenta sunset" loading="lazy"></div>
+      <div class="frame"><img src="photo-16.jpg" alt="Mammatus clouds catching the last light" loading="lazy"></div>
+      <div class="frame"><img src="photo-11.jpg" alt="Crimson sky over the bay" loading="lazy"></div>
+      <div class="frame"><img src="photo-05.jpg" alt="Ferris wheel glowing at twilight" loading="lazy"></div>
+      <div class="frame"><img src="photo-03.jpg" alt="Santa Cruz Beach Boardwalk at dusk" loading="lazy"></div>
+      <div class="frame"><img src="photo-07.jpg" alt="Sunset over the wharf" loading="lazy"></div>
+      <div class="frame"><img src="photo-12.jpg" alt="Golden hour at the cliffs" loading="lazy"></div>
+      <div class="frame"><img src="photo-17.jpg" alt="A sailboat passes the harbor lighthouse" loading="lazy"></div>
+      <div class="frame"><img src="photo-10.jpg" alt="Santa Cruz Wharf at last light" loading="lazy"></div>
+      <div class="frame"><img src="photo-04.jpg" alt="Boardwalk lights under stormy clouds" loading="lazy"></div>
+      <div class="frame"><img src="photo-13.jpg" alt="Its Beach and the coastal bluffs" loading="lazy"></div>
+      <div class="frame"><img src="photo-09.jpg" alt="Coastal trail above a sparkling bay" loading="lazy"></div>
+      <div class="frame"><img src="photo-08.jpg" alt="A pug on a foamy winter beach" loading="lazy"></div>
+      <div class="frame"><img src="photo-02.jpg" alt="Redwoods and open lawn on a clear day" loading="lazy"></div>
+      <div class="frame"><img src="photo-18.jpg" alt="Quiet morning over an empty beach" loading="lazy"></div>
     </div>
 
     <div class="gallery-foot">
