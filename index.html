@@ -336,7 +336,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 /* ============================================================
    SHOP — product cards
    ============================================================ */
-.cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.cards{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
 .card{
   display:flex; flex-direction:column;
   background:var(--paper);
@@ -360,7 +360,8 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 .card .card-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:10px; }
 .card .price{ font-family:var(--serif); font-size:19px; color:var(--graphite); }
 .shop-foot{ margin-top:32px; }
-@media (max-width:720px){ .cards{ grid-template-columns:1fr; } }
+@media (max-width:1000px){ .cards{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .cards{ grid-template-columns:1fr; max-width:420px; } }
 
 /* ============================================================
    THE FEED — social + video
@@ -573,7 +574,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
     <div class="sec-head">
       <p class="eyebrow">Chapter 02 — The Shop</p>
       <h2>Emberwild</h2>
-      <p>An original illustrated series. Act I — The Burning opens with three episodes, each a quick read delivered instantly as a PDF for just $0.99.</p>
+      <p>An original illustrated series. Act I — The Burning runs four episodes so far, each a quick read delivered instantly as a PDF for just $0.99.</p>
     </div>
 
     <div class="cards">
@@ -601,6 +602,15 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
           <span class="kicker">Episode Three</span>
           <h3>Old Wounds</h3>
           <p>A wound with two people holding it closed bleeds slower. Grief and ruins that shouldn't exist plant the first seed of the origin mystery.</p>
+          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
+        </div>
+      </a>
+      <a class="card" href="https://payhip.com/b/9BG6W" target="_blank" rel="noopener">
+        <div class="cover"><img src="ep-4cover.png" alt="Emberwild Episode Four — The Sky Cage cover"></div>
+        <div class="body">
+          <span class="kicker">Episode Four</span>
+          <h3>The Sky Cage</h3>
+          <p>They don't say please. Something comes down out of the night sky with lights and a cage, and the wild stops being the thing to fear.</p>
           <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
         </div>
       </a>
