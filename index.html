@@ -228,21 +228,81 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 /* ============================================================
    PHOTOGRAPHY GALLERY — media cards
    ============================================================ */
-.gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.frame{
+/* ---- Slideshow ---- */
+.slideshow{
   position:relative;
   border:1px solid var(--mist);
-  border-radius:var(--r-card);
+  border-radius:var(--r-card-lg);
   overflow:hidden;
-  aspect-ratio:3/2;
   background:var(--linen);
   box-shadow:var(--sh-card);
+  aspect-ratio:16/9;
 }
-.frame img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
-.frame:hover img{ transform:scale(1.04); }
+.slides{ position:absolute; inset:0; }
+.slide{
+  position:absolute; inset:0; margin:0;
+  opacity:0; transition:opacity .6s ease;
+  pointer-events:none;
+}
+.slide.is-active{ opacity:1; pointer-events:auto; }
+.slide img{ width:100%; height:100%; object-fit:cover; display:block; }
+.slide figcaption{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:56px 24px 20px;
+  font-family:var(--sans); font-size:15px; font-weight:500; color:#fff;
+  background:linear-gradient(to top, rgba(10,12,20,0.7), rgba(10,12,20,0));
+}
+.nav-arrow{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:3;
+  width:46px; height:46px; border-radius:50%;
+  background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.45);
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  color:#fff; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background-color .16s ease;
+}
+.nav-arrow:hover{ background:rgba(255,255,255,0.3); }
+.nav-arrow svg{ width:22px; height:22px; }
+.nav-arrow.prev{ left:16px; }
+.nav-arrow.next{ right:16px; }
+.counter{
+  position:absolute; top:16px; right:16px; z-index:3;
+  font-family:var(--sans); font-size:13px; font-weight:500; color:#fff;
+  background:rgba(10,12,20,0.4); border:1px solid rgba(255,255,255,0.2);
+  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+  padding:5px 11px; border-radius:50px;
+}
+.dots{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px; }
+.dot{
+  width:8px; height:8px; border-radius:50%; padding:0;
+  border:1px solid var(--fog); background:transparent; cursor:pointer;
+  transition:background-color .16s ease, border-color .16s ease, transform .16s ease;
+}
+.dot:hover{ border-color:var(--charcoal); }
+.dot.is-active{ background:var(--signal-blue); border-color:var(--signal-blue); transform:scale(1.25); }
 .gallery-foot{ margin-top:32px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-@media (max-width:900px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:520px){ .gallery{ grid-template-columns:1fr; } }
+@media (max-width:720px){
+  .slideshow{ aspect-ratio:4/3; }
+  .nav-arrow{ width:40px; height:40px; }
+  .nav-arrow.prev{ left:10px; } .nav-arrow.next{ right:10px; }
+  .slide figcaption{ font-size:14px; padding:48px 16px 16px; }
+}
+
+/* ============================================================
+   PRINTS & WALLPAPERS — Payhip product cards
+   ============================================================ */
+.pcards{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.pcard{ display:flex; flex-direction:column; background:var(--paper); border:1px solid var(--mist); border-radius:var(--r-card-lg); overflow:hidden; box-shadow:var(--sh-card); }
+.pcard .pcover{ aspect-ratio:2/3; background:var(--linen); border-bottom:1px solid var(--mist); }
+.pcard .pcover img{ width:100%; height:100%; object-fit:cover; display:block; }
+.pcard .pbody{ padding:20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.pcard .kicker{ font-size:13px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--ash); }
+.pcard h3{ font-size:24px; line-height:1.2; letter-spacing:-0.01em; }
+.pcard p{ font-size:15px; color:var(--ash); margin:0; flex:1; }
+.pcard .pfoot{ display:flex; align-items:center; justify-content:space-between; margin-top:12px; gap:12px; }
+.pcard .price{ font-family:var(--serif); font-size:22px; color:var(--graphite); }
+.pcard .btn-buy{ cursor:pointer; }
+@media (max-width:900px){ .pcards{ grid-template-columns:1fr; max-width:460px; } }
 
 /* ============================================================
    WORLD SWAP — the single Cerulean atmospheric moment
@@ -367,6 +427,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
     </a>
     <div class="nav-links">
       <a href="#photography">Photography</a>
+      <a href="#prints">Prints</a>
       <a href="#worldswap">World Swap</a>
       <a href="#shop">Shop</a>
       <a href="#feed">The Feed</a>
@@ -398,30 +459,95 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <p>A running record of light, place, and the small moments that turn a walk into a scene. Every frame is a still from a story that's still being written.</p>
     </div>
 
-    <div class="gallery">
-      <div class="frame"><img src="photo-01.jpg" alt="Fiery sunset over Walton Lighthouse, Santa Cruz" loading="lazy"></div>
-      <div class="frame"><img src="photo-14.jpg" alt="Sunrise breaking over the harbor" loading="lazy"></div>
-      <div class="frame"><img src="photo-15.jpg" alt="Deep red dusk along the shoreline" loading="lazy"></div>
-      <div class="frame"><img src="photo-06.jpg" alt="Boardwalk under a magenta sunset" loading="lazy"></div>
-      <div class="frame"><img src="photo-16.jpg" alt="Mammatus clouds catching the last light" loading="lazy"></div>
-      <div class="frame"><img src="photo-11.jpg" alt="Crimson sky over the bay" loading="lazy"></div>
-      <div class="frame"><img src="photo-05.jpg" alt="Ferris wheel glowing at twilight" loading="lazy"></div>
-      <div class="frame"><img src="photo-03.jpg" alt="Santa Cruz Beach Boardwalk at dusk" loading="lazy"></div>
-      <div class="frame"><img src="photo-07.jpg" alt="Sunset over the wharf" loading="lazy"></div>
-      <div class="frame"><img src="photo-12.jpg" alt="Golden hour at the cliffs" loading="lazy"></div>
-      <div class="frame"><img src="photo-17.jpg" alt="A sailboat passes the harbor lighthouse" loading="lazy"></div>
-      <div class="frame"><img src="photo-10.jpg" alt="Santa Cruz Wharf at last light" loading="lazy"></div>
-      <div class="frame"><img src="photo-04.jpg" alt="Boardwalk lights under stormy clouds" loading="lazy"></div>
-      <div class="frame"><img src="photo-13.jpg" alt="Its Beach and the coastal bluffs" loading="lazy"></div>
-      <div class="frame"><img src="photo-09.jpg" alt="Coastal trail above a sparkling bay" loading="lazy"></div>
-      <div class="frame"><img src="photo-08.jpg" alt="A pug on a foamy winter beach" loading="lazy"></div>
-      <div class="frame"><img src="photo-02.jpg" alt="Redwoods and open lawn on a clear day" loading="lazy"></div>
-      <div class="frame"><img src="photo-18.jpg" alt="Quiet morning over an empty beach" loading="lazy"></div>
+    <div class="slideshow" id="slideshow">
+      <div class="slides" id="slides">
+        <figure class="slide is-active"><img src="photo-01.jpg" alt="Fiery sunset over Walton Lighthouse, Santa Cruz"><figcaption>Walton Lighthouse, burning sky</figcaption></figure>
+        <figure class="slide"><img src="photo-14.jpg" alt="Sunrise breaking over the harbor" loading="lazy"><figcaption>Sunrise over the harbor</figcaption></figure>
+        <figure class="slide"><img src="photo-15.jpg" alt="Deep red dusk along the shoreline" loading="lazy"><figcaption>Red dusk on the shoreline</figcaption></figure>
+        <figure class="slide"><img src="photo-06.jpg" alt="Boardwalk under a magenta sunset" loading="lazy"><figcaption>Boardwalk in magenta</figcaption></figure>
+        <figure class="slide"><img src="photo-16.jpg" alt="Clouds catching the last light" loading="lazy"><figcaption>Last light in the clouds</figcaption></figure>
+        <figure class="slide"><img src="photo-11.jpg" alt="Crimson sky over the bay" loading="lazy"><figcaption>Crimson over the bay</figcaption></figure>
+        <figure class="slide"><img src="photo-05.jpg" alt="Ferris wheel glowing at twilight" loading="lazy"><figcaption>Ferris wheel at twilight</figcaption></figure>
+        <figure class="slide"><img src="photo-03.jpg" alt="Santa Cruz Beach Boardwalk at dusk" loading="lazy"><figcaption>The Boardwalk at dusk</figcaption></figure>
+        <figure class="slide"><img src="photo-07.jpg" alt="Sunset over the wharf" loading="lazy"><figcaption>Sunset over the wharf</figcaption></figure>
+        <figure class="slide"><img src="photo-12.jpg" alt="Golden hour at the cliffs" loading="lazy"><figcaption>Golden hour, cliffside</figcaption></figure>
+        <figure class="slide"><img src="photo-17.jpg" alt="A sailboat passes the harbor lighthouse" loading="lazy"><figcaption>Sailboat past the lighthouse</figcaption></figure>
+        <figure class="slide"><img src="photo-10.jpg" alt="Santa Cruz Wharf at last light" loading="lazy"><figcaption>The wharf, last light</figcaption></figure>
+        <figure class="slide"><img src="photo-04.jpg" alt="Boardwalk lights under stormy clouds" loading="lazy"><figcaption>Storm over the lights</figcaption></figure>
+        <figure class="slide"><img src="photo-13.jpg" alt="Its Beach and the coastal bluffs" loading="lazy"><figcaption>Its Beach and the bluffs</figcaption></figure>
+        <figure class="slide"><img src="photo-09.jpg" alt="Coastal trail above a sparkling bay" loading="lazy"><figcaption>Trail above the bay</figcaption></figure>
+        <figure class="slide"><img src="photo-08.jpg" alt="A pug on a foamy winter beach" loading="lazy"><figcaption>Sea foam, winter beach</figcaption></figure>
+        <figure class="slide"><img src="photo-02.jpg" alt="Redwoods and open lawn on a clear day" loading="lazy"><figcaption>Redwoods, clear day</figcaption></figure>
+        <figure class="slide"><img src="photo-18.jpg" alt="Quiet morning over an empty beach" loading="lazy"><figcaption>Quiet morning, empty sand</figcaption></figure>
+      </div>
+
+      <button class="nav-arrow prev" id="prevBtn" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="nav-arrow next" id="nextBtn" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <div class="counter"><span id="counterNow">1</span> / 18</div>
     </div>
 
+    <div class="dots" id="dots" role="tablist" aria-label="Choose a photo"></div>
+
     <div class="gallery-foot">
-      <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1e5MBFuIErfgRU6FVN7C_b369IrgFag2a?usp=sharing" target="_blank" rel="noopener">View the full gallery <span class="arrow">→</span></a>
-      <a class="btn btn-secondary" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Prints &amp; downloads</a>
+      <a class="btn btn-primary" href="#prints">Prints &amp; wallpapers <span class="arrow">→</span></a>
+      <a class="btn btn-secondary" href="https://www.instagram.com/storymodeguy" target="_blank" rel="noopener">More on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PRINTS & WALLPAPERS ========================= -->
+<section class="chapter" id="prints">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Santa Cruz Skies</p>
+      <h2>Take a piece of it home</h2>
+      <p>The photography, as instant digital downloads — wallpapers for your screens and high-resolution files you can print any size. Checkout happens right here; your files arrive by email the moment you buy.</p>
+    </div>
+
+    <div class="pcards">
+      <div class="pcard">
+        <div class="pcover"><img src="thumb-phone.jpg" alt="Phone wallpaper pack preview"></div>
+        <div class="pbody">
+          <span class="kicker">Santa Cruz Skies</span>
+          <h3>Phone Wallpapers</h3>
+          <p>8 original photographs sized for phone lock and home screens. Fiery boardwalk sunsets, golden hour on the cliffs, and more.</p>
+          <div class="pfoot">
+            <span class="price">$4</span>
+            <a href="https://payhip.com/b/KstGk" class="payhip-buy-button btn btn-primary btn-buy" data-theme="none" data-product="KstGk">Buy <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcover"><img src="thumb-desktop.jpg" alt="Desktop wallpaper pack preview"></div>
+        <div class="pbody">
+          <span class="kicker">Santa Cruz Skies</span>
+          <h3>Desktop Wallpapers · 4K</h3>
+          <p>12 photographs at 3840 × 2160 for desktop and laptop screens — a wallpaper for every mood, from fiery to calm.</p>
+          <div class="pfoot">
+            <span class="price">$4</span>
+            <a href="https://payhip.com/b/9dl2k" class="payhip-buy-button btn btn-primary btn-buy" data-theme="none" data-product="9dl2k">Buy <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcover"><img src="thumb-prints.jpg" alt="Printable fine-art set preview"></div>
+        <div class="pbody">
+          <span class="kicker">Coastline</span>
+          <h3>Printable Fine-Art Set</h3>
+          <p>6 high-resolution files (4000&nbsp;px) with a print-size guide. Print at home or any lab, and hang as many times as you like.</p>
+          <div class="pfoot">
+            <span class="price">$15</span>
+            <a href="https://payhip.com/b/8eEof" class="payhip-buy-button btn btn-primary btn-buy" data-theme="none" data-product="8eEof">Buy <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -557,7 +683,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <div class="foot-col">
         <h4>Shop &amp; work</h4>
         <a href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Payhip store</a>
-        <a href="https://drive.google.com/drive/folders/1e5MBFuIErfgRU6FVN7C_b369IrgFag2a?usp=sharing" target="_blank" rel="noopener">Photo gallery</a>
+        <a href="#prints">Prints &amp; wallpapers</a>
       </div>
       <div class="foot-col foot-cta">
         <a class="btn btn-filled" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Visit the shop <span class="arrow">→</span></a>
@@ -570,5 +696,68 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   </div>
 </footer>
 
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('#slides .slide'));
+  if(!slides.length) return;
+  var dotsWrap = document.getElementById('dots');
+  var counterNow = document.getElementById('counterNow');
+  var show = document.getElementById('slideshow');
+  var i = 0, timer = null, DELAY = 5000;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // build dots
+  slides.forEach(function(_, n){
+    var b = document.createElement('button');
+    b.className = 'dot' + (n === 0 ? ' is-active' : '');
+    b.setAttribute('aria-label', 'Photo ' + (n+1));
+    b.addEventListener('click', function(){ go(n); restart(); });
+    dotsWrap.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function go(n){
+    slides[i].classList.remove('is-active');
+    dots[i].classList.remove('is-active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('is-active');
+    dots[i].classList.add('is-active');
+    counterNow.textContent = i + 1;
+  }
+  function next(){ go(i+1); }
+  function prev(){ go(i-1); }
+  function start(){ if(!reduce) timer = setInterval(next, DELAY); }
+  function stop(){ clearInterval(timer); }
+  function restart(){ stop(); start(); }
+
+  document.getElementById('nextBtn').addEventListener('click', function(){ next(); restart(); });
+  document.getElementById('prevBtn').addEventListener('click', function(){ prev(); restart(); });
+
+  // pause on hover
+  show.addEventListener('mouseenter', stop);
+  show.addEventListener('mouseleave', start);
+
+  // keyboard
+  document.addEventListener('keydown', function(e){
+    var r = show.getBoundingClientRect();
+    if(r.bottom < 0 || r.top > window.innerHeight) return;
+    if(e.key === 'ArrowRight'){ next(); restart(); }
+    if(e.key === 'ArrowLeft'){ prev(); restart(); }
+  });
+
+  // swipe
+  var x0 = null;
+  show.addEventListener('touchstart', function(e){ x0 = e.changedTouches[0].clientX; stop(); }, {passive:true});
+  show.addEventListener('touchend', function(e){
+    if(x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if(Math.abs(dx) > 40){ dx < 0 ? next() : prev(); }
+    x0 = null; start();
+  }, {passive:true});
+
+  start();
+})();
+</script>
+<script src="https://payhip.com/payhip.js" type="text/javascript"></script>
 </body>
 </html>
