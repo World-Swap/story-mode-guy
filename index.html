@@ -292,7 +292,8 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
    PRINTS & WALLPAPERS — Payhip product cards
    ============================================================ */
 .pcards{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.pcard{ display:flex; flex-direction:column; background:var(--paper); border:1px solid var(--mist); border-radius:var(--r-card-lg); overflow:hidden; box-shadow:var(--sh-card); }
+.pcard{ display:flex; flex-direction:column; background:var(--paper); border:1px solid var(--mist); border-radius:var(--r-card-lg); overflow:hidden; box-shadow:var(--sh-card); text-decoration:none; transition:transform .18s ease; }
+.pcard:hover{ transform:translateY(-3px); }
 .pcard .pcover{ aspect-ratio:2/3; background:var(--linen); border-bottom:1px solid var(--mist); }
 .pcard .pcover img{ width:100%; height:100%; object-fit:cover; display:block; }
 .pcard .pbody{ padding:20px; display:flex; flex-direction:column; gap:8px; flex:1; }
@@ -301,7 +302,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 .pcard p{ font-size:15px; color:var(--ash); margin:0; flex:1; }
 .pcard .pfoot{ display:flex; align-items:center; justify-content:space-between; margin-top:12px; gap:12px; }
 .pcard .price{ font-family:var(--serif); font-size:22px; color:var(--graphite); }
-.pcard .btn-buy{ cursor:pointer; }
+.pcard .card-link{ font-size:15px; font-weight:500; color:var(--signal-blue); display:inline-flex; align-items:center; gap:6px; }
 @media (max-width:900px){ .pcards{ grid-template-columns:1fr; max-width:460px; } }
 
 /* ============================================================
@@ -506,11 +507,11 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
     <div class="sec-head">
       <p class="eyebrow">Santa Cruz Skies</p>
       <h2>Take a piece of it home</h2>
-      <p>The photography, as instant digital downloads — wallpapers for your screens and high-resolution files you can print any size. Checkout happens right here; your files arrive by email the moment you buy.</p>
+      <p>The photography, as instant digital downloads — wallpapers for your screens and high-resolution files you can print any size. Delivered to your inbox the moment you buy.</p>
     </div>
 
     <div class="pcards">
-      <div class="pcard">
+      <a class="pcard" href="https://payhip.com/b/KstGk" target="_blank" rel="noopener">
         <div class="pcover"><img src="thumb-phone.jpg" alt="Phone wallpaper pack preview"></div>
         <div class="pbody">
           <span class="kicker">Santa Cruz Skies</span>
@@ -518,12 +519,12 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
           <p>8 original photographs sized for phone lock and home screens. Fiery boardwalk sunsets, golden hour on the cliffs, and more.</p>
           <div class="pfoot">
             <span class="price">$4</span>
-            <a href="https://payhip.com/b/KstGk" class="payhip-buy-button btn btn-primary btn-buy" data-theme="none" data-product="KstGk">Buy <span class="arrow">→</span></a>
+            <span class="card-link">Get it on Payhip →</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="pcard">
+      <a class="pcard" href="https://payhip.com/b/9dl2k" target="_blank" rel="noopener">
         <div class="pcover"><img src="thumb-desktop.jpg" alt="Desktop wallpaper pack preview"></div>
         <div class="pbody">
           <span class="kicker">Santa Cruz Skies</span>
@@ -531,12 +532,12 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
           <p>12 photographs at 3840 × 2160 for desktop and laptop screens — a wallpaper for every mood, from fiery to calm.</p>
           <div class="pfoot">
             <span class="price">$4</span>
-            <a href="https://payhip.com/b/9dl2k" class="payhip-buy-button btn btn-primary btn-buy" data-theme="none" data-product="9dl2k">Buy <span class="arrow">→</span></a>
+            <span class="card-link">Get it on Payhip →</span>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="pcard">
+      <a class="pcard" href="https://payhip.com/b/8eEof" target="_blank" rel="noopener">
         <div class="pcover"><img src="thumb-prints.jpg" alt="Printable fine-art set preview"></div>
         <div class="pbody">
           <span class="kicker">Coastline</span>
@@ -544,10 +545,10 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
           <p>6 high-resolution files (4000&nbsp;px) with a print-size guide. Print at home or any lab, and hang as many times as you like.</p>
           <div class="pfoot">
             <span class="price">$15</span>
-            <a href="https://payhip.com/b/8eEof" class="payhip-buy-button btn btn-primary btn-buy" data-theme="none" data-product="8eEof">Buy <span class="arrow">→</span></a>
+            <span class="card-link">Get it on Payhip →</span>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -758,6 +759,5 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   start();
 })();
 </script>
-<script src="https://payhip.com/payhip.js" type="text/javascript"></script>
 </body>
 </html>
