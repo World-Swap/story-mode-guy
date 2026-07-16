@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Full Gallery — Story Mode Guy</title>
+<meta name="description" content="The complete photography archive from Story Mode Guy — Santa Cruz coast, golden hour, and everything in between.">
+<link rel="icon" type="image/png" href="smg-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#fefffc; --paper:#ffffff; --linen:#f9faf7;
+  --graphite:#2c2c2c; --charcoal:#444141; --ash:#646464;
+  --fog:#b4b8b4; --mist:#dee2de; --twilight:#282834; --dusk:#1f1f29;
+  --signal-blue:#41a1cf;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --r-btn:8px; --r-card:12px; --r-pill:50px;
+  --sh-nav:rgba(0,0,0,0.15) 0px 2px 6px 0px;
+  --sh-card:rgba(0,0,0,0.08) 0px 1px 1px 0px, rgba(0,0,0,0.08) 0px 4px 5px 0px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; background:var(--parchment); color:var(--charcoal);
+  font-family:var(--sans); font-size:16px; line-height:1.5; letter-spacing:-0.01em;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2{font-family:var(--serif); font-weight:400; color:var(--graphite); margin:0; font-feature-settings:"liga" 0;}
+a{color:inherit; text-decoration:none;}
+img{display:block; max-width:100%;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 24px;}
+
+/* nav */
+.nav-wrap{position:fixed; top:18px; left:0; right:0; z-index:50; display:flex; justify-content:center; padding:0 16px; pointer-events:none;}
+.nav{
+  pointer-events:auto; display:flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,0.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(40,40,52,0.5); border-radius:var(--r-pill);
+  padding:7px 8px 7px 16px; box-shadow:var(--sh-nav);
+}
+.brand{display:flex; align-items:center; gap:9px; margin-right:6px;}
+.brand-logo{width:30px; height:30px; border-radius:50%;}
+.brand-name{font-family:var(--serif); font-size:16px; color:var(--graphite); white-space:nowrap;}
+.nav-links{display:flex; align-items:center; gap:2px;}
+.nav-links a{font-size:15px; font-weight:500; color:var(--charcoal); padding:7px 12px; border-radius:var(--r-pill); white-space:nowrap;}
+.nav-links a:hover{background:rgba(40,40,52,0.06);}
+.btn{
+  display:inline-flex; align-items:center; gap:9px; font-size:15px; font-weight:500;
+  border-radius:var(--r-btn); padding:8px 16px; border:1px solid transparent; cursor:pointer;
+  transition:background-color .18s ease;
+}
+.btn .arrow{display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%; border:1px solid currentColor; font-size:11px; line-height:1;}
+.btn-primary{color:var(--signal-blue); border-color:var(--signal-blue);}
+.btn-primary:hover{background:rgba(65,161,207,0.08);}
+.btn-secondary{color:var(--twilight); border-color:var(--twilight);}
+.btn-secondary:hover{background:rgba(40,40,52,0.05);}
+@media (max-width:860px){ .nav-links{display:none;} }
+
+/* header */
+.head{padding:150px 0 48px;}
+.eyebrow{font-size:13px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--ash); margin:0 0 18px;}
+.head h1{font-size:clamp(40px,6vw,64px); line-height:1.05; letter-spacing:-0.02em; margin-bottom:16px;}
+.head p{font-size:18px; color:var(--ash); max-width:56ch; margin:0;}
+.count{margin-top:24px; font-size:15px; color:var(--fog);}
+
+/* grid */
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding-bottom:80px;}
+.gtile{
+  position:relative; padding:0; margin:0; border:1px solid var(--mist);
+  border-radius:var(--r-card); overflow:hidden; background:var(--linen);
+  cursor:zoom-in; box-shadow:var(--sh-card); aspect-ratio:3/2;
+  transition:transform .18s ease;
+}
+.gtile:hover{transform:translateY(-3px);}
+.gtile img{width:100%; height:100%; object-fit:cover; transition:transform .35s ease;}
+.gtile:hover img{transform:scale(1.05);}
+.gcap{
+  position:absolute; left:0; right:0; bottom:0; text-align:left;
+  padding:38px 12px 10px; font-family:var(--sans); font-size:13px; font-weight:500; color:#fff;
+  background:linear-gradient(to top, rgba(10,12,20,0.72), rgba(10,12,20,0));
+  opacity:0; transition:opacity .2s ease;
+}
+.gtile:hover .gcap, .gtile:focus-visible .gcap{opacity:1;}
+@media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:560px){ .grid{grid-template-columns:1fr;} .head{padding:130px 0 32px;} }
+
+/* lightbox */
+.lb{
+  position:fixed; inset:0; z-index:100; display:none;
+  background:rgba(12,14,20,0.94); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  align-items:center; justify-content:center; padding:24px;
+}
+.lb.open{display:flex;}
+.lb img{max-width:100%; max-height:82vh; border-radius:8px; object-fit:contain;}
+.lb-cap{position:absolute; bottom:26px; left:0; right:0; text-align:center; color:rgba(255,255,255,0.85); font-size:15px;}
+.lb-btn{
+  position:absolute; width:46px; height:46px; border-radius:50%;
+  background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.4);
+  color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.lb-btn:hover{background:rgba(255,255,255,0.28);}
+.lb-close{top:20px; right:20px; font-size:22px; line-height:1;}
+.lb-prev{left:20px; top:50%; transform:translateY(-50%);}
+.lb-next{right:20px; top:50%; transform:translateY(-50%);}
+.lb-btn svg{width:22px; height:22px;}
+@media (max-width:560px){ .lb-prev{left:8px;} .lb-next{right:8px;} }
+
+/* footer */
+.footer{background:var(--paper); border-top:1px solid var(--mist); padding:64px 0 40px;}
+.footer h2{font-size:clamp(28px,4vw,40px); line-height:1.1; letter-spacing:-0.02em; max-width:16ch; margin-bottom:32px;}
+.foot-links{display:flex; gap:16px; flex-wrap:wrap;}
+.colophon{margin-top:48px; padding-top:24px; border-top:1px solid var(--mist); font-size:13px; color:var(--fog);}
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="index.html" aria-label="Story Mode Guy — home">
+      <img class="brand-logo" src="smg-logo.png" alt="Story Mode Guy logo">
+      <span class="brand-name">Story Mode Guy</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#photography">Photography</a>
+      <a href="index.html#prints">Prints</a>
+      <a href="index.html#worldswap">World Swap</a>
+      <a href="index.html#shop">Shop</a>
+      <a href="index.html#feed">The Feed</a>
+    </div>
+    <a class="btn btn-primary" href="index.html">Back home <span class="arrow">→</span></a>
+  </nav>
+</div>
+
+<header class="wrap head">
+  <p class="eyebrow">Chapter 01 — The Frames · Complete</p>
+  <h1>The full gallery</h1>
+  <p>Every frame worth keeping — the Santa Cruz coast at every hour, from burning sunsets to quiet gray mornings, plus a few detours inland. Click any photo to see it full size.</p>
+  <p class="count" id="count"></p>
+</header>
+
+<main class="wrap">
+  <div class="grid" id="grid">
+      <button class="gtile" data-full="photo-01.jpg" data-cap="Red sky over the boardwalk" aria-label="Red sky over the boardwalk">
+        <img src="thumb-photo-01.jpg" alt="Red sky over the boardwalk" loading="lazy">
+        <span class="gcap">Red sky over the boardwalk</span>
+      </button>
+      <button class="gtile" data-full="photo-02.jpg" data-cap="Ferris wheel in silhouette" aria-label="Ferris wheel in silhouette">
+        <img src="thumb-photo-02.jpg" alt="Ferris wheel in silhouette" loading="lazy">
+        <span class="gcap">Ferris wheel in silhouette</span>
+      </button>
+      <button class="gtile" data-full="photo-03.jpg" data-cap="Walton Lighthouse, burning sky" aria-label="Walton Lighthouse, burning sky">
+        <img src="thumb-photo-03.jpg" alt="Walton Lighthouse, burning sky" loading="lazy">
+        <span class="gcap">Walton Lighthouse, burning sky</span>
+      </button>
+      <button class="gtile" data-full="photo-04.jpg" data-cap="Ember light on the shore" aria-label="Ember light on the shore">
+        <img src="thumb-photo-04.jpg" alt="Ember light on the shore" loading="lazy">
+        <span class="gcap">Ember light on the shore</span>
+      </button>
+      <button class="gtile" data-full="photo-05.jpg" data-cap="The wheel, lit up after dark" aria-label="The wheel, lit up after dark">
+        <img src="thumb-photo-05.jpg" alt="The wheel, lit up after dark" loading="lazy">
+        <span class="gcap">The wheel, lit up after dark</span>
+      </button>
+      <button class="gtile" data-full="photo-06.jpg" data-cap="Lenticular cloud over the cliff" aria-label="Lenticular cloud over the cliff">
+        <img src="thumb-photo-06.jpg" alt="Lenticular cloud over the cliff" loading="lazy">
+        <span class="gcap">Lenticular cloud over the cliff</span>
+      </button>
+      <button class="gtile" data-full="photo-07.jpg" data-cap="Dusk on the wet sand" aria-label="Dusk on the wet sand">
+        <img src="thumb-photo-07.jpg" alt="Dusk on the wet sand" loading="lazy">
+        <span class="gcap">Dusk on the wet sand</span>
+      </button>
+      <button class="gtile" data-full="photo-08.jpg" data-cap="Still water, mirrored lights" aria-label="Still water, mirrored lights">
+        <img src="thumb-photo-08.jpg" alt="Still water, mirrored lights" loading="lazy">
+        <span class="gcap">Still water, mirrored lights</span>
+      </button>
+      <button class="gtile" data-full="photo-09.jpg" data-cap="Golden hour on the tideline" aria-label="Golden hour on the tideline">
+        <img src="thumb-photo-09.jpg" alt="Golden hour on the tideline" loading="lazy">
+        <span class="gcap">Golden hour on the tideline</span>
+      </button>
+      <button class="gtile" data-full="photo-10.jpg" data-cap="Magenta over the coaster" aria-label="Magenta over the coaster">
+        <img src="thumb-photo-10.jpg" alt="Magenta over the coaster" loading="lazy">
+        <span class="gcap">Magenta over the coaster</span>
+      </button>
+      <button class="gtile" data-full="photo-11.jpg" data-cap="Sun through the coaster" aria-label="Sun through the coaster">
+        <img src="thumb-photo-11.jpg" alt="Sun through the coaster" loading="lazy">
+        <span class="gcap">Sun through the coaster</span>
+      </button>
+      <button class="gtile" data-full="photo-12.jpg" data-cap="Cotton candy sky" aria-label="Cotton candy sky">
+        <img src="thumb-photo-12.jpg" alt="Cotton candy sky" loading="lazy">
+        <span class="gcap">Cotton candy sky</span>
+      </button>
+      <button class="gtile" data-full="photo-13.jpg" data-cap="Crimson over the bay" aria-label="Crimson over the bay">
+        <img src="thumb-photo-13.jpg" alt="Crimson over the bay" loading="lazy">
+        <span class="gcap">Crimson over the bay</span>
+      </button>
+      <button class="gtile" data-full="photo-14.jpg" data-cap="Pastel evening on the river" aria-label="Pastel evening on the river">
+        <img src="thumb-photo-14.jpg" alt="Pastel evening on the river" loading="lazy">
+        <span class="gcap">Pastel evening on the river</span>
+      </button>
+      <button class="gtile" data-full="photo-15.jpg" data-cap="Boardwalk after dark" aria-label="Boardwalk after dark">
+        <img src="thumb-photo-15.jpg" alt="Boardwalk after dark" loading="lazy">
+        <span class="gcap">Boardwalk after dark</span>
+      </button>
+      <button class="gtile" data-full="photo-16.jpg" data-cap="Blue water on the rocks" aria-label="Blue water on the rocks">
+        <img src="thumb-photo-16.jpg" alt="Blue water on the rocks" loading="lazy">
+        <span class="gcap">Blue water on the rocks</span>
+      </button>
+      <button class="gtile" data-full="photo-17.jpg" data-cap="Cirrus over an empty beach" aria-label="Cirrus over an empty beach">
+        <img src="thumb-photo-17.jpg" alt="Cirrus over an empty beach" loading="lazy">
+        <span class="gcap">Cirrus over an empty beach</span>
+      </button>
+      <button class="gtile" data-full="photo-18.jpg" data-cap="Creek in the redwoods" aria-label="Creek in the redwoods">
+        <img src="thumb-photo-18.jpg" alt="Creek in the redwoods" loading="lazy">
+        <span class="gcap">Creek in the redwoods</span>
+      </button>
+      <button class="gtile" data-full="photo-19.jpg" data-cap="Amanita on the forest floor" aria-label="Amanita on the forest floor">
+        <img src="thumb-photo-19.jpg" alt="Amanita on the forest floor" loading="lazy">
+        <span class="gcap">Amanita on the forest floor</span>
+      </button>
+      <button class="gtile" data-full="photo-20.jpg" data-cap="Sea foam, Christmas morning" aria-label="Sea foam, Christmas morning">
+        <img src="thumb-photo-20.jpg" alt="Sea foam, Christmas morning" loading="lazy">
+        <span class="gcap">Sea foam, Christmas morning</span>
+      </button>
+      <button class="gtile" data-full="photo-21.jpg" data-cap="Last light on the water" aria-label="Last light on the water">
+        <img src="thumb-photo-21.jpg" alt="Last light on the water" loading="lazy">
+        <span class="gcap">Last light on the water</span>
+      </button>
+      <button class="gtile" data-full="photo-22.jpg" data-cap="Silver surf at sunset" aria-label="Silver surf at sunset">
+        <img src="thumb-photo-22.jpg" alt="Silver surf at sunset" loading="lazy">
+        <span class="gcap">Silver surf at sunset</span>
+      </button>
+      <button class="gtile" data-full="photo-23.jpg" data-cap="Its Beach and the bluffs" aria-label="Its Beach and the bluffs">
+        <img src="thumb-photo-23.jpg" alt="Its Beach and the bluffs" loading="lazy">
+        <span class="gcap">Its Beach and the bluffs</span>
+      </button>
+      <button class="gtile" data-full="photo-24.jpg" data-cap="Storm light over the rides" aria-label="Storm light over the rides">
+        <img src="thumb-photo-24.jpg" alt="Storm light over the rides" loading="lazy">
+        <span class="gcap">Storm light over the rides</span>
+      </button>
+      <button class="gtile" data-full="photo-25.jpg" data-cap="Redwoods and open lawn" aria-label="Redwoods and open lawn">
+        <img src="thumb-photo-25.jpg" alt="Redwoods and open lawn" loading="lazy">
+        <span class="gcap">Redwoods and open lawn</span>
+      </button>
+      <button class="gtile" data-full="photo-26.jpg" data-cap="Dusk from the river mouth" aria-label="Dusk from the river mouth">
+        <img src="thumb-photo-26.jpg" alt="Dusk from the river mouth" loading="lazy">
+        <span class="gcap">Dusk from the river mouth</span>
+      </button>
+      <button class="gtile" data-full="photo-27.jpg" data-cap="Evening on the wharf" aria-label="Evening on the wharf">
+        <img src="thumb-photo-27.jpg" alt="Evening on the wharf" loading="lazy">
+        <span class="gcap">Evening on the wharf</span>
+      </button>
+      <button class="gtile" data-full="photo-28.jpg" data-cap="The wharf at last light" aria-label="The wharf at last light">
+        <img src="thumb-photo-28.jpg" alt="The wharf at last light" loading="lazy">
+        <span class="gcap">The wharf at last light</span>
+      </button>
+      <button class="gtile" data-full="photo-29.jpg" data-cap="Quiet morning, empty sand" aria-label="Quiet morning, empty sand">
+        <img src="thumb-photo-29.jpg" alt="Quiet morning, empty sand" loading="lazy">
+        <span class="gcap">Quiet morning, empty sand</span>
+      </button>
+      <button class="gtile" data-full="photo-30.jpg" data-cap="Winter foam on the beach" aria-label="Winter foam on the beach">
+        <img src="thumb-photo-30.jpg" alt="Winter foam on the beach" loading="lazy">
+        <span class="gcap">Winter foam on the beach</span>
+      </button>
+      <button class="gtile" data-full="photo-31.jpg" data-cap="Sundown over the point" aria-label="Sundown over the point">
+        <img src="thumb-photo-31.jpg" alt="Sundown over the point" loading="lazy">
+        <span class="gcap">Sundown over the point</span>
+      </button>
+      <button class="gtile" data-full="photo-32.jpg" data-cap="Boulders at blue hour" aria-label="Boulders at blue hour">
+        <img src="thumb-photo-32.jpg" alt="Boulders at blue hour" loading="lazy">
+        <span class="gcap">Boulders at blue hour</span>
+      </button>
+      <button class="gtile" data-full="photo-33.jpg" data-cap="Moonrise over the lights" aria-label="Moonrise over the lights">
+        <img src="thumb-photo-33.jpg" alt="Moonrise over the lights" loading="lazy">
+        <span class="gcap">Moonrise over the lights</span>
+      </button>
+      <button class="gtile" data-full="photo-34.jpg" data-cap="Soft dusk on the boardwalk" aria-label="Soft dusk on the boardwalk">
+        <img src="thumb-photo-34.jpg" alt="Soft dusk on the boardwalk" loading="lazy">
+        <span class="gcap">Soft dusk on the boardwalk</span>
+      </button>
+      <button class="gtile" data-full="photo-35.jpg" data-cap="Evening tide, pier lights" aria-label="Evening tide, pier lights">
+        <img src="thumb-photo-35.jpg" alt="Evening tide, pier lights" loading="lazy">
+        <span class="gcap">Evening tide, pier lights</span>
+      </button>
+      <button class="gtile" data-full="photo-36.jpg" data-cap="Sunrise over the pool" aria-label="Sunrise over the pool">
+        <img src="thumb-photo-36.jpg" alt="Sunrise over the pool" loading="lazy">
+        <span class="gcap">Sunrise over the pool</span>
+      </button>
+      <button class="gtile" data-full="photo-37.jpg" data-cap="First light on the horizon" aria-label="First light on the horizon">
+        <img src="thumb-photo-37.jpg" alt="First light on the horizon" loading="lazy">
+        <span class="gcap">First light on the horizon</span>
+      </button>
+      <button class="gtile" data-full="photo-38.jpg" data-cap="Dawn breaking, orange line" aria-label="Dawn breaking, orange line">
+        <img src="thumb-photo-38.jpg" alt="Dawn breaking, orange line" loading="lazy">
+        <span class="gcap">Dawn breaking, orange line</span>
+      </button>
+      <button class="gtile" data-full="photo-39.jpg" data-cap="Surf against the rocks" aria-label="Surf against the rocks">
+        <img src="thumb-photo-39.jpg" alt="Surf against the rocks" loading="lazy">
+        <span class="gcap">Surf against the rocks</span>
+      </button>
+      <button class="gtile" data-full="photo-40.jpg" data-cap="The wharf on a clear day" aria-label="The wharf on a clear day">
+        <img src="thumb-photo-40.jpg" alt="The wharf on a clear day" loading="lazy">
+        <span class="gcap">The wharf on a clear day</span>
+      </button>
+      <button class="gtile" data-full="photo-41.jpg" data-cap="Low sun, long beach" aria-label="Low sun, long beach">
+        <img src="thumb-photo-41.jpg" alt="Low sun, long beach" loading="lazy">
+        <span class="gcap">Low sun, long beach</span>
+      </button>
+      <button class="gtile" data-full="photo-42.jpg" data-cap="Mushrooms after the rain" aria-label="Mushrooms after the rain">
+        <img src="thumb-photo-42.jpg" alt="Mushrooms after the rain" loading="lazy">
+        <span class="gcap">Mushrooms after the rain</span>
+      </button>
+      <button class="gtile" data-full="photo-43.jpg" data-cap="Green hills, gray sky" aria-label="Green hills, gray sky">
+        <img src="thumb-photo-43.jpg" alt="Green hills, gray sky" loading="lazy">
+        <span class="gcap">Green hills, gray sky</span>
+      </button>
+      <button class="gtile" data-full="photo-44.jpg" data-cap="Overcast over the rides" aria-label="Overcast over the rides">
+        <img src="thumb-photo-44.jpg" alt="Overcast over the rides" loading="lazy">
+        <span class="gcap">Overcast over the rides</span>
+      </button>
+      <button class="gtile" data-full="photo-45.jpg" data-cap="Flat light on the sand" aria-label="Flat light on the sand">
+        <img src="thumb-photo-45.jpg" alt="Flat light on the sand" loading="lazy">
+        <span class="gcap">Flat light on the sand</span>
+      </button>
+      <button class="gtile" data-full="photo-46.jpg" data-cap="Dune grass at dusk" aria-label="Dune grass at dusk">
+        <img src="thumb-photo-46.jpg" alt="Dune grass at dusk" loading="lazy">
+        <span class="gcap">Dune grass at dusk</span>
+      </button>
+      <button class="gtile" data-full="photo-47.jpg" data-cap="Winter afternoon, wide beach" aria-label="Winter afternoon, wide beach">
+        <img src="thumb-photo-47.jpg" alt="Winter afternoon, wide beach" loading="lazy">
+        <span class="gcap">Winter afternoon, wide beach</span>
+      </button>
+      <button class="gtile" data-full="photo-48.jpg" data-cap="Pre-dawn glow" aria-label="Pre-dawn glow">
+        <img src="thumb-photo-48.jpg" alt="Pre-dawn glow" loading="lazy">
+        <span class="gcap">Pre-dawn glow</span>
+      </button>
+      <button class="gtile" data-full="photo-49.jpg" data-cap="New Year gray" aria-label="New Year gray">
+        <img src="thumb-photo-49.jpg" alt="New Year gray" loading="lazy">
+        <span class="gcap">New Year gray</span>
+      </button>
+      <button class="gtile" data-full="photo-50.jpg" data-cap="Christmas dusk" aria-label="Christmas dusk">
+        <img src="thumb-photo-50.jpg" alt="Christmas dusk" loading="lazy">
+        <span class="gcap">Christmas dusk</span>
+      </button>
+      <button class="gtile" data-full="photo-51.jpg" data-cap="Early light, low tide" aria-label="Early light, low tide">
+        <img src="thumb-photo-51.jpg" alt="Early light, low tide" loading="lazy">
+        <span class="gcap">Early light, low tide</span>
+      </button>
+      <button class="gtile" data-full="photo-52.jpg" data-cap="Pug in the sea foam" aria-label="Pug in the sea foam">
+        <img src="thumb-photo-52.jpg" alt="Pug in the sea foam" loading="lazy">
+        <span class="gcap">Pug in the sea foam</span>
+      </button>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <h2>Everything's a story if you shoot it right.</h2>
+    <div class="foot-links">
+      <a class="btn btn-primary" href="index.html#prints">Prints &amp; wallpapers <span class="arrow">→</span></a>
+      <a class="btn btn-secondary" href="https://www.instagram.com/storymodeguy" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+    <div class="colophon">© 2026 Story Mode Guy · storymodeguy.com · Photography · Ebooks · Film</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  </button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+(function(){
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.gtile'));
+  var lb = document.getElementById('lb');
+  var img = document.getElementById('lbImg');
+  var cap = document.getElementById('lbCap');
+  var idx = 0;
+
+  document.getElementById('count').textContent = tiles.length + ' photographs';
+
+  function open(n){
+    idx = (n + tiles.length) % tiles.length;
+    var t = tiles[idx];
+    img.src = t.getAttribute('data-full');
+    img.alt = t.getAttribute('data-cap');
+    cap.textContent = t.getAttribute('data-cap') + '  ·  ' + (idx+1) + ' / ' + tiles.length;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  tiles.forEach(function(t, n){ t.addEventListener('click', function(){ open(n); }); });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); open(idx+1); });
+  document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); open(idx-1); });
+  lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') close();
+    if(e.key === 'ArrowRight') open(idx+1);
+    if(e.key === 'ArrowLeft') open(idx-1);
+  });
+  // swipe
+  var x0 = null;
+  lb.addEventListener('touchstart', function(e){ x0 = e.changedTouches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    if(x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if(Math.abs(dx) > 40){ dx < 0 ? open(idx+1) : open(idx-1); }
+    x0 = null;
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
