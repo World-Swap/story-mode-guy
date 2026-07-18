@@ -67,11 +67,11 @@ DOC = f"""<!doctype html><html><head><meta charset='utf-8'><style>{CSS}</style><
 </div></div>
 
 <div class="card dark" id="cta"><div class="glow"></div><div class="wrap">
-  <img class="logo" src="{LOGO}"><div class="kick">Get the guide</div>
+  <img class="logo" src="{LOGO}"><div class="kick">{html.escape(spec.get('cta_kicker','Get the guide'))}</div>
   <div class="big serif">{html.escape(spec['title'])}</div>
   <div class="price">{html.escape(spec.get('price',''))}</div>
   <div class="url">storymodeguy.com</div>
-  <div class="pill">Instant PDF download</div>
+  <div class="pill">{html.escape(spec.get('cta_pill','Instant PDF download'))}</div>
   <div class="handle">@storymodeguy</div>
 </div></div>
 

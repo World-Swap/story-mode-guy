@@ -27,11 +27,12 @@ Each: title card → **cover only** → "What's inside" value props → CTA. No 
 
 ---
 
-## 🖼️ Wallpaper pack reels
-Folder: `promo/reels/`
+## 🖼️ Wallpaper reels
+Folder: `promo/reels/` (packs) and `promo/reels/guides/` (collection)
 
 | File | Promotes |
 |------|----------|
+| `reel-00b-wallpaper-collection.mp4` | **The Complete Wallpaper Collection** (95, $19) — flagship |
 | `smg-desktop-4k-reel.mp4` | Santa Cruz Skies Vol. II — Desktop 4K pack |
 | `smg-phone-reel.mp4` | Santa Cruz Skies Vol. II — Phone pack |
 
