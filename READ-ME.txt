@@ -1,0 +1,23 @@
+Story Mode Guy — complete repo update
+=====================================
+Extract EVERYTHING in this zip into your repo ROOT, overwriting when asked.
+All files sit at their normal repo-root path, so extraction updates the site cleanly.
+
+Included (new/changed since your last update):
+  index.html        Everything current: Complete Wallpaper Collection band (-> payhip.com/b/uIdFV),
+                    Vol I/II bundle bands, wallpaper pack cards, Emberwild Ep 9 & 10 cards,
+                    Guides section, Legal footer links.
+  gallery.html      78 photographs + legal footer links
+  privacy.html / terms.html / refunds.html / license.html   Legal pages (NEW)
+  sitemap.xml       includes the legal pages
+  photo-53..78.jpg + thumb-photo-53..78.jpg   the 26 new gallery photos
+  thumb-scv2-desktop.jpg / thumb-scv2-phone.jpg   wallpaper card covers
+
+STILL NEEDED FROM YOU (your artwork — I can't generate it):
+  ep-9cover.png   Emberwild Ep 9 "The Fallen Ring"
+  ep-10cover.png  Emberwild Ep 10 "The Sleeping Ones"
+  Drop these two into the repo root or the Ep 9/10 cards show blank previews.
+
+NOT in this zip (they are Payhip product images, not website files):
+  bundle-cover-complete.jpg, bundle-cover-everything.jpg, bundle-cover-scv2.jpg
+  (upload those to their Payhip products; sent separately.)
