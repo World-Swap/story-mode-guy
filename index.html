@@ -319,6 +319,40 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 @media (max-width:900px){ .pcards{ grid-template-columns:1fr; max-width:460px; } }
 
 /* ============================================================
+   BUNDLE BAND — a tier above the grid, not a seventh peer.
+   Linen + hairline + outlined CTA, so Cerulean stays unique
+   to World Swap.
+   ============================================================ */
+.bundle{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:32px; flex-wrap:wrap;
+  background:var(--linen);
+  border:1px solid var(--mist);
+  border-radius:var(--r-card-lg);
+  padding:32px 36px;
+  margin-bottom:16px;
+  box-shadow:var(--sh-soft);
+  text-decoration:none;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.bundle:hover{ transform:translateY(-2px); border-color:var(--fog); }
+.bundle .eyebrow{ margin:0 0 10px 0; }
+.bundle h3{
+  font-family:var(--serif); font-weight:400;
+  font-size:clamp(28px,3.4vw,38px); line-height:1.1;
+  letter-spacing:-0.02em; color:var(--graphite);
+  margin:0 0 10px;
+}
+.bundle-sub{ font-size:16px; color:var(--ash); line-height:1.5; margin:0; max-width:60ch; }
+.bundle-buy{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.bundle-price{ font-family:var(--serif); font-size:34px; color:var(--graphite); line-height:1; }
+.bundle-was{ font-family:var(--serif); font-size:20px; color:var(--fog); text-decoration:line-through; line-height:1; }
+@media (max-width:720px){
+  .bundle{ padding:28px 24px; gap:24px; }
+  .bundle-buy{ width:100%; }
+}
+
+/* ============================================================
    WORLD SWAP — the single Cerulean atmospheric moment
    ============================================================ */
 .feature{
@@ -526,6 +560,19 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <p>The photography, as instant digital downloads — wallpapers for your screens and high-resolution files you can print. Delivered to your inbox the moment you buy.</p>
     </div>
 
+    <a class="bundle" href="https://payhip.com/b/UonOc" target="_blank" rel="noopener">
+      <div class="bundle-text">
+        <p class="eyebrow">All five packs · Save $8</p>
+        <h3>The Complete Collection</h3>
+        <p class="bundle-sub">Every wallpaper I've made — 38 photographs, every hour from 6:45am to 9:18pm. Phone, Desktop&nbsp;4K, First Light, Clear Coast and After Dark, in one download.</p>
+      </div>
+      <div class="bundle-buy">
+        <span class="bundle-was">$20</span>
+        <span class="bundle-price">$12</span>
+        <span class="btn btn-primary">Get the collection <span class="arrow">→</span></span>
+      </div>
+    </a>
+
     <div class="pcards">
       <a class="pcard" href="https://payhip.com/b/KstGk" target="_blank" rel="noopener">
         <div class="pcover"><img src="thumb-phone.jpg" alt="Phone wallpaper pack preview"></div>
@@ -598,6 +645,19 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
           <span class="kicker">Santa Cruz Skies</span>
           <h3>Clear Coast · 4K</h3>
           <p>6 photographs from two clear winter days, when the storms scrub the air out and the bay goes hard blue to the far hills.</p>
+          <div class="pfoot">
+            <span class="price">$4</span>
+            <span class="card-link">Get it on Payhip →</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="pcard" href="https://payhip.com/b/YbZBo" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-after-dark.jpg" alt="After Dark 4K wallpaper pack preview"></div>
+        <div class="pbody">
+          <span class="kicker">Santa Cruz Skies</span>
+          <h3>After Dark · 4K</h3>
+          <p>6 photographs shot between 8:41 and 9:18pm — the lit boardwalk, mirrored water, and the last orange line before it goes.</p>
           <div class="pfoot">
             <span class="price">$4</span>
             <span class="card-link">Get it on Payhip →</span>
@@ -748,6 +808,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <div class="foot-col">
         <h4>Shop &amp; work</h4>
         <a href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Payhip store</a>
+        <a href="https://payhip.com/b/UonOc" target="_blank" rel="noopener">The Complete Collection</a>
         <a href="#prints">Prints &amp; wallpapers</a>
       </div>
       <div class="foot-col foot-cta">
