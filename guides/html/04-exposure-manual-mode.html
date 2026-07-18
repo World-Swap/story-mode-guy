@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Master Your Camera in a Weekend — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #7c2d12;
+  --accent2: #ea580c;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">CAMERA FUNDAMENTALS</div>
+    <div style="margin-top:auto"></div>
+    <h1>Master Your Camera in a Weekend</h1>
+    <div class="rule"></div>
+    <div class="sub">The Exposure Triangle &amp; Manual Mode, Made Simple</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$27 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">The Exposure Triangle &amp; Manual Mode, Made Simple. Written for new DSLR &amp; mirrorless owners intimidated by the mode dial.</div>
+  <ol><li><span class="t">Get Off Auto This Weekend</span></li><li><span class="t">Meet the Three Controls</span></li><li><span class="t">Aperture & Depth of Field</span></li><li><span class="t">Shutter Speed & Motion</span></li><li><span class="t">ISO & Image Quality</span></li><li><span class="t">Reading the Meter & Histogram</span></li><li><span class="t">Priority Modes — Your Training Wheels</span></li><li><span class="t">Full Manual, Step by Step</span></li><li><span class="t">12 Real-World Settings Recipes</span></li><li><span class="t">Practice Drills & Next Steps</span></li></ol>
+</div>
+<h1><span class="n">INTRODUCTION</span>Get Off Auto This Weekend</h1>
+<p class="lead-in">That green AUTO mode is the training wheels you were supposed to take off. This weekend, you finally do. By Sunday night you will understand exactly what your camera is doing when it makes a picture — and you will be the one telling it what to do, on purpose, every single time.</p>
+
+<p>Here is the truth nobody tells nervous beginners: the mode dial is not hard. It only looks hard because three little controls all affect one thing — brightness — while each <em>also</em> quietly shapes your photo in its own way. Once you see how those three fit together, the whole camera clicks into place. It stops being a machine that guesses and becomes an instrument you play.</p>
+
+<p>"Exposure" just means <strong>how much light lands on your sensor</strong>. Too much and the photo is a blown-out white mess. Too little and it's a muddy, dark disappointment. Auto mode tries to hit the middle for you — and it usually gets the brightness roughly right. But it does that by making creative decisions <em>for</em> you: it decides whether your background is blurry or sharp, whether motion is frozen or streaked, whether your photo is clean or grainy. Those aren't brightness decisions. Those are the decisions that separate a snapshot from a photograph.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Three controls — aperture, shutter speed, and ISO — set your brightness together, and each one also decides one creative thing; learn what that second job is and you own your camera.</p></div>
+
+<h2>How to use this guide</h2>
+<p>Read it in order the first time — each chapter builds on the last. Chapters 2 through 5 teach the three controls one at a time. Chapter 6 teaches you to read the camera's built-in light meter so you know when your exposure is right. Chapter 7 hands you "priority" modes, the honest halfway house where most photographers happily live for months. Chapter 8 gives you a repeatable full-manual routine. Then Chapter 9 is twelve ready-to-shoot recipes, and Chapter 10 is your weekend practice plan.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with your camera</div><p>Every idea here is true on any DSLR or mirrorless camera, Canon, Nikon, Sony, Fujifilm, or otherwise. Where a control has a different name by brand, we give both. You already own everything you need. The only upgrade this weekend is you.</p></div>
+
+<h1><span class="n">CHAPTER 1</span>Meet the Three Controls</h1>
+<p>Everything in this guide comes back to three settings. They are the entire game. Master these and there is nothing on the mode dial left to fear.</p>
+
+<p>Picture your sensor as a small dark room, and the photo as how much daylight you let flood in. You have exactly three ways to control that flood.</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🪟 Aperture</div><p>The <strong>size of the window</strong> in the lens. A bigger opening lets in more light at once. Measured in f-numbers like f/2.8 or f/8.</p></div>
+  <div class="card"><div class="ch">⏱️ Shutter Speed</div><p>How <strong>long the curtain stays open</strong>. A longer time lets in more light. Measured in seconds and fractions, like 1/200s.</p></div>
+  <div class="card"><div class="ch">📶 ISO</div><p>How much the camera <strong>amplifies the signal</strong> after the light arrives. Higher ISO brightens a dark scene — with a cost. Measured 100, 400, 1600…</p></div>
+</div>
+
+<h2>The second job — this is the whole point</h2>
+<p>If all three did was control brightness, you could pick any combination and be done. But each control has a <em>side effect</em>, and that side effect is where photography actually lives.</p>
+
+<table>
+  <tr><th>Control</th><th>Its job (brightness)</th><th>What it ALSO changes</th></tr>
+  <tr><td>Aperture</td><td>Wider = brighter</td><td><strong>Depth of field</strong> — how much is in focus front-to-back</td></tr>
+  <tr><td>Shutter speed</td><td>Slower = brighter</td><td><strong>Motion</strong> — frozen crisp or streaked with blur</td></tr>
+  <tr><td>ISO</td><td>Higher = brighter</td><td><strong>Noise</strong> — clean image or grainy speckle</td></tr>
+</table>
+
+<p>Read that table twice. It is the exposure triangle, and it is genuinely all there is. When you change one control for its <em>brightness</em>, you inherit its <em>side effect</em> whether you wanted it or not. Shooting a waterfall silky-smooth? That's a slow shutter — a brightness choice with a motion side effect. A portrait with a dreamy blurred background? That's a wide aperture — a brightness choice with a depth-of-field side effect.</p>
+
+<div class="key"><div class="kt">Remember</div><p>You are never just setting brightness. Every exposure choice is also a creative choice — and you get to make it on purpose.</p></div>
+
+<h2>Stops — the camera's unit of "twice as much"</h2>
+<p>You'll hear the word <strong>stop</strong> constantly. A stop is simply a doubling or halving of light. Open the aperture one stop and twice as much light comes in; slow the shutter one stop, same thing; raise ISO one stop, the image gets twice as bright. This matters because the three controls speak the same language. If you make the shutter one stop darker to freeze motion, you can make the aperture one stop brighter to pay it back — and your total exposure stays the same. That trade is the heartbeat of manual photography.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The see-saw mental model</div><p>Think of exposure as a see-saw that must stay level. Take a stop of light away here, add a stop back there, and the brightness holds while the <em>look</em> changes. Once this clicks, manual mode stops being math and starts being choices.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Aperture &amp; Depth of Field</h1>
+<p>Aperture is the control that makes photos look "professional," because it governs that creamy, blurred background everyone wants. It is also the single most confusing setting for beginners, thanks to one backwards little quirk. Let's kill that confusion right now.</p>
+
+<h2>Why a smaller number means a bigger opening</h2>
+<p>Aperture is written as an f-number: f/1.8, f/4, f/11. The backwards part is that <strong>a smaller number is a bigger opening</strong>. f/1.8 is a wide, gaping window that floods the sensor with light. f/16 is a tiny pinhole. It feels wrong until you learn why: the f-number is a <em>fraction</em>. It's the lens focal length divided by the opening's diameter. Just like ½ of a pizza is more than ⅟₁₆ of a pizza, f/2 is a bigger hole than f/16.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Say it once, remember forever</div><p>Small f-number = big opening = more light = blurrier background. Big f-number = small opening = less light = more in focus. Tape that to your lens if you must.</p></div>
+
+<h2>Depth of field — the creative payoff</h2>
+<p>Depth of field is how much of your scene is sharp from front to back. A <strong>shallow</strong> depth of field (wide aperture, low f-number) keeps a thin slice in focus and melts everything else into blur — perfect for making a subject pop. A <strong>deep</strong> depth of field (narrow aperture, high f-number) keeps everything sharp from the flowers at your feet to the mountains behind — perfect for landscapes.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">😍 Wide open (f/1.8–f/4)</div><p>Blurry, buttery backgrounds. Subject leaps off the frame. Great for portraits, food, single objects, low light. Only a thin plane is sharp, so nail your focus on the eye.</p></div>
+  <div class="card solid"><div class="ch">🏔️ Stopped down (f/8–f/16)</div><p>Front-to-back sharpness. Everything crisp. Great for landscapes, architecture, group shots where every face must be sharp. Needs more light or a slower shutter.</p></div>
+</div>
+
+<h2>The sharpness sweet spot</h2>
+<p>Here's a secret that saves beginners endless frustration: lenses are <strong>not sharpest wide open</strong>. Nearly every lens hits peak sharpness two or three stops down from its maximum — usually around <strong>f/5.6 to f/8</strong>. Wide open at f/1.8 you trade a little edge sharpness for that gorgeous blur. And past f/16, a physics effect called diffraction actually <em>softens</em> the whole frame again. So for critical sharpness when you don't need extreme blur or extreme depth, live around f/5.6–f/8.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Wide apertures are unforgiving</div><p>At f/1.8 the sharp zone can be thinner than a person's face. Focus on the near eye and even the far eye may go soft. Beginners often blame the lens when the real fix is: focus more carefully, or stop down to f/2.8–f/4 for a little breathing room.</p></div>
+
+<div class="recipe">
+  <div class="rh"><span>Portrait — subject pops off a blurred background</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/2.8</b></span><span class="chip">Shutter <b>1/250s</b></span><span class="chip">ISO <b>200</b></span></div>
+    <p class="small">Outdoors in good light. Focus on the near eye. Want more blur? Open to f/1.8 and step closer. Want both eyes and the ears sharp? Stop to f/4.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Landscape — sharp from foreground to horizon</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/11</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">On a tripod you can slow the shutter and drop ISO for maximum quality. Focus about a third of the way into the scene for the deepest sharpness.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Three things deepen background blur</div><p>Depth of field isn't only about aperture. You get more background blur by (1) opening the aperture, (2) getting physically closer to your subject, and (3) using a longer focal length. Stack all three — 85mm, up close, at f/2.8 — and even a modest lens produces stunning separation.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Shutter Speed &amp; Motion</h1>
+<p>Shutter speed controls time. It's how long the sensor is exposed to light — and because the world moves during that sliver of time, shutter speed is the control that either <strong>freezes</strong> the action or lets it <strong>blur</strong>. This is the most intuitive of the three, and the most fun to play with.</p>
+
+<h2>Reading the numbers</h2>
+<p>Shutter speeds are mostly fractions of a second: 1/1000s is very fast (a thousandth of a second), 1/30s is slow, and a full <strong>1"</strong> or longer is very slow. Faster shutter = less light in = frozen motion. Slower shutter = more light in = motion blur. On the dial, each doubling — 1/125 to 1/250 — is one stop of light.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">❄️ Fast shutter (1/500s+)</div><p>Freezes a splash mid-air, a running dog, a jumping kid. Crisp and sharp. Costs light, so you may need a wider aperture or higher ISO to compensate.</p></div>
+  <div class="card"><div class="ch">🌊 Slow shutter (1/15s and below)</div><p>Silky waterfalls, light-trail streaks, that sense of motion. Requires a tripod or the whole frame blurs from your hands shaking.</p></div>
+</div>
+
+<h2>The handholding reciprocal rule</h2>
+<p>Even a still subject goes blurry if <em>you</em> move during the shot. The safe minimum handheld shutter speed is <strong>1 over your focal length</strong>. At 50mm, use 1/50s or faster. At 200mm, use 1/200s or faster, because a long lens magnifies your hand-shake just as it magnifies the subject.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Crop-sensor correction</div><p>Most beginner cameras have a crop sensor. Multiply your focal length by the crop factor first — 1.5× for most brands, 1.6× for Canon. A 50mm lens then behaves like 75mm, so aim for 1/80s, not 1/50s. When unsure, round up to the next faster speed.</p></div>
+
+<div class="recipe">
+  <div class="rh"><span>Shutter speeds by subject</span><span class="tag">FIELD-TESTED</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Still person → <b>1/125s</b></span><span class="chip">Walking → <b>1/250s</b></span><span class="chip">Kids/pets playing → <b>1/500s</b></span><span class="chip">Sports/running → <b>1/1000s</b></span><span class="chip">Birds/cars → <b>1/2000s</b></span></div>
+    <p class="small">Motion <em>across</em> the frame needs a faster shutter than motion <em>toward</em> you. A cyclist crossing left-to-right smears far more than one riding straight at you.</p>
+  </div>
+</div>
+
+<h2>When slow is the point</h2>
+<p>Sometimes blur is the goal. A waterfall at 1/2s turns to silk. City traffic at 4 seconds becomes ribbons of red and white light. A slow shutter while you <em>pan</em> the camera with a moving subject keeps the subject sharp and streaks the background into speed-lines. All of these need the camera locked down on a tripod, because at those speeds your heartbeat alone will smear the shot.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Silky waterfall</span><span class="tag">TRIPOD REQUIRED</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/16</b></span><span class="chip">Shutter <b>1/2s – 2s</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">Narrow aperture and low ISO help you reach a slow shutter in daylight. In bright sun you may still need a neutral-density filter — think of it as sunglasses for the lens.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Turn stabilization off on a tripod</div><p>In-body (IBIS) or in-lens stabilization is magic for handheld work — worth 2–5 stops. But on a tripod it can hunt for movement that isn't there and <em>add</em> tiny blur. When the camera is locked down, switch stabilization off.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>ISO &amp; Image Quality</h1>
+<p>ISO is the third leg of the triangle, and it's the one to reach for <em>last</em>. Aperture and shutter change how much real light hits the sensor. ISO doesn't gather any new light — it <strong>amplifies</strong> the signal you already captured. Turn up the amplifier and the picture brightens, but the graininess, called <em>noise</em>, comes up with it.</p>
+
+<h2>The volume-knob analogy</h2>
+<p>Think of ISO like the volume on a cheap speaker. At low volume the music is clean. Crank it and you hear hiss under the song. ISO is the same: at base ISO the image is clean; push it high and digital "hiss" — speckly noise — creeps into shadows and smooth areas like skies.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Base ISO is your friend</div><p>Every sensor has a native <strong>base ISO</strong>, usually 100 (sometimes 64 or 200), where it produces the cleanest, highest-quality image with the widest range of tones. Use it whenever there's enough light. Only leave it when you must.</p></div>
+
+<h2>How high can you push it?</h2>
+<p>This depends on your camera and, honestly, on how big you'll display the photo. Noise that's obvious at 100% on your monitor often vanishes in a print or an Instagram post. Modern cameras are shockingly good. Here's a realistic starting map — test your own body to find its personal limit.</p>
+
+<table>
+  <tr><th>ISO</th><th>Typical scene</th><th>Quality</th></tr>
+  <tr><td>100–200</td><td>Bright sun, tripod work, studio</td><td>Cleanest possible</td></tr>
+  <tr><td>400–800</td><td>Overcast, open shade, bright indoors</td><td>Excellent, noise invisible</td></tr>
+  <tr><td>1600–3200</td><td>Dim indoors, evening, events</td><td>Good; slight grain in shadows</td></tr>
+  <tr><td>6400</td><td>Dark rooms, concerts, night street</td><td>Usable; noticeable but fine</td></tr>
+  <tr><td>12800+</td><td>Near-dark, last resort</td><td>Grainy; a sharp grainy shot still beats a blurry clean one</td></tr>
+</table>
+
+<div class="key"><div class="kt">The golden rule of ISO</div><p>A grainy sharp photo is a keeper. A clean blurry one is trash. Never let fear of noise force you into a shutter speed too slow to hold. Raise the ISO and get the shot.</p></div>
+
+<h2>Auto ISO with a ceiling — the smart default</h2>
+<p>Here's a setting that changes lives: <strong>Auto ISO with a maximum limit</strong>. You tell the camera "use as low an ISO as you can, but never go above 6400." Now you're free to pick aperture and shutter for their creative effect, and the camera fills in exactly enough ISO to make the exposure work — without ever running away into ugly territory. Most cameras also let you set a <em>minimum shutter speed</em> for Auto ISO, so it won't dip below, say, 1/125s and reintroduce blur. This one setting gives you manual-level control with a safety net.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Set your ceiling once</div><p>Dig into your menu, find Auto ISO, and set a maximum you're comfortable with — 6400 is a sane starting point for most recent cameras. Set the minimum shutter to 1/125s. Now Auto ISO is a teammate, not a wildcard.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Reading the Meter &amp; Histogram</h1>
+<p>You now know the three controls. But how do you know if your exposure is actually <em>right</em>? Your camera has two tools that tell you the truth: the light meter while you shoot, and the histogram after. Learn to read both and you'll never guess at brightness again.</p>
+
+<h2>The exposure meter</h2>
+<p>Half-press the shutter and look for a little scale at the bottom of the viewfinder or screen, marked <strong>-2 … -1 … 0 … +1 … +2</strong>. A marker slides along it. The camera is telling you: at your current settings, it thinks the shot will be too dark (marker toward &minus;), too bright (toward +), or just right (at 0). In manual mode, your job is to adjust aperture, shutter, or ISO until that marker sits where you want it — usually at 0 to start.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Zero isn't sacred</div><p>The meter aims for an "average" brightness, which is only a suggestion. For a bright, airy photo you might set it to +1. For a moody, dark one, &minus;1. The meter is a starting reference, not a boss.</p></div>
+
+<h2>Metering modes — how the camera measures</h2>
+<table>
+  <tr><th>Mode</th><th>What it reads</th><th>Use when</th></tr>
+  <tr><td>Evaluative / Matrix</td><td>The whole frame, intelligently</td><td>Your everyday default — reliable most of the time</td></tr>
+  <tr><td>Center-weighted</td><td>Mostly the middle</td><td>Subject is centered; portraits</td></tr>
+  <tr><td>Spot</td><td>One tiny point you choose</td><td>Tricky backlight; measuring a specific face or highlight</td></tr>
+</table>
+
+<h2>Why the camera gets fooled</h2>
+<p>The meter assumes the world averages out to a middle gray. Point it at a snowy field and it thinks "far too bright!" and darkens everything — turning white snow dingy gray. Point it at a black cat and it brightens the shot until the cat is muddy gray. Backlight fools it the same way: a bright window behind your subject makes the camera darken the whole frame, leaving your subject a silhouette.</p>
+
+<h3>Exposure compensation — the fix</h3>
+<p>When the camera guesses wrong, you override it with <strong>exposure compensation</strong> (the +/&minus; button). Snowy scene coming out gray? Dial in +1 or +2 and it brightens back to white. Subject too dark against a bright window? Add +1 to +2. This works in Auto ISO manual and in the priority modes of the next chapter. Remember it as: <em>white scene, add light; dark scene, subtract.</em></p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Snow and beaches lie to your meter</div><p>Bright, evenly-lit scenes are the classic trap. Left alone, the camera underexposes them into a dull gray. Always add +1 to +2 stops of compensation for snow, sand, or a white wall behind your subject.</p></div>
+
+<h2>The histogram — the real truth</h2>
+<p>Your screen brightness lies; it looks different in sunlight than in a dark room. The <strong>histogram</strong> doesn't lie. It's a simple graph of your photo's tones, dark on the left, bright on the right, with the count of pixels at each brightness. Read it like a landscape.</p>
+
+<ul class="check">
+  <li>A hill bunched hard against the <strong>left</strong> wall = crushed shadows, detail lost in the dark. Add light.</li>
+  <li>A hill spiking against the <strong>right</strong> wall = blown highlights, detail lost in the white. Remove light.</li>
+  <li>A nicely spread hump that doesn't slam either wall = a healthy exposure with detail everywhere.</li>
+</ul>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Expose to the right — gently</div><p>Digital sensors record more detail in the brighter tones, so a slightly bright exposure (the histogram pushed toward the right without touching the wall) captures the cleanest files with the least noise. You then pull it back down in editing. Push right — but never so far that highlights clip off the right edge, because that detail is gone forever.</p></div>
+
+<blockquote>The back-of-camera image tells you what the photo looks like. The histogram tells you what the photo <em>is</em>.</blockquote>
+
+<h1><span class="n">CHAPTER 6</span>Priority Modes — Your Training Wheels</h1>
+<p>Here's permission you didn't know you needed: <strong>you do not have to start in full manual.</strong> Between Auto and Manual sit two brilliant "semi-automatic" modes that give you creative control over the one thing that matters for your scene, while the camera handles the rest. Most working photographers spend the majority of their time here. There is nothing to be ashamed of — these modes are faster and smarter for most situations.</p>
+
+<h2>Aperture Priority (A / Av)</h2>
+<p>You set the <strong>aperture</strong> and the ISO; the camera picks the matching shutter speed. This is the most-used mode in all of photography, because for most photos the depth of field is the creative decision you care about. Choosing portraits with a blurry background? Set f/2.8 and let the camera sort the shutter. Want a landscape sharp throughout? Set f/11 and the camera handles the rest.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Aperture Priority is the default answer</div><p>When you don't know which mode to use, use Aperture Priority. Set ISO (or Auto ISO with a ceiling), choose your aperture for the look you want, and shoot. Glance at the shutter speed the camera picks — if it's too slow to handhold, open up or raise ISO.</p></div>
+
+<h2>Shutter Priority (S / Tv)</h2>
+<p>You set the <strong>shutter speed</strong> and ISO; the camera picks the aperture. Reach for this whenever <em>motion</em> is the point — freezing your kid's soccer game at 1/1000s, or blurring a waterfall at 1/2s. You guarantee the motion look you want and the camera figures out the brightness.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">🅰️ Reach for Aperture Priority when…</div><ul><li>Depth of field is the priority</li><li>Portraits, landscapes, food, products</li><li>Light is steady, subject isn't racing</li><li>Honestly — most of the time</li></ul></div>
+  <div class="card solid"><div class="ch">🅢 Reach for Shutter Priority when…</div><ul><li>Motion is the priority</li><li>Sports, kids, pets, wildlife</li><li>Intentional motion blur</li><li>You must freeze or streak the action</li></ul></div>
+</div>
+
+<h2>Compensation is your steering wheel</h2>
+<p>In both priority modes the camera sets brightness for you — so when it guesses wrong (snow, backlight, a dark subject), you correct with <strong>exposure compensation</strong>, exactly as in the last chapter. Priority mode plus the +/&minus; dial is a genuinely complete way to shoot. Many pros never do more than this.</p>
+
+<div class="key"><div class="kt">Permission granted</div><p>Living in Aperture or Shutter Priority is not cheating. It is choosing the one creative variable that matters and letting a very smart machine handle the arithmetic. Full manual is a tool, not a moral test.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Full Manual, Step by Step</h1>
+<p>Now the moment you bought this guide for. Full Manual (M on the dial) means <em>you</em> set all three controls. It sounds daunting; it's actually a calm, repeatable routine. Use it when the light is tricky or unchanging — studio work, concerts, night scenes, panoramas, anything where you want every frame to match exactly. Here is the routine that works every time.</p>
+
+<ol class="steps">
+  <li><span class="sh">Decide what the photo is <em>about</em>.</span> Motion, or depth of field? That answer tells you which control to lock first. A running dog is about motion; a portrait is about depth. This is the same choice the priority modes made for you — now you make it consciously.</li>
+  <li><span class="sh">Set the priority control first.</span> Motion shot → set your shutter speed (say 1/1000s to freeze it). Depth shot → set your aperture (say f/2.8 for a blurred background). Lock in the one that matters.</li>
+  <li><span class="sh">Set ISO for the light.</span> Bright outdoors → ISO 100. Indoors → ISO 800–1600. Dark → 3200+. Or use Auto ISO with a ceiling and let it float. This is your rough brightness knob.</li>
+  <li><span class="sh">Set the third control to balance the meter.</span> Adjust the remaining control (aperture or shutter) until the exposure meter sits near 0 — or where you want it for a brighter or darker mood. This is where the see-saw balances.</li>
+  <li><span class="sh">Take the shot and chimp the histogram.</span> "Chimping" is checking the back screen after a shot. Glance at the histogram: bunched left, add light; slammed right, remove light. Trust the graph, not how bright the screen looks.</li>
+  <li><span class="sh">Adjust one stop and reshoot if needed.</span> Too dark? Slow the shutter a stop, open the aperture a stop, or raise ISO a stop — whichever won't ruin your creative intent. Reshoot, recheck. Two or three frames in, you're dialed.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Do this once and it sticks</div><p>Set up a still scene indoors. In full manual, get a correct exposure. Now change <em>one</em> control by a stop and rebalance with another to keep the same brightness — e.g. open aperture one stop, speed up shutter one stop. Same brightness, different look. Do it five times. You'll feel the see-saw in your hands.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Manual + changing light = frustration</div><p>Full manual shines when light is constant. Out on a partly-cloudy walk where the sun keeps ducking behind clouds, manual makes you re-meter constantly. That's exactly when a priority mode or Auto ISO earns its keep. Match the mode to the conditions.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>12 Real-World Settings Recipes</h1>
+<p>Theory is nothing without a starting point in the field. These twelve recipes are your cheat sheet — reliable jumping-off settings for the scenes beginners shoot most. They are <em>starting points</em>, not laws. Set them, check your meter and histogram, and adjust a stop as needed. Screenshot this chapter for your phone.</p>
+
+<div class="recipe">
+  <div class="rh"><span>1 · Bright outdoor portrait</span><span class="tag">APERTURE PRIORITY</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/2.8</b></span><span class="chip">Shutter <b>1/500s</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">Blurred background, subject pops. Focus the near eye. Shade or golden hour beats harsh noon light. Open to f/1.8 for more blur.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>2 · Indoor party / birthday</span><span class="tag">FULL MANUAL + AUTO ISO</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/2.0</b></span><span class="chip">Shutter <b>1/160s</b></span><span class="chip">ISO <b>Auto ≤6400</b></span></div>
+    <p class="small">Open wide to drink in the dim light, keep shutter fast enough to freeze mingling people, let Auto ISO fill the gap. Find a lamp or window and put faces toward it.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>3 · Sunset / golden hour</span><span class="tag">APERTURE PRIORITY</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/8</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">Meter for the sky, then dial &minus;1 exposure compensation to keep those rich colors from washing out. A silhouetted subject in front looks magical.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>4 · Kids' / outdoor sports</span><span class="tag">SHUTTER PRIORITY</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>Auto (~f/4)</b></span><span class="chip">Shutter <b>1/1000s</b></span><span class="chip">ISO <b>Auto ≤6400</b></span></div>
+    <p class="small">Freeze the action, use Continuous AF (AF-C / AI Servo) and burst mode. Track the near eye. Overcast? The camera will raise ISO — let it.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>5 · Silky waterfall / stream</span><span class="tag">TRIPOD · MANUAL</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/16</b></span><span class="chip">Shutter <b>1s</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">Tripod essential. Use the 2-second timer so pressing the shutter doesn't shake it. Bright day? Add a neutral-density filter to reach that slow shutter.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>6 · Sweeping landscape</span><span class="tag">APERTURE PRIORITY</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/11</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">Deep front-to-back sharpness. Focus a third of the way in. On a tripod, drop the shutter and keep ISO at base for the cleanest file.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>7 · Night street scene</span><span class="tag">MANUAL</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/2.8</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>3200</b></span></div>
+    <p class="small">Open wide, accept high ISO, keep the shutter fast enough for people. Expose for the lit areas and let shadows fall dark — night is <em>supposed</em> to look dark.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>8 · Pet in action</span><span class="tag">SHUTTER PRIORITY</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>Auto (~f/4)</b></span><span class="chip">Shutter <b>1/800s</b></span><span class="chip">ISO <b>Auto ≤6400</b></span></div>
+    <p class="small">Get low to their eye level. Continuous AF, burst mode, focus the eyes. Fast, unpredictable motion loves a fast shutter and a lot of frames.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>9 · Product / food on a table</span><span class="tag">APERTURE PRIORITY</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/5.6</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>200</b></span></div>
+    <p class="small">Near the sweet spot for sharpness with a gentle background blur. Big soft window light to the side. Steady the camera on the table if the shutter dips slow.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>10 · Concert / stage</span><span class="tag">MANUAL</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/2.8</b></span><span class="chip">Shutter <b>1/250s</b></span><span class="chip">ISO <b>6400</b></span></div>
+    <p class="small">Bright stage lights, black surroundings — meter off the performer with spot metering, or the dark background will trick the camera into overexposing.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>11 · Snow / bright beach</span><span class="tag">APERTURE PRIORITY + COMP</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/8</b></span><span class="chip">Shutter <b>1/500s</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">Dial in <b>+1.5 to +2</b> exposure compensation or the meter renders white snow a dull gray. Check the histogram — push it right without clipping.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>12 · Backlit subject (window/sun behind)</span><span class="tag">APERTURE PRIORITY + COMP</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/2.8</b></span><span class="chip">Shutter <b>1/250s</b></span><span class="chip">ISO <b>400</b></span></div>
+    <p class="small">Add <b>+1 to +2</b> compensation so your subject isn't a silhouette, or spot-meter their face. That bright rim of light around them is a gift — use it.</p>
+  </div>
+</div>
+
+<h2>The one-glance summary table</h2>
+<table>
+  <tr><th>Scene</th><th>Mode</th><th>Aperture</th><th>Shutter</th><th>ISO</th></tr>
+  <tr><td>Outdoor portrait</td><td>A / Av</td><td>f/2.8</td><td>1/500s</td><td>100</td></tr>
+  <tr><td>Indoor party</td><td>M + Auto ISO</td><td>f/2.0</td><td>1/160s</td><td>Auto</td></tr>
+  <tr><td>Sunset</td><td>A / Av</td><td>f/8</td><td>1/125s</td><td>100</td></tr>
+  <tr><td>Sports</td><td>S / Tv</td><td>auto</td><td>1/1000s</td><td>Auto</td></tr>
+  <tr><td>Waterfall</td><td>M (tripod)</td><td>f/16</td><td>1s</td><td>100</td></tr>
+  <tr><td>Landscape</td><td>A / Av</td><td>f/11</td><td>1/125s</td><td>100</td></tr>
+  <tr><td>Night street</td><td>M</td><td>f/2.8</td><td>1/125s</td><td>3200</td></tr>
+  <tr><td>Pet action</td><td>S / Tv</td><td>auto</td><td>1/800s</td><td>Auto</td></tr>
+  <tr><td>Product / food</td><td>A / Av</td><td>f/5.6</td><td>1/125s</td><td>200</td></tr>
+  <tr><td>Concert</td><td>M (spot)</td><td>f/2.8</td><td>1/250s</td><td>6400</td></tr>
+  <tr><td>Snow / beach</td><td>A / Av +2</td><td>f/8</td><td>1/500s</td><td>100</td></tr>
+  <tr><td>Backlit</td><td>A / Av +1.5</td><td>f/2.8</td><td>1/250s</td><td>400</td></tr>
+</table>
+
+<h1><span class="n">CHAPTER 9</span>Practice Drills &amp; Next Steps</h1>
+<p>Reading built the map; only shooting builds the muscle. Spend this weekend on three short drills and the exposure triangle stops being knowledge and becomes instinct — the kind that lets you set your camera without looking down.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Drill 1 — The aperture ladder (30 minutes)</div><p>Sit a friend or a plant six feet in front of a cluttered background. In Aperture Priority, shoot the same frame at f/1.8 (or your widest), f/2.8, f/5.6, f/8, and f/16. Line them up on your computer. <em>Watch the background go from melted to crisp.</em> You will never again wonder what aperture does.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Drill 2 — The shutter ladder (20 minutes)</div><p>Have someone walk past you left to right. In Shutter Priority, shoot them at 1/30s, 1/125s, 1/250s, 1/500s, and 1/1000s. Compare. You'll see exactly where blur turns to freeze — and learn how fast "walking speed" really needs.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Drill 3 — The full-manual balance (30 minutes)</div><p>Pick one indoor scene. In full Manual, nail a correct exposure using the six-step routine from Chapter 7. Then, keeping the brightness identical, find three <em>different</em> combinations of aperture, shutter, and ISO that all meter at zero. Notice how each looks different. This is the see-saw, in your hands, for real.</p></div>
+
+<h2>Your printable "too dark / too bright" reminder</h2>
+<p>When a shot's brightness is off and you're not sure which knob to turn, walk this flowchart. It's the whole book compressed into a field card.</p>
+
+<ol class="steps">
+  <li><span class="sh">Photo too DARK? → First, can you slow the shutter?</span> If it's still above your handholding minimum and the subject isn't moving, slow it a stop. More light, no downside.</li>
+  <li><span class="sh">Still too dark, but shutter can't go slower? → Open the aperture.</span> Drop to a lower f-number for more light — as long as you can accept the shallower depth of field.</li>
+  <li><span class="sh">Aperture already wide open? → Raise the ISO.</span> Bump it a stop or two. A little grain is nothing next to a properly bright, sharp photo.</li>
+  <li><span class="sh">Photo too BRIGHT? → Reverse the order.</span> First lower ISO toward base, then narrow the aperture (higher f-number), then speed up the shutter. Pull light out from the cheapest side effect first.</li>
+  <li><span class="sh">In a priority mode and it's consistently off? → Use exposure compensation.</span> Snow or backlight fooling the meter: add light (+). Dark subject going muddy gray: subtract light (&minus;). Then confirm with the histogram.</li>
+</ol>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>The one upgrade worth making</div><p>If you own only a kit zoom, a 50mm f/1.8 "nifty fifty" — often under $150 — is the highest-impact purchase in beginner photography. It gathers far more light for low-light shots and produces the beautiful background blur that makes portraits sing. It teaches you aperture faster than any lens.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Shoot in RAW while you learn</div><p>Switch your file format to RAW (or RAW+JPEG). RAW files hold far more recoverable detail in shadows and highlights, so a slightly-off exposure while you're learning is easily rescued in editing. It's a safety net that costs you nothing but card space.</p></div>
+
+<blockquote>The dial has five real settings and three real controls. That's the entire mountain. You just climbed it.</blockquote>
+
+<p>You started this weekend afraid of a dial. You're ending it able to look at any scene, decide what the photo is <em>about</em>, and set three controls to make it happen on purpose. That's not a beginner's skill. That's the skill. Everything else in photography — lighting, composition, editing — builds on the foundation you just poured. Go fill a memory card. Make mistakes on purpose. Read your histograms. In a month, Auto mode will feel like a language you used to speak before you learned to actually talk.</p>
+
+<div class="key"><div class="kt">Remember</div><p>You don't take the picture the camera decides on anymore — you decide, and the camera obeys. That's what getting off Auto really means.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Photography guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

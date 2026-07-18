@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Pro Photos From Your Pocket — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #0f766e;
+  --accent2: #14b8a6;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">SMARTPHONE PHOTOGRAPHY</div>
+    <div style="margin-top:auto"></div>
+    <h1>Pro Photos From Your Pocket</h1>
+    <div class="rule"></div>
+    <div class="sub">The Complete iPhone &amp; Smartphone Photography Guide</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$34 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">The Complete iPhone &amp; Smartphone Photography Guide. Written for anyone with a phone who wants photos that look like a camera took them.</div>
+  <ol><li><span class="t">The Best Camera Is the One in Your Pocket</span></li><li><span class="t">Know Your Phone Camera</span></li><li><span class="t">Nail Exposure & Focus Every Time</span></li><li><span class="t">Light Is Everything</span></li><li><span class="t">Composition on a Phone</span></li><li><span class="t">Portrait Mode Done Right</span></li><li><span class="t">Shoot RAW & Master Mobile Editing</span></li><li><span class="t">Genre Mini-Guides</span></li><li><span class="t">Gear That Actually Helps</span></li><li><span class="t">Your 30-Day Phone Photo Challenge</span></li></ol>
+</div>
+<h1><span class="n">INTRODUCTION</span>The Best Camera Is the One in Your Pocket</h1>
+<p class="lead-in">You already own a camera capable of gallery-worthy photos — it's the phone in your hand right now. The gap between your snapshots and the images you envy isn't the hardware. It's a handful of habits: where you stand, how the light falls, which lens you pick, and what you do in the ten seconds before you tap the shutter. This guide closes that gap.</p>
+
+<p>Modern phone cameras are astonishing. Multiple lenses, sensors that see in near-darkness, and computational tricks that used to require a laptop full of software — all in something thinner than a deck of cards. And yet most people's photos still look like <em>phone photos</em>: flat, cluttered, a little soft, the subject swimming in a sea of distraction.</p>
+
+<p>Here is the truth almost nobody tells you: <strong>the professionals aren't using better gear than you — they're making better decisions.</strong> They wait for the light. They step to the side to clean up the background. They tap to lock focus and pull the exposure down before a highlight blows out. Every one of those decisions is learnable, and none of them cost a cent.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Great phone photos come from controlling four things — light, lens choice, exposure, and composition — and then finishing with a light, confident edit.</p></div>
+
+<h2>What this guide fixes</h2>
+<p>If your photos come out dark, blurry, weirdly colored, cluttered, or just <em>flat</em>, every one of those is a solved problem. We'll go camera to edit, in the order you actually shoot: understanding your lenses, nailing exposure and focus, hunting good light, composing with intention, using Portrait mode without the plastic look, and finally shooting RAW and editing like you know what you're doing.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>iPhone and Android, both</div><p>Everything here works on any recent smartphone. When a feature is iPhone-specific — like ProRAW or Photographic Styles — we say so and give you the Android equivalent (usually Pro/Manual mode, or a RAW app like Expert RAW or a GCam port). You do not need the newest phone. You need to change what you do with the one you have.</p></div>
+
+<h1><span class="n">CHAPTER 1</span>Know Your Phone Camera</h1>
+<p>Before you shoot anything, you need to understand the little cluster of lenses on the back of your phone. They are not the same lens at different zoom levels — they are genuinely different cameras, each best at a different job. Picking the right one is the first decision that separates a snapshot from a photograph.</p>
+
+<h2>The three lenses and what each is for</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">🌐 Ultra-Wide</div><p>Sees a huge, sweeping view. Great for tight interiors, big landscapes, and dramatic low-angle shots. <strong>Distorts faces</strong> — never use it up close on people.</p></div>
+  <div class="card"><div class="ch">📸 Wide (Main)</div><p>The workhorse. Biggest sensor, best in low light, sharpest detail. Your default for almost everything. When in doubt, shoot on this one.</p></div>
+  <div class="card"><div class="ch">🔭 Telephoto</div><p>Magnifies distant subjects and — crucially — <strong>flatters faces</strong>. The go-to for portraits, food, and anything you want to isolate from the background.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Not every phone has three</div><p>Budget and mid-range phones often have just the ultra-wide and main lens. That's fine — the main lens does 90% of great photography. If you lack a telephoto, walk closer instead of zooming, and use the framing tricks in the composition chapter to isolate your subject.</p></div>
+
+<h3>The digital-zoom trap</h3>
+<p>Here's the rule that instantly upgrades your sharpness: <strong>only zoom to a magnification your phone has a dedicated lens for.</strong> The clean stops are 0.5&times; (ultra-wide), 1&times; (main), and 2&times;, 3&times;, or 5&times; (telephoto, depending on your model). These are <em>optical</em> — real glass, full detail.</p>
+
+<p>Anything between those numbers, and everything beyond your longest lens, is <em>digital</em> zoom: the phone is just cropping into the image and enlarging pixels. It looks soft, mushy, and noisy. Instead of pinching to 7&times;, shoot at your maximum optical zoom and crop later in editing — you get the same framing with far more control and no quality loss you didn't choose.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Zoom with your feet</div><p>Whenever it's safe and possible, physically walk toward your subject instead of zooming. Getting closer with the main lens beats zooming with any lens — you keep the sharpest optics and the best low-light performance.</p></div>
+
+<h2>The two-second habit that fixes half of all bad photos</h2>
+<p>Your phone lives in your pocket, your bag, and your greasy hands. That lens gets <strong>filthy</strong>, and a fingerprint smear is the number-one cause of hazy, low-contrast, dreamy-in-a-bad-way phone photos. It also wrecks night shots by turning every light source into a foggy glow.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Wipe the lens. Every single time.</div><p>Before you shoot anything important, wipe all the rear lenses on your shirt or a cloth. It takes two seconds and eliminates an entire category of ruined photos. If your night shots look hazy or your daytime shots lack "pop," a dirty lens is the first suspect — not your technique.</p></div>
+
+<h2>Turn on the grid — right now</h2>
+<p>Somewhere in your camera settings is a <strong>gridlines</strong> or <strong>composition grid</strong> toggle. Turn it on and leave it on forever. Those two vertical and two horizontal lines are your framing scaffold: they help you place subjects off-center, keep horizons level, and stop the subtle tilt that makes photos feel "off" without people knowing why.</p>
+
+<h3>Aspect ratios and when to use them</h3>
+<table>
+  <tr><th>Ratio</th><th>Best for</th><th>Why</th></tr>
+  <tr><td>4:3 (default)</td><td>Everyday shooting, max quality</td><td>Uses the full sensor — most detail, most cropping room later</td></tr>
+  <tr><td>1:1 (square)</td><td>Social posts, symmetric subjects</td><td>Forces tight, centered composition; great for food and products</td></tr>
+  <tr><td>16:9 (wide)</td><td>Landscapes, cinematic scenes</td><td>Sweeping and dramatic, but crops off the top and bottom of the sensor</td></tr>
+</table>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Shoot wide, crop later</div><p>Shoot in 4:3 even when you want a square or 16:9 final image. You capture the most information, then crop to your chosen ratio in editing with full freedom. Cropping in is easy; un-cropping is impossible.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Nail Exposure &amp; Focus Every Time</h1>
+<p>Your phone tries to guess what you're photographing and how bright it should be. It's often right — and sometimes catastrophically wrong, blowing out a bright sky or focusing on the wall behind your subject. Taking control of focus and exposure is a two-tap skill, and it's the fastest way to look like you know what you're doing.</p>
+
+<h2>Tap to focus, drag to expose</h2>
+<ol class="steps">
+  <li><span class="sh">Tap your subject on the screen.</span> A box appears, telling the phone "focus here and expose for this." Always tap the most important thing — usually a face or the main object.</li>
+  <li><span class="sh">Drag up or down to adjust brightness.</span> A little sun icon appears next to the focus box. Slide it down to darken, up to brighten. This is your exposure slider, and it overrides the phone's guess instantly.</li>
+  <li><span class="sh">Then shoot.</span> Two taps and a drag, and you've out-thought the automatic mode.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>When in doubt, expose for the highlights</div><p>Phones recover shadow detail from dark areas far better than they recover blown-out bright areas. If a scene has both bright and dark parts, drag the exposure <em>down</em> until the brightest important area still shows detail. You can lift the shadows later in editing; you can never bring back a pure-white sky.</p></div>
+
+<h2>Lock it so it can't drift — AE/AF Lock</h2>
+<p>The moment you recompose or your subject moves, the phone re-guesses focus and exposure — often at the worst possible moment. To freeze both, <strong>press and hold</strong> on your subject until you see a lock indicator (on iPhone it says "AE/AF LOCK"; on Android it's usually a lock icon after a long-press). Now focus and brightness are pinned no matter how you move the frame.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this: the lock-and-reframe</div><p>Point at a person standing in a doorway. Long-press their face to lock focus and exposure. Now recompose so they're off to one side with the doorway framing them. Because you locked, they stay perfectly exposed and sharp even though they're no longer under the focus box. This one move fixes countless "why is my subject dark?" photos.</p></div>
+
+<h2>HDR: let it help, know its limits</h2>
+<p>HDR (High Dynamic Range) takes several exposures and blends them so both the bright sky and the dark foreground keep detail. On most modern phones it's automatic and excellent — leave it on. It's what lets you shoot a person against a bright window and see both.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>HDR needs stillness</div><p>Because HDR blends multiple frames, fast-moving subjects can ghost or smear. For action — kids running, pets, sports — a single well-exposed frame beats a mushy HDR blend. If your motion shots look strange, that's the culprit.</p></div>
+
+<h2>Night mode, demystified</h2>
+<p>In dim light your phone offers Night mode (iPhone), Night Sight (Pixel), or Nightscape/Night mode (other Android). It holds the "shutter" open for one to several seconds and stacks frames into one bright, clean image. It's genuinely magical — but it has rules.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Getting a clean night shot</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Hold <b>Very still</b></span><span class="chip">Duration <b>2&ndash;3s</b></span><span class="chip">Lens <b>Main (1&times;)</b></span><span class="chip">Subject <b>Not moving</b></span></div>
+    <p class="small">Brace against a wall or rail. Let the full capture finish before lowering the phone. The main lens has the biggest sensor, so it always beats the ultra-wide or tele at night.</p>
+  </div>
+</div>
+
+<ul class="check">
+  <li>Steady the phone — a wall, railing, or tiny tripod turns a 3-second exposure from a smear into a crisp shot.</li>
+  <li>Ask people to hold still for the full capture; movement becomes a ghost.</li>
+  <li>Use the main lens, not the ultra-wide or telephoto — its larger sensor gathers far more light.</li>
+  <li>Wipe the lens first; night is where smears cause the worst haze and light-flare.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 3</span>Light Is Everything</h1>
+<p>If you learn only one thing from this guide, make it this: <strong>photography is the craft of collecting light.</strong> The single biggest difference between an amateur photo and a professional one is almost never the camera — it's that the pro either found good light or waited for it. Once your eye learns to read light, your phone photos leap forward.</p>
+
+<blockquote>Amateurs think about their subject. Professionals think about the light falling on their subject.</blockquote>
+
+<h2>The best free light: a window</h2>
+<p>Soft light from a large window is the most flattering light on Earth, and it's in nearly every home. Place your subject <em>beside</em> the window, facing it or turned slightly away, so the light wraps across them. This is how professional portrait and food photographers work, and it costs nothing.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Turn off the ceiling lights</div><p>Overhead room lights cast ugly shadows under eyes and clash in color with window light, giving skin a sickly orange-and-blue mix. For indoor portraits and food, kill the overheads and let a single window be your only source. Cleaner, softer, more professional — instantly.</p></div>
+
+<h2>Golden hour is worth setting an alarm for</h2>
+<p>The hour after sunrise and the hour before sunset bathe everything in warm, soft, directional light with long gentle shadows. Skin glows, landscapes get depth, and even a parking lot looks cinematic. If you can choose <em>when</em> to shoot something beautiful, choose golden hour every time.</p>
+
+<h2>Recipe cards for the light you'll actually meet</h2>
+
+<div class="recipe">
+  <div class="rh"><span>Harsh midday sun</span><span class="tag">RESCUE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Move to <b>Open shade</b></span><span class="chip">Expose for <b>Highlights</b></span><span class="chip">Avoid <b>Squinting subjects</b></span></div>
+    <p class="small">Overhead noon sun creates raccoon-eye shadows and blown highlights. Step your subject under a tree, awning, or the shaded side of a building — you get the sun's brightness as soft, even fill. Never pose people facing straight into hard sun.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Backlight (sun behind subject)</span><span class="tag">CREATIVE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Tap on <b>The face</b></span><span class="chip">Drag exposure <b>Up</b></span><span class="chip">Look for <b>Rim light</b></span></div>
+    <p class="small">Put the sun behind your subject for a glowing halo of hair-light. The phone will underexpose the face, so tap the face and drag brightness up. Shoot at golden hour and you get dreamy, luminous portraits.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Mixed indoor light</span><span class="tag">FIX THE COLOR</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Pick <b>One source</b></span><span class="chip">Shoot <b>RAW</b> if you can</span><span class="chip">Fix WB <b>In editing</b></span></div>
+    <p class="small">When window light, lamps, and screens all mix, skin tones turn muddy because the phone can't pick one color temperature. Turn off competing sources so one type of light dominates — or shoot RAW so you can correct white balance perfectly afterward.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Use shadows on purpose</div><p>Beginners fear shadows; pros use them. Shadow is what creates depth, mood, and three-dimensional shape. Side light — from a window or low sun coming across your subject — sculpts texture and form. Flat, shadowless light (like an overcast noon or on-camera flash) is what makes photos look boring. Chase directional light.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Kill the flash (almost always)</div><p>Your phone's LED flash is tiny, harsh, and points straight at your subject, flattening them and turning eyes red and skin shiny. It is a light of last resort. Nine times out of ten, finding existing light or raising exposure gives a far better result. Leave the flash off by default.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Composition on a Phone</h1>
+<p>Composition is simply where you put things in the frame — and it's the skill that makes people say "how did you take that?" You don't need art school. You need a handful of reliable patterns and the willingness to move your feet before you shoot.</p>
+
+<h2>Rule of thirds: get your subject off the bullseye</h2>
+<p>Remember that grid you turned on? Its power move is this: instead of centering your subject, place it along one of the vertical lines or where two lines cross. Off-center subjects feel dynamic and intentional; dead-center ones often feel static and amateur. Put a person's eyes on the top gridline, a horizon on the top or bottom line — never slicing the frame in half.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this: the thirds drill</div><p>Photograph the same scene twice — once with your subject centered, once with it on a gridline intersection. Compare. You'll feel the off-center version breathe. Do this ten times over a week and off-center framing becomes automatic.</p></div>
+
+<h2>Lead the eye with lines</h2>
+<p>Roads, fences, shorelines, railings, hallways, shadows — any line in a scene pulls the viewer's eye along it. Point those lines <em>toward</em> your subject or into the distance to create depth and draw people into the photo. A path leading to a mountain is a stronger image than the mountain alone.</p>
+
+<h2>Get low, get close, fill the frame</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🐜 Get low</div><p>Crouch or put the phone near the ground. A low angle makes ordinary subjects — kids, pets, food, flowers — look heroic and immersive instead of like you're looking down on them.</p></div>
+  <div class="card"><div class="ch">🔍 Fill the frame</div><p>The most common beginner mistake is standing too far back. Move in until your subject dominates the frame. Empty space around a tiny subject reads as "I didn't know what I was shooting."</p></div>
+</div>
+
+<div class="key"><div class="kt">Remember</div><p>If your photo isn't good enough, you're not close enough. Move your feet — get lower, get nearer — before you ever reach for zoom.</p></div>
+
+<h2>Foreground depth</h2>
+<p>A photo is flat by nature — it's your job to fake three dimensions. Put something in the near foreground: leaves framing a portrait, a coffee cup at the edge of a café scene, rocks in the front of a landscape. That near element gives the eye a sense of near-and-far and makes the image feel like a space you could step into.</p>
+
+<h2>Reflections and symmetry</h2>
+<p>Puddles, windows, lakes, polished floors, sunglasses — reflective surfaces double your composition and add instant polish. Get the phone low to the reflective surface for the strongest mirror effect. And when a scene is naturally symmetrical — an archway, a straight road, a face head-on — center it deliberately and let the balance be the point. (Symmetry is the one time centering beats the rule of thirds.)</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Clean up the background</div><p>Before you shoot, glance at what's <em>behind</em> your subject. A trash can growing out of someone's head, a bright sign stealing attention, clutter along the edges — all of it drags a photo down. Take one step left or right, or crouch, to place your subject against a cleaner backdrop. This single habit separates snapshots from photographs.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Portrait Mode Done Right</h1>
+<p>Portrait mode fakes the creamy background blur of an expensive camera by using software to separate your subject from the background and blur everything behind. Used well, it produces genuinely professional-looking portraits. Used carelessly, it produces the tell-tale "cut out with scissors" look. Here's how to stay on the right side of that line.</p>
+
+<h2>When to reach for it — and when not to</h2>
+<div class="cards">
+  <div class="card solid"><div class="ch">✅ Great for</div><ul><li>People and pets with clear edges</li><li>Products and objects on a plain surface</li><li>Flowers and food with space behind them</li></ul></div>
+  <div class="card solid"><div class="ch">🚫 Struggles with</div><ul><li>Wispy hair, glasses, and fences</li><li>Busy backgrounds close to the subject</li><li>Fast action (it needs a still moment)</li></ul></div>
+</div>
+
+<h2>Fixing the fake-looking edges</h2>
+<ol class="steps">
+  <li><span class="sh">Create real separation.</span> Put physical distance between your subject and the background — a few feet is plenty. The further the background, the easier the software's job and the more natural the blur. A subject pressed against a wall is where Portrait mode fails hardest.</li>
+  <li><span class="sh">Dial the blur down.</span> Most phones let you adjust the blur strength (the "aperture" or f-number slider) after the shot. Cranked to maximum, it looks obviously fake. Ease it back to a gentle, believable amount — a little blur reads as far more real than a lot.</li>
+  <li><span class="sh">Avoid busy edges.</span> Frizzy hair, chain-link, and leafy branches confuse the edge detection and produce halos. Choose a moment and angle where your subject's outline is clean.</li>
+  <li><span class="sh">Check and re-shoot.</span> Zoom in on the edges right after shooting. If the software smeared part of the background onto the subject, adjust distance or angle and take another. It costs nothing.</li>
+</ol>
+
+<h2>Distance and lens: the secret to flattering faces</h2>
+<p>Here's a rule pros live by: <strong>don't shoot faces up close with a wide lens.</strong> Getting physically close with the wide or ultra-wide lens enlarges whatever's nearest the camera — the nose — and makes faces look bulbous and distorted. Instead, back up and use the telephoto lens (2&times;, 3&times;, or 5&times;). The longer lens compresses features into natural, flattering proportions. This is why phone portraits taken a few steps back look dramatically better than selfies-arm-length shots.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The portrait sweet spot</div><p>Stand a few steps back and use your telephoto lens (or the "2&times;/3&times; Portrait" option). You get flattering facial proportions <em>and</em> more natural background blur, because longer focal lengths compress and separate the background all on their own — with no software fakery involved.</p></div>
+
+<h2>Natural blur, no Portrait mode needed</h2>
+<p>You can get real, optical background blur without Portrait mode at all — and it never looks fake because the phone genuinely can't focus on the background. The recipe: <strong>get close to your subject, put the background far away, and use your longest lens.</strong> A flower a foot from your lens with trees thirty feet behind will melt into soft color naturally. For close subjects, real blur beats simulated blur every time.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this: real vs. fake blur</div><p>Photograph a coffee cup two ways: once in Portrait mode against a near wall, once on the main lens with the cup close and the background across the room. Compare the blur. The second — real optical blur — looks smoother and more believable, and it took no software guessing at all.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Shoot RAW &amp; Master Mobile Editing</h1>
+<p>This is the chapter that turns good photos into photos that make people ask what camera you used. Editing isn't cheating and it isn't "fixing mistakes" — every professional image you've ever admired was edited. The goal is a natural, confident finish, not a garish filter. And it starts with capturing more information in the first place: shooting RAW.</p>
+
+<h2>Why RAW (and ProRAW) matters</h2>
+<p>A normal JPEG or HEIC photo is baked: the phone has already decided the color, contrast, and sharpening, and thrown away the rest. A <strong>RAW</strong> file keeps all the sensor data, giving you enormous freedom to recover blown skies, fix color, and lift shadows in editing without the image falling apart.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>How to shoot RAW on your phone</div><p><strong>iPhone:</strong> Pro models offer <em>ProRAW</em> — a toggle labeled RAW at the top of the camera. It keeps RAW flexibility plus Apple's computational magic. <strong>Android:</strong> Open Pro or Manual mode and set the format to RAW/DNG; Samsung's <em>Expert RAW</em> app and Google Camera (or a GCam port) do the same. If your phone can't shoot RAW, don't worry — the editing workflow below still works beautifully on a normal photo.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>RAW files look flat at first — that's correct</div><p>Straight out of the camera, a RAW photo looks dull and low-contrast because none of the automatic "make it pretty" processing has been applied. That's the point: <em>you</em> apply it, with full control. A flat RAW is a canvas, not a failure.</p></div>
+
+<h2>Photographic Styles vs. neutral capture</h2>
+<p>Newer iPhones offer <strong>Photographic Styles</strong> — a way to bake a consistent tone-and-warmth preference into every shot (more contrast, warmer skin, etc.), adjustable rather than a heavy filter. The Android equivalent is a "look" or "tone" preset in the camera app, or simply editing to a saved preset afterward. Either way, aim for a subtle, repeatable personal look — not a different heavy filter on every photo.</p>
+
+<h2>The repeatable order of operations</h2>
+<p>The secret to editing that never looks overcooked is doing steps <em>in the right order</em>. Global light first, then color, then local touches, then crop and sharpen. Follow this sequence in any editor (Lightroom Mobile, Snapseed, or your phone's built-in editor) and you'll get consistent, natural results every time.</p>
+
+<ol class="steps">
+  <li><span class="sh">Set exposure and contrast.</span> Get the overall brightness right first. Then add contrast for punch — or reduce it for a soft, filmic look.</li>
+  <li><span class="sh">Recover highlights, lift shadows.</span> Pull the <em>Highlights</em> slider down to bring back a blown sky; push <em>Shadows</em> up to reveal detail in dark areas. This alone rescues most "the sky is white / my subject is a silhouette" photos.</li>
+  <li><span class="sh">Fix white balance.</span> Use the <em>Temperature</em> slider to correct color casts — warmer if the photo is too blue, cooler if too orange. Neutral whites and natural skin tones are the goal. (This is where RAW shines: you can set white balance perfectly after the fact.)</li>
+  <li><span class="sh">Adjust color: saturation and vibrance.</span> Nudge <em>Vibrance</em> (which protects skin tones) before <em>Saturation</em> (which hits everything). A little goes a long way — oversaturated photos scream "amateur filter."</li>
+  <li><span class="sh">Make selective edits.</span> Use a brush or radial/linear mask to adjust just part of the image — brighten a face, darken a distracting corner, add a touch of clarity to the eyes. Local edits are what separate a snapshot from a crafted image.</li>
+  <li><span class="sh">Crop and straighten.</span> Fix any tilt, apply the rule of thirds, and crop to your final ratio. Doing this last means you've judged the whole edit before committing the frame.</li>
+  <li><span class="sh">Sharpen last, gently.</span> A small amount of sharpening at 100% zoom adds crispness. Too much creates crunchy halos. Finish, don't overdo.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The "less is more" gut-check</div><p>After you finish an edit, tap the before/after toggle. If the "after" makes you wince — too saturated, too bright, too much clarity — dial everything back about halfway. Your finished edit should look like a great version of reality, not a different planet. Restraint is the mark of a pro.</p></div>
+
+<h2>Presets and building a consistent look</h2>
+<p>Once you land an edit you love, <strong>save it as a preset</strong> (Lightroom) or copy-and-paste the settings across photos (Snapseed, most editors). Applying a consistent look across a set — a trip, a product line, your whole feed — is exactly how photographers create a recognizable style. Build two or three of your own: a bright-and-airy, a warm-and-moody, a clean-and-neutral. Then apply and lightly tweak per photo.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Edit on the original, always</div><p>Mobile editors work non-destructively — your edits are instructions layered over the untouched original, and you can reset to the start at any time. So experiment freely. You can never actually ruin the photo; the RAW or original file is always safe underneath.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Genre Mini-Guides</h1>
+<p>Different subjects reward different moves. Here are field-tested recipes for the four kinds of photos people most want to nail — each one a distillation of everything in the previous chapters, aimed at a specific job.</p>
+
+<h2>Food that looks delicious</h2>
+<div class="recipe">
+  <div class="rh"><span>Food photography</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Light <b>Window, side-on</b></span><span class="chip">Angle <b>45&deg; or straight down</b></span><span class="chip">Lens <b>Main or tele</b></span><span class="chip">Flash <b>Never</b></span></div>
+    <p class="small">Place the plate beside a window with light raking across it — never overhead room light. Shoot at 45&deg; for height (burgers, layered dishes) or straight down for flat spreads (pizza, table scenes). Get close, fill the frame, and wipe away crumbs first.</p>
+  </div>
+</div>
+
+<h2>Travel that tells a story</h2>
+<div class="recipe">
+  <div class="rh"><span>Travel &amp; landscape</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Time <b>Golden hour</b></span><span class="chip">Lens <b>Ultra-wide or main</b></span><span class="chip">Include <b>Foreground + person</b></span><span class="chip">Format <b>RAW</b></span></div>
+    <p class="small">Shoot early or late for warm light and no crowds. Add a foreground element for depth and put a person in the scene for scale and story. Use leading lines (paths, coastlines) to pull the eye toward the landmark.</p>
+  </div>
+</div>
+
+<h2>Kids and pets that stay sharp</h2>
+<div class="recipe">
+  <div class="rh"><span>Kids &amp; pets</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mode <b>Burst</b></span><span class="chip">Angle <b>Get down low</b></span><span class="chip">HDR <b>Off for action</b></span><span class="chip">Light <b>Bright / outdoors</b></span></div>
+    <p class="small">Hold the shutter for a burst and pick the sharpest frame later — kids and animals never hold still. Crouch to their eye level for connection. Shoot in bright light so the phone uses a fast shutter that freezes motion; turn HDR off so fast movement doesn't ghost.</p>
+  </div>
+</div>
+
+<h2>Products for resale that sell</h2>
+<div class="recipe">
+  <div class="rh"><span>Product / for-resale</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Background <b>Clean &amp; plain</b></span><span class="chip">Light <b>Soft, even, window</b></span><span class="chip">Focus <b>Tap the product</b></span><span class="chip">Angles <b>Several</b></span></div>
+    <p class="small">Buyers trust clear, honest photos. Use a plain background (a poster board or clean wall), soft window light with no harsh shadows, and shoot multiple angles plus any flaws up close. Tap to focus on the product, expose so it's bright and true, and keep colors accurate — no heavy filters that misrepresent the item.</p>
+  </div>
+</div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this: the seller's turntable</div><p>For anything you're selling, shoot it on a clean surface by a window, then rotate it a quarter-turn and shoot again — four angles, plus one close-up of any wear or label. Consistent lighting and a clean background across all five shots reads as trustworthy and professional, and photos like that genuinely sell items faster.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Gear That Actually Helps</h1>
+<p>You can take spectacular photos with just your phone and everything in this guide. But a few cheap accessories genuinely expand what's possible. Here's an honest, cheapest-first rundown — with a clear note on what's worth it and what's mostly hype.</p>
+
+<h2>The high-value, low-cost kit</h2>
+<div class="cards">
+  <div class="card solid"><div class="ch">🧼 Microfiber cloth</div><p>Under $5, and it fixes the single most common cause of hazy photos. Keep one in your bag or pocket. Best value in all of photography.</p></div>
+  <div class="card solid"><div class="ch">🦵 Mini tripod or clamp</div><p>A small flexible tripod or phone clamp unlocks sharp night shots, long exposures, self-portraits, and steady video. The biggest capability jump for the money.</p></div>
+  <div class="card solid"><div class="ch">🔘 Remote shutter</div><p>A tiny Bluetooth button (or your earbud volume control) fires the shutter without touching the phone — zero shake for night and tripod shots, plus easy group photos you're actually in.</p></div>
+  <div class="card solid"><div class="ch">🔭 Clip-on lenses</div><p>Clip-on macro and anamorphic lenses can be fun. Cheap ones are soft at the edges, though — buy a well-reviewed brand or skip it. A macro clip is the most genuinely useful of the bunch.</p></div>
+</div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Buy in this order</div><p>Microfiber cloth first (a few dollars). Then a mini tripod plus remote shutter — together under twenty dollars and they transform your night, self-portrait, and long-exposure options. Everything after that is optional. Don't spend on lenses or a gimbal until these basics are working for you.</p></div>
+
+<h2>When a gimbal actually matters</h2>
+<p>A gimbal — a motorized handle that stabilizes the phone — produces buttery, floating <strong>video</strong>. If you shoot a lot of walking video, vlogs, or motion clips, it's transformative. But for <em>still photos</em>, it does almost nothing a cheap tripod and steady hands don't already do. Buy a gimbal only if video is a real part of what you make. For photography, your money is better spent elsewhere.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>The honest truth about gear</div><p>No accessory will make a poorly-lit, badly-composed photo good. Gear removes specific limitations — camera shake, reach, stability — but it never replaces the skills in the earlier chapters. Master those first; buy gear only to solve a problem you can actually name.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Your 30-Day Phone Photo Challenge</h1>
+<p>Skills stick when you practice them one at a time, on purpose. Here's a 30-day plan — one small mission a day, each reinforcing something from this guide. Do them in order and by the end you won't be thinking about technique; it'll just be how you see. Keep the results in one album so you can watch yourself improve.</p>
+
+<table>
+  <tr><th>Day</th><th>Mission</th><th>Skill it builds</th></tr>
+  <tr><td>1</td><td>Clean your lens, turn on the grid, shoot 10 everyday things</td><td>Setup habits</td></tr>
+  <tr><td>2</td><td>Shoot one subject on all three lenses; compare</td><td>Lens choice</td></tr>
+  <tr><td>3</td><td>Photograph a friend by a window, overheads off</td><td>Window light</td></tr>
+  <tr><td>4</td><td>Tap-to-focus and drag exposure on 10 shots</td><td>Exposure control</td></tr>
+  <tr><td>5</td><td>Place every subject on a gridline, never centered</td><td>Rule of thirds</td></tr>
+  <tr><td>6</td><td>Shoot the same scene high and low; pick the winner</td><td>Angle</td></tr>
+  <tr><td>7</td><td>Fill the frame — get twice as close as feels natural</td><td>Proximity</td></tr>
+  <tr><td>8</td><td>Find and shoot three sets of leading lines</td><td>Leading lines</td></tr>
+  <tr><td>9</td><td>Shoot only during golden hour today</td><td>Reading light</td></tr>
+  <tr><td>10</td><td>Use AE/AF lock, then recompose, on 10 shots</td><td>Locking</td></tr>
+  <tr><td>11</td><td>Turn on RAW/ProRAW and shoot five scenes</td><td>RAW capture</td></tr>
+  <tr><td>12</td><td>Edit one RAW photo through the full 7-step order</td><td>Editing workflow</td></tr>
+  <tr><td>13</td><td>Shoot a backlit portrait at golden hour</td><td>Backlight</td></tr>
+  <tr><td>14</td><td>Make a photo with a foreground element for depth</td><td>Depth</td></tr>
+  <tr><td>15</td><td>Find a reflection and shoot it low</td><td>Reflections</td></tr>
+  <tr><td>16</td><td>Portrait mode done right — real distance, blur dialed back</td><td>Portrait mode</td></tr>
+  <tr><td>17</td><td>Real optical blur: close subject, far background, tele lens</td><td>Natural blur</td></tr>
+  <tr><td>18</td><td>Shoot a meal by a window at 45&deg; and straight down</td><td>Food</td></tr>
+  <tr><td>19</td><td>Night mode: brace on a wall, shoot a city or room scene</td><td>Night mode</td></tr>
+  <tr><td>20</td><td>Burst-shoot a moving kid, pet, or person; pick the sharpest</td><td>Freezing motion</td></tr>
+  <tr><td>21</td><td>Build and save your first editing preset</td><td>Personal style</td></tr>
+  <tr><td>22</td><td>Correct a color cast using white balance on a RAW file</td><td>White balance</td></tr>
+  <tr><td>23</td><td>Make one selective/masked edit (brighten a face)</td><td>Local edits</td></tr>
+  <tr><td>24</td><td>Photograph an item for resale: clean bg, five angles</td><td>Product shots</td></tr>
+  <tr><td>25</td><td>Shoot in open shade at harsh midday</td><td>Managing sun</td></tr>
+  <tr><td>26</td><td>Find symmetry and center it deliberately</td><td>Symmetry</td></tr>
+  <tr><td>27</td><td>Clean up three backgrounds by stepping side to side</td><td>Background awareness</td></tr>
+  <tr><td>28</td><td>Shoot a whole "series" of five with one consistent look</td><td>Consistency</td></tr>
+  <tr><td>29</td><td>Recreate your worst old photo — done right this time</td><td>Applying it all</td></tr>
+  <tr><td>30</td><td>Pick your 10 best from the month; notice how far you've come</td><td>Seeing your growth</td></tr>
+</table>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Make it stick</div><p>Save all 30 days into one album titled with the start date. On Day 30, scroll from the first shot to the last. The jump will surprise you — and that visible progress is the thing that keeps you shooting long after the challenge ends.</p></div>
+
+<hr>
+
+<div class="key"><div class="kt">Remember</div><p>Your phone was always good enough — now you know how to make it prove it. Find the light, choose the lens, control the exposure, compose with intention, and finish with a confident edit.</p></div>
+
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Photography guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>
