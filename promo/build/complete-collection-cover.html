@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:1800px}
+  body{position:relative;overflow:hidden;font-family:'DejaVu Sans','Liberation Sans',sans-serif;color:#fff;
+    background:radial-gradient(120% 85% at 50% 8%, #1a2740 0%, #10151f 55%, #070a10 100%)}
+  .glowA{position:absolute;width:840px;height:840px;border-radius:50%;top:-300px;left:-160px;
+    background:radial-gradient(circle, rgba(65,161,207,.32), transparent 62%)}
+  .glowB{position:absolute;width:780px;height:780px;border-radius:50%;top:60px;right:-240px;
+    background:radial-gradient(circle, rgba(224,120,58,.22), transparent 62%)}
+  .top{position:absolute;top:66px;left:0;right:0;text-align:center;z-index:5}
+  .brandline{font-size:22px;letter-spacing:.42em;font-weight:700;color:#5ab8e0;text-transform:uppercase}
+  .head{position:absolute;top:142px;left:0;right:0;text-align:center;z-index:5;padding:0 70px}
+  .kicker{font-size:20px;letter-spacing:.30em;font-weight:700;color:#aeb9c2;text-transform:uppercase;margin-bottom:22px}
+  h1{font-family:'Bitstream Charter','DejaVu Serif',Georgia,serif;font-weight:800;font-size:100px;line-height:.98;
+    letter-spacing:-1px;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+  h1 .v{color:#41a1cf}
+  .rule{width:140px;height:5px;background:#41a1cf;margin:26px auto 24px;border-radius:3px}
+  .meta{font-size:31px;font-weight:600;color:#e9eef2}
+  .meta b{color:#41a1cf}
+  .deck{position:absolute;left:0;right:0;bottom:150px;height:790px;z-index:3}
+  .deck .c{position:absolute;bottom:0;left:50%;width:246px;height:534px;border-radius:16px;overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.6);border:3px solid rgba(255,255,255,.12);transform-origin:bottom center}
+  .deck .c img{width:100%;height:100%;object-fit:cover;display:block}
+  .foot{position:absolute;bottom:0;left:0;right:0;height:150px;z-index:6;
+    background:linear-gradient(0deg, rgba(4,8,11,.96), rgba(4,8,11,0));
+    display:flex;align-items:flex-end;justify-content:space-between;padding:0 70px 46px}
+  .foot .b{font-size:30px;font-weight:800}
+  .foot .b span{display:block;font-size:18px;font-weight:400;color:#8b96a0;letter-spacing:.24em;margin-top:4px}
+  .price{text-align:right}
+  .price .now{font-family:'Bitstream Charter',serif;font-size:58px;font-weight:800;color:#41a1cf;line-height:1}
+  .price .was{font-size:26px;color:#69747e;text-decoration:line-through;margin-left:12px}
+  .price .save{display:block;font-size:18px;color:#aeb9c2;letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
+</style></head>
+<body>
+  <div class="glowA"></div><div class="glowB"></div>
+  <div class="top"><div class="brandline">Story Mode Guy</div></div>
+  <div class="head">
+    <div class="kicker">Story Mode Guy · Santa Cruz</div>
+    <h1>The Complete<br>Wallpaper <span class="v">Collection</span></h1>
+    <div class="rule"></div>
+    <div class="meta"><b>95 Wallpapers</b> &nbsp;·&nbsp; Desktop 4K + Phone</div>
+  </div>
+  <div class="deck" id="deck"></div>
+  <div class="foot">
+    <div class="b">Story Mode Guy<span>STORYMODEGUY.COM</span></div>
+    <div class="price"><span class="now">$19</span><span class="was">$32</span><span class="save">Save $13</span></div>
+  </div>
+  <script>
+    var deck=document.getElementById('deck');
+    var files=['file:///home/user/story-mode-guy/promo/bigbundle/Phone/smg-phone-03.jpg','file:///home/user/story-mode-guy/promo/bigbundle/Phone/smg-phone-12.jpg','file:///home/user/story-mode-guy/promo/bigbundle/Phone/smg-phone-20.jpg','file:///home/user/story-mode-guy/promo/bigbundle/Phone/smg-phone-28.jpg','file:///home/user/story-mode-guy/promo/bigbundle/Phone/smg-phone-36.jpg','file:///home/user/story-mode-guy/promo/bigbundle/Phone/smg-phone-44.jpg','file:///home/user/story-mode-guy/promo/bigbundle/Phone/smg-phone-49.jpg',];
+    var n=files.length;
+    for(var i=0;i<n;i++){
+      var t=(i/(n-1))-0.5;
+      var angle=t*32, x=t*780, lift=-Math.pow(t,2)*130+10;
+      var c=document.createElement('div'); c.className='c';
+      c.style.transform='translateX(-50%) translateX('+x+'px) translateY('+lift+'px) rotate('+angle+'deg)';
+      c.style.zIndex=String(20-Math.abs(Math.round(t*10)));
+      var img=document.createElement('img'); img.src=files[i]; c.appendChild(img); deck.appendChild(c);
+    }
+  </script>
+</body></html>
