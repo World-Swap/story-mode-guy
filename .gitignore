@@ -3,3 +3,6 @@ orig-*.jpg
 # reel-card build temp
 promo/reels/*/_cards.html
 promo/reels/*/_shot.js
+promo/reels/photo-overlays/
+promo/reels/*/_overlays.html
+promo/reels/*/_ov.js
