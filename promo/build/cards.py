@@ -8,6 +8,7 @@ Outputs: <out-dir>/title.png, <out-dir>/cta.png, <out-dir>/bar.png
 import sys, json, subprocess, pathlib, html
 
 TITLE, SUB, CTA, OUTDIR, ACCENT = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]
+PILL = sys.argv[6] if len(sys.argv) > 6 else "Wallpapers & Prints"
 OUT = pathlib.Path(OUTDIR).resolve(); OUT.mkdir(parents=True, exist_ok=True)
 LOGO = "file:///home/user/story-mode-guy/smg-logo.png"
 
@@ -64,7 +65,7 @@ DOC = f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style><
     <div class="kick">Story Mode Guy</div>
     <div class="big serif">{html.escape(CTA)}</div>
     <div class="url">storymodeguy.com</div>
-    <div class="pill">Wallpapers &amp; Prints</div>
+    <div class="pill">{html.escape(PILL)}</div>
     <div class="handle">@storymodeguy</div>
   </div>
 </div>
