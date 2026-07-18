@@ -302,12 +302,12 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 }
 
 /* ============================================================
-   PRINTS & WALLPAPERS — Payhip product cards, as a slider
-   Native scroll-snap: real touch swipe, no JS needed for the
-   gesture. JS only drives arrows + dots.
+   SLIDER — shared by Prints (#prints) and Emberwild (#shop).
+   Native scroll-snap: the swipe gesture is the browser's.
+   JS only drives arrows + dots.
    ============================================================ */
-.pshow{ position:relative; }
-.ptrack{
+.slider{ position:relative; }
+.strack{
   display:grid;
   grid-auto-flow:column;
   grid-auto-columns:calc((100% - 3*16px) / 4);   /* 4 across */
@@ -316,15 +316,43 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   overscroll-behavior-x:contain;
   scroll-snap-type:x mandatory;
   scroll-behavior:smooth;
-  padding:4px 4px 8px;      /* room for hover lift + shadow */
+  padding:4px 4px 8px;      /* room for the hover lift + shadow */
   margin:-4px -4px -8px;
   scrollbar-width:none;
   -ms-overflow-style:none;
 }
-.ptrack::-webkit-scrollbar{ display:none; }
-@media (prefers-reduced-motion:reduce){ .ptrack{ scroll-behavior:auto; } }
+.strack::-webkit-scrollbar{ display:none; }
+.strack > *{ scroll-snap-align:start; }
+@media (prefers-reduced-motion:reduce){ .strack{ scroll-behavior:auto; } }
 
-.pcard{ scroll-snap-align:start; display:flex; flex-direction:column; background:var(--paper); border:1px solid var(--mist); border-radius:var(--r-card-lg); overflow:hidden; box-shadow:var(--sh-card); text-decoration:none; transition:transform .18s ease; }
+/* arrows — light surface variant; the photo slideshow's are white-on-photo */
+.sarrow{
+  position:absolute; top:38%; transform:translateY(-50%); z-index:4;
+  width:44px; height:44px; border-radius:50%;
+  background:rgba(255,255,255,0.94);
+  border:1px solid var(--mist);
+  box-shadow:var(--sh-card);
+  color:var(--graphite); cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:border-color .16s ease, background-color .16s ease, opacity .2s ease;
+}
+.sarrow:hover{ background:#fff; border-color:var(--fog); }
+.sarrow svg{ width:20px; height:20px; }
+.sarrow.prev{ left:-20px; }
+.sarrow.next{ right:-20px; }
+.sarrow[disabled]{ opacity:0; pointer-events:none; }
+
+@media (max-width:1100px){ .strack{ grid-auto-columns:calc((100% - 2*16px) / 3); } }   /* 3 across */
+@media (max-width:860px){
+  .strack{ grid-auto-columns:calc((100% - 16px) / 2); }                                 /* 2 across */
+  .sarrow.prev{ left:6px; } .sarrow.next{ right:6px; }
+}
+@media (max-width:560px){ .strack{ grid-auto-columns:82%; } }                            /* 1 + a peek */
+
+/* ============================================================
+   PRINTS & WALLPAPERS — Payhip product cards
+   ============================================================ */
+.pcard{ display:flex; flex-direction:column; background:var(--paper); border:1px solid var(--mist); border-radius:var(--r-card-lg); overflow:hidden; box-shadow:var(--sh-card); text-decoration:none; transition:transform .18s ease; }
 .pcard:hover{ transform:translateY(-3px); }
 .pcard .pcover{ aspect-ratio:2/3; background:var(--linen); border-bottom:1px solid var(--mist); }
 .pcard .pcover img{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -335,30 +363,6 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 .pcard .pfoot{ display:flex; align-items:center; justify-content:space-between; margin-top:12px; gap:12px; }
 .pcard .price{ font-family:var(--serif); font-size:22px; color:var(--graphite); }
 .pcard .card-link{ font-size:15px; font-weight:500; color:var(--signal-blue); display:inline-flex; align-items:center; gap:6px; }
-
-/* arrows — light surface variant, the photo slideshow's are white-on-photo */
-.parrow{
-  position:absolute; top:38%; transform:translateY(-50%); z-index:4;
-  width:44px; height:44px; border-radius:50%;
-  background:rgba(255,255,255,0.94);
-  border:1px solid var(--mist);
-  box-shadow:var(--sh-card);
-  color:var(--graphite); cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  transition:border-color .16s ease, background-color .16s ease, opacity .2s ease;
-}
-.parrow:hover{ background:#fff; border-color:var(--fog); }
-.parrow svg{ width:20px; height:20px; }
-.parrow.prev{ left:-20px; }
-.parrow.next{ right:-20px; }
-.parrow[disabled]{ opacity:0; pointer-events:none; }
-
-@media (max-width:1100px){ .ptrack{ grid-auto-columns:calc((100% - 2*16px) / 3); } }   /* 3 across */
-@media (max-width:860px){
-  .ptrack{ grid-auto-columns:calc((100% - 16px) / 2); }                                 /* 2 across */
-  .parrow.prev{ left:6px; } .parrow.next{ right:6px; }
-}
-@media (max-width:560px){ .ptrack{ grid-auto-columns:82%; } }                            /* 1 + a peek */
 
 /* ============================================================
    BUNDLE BAND — a tier above the grid, not a seventh peer.
@@ -425,7 +429,9 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 /* ============================================================
    SHOP — product cards
    ============================================================ */
-.cards{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+/* ============================================================
+   SHOP — Emberwild episode cards (layout via .strack)
+   ============================================================ */
 .card{
   display:flex; flex-direction:column;
   background:var(--paper);
@@ -449,8 +455,6 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 .card .card-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:10px; }
 .card .price{ font-family:var(--serif); font-size:19px; color:var(--graphite); }
 .shop-foot{ margin-top:32px; }
-@media (max-width:1000px){ .cards{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:560px){ .cards{ grid-template-columns:1fr; max-width:420px; } }
 
 /* ============================================================
    THE FEED — social + video
@@ -615,8 +619,8 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       </div>
     </a>
 
-    <div class="pshow" id="pshow">
-      <div class="ptrack" id="ptrack">
+    <div class="slider" id="pshow">
+      <div class="strack" id="ptrack">
       <a class="pcard" href="https://payhip.com/b/KstGk" target="_blank" rel="noopener">
         <div class="pcover"><img src="thumb-phone.jpg" alt="Phone wallpaper pack preview"></div>
         <div class="pbody">
@@ -709,10 +713,10 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       </a>
       </div>
 
-      <button class="parrow prev" id="pPrev" aria-label="Previous products">
+      <button class="sarrow prev" id="pPrev" aria-label="Previous products">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
       </button>
-      <button class="parrow next" id="pNext" aria-label="More products">
+      <button class="sarrow next" id="pNext" aria-label="More products">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </button>
     </div>
@@ -741,10 +745,11 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
     <div class="sec-head">
       <p class="eyebrow">Chapter 02 — The Shop</p>
       <h2>Emberwild</h2>
-      <p>An original illustrated series. Act I — The Burning runs four episodes so far, each a quick read delivered instantly as a PDF for just $0.99.</p>
+      <p>An original illustrated series. Eight episodes so far, each a quick read delivered instantly as a PDF for just $0.99.</p>
     </div>
 
-    <div class="cards">
+    <div class="slider" id="eshow">
+      <div class="strack" id="etrack">
       <a class="card" href="https://payhip.com/b/bMoJ7" target="_blank" rel="noopener">
         <div class="cover"><img src="ep-1cover.png" alt="Emberwild Episode One — The Bonding cover"></div>
         <div class="body">
@@ -781,7 +786,53 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
           <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
         </div>
       </a>
+      <a class="card" href="https://payhip.com/b/z9W8U" target="_blank" rel="noopener">
+        <div class="cover"><img src="ep-5cover.png" alt="Emberwild Episode Five — The Deserter cover" loading="lazy"></div>
+        <div class="body">
+          <span class="kicker">Episode Five</span>
+          <h3>The Deserter</h3>
+          <p>Ash, an Ironfolk defector, confirms from the inside what the Vael only guessed. The Pact is tested on the enemy.</p>
+          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
+        </div>
+      </a>
+      <a class="card" href="https://payhip.com/b/umiJc" target="_blank" rel="noopener">
+        <div class="cover"><img src="ep-6cover.png" alt="Emberwild Episode Six — The Straight Scar cover" loading="lazy"></div>
+        <div class="body">
+          <span class="kicker">Episode Six</span>
+          <h3>The Straight Scar</h3>
+          <p>Following the geometric cut back to its source. The first real look at Iron Warden Vane and the machine he commands.</p>
+          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
+        </div>
+      </a>
+      <a class="card" href="https://payhip.com/b/7riO6" target="_blank" rel="noopener">
+        <div class="cover"><img src="ep-7cover.png" alt="Emberwild Episode Seven — The Long Winter cover" loading="lazy"></div>
+        <div class="body">
+          <span class="kicker">Episode Seven</span>
+          <h3>The Long Winter</h3>
+          <p>The gathered tribes starve and doubt Rook. Cinder falls gravely ill, and a chief who won't lie has nothing comforting to say.</p>
+          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
+        </div>
+      </a>
+      <a class="card" href="https://payhip.com/b/tqn92" target="_blank" rel="noopener">
+        <div class="cover"><img src="ep-8cover.png" alt="Emberwild Episode Eight — The Ruins That Shouldn't Be cover" loading="lazy"></div>
+        <div class="body">
+          <span class="kicker">Episode Eight</span>
+          <h3>The Ruins That Shouldn't Be</h3>
+          <p>Look up. Now look down. Deeper into the impossible ruins, and the origin mystery sharpens into something nobody wanted answered.</p>
+          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
+        </div>
+      </a>
+      </div>
+
+      <button class="sarrow prev" id="ePrev" aria-label="Previous episodes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="sarrow next" id="eNext" aria-label="More episodes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
     </div>
+
+    <div class="dots" id="eDots" role="tablist" aria-label="Episode pages"></div>
 
     <div class="shop-foot">
       <a class="btn btn-filled" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Browse everything on Payhip <span class="arrow">→</span></a>
@@ -937,94 +988,94 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   start();
 })();
 
-/* ---------- Prints & Wallpapers slider ---------- */
+/* ---------- Card sliders (Prints + Emberwild) ---------- */
 (function(){
-  var track = document.getElementById('ptrack');
-  if(!track) return;
-  var prev = document.getElementById('pPrev');
-  var next = document.getElementById('pNext');
-  var dotsWrap = document.getElementById('pDots');
-  var cards = Array.prototype.slice.call(track.querySelectorAll('.pcard'));
-  if(!cards.length) return;
+  function makeSlider(trackId, prevId, nextId, dotsId){
+    var track = document.getElementById(trackId);
+    if(!track) return;
+    var prev = document.getElementById(prevId);
+    var next = document.getElementById(nextId);
+    var dotsWrap = document.getElementById(dotsId);
+    var cards = Array.prototype.slice.call(track.children);
+    if(!cards.length) return;
+    var GAP = 16;
 
-  function perView(){
-    var cw = cards[0].getBoundingClientRect().width + 16;
-    return Math.max(1, Math.round(track.clientWidth / cw));
-  }
-  function pageW(){
-    return (cards[0].getBoundingClientRect().width + 16) * perView();
-  }
-  function maxScroll(){
-    return Math.max(0, track.scrollWidth - track.clientWidth);
-  }
-  // Pages come from how far the track can actually scroll, NOT from
-  // ceil(cards/perView) — the last page is always partial, so the
-  // card-count model invents a page the browser will never reach.
-  function pages(){
-    var m = maxScroll();
-    if(m <= 2) return 1;
-    return Math.ceil(m / pageW()) + 1;
-  }
-  function current(){
-    var n = pages();
-    if(track.scrollLeft >= maxScroll() - 2) return n - 1;
-    return Math.min(Math.round(track.scrollLeft / pageW()), n - 1);
-  }
+    function cardW(){ return cards[0].getBoundingClientRect().width + GAP; }
+    function perView(){ return Math.max(1, Math.round(track.clientWidth / cardW())); }
+    function pageW(){ return cardW() * perView(); }
+    function maxScroll(){ return Math.max(0, track.scrollWidth - track.clientWidth); }
 
-  function buildDots(){
-    dotsWrap.innerHTML = '';
-    var n = pages();
-    if(n < 2) return;                       // nothing to page through
-    for(var i=0; i<n; i++){
-      var b = document.createElement('button');
-      b.className = 'dot' + (i===0 ? ' is-active' : '');
-      b.setAttribute('aria-label', 'Products, page ' + (i+1));
-      (function(idx){ b.addEventListener('click', function(){ goTo(idx); }); })(i);
-      dotsWrap.appendChild(b);
+    // Pages come from how far the track can ACTUALLY scroll, not from
+    // ceil(cards/perView) — the final page is always partial, so the
+    // card-count model invents a page the browser will never reach and
+    // leaves the last dot permanently dead.
+    function pages(){
+      var m = maxScroll();
+      if(m <= 2) return 1;
+      return Math.ceil(m / pageW()) + 1;
     }
+    function current(){
+      var n = pages();
+      if(track.scrollLeft >= maxScroll() - 2) return n - 1;
+      return Math.min(Math.round(track.scrollLeft / pageW()), n - 1);
+    }
+
+    function buildDots(){
+      dotsWrap.innerHTML = '';
+      var n = pages();
+      if(n < 2) return;                     // nothing to page through
+      for(var i=0; i<n; i++){
+        var b = document.createElement('button');
+        b.className = 'dot' + (i===0 ? ' is-active' : '');
+        b.setAttribute('aria-label', 'Page ' + (i+1) + ' of ' + n);
+        (function(idx){ b.addEventListener('click', function(){ goTo(idx); }); })(i);
+        dotsWrap.appendChild(b);
+      }
+    }
+    function goTo(i){ track.scrollTo({ left: i * pageW(), behavior: 'smooth' }); }
+    function sync(){
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= maxScroll() - 2;
+      var d = Array.prototype.slice.call(dotsWrap.children);
+      if(!d.length) return;
+      var c = current();
+      d.forEach(function(x, i){ x.classList.toggle('is-active', i === c); });
+    }
+
+    prev.addEventListener('click', function(){ goTo(Math.max(0, current()-1)); });
+    next.addEventListener('click', function(){ goTo(Math.min(pages()-1, current()+1)); });
+
+    var raf;
+    track.addEventListener('scroll', function(){
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(sync);
+    }, {passive:true});
+
+    // keyboard — only when this slider crosses the viewport midline, so the
+    // two card sliders and the photo slideshow can't all fire on one keypress
+    document.addEventListener('keydown', function(e){
+      if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var r = track.getBoundingClientRect();
+      var mid = window.innerHeight / 2;
+      if(r.top > mid || r.bottom < mid) return;
+      if(document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+      if(e.key === 'ArrowRight' && !next.disabled){ e.preventDefault(); goTo(Math.min(pages()-1, current()+1)); }
+      if(e.key === 'ArrowLeft'  && !prev.disabled){ e.preventDefault(); goTo(Math.max(0, current()-1)); }
+    });
+
+    var rt;
+    window.addEventListener('resize', function(){
+      clearTimeout(rt);
+      rt = setTimeout(function(){ buildDots(); sync(); }, 150);
+    });
+
+    buildDots(); sync();
   }
-  function goTo(i){
-    track.scrollTo({ left: i * pageW(), behavior: 'smooth' });
-  }
-  function sync(){
-    prev.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft >= maxScroll() - 2;
-    var d = Array.prototype.slice.call(dotsWrap.children);
-    if(!d.length) return;
-    var c = current();
-    d.forEach(function(x, i){ x.classList.toggle('is-active', i === c); });
-  }
 
-  prev.addEventListener('click', function(){ goTo(Math.max(0, current()-1)); });
-  next.addEventListener('click', function(){ goTo(Math.min(pages()-1, current()+1)); });
-
-  var raf;
-  track.addEventListener('scroll', function(){
-    cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(sync);
-  }, {passive:true});
-
-  // keyboard — only when the slider is what you're actually looking at.
-  // (the photo slideshow up the page also binds arrows; requiring the
-  //  viewport midline keeps the two from firing on the same keypress)
-  document.addEventListener('keydown', function(e){
-    if(e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    var r = track.getBoundingClientRect();
-    var mid = window.innerHeight / 2;
-    if(r.top > mid || r.bottom < mid) return;
-    if(document.activeElement && /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
-    if(e.key === 'ArrowRight' && !next.disabled){ e.preventDefault(); goTo(Math.min(pages()-1, current()+1)); }
-    if(e.key === 'ArrowLeft'  && !prev.disabled){ e.preventDefault(); goTo(Math.max(0, current()-1)); }
-  });
-
-  var rt;
-  window.addEventListener('resize', function(){
-    clearTimeout(rt);
-    rt = setTimeout(function(){ buildDots(); sync(); }, 150);
-  });
-
-  buildDots(); sync();
+  makeSlider('ptrack', 'pPrev', 'pNext', 'pDots');   // Prints & Wallpapers
+  makeSlider('etrack', 'ePrev', 'eNext', 'eDots');   // Emberwild
 })();
+
 </script>
 </body>
 </html>
