@@ -1,0 +1,5 @@
+# high-res photo masters (kept locally / delivered via zip, not needed on the site)
+orig-*.jpg
+# reel-card build temp
+promo/reels/*/_cards.html
+promo/reels/*/_shot.js
