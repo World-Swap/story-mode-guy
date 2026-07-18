@@ -44,7 +44,9 @@
   --twilight:#282834;
   --dusk:#1f1f29;
   --signal-blue:#41a1cf;
-  --cerulean:#0081c0;
+  --cerulean:#0081c0;   /* unused since the World Swap card was removed — kept as a
+                           palette token; it's the reserved atmospheric surface if a
+                           full-bleed feature card ever comes back */
 
   /* ---- Type ---- */
   --serif:'Fraunces', Georgia, 'Times New Roman', serif;
@@ -399,37 +401,6 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 }
 
 /* ============================================================
-   WORLD SWAP — the single Cerulean atmospheric moment
-   ============================================================ */
-.feature{
-  position:relative;
-  display:block;
-  text-decoration:none;
-  border-radius:var(--r-surface);
-  background:var(--cerulean);
-  color:#fff;
-  overflow:hidden;
-  box-shadow:rgba(0,0,0,0.06) 0px 2px 2px 0px, rgba(0,0,0,0.04) 0px 0px 0px 5px;
-  transition:transform .18s ease;
-}
-.feature:hover{ transform:translateY(-2px); }
-.feature::before,.feature::after{ pointer-events:none; }
-.feature::before{ content:""; position:absolute; inset:0;
-  background:
-    radial-gradient(80% 90% at 88% 10%, rgba(255,255,255,0.22), rgba(255,255,255,0) 55%),
-    radial-gradient(70% 80% at 6% 100%, rgba(0,40,70,0.4), rgba(0,40,70,0) 60%); }
-.feature::after{ content:""; position:absolute; inset:0; opacity:0.35; mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-.feature-inner{ position:relative; z-index:1; padding:80px; max-width:640px; }
-.feature .eyebrow{ color:rgba(255,255,255,0.8); }
-.feature h2{ color:#fff; font-size:clamp(40px,6vw,64px); line-height:1.03; letter-spacing:-0.02em; margin:0 0 20px 0; }
-.feature p{ font-size:18px; color:rgba(255,255,255,0.9); line-height:1.55; margin:0 0 32px 0; max-width:44ch; }
-@media (max-width:720px){ .feature-inner{ padding:40px 28px; } }
-
-/* ============================================================
-   SHOP — product cards
-   ============================================================ */
-/* ============================================================
    SHOP — Emberwild episode cards (layout via .strack)
    ============================================================ */
 .card{
@@ -523,7 +494,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
     <div class="nav-links">
       <a href="#photography">Photography</a>
       <a href="#prints">Prints</a>
-      <a href="#worldswap">World Swap</a>
+      <a href="https://worldswap.store" target="_blank" rel="noopener">World Swap</a>
       <a href="#shop">Shop</a>
       <a href="#feed">The Feed</a>
     </div>
@@ -725,20 +696,6 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   </div>
 </section>
 
-<!-- ========================= WORLD SWAP (FEATURED) ========================= -->
-<section class="chapter" id="worldswap">
-  <div class="wrap">
-    <a class="feature" href="https://worldswap.store" target="_blank" rel="noopener">
-      <div class="feature-inner">
-        <p class="eyebrow">Featured · Escrow marketplace</p>
-        <h2>World Swap</h2>
-        <p>A marketplace for buying goods and hiring people, paid in stablecoins. Every payment locks in escrow until you get exactly what you paid for — no bank, no chargebacks, open worldwide.</p>
-        <span class="btn btn-onblue">Enter World Swap <span class="arrow">→</span></span>
-      </div>
-    </a>
-  </div>
-</section>
-
 <!-- ========================= CH.02 SHOP ========================= -->
 <section class="chapter" id="shop">
   <div class="wrap">
@@ -898,7 +855,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <div class="foot-col">
         <h4>Explore</h4>
         <a href="#photography">Photography</a>
-        <a href="#worldswap">World Swap</a>
+        <a href="https://worldswap.store" target="_blank" rel="noopener">World Swap</a>
         <a href="#shop">Shop</a>
         <a href="#feed">The Feed</a>
       </div>
