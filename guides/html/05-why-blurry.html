@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Why Are My Photos Blurry? — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #9f1239;
+  --accent2: #e11d48;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">FIX-IT GUIDE</div>
+    <div style="margin-top:auto"></div>
+    <h1>Why Are My Photos Blurry?</h1>
+    <div class="rule"></div>
+    <div class="sub">The Complete Fix-It Guide to Tack-Sharp Images</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$22 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">The Complete Fix-It Guide to Tack-Sharp Images. Written for frustrated hobbyists whose shots keep coming out soft.</div>
+  <ol><li><span class="t">Blurry Photos Are a Solvable Problem</span></li><li><span class="t">The Three Kinds of Blur</span></li><li><span class="t">Blur #1 — Camera Shake</span></li><li><span class="t">Blur #2 — Subject Motion</span></li><li><span class="t">Blur #3 — Missed Focus</span></li><li><span class="t">The Low-Light Trap</span></li><li><span class="t">When It's the Lens, Not You</span></li><li><span class="t">Can Editing Save a Blurry Photo?</span></li><li><span class="t">The 60-Second Blur Diagnostic</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Blurry Photos Are a Solvable Problem</h1>
+<p class="lead-in">You spent real money on a camera, and somehow your phone still takes sharper pictures. It is the single most demoralizing thing in early photography — and it is almost always caused by one of just three things. This guide teaches you to name the blur, fix its cause, and never guess again.</p>
+
+<p>Here is the good news, stated plainly: <strong>sharpness is a technical problem, not a talent problem.</strong> Blur is caused by physics you can see and control — the camera moved, the subject moved, or the lens focused on the wrong spot. Once you can tell those three apart in a heartbeat, you fix soft photos on the spot instead of discovering them, ruined, back at home.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Every blurry photo is camera shake, subject motion, or missed focus — and each has a different, reliable fix.</p></div>
+
+<h2>How to use this guide</h2>
+<p>Read Chapter 2 first — it teaches the 10-second diagnosis that the rest of the book depends on. Then jump to whichever chapter matches the kind of blur you keep getting. The final chapter is a printable one-page flowchart; keep it on your phone for the field.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with any camera</div><p>Everything here applies to DSLRs, mirrorless cameras, and phones. Where a setting has a different name on different brands, we say so. You do not need new gear to get sharp photos — you need to change what you are doing with the gear you own.</p></div>
+
+<h1><span class="n">CHAPTER 1</span>The Three Kinds of Blur</h1>
+<p>Before you can fix a soft photo, you have to know <em>why</em> it is soft. There are exactly three causes, and they leave different fingerprints in the image. Learn to read those fingerprints and you have solved 90% of the problem.</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🤝 Camera Shake</div><p><strong>Whole frame</strong> is soft or smeared, often in one direction. Caused by your hands moving during the exposure.</p></div>
+  <div class="card"><div class="ch">🏃 Subject Motion</div><p>Background is <strong>sharp</strong>, but the moving thing (kid, dog, car) is streaked. The camera was still; the subject wasn't.</p></div>
+  <div class="card"><div class="ch">🎯 Missed Focus</div><p>Part of the frame is <strong>tack sharp</strong> — just not your subject. The lens locked onto the wrong distance.</p></div>
+</div>
+
+<h2>The 10-second diagnosis</h2>
+<p>Zoom to 100% on the back of the camera (or pinch-zoom on your phone) and ask three questions in order:</p>
+<ol class="steps">
+  <li><span class="sh">Is <em>anything</em> in the frame perfectly sharp?</span> If yes, your camera held still and your focus system worked — the problem is subject motion. If no, keep going.</li>
+  <li><span class="sh">Is the whole frame evenly soft, sometimes with a directional smear?</span> That is camera shake. Your hands (or the tripod) moved.</li>
+  <li><span class="sh">Is something sharp, but it's the wrong thing — the ear instead of the eye, the fence instead of the face?</span> That is missed focus.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The fastest tell of all</div><p>Look at bright pinpoints of light or specular highlights (catchlights in eyes, streetlights, sun sparkle). A sharp photo renders them as crisp dots. Camera shake stretches them into short lines. Subject motion streaks only the moving object's highlights while the background's stay as dots.</p></div>
+
+<table>
+  <tr><th>Fingerprint in the photo</th><th>Cause</th><th>Jump to</th></tr>
+  <tr><td>Everything soft; highlights become short streaks</td><td>Camera shake</td><td>Chapter 2</td></tr>
+  <tr><td>Background sharp; subject streaked</td><td>Subject motion</td><td>Chapter 3</td></tr>
+  <tr><td>Wrong plane sharp (ear not eye)</td><td>Missed focus</td><td>Chapter 4</td></tr>
+  <tr><td>Uniformly hazy, low-contrast, no crisp anything</td><td>Dirty lens / diffraction / cheap glass</td><td>Chapter 6</td></tr>
+</table>
+
+<h1><span class="n">CHAPTER 2</span>Blur #1 — Camera Shake</h1>
+<p>Camera shake is the most common cause of soft photos, and the easiest to eliminate. It happens when the shutter stays open long enough for your unavoidable hand-tremor to register as movement across the sensor. The fix is a fast enough shutter speed — and knowing what "fast enough" actually means.</p>
+
+<h2>The reciprocal rule</h2>
+<p>Your shutter speed should be <strong>at least 1 divided by your focal length</strong> when handholding. Shooting at 50mm? Use 1/50s or faster. At 200mm? You need 1/200s or faster, because longer lenses magnify shake just like they magnify the subject.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The crop-sensor correction</div><p>If your camera has a crop sensor (most entry-level bodies do), multiply the focal length by your crop factor first — 1.5× for most brands, 1.6× for Canon. A 50mm lens on a crop body behaves like 75mm, so you want 1/80s, not 1/50s. When in doubt, round up.</p></div>
+
+<div class="recipe">
+  <div class="rh"><span>Safe handheld shutter speeds</span><span class="tag">STARTING POINTS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">24mm → <b>1/40s</b></span><span class="chip">35mm → <b>1/60s</b></span><span class="chip">50mm → <b>1/80s</b></span><span class="chip">85mm → <b>1/125s</b></span><span class="chip">135mm → <b>1/200s</b></span><span class="chip">200mm → <b>1/320s</b></span></div>
+    <p class="small">These assume a still subject. Any human that might breathe, sway, or blink? Double it — 1/125s minimum for portraits.</p>
+  </div>
+</div>
+
+<h2>When you can't get a fast shutter</h2>
+<p>Indoors or at dusk, there simply isn't enough light for a fast shutter at a reasonable exposure. You have three levers, in order of preference:</p>
+<ol class="steps">
+  <li><span class="sh">Open your aperture.</span> A lower f-number (f/2.8, f/1.8) lets in more light, letting you keep the shutter fast. This is why a cheap "nifty fifty" f/1.8 lens is the best anti-blur upgrade you can buy.</li>
+  <li><span class="sh">Raise your ISO.</span> A little noise from ISO 3200 beats a blurry photo every time. A grainy sharp shot is usable; a clean blurry one is trash.</li>
+  <li><span class="sh">Add support.</span> Brace against a wall, plant your elbows, or set the camera on a solid surface. Every point of contact steals shake.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Turn on stabilization — but know its limit</div><p>In-body (IBIS) or in-lens stabilization buys you 2–5 stops of slower shutter for <em>shake</em>. It does nothing for subject motion. And turn it <strong>off</strong> when you're on a tripod — on some systems it hunts for movement that isn't there and adds blur.</p></div>
+
+<h2>Handholding technique that actually helps</h2>
+<ul class="check">
+  <li>Left hand cradles the lens from underneath, not gripping the side.</li>
+  <li>Elbows tucked into your ribs to form a tripod with your torso.</li>
+  <li>Exhale slowly and squeeze the shutter at the bottom of the breath.</li>
+  <li>Shoot a quick burst of three — the middle frame is often the sharpest.</li>
+  <li>Use the 2-second self-timer when the camera is resting on something.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 3</span>Blur #2 — Subject Motion</h1>
+<p>Your toddler is a beautiful streak. The dog's face is a smear on an otherwise crisp lawn. This is subject motion: the camera was rock-steady, but your subject moved across the frame faster than the shutter could freeze it. The only cure is a faster shutter speed — fast enough for how quickly the subject is actually moving.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Shutter speeds to freeze motion</span><span class="tag">FIELD-TESTED</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Portrait, still → <b>1/125s</b></span><span class="chip">Walking kids → <b>1/250s</b></span><span class="chip">Playing pets → <b>1/500s</b></span><span class="chip">Running / sports → <b>1/1000s</b></span><span class="chip">Birds, cars → <b>1/2000s</b></span></div>
+    <p class="small">Motion across the frame needs a faster shutter than motion toward you. A car crossing left-to-right smears far more than one driving at you at the same speed.</p>
+  </div>
+</div>
+
+<h2>The setup that never misses moving subjects</h2>
+<ol class="steps">
+  <li><span class="sh">Switch to Shutter Priority (S or Tv).</span> You pick the freezing shutter speed; the camera handles the rest of the exposure.</li>
+  <li><span class="sh">Set Auto ISO with a ceiling.</span> This keeps your fast shutter even as light changes, only raising ISO as needed. Cap it (say ISO 6400) so noise never runs away.</li>
+  <li><span class="sh">Use continuous autofocus + burst mode.</span> Continuous AF (AF-C / AI Servo) tracks the subject as it moves; burst gives you several frames to pick the peak moment.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Pan for a creative save</div><p>Can't get enough shutter to freeze a moving subject? Do the opposite: use a <em>slow</em> shutter (1/30s) and swing the camera to follow the subject. The subject stays sharp while the background blurs into speed-lines. It takes practice, but it turns a limitation into a signature look.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Blur #3 — Missed Focus</h1>
+<p>This is the sneaky one. The photo <em>is</em> sharp — the camera and subject both held still — but the sharp plane landed on the wrong spot. The tip of the nose instead of the eyes. The collar instead of the face. Missed focus is a settings-and-technique problem, and once you fix your autofocus setup it mostly disappears.</p>
+
+<h2>Stop letting the camera choose the focus point</h2>
+<p>Out of the box, most cameras use <strong>automatic area AF</strong> — they pick what to focus on for you, and they usually pick the closest, highest-contrast object. That's why they nail the fence and miss the face. Take the wheel:</p>
+
+<ol class="steps">
+  <li><span class="sh">Switch to Single-Point AF.</span> Now <em>you</em> choose one focus point and place it exactly where sharpness matters most.</li>
+  <li><span class="sh">Put that point on the eye.</span> For any living subject, the near eye is the target. Sharp eyes read as a sharp photo even if the ears go soft.</li>
+  <li><span class="sh">If your camera has Eye-AF, turn it on.</span> Modern mirrorless bodies detect and lock onto eyes automatically — it's the biggest sharpness upgrade of the last decade.</li>
+</ol>
+
+<h2>Choose the right focus mode for the situation</h2>
+<table>
+  <tr><th>Situation</th><th>Focus mode</th><th>Why</th></tr>
+  <tr><td>Still subject (portrait, product, landscape)</td><td>Single AF (AF-S / One-Shot)</td><td>Locks focus once, then holds it while you recompose</td></tr>
+  <tr><td>Moving subject (kids, pets, sports)</td><td>Continuous AF (AF-C / AI Servo)</td><td>Re-focuses continuously as distance changes</td></tr>
+  <tr><td>Mixed / unpredictable</td><td>Auto-servo (AF-A) or continuous</td><td>Camera switches as needed; continuous is the safer default</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The focus-and-recompose trap</div><p>Locking focus on a close subject and then swinging the camera to reframe can shift the sharp plane off your subject — especially at wide apertures like f/1.8. For close portraits, move your focus point instead of recomposing, or use back-button focus (below).</p></div>
+
+<h2>Back-button focus: the pro habit</h2>
+<p>By default your shutter button does two jobs — focus <em>and</em> fire — which fight each other. Back-button focus moves focusing to a dedicated thumb button (often labeled AF-ON), leaving the shutter to only take the picture.</p>
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Why it makes you sharper</div><p>You focus once with your thumb, then fire as many frames as you like without the camera re-hunting. For moving subjects, you hold the button and it tracks continuously; release, and focus locks. It feels strange for a day, then you never go back. Set it in your menu under "AF activation" or "custom buttons."</p></div>
+
+<h1><span class="n">CHAPTER 5</span>The Low-Light Trap</h1>
+<p>Notice a pattern? Every fix so far comes back to <strong>needing a faster shutter</strong> — and the enemy of a fast shutter is darkness. This is why the same person who takes sharp photos outdoors gets nothing but mush at a birthday party indoors. Low light forces the camera to slow the shutter to gather enough light, and a slow shutter reintroduces both kinds of movement blur.</p>
+
+<div class="key"><div class="kt">The core tradeoff</div><p>In low light you must trade a little noise (high ISO) for sharpness. A grainy sharp photo is a keeper. A clean blurry one is deleted.</p></div>
+
+<h2>Your low-light anti-blur checklist</h2>
+<ul class="check">
+  <li>Open the aperture all the way (lowest f-number your lens allows).</li>
+  <li>Raise ISO without fear — 3200, 6400, even higher. Modern sensors handle it.</li>
+  <li>Keep the shutter at your minimum safe speed (1/125s for people).</li>
+  <li>Use Auto ISO with a shutter floor so the camera never dips below that.</li>
+  <li>Find the light — position people near a window or under a lamp.</li>
+  <li>Steady yourself against something solid for the extra margin.</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>The one purchase worth making</div><p>If low-light blur is your recurring problem, a fast prime lens (50mm f/1.8, often under $150) gathers roughly 8× more light than a typical kit zoom at the same focal length. It is the highest-impact, lowest-cost sharpness upgrade in photography.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>When It's the Lens, Not You</h1>
+<p>Sometimes you did everything right and photos are still a little hazy — low contrast, never quite crisp. That's not movement or focus; it's the optics. These causes are rarer, but worth ruling out.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">🧽 Dirty front element</div><p>Fingerprints, dust, and haze scatter light and kill contrast. Check the glass in raking light; clean gently with a microfiber cloth. This fixes more "soft lenses" than people admit.</p></div>
+  <div class="card solid"><div class="ch">🔬 Diffraction</div><p>Stopping down past f/11–f/16 actually <em>softens</em> the whole frame on most lenses. For maximum sharpness, live around f/5.6–f/8 — the "sweet spot" of nearly every lens.</p></div>
+  <div class="card solid"><div class="ch">📏 Too close to focus</div><p>Every lens has a minimum focusing distance. Get closer than that and it simply can't lock on. Back up a step, or use a macro lens for tiny subjects.</p></div>
+  <div class="card solid"><div class="ch">🪟 Shooting through glass/UV filter</div><p>A cheap protective filter or a dirty window adds a haze layer. Remove the filter to test; clean or open the window.</p></div>
+</div>
+
+<h1><span class="n">CHAPTER 7</span>Can Editing Save a Blurry Photo?</h1>
+<p>Partly — and it's important to know the honest limits before you rely on it.</p>
+<p>Sharpening in Lightroom, Photoshop, or your phone's editor increases <em>edge contrast</em> to make an already-focused photo look crisper. It cannot invent detail that the lens never recorded. AI "super-resolution" and deblur tools have gotten genuinely good and can rescue a mildly soft shot, but they guess at missing detail and fall apart on badly blurred images.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>The realistic rule</div><p>Editing can turn a <em>slightly</em> soft photo into an acceptable one. It cannot turn a motion-smeared or badly-missed-focus photo into a sharp one. Get it right in the camera; treat editing as polish, not rescue.</p></div>
+
+<h2>A safe sharpening starting point</h2>
+<ul class="check">
+  <li>Apply sharpening last, after all other edits, viewing at 100%.</li>
+  <li>Add a touch of clarity/texture for perceived crispness — a little goes far.</li>
+  <li>Mask sharpening to edges only, so you don't amplify noise in smooth areas.</li>
+  <li>Export at the final size; downsizing a large image hides minor softness.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 8</span>The 60-Second Blur Diagnostic</h1>
+<p>Tape this to your camera bag. When a photo comes out soft, walk the flowchart and you'll know the fix before your next shot.</p>
+
+<ol class="steps">
+  <li><span class="sh">Is anything sharp? → No.</span> Camera shake or too-slow shutter. Raise shutter to the reciprocal rule, open aperture, raise ISO, or add support.</li>
+  <li><span class="sh">Background sharp, subject streaked?</span> Subject motion. Switch to Shutter Priority, pick a freezing speed from the chart, use continuous AF + burst.</li>
+  <li><span class="sh">Wrong thing sharp (ear not eye)?</span> Missed focus. Single-point AF on the eye, or turn on Eye-AF; match AF mode to whether the subject moves.</li>
+  <li><span class="sh">Everything hazy and low-contrast?</span> Optics. Clean the lens, shoot at f/5.6–f/8, check minimum focus distance, remove cheap filters.</li>
+  <li><span class="sh">Indoors or at night and it's always soft?</span> The low-light trap. Fast prime lens, high ISO, Auto ISO with a shutter floor, move toward the light.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your practice drill this week</div><p>Shoot the same still object at 1/15s, 1/60s, 1/250s, and 1/1000s handheld. Then shoot a walking friend at each speed. Compare at 100%. In fifteen minutes you'll <em>feel</em> exactly where your personal shake limit is and what it takes to freeze a person — knowledge no chart can give you.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Sharpness isn't luck. Name the blur, apply its fix, and every soft photo becomes a problem you already know how to solve.</p></div>
+
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Photography guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

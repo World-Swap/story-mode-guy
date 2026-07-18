@@ -1,0 +1,117 @@
+{
+  "brand": "Story Mode Guy",
+  "site": "storymodeguy.com",
+  "year": "2026",
+  "guides": [
+    {
+      "id": "01-iphone-photography",
+      "kicker": "SMARTPHONE PHOTOGRAPHY",
+      "title": "Pro Photos From Your Pocket",
+      "subtitle": "The Complete iPhone & Smartphone Photography Guide",
+      "price": "$34",
+      "accent": "#0f766e",
+      "accent2": "#14b8a6",
+      "reader": "Anyone with a phone who wants photos that look like a camera took them",
+      "short": "Pro Photos From Your Pocket"
+    },
+    {
+      "id": "02-lightroom-blueprint",
+      "kicker": "PHOTO EDITING",
+      "title": "The Lightroom Blueprint",
+      "subtitle": "From Flat RAW to Finished Photo in Minutes",
+      "price": "$37",
+      "accent": "#1d4ed8",
+      "accent2": "#3b82f6",
+      "reader": "Photographers whose edits look muddy, flat, or inconsistent",
+      "short": "The Lightroom Blueprint"
+    },
+    {
+      "id": "03-product-photography",
+      "kicker": "SELL MORE ONLINE",
+      "title": "Product Photos That Sell",
+      "subtitle": "Shoot-at-Home Photography for Etsy & Small Shops",
+      "price": "$34",
+      "accent": "#b45309",
+      "accent2": "#f59e0b",
+      "reader": "Etsy, Shopify & Amazon sellers photographing their own products",
+      "short": "Product Photos That Sell"
+    },
+    {
+      "id": "04-exposure-manual-mode",
+      "kicker": "CAMERA FUNDAMENTALS",
+      "title": "Master Your Camera in a Weekend",
+      "subtitle": "The Exposure Triangle & Manual Mode, Made Simple",
+      "price": "$27",
+      "accent": "#7c2d12",
+      "accent2": "#ea580c",
+      "reader": "New DSLR & mirrorless owners intimidated by the mode dial",
+      "short": "Master Your Camera in a Weekend"
+    },
+    {
+      "id": "05-why-blurry",
+      "kicker": "FIX-IT GUIDE",
+      "title": "Why Are My Photos Blurry?",
+      "subtitle": "The Complete Fix-It Guide to Tack-Sharp Images",
+      "price": "$22",
+      "accent": "#9f1239",
+      "accent2": "#e11d48",
+      "reader": "Frustrated hobbyists whose shots keep coming out soft",
+      "short": "Why Are My Photos Blurry?"
+    },
+    {
+      "id": "06-real-estate-photography",
+      "kicker": "START A SIDE INCOME",
+      "title": "Real Estate & Airbnb Photography",
+      "subtitle": "The Beginner's System for Bright, Sellable Interiors",
+      "price": "$39",
+      "accent": "#0e7490",
+      "accent2": "#06b6d4",
+      "reader": "Aspiring side-hustlers and hosts shooting their own listings",
+      "short": "Real Estate & Airbnb Photography"
+    },
+    {
+      "id": "07-natural-light-portraits",
+      "kicker": "PEOPLE PHOTOGRAPHY",
+      "title": "Natural-Light Portraits & Posing",
+      "subtitle": "Flattering Light and Relaxed Poses, Every Time",
+      "price": "$29",
+      "accent": "#7e22ce",
+      "accent2": "#a855f7",
+      "reader": "Hobbyists photographing family, friends, and clients",
+      "short": "Natural-Light Portraits & Posing"
+    },
+    {
+      "id": "08-astrophotography",
+      "kicker": "NIGHT SKY",
+      "title": "Astrophotography for Beginners",
+      "subtitle": "Shoot the Milky Way & Stars With Any Camera",
+      "price": "$39",
+      "accent": "#3730a3",
+      "accent2": "#6366f1",
+      "reader": "Landscape and travel shooters chasing the night sky",
+      "short": "Astrophotography for Beginners"
+    },
+    {
+      "id": "09-low-light-night",
+      "kicker": "AFTER DARK",
+      "title": "Low-Light & Night Photography",
+      "subtitle": "Sharp, Clean Photos When the Sun Goes Down",
+      "price": "$27",
+      "accent": "#1e293b",
+      "accent2": "#0ea5e9",
+      "reader": "Beginners shooting concerts, cities, and indoor events",
+      "short": "Low-Light & Night Photography"
+    },
+    {
+      "id": "10-cheat-sheet-pack",
+      "kicker": "FIELD REFERENCE",
+      "title": "The Photographer's Cheat-Sheet Pack",
+      "subtitle": "Grab-and-Go Cards for Every Shooting Situation",
+      "price": "$17",
+      "accent": "#166534",
+      "accent2": "#22c55e",
+      "reader": "New camera owners who want a printable field reference",
+      "short": "The Photographer's Cheat-Sheet Pack"
+    }
+  ]
+}
