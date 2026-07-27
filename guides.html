@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guides — Story Mode Guy</title>
+<meta name="description" content="Premium PDF guides from Story Mode Guy — photography from every angle, plus a five-week office overhaul for trades businesses. Instant downloads.">
+<link rel="canonical" href="https://storymodeguy.com/guides.html">
+<link rel="icon" type="image/png" href="smg-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Story Mode Guy">
+<meta property="og:url" content="https://storymodeguy.com/guides.html">
+<meta property="og:title" content="Guides — Story Mode Guy">
+<meta property="og:description" content="Eleven premium PDF guides — iPhone photography, Lightroom, portraits, astro, low-light, and more, plus The Contractor's Office Fix.">
+<meta property="og:image" content="https://storymodeguy.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guides — Story Mode Guy">
+<meta name="twitter:description" content="Eleven premium PDF guides, instant download.">
+<meta name="twitter:image" content="https://storymodeguy.com/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#fefffc; --paper:#ffffff; --linen:#f9faf7;
+  --graphite:#2c2c2c; --charcoal:#444141; --ash:#646464;
+  --fog:#b4b8b4; --mist:#dee2de; --twilight:#282834; --dusk:#1f1f29;
+  --signal-blue:#41a1cf;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --r-btn:8px; --r-card:12px; --r-card-lg:16px; --r-surface:24px; --r-pill:50px;
+  --sh-nav:rgba(0,0,0,0.15) 0px 2px 6px 0px;
+  --sh-card:rgba(0,0,0,0.08) 0px 1px 1px 0px, rgba(0,0,0,0.08) 0px 4px 5px 0px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; background:var(--parchment); color:var(--charcoal); font-family:var(--sans);
+  font-size:16px; line-height:1.5; letter-spacing:-0.01em; -webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:var(--serif); font-weight:400; color:var(--graphite); margin:0; font-feature-settings:"liga" 0;}
+a{color:inherit; text-decoration:none;}
+img{display:block; max-width:100%;}
+.wrap{max-width:1200px; margin:0 auto; padding:0 24px;}
+.eyebrow{font-size:13px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--ash); margin:0 0 18px;}
+.nav-wrap{position:fixed; top:18px; left:0; right:0; z-index:50; display:flex; justify-content:center; padding:0 16px; pointer-events:none;}
+.nav{pointer-events:auto; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.55);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(40,40,52,0.5);
+  border-radius:var(--r-pill); padding:7px 8px 7px 16px; box-shadow:var(--sh-nav);}
+.brand{display:flex; align-items:center; gap:9px; margin-right:6px;}
+.brand-logo{width:30px; height:30px; border-radius:50%;}
+.brand-name{font-family:var(--serif); font-size:16px; color:var(--graphite); white-space:nowrap;}
+.nav-links{display:flex; align-items:center; gap:2px;}
+.nav-links a{font-size:15px; font-weight:500; color:var(--charcoal); padding:7px 12px; border-radius:var(--r-pill); white-space:nowrap;}
+.nav-links a:hover{background:rgba(40,40,52,0.06);}
+.btn{display:inline-flex; align-items:center; gap:9px; font-size:15px; font-weight:500; border-radius:var(--r-btn);
+  padding:8px 16px; border:1px solid transparent; cursor:pointer; transition:background-color .18s ease;}
+.btn .arrow{display:inline-flex; align-items:center; justify-content:center; width:18px; height:18px; border-radius:50%;
+  border:1px solid currentColor; font-size:11px; line-height:1;}
+.btn-primary{color:var(--signal-blue); border-color:var(--signal-blue);}
+.btn-primary:hover{background:rgba(65,161,207,0.08);}
+@media (max-width:860px){ .nav-links{display:none;} }
+.head{padding:150px 0 48px;}
+.head h1{font-size:clamp(40px,6vw,64px); line-height:1.05; letter-spacing:-0.02em; margin-bottom:16px;}
+.head p{font-size:18px; color:var(--ash); max-width:56ch; margin:0;}
+.pgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:32px 0 80px;}
+@media (max-width:1000px){ .pgrid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:620px){ .pgrid{grid-template-columns:1fr; max-width:440px;} }
+.pcard{ display:flex; flex-direction:column; background:var(--paper); border:1px solid var(--mist); border-radius:var(--r-card-lg); overflow:hidden; box-shadow:var(--sh-card); text-decoration:none; transition:transform .18s ease; }
+.pcard:hover{ transform:translateY(-3px); }
+.pcard .pcover{ aspect-ratio:2/3; background:var(--linen); border-bottom:1px solid var(--mist); }
+.pcard .pcover img{ width:100%; height:100%; object-fit:cover; display:block; }
+.pcard .pbody{ padding:20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.pcard .kicker{ font-size:13px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--ash); }
+.pcard h3{ font-size:24px; line-height:1.2; letter-spacing:-0.01em; }
+.pcard p{ font-size:15px; color:var(--ash); margin:0; flex:1; }
+.pcard .pfoot{ display:flex; align-items:center; justify-content:space-between; margin-top:12px; gap:12px; }
+.pcard .price{ font-family:var(--serif); font-size:22px; color:var(--graphite); }
+.pcard .card-link{ font-size:15px; font-weight:500; color:var(--signal-blue); display:inline-flex; align-items:center; gap:6px; }
+.bundle{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:32px; flex-wrap:wrap;
+  background:var(--linen);
+  border:1px solid var(--mist);
+  border-radius:var(--r-card-lg);
+  padding:32px 36px;
+  margin-bottom:16px;
+  box-shadow:var(--sh-soft);
+  text-decoration:none;
+  transition:transform .18s ease, border-color .18s ease;
+}
+.bundle:hover{ transform:translateY(-2px); border-color:var(--fog); }
+.bundle .eyebrow{ margin:0 0 10px 0; }
+.bundle h3{
+  font-family:var(--serif); font-weight:400;
+  font-size:clamp(28px,3.4vw,38px); line-height:1.1;
+  letter-spacing:-0.02em; color:var(--graphite);
+  margin:0 0 10px;
+}
+.bundle-sub{ font-size:16px; color:var(--ash); line-height:1.5; margin:0; max-width:60ch; }
+.bundle-buy{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.bundle-price{ font-family:var(--serif); font-size:34px; color:var(--graphite); line-height:1; }
+.bundle-was{ font-family:var(--serif); font-size:20px; color:var(--fog); text-decoration:line-through; line-height:1; }
+@media (max-width:720px){ .bundle{padding:28px 24px; gap:24px;} .bundle-buy{width:100%;} }
+.footer{background:var(--paper); border-top:1px solid var(--mist); padding:64px 0 40px;}
+.footer h2{font-size:clamp(28px,4vw,40px); line-height:1.1; letter-spacing:-0.02em; max-width:16ch; margin-bottom:32px;}
+.foot-links{display:flex; gap:16px; flex-wrap:wrap;}
+.colophon{margin-top:48px; padding-top:24px; border-top:1px solid var(--mist); font-size:13px; color:var(--fog);}
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="index.html" aria-label="Story Mode Guy — home">
+      <img class="brand-logo" src="smg-logo.png" alt="Story Mode Guy logo">
+      <span class="brand-name">Story Mode Guy</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#photography">Photography</a>
+      <a href="index.html#prints">Prints</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#shop">Shop</a>
+      <a href="index.html#feed">The Feed</a>
+    </div>
+    <a class="btn btn-primary" href="index.html">Back home <span class="arrow">→</span></a>
+  </nav>
+</div>
+
+<header class="wrap head">
+  <p class="eyebrow">Learn the craft</p>
+  <h1>The Guides</h1>
+  <p>Premium PDF guides that fix real problems — photography from every angle, plus a five-week office overhaul for the trades. Instant downloads, delivered to your inbox the moment you buy.</p>
+</header>
+
+<main class="wrap">
+  <a class="bundle" href="https://payhip.com/b/M7qgJ" target="_blank" rel="noopener">
+      <div class="bundle-text">
+        <p class="eyebrow">All ten photography guides · Save $216</p>
+        <h3>The Complete Photography Library</h3>
+        <p class="bundle-sub">Every photography guide I've made — 219 pages covering iPhone photography, Lightroom, portraits, product, real estate, astro, low-light, exposure, sharpness, and a printable cheat-sheet pack. One download.</p>
+      </div>
+      <div class="bundle-buy">
+        <span class="bundle-was">$305</span>
+        <span class="bundle-price">$89</span>
+        <span class="btn btn-primary">Get the library <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+  <div class="pgrid">
+<!-- Guide 01 — iPhone / Smartphone -->
+      <a class="pcard" href="https://payhip.com/b/Hf8YW" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-01.jpg" alt="Pro Photos From Your Pocket — iPhone photography guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">Smartphone Photography</span>
+          <h3>Pro Photos From Your Pocket</h3>
+          <p>Camera-quality photos from the phone in your pocket — lenses, light, composition, editing, and a 30-day challenge.</p>
+          <div class="pfoot"><span class="price">$34</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 02 — Lightroom -->
+      <a class="pcard" href="https://payhip.com/b/1gXQa" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-02.jpg" alt="The Lightroom Blueprint — photo editing guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">Photo Editing</span>
+          <h3>The Lightroom Blueprint</h3>
+          <p>A repeatable order-of-operations that turns flat RAW files into finished photos in minutes.</p>
+          <div class="pfoot"><span class="price">$37</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 03 — Product photography -->
+      <a class="pcard" href="https://payhip.com/b/Ynu1K" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-03.jpg" alt="Product Photos That Sell — product photography guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">Sell More Online</span>
+          <h3>Product Photos That Sell</h3>
+          <p>Shoot-at-home product photos that convert — the $30 setup, lighting, marketplace specs, and a shot list.</p>
+          <div class="pfoot"><span class="price">$34</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 04 — Exposure / Manual mode -->
+      <a class="pcard" href="https://payhip.com/b/1TJzr" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-04.jpg" alt="Master Your Camera in a Weekend — exposure and manual mode guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">Camera Fundamentals</span>
+          <h3>Master Your Camera in a Weekend</h3>
+          <p>Get off Auto for good — the exposure triangle and manual mode made simple, with 12 real-world settings recipes.</p>
+          <div class="pfoot"><span class="price">$27</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 05 — Why blurry -->
+      <a class="pcard" href="https://payhip.com/b/pZADo" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-05.jpg" alt="Why Are My Photos Blurry — sharpness fix-it guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">Fix-It Guide</span>
+          <h3>Why Are My Photos Blurry?</h3>
+          <p>Diagnose the three kinds of blur and fix each one — the complete guide to tack-sharp images.</p>
+          <div class="pfoot"><span class="price">$22</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 06 — Real estate -->
+      <a class="pcard" href="https://payhip.com/b/kPbJX" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-06.jpg" alt="Real Estate and Airbnb Photography guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">Start a Side Income</span>
+          <h3>Real Estate &amp; Airbnb Photography</h3>
+          <p>Bright, sellable interiors and the full system to start a paid real-estate and Airbnb photo side income.</p>
+          <div class="pfoot"><span class="price">$39</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 07 — Natural-light portraits -->
+      <a class="pcard" href="https://payhip.com/b/y8H6g" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-07.jpg" alt="Natural-Light Portraits and Posing guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">People Photography</span>
+          <h3>Natural-Light Portraits &amp; Posing</h3>
+          <p>Flattering natural light and a full posing library so family, friends, and clients never look awkward again.</p>
+          <div class="pfoot"><span class="price">$29</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 08 — Astrophotography -->
+      <a class="pcard" href="https://payhip.com/b/bKhSu" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-08.jpg" alt="Astrophotography for Beginners guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">Night Sky</span>
+          <h3>Astrophotography for Beginners</h3>
+          <p>Shoot the Milky Way and stars with any camera — planning, focusing in the dark, settings, and editing.</p>
+          <div class="pfoot"><span class="price">$39</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 09 — Low-light / night -->
+      <a class="pcard" href="https://payhip.com/b/HYs6z" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-09.jpg" alt="Low-Light and Night Photography guide cover"></div>
+        <div class="pbody">
+          <span class="kicker">After Dark</span>
+          <h3>Low-Light &amp; Night Photography</h3>
+          <p>Sharp, clean photos after dark — cities, concerts, indoor events, and glowing light trails.</p>
+          <div class="pfoot"><span class="price">$27</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 10 — Cheat-sheet pack -->
+      <a class="pcard" href="https://payhip.com/b/lhZE4" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-10.jpg" alt="The Photographer's Cheat-Sheet Pack cover"></div>
+        <div class="pbody">
+          <span class="kicker">Field Reference</span>
+          <h3>The Photographer's Cheat-Sheet Pack</h3>
+          <p>Grab-and-go printable cards for every situation — settings, scene recipes, and a troubleshooting flowchart.</p>
+          <div class="pfoot"><span class="price">$17</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+
+      <!-- Guide 11 — Contractor's Office Fix -->
+      <a class="pcard" href="https://payhip.com/b/ba8nO" target="_blank" rel="noopener">
+        <div class="pcover"><img src="thumb-guide-11.jpg" alt="The Contractor's Office Fix — five-week office systems workbook cover"></div>
+        <div class="pbody">
+          <span class="kicker">For the Trades</span>
+          <h3>The Contractor&rsquo;s Office Fix</h3>
+          <p>Five weeks to same-day estimates, zero missed calls, and your evenings back — a 61-page workbook for HVAC, plumbing &amp; electrical shops.</p>
+          <div class="pfoot"><span class="price">$47</span><span class="card-link">Get it on Payhip →</span></div>
+        </div>
+      </a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <h2>Everything's a story if you shoot it right.</h2>
+    <div class="foot-links">
+      <a class="btn btn-primary" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Browse the full store <span class="arrow">→</span></a>
+      <a class="btn btn-primary" href="index.html#prints">Prints &amp; wallpapers <span class="arrow">→</span></a>
+    </div>
+    <div class="colophon">© 2026 Story Mode Guy · storymodeguy.com · Photography · Ebooks · Film</div>
+  </div>
+</footer>
+
+</body>
+</html>
