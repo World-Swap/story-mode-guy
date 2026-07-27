@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Story Mode Guy — Photography, Ebooks & Film</title>
-<meta name="description" content="Photography, original ebooks, and short films from Story Mode Guy — someone who treats everything like it has a plot.">
+<title>Story Mode Guy — Photography &amp; Guides</title>
+<meta name="description" content="Photography from the Santa Cruz coast — prints, wallpapers, and guides that teach the craft, from someone who treats everything like it has a plot.">
 <link rel="canonical" href="https://storymodeguy.com/">
 <link rel="icon" type="image/png" href="smg-logo.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Story Mode Guy">
 <meta property="og:url" content="https://storymodeguy.com/">
-<meta property="og:title" content="Story Mode Guy — Photography, Ebooks & Film">
-<meta property="og:description" content="Photography, original fantasy ebooks, and short films.">
+<meta property="og:title" content="Story Mode Guy — Photography &amp; Guides">
+<meta property="og:description" content="Photography, prints, wallpapers, and guides that teach the craft.">
 <meta property="og:image" content="https://storymodeguy.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Story Mode Guy — Photography, Ebooks & Film">
-<meta name="twitter:description" content="Photography, original fantasy ebooks, and short films.">
+<meta name="twitter:title" content="Story Mode Guy — Photography &amp; Guides">
+<meta name="twitter:description" content="Photography, prints, wallpapers, and guides that teach the craft.">
 <meta name="twitter:image" content="https://storymodeguy.com/og-image.jpg">
 
 <!-- ============================================================
@@ -44,7 +44,7 @@
   --twilight:#282834;
   --dusk:#1f1f29;
   --signal-blue:#41a1cf;
-  --cerulean:#0081c0;   /* unused since the World Swap card was removed — kept as a
+  --cerulean:#0081c0;   /* unused accent — kept as a
                            palette token; it's the reserved atmospheric surface if a
                            full-bleed feature card ever comes back */
 
@@ -304,7 +304,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 }
 
 /* ============================================================
-   SLIDER — shared by Prints (#prints) and Emberwild (#shop).
+   SLIDER — shared by Prints (#prints) and Guides (#guides).
    Native scroll-snap: the swipe gesture is the browser's.
    JS only drives arrows + dots.
    ============================================================ */
@@ -369,7 +369,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 /* ============================================================
    BUNDLE BAND — a tier above the grid, not a seventh peer.
    Linen + hairline + outlined CTA, so Cerulean stays unique
-   to World Swap.
+
    ============================================================ */
 .bundle{
   display:flex; align-items:center; justify-content:space-between;
@@ -401,7 +401,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 }
 
 /* ============================================================
-   SHOP — Emberwild episode cards (layout via .strack)
+   (legacy card styles, retained)
    ============================================================ */
 .card{
   display:flex; flex-direction:column;
@@ -495,8 +495,6 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <a href="#photography">Photography</a>
       <a href="#prints">Prints</a>
       <a href="#guides">Guides</a>
-      <a href="https://worldswap.store" target="_blank" rel="noopener">World Swap</a>
-      <a href="#shop">Shop</a>
       <a href="#feed">The Feed</a>
     </div>
     <a class="btn btn-primary nav-cta" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Shop <span class="arrow">→</span></a>
@@ -507,12 +505,11 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 <header class="hero" id="top">
   <div class="hero-art" aria-hidden="true"></div>
   <div class="hero-card">
-    <p class="eyebrow">Photography · Ebooks · Film</p>
+    <p class="eyebrow">Photography · Prints · Guides</p>
     <h1>Story Mode Guy</h1>
-    <p class="lead">Real life shot like a film, and whole worlds built from scratch. Photography, original ebooks, and short films from someone who treats everything like it has a plot.</p>
+    <p class="lead">Real life shot like a film. Photography from the Santa Cruz coast, prints and wallpapers you can take home, and guides that teach the craft — from someone who treats everything like it has a plot.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#photography">See the photography <span class="arrow">→</span></a>
-      <a class="btn btn-onblue" href="https://worldswap.store" target="_blank" rel="noopener">Enter World Swap</a>
     </div>
   </div>
 </header>
@@ -802,7 +799,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Learn the craft</p>
-      <h2>Photography Guides</h2>
+      <h2>The Guides</h2>
       <p>Premium guides that fix real problems — photography from every angle, plus a five-week office overhaul for the trades. Instant PDF downloads, delivered to your inbox the moment you buy.</p>
       <p style="margin-top:14px;"><a class="btn btn-primary" href="guides.html">Browse all guides <span class="arrow">→</span></a></p>
     </div>
@@ -958,129 +955,12 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 </section>
 
 <!-- ========================= CH.02 SHOP ========================= -->
-<section class="chapter" id="shop">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Chapter 02 — The Shop</p>
-      <h2>Emberwild</h2>
-      <p>An original illustrated series. Ten episodes so far, each a quick read delivered instantly as a PDF for just $0.99.</p>
-    </div>
-
-    <div class="slider" id="eshow">
-      <div class="strack" id="etrack">
-      <a class="card" href="https://payhip.com/b/bMoJ7" target="_blank" rel="noopener">
-        <div class="cover"><img src="ep-1cover.png" alt="Emberwild Episode One — The Bonding cover"></div>
-        <div class="body">
-          <span class="kicker">Episode One</span>
-          <h3>The Bonding</h3>
-          <p>To bond is to stop being alone. A young Vael makes a first bond with a flame-lynx — the world, its rituals, and a fragile peace.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/hLtPf" target="_blank" rel="noopener">
-        <div class="cover"><img src="ep-2cover.png" alt="Emberwild Episode Two — Strangers in the Reeds cover"></div>
-        <div class="body">
-          <span class="kicker">Episode Two</span>
-          <h3>Strangers in the Reeds</h3>
-          <p>Not the last of their kind. Scattered by fire, the survivors cross unknown lands and learn they are not alone out here.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/Lip5f" target="_blank" rel="noopener">
-        <div class="cover"><img src="ep-3cover.png" alt="Emberwild Episode Three — Old Wounds cover"></div>
-        <div class="body">
-          <span class="kicker">Episode Three</span>
-          <h3>Old Wounds</h3>
-          <p>A wound with two people holding it closed bleeds slower. Grief and ruins that shouldn't exist plant the first seed of the origin mystery.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/9BG6W" target="_blank" rel="noopener">
-        <div class="cover"><img src="ep-4cover.png" alt="Emberwild Episode Four — The Sky Cage cover"></div>
-        <div class="body">
-          <span class="kicker">Episode Four</span>
-          <h3>The Sky Cage</h3>
-          <p>They don't say please. Something comes down out of the night sky with lights and a cage, and the wild stops being the thing to fear.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/z9W8U" target="_blank" rel="noopener">
-        <div class="cover"><img src="ep-5cover.png" alt="Emberwild Episode Five — The Deserter cover" loading="lazy"></div>
-        <div class="body">
-          <span class="kicker">Episode Five</span>
-          <h3>The Deserter</h3>
-          <p>Ash, an Ironfolk defector, confirms from the inside what the Vael only guessed. The Pact is tested on the enemy.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/umiJc" target="_blank" rel="noopener">
-        <div class="cover"><img src="ep-6cover.png" alt="Emberwild Episode Six — The Straight Scar cover" loading="lazy"></div>
-        <div class="body">
-          <span class="kicker">Episode Six</span>
-          <h3>The Straight Scar</h3>
-          <p>Following the geometric cut back to its source. The first real look at Iron Warden Vane and the machine he commands.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/7riO6" target="_blank" rel="noopener">
-        <div class="cover"><img src="ep-7cover.png" alt="Emberwild Episode Seven — The Long Winter cover" loading="lazy"></div>
-        <div class="body">
-          <span class="kicker">Episode Seven</span>
-          <h3>The Long Winter</h3>
-          <p>The gathered tribes starve and doubt Rook. Cinder falls gravely ill, and a chief who won't lie has nothing comforting to say.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/tqn92" target="_blank" rel="noopener">
-        <div class="cover"><img src="ep-8cover.png" alt="Emberwild Episode Eight — The Ruins That Shouldn't Be cover" loading="lazy"></div>
-        <div class="body">
-          <span class="kicker">Episode Eight</span>
-          <h3>The Ruins That Shouldn't Be</h3>
-          <p>Look up. Now look down. Deeper into the impossible ruins, and the origin mystery sharpens into something nobody wanted answered.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/zQWhs" target="_blank" rel="noopener">
-        <div class="cover"><img src="emberwild_ep9_cover_fallen-ring.png" alt="Emberwild Episode Nine — The Fallen Ring cover" loading="lazy"></div>
-        <div class="body">
-          <span class="kicker">Episode Nine</span>
-          <h3>The Fallen Ring</h3>
-          <p>We didn't rise. Something vast came down instead — and the ring that fell rewrites what the survivors thought they were running from.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      <a class="card" href="https://payhip.com/b/lBJZd" target="_blank" rel="noopener">
-        <div class="cover"><img src="emberwild_ep10_cover_sleeping-ones.png" alt="Emberwild Episode Ten — The Sleeping Ones cover" loading="lazy"></div>
-        <div class="body">
-          <span class="kicker">Episode Ten</span>
-          <h3>The Sleeping Ones</h3>
-          <p>They're not dead. That's the problem. Down past the impossible ruins, the sleeping ones wait — and the origin mystery finally opens its eyes.</p>
-          <div class="card-foot"><span class="price">$0.99</span><span class="card-link">Read on Payhip →</span></div>
-        </div>
-      </a>
-      </div>
-
-      <button class="sarrow prev" id="ePrev" aria-label="Previous episodes">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      </button>
-      <button class="sarrow next" id="eNext" aria-label="More episodes">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </button>
-    </div>
-
-    <div class="dots" id="eDots" role="tablist" aria-label="Episode pages"></div>
-
-    <div class="shop-foot">
-      <a class="btn btn-filled" href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Browse everything on Payhip <span class="arrow">→</span></a>
-    </div>
-  </div>
-</section>
 
 <!-- ========================= CH.03 THE FEED ========================= -->
 <section class="chapter" id="feed">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Chapter 03 — The Feed</p>
+      <p class="eyebrow">Chapter 02 — The Feed</p>
       <h2>Where the story continues</h2>
       <p>New scenes daily. Follow along for the video side of the work across every platform.</p>
     </div>
@@ -1134,8 +1014,6 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <div class="foot-col">
         <h4>Explore</h4>
         <a href="#photography">Photography</a>
-        <a href="https://worldswap.store" target="_blank" rel="noopener">World Swap</a>
-        <a href="#shop">Shop</a>
         <a href="#feed">The Feed</a>
       </div>
       <div class="foot-col">
@@ -1148,7 +1026,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <div class="foot-col">
         <h4>Shop &amp; work</h4>
         <a href="https://payhip.com/storymodeguy" target="_blank" rel="noopener">Payhip store</a>
-        <a href="guides.html">Photography guides</a>
+        <a href="guides.html">Guides</a>
         <a href="#prints">Prints &amp; wallpapers</a>
       </div>
       <div class="foot-col">
@@ -1164,7 +1042,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
     </div>
     <div class="colophon">
       <span>© 2026 Story Mode Guy · storymodeguy.com</span>
-      <span>Photography · Ebooks · Film</span>
+      <span>Photography · Prints · Guides</span>
     </div>
   </div>
 </footer>
@@ -1231,7 +1109,7 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   start();
 })();
 
-/* ---------- Card sliders (Prints + Emberwild) ---------- */
+/* ---------- Card sliders (Prints + Guides) ---------- */
 (function(){
   function makeSlider(trackId, prevId, nextId, dotsId){
     var track = document.getElementById(trackId);
@@ -1317,7 +1195,6 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 
   makeSlider('ptrack', 'pPrev', 'pNext', 'pDots');   // Prints & Wallpapers
   makeSlider('gtrack', 'gPrev', 'gNext', 'gDots');   // Photography Guides
-  makeSlider('etrack', 'ePrev', 'eNext', 'eDots');   // Emberwild
 })();
 
 </script>
