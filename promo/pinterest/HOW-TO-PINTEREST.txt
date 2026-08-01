@@ -1,0 +1,20 @@
+Pinterest Pack — how to use it
+==============================
+You have 78 ready-to-pin images (pins/) and pins.csv with a title, description, link, and
+suggested board for each. Pinterest is a slow burn — pins keep sending traffic for years.
+
+SETUP (once):
+1. Use a free Pinterest BUSINESS account (needed for analytics + rich pins).
+2. Create these boards (matches the "Suggested board" column):
+     Santa Cruz Boardwalk · Sunset Wallpapers · Santa Cruz Nature · Santa Cruz Coast
+3. In Pinterest settings, "Claim" your domain storymodeguy.com so pins credit you.
+
+POSTING:
+- Create a Pin → upload the image from pins/ → paste the Title and Description from pins.csv →
+  set the Destination link (all go to your prints/wallpapers) → pick the Suggested board.
+- Pace it: ~5-10 pins/day, not all at once. 78 pins = ~2 weeks of steady pinning.
+- Best times: evenings & weekends. Re-pin your top performers to other boards later.
+
+TIP: link some pins to specific products instead of #prints if you want — e.g. the
+Complete Wallpaper Collection (payhip.com/b/uIdFV). Ask Claude to regenerate the CSV with
+per-product links anytime.
