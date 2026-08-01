@@ -1,0 +1,65 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  @page{ size:1200px 1800px; margin:0; }
+  *{ box-sizing:border-box; margin:0; padding:0; } html,body{ width:1200px; height:1800px; }
+  body{ position:relative; overflow:hidden; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+    color:#fff; background:radial-gradient(120% 90% at 50% 0%, #0c355a 0%, #071f33 55%, #04121e 100%); }
+  .glowA{ position:absolute; width:1000px; height:1000px; border-radius:50%; top:-380px; left:-220px;
+    background:radial-gradient(circle, rgba(56,189,248,.30), transparent 62%); }
+  .glowB{ position:absolute; width:820px; height:820px; border-radius:50%; top:120px; right:-280px;
+    background:radial-gradient(circle, rgba(251,191,36,.16), transparent 62%); }
+  .top{ position:absolute; top:62px; left:0; right:0; text-align:center; z-index:5; }
+  .brandline{ font-size:22px; letter-spacing:.42em; font-weight:700; color:#7dd3fc; text-transform:uppercase; }
+  .head{ position:absolute; top:148px; left:0; right:0; text-align:center; z-index:5; padding:0 84px; }
+  .kicker{ font-size:20px; letter-spacing:.34em; font-weight:700; color:#a7b0bb; text-transform:uppercase; margin-bottom:24px; }
+  h1{ font-family:"Bitstream Charter","Liberation Serif",Georgia,serif; font-weight:800;
+    font-size:100px; line-height:.98; letter-spacing:-1px; margin-bottom:28px; text-shadow:0 4px 30px rgba(0,0,0,.45); }
+  h1 .lib{ color:#38bdf8; }
+  .rule{ width:150px; height:5px; background:#0ea5e9; margin:0 auto 26px; border-radius:3px; }
+  .meta{ font-size:32px; font-weight:600; color:#e8edf1; }
+  .meta b{ color:#38bdf8; }
+  .bonus{ display:inline-block; margin-top:22px; padding:9px 22px; border-radius:40px;
+    background:rgba(56,189,248,.14); border:2px solid rgba(125,211,252,.5); color:#bae6fd;
+    font-size:21px; font-weight:700; }
+  .deck{ position:absolute; left:0; right:0; bottom:128px; height:820px; z-index:3; }
+  .deck .c{ position:absolute; bottom:0; left:50%; width:244px; height:366px; border-radius:13px;
+    overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,.6); border:3px solid rgba(255,255,255,.12); transform-origin:bottom center; }
+  .deck .c img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .foot{ position:absolute; bottom:0; left:0; right:0; height:150px; z-index:6;
+    background:linear-gradient(0deg, rgba(4,12,20,.97), rgba(4,12,20,0));
+    display:flex; align-items:flex-end; justify-content:space-between; padding:0 74px 44px; }
+  .foot .b{ font-size:30px; font-weight:800; }
+  .foot .b span{ display:block; font-size:18px; font-weight:400; color:#8a939d; letter-spacing:.24em; margin-top:4px; }
+  .price{ text-align:right; }
+  .price .now{ font-family:"Bitstream Charter",serif; font-size:58px; font-weight:800; color:#38bdf8; line-height:1; }
+  .price .was{ font-size:26px; color:#5c6b7a; text-decoration:line-through; margin-left:12px; }
+  .price .save{ display:block; font-size:18px; color:#a7b0bb; letter-spacing:.14em; text-transform:uppercase; margin-top:6px; }
+</style></head>
+<body>
+  <div class="glowA"></div><div class="glowB"></div>
+  <div class="top"><div class="brandline">Story Mode Guy</div></div>
+  <div class="head">
+    <div class="kicker">The Complete Collection</div>
+    <h1>The Complete<br>Drone <span class="lib">Library</span></h1>
+    <div class="rule"></div>
+    <div class="meta"><b>13 Guides</b> &nbsp;·&nbsp; <b>282 Pages</b> &nbsp;·&nbsp; Instant Download</div>
+    <div class="bonus">+ 3 bonus guides: FPV · Business · Mapping</div>
+  </div>
+  <div class="deck" id="deck"></div>
+  <div class="foot">
+    <div class="b">Story Mode Guy<span>STORYMODEGUY.COM</span></div>
+    <div class="price"><span class="now">$79</span><span class="was">$282</span><span class="save">Save $203</span></div>
+  </div>
+  <script>
+    var deck=document.getElementById('deck'); var nums=[];
+    for(var k=21;k<=33;k++) nums.push(String(k));
+    var n=nums.length;
+    for(var i=0;i<n;i++){
+      var t=(i/(n-1))-0.5; var angle=t*38; var x=t*840; var lift=-Math.pow(t,2)*160+8;
+      var c=document.createElement('div'); c.className='c';
+      c.style.transform='translateX(-50%) translateX('+x+'px) translateY('+lift+'px) rotate('+angle+'deg)';
+      c.style.zIndex=String(30-Math.abs(Math.round(t*13)));
+      var img=document.createElement('img'); img.src='file:///home/user/story-mode-guy/thumb-guide-'+nums[i]+'.jpg';
+      c.appendChild(img); deck.appendChild(c);
+    }
+  </script>
+</body></html>
