@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The Videographer&#x27;s Cheat-Sheet Pack — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #334155;
+  --accent2: #64748b;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">FIELD REFERENCE</div>
+    <div style="margin-top:auto"></div>
+    <h1>The Videographer&#x27;s Cheat-Sheet Pack</h1>
+    <div class="rule"></div>
+    <div class="sub">Grab-and-Go Cards for Frame Rates, Audio &amp; Export</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$17 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Grab-and-Go Cards for Frame Rates, Audio &amp; Export. Written for new shooters who want a printable field reference.</div>
+  <ol><li><span class="t">How to Use This Pack</span></li><li><span class="t">Frame Rate & Shutter Angle</span></li><li><span class="t">Resolution, Bitrate & Codec</span></li><li><span class="t">Picture Profile Quick-Set</span></li><li><span class="t">Exposure Tools</span></li><li><span class="t">Audio Levels & Mic Checklist</span></li><li><span class="t">Lighting Quick-Reference</span></li><li><span class="t">The B-roll & 5-Shot Shot-List</span></li><li><span class="t">Camera Movement Cheat Card</span></li><li><span class="t">Export Settings & Pre-Shoot Checklist</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>How to Use This Pack</h1>
+<p class="lead-in">This is not a manual you read once and forget. It's a deck of field cards — each one dense, self-contained, and built to live in your bag. Print them, keep them close, and pull the right card the moment you're set up, the light is going, and you're blanking on what to dial in.</p>
+
+<p>Every card that follows is a standalone reference. There's a card for frame rates and shutter, a card for codecs and bitrate, cards for picture profiles, exposure tools, audio, lighting, movement, shot lists, and one packed with export recipes. Nothing depends on anything else. Grab the one you need and go.</p>
+
+<div class="key"><div class="kt">How to get the most from this pack</div><p>Print each card, keep them in your camera bag, and reach for the frame-rate card and the audio checklist first — those two save more footage than anything else here.</p></div>
+
+<h2>Three ways to use these cards</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">🖨️ Print &amp; keep</div><p>Each <strong>card starts on its own page</strong>, sized to trim down and slip into a pocket. Laminate them so they survive rain, sweat, and the bottom of your bag.</p></div>
+  <div class="card"><div class="ch">📱 Keep on your phone</div><p>Save the PDF to your phone. When you're on location and unsure, the shutter-angle math and export recipes are two taps away.</p></div>
+  <div class="card"><div class="ch">🎓 Learn by repetition</div><p>Shoot the settings as written, then adjust. After a few projects the numbers live in your hands and you won't need the card at all.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with any camera</div><p>Every setting here applies to mirrorless bodies, cinema cameras, DSLRs in video mode, and most phones in Pro/Cinematic mode. Where a control has different names by brand, both are given (for example, "Log (S-Log / V-Log / C-Log)"). Treat every number as a <em>starting point</em>, not a law — check your footage and nudge from there.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The one habit that ties it all together</div><p>Before you hit record, run a three-second check: <strong>frame rate</strong> (does it match the project?), <strong>shutter</strong> (is it double the frame rate?), and <strong>audio</strong> (are the meters actually moving?). These cards exist to make that check automatic.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Frame Rate &amp; Shutter Angle</h1>
+<p>Frame rate is how many still images you capture per second; shutter speed is how long each one is exposed. Get the relationship between them right and your motion looks natural — like film. Get it wrong and footage looks either stuttery or oddly video-game smooth.</p>
+
+<h2>The 180° rule</h2>
+<p>For natural motion blur, set your <strong>shutter speed to roughly double your frame rate</strong>. That's what a 180-degree shutter angle means. Shoot 24 fps, use 1/48s (round to 1/50s). Shoot 30 fps, use 1/60s. Simple as that.</p>
+
+<table>
+  <tr><th>Frame rate</th><th>Shutter (180° rule)</th><th>Shutter angle</th><th>What it's for</th></tr>
+  <tr><td>24 fps</td><td>1/48s (use 1/50s)</td><td>180&deg;</td><td>The cinematic look — films, narrative, most YouTube</td></tr>
+  <tr><td>25 fps</td><td>1/50s</td><td>180&deg;</td><td>PAL regions (Europe), broadcast, film look</td></tr>
+  <tr><td>30 fps</td><td>1/60s</td><td>180&deg;</td><td>Web video, social, news, live-feel content</td></tr>
+  <tr><td>60 fps</td><td>1/120s</td><td>180&deg;</td><td>Smooth motion, sports, half-speed slow-mo</td></tr>
+  <tr><td>120 fps</td><td>1/240s</td><td>180&deg;</td><td>Dramatic slow-mo, water, action detail</td></tr>
+</table>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Angle vs. speed</div><p>Cinema cameras let you set a <strong>shutter angle</strong> directly (180&deg; is the default). Most hybrid cameras only show shutter <em>speed</em>. They describe the same thing — angle just adapts automatically when you change frame rate, so you never have to recompute.</p></div>
+
+<h2>Slow-motion math</h2>
+<p>Slow motion is simple: <strong>shoot at a high frame rate, play it back at a normal one.</strong> The playback rate divided into the capture rate is your slowdown factor.</p>
+
+<div class="recipe">
+  <div class="rh"><span>How slow will it go?</span><span class="tag">FIELD-TESTED</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">60 fps &rarr; 24 fps = <b>2.5&times; slower</b></span><span class="chip">60 fps &rarr; 30 fps = <b>2&times;</b></span><span class="chip">120 fps &rarr; 24 fps = <b>5&times;</b></span><span class="chip">240 fps &rarr; 24 fps = <b>10&times;</b></span></div>
+    <p class="small">Always match your slow-mo clip's project frame rate. Shoot 120, drop it on a 24 fps timeline, and it plays back five times slower automatically.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>High frame rates eat light</div><p>At 120 fps your shutter is 1/240s — half as much light per frame as 60 fps. Slow-mo needs bright scenes or more ISO. Plan to shoot it outdoors or add light.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Pick one frame rate per project</div><p>Mixing 24 and 30 fps in the same edit is a headache. Choose your base rate up front (24 for cinematic, 30 for web) and only break from it for intentional slow-mo clips.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Resolution, Bitrate &amp; Codec</h1>
+<p>Resolution is how many pixels; bitrate is how much data per second the camera spends describing them; codec is the method used to compress that data. Together they decide how sharp your footage is, how much it holds up in the edit, and how fast it fills your card.</p>
+
+<h2>Resolution — how many pixels</h2>
+<table>
+  <tr><th>Resolution</th><th>Pixels</th><th>Use for</th></tr>
+  <tr><td>1080p (Full HD)</td><td>1920 &times; 1080</td><td>Fast turnaround, smaller files, most social delivery</td></tr>
+  <tr><td>4K (UHD)</td><td>3840 &times; 2160</td><td>The modern default — crop room, future-proof, punch-ins</td></tr>
+  <tr><td>6K / 8K</td><td>6144+ wide</td><td>Heavy reframing, VFX, big-screen delivery</td></tr>
+</table>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Shoot 4K, deliver 1080p</div><p>Even for a 1080p final, shooting 4K gives you room to reframe, punch in for a fake "second angle," and stabilize without losing quality. Downscaled 4K also looks noticeably sharper than native 1080p.</p></div>
+
+<h2>Codec &amp; bitrate — how the data is stored</h2>
+<table>
+  <tr><th>Codec</th><th>Type</th><th>Rough bitrate</th><th>Use when…</th></tr>
+  <tr><td>H.264</td><td>Compressed (8-bit)</td><td>50–100 Mbps</td><td>Everyday shooting, small files, easy playback</td></tr>
+  <tr><td>H.265 / HEVC</td><td>Compressed (10-bit)</td><td>50–150 Mbps</td><td>Same quality as H.264 at smaller size; more color depth</td></tr>
+  <tr><td>ProRes / ProRes HQ</td><td>Lightly compressed</td><td>440–880 Mbps</td><td>Serious grading, client work, minimal quality loss</td></tr>
+  <tr><td>RAW / ProRes RAW</td><td>Near-uncompressed</td><td>1000+ Mbps</td><td>Maximum flexibility, VFX, high-end delivery</td></tr>
+</table>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Bit depth matters more than you think</div><p><strong>8-bit</strong> holds 16.7 million colors; <strong>10-bit</strong> holds over a billion. If you plan to grade — especially Log footage — shoot 10-bit so skies and skin tones don't band into ugly stripes.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Match your card to your bitrate</div><p>ProRes and high-bitrate recording demand fast cards. Check the card's <strong>sustained write speed</strong> (a V60 or V90 SD card, or CFexpress for the highest rates). A slow card causes dropped frames and stopped recordings mid-take.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Picture Profile Quick-Set</h1>
+<p>A picture profile decides how much contrast and color the camera bakes into the file. Pick the one that matches how much you plan to edit — shoot flat when you'll grade, shoot standard when you won't.</p>
+
+<div class="cards three">
+  <div class="card solid"><div class="ch">🎬 Standard</div><p><strong>Contrast &amp; color baked in.</strong> Looks good straight out of camera. Least editing room. Best for run-and-gun and same-day delivery.</p></div>
+  <div class="card solid"><div class="ch">🌫️ Flat / Neutral</div><p><strong>Reduced contrast.</strong> Keeps more shadow and highlight detail while still looking usable raw. A gentle middle ground for light grading.</p></div>
+  <div class="card solid"><div class="ch">📉 Log</div><p><strong>Maximum dynamic range, gray &amp; flat.</strong> Must be graded. The most highlight and shadow latitude — for when the look is made in post.</p></div>
+</div>
+
+<h2>When to shoot each</h2>
+<table>
+  <tr><th>Profile</th><th>Names by brand</th><th>Shoot it when…</th></tr>
+  <tr><td>Standard</td><td>Standard / Natural / Rec.709</td><td>Fast delivery, no time to grade, run-and-gun events</td></tr>
+  <tr><td>Flat</td><td>Neutral / Cine / HLG</td><td>You want some grading room but a usable image on-set</td></tr>
+  <tr><td>Log</td><td>S-Log / V-Log / C-Log / Log3</td><td>You'll grade every clip and want maximum latitude</td></tr>
+</table>
+
+<div class="key"><div class="kt">Expose Log to the right</div><p>Log footage is designed to be shot <strong>slightly bright</strong> — often 1 to 1.5 stops over "correct." A brighter Log file has cleaner shadows once you pull it back down in the grade. Underexposed Log gets noisy fast.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Log has a minimum ISO</div><p>Log profiles have a high <strong>base ISO</strong> — often 640, 800, or higher — where they're cleanest. Going below it isn't "cleaner," it clips highlights. Learn your camera's Log base ISO and treat it as the floor.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Don't grade blind</div><p>Load a <strong>LUT</strong> to your monitor or viewfinder so you preview a corrected image while shooting Log. The recording stays flat; only your preview is transformed, so you can judge exposure and color accurately.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>New to grading? Start with Flat</div><p>Log is powerful but unforgiving. If you're still learning, a flat/neutral profile gives you 80% of the flexibility with far less chance of a noisy, muddy, or clipped clip you can't rescue.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Exposure Tools</h1>
+<p>In video you can't just change the shutter to fix brightness — the 180&deg; rule locks your shutter to your frame rate. So you control exposure with three other tools: aperture, ISO, and ND filters. This card covers the filters and the on-screen tools that tell you the truth about your exposure.</p>
+
+<h2>ND filters — sunglasses for your lens</h2>
+<p>An ND (neutral density) filter darkens the image without changing color, so you can keep your shutter at the 180&deg; rule <em>and</em> your aperture wide open in bright light. Without one, daylight forces you to a fast shutter that ruins your motion blur.</p>
+
+<table>
+  <tr><th>ND strength</th><th>Stops cut</th><th>Use in…</th></tr>
+  <tr><td>ND8</td><td>3 stops</td><td>Overcast, shade, golden hour</td></tr>
+  <tr><td>ND16</td><td>4 stops</td><td>Bright but not harsh daylight</td></tr>
+  <tr><td>ND64</td><td>6 stops</td><td>Full sun, open sky</td></tr>
+  <tr><td>ND1000</td><td>10 stops</td><td>Very bright sun at a wide aperture</td></tr>
+  <tr><td>Variable ND</td><td>2–8 stops (adjustable)</td><td>Run-and-gun — dial it as the light changes</td></tr>
+</table>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>One variable ND does most jobs</div><p>A quality <strong>variable ND</strong> (2–5 or 3–8 stop) covers most daylight situations from a single filter. Buy one that fits your largest lens and use step-up rings for the rest. Cheap ones add a color cast or an "X" pattern at the extremes.</p></div>
+
+<h2>Zebras &amp; false color — judge exposure, not guesswork</h2>
+<p>Your screen's brightness lies; the sun on it lies harder. Use these tools instead of trusting your eyes.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🦓 Zebras</div><p>Diagonal stripes appear on areas hitting a brightness threshold you set. <strong>Set to ~100%</strong> to see clipping (blown highlights). <strong>Set to ~70%</strong> to expose skin tones consistently.</p></div>
+  <div class="card"><div class="ch">🌈 False color</div><p>Paints the image by exposure value — a full map from clipped to crushed. <strong>Green/gray = mid-tones, red = clipping, purple/blue = crushed shadows.</strong> The most precise tool once you learn the palette.</p></div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Skin-tone exposure with zebras</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Zebra level <b>~70%</b></span><span class="chip">Target <b>zebras on cheek</b></span><span class="chip">Log <b>expose +1 stop</b></span></div>
+    <p class="small">Set zebras to 70% and expose so they just tickle the bright side of your subject's face. Consistent skin exposure across every shot makes editing painless.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Highlights don't come back</div><p>Blown-out (clipped) highlights hold no detail — no grade recovers them. When in doubt, protect the highlights and lift the shadows later. A histogram or false-color pushed hard right is your warning.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Audio Levels &amp; Mic Checklist</h1>
+<p>Viewers forgive rough footage; they switch off bad audio in seconds. Good sound is half of "professional." This card gets your levels safe and your mic choice right.</p>
+
+<h2>Recording levels — aim for the safe zone</h2>
+<table>
+  <tr><th>Level (dBFS)</th><th>Meaning</th><th>Action</th></tr>
+  <tr><td>0 dBFS</td><td>Absolute ceiling — clipping</td><td>Never touch it; clipped audio is unfixable</td></tr>
+  <tr><td>&minus;6 dBFS</td><td>Loudest safe peaks</td><td>Let occasional peaks reach here, no higher</td></tr>
+  <tr><td>&minus;12 dBFS</td><td>Ideal average for speech</td><td>Aim your normal talking level here</td></tr>
+  <tr><td>&minus;20 dBFS</td><td>Quiet / too low</td><td>Raise gain — recording this low adds noise when boosted</td></tr>
+</table>
+
+<div class="key"><div class="kt">Target &minus;12, peak &minus;6</div><p>Set your gain so normal speech sits around <strong>&minus;12 dBFS</strong> and the loudest moments never pass <strong>&minus;6</strong>. Headroom is safety — a laugh or a shout should never clip.</p></div>
+
+<h2>Delivery loudness — the platform standard</h2>
+<p>Your <em>recording</em> level and your <em>final export</em> loudness are different jobs. Streaming platforms normalize to a loudness target measured in LUFS. Mix to it so your video isn't jarringly loud or quiet next to others.</p>
+
+<table>
+  <tr><th>Platform</th><th>Loudness target</th></tr>
+  <tr><td>YouTube</td><td>&minus;14 LUFS</td></tr>
+  <tr><td>Instagram / TikTok</td><td>&minus;14 LUFS</td></tr>
+  <tr><td>Podcast / spoken</td><td>&minus;16 LUFS</td></tr>
+  <tr><td>Broadcast TV</td><td>&minus;23 LUFS (EBU R128)</td></tr>
+</table>
+
+<h2>Mic choice — right tool, right distance</h2>
+<table>
+  <tr><th>Mic type</th><th>Best for</th><th>Watch out</th></tr>
+  <tr><td>Shotgun (on-cam / boom)</td><td>Interviews, run-and-gun, dialogue</td><td>Keep it close — 60cm beats 2m every time</td></tr>
+  <tr><td>Lavalier (clip-on)</td><td>Talking heads, moving subjects, presenters</td><td>Clothing rustle; hide it well</td></tr>
+  <tr><td>Wireless lav system</td><td>Distance, multiple people, freedom</td><td>Interference; always monitor</td></tr>
+  <tr><td>Handheld</td><td>Vox pops, stand-ups, music</td><td>Handling noise; needs a grip technique</td></tr>
+</table>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Distance beats price</div><p>A cheap mic 30cm from the mouth sounds better than an expensive one two meters away. The single biggest audio upgrade is <strong>getting the mic closer to the source</strong>.</p></div>
+
+<h2>Field-audio checklist</h2>
+<ul class="check">
+  <li>Headphones plugged in — you can't fix what you can't hear</li>
+  <li>Levels set: speech peaking around &minus;12, never past &minus;6</li>
+  <li>Windscreen / dead-cat on outdoors, always</li>
+  <li>Fresh batteries in mics and transmitters; spares in the bag</li>
+  <li>Record a few seconds of room tone at every location</li>
+  <li>Turn off buzzing fridges, A/C, and fluorescent hums where you can</li>
+  <li>Monitor the whole take — don't just set and pray</li>
+</ul>
+
+<h1><span class="n">CHAPTER 7</span>Lighting Quick-Reference</h1>
+<p>You don't need a truck of gear to light well — you need to understand two qualities and three jobs. Master those and one light plus a window will carry you far.</p>
+
+<h2>Soft vs. hard — it's all about size</h2>
+<div class="cards">
+  <div class="card"><div class="ch">☁️ Soft light</div><p>From a <strong>large source relative to the subject</strong> — a big softbox, a bounced light, an overcast sky. Gentle, wrapping shadows. Flattering for faces and skin.</p></div>
+  <div class="card"><div class="ch">☀️ Hard light</div><p>From a <strong>small or distant source</strong> — a bare bulb, direct sun. Crisp, defined shadows. Dramatic, edgy, high-contrast. Great for mood.</p></div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Bigger and closer = softer</div><p>To soften any light, make its <em>apparent</em> size bigger: move it closer, bounce it off a wall or ceiling, or shoot it through diffusion. A window with a sheer curtain is one of the best soft sources on earth.</p></div>
+
+<h2>Three-point lighting — the roles</h2>
+<div class="cards three">
+  <div class="card solid"><div class="ch">🔑 Key light</div><p>Your <strong>main light</strong>. Placed ~45&deg; to one side of the subject. Sets the exposure and the overall look.</p></div>
+  <div class="card solid"><div class="ch">🌗 Fill light</div><p><strong>Softens the shadows</strong> the key creates, on the opposite side. Weaker than the key — or just a bounce card.</p></div>
+  <div class="card solid"><div class="ch">✨ Back / rim light</div><p>Behind the subject, edging their hair and shoulders to <strong>separate them from the background</strong> and add depth.</p></div>
+</div>
+
+<h2>Color temperature — mixing warm and cool</h2>
+<table>
+  <tr><th>Source</th><th>Color temp</th><th>Look</th></tr>
+  <tr><td>Tungsten / warm bulb</td><td>3200K</td><td>Warm, orange, cozy</td></tr>
+  <tr><td>Golden hour sun</td><td>~3500K</td><td>Warm glow</td></tr>
+  <tr><td>Daylight / flash</td><td>5600K</td><td>Neutral, clean white</td></tr>
+  <tr><td>Overcast / shade</td><td>6500K+</td><td>Cool, blue</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Match your light to the room</div><p>Mixing a 5600K daylight LED with 3200K tungsten room lamps gives you one orange side and one blue side of a face. Either <strong>gel your light to match</strong> the room or kill the room lights and control it all yourself.</p></div>
+
+<div class="recipe">
+  <div class="rh"><span>One-light interview setup</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Light <b>45&deg; to side</b></span><span class="chip">Height <b>just above eye</b></span><span class="chip">Quality <b>softbox / bounce</b></span><span class="chip">Fill <b>white bounce card</b></span></div>
+    <p class="small">One soft key at 45&deg;, a bounce card on the shadow side, and a window or lamp behind for separation. That's a clean, professional interview with a single fixture.</p>
+  </div>
+</div>
+
+<h1><span class="n">CHAPTER 8</span>The B-roll &amp; 5-Shot Shot-List</h1>
+<p>B-roll is the supporting footage that makes an edit breathe — the details, the wides, the hands at work. The fastest way to cover any subject or scene is the 5-shot method: five deliberate angles that always cut together.</p>
+
+<h2>The 5-shot method</h2>
+<table>
+  <tr><th>Shot</th><th>What it captures</th><th>Why it works</th></tr>
+  <tr><td>1. Wide (establishing)</td><td>The whole scene / location</td><td>Tells the viewer where they are</td></tr>
+  <tr><td>2. Medium</td><td>The subject and their action</td><td>The main "who and what" shot</td></tr>
+  <tr><td>3. Tight (close-up)</td><td>The face or the focus of action</td><td>Emotion and detail; the money shot</td></tr>
+  <tr><td>4. Detail (extreme close)</td><td>Hands, tools, textures, product</td><td>The cutaway that hides edits</td></tr>
+  <tr><td>5. Reverse / over-shoulder</td><td>The opposite angle or POV</td><td>Gives the sequence a second dimension</td></tr>
+</table>
+
+<div class="key"><div class="kt">Five shots cut into a scene</div><p>Get all five of any moment — a person cooking, a mechanic working, a street performer — and you can edit a complete, dynamic sequence. Coverage beats camera gear every single time.</p></div>
+
+<h2>Reusable B-roll shot-list</h2>
+<ul class="check">
+  <li>Wide establishing shot of the location</li>
+  <li>Medium shot of the subject doing the action</li>
+  <li>Tight close-up of the face / reaction</li>
+  <li>Extreme detail: hands, tools, product, texture</li>
+  <li>Reverse angle or over-the-shoulder / POV</li>
+  <li>A slow, static "beauty" shot for openers &amp; transitions</li>
+  <li>One deliberate camera-movement shot (push, reveal, or pan)</li>
+  <li>Entrances and exits — someone walking into and out of frame</li>
+</ul>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Hold every shot for ten seconds</div><p>Count to ten on each B-roll clip, and don't cut the camera the instant the action ends. Short clips are useless in the edit; a generous hold gives your editor room to breathe and time the cut.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Camera Movement Cheat Card</h1>
+<p>Movement adds energy and meaning — but only when it's motivated. Every move should have a reason: to reveal, to follow, to draw the eye. This card covers the core moves and when each one earns its place.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">➡️ Pan</div><p>Pivot the camera <strong>horizontally</strong> on a fixed point. Follow a subject or scan a landscape. Keep it slow and smooth.</p></div>
+  <div class="card"><div class="ch">↕️ Tilt</div><p>Pivot <strong>vertically</strong>. Reveal height — a tall building, a full figure from feet to face.</p></div>
+  <div class="card"><div class="ch">🔍 Push in / Pull out</div><p>Move the whole camera <strong>toward or away</strong> from the subject. Push in to build tension or intimacy; pull out to reveal context.</p></div>
+  <div class="card"><div class="ch">🚶 Tracking / Dolly</div><p>Move <strong>alongside or with</strong> a moving subject. Keeps them steady in frame while the world slides by — dynamic and immersive.</p></div>
+  <div class="card"><div class="ch">🔄 Reveal</div><p>Move past a foreground object to <strong>uncover</strong> the subject behind it. Adds depth and a little drama to any entrance.</p></div>
+  <div class="card"><div class="ch">🎯 Whip pan</div><p>A fast, blurred pan used as a <strong>transition</strong>. Match the direction between two clips for a seamless energetic cut.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Motivation over motion</div><p>A locked-off static shot is often stronger than a wandering handheld one. Move the camera when the story asks for it — to follow, reveal, or intensify — not just because you can.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Start and end on a hold</div><p>Begin every moving shot with a second or two of stillness, execute the move slowly, then hold still at the end. Those static bookends give your editor clean in and out points and make any move look intentional.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Stabilize on a budget</div><p>No gimbal? Tuck your elbows in, use the "ninja walk" (bent knees, heel-to-toe), and let stabilization help. For push-ins, a slider beats walking.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>Export Settings &amp; Pre-Shoot Checklist</h1>
+<p>The last mile. Nail your export and your footage looks as good online as it did on the card. These recipes are safe, proven starting points for the three deliveries you'll make most.</p>
+
+<div class="recipe">
+  <div class="rh"><span>YouTube (1080p / 4K)</span><span class="tag">EXPORT RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Format <b>H.264 / MP4</b></span><span class="chip">Resolution <b>3840&times;2160 or 1920&times;1080</b></span><span class="chip">Bitrate <b>1080p: 16 Mbps · 4K: 45 Mbps</b></span><span class="chip">Audio <b>AAC 320 kbps</b></span></div>
+    <p class="small">Match the project frame rate. YouTube re-compresses everything, so exporting a touch high (or using their higher-quality specs) preserves detail.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Instagram / TikTok (vertical)</span><span class="tag">EXPORT RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Format <b>H.264 / MP4</b></span><span class="chip">Resolution <b>1080&times;1920 (9:16)</b></span><span class="chip">Bitrate <b>10–15 Mbps</b></span><span class="chip">Frame rate <b>30 fps</b></span></div>
+    <p class="small">Shoot or reframe for vertical 9:16. Keep key action away from the edges where the interface covers the frame. Loudness &minus;14 LUFS.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Client delivery (master)</span><span class="tag">EXPORT RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Format <b>ProRes 422 HQ (or high H.264)</b></span><span class="chip">Resolution <b>native project size</b></span><span class="chip">Bitrate <b>near-lossless / 100+ Mbps</b></span><span class="chip">Audio <b>48kHz, &minus;16 to &minus;14 LUFS</b></span></div>
+    <p class="small">Deliver a high-quality master the client can re-use, plus a compressed MP4 for easy review. Always keep your own archived copy.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Frame rate must match end to end</div><p>Shoot 24, edit on a 24 fps timeline, export 24. Mismatched frame rates cause stuttery, judder-y playback that no bitrate fixes. Set your sequence to your footage before you cut a single clip.</p></div>
+
+<h2>Final pack-and-shoot checklist</h2>
+<ul class="check">
+  <li>Batteries charged — camera, mics, monitor, gimbal — plus spares</li>
+  <li>Cards formatted, fast enough for your codec, and enough capacity</li>
+  <li>Frame rate and shutter set (shutter = 2&times; frame rate)</li>
+  <li>Picture profile chosen; LUT loaded to monitor if shooting Log</li>
+  <li>ND filter in the bag (or on the lens) for daylight</li>
+  <li>Zebras / false color enabled to nail exposure</li>
+  <li>Mic connected, levels tested, headphones packed</li>
+  <li>White balance set to the dominant light</li>
+  <li>Lens clean; lens cloth in a pocket</li>
+  <li>Shot-list printed — know your five shots before you arrive</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Keep this card closest</div><p>Of everything in this pack, laminate this export card and the audio checklist first. Between "how do I export this?" and "why does my sound clip?", these two solve the problems that most often sink a finished video.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>You don't have to memorize videography — you have to carry the right card, check your frame rate and your levels, and roll, and these cards make sure you always can.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

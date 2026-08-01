@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The Video Editing Blueprint — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #1d4ed8;
+  --accent2: #3b82f6;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">VIDEO EDITING</div>
+    <div style="margin-top:auto"></div>
+    <h1>The Video Editing Blueprint</h1>
+    <div class="rule"></div>
+    <div class="sub">A Repeatable Workflow for Premiere, DaVinci &amp; CapCut</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$37 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">A Repeatable Workflow for Premiere, DaVinci &amp; CapCut. Written for anyone who films but stalls at the timeline.</div>
+  <ol><li><span class="t">The Timeline Is Not the Enemy</span></li><li><span class="t">Set Up the Project & Import</span></li><li><span class="t">Cull & Select the Keepers</span></li><li><span class="t">The Assembly Edit</span></li><li><span class="t">Rough Cut to Fine Cut</span></li><li><span class="t">Pacing & Cutting on Motion</span></li><li><span class="t">Music & Sound in the Edit</span></li><li><span class="t">Titles, Text & Captions</span></li><li><span class="t">Color & Final Polish</span></li><li><span class="t">Export Settings</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>The Timeline Is Not the Enemy</h1>
+<p class="lead-in">You have the footage. It is sitting on a card, or already dumped into a folder called "New Folder (3)", and every time you open your editor you feel the same thing: paralysis. Where do you even begin? This guide fixes that by giving you an order of operations — the exact same sequence, every project, forever — so editing stops being a wall of choices and becomes a checklist you walk down.</p>
+
+<p>Here is the truth nobody tells beginners: <strong>editing feels overwhelming because you are trying to do all of it at once.</strong> You trim a clip, second-guess the music, fix color, and re-write the story in your head — simultaneously — and your brain seizes. Professional editors are not smarter than you. They are just <em>doing one thing at a time, in a fixed order.</em></p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Great edits are not made in one pass — they are built in layers, structure first and polish last, in an order you never have to reinvent.</p></div>
+
+<h2>The blueprint, top to bottom</h2>
+<p>Every chapter after this one is a single stage. You do them in order and never skip ahead. Structure before trimming, trimming before pacing, pacing before music, music before titles, titles before color, color before export. When you feel lost, it is almost always because you jumped a stage — polishing color on a cut that is not even locked yet.</p>
+
+<ol class="steps">
+  <li><span class="sh">Set up the project &amp; import.</span> A clean foundation so nothing goes missing or plays badly.</li>
+  <li><span class="sh">Cull &amp; select the keepers.</span> Decide what is good <em>before</em> you touch the timeline.</li>
+  <li><span class="sh">Assembly edit.</span> Get the story in order — ugly, long, unpolished, but complete.</li>
+  <li><span class="sh">Rough cut to fine cut.</span> Tighten every edit until there is no dead air left.</li>
+  <li><span class="sh">Pacing &amp; cutting on motion.</span> Give it rhythm so it feels alive.</li>
+  <li><span class="sh">Music &amp; sound.</span> Build the emotional floor and mix it so dialogue wins.</li>
+  <li><span class="sh">Titles, text &amp; captions.</span> Add words cleanly, inside safe margins.</li>
+  <li><span class="sh">Color &amp; final polish.</span> A light corrective pass and cleanup.</li>
+  <li><span class="sh">Export.</span> The right file for the right destination.</li>
+</ol>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works in whatever you edit</div><p>This blueprint is software-agnostic. Throughout the guide we name the relevant tool in <strong>Adobe Premiere Pro</strong>, <strong>DaVinci Resolve</strong> (which has a genuinely full-featured free version), and <strong>CapCut</strong> (desktop or mobile). The buttons live in different places, but the workflow is identical. Learn the workflow once and you can switch editors in an afternoon.</p></div>
+
+<blockquote>An editor's real skill is not knowing the software. It is knowing what to do next.</blockquote>
+
+<h1><span class="n">CHAPTER 1</span>Set Up the Project &amp; Import</h1>
+<p>Most "my editor keeps crashing" and "why is my footage laggy" problems are born in the first ten minutes, before you make a single cut. Spend those minutes well and the rest of the edit is smooth. Rush them and you will fight your computer for hours.</p>
+
+<h2>Build a folder structure before you import anything</h2>
+<p>Editors do not store your video inside the project file — they store a <em>link</em> to where it lives on your drive. Move or rename a file later and the editor throws up "media offline." A tidy folder structure, created once, prevents this forever.</p>
+
+<div class="recipe">
+  <div class="rh"><span>A folder structure that never breaks</span><span class="tag">DO THIS FIRST</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">01_FOOTAGE</span><span class="chip">02_AUDIO</span><span class="chip">03_MUSIC</span><span class="chip">04_GRAPHICS</span><span class="chip">05_PROJECT</span><span class="chip">06_EXPORTS</span></div>
+    <p class="small">Make this on your drive first, copy everything into it, and only then open your editor. The project file lives in 05_PROJECT and points at the rest.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Copy off the card before you edit — twice</div><p>Never edit directly from the card or camera. Copy the footage to your computer, then copy it <em>again</em> to a second drive or the cloud. Cards fail, always on the one shoot you cannot re-do. Two copies in two places is the minimum; only format the card once both are verified.</p></div>
+
+<h2>Match your timeline to your footage</h2>
+<p>Your <strong>sequence</strong> (Premiere), <strong>timeline</strong> (Resolve), or <strong>project</strong> (CapCut) has a frame rate and resolution, and it should match the footage you shot. Shoot 4K at 24fps? Your timeline should be 3840&times;2160 at 24fps. A mismatch causes stutter, weird slow-motion, or letterboxing.</p>
+
+<ol class="steps">
+  <li><span class="sh">Check what you shot.</span> Right-click a clip and read its properties, or look at your camera's settings. Note resolution (e.g. 3840&times;2160) and frame rate (24, 25, 30, or 60fps).</li>
+  <li><span class="sh">Let the first clip define the timeline.</span> In Premiere, drag your first clip onto the "New Item" area and it builds a matching sequence. In Resolve, drag a clip to an empty timeline and it can auto-match. In CapCut, the project adopts your first clip's ratio.</li>
+  <li><span class="sh">Decide your delivery frame rate now.</span> If you mixed 24 and 60fps clips, pick one timeline rate. 60fps clips on a 24fps timeline can become buttery slow-motion — sometimes that is exactly what you want.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>24 vs 30 vs 60 — the plain version</div><p>24fps looks cinematic and is standard for film-style video. 30fps is common for online and news-style content. 60fps is for slowing down later or for very smooth motion (sports, gaming). Pick one for your project and stay consistent.</p></div>
+
+<h2>Proxies: the fix for a slow computer</h2>
+<p>4K footage is heavy. If playback stutters and every trim lags, you do not need a new computer — you need <strong>proxies</strong>: small, low-resolution stand-in copies your editor plays smoothly while quietly keeping the full-quality files for export.</p>
+
+<table>
+  <tr><th>Editor</th><th>What it's called</th><th>How it behaves</th></tr>
+  <tr><td>Premiere Pro</td><td>Proxies (attach/create in the media panel)</td><td>Toggle a "proxy" button in the monitor to switch views</td></tr>
+  <tr><td>DaVinci Resolve</td><td>Optimized Media / Proxy Mode</td><td>Generate optimized media, then set Proxy Mode in the Playback menu</td></tr>
+  <tr><td>CapCut</td><td>Proxy generation (Settings &rarr; Performance)</td><td>Handled automatically for large clips when enabled</td></tr>
+</table>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Generate proxies while you cull</div><p>Kick off proxy generation the moment you finish importing, then start Chapter 2's culling on the originals. By the time you are ready to seriously edit, the proxies are done and playback is instant. The editor swaps back to full quality automatically at export.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Cull &amp; Select the Keepers</h1>
+<p>The biggest reason edits drag on for days is that people start cutting before they know what they have. You cannot build a story out of forty clips you have never watched. Culling — watching everything once and marking the good bits — is the stage that makes every later stage faster.</p>
+
+<h2>Watch everything once, all the way through</h2>
+<p>Before you make one cut, play through your footage at normal speed. You are not editing — you are <em>scouting</em>: learning what you shot, where the good moments are, and what is unusable. It feels slow. It is the fastest thing you will do all day.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Do this while you watch</div><p>Keep one finger on your favorite/reject keys the whole time. The instant a clip makes you feel something — a clean take, a real laugh, a beautiful shot — mark it. Do not stop to think. First reactions are usually right, and you can always revisit.</p></div>
+
+<h2>Mark favorites and rejects as you go</h2>
+<table>
+  <tr><th>Editor</th><th>Favorite / mark good</th><th>Reject / hide bad</th></tr>
+  <tr><td>Premiere Pro</td><td>Star ratings; In/Out points to mark a sub-clip</td><td>Rejected flag; hide rejected in the bin</td></tr>
+  <tr><td>DaVinci Resolve</td><td>Flags &amp; color tags; mark In/Out on a clip</td><td>Unused clips stay in the Media Pool, out of the way</td></tr>
+  <tr><td>CapCut</td><td>Add to timeline selectively; label clips</td><td>Simply do not drag the bad ones in</td></tr>
+</table>
+
+<h2>Mark the moment, not the whole clip</h2>
+<p>A three-minute clip usually has eight good seconds in it. Do not drag the whole thing in and trim later — that is how timelines become bloated and confusing. Set an <strong>In point</strong> at the start of the good moment and an <strong>Out point</strong> at the end, so only the keeper travels to your edit.</p>
+
+<div class="key"><div class="kt">Be ruthless now to be fast later</div><p>Every mediocre clip you refuse to bring into the timeline is a decision you never have to make again. Selection is an act of editing — the hardest and most important one.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Kill your darlings early</div><p>That shot you spent an hour setting up — if it does not serve the story, it goes. The effort is a sunk cost; the audience never saw it, they only see whether the shot earns its place. Judge clips on what they do for the viewer, not what they cost you.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>The Assembly Edit</h1>
+<p>Now — and only now — you touch the timeline. The assembly edit (also called the "string-out" or "radio edit") has exactly one job: <strong>get the story in the right order.</strong> Nothing is polished. Nothing is trimmed tight. It will be too long, clunky, and ugly. That is correct. You are pouring the concrete, not painting the walls.</p>
+
+<h2>The paper edit: plan before you drag</h2>
+<p>For anything with talking — interviews, vlogs, tutorials — write a <strong>paper edit</strong> first. List the beats of your story in the order they should play: what is the hook, what comes second, what is the payoff? This five-minute outline saves you hours of aimless dragging.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The radio edit test</div><p>Build the talking parts so the story makes complete sense with your <em>eyes closed</em> — as if it were a radio show. If the audio-only version tells the story, your structure is sound. You will lay the visuals (b-roll) over the top afterward. Structure lives in the audio; pictures decorate it.</p></div>
+
+<h2>Lay it down in order</h2>
+<ol class="steps">
+  <li><span class="sh">Drop your marked keepers onto the timeline in story order.</span> Hook first, then the beats you planned, then the ending. Do not agonize over exact trims yet.</li>
+  <li><span class="sh">Leave the seams rough.</span> A little extra head and tail on every clip is fine — you will trim it in the next stage. Rough is the goal here.</li>
+  <li><span class="sh">Watch it start to finish.</span> Does the story hold together? Is anything missing? Is the order wrong? Fix <em>structure</em> problems now, while moving blocks around is still easy.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Resist the urge to polish</div><p>The moment you catch yourself adding a transition or nudging audio levels during assembly, stop. Those are later-stage jobs. Polishing a structure that might still change is wasted work — and it is the number-one way edits balloon from two hours into two days.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Rough Cut to Fine Cut</h1>
+<p>Your assembly tells the story but drags. This stage tightens every edit until there is not a wasted second left. It is where an amateur edit becomes a professional one — not through effects, but through <strong>removing everything that does not need to be there.</strong></p>
+
+<h2>Trim the fat from every clip</h2>
+<p>Go through the timeline edit by edit. On each clip ask: does it start too early, or end too late? Trim the head until the clip begins <em>right</em> as the interesting thing happens, and trim the tail the instant it is over. Dead air at the front and back of clips is the most common beginner mistake.</p>
+
+<ul class="check">
+  <li>Cut the "getting ready" moment — start on the action, not the wind-up.</li>
+  <li>Cut the trailing pause after a sentence or gesture finishes.</li>
+  <li>Cut the "um," the false start, the throat-clear, the repeated word.</li>
+  <li>Cut any clip that repeats what the previous one already said.</li>
+</ul>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Ripple delete is your best friend</div><p>When you delete a chunk, you want the gap to close automatically so everything downstream slides left. In <strong>Premiere</strong> this is Ripple Delete. In <strong>Resolve</strong> it is also Ripple Delete (or the "Delete" that closes gaps). In <strong>CapCut</strong>, deleting a clip closes the gap by default. Closing gaps as you go keeps the timeline honest and tight.</p></div>
+
+<h2>J-cuts and L-cuts: the invisible upgrade</h2>
+<p>If every cut switches picture and sound at the same instant, your edit feels choppy and mechanical. The fix is to let audio and video change at <em>different</em> moments. These are the two most useful edits in all of video.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🔊 J-cut (sound leads)</div><p>The audio from the <em>next</em> clip starts <strong>before</strong> its picture. You hear the next speaker a beat before you see them. Great for smooth conversation and for teasing what is coming.</p></div>
+  <div class="card"><div class="ch">🎬 L-cut (sound trails)</div><p>The audio from the <em>current</em> clip continues <strong>after</strong> you have cut to the next picture. You keep hearing someone talk while you show what they are describing. The backbone of interview b-roll.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>How to make one</div><p>Unlink or separately trim the audio and video of a clip so their edit points no longer line up. In Premiere and Resolve, drag the audio edit point independently of the video edit point on the track below. In CapCut, detach the audio from the clip, then slide it a little earlier or later. That offset <em>is</em> the J or L cut.</p></div>
+
+<h2>Find the fine cut</h2>
+<p>The rough cut removes the obvious excess. The <strong>fine cut</strong> is the second pass where you shave frames off each edit until the rhythm feels right. When you can watch the whole piece and never once think "get on with it," you have a fine cut.</p>
+
+<blockquote>When in doubt, cut it out. The edit is almost always improved by being shorter.</blockquote>
+
+<h1><span class="n">CHAPTER 5</span>Pacing &amp; Cutting on Motion</h1>
+<p>A tight edit can still feel lifeless if every shot lingers for the same dull length. Pacing is rhythm — how long shots hold, when they change, and how the changes feel. It separates "watchable" from "I couldn't look away."</p>
+
+<h2>Cut on action</h2>
+<p>The smoothest place to cut is <em>during</em> a movement, not before or after it. Someone reaches for a door — cut mid-reach to the other side of it opening. The motion carries the viewer's eye across the edit and the cut becomes nearly invisible. Our brains forgive a cut when something is already moving.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Practice cutting on action</div><p>Find any clip where a person sits down, turns their head, or picks something up. Cut in the middle of that motion to a second angle and let the movement continue. Watch how the two shots fuse into one fluid moment. Do it ten times and it becomes instinct.</p></div>
+
+<h2>Vary shot length to create rhythm</h2>
+<p>Rhythm comes from <em>contrast</em>. A run of quick shots builds energy; a long held shot after them lands with weight. If everything is the same length there is no rhythm — just a metronome. Speed up into a peak, then let a shot breathe to release the tension.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Pacing feel by content type</span><span class="tag">STARTING POINTS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Emotional / cinematic → <b>long holds</b></span><span class="chip">Vlog / tutorial → <b>medium, steady</b></span><span class="chip">Action / social → <b>fast, punchy</b></span><span class="chip">Music-driven → <b>cut to the beat</b></span></div>
+    <p class="small">These are feels, not rules. The point is to choose a pace deliberately rather than letting every clip default to five seconds.</p>
+  </div>
+</div>
+
+<h2>Match cuts and when to hold</h2>
+<p>A <strong>match cut</strong> connects two shots that share a shape or motion — a spinning wheel cuts to a spinning record, a hand reaching down cuts to a hand reaching up. It feels intentional and satisfying. Use them sparingly for impact.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Do not cut just because you can</div><p>New editors cut constantly, terrified of boredom. But a well-composed shot with something happening in it can and should <em>hold</em>. Silence and stillness are pacing tools too. The goal is not maximum cuts — it is the right number.</p></div>
+
+<div class="key"><div class="kt">Pacing in one idea</div><p>Cut on motion, vary your shot lengths on purpose, and hold the shots that earn it — rhythm is contrast, not speed.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Music &amp; Sound in the Edit</h1>
+<p>Audio is half of video, and the half beginners neglect. Viewers forgive a slightly soft picture but click away from bad sound in seconds. Music sets the emotional floor; clean dialogue keeps them watching; sound effects make it feel real.</p>
+
+<h2>Choose music that serves the cut</h2>
+<p>Pick music that matches the <em>energy and emotion</em> of your piece, not just a song you like — an upbeat track under a somber moment fights the story. When the edit is music-driven, choose the track before you fine-tune pacing, so you can cut to the beat.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Licensing is not optional</div><p>You cannot use commercial pop songs in videos you publish — they get muted, blocked, or demonetized, and can get your account struck. Use properly licensed music: royalty-free libraries (Epidemic Sound, Artlist, Musicbed), YouTube's Audio Library, or CapCut's licensed in-app tracks. "I credited the artist" is not a license.</p></div>
+
+<h2>Get your levels right</h2>
+<p>Audio is measured in decibels (dB) on a meter where 0 is the ceiling — go above it and sound distorts. You want dialogue loud and clear, music supporting underneath, and nothing clipping.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Safe mixing levels</span><span class="tag">STARTING POINTS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Dialogue peaks → <b>&minus;6 to &minus;12 dB</b></span><span class="chip">Background music → <b>&minus;18 to &minus;24 dB</b></span><span class="chip">Never exceed → <b>0 dB</b></span><span class="chip">Overall loudness → <b>&minus;14 LUFS</b></span></div>
+    <p class="small">&minus;14 LUFS is the loudness target most platforms normalize to. Aim near it and your video will sound consistent with everything else on the feed.</p>
+  </div>
+</div>
+
+<h2>Duck the music under dialogue</h2>
+<p>When someone speaks, the music must drop so the words cut through, then rise again in the gaps. This is called <strong>ducking</strong>, and it is the difference between a professional mix and a muddy one.</p>
+
+<table>
+  <tr><th>Editor</th><th>How to duck</th></tr>
+  <tr><td>Premiere Pro</td><td>Essential Sound panel &rarr; tag a clip as "Dialogue" and another as "Music," then use its auto-duck; or use keyframes on the music's volume</td></tr>
+  <tr><td>DaVinci Resolve</td><td>The Fairlight page has a Ducker in the dynamics section; or keyframe volume manually</td></tr>
+  <tr><td>CapCut</td><td>"Auto ducking" toggle on the music track lowers it automatically under other audio</td></tr>
+</table>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Sound effects sell realism</div><p>A whoosh on a fast transition, a soft ambience under a quiet scene, a subtle click on a text pop-in — small sound effects make an edit feel intentional and alive. All three editors have sound-effect libraries or accept imported SFX. A little goes a long way; a whoosh on every cut becomes noise.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Clean the dialogue first</div><p>Before you mix, reduce background hiss and hum. Premiere has "Reduce Noise" in Essential Sound, Resolve's Fairlight has a Voice Isolation / Noise Reduction effect, and CapCut has a one-tap "Reduce noise" toggle. Clean, then balance, then add music. Order matters here too.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Titles, Text &amp; Captions</h1>
+<p>Text guides the viewer, adds information, and — for social video watched on mute — carries the whole message. Do it cleanly and it looks professional. Do it carelessly and it screams amateur faster than anything else.</p>
+
+<h2>Stay inside the safe margins</h2>
+<p>Never push text to the very edge of the frame. Different screens crop differently, and platform interface elements (buttons, captions, usernames) cover the edges — especially the bottom third on TikTok and Instagram. Keep important text within the central <strong>title-safe area</strong>, roughly the middle 90%.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Mind the platform UI</div><p>On vertical social video, the bottom ~15% and right edge are buried under the caption, the like/share buttons, and the profile. Put your text higher and more central than feels natural on a bare frame, or it will be unreadable in the actual app. Turn on safe-area guides in your editor to see the zones.</p></div>
+
+<h2>Clean lower-thirds</h2>
+<p>A lower-third is the name/title graphic that appears in the lower portion of the frame. Keep it simple: one or two lines, a legible sans-serif font, high contrast against the background, and a gentle fade in and out. Resist busy boxes and spinning animations.</p>
+
+<ul class="check">
+  <li>High contrast: light text on dark, or add a subtle shadow/backing bar.</li>
+  <li>One font, two weights maximum — bold name, regular title.</li>
+  <li>On screen long enough to read twice, then gone.</li>
+  <li>Animate in and out softly; no distracting motion while it holds.</li>
+</ul>
+
+<h2>Burned-in captions for social</h2>
+<p>Most social video is watched with the sound off, so captions are not optional — they are how most of your audience receives your words. "Burned-in" means the captions are part of the video image itself, always visible, not a separate file the viewer has to enable.</p>
+
+<table>
+  <tr><th>Editor</th><th>Auto-captions</th></tr>
+  <tr><td>Premiere Pro</td><td>Text panel &rarr; "Transcribe Sequence" then "Create Captions"; fully editable and stylable</td></tr>
+  <tr><td>DaVinci Resolve</td><td>Audio-to-subtitle / "Create Subtitles from Audio" on the Edit page</td></tr>
+  <tr><td>CapCut</td><td>"Auto captions" — its signature feature; fast and accurate, with animated caption styles built in</td></tr>
+</table>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Always read every auto-caption</div><p>Auto-transcription is fast but not perfect — it mishears names, jargon, and homophones. Read the whole caption track and fix the errors before export. A caption that says the wrong word is worse than no caption, because now it is on screen, in writing, wrong.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Restraint is the aesthetic</div><p>The most professional-looking text is the simplest. One clean font, consistent placement, gentle animation. When every title uses a different style, color, and effect, the video looks chaotic. Pick a look and repeat it — consistency reads as intention.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Color &amp; Final Polish</h1>
+<p>Color is where your footage stops looking like raw clips and starts looking like a finished film. This chapter is a <em>light corrective pass</em> — enough to make everything consistent and pleasant. A full creative grade is its own craft (and its own guide); here we get the fundamentals right.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Correction vs grade</div><p><strong>Correction</strong> fixes problems: exposure that is too dark, white balance that is too orange, shots that do not match each other. <strong>Grading</strong> adds a creative look: teal shadows, warm skin, a filmic mood. Always correct first, grade second. This chapter is about correction — get that solid before you chase a look.</p></div>
+
+<h2>The corrective order of operations</h2>
+<ol class="steps">
+  <li><span class="sh">Set exposure.</span> Bring the brightness to a natural level — highlights not blown out to pure white, shadows not crushed to pure black. Use your editor's scopes (waveform) rather than trusting your eyes on an uncalibrated screen.</li>
+  <li><span class="sh">Fix white balance.</span> Neutralize color casts so whites look white and skin looks like skin — not too orange, not too blue. A white-balance eyedropper on something that should be neutral gray gets you close instantly.</li>
+  <li><span class="sh">Match your shots.</span> Put clips from the same scene side by side and adjust until they look like they belong together. Mismatched shots in one sequence are the most jarring, amateur-looking color problem there is.</li>
+  <li><span class="sh">Add contrast and saturation to taste.</span> A gentle push gives images life. Restraint wins — over-saturated, crunchy footage looks worse than untouched footage.</li>
+</ol>
+
+<table>
+  <tr><th>Editor</th><th>Where color lives</th></tr>
+  <tr><td>Premiere Pro</td><td>Lumetri Color panel — Basic Correction sliders, curves, and scopes</td></tr>
+  <tr><td>DaVinci Resolve</td><td>The dedicated Color page — the most powerful color tools of the three, still free</td></tr>
+  <tr><td>CapCut</td><td>"Adjust" panel — brightness, contrast, saturation, temperature; plus one-tap filters</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>If you shot in a flat / Log profile</div><p>Footage shot in a Log or "flat" profile looks washed-out and gray on purpose — it preserves detail for grading and is <em>not</em> finished footage. Apply a conversion (a LUT, or manual correction) to bring back normal contrast and color. If your footage looks lifeless straight off the card, this is likely why — and it is fixable, not broken.</p></div>
+
+<h2>Stabilization and cleanup</h2>
+<p>The last polish pass handles the small stuff that pulls a viewer out of the video.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🎚️ Stabilize shaky shots</div><p>Premiere's Warp Stabilizer, Resolve's Stabilizer (on the Color page tracker), and CapCut's "Stabilize" toggle all smooth handheld wobble. Use it lightly — heavy stabilization warps the frame and looks worse than the shake.</p></div>
+  <div class="card"><div class="ch">🧹 Final cleanup pass</div><p>Watch the whole thing one last time: any flash frames, black gaps, misspelled titles, an audio pop, a clip that never got color-matched? Fix them now. This pass catches what fatigue hid earlier.</p></div>
+</div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Watch it like a stranger</div><p>Before you call it done, watch the full video from the start without touching anything — no scrubbing, no pausing — and pretend you have never seen it. The problems you have gone blind to after hours of editing jump out immediately when you just <em>watch</em>.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Export Settings</h1>
+<p>You did all that work — do not ruin it with a bad export. The export turns your timeline into a single video file, and the settings decide whether it looks crisp and plays everywhere or looks blocky and stutters. The good news: every destination has a known-good recipe.</p>
+
+<h2>The three settings that matter most</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">📐 Resolution</div><p>The pixel dimensions — 1920&times;1080 (1080p) or 3840&times;2160 (4K) for horizontal; 1080&times;1920 for vertical. Match your delivery, usually the same as your timeline.</p></div>
+  <div class="card"><div class="ch">🎞️ Codec</div><p>How the video is compressed. <strong>H.264</strong> is the universal choice — plays everywhere, small files. <strong>H.265/HEVC</strong> is smaller still for 4K. Use these for delivery.</p></div>
+  <div class="card"><div class="ch">📊 Bitrate</div><p>Data per second — the biggest lever on quality. Higher bitrate = better image and bigger file. Too low and you get blocky, smeared motion.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Match frame rate to your timeline</div><p>Export at the same frame rate you edited at. A 24fps timeline exports at 24fps. Do not "upgrade" to 60fps on export — it cannot add smoothness that was never shot, and it can introduce stutter.</p></div>
+
+<h2>Known-good export recipes</h2>
+<table>
+  <tr><th>Destination</th><th>Resolution</th><th>Codec</th><th>Bitrate (target)</th></tr>
+  <tr><td>YouTube 1080p</td><td>1920&times;1080</td><td>H.264</td><td>~12&ndash;16 Mbps</td></tr>
+  <tr><td>YouTube 4K</td><td>3840&times;2160</td><td>H.264 / H.265</td><td>~35&ndash;50 Mbps</td></tr>
+  <tr><td>Instagram / TikTok (vertical)</td><td>1080&times;1920</td><td>H.264</td><td>~8&ndash;12 Mbps</td></tr>
+  <tr><td>Instagram feed (square)</td><td>1080&times;1080</td><td>H.264</td><td>~8&ndash;10 Mbps</td></tr>
+  <tr><td>Client delivery (high quality)</td><td>Match project (1080p/4K)</td><td>H.264 high, or ProRes</td><td>~40&ndash;80 Mbps (or ProRes)</td></tr>
+</table>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Just use the presets first</div><p>Every editor ships with presets that get you 95% there. Premiere's Media Encoder has "YouTube 1080p Full HD" and matching presets. Resolve's Deliver page has a YouTube preset and vertical options. CapCut's export dialog offers resolution/frame-rate/bitrate sliders with sensible defaults. Start from a preset, then only tweak resolution and bitrate if you need to.</p></div>
+
+<h2>Audio and container settings</h2>
+<ul class="check">
+  <li>Container/format: <strong>MP4</strong> for anything online — universal and small.</li>
+  <li>Audio codec: <strong>AAC</strong>, 320 kbps, at 48 kHz sample rate.</li>
+  <li>Confirm loudness is near &minus;14 LUFS so platforms do not turn you down.</li>
+  <li>For 4K vertical, some phones prefer H.265 — test one clip before delivering a batch.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Always watch your export before you publish</div><p>Never upload a file you have not played back in full. Open the finished export in a regular media player and watch the whole thing. Rendering glitches, missing audio, a dropped title, or a wrong aspect ratio all show up here — and it is far better to catch them on your drive than in front of your audience or your client.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Keep the project, archive the media</div><p>After delivery, keep the project file and exports, and archive the raw footage to a backup drive rather than deleting it — clients ask for changes weeks later, and re-shooting is not an option. Your folder structure from Chapter 1 makes this a five-minute job.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>You do not have to be inspired to edit well — you have to follow the order, one stage at a time, and the finished film builds itself.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>
