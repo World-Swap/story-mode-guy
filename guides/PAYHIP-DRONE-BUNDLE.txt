@@ -15,7 +15,7 @@ TITLE:
 The Complete Drone Library - 13 Guides (Fly, Film, Edit & Get Paid)
 
 SHORT DESCRIPTION:
-Everything for drone flying and drone video - 13 guides, 282 pages, from your
+Everything for drone flying and drone video - 13 guides, 276 pages, from your
 first flight to paid aerial work. Includes 3 bonus guides.
 
 FULL DESCRIPTION:
@@ -40,7 +40,7 @@ INCLUDED (10 core guides):
  - The Drone Business Playbook
  - Drone Mapping & Surveying
 
-13 guides, 282 pages. Instant PDF download. (Legal chapters are educational,
+13 guides, 276 pages. Instant PDF download. (Legal chapters are educational,
 US/FAA-centered, and remind you to verify current rules with your aviation
 authority before every flight.)
 
