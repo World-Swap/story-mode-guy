@@ -1,13 +1,13 @@
-# Story Mode Guy — Reels Index
+# Story Mode Guy  -  Reels Index
 
-Every promo reel, where it lives, and what it sells. All reels are **1080×1920, silent** — add a
+Every promo reel, where it lives, and what it sells. All reels are **1080x1920, silent**  -  add a
 trending audio track in-app, and end every caption with the link line. Full captions + hashtags are
 in each folder's `posting-queue.md`.
 
 ---
 
-## 🎞️ Guide reels — covers only (no paid pages shown)
-Folder: `promo/reels/guides/` · Captions: `promo/reels/guides/posting-queue.md` · Visual index: `guide-reels-index.jpg`
+## 🎞️ Guide reels  -  covers only (no paid pages shown)
+Folder: `promo/reels/guides/` - Captions: `promo/reels/guides/posting-queue.md` - Visual index: `guide-reels-index.jpg`
 
 | File | Promotes | Price |
 |------|----------|-------|
@@ -23,7 +23,7 @@ Folder: `promo/reels/guides/` · Captions: `promo/reels/guides/posting-queue.md`
 | `reel-09-low-light-night.mp4` | Low-Light & Night Photography | $27 |
 | `reel-10-cheat-sheet-pack.mp4` | The Photographer's Cheat-Sheet Pack | $17 |
 
-Each: title card → **cover only** → "What's inside" value props → CTA. No interior pages are shown.
+Each: title card -> **cover only** -> "What's inside" value props -> CTA. No interior pages are shown.
 
 ---
 
@@ -32,22 +32,22 @@ Folder: `promo/reels/` (packs) and `promo/reels/guides/` (collection)
 
 | File | Promotes |
 |------|----------|
-| `reel-00b-wallpaper-collection.mp4` | **The Complete Wallpaper Collection** (95, $19) — flagship |
-| `smg-desktop-4k-reel.mp4` | Santa Cruz Skies Vol. II — Desktop 4K pack |
-| `smg-phone-reel.mp4` | Santa Cruz Skies Vol. II — Phone pack |
+| `reel-00b-wallpaper-collection.mp4` | **The Complete Wallpaper Collection** (95, $19)  -  flagship |
+| `smg-desktop-4k-reel.mp4` | Santa Cruz Skies Vol. II  -  Desktop 4K pack |
+| `smg-phone-reel.mp4` | Santa Cruz Skies Vol. II  -  Phone pack |
 
 ---
 
-## 🌅 Photo reels — one per photo (Santa Cruz gallery drop)
-Folder: `promo/reels/photo/` · Captions: `promo/reels/photo/posting-queue.md`
+## 🌅 Photo reels  -  one per photo (Santa Cruz gallery drop)
+Folder: `promo/reels/photo/` - Captions: `promo/reels/photo/posting-queue.md`
 
-`reel-53.mp4` … `reel-78.mp4` — 26 single-photo reels (blurred fill + sharp band + slow pan, branded).
+`reel-53.mp4` ... `reel-78.mp4`  -  26 single-photo reels (blurred fill + sharp band + slow pan, branded).
 These promote the **photography / prints / wallpapers** and the gallery; post order is in the posting queue.
 
 ---
 
 ## Suggested cadence
 - **2 posts/week** keeps a queue fresh for ~5 months across these sets.
-- Alternate: a photo reel → a guide reel → a wallpaper reel, so the feed isn't all sales.
+- Alternate: a photo reel -> a guide reel -> a wallpaper reel, so the feed isn't all sales.
 - Lead a guide push with `reel-00-collection.mp4`, then drip the individual guide reels.
 - Rotate hashtags (don't reuse the full set every time); put the product link in your bio and the caption.
