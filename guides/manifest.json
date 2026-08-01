@@ -362,6 +362,42 @@
       "accent2": "#64748b",
       "reader": "New pilots who want a printable field reference",
       "short": "The Drone Pilot's Cheat-Sheet Pack"
+    },
+    {
+      "id": "d11-fpv-flying",
+      "line": "drone",
+      "kicker": "FPV FLYING",
+      "title": "FPV Drone Flying for Beginners",
+      "subtitle": "The Immersive Side of Drones - Gear, Modes & First Flights",
+      "price": "$29",
+      "accent": "#9333ea",
+      "accent2": "#c084fc",
+      "reader": "Pilots curious about immersive FPV flying",
+      "short": "FPV Drone Flying for Beginners"
+    },
+    {
+      "id": "d12-drone-business",
+      "line": "drone",
+      "kicker": "GET PAID TO FLY",
+      "title": "The Drone Business Playbook",
+      "subtitle": "Turn Your Drone Into a Paid Side Income",
+      "price": "$37",
+      "accent": "#b45309",
+      "accent2": "#f59e0b",
+      "reader": "Pilots who want to get paid for drone work",
+      "short": "The Drone Business Playbook"
+    },
+    {
+      "id": "d13-drone-mapping",
+      "line": "drone",
+      "kicker": "MAPPING & SURVEYING",
+      "title": "Drone Mapping & Surveying",
+      "subtitle": "From Flight Plan to Orthomosaic Map & 3D Model",
+      "price": "$39",
+      "accent": "#0f766e",
+      "accent2": "#14b8a6",
+      "reader": "Pilots moving into technical mapping and survey work",
+      "short": "Drone Mapping & Surveying"
     }
   ]
 }
