@@ -1,17 +1,203 @@
 {
   "_comment": "Topic backlog for the autonomous blog engine. Each fire, take the FIRST entry, write its article, move it into manifest.json's articles array, and delete it from here. ~2 weeks apart = ~6 months of runway. Heroes are photo-NN.jpg that exist on main (01-109). Refill this list when it runs low.",
   "topics": [
-    {"slug":"how-to-take-sharp-night-photos","title":"How to Take Sharp Photos at Night (Without a Flash)","description":"Night photos don't have to be a blurry, grainy mess. Here's how to get clean, sharp shots after dark using shutter speed, ISO, focus, and a steady base.","keywords":"night photography, how to take photos at night, sharp night photos, low light photography, night photography settings","hero":"photo-53.jpg","hero_alt":"Boardwalk lights glowing at blue dusk","product":"Low-Light & Night Photography guide ($27)","cta_url":"https://payhip.com/b/HYs6z","cta_button":"Get the Low-Light guide ($27) →"},
-    {"slug":"iphone-photography-tips-that-actually-work","title":"7 iPhone Photography Tips That Actually Make a Difference","description":"Your phone is a better camera than you think. Seven practical tips — light, gridlines, focus lock, and editing — that instantly upgrade your iPhone photos.","keywords":"iphone photography tips, phone photography, how to take better iphone photos, mobile photography, iphone camera tips","hero":"photo-30.jpg","hero_alt":"A crisp coastal scene shot on a phone","product":"Pro Photos From Your Pocket ($34)","cta_url":"https://payhip.com/b/Hf8YW","cta_button":"Get the iPhone guide ($34) →"},
-    {"slug":"how-to-photograph-the-milky-way","title":"How to Photograph the Milky Way With the Camera You Already Own","description":"You don't need a telescope to shoot the Milky Way — just a dark sky, a tripod, and the right settings. Here's the beginner-friendly starting point.","keywords":"how to photograph the milky way, astrophotography for beginners, milky way camera settings, night sky photography, star photography","hero":"photo-40.jpg","hero_alt":"A dark, star-filled night sky over the coast","product":"Astrophotography for Beginners ($39)","cta_url":"https://payhip.com/b/bKhSu","cta_button":"Get the Astrophotography guide ($39) →"},
-    {"slug":"how-to-edit-photos-in-lightroom","title":"How to Edit Photos in Lightroom: A Simple Order of Operations","description":"Editing gets easy when you stop shoving sliders around and follow a repeatable order. Here's the sequence I use to take a flat RAW file to a finished photo.","keywords":"how to edit photos in lightroom, lightroom editing, lightroom workflow, photo editing steps, lightroom for beginners","hero":"photo-12.jpg","hero_alt":"A richly edited golden-hour coastal photograph","product":"The Lightroom Blueprint ($37)","cta_url":"https://payhip.com/b/1gXQa","cta_button":"Get the Lightroom Blueprint ($37) →"},
-    {"slug":"how-to-pose-people-for-natural-portraits","title":"How to Pose People for Natural-Looking Portraits","description":"Nobody wants to look stiff. A few simple posing cues — and the right light — make anyone look relaxed and flattering in a portrait, on any camera.","keywords":"how to pose for portraits, posing guide, natural portrait poses, portrait photography tips, how to pose people","hero":"photo-25.jpg","hero_alt":"Soft natural light along the coast","product":"Natural-Light Portraits & Posing ($29)","cta_url":"https://payhip.com/b/y8H6g","cta_button":"Get the Portraits & Posing guide ($29) →"},
-    {"slug":"product-photography-at-home","title":"Product Photography at Home: A $30 Setup That Looks Expensive","description":"You don't need a studio to make products look premium. Here's a cheap home setup and the settings that turn a kitchen table into a storefront.","keywords":"product photography at home, diy product photography, etsy product photos, how to photograph products, small business photography","hero":"photo-15.jpg","hero_alt":"Clean, well-lit still-life composition","product":"Product Photos That Sell ($34)","cta_url":"https://payhip.com/b/Ynu1K","cta_button":"Get the Product Photography guide ($34) →"},
-    {"slug":"what-is-the-exposure-triangle","title":"The Exposure Triangle, Explained Without the Jargon","description":"Aperture, shutter speed, ISO — three dials that control every photo. Here's what each one actually does and how they trade off, in plain English.","keywords":"exposure triangle, aperture shutter speed iso, what is the exposure triangle, manual mode explained, photography basics","hero":"photo-18.jpg","hero_alt":"A balanced, well-exposed coastal landscape","product":"Master Your Camera in a Weekend ($27)","cta_url":"https://payhip.com/b/1TJzr","cta_button":"Get the manual-mode guide ($27) →"},
-    {"slug":"real-estate-photography-tips","title":"Real Estate Photography Tips for Bright, Sellable Interiors","description":"Dark, crooked interior photos kill listings. Here's how to shoot bright, straight, sellable rooms — and turn it into a paid side income.","keywords":"real estate photography, how to photograph interiors, airbnb photography, real estate photo tips, interior photography settings","hero":"photo-22.jpg","hero_alt":"Bright, airy coastal scene","product":"Real Estate & Airbnb Photography ($39)","cta_url":"https://payhip.com/b/kPbJX","cta_button":"Get the Real Estate guide ($39) →"},
-    {"slug":"free-santa-cruz-desktop-wallpapers","title":"Where to Find Beautiful Santa Cruz Desktop Wallpapers","description":"Want the Santa Cruz coast on your screen? Here's what makes a great desktop wallpaper — and where to get a whole 4K collection of the California coast.","keywords":"santa cruz wallpaper, california coast wallpaper, desktop wallpaper 4k, santa cruz desktop background, ocean wallpaper","hero":"photo-01.jpg","hero_alt":"A wide Santa Cruz coastline at sunset","product":"The Complete Wallpaper Collection ($19)","cta_url":"https://payhip.com/b/uIdFV","cta_button":"Browse the wallpaper collection →"},
-    {"slug":"what-is-blue-hour-photography","title":"Blue Hour: The Best 20 Minutes of Light Most People Miss","description":"The window just after sunset — blue hour — gives you deep skies, glowing lights, and glassy reflections. Here's how to catch it and shoot it.","keywords":"blue hour photography, what is blue hour, blue hour settings, twilight photography, dusk photography tips","hero":"photo-53.jpg","hero_alt":"Deep blue sky over lit boardwalk at dusk","product":"Low-Light & Night Photography ($27)","cta_url":"https://payhip.com/b/HYs6z","cta_button":"Get the Low-Light guide ($27) →"},
-    {"slug":"how-to-shoot-in-manual-mode","title":"How to Shoot in Manual Mode (and Finally Get Off Auto)","description":"Manual mode isn't hard — it's three dials and a light meter. Here's a step-by-step way to take control of your camera and stop letting Auto guess.","keywords":"how to shoot in manual mode, manual mode photography, get off auto, manual camera settings, learn manual mode","hero":"photo-08.jpg","hero_alt":"A sharp, deliberately exposed coastal photo","product":"Master Your Camera in a Weekend ($27)","cta_url":"https://payhip.com/b/1TJzr","cta_button":"Get the manual-mode guide ($27) →"},
-    {"slug":"best-time-of-day-for-photos","title":"The Best Time of Day to Take Photos (and Why)","description":"Light is everything. Here's a quick tour of what each part of the day gives you — golden hour, blue hour, harsh noon — and when to shoot what.","keywords":"best time of day for photos, golden hour, best lighting for photography, when to take photos, natural light photography","hero":"photo-20.jpg","hero_alt":"Warm directional light across the coast","product":"Master Your Camera in a Weekend ($27)","cta_url":"https://payhip.com/b/1TJzr","cta_button":"Get the manual-mode guide ($27) →"}
+    {
+      "slug": "how-to-make-videos-look-cinematic",
+      "title": "How to Make Your Videos Look Cinematic (It's Mostly 3 Settings)",
+      "description": "The difference between home-video footage and cinematic footage isn't the camera — it's frame rate, shutter, and a flat picture profile. Here's the simple starting point.",
+      "keywords": "how to make videos look cinematic, cinematic camera settings, cinematic video, 180 degree shutter rule, filmic look",
+      "hero": "photo-05.jpg",
+      "hero_alt": "A cinematic, moody Santa Cruz coastal scene",
+      "product": "Make Your Videos Look Cinematic ($29)",
+      "cta_url": "https://storymodeguy.com/#video-guides",
+      "cta_button": "See the videography guides →"
+    },
+    {
+      "slug": "how-to-take-sharp-night-photos",
+      "title": "How to Take Sharp Photos at Night (Without a Flash)",
+      "description": "Night photos don't have to be a blurry, grainy mess. Here's how to get clean, sharp shots after dark using shutter speed, ISO, focus, and a steady base.",
+      "keywords": "night photography, how to take photos at night, sharp night photos, low light photography, night photography settings",
+      "hero": "photo-53.jpg",
+      "hero_alt": "Boardwalk lights glowing at blue dusk",
+      "product": "Low-Light & Night Photography guide ($27)",
+      "cta_url": "https://payhip.com/b/HYs6z",
+      "cta_button": "Get the Low-Light guide ($27) →"
+    },
+    {
+      "slug": "why-does-my-video-audio-sound-bad",
+      "title": "Why Does My Video Audio Sound Bad? (And How to Fix It)",
+      "description": "Echoey, hollow, or hissy sound comes down to three things: mic distance, the room, and your levels. Here's how to get clean, professional audio.",
+      "keywords": "why does my video sound bad, how to get good audio for video, video audio tips, microphone for video, fix echo audio",
+      "hero": "photo-30.jpg",
+      "hero_alt": "A quiet coastal scene at golden hour",
+      "product": "Fix Your Audio ($24)",
+      "cta_url": "https://storymodeguy.com/#video-guides",
+      "cta_button": "See the videography guides →"
+    },
+    {
+      "slug": "iphone-photography-tips-that-actually-work",
+      "title": "7 iPhone Photography Tips That Actually Make a Difference",
+      "description": "Your phone is a better camera than you think. Seven practical tips — light, gridlines, focus lock, and editing — that instantly upgrade your iPhone photos.",
+      "keywords": "iphone photography tips, phone photography, how to take better iphone photos, mobile photography, iphone camera tips",
+      "hero": "photo-30.jpg",
+      "hero_alt": "A crisp coastal scene shot on a phone",
+      "product": "Pro Photos From Your Pocket ($34)",
+      "cta_url": "https://payhip.com/b/Hf8YW",
+      "cta_button": "Get the iPhone guide ($34) →"
+    },
+    {
+      "slug": "best-camera-settings-for-video",
+      "title": "The Best Camera Settings for Video (Frame Rate, Shutter & More)",
+      "description": "A plain-English starting point for video: what frame rate to pick, the shutter rule that kills the 'video look,' resolution, and picture profiles.",
+      "keywords": "best camera settings for video, frame rate for video, shutter speed for video, 24fps vs 30fps vs 60fps, video settings",
+      "hero": "photo-18.jpg",
+      "hero_alt": "A wide, well-exposed coastal landscape",
+      "product": "Make Your Videos Look Cinematic ($29)",
+      "cta_url": "https://storymodeguy.com/#video-guides",
+      "cta_button": "See the videography guides →"
+    },
+    {
+      "slug": "how-to-photograph-the-milky-way",
+      "title": "How to Photograph the Milky Way With the Camera You Already Own",
+      "description": "You don't need a telescope to shoot the Milky Way — just a dark sky, a tripod, and the right settings. Here's the beginner-friendly starting point.",
+      "keywords": "how to photograph the milky way, astrophotography for beginners, milky way camera settings, night sky photography, star photography",
+      "hero": "photo-40.jpg",
+      "hero_alt": "A dark, star-filled night sky over the coast",
+      "product": "Astrophotography for Beginners ($39)",
+      "cta_url": "https://payhip.com/b/bKhSu",
+      "cta_button": "Get the Astrophotography guide ($39) →"
+    },
+    {
+      "slug": "how-to-shoot-better-video-on-your-phone",
+      "title": "How to Shoot Better Video on Your Phone",
+      "description": "Your phone shoots better video than you think. Lock focus and exposure, pick the right frame rate, hold it steady, and fix the audio — here's how.",
+      "keywords": "how to shoot video on phone, iphone video tips, phone videography, smartphone video, better phone video",
+      "hero": "photo-12.jpg",
+      "hero_alt": "A coastal scene framed for video",
+      "product": "Shoot Better Video on Your Phone ($29)",
+      "cta_url": "https://storymodeguy.com/#video-guides",
+      "cta_button": "See the videography guides →"
+    },
+    {
+      "slug": "how-to-edit-photos-in-lightroom",
+      "title": "How to Edit Photos in Lightroom: A Simple Order of Operations",
+      "description": "Editing gets easy when you stop shoving sliders around and follow a repeatable order. Here's the sequence I use to take a flat RAW file to a finished photo.",
+      "keywords": "how to edit photos in lightroom, lightroom editing, lightroom workflow, photo editing steps, lightroom for beginners",
+      "hero": "photo-12.jpg",
+      "hero_alt": "A richly edited golden-hour coastal photograph",
+      "product": "The Lightroom Blueprint ($37)",
+      "cta_url": "https://payhip.com/b/1gXQa",
+      "cta_button": "Get the Lightroom Blueprint ($37) →"
+    },
+    {
+      "slug": "how-to-color-grade-video",
+      "title": "How to Color Grade Video: Correct First, Then Style",
+      "description": "Flat, grey footage isn't broken — it's ungraded. Here's the difference between color correction and grading, and a simple order that works every time.",
+      "keywords": "how to color grade video, color grading, log footage, luts, davinci resolve color, video color correction",
+      "hero": "photo-20.jpg",
+      "hero_alt": "A richly colored golden-hour coastal photograph",
+      "product": "Color Grading Demystified ($34)",
+      "cta_url": "https://storymodeguy.com/#video-guides",
+      "cta_button": "See the videography guides →"
+    },
+    {
+      "slug": "how-to-pose-people-for-natural-portraits",
+      "title": "How to Pose People for Natural-Looking Portraits",
+      "description": "Nobody wants to look stiff. A few simple posing cues — and the right light — make anyone look relaxed and flattering in a portrait, on any camera.",
+      "keywords": "how to pose for portraits, posing guide, natural portrait poses, portrait photography tips, how to pose people",
+      "hero": "photo-25.jpg",
+      "hero_alt": "Soft natural light along the coast",
+      "product": "Natural-Light Portraits & Posing ($29)",
+      "cta_url": "https://payhip.com/b/y8H6g",
+      "cta_button": "Get the Portraits & Posing guide ($29) →"
+    },
+    {
+      "slug": "how-to-get-smooth-cinematic-video",
+      "title": "How to Get Smooth, Cinematic Video (Handheld or Gimbal)",
+      "description": "Shaky footage reads as amateur; smooth, motivated movement reads as film. Here's how to steady your shots — with or without a gimbal.",
+      "keywords": "how to get smooth video, cinematic camera movement, gimbal moves, stabilize video, smooth handheld video",
+      "hero": "photo-08.jpg",
+      "hero_alt": "A steady, sweeping view of the coast",
+      "product": "Smooth, Cinematic Camera Movement ($24)",
+      "cta_url": "https://storymodeguy.com/#video-guides",
+      "cta_button": "See the videography guides →"
+    },
+    {
+      "slug": "product-photography-at-home",
+      "title": "Product Photography at Home: A $30 Setup That Looks Expensive",
+      "description": "You don't need a studio to make products look premium. Here's a cheap home setup and the settings that turn a kitchen table into a storefront.",
+      "keywords": "product photography at home, diy product photography, etsy product photos, how to photograph products, small business photography",
+      "hero": "photo-15.jpg",
+      "hero_alt": "Clean, well-lit still-life composition",
+      "product": "Product Photos That Sell ($34)",
+      "cta_url": "https://payhip.com/b/Ynu1K",
+      "cta_button": "Get the Product Photography guide ($34) →"
+    },
+    {
+      "slug": "what-is-the-exposure-triangle",
+      "title": "The Exposure Triangle, Explained Without the Jargon",
+      "description": "Aperture, shutter speed, ISO — three dials that control every photo. Here's what each one actually does and how they trade off, in plain English.",
+      "keywords": "exposure triangle, aperture shutter speed iso, what is the exposure triangle, manual mode explained, photography basics",
+      "hero": "photo-18.jpg",
+      "hero_alt": "A balanced, well-exposed coastal landscape",
+      "product": "Master Your Camera in a Weekend ($27)",
+      "cta_url": "https://payhip.com/b/1TJzr",
+      "cta_button": "Get the manual-mode guide ($27) →"
+    },
+    {
+      "slug": "real-estate-photography-tips",
+      "title": "Real Estate Photography Tips for Bright, Sellable Interiors",
+      "description": "Dark, crooked interior photos kill listings. Here's how to shoot bright, straight, sellable rooms — and turn it into a paid side income.",
+      "keywords": "real estate photography, how to photograph interiors, airbnb photography, real estate photo tips, interior photography settings",
+      "hero": "photo-22.jpg",
+      "hero_alt": "Bright, airy coastal scene",
+      "product": "Real Estate & Airbnb Photography ($39)",
+      "cta_url": "https://payhip.com/b/kPbJX",
+      "cta_button": "Get the Real Estate guide ($39) →"
+    },
+    {
+      "slug": "free-santa-cruz-desktop-wallpapers",
+      "title": "Where to Find Beautiful Santa Cruz Desktop Wallpapers",
+      "description": "Want the Santa Cruz coast on your screen? Here's what makes a great desktop wallpaper — and where to get a whole 4K collection of the California coast.",
+      "keywords": "santa cruz wallpaper, california coast wallpaper, desktop wallpaper 4k, santa cruz desktop background, ocean wallpaper",
+      "hero": "photo-01.jpg",
+      "hero_alt": "A wide Santa Cruz coastline at sunset",
+      "product": "The Complete Wallpaper Collection ($19)",
+      "cta_url": "https://payhip.com/b/uIdFV",
+      "cta_button": "Browse the wallpaper collection →"
+    },
+    {
+      "slug": "what-is-blue-hour-photography",
+      "title": "Blue Hour: The Best 20 Minutes of Light Most People Miss",
+      "description": "The window just after sunset — blue hour — gives you deep skies, glowing lights, and glassy reflections. Here's how to catch it and shoot it.",
+      "keywords": "blue hour photography, what is blue hour, blue hour settings, twilight photography, dusk photography tips",
+      "hero": "photo-53.jpg",
+      "hero_alt": "Deep blue sky over lit boardwalk at dusk",
+      "product": "Low-Light & Night Photography ($27)",
+      "cta_url": "https://payhip.com/b/HYs6z",
+      "cta_button": "Get the Low-Light guide ($27) →"
+    },
+    {
+      "slug": "how-to-shoot-in-manual-mode",
+      "title": "How to Shoot in Manual Mode (and Finally Get Off Auto)",
+      "description": "Manual mode isn't hard — it's three dials and a light meter. Here's a step-by-step way to take control of your camera and stop letting Auto guess.",
+      "keywords": "how to shoot in manual mode, manual mode photography, get off auto, manual camera settings, learn manual mode",
+      "hero": "photo-08.jpg",
+      "hero_alt": "A sharp, deliberately exposed coastal photo",
+      "product": "Master Your Camera in a Weekend ($27)",
+      "cta_url": "https://payhip.com/b/1TJzr",
+      "cta_button": "Get the manual-mode guide ($27) →"
+    },
+    {
+      "slug": "best-time-of-day-for-photos",
+      "title": "The Best Time of Day to Take Photos (and Why)",
+      "description": "Light is everything. Here's a quick tour of what each part of the day gives you — golden hour, blue hour, harsh noon — and when to shoot what.",
+      "keywords": "best time of day for photos, golden hour, best lighting for photography, when to take photos, natural light photography",
+      "hero": "photo-20.jpg",
+      "hero_alt": "Warm directional light across the coast",
+      "product": "Master Your Camera in a Weekend ($27)",
+      "cta_url": "https://payhip.com/b/1TJzr",
+      "cta_button": "Get the manual-mode guide ($27) →"
+    }
   ]
 }
