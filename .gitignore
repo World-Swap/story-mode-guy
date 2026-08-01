@@ -15,3 +15,7 @@ promo/reels/guides/collection-wall-cards/
 promo/pinterest/pins/
 promo/music/
 promo/reels-music/
+
+# delivery zips (build artifacts, delivered via SendUserFile)
+*-drop.zip
+blog-engine-drop.zip
