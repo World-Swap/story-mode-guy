@@ -47,6 +47,20 @@ You've built a lot. This doc holds all of it so you never have to keep it in you
 | Low-Light & Night Photography | $27 | payhip.com/b/HYs6z |
 | The Photographer's Cheat-Sheet Pack | $17 | payhip.com/b/lhZE4 |
 
+### 🎬 Videography guides (10 + bundle) — LIVE on site & Payhip
+| Guide | Price | Link |
+| **The Complete Videography Library** (bundle) | $99 | payhip.com/b/aGjJP |
+| Make Your Videos Look Cinematic | $29 | payhip.com/b/k9Tvz |
+| Shoot Better Video on Your Phone | $29 | payhip.com/b/30nYZ |
+| The Video Editing Blueprint | $37 | payhip.com/b/5t1AY |
+| Color Grading Demystified | $34 | payhip.com/b/QtcBz |
+| Fix Your Audio | $24 | payhip.com/b/tAeQd |
+| Lighting for Video | $27 | payhip.com/b/AxJ4B |
+| B-roll & Visual Storytelling | $27 | payhip.com/b/1olQD |
+| Smooth, Cinematic Camera Movement | $24 | payhip.com/b/zhSxf |
+| Real Estate & Airbnb Video Tours | $39 | payhip.com/b/BcxD9 |
+| The Videographer's Cheat-Sheet Pack | $17 | payhip.com/b/9QMfo |
+
 ### 📖 Emberwild (illustrated series, $0.99 each)
 Ep 1 bMoJ7 · Ep 2 hLtPf · Ep 3 Lip5f · Ep 4 9BG6W · Ep 5 z9W8U · Ep 6 umiJc · Ep 7 7riO6 · Ep 8 tqn92 · Ep 9 zQWhs · Ep 10 lBJZd
 
