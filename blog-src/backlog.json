@@ -2,6 +2,17 @@
   "_comment": "Topic backlog for the autonomous blog engine. Each fire, take the FIRST entry, write its article, move it into manifest.json's articles array, and delete it from here. ~2 weeks apart = ~6 months of runway. Heroes are photo-NN.jpg that exist on main (01-109). Refill this list when it runs low.",
   "topics": [
     {
+      "slug": "how-to-fly-a-drone-for-beginners",
+      "title": "How to Fly a Drone for Beginners (Your First Flight, Step by Step)",
+      "description": "Nervous about your first flight? Here's the calm, step-by-step way to take off, hover, and land your drone with confidence.",
+      "keywords": "how to fly a drone, drone for beginners, first drone flight, drone flying tips, beginner drone",
+      "hero": "photo-14.jpg",
+      "hero_alt": "Open sky over the Santa Cruz coast",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
+    },
+    {
       "slug": "how-to-make-videos-look-cinematic",
       "title": "How to Make Your Videos Look Cinematic (It's Mostly 3 Settings)",
       "description": "The difference between home-video footage and cinematic footage isn't the camera — it's frame rate, shutter, and a flat picture profile. Here's the simple starting point.",
@@ -22,6 +33,17 @@
       "product": "Low-Light & Night Photography guide ($27)",
       "cta_url": "https://payhip.com/b/HYs6z",
       "cta_button": "Get the Low-Light guide ($27) →"
+    },
+    {
+      "slug": "do-i-need-a-license-to-fly-a-drone",
+      "title": "Do I Need a License to Fly a Drone? (US Rules, Explained Simply)",
+      "description": "Registration, the recreational test, and Part 107 for paid work - the US drone rules in plain English. Always verify current rules with the FAA before flying.",
+      "keywords": "do i need a license to fly a drone, drone registration, part 107, drone laws, faa drone rules",
+      "hero": "photo-22.jpg",
+      "hero_alt": "A wide coastal landscape",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
     },
     {
       "slug": "why-does-my-video-audio-sound-bad",
@@ -46,6 +68,17 @@
       "cta_button": "Get the iPhone guide ($34) →"
     },
     {
+      "slug": "cinematic-drone-shots-for-beginners",
+      "title": "5 Cinematic Drone Shots Any Beginner Can Fly",
+      "description": "The reveal, the orbit, the flyover, the top-down, and the dronie - the signature moves that make aerial footage look like a film, and how to fly each smoothly.",
+      "keywords": "cinematic drone shots, drone moves for beginners, drone video, how to film with a drone, aerial shots",
+      "hero": "photo-05.jpg",
+      "hero_alt": "A sweeping coastal vista",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
+    },
+    {
       "slug": "best-camera-settings-for-video",
       "title": "The Best Camera Settings for Video (Frame Rate, Shutter & More)",
       "description": "A plain-English starting point for video: what frame rate to pick, the shutter rule that kills the 'video look,' resolution, and picture profiles.",
@@ -66,6 +99,17 @@
       "product": "Astrophotography for Beginners ($39)",
       "cta_url": "https://payhip.com/b/bKhSu",
       "cta_button": "Get the Astrophotography guide ($39) →"
+    },
+    {
+      "slug": "how-to-not-crash-your-drone",
+      "title": "How to Not Crash Your Drone: 7 Habits That Keep It in the Air",
+      "description": "Most crashes and flyaways are preventable on the ground. Wind limits, GPS, battery discipline, and the Return-to-Home setting that saves drones.",
+      "keywords": "how to not crash a drone, drone flyaway, drone safety, return to home, drone crash prevention",
+      "hero": "photo-30.jpg",
+      "hero_alt": "Calm skies over the coast",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
     },
     {
       "slug": "how-to-shoot-better-video-on-your-phone",
