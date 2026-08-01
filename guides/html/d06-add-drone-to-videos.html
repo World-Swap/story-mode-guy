@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Add Drone Shots to Your Videos — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #7c3aed;
+  --accent2: #a78bfa;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">AIR MEETS GROUND</div>
+    <div style="margin-top:auto"></div>
+    <h1>Add Drone Shots to Your Videos</h1>
+    <div class="rule"></div>
+    <div class="sub">Turn Aerial Clips Into a Story That Holds Attention</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$27 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Turn Aerial Clips Into a Story That Holds Attention. Written for creators with great aerial clips but flat-feeling videos.</div>
+  <ol><li><span class="t">Great Clips, Flat Video: The Missing Piece Is Structure</span></li><li><span class="t">What Aerial B-roll Is For — the Establishing-Shot Job</span></li><li><span class="t">The Aerial Shot List for a Ground Story</span></li><li><span class="t">Cutting Between Ground & Air</span></li><li><span class="t">Motivated Transitions — Match-Cut on Motion, Whip Pans, Masked Reveals</span></li><li><span class="t">Pacing & Music With Aerials</span></li><li><span class="t">Story Structure — Using Aerials for Beginning, Middle, and End</span></li><li><span class="t">Shoot Aerials Knowing You'll Edit Them — Coverage & Overlap</span></li><li><span class="t">Common Mistakes — Too Many Aerials, Aimless Drift, No Ground Connection</span></li><li><span class="t">A Repeatable Integration Workflow</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Great Clips, Flat Video: The Missing Piece Is Structure</h1>
+<p class="lead-in">Your drone footage is genuinely good. The light was nice, the moves were smooth, the coastline looked cinematic on the little screen. So why does the finished video feel like a slideshow of pretty shots that never quite adds up to anything? The answer is almost never the footage. It is what happens between the shots — and that is a skill you can learn in an afternoon.</p>
+
+<p>Here is the truth most drone owners discover the hard way: <strong>aerial footage does not carry a video on its own.</strong> A bird's-eye view is a spectacular <em>ingredient</em>, but a string of ingredients is not a meal. Videos hold attention because they have structure — a beginning that orients you, a middle that develops, and an end that lands. Aerials are a powerful tool for building that structure, but only when they work <em>for</em> the story instead of replacing it.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Your aerials are B-roll in service of a ground-level story — the job is to cut them into a structure, not to string them together.</p></div>
+
+<h2>Why this guide exists</h2>
+<p>Most drone tutorials teach you to <em>fly</em> and to <em>capture</em>. Almost none teach what to do with the clips afterward — how an aerial connects to a person on the ground, why some cuts feel invisible and others feel like a jolt, and how to build a piece people watch to the end. This guide is that missing bridge: the link between the footage on your card and a finished, ground-based video that holds attention.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Editor-agnostic on purpose</div><p>Everything here is about editing <em>concepts</em>, not buttons. Whether you cut in Premiere, DaVinci Resolve, Final Cut, CapCut, or an app on your phone, the ideas are identical. Where a technique has a common name, we use it — but you will never find a menu path here, because those change and the thinking does not.</p></div>
+
+<h2>What you already have going for you</h2>
+<p>If your individual clips look good, you have cleared the hardest technical bar in aerial video. The rest is craft you can practice. By the end of this guide you will know which aerial shots a story needs, where they belong in the timeline, how to cut into and out of them without a jolt, and — just as importantly — when to leave the drone on the ground.</p>
+
+<h1><span class="n">CHAPTER 1</span>What Aerial B-roll Is For — the Establishing-Shot Job</h1>
+<p>Before you place a single aerial in a timeline, you need to know what it is <em>for</em>. Aerial footage has a specific job in the grammar of video, and when you use it for that job it feels essential. When you use it for anything else, it feels like padding. That job is the establishing shot.</p>
+
+<h2>The establishing shot, defined</h2>
+<p>An establishing shot answers the three silent questions a viewer asks in the first seconds of any scene: <strong>Where are we? What is this place? What is its scale?</strong> A wide aerial answers all three instantly — the town on the river, the trailhead below the ridgeline, the venue in the vineyard. That single view orients the audience so every ground-level shot afterward has a context to live inside.</p>
+
+<blockquote>Aerials are not the story. They are the stage the story stands on.</blockquote>
+
+<p>This is why the strongest place for your best wide aerial is near the <em>start</em> of a section — it sets the table. And it is why an aerial dropped into an intimate ground scene, with no reason to zoom out, feels like the video lost its train of thought. The shot is fine. The <em>job</em> is wrong.</p>
+
+<h2>B-roll versus A-roll</h2>
+<p>In editing, <strong>A-roll</strong> is your spine: the main action, the person talking, the thing the video is about. <strong>B-roll</strong> is supporting footage that adds context, texture, and cover for cuts. Almost all of your aerial footage is B-roll. Internalizing this reframes everything — you stop asking "where can I show off this drone shot?" and start asking "what does this moment need, and can an aerial provide it?"</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🎬 What aerials do well</div><ul><li>Establish a location and its scale</li><li>Signal a change of place or time</li><li>Reveal something the ground view hid</li><li>Give the eye a wide breath between tight shots</li><li>Bookend a piece with a sense of arrival or departure</li></ul></div>
+  <div class="card"><div class="ch">🚫 What aerials do poorly</div><ul><li>Carry emotion or a character's face</li><li>Show fine action and detail</li><li>Sustain interest for many seconds alone</li><li>Replace a missing story with spectacle</li><li>Connect to nothing on the ground</li></ul></div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The one-question test</div><p>Before you keep any aerial in your edit, ask: <em>"What does this shot tell the viewer that the shot before it didn't?"</em> If you can answer in a few words — "now they see how remote the cabin is" — keep it. If your only answer is "it looks cool," you have found a cut.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>The Aerial Shot List for a Ground Story</h1>
+<p>A ground-based story needs only a handful of aerial <em>types</em>, each doing a distinct structural job. Fly with this list in mind — or sort footage you already have into these buckets — and you will always have the right aerial for the right moment, instead of forty versions of the same drifting flyover.</p>
+
+<h2>The six workhorse aerials</h2>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🗺️ The Establisher</div><p>High and wide, mostly static or a slow drift. Shows the whole place and its scale. This is your opener and your scene-change shot.</p></div>
+  <div class="card"><div class="ch">➡️ The Follow</div><p>Tracks a subject moving through the landscape — a car on a road, a hiker on a trail. Ties the aerial directly to a person on the ground.</p></div>
+  <div class="card"><div class="ch">🔓 The Reveal</div><p>Starts on something small or hidden, then rises or pushes to expose the wider context. A built-in "wow" that also delivers information.</p></div>
+  <div class="card"><div class="ch">🔎 The Detail Push</div><p>The opposite move — descends or flies in <em>toward</em> a specific subject, narrowing from wide to a point of interest. Great for cutting <em>into</em> a scene.</p></div>
+  <div class="card"><div class="ch">🌀 The Orbit</div><p>Circles a fixed subject — a landmark, a building, a person standing still. Adds dimension and dwell. Use sparingly; it is the easiest move to overuse.</p></div>
+  <div class="card"><div class="ch">📐 The Top-Down</div><p>Straight-down "God's eye." Abstract and graphic. A punctuation mark, not a workhorse — one per video is often plenty.</p></div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Motion is your edit currency</div><p>Notice that four of these six are defined by <em>movement</em> — following, revealing, pushing, orbiting. That movement is not just for looks. Direction and speed of motion are what let you cut cleanly between an aerial and a ground shot. Capture the motion deliberately and you are really capturing edit points. We build on this in Chapters 3 and 4.</p></div>
+
+<h3>Your aerial shot-list checklist</h3>
+<p>Print this. Before a shoot, or before you start an edit from existing footage, confirm you have at least one clean version of each shot the story needs:</p>
+
+<ul class="check">
+  <li>One wide <strong>Establisher</strong> of the main location, held steady for 8–10 seconds.</li>
+  <li>A <strong>Reveal</strong> that can open the video or a section.</li>
+  <li>A <strong>Follow</strong> shot tied to a subject who also appears in ground footage.</li>
+  <li>A <strong>Detail Push</strong> that flies toward a place you cut to on the ground.</li>
+  <li>At least one aerial with motion moving <em>left-to-right</em> and one moving <em>right-to-left</em>, for cutting flexibility.</li>
+  <li>A calmer "departure" or pull-back aerial for the ending.</li>
+  <li>Extra handles: every clip 3–5 seconds longer than you think you need on both ends.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 3</span>Cutting Between Ground &amp; Air</h1>
+<p>This is where flat videos become finished ones. The relationship between air and ground is not decorative — it is the engine of the piece. All aerials feel weightless and distant; all ground shots feel claustrophobic and small. The magic is in the <em>conversation</em> between the two.</p>
+
+<h2>The rhythm: wide to close, and back</h2>
+<p>Human attention follows a zoom-in of meaning. We like to be shown <em>where</em> we are, then brought <em>close</em> to what matters, then pulled back to breathe. Aerials are your "wide" and your "breath"; ground shots are your "close" and your "matter." A reliable pattern:</p>
+
+<ol class="steps">
+  <li><span class="sh">Establish from the air.</span> Open on a wide aerial so the viewer knows the place and its scale before you show any detail.</li>
+  <li><span class="sh">Land on the ground.</span> Cut to a ground shot of the actual subject — a face, a hand, an action. This is the payoff the aerial set up.</li>
+  <li><span class="sh">Stay on the ground for the substance.</span> Let several ground shots develop the moment. This is where the story actually lives.</li>
+  <li><span class="sh">Return to the air to transition or breathe.</span> When you need to change place, compress time, or give the eye a rest, cut back to an aerial — then land again somewhere new.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't cut air-to-air-to-air</div><p>Two aerials back to back can work if they are clearly different shots doing different jobs. Three or more in a row and the video floats away — the viewer loses the human thread and starts to disengage. When you catch yourself stacking aerials, ask what ground shot belongs between them.</p></div>
+
+<h2>Make the ground and air share something</h2>
+<p>The cleanest air-to-ground cuts are <em>linked</em> — the two shots have an element in common that the viewer's eye can follow across the cut. Link on any of these:</p>
+
+<table>
+  <tr><th>Link the cut on…</th><th>Air shot</th><th>Ground shot</th></tr>
+  <tr><td>The same subject</td><td>Aerial follows the car down the coast road</td><td>Ground shot inside/beside the same car</td></tr>
+  <tr><td>Direction of motion</td><td>Drone moves left-to-right</td><td>Subject on ground also moves left-to-right</td></tr>
+  <tr><td>A specific place</td><td>Detail Push toward a red barn</td><td>Ground shot standing at that red barn</td></tr>
+  <tr><td>Time of day / light</td><td>Golden-hour aerial</td><td>Golden-hour ground shot, matching warmth</td></tr>
+</table>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this in your next edit</div><p>Take your single best aerial and, instead of admiring it, immediately find the ground clip that shares its subject, direction, or location. Place them next to each other. Feel how the pair does something neither could alone — the aerial gives scale, the ground gives meaning. That pairing instinct is the whole craft in miniature.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Motivated Transitions — Match-Cut on Motion, Whip Pans, Masked Reveals</h1>
+<p>A transition is <strong>motivated</strong> when something in the shot <em>asks</em> for it — a movement, a shape, a wipe of the frame. Motivated transitions feel inevitable; the viewer never thinks "nice transition," they just stay inside the story. Unmotivated ones — a random cross-dissolve, a spinning cube, a flashy preset — announce the edit and break the spell. With aerials, three techniques do almost all the heavy lifting.</p>
+
+<div class="cards three">
+  <div class="card solid"><div class="ch">🔗 Match-cut on motion</div><p>End the outgoing shot on a motion, begin the incoming shot on the <em>same</em> motion and direction. The eye follows the movement across the cut and never registers the seam.</p></div>
+  <div class="card solid"><div class="ch">💨 Whip pan</div><p>End the shot with a fast horizontal blur, start the next shot with a matching blur settling into frame. The motion blur hides the cut entirely — air to ground in a blink.</p></div>
+  <div class="card solid"><div class="ch">🌓 Masked reveal</div><p>Let something in the frame — a ridgeline, a wing, a wall, a passing tree — sweep across and briefly fill the frame. Cut underneath that "wipe" to a new shot. The object becomes a natural transition.</p></div>
+</div>
+
+<h2>Match-cut on motion, in practice</h2>
+<p>This is the most useful aerial transition, and it is why Chapter 2 told you to capture direction of motion deliberately. The recipe:</p>
+
+<ol class="steps">
+  <li><span class="sh">Identify the motion in your aerial.</span> Say the drone is pushing forward, or panning left-to-right. Note the direction and roughly the speed.</li>
+  <li><span class="sh">Find a ground shot with matching motion.</span> A subject walking the same direction, a car moving the same way, or a camera move (pan, push) that mirrors the drone's.</li>
+  <li><span class="sh">Cut at the moment of peak motion.</span> Trim the aerial to end mid-move and the ground shot to begin mid-move. Don't cut on a still frame — cut while both are moving.</li>
+  <li><span class="sh">Match the speed if you can.</span> Slightly slow or speed one clip so the two movements flow at a similar rate across the cut. The closer the match, the more invisible the transition.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Cut on the action, not the pause</div><p>Editors have a saying: cut on movement and the eye forgives everything. A cut placed during motion is far less noticeable than one placed on a static hold, because the brain is busy tracking the movement. This is why your aerials should almost always be <em>moving</em> at their cut points — give yourself motion to hide the seam in.</p></div>
+
+<h2>Whip pans and masked reveals</h2>
+<p>A <strong>whip pan</strong> works when both clips have a fast horizontal blur to marry — create it in-camera by whipping the drone or the ground camera, or approximate it with a quick directional blur on the last and first few frames. The blur direction must match: a left-whip out needs a left-whip in.</p>
+<p>A <strong>masked reveal</strong> (a "wipe through an object") uses something in the frame to cover the cut — a drone passing a tree, a cliff edge sweeping through frame, a person crossing close to the lens. The moment the frame goes briefly dark or full, you hide the cut inside it. It feels handcrafted because it is built from the real world, not a preset.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>One transition style per video</div><p>Pick one or two motivated transition types and repeat them with discipline. A video that whip-pans once, masks once, match-cuts once, and cross-dissolves once feels chaotic. Consistency in <em>how</em> you transition is part of what makes a piece feel authored rather than assembled.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Pacing &amp; Music With Aerials</h1>
+<p>Aerials and pacing are deeply linked, because aerial shots are the slowest-reading shots in your toolkit. A wide, drifting landscape needs <em>time</em> to be understood — cut it too short and the viewer never reads the space; cut it too long and attention drains away. Getting duration right is half of good aerial editing.</p>
+
+<h2>How long should an aerial hold?</h2>
+<div class="recipe">
+  <div class="rh"><span>Aerial shot durations</span><span class="tag">STARTING POINTS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Establisher → <b>4–8s</b></span><span class="chip">Reveal → <b>4–7s</b></span><span class="chip">Follow → <b>3–6s</b></span><span class="chip">Detail Push → <b>2–4s</b></span><span class="chip">Top-Down accent → <b>1.5–3s</b></span></div>
+    <p class="small">Wider and more complex shots need longer to read; a tight or fast-moving aerial can be quick. When in doubt, trim from the front and back, not the middle — the strongest part of the move is usually the center.</p>
+  </div>
+</div>
+
+<h2>Let the music lead the structure</h2>
+<p>Music is the invisible skeleton of most short videos, and aerials are your best tool for hitting its big moments. The relationship is simple: <strong>land your biggest aerials on the music's biggest beats.</strong></p>
+
+<ol class="steps">
+  <li><span class="sh">Find the track's structure first.</span> Every piece of music has a quiet intro, a build, a drop or chorus, and a resolution. Mark those moments on your timeline before you place shots.</li>
+  <li><span class="sh">Put a Reveal or Establisher on the first big swell.</span> The moment the music opens up is where an aerial that opens up feels earned.</li>
+  <li><span class="sh">Cut faster in the builds, slower in the breaths.</span> Ground shots and quick aerials during energetic sections; long, wide aerials during the calm ones.</li>
+  <li><span class="sh">Save one aerial for the final beat.</span> A pull-back or rise on the last note gives the whole video a sense of resolution.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Cut to the beat, but not <em>every</em> beat</div><p>Snapping every cut to the rhythm gets mechanical fast. Hit the <em>major</em> beats — the downbeats, the drop, the phrase changes — and let the shots between them breathe naturally. Aerials especially should ride over several beats, not get chopped to each one.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Slow down, don't speed up</div><p>Most drone footage looks better slightly slowed (conforming a 60fps clip to a 24 or 30fps timeline gives you smooth slow motion). Gentle slow motion adds a cinematic, weightless quality to aerials that a real-time flyover rarely has. Speeding aerials up usually reads as a cheap timelapse — use it deliberately or not at all.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Story Structure — Using Aerials for Beginning, Middle, and End</h1>
+<p>Now we assemble everything into a shape. A video that holds attention has a structure the viewer can feel even if they could not name it: a beginning that orients, a middle that develops, and an end that resolves. Aerials play a specific role in each act — and using them where they belong is what turns a reel of clips into a piece.</p>
+
+<h2>The beginning: arrival</h2>
+<p>Open by orienting the viewer. This is where your best <strong>Reveal</strong> or wide <strong>Establisher</strong> earns its keep — it sets place, scale, and mood in a few seconds, then hands off to a ground shot that introduces the actual subject. The feeling you are creating is <em>arrival</em>: we have landed somewhere, and now we are going to look closer.</p>
+
+<h2>The middle: development on the ground</h2>
+<p>The middle is where the story does its work, and it should live mostly on the <em>ground</em>. Here is the counterintuitive part: your middle should be the least aerial-heavy section. Use aerials only as <strong>transitions</strong> between sub-locations or as <strong>breaths</strong> between intense sequences — a quick Follow from beach to town, a wide breath after a busy montage. The human thread carries the middle; aerials just connect its rooms.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The saggy middle is an aerial trap</div><p>When a video's middle drags, the fix is almost never "add another beautiful aerial." Aerials in the middle, without ground content between them, are exactly what makes a middle feel aimless. Add ground substance — faces, action, detail — and use aerials only to move between it.</p></div>
+
+<h2>The end: departure</h2>
+<p>End with a sense of leaving. A slow <strong>pull-back</strong>, a <strong>rise</strong>, or a wide static hold gives the viewer the emotional cue that the piece is resolving. The camera physically withdrawing from the subject mirrors the feeling of a story ending — it is one of the oldest, most reliable closing moves in film, and your drone does it beautifully.</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🛫 Beginning</div><p><strong>Arrival.</strong> Reveal or Establisher &rarr; land on the subject. Orient the viewer.</p></div>
+  <div class="card"><div class="ch">🚶 Middle</div><p><strong>Development.</strong> Mostly ground. Aerials only to transition or breathe.</p></div>
+  <div class="card"><div class="ch">🛬 End</div><p><strong>Departure.</strong> Pull-back or rise. Resolve and let go.</p></div>
+</div>
+
+<h1><span class="n">CHAPTER 7</span>Shoot Aerials Knowing You'll Edit Them — Coverage &amp; Overlap</h1>
+<p>The best editing decisions are made in the air. Fly with the edit in mind and you come home with footage that <em>cuts</em>; fly to capture pretty shots and figure it out later, and you come home with clips that refuse to connect. This chapter is about flying like an editor.</p>
+
+<h2>Capture coverage, not highlights</h2>
+<p><strong>Coverage</strong> means getting enough variety and enough <em>handles</em> that you have choices in the edit. A single perfect 6-second orbit gives you exactly one option. The same location shot as an establisher, a reveal, a follow, and a detail push gives you a scene you can actually build.</p>
+
+<ul class="check">
+  <li>Fly each key shot at least <strong>twice</strong> — one clean take is a gamble.</li>
+  <li>Start recording <strong>3–5 seconds before</strong> the move and stop <strong>3–5 seconds after</strong>. Those handles are where your transitions and match-cuts get made.</li>
+  <li>Get the same location with <strong>different motion directions</strong> so you have cut-in options both ways.</li>
+  <li>Capture a mix of <strong>speeds</strong> — a slow drift and a faster push of the same subject.</li>
+  <li>Grab a few <strong>static or near-static</strong> wides; not every aerial should be moving, and a held frame is priceless for a title or a breath.</li>
+</ul>
+
+<h2>Overlap: the secret to invisible cuts</h2>
+<p><strong>Overlap</strong> means capturing motion that continues <em>across</em> where a cut will fall. If your aerial is panning right and you plan to cut to a ground shot, keep the drone panning right through the end of the take — and shoot the ground clip panning right too. Now you have matching motion on both sides of the cut, and the match-cut from Chapter 4 becomes trivial. Overlap is simply giving your future self the raw material to hide seams.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Fly the connection, not the clip</div><p>Before each flight, picture the ground shot this aerial will cut to. Are you flying toward that barn because you have a ground shot at the barn? Are you following that road because your subject drives it? Flying the <em>connection</em> — air to a specific ground moment — is the habit that most separates footage that cuts from footage that just sits there.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Record flat, and at a higher frame rate</div><p>A flat or log color profile gives you room to match the aerial's color to your ground footage in the edit — mismatched color is a top reason air and ground feel like two different videos. And shooting aerials at 48/60fps lets you conform to smooth slow motion later. Both are decisions you can only make in the air; you cannot add them afterward.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Common Mistakes — Too Many Aerials, Aimless Drift, No Ground Connection</h1>
+<p>Almost every flat-feeling drone video suffers from the same short list of mistakes. Learn to spot them in your own edits and you will fix most of your problems without learning anything new — just by removing what shouldn't be there.</p>
+
+<h2>Mistake 1: Too many aerials</h2>
+<p>This is the big one. When you own a drone, every aerial feels precious and you want to use them all. But a video is not a highlight reel of your flying — it is a story, and most of a story happens at human scale. <strong>If more than a third of your video is aerial, it is probably too much.</strong> The cure is ruthless: keep the aerials that do a structural job, cut the ones that are merely pretty.</p>
+
+<blockquote>An aerial you cut is often worth more than one you keep — it makes the ones that remain feel earned.</blockquote>
+
+<h2>Mistake 2: Aimless drift</h2>
+<p>A shot that slowly drifts over a landscape with no subject, no destination, and no reason feels exactly like what it is: filler. Motion without <em>purpose</em> is not cinematic; it is just movement. Every aerial should be going somewhere, revealing something, or following someone. If a clip's only content is "the drone moved," it is a candidate for the cut — or for trimming down to just its strongest couple of seconds as a breath.</p>
+
+<h2>Mistake 3: No ground connection</h2>
+<p>Aerials that never link to anything at human scale leave the viewer emotionally cold. Beautiful, distant, and forgettable. Every important aerial should have a ground shot it relates to — same subject, same place, same direction, same light. The connection is what gives the aerial <em>meaning</em> beyond "nice view."</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🩹 Quick diagnoses</div><ul><li>Feels like a slideshow &rarr; too many aerials, not enough ground.</li><li>Feels aimless &rarr; drifting shots with no subject or destination.</li><li>Feels cold &rarr; aerials with no ground connection.</li><li>Feels jumpy &rarr; unmotivated transitions; cut on motion instead.</li></ul></div>
+  <div class="card"><div class="ch">✅ Quick fixes</div><ul><li>Delete a third of your aerials; watch it improve.</li><li>Trim drift shots to their strongest 2–3 seconds.</li><li>Pair every kept aerial with a linked ground shot.</li><li>Move cuts onto moments of motion.</li></ul></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The reel-vs-story confusion</div><p>A drone <em>reel</em> — pure aerials cut to music to show off flying — is a legitimate format, and the rules bend for it. But most people want a <em>story</em>, then edit it like a reel by accident. Decide which you are making. If it is a story, the ground has to lead.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>A Repeatable Integration Workflow</h1>
+<p>Everything in this guide collapses into a workflow you can run every single time. Follow these steps and your aerials will integrate into a ground-based story by default, not by luck.</p>
+
+<ol class="steps">
+  <li><span class="sh">Build the ground story first.</span> Assemble a rough cut using <em>only</em> ground footage. Get the beginning, middle, and end working at human scale before a single aerial goes in. This forces the story to stand on its own.</li>
+  <li><span class="sh">Add aerials only where the structure asks for them.</span> Drop in an Establisher or Reveal at the opening, a Follow or breath at each scene change, and a pull-back at the end. Add them for a <em>job</em>, not to fill space.</li>
+  <li><span class="sh">Link every aerial to its neighbor.</span> For each aerial you place, confirm the shot before or after it shares a subject, direction, place, or light. If nothing links, either find a linking shot or cut the aerial.</li>
+  <li><span class="sh">Motivate every transition.</span> Cut on motion, match the movement across the seam, or hide the cut in a whip or a masked wipe. No unmotivated dissolves or presets.</li>
+  <li><span class="sh">Set aerial durations to read, not to linger.</span> Trim each aerial to the range from Chapter 5, holding long enough to understand the space and no longer.</li>
+  <li><span class="sh">Lay it against the music.</span> Slide the timeline so your biggest aerials land on the biggest beats; cut faster in builds, slower in breaths.</li>
+  <li><span class="sh">Match the color of air and ground.</span> Grade the aerials to match the warmth and contrast of your ground shots so the two never feel like separate videos.</li>
+  <li><span class="sh">Cut a third of the aerials.</span> On your final pass, remove your least essential aerials on purpose. The video will almost always get stronger — and the survivors will feel earned.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your drill this week</div><p>Take footage you already have and build one 60–90 second piece following the eight steps in order — ground rough cut first, aerials in second. Time yourself only on the ground edit; do not touch an aerial until the ground story holds on its own. You will feel, in one session, how much stronger aerials become when they are the last ingredient instead of the first.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Where the drone becomes invisible</div><p>You will know you have arrived when viewers stop saying "great drone shots" and start saying "great video." That is the goal. The best aerial editing does not make the audience admire the aircraft — it makes them forget there was one, because the shots simply belong.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Aerials serve the story — build the ground-level story first, then let the drone lift it, never the other way around.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

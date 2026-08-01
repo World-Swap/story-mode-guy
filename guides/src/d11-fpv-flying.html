@@ -1,0 +1,243 @@
+<h1><span class="n">START HERE</span>FPV Is the Closest Thing to Flying You Can Buy</h1>
+<p class="lead-in">Put on a pair of goggles, punch the throttle, and the ground drops away beneath you — not on a screen you glance at, but from inside the aircraft, as if you climbed in. FPV drones trade the point-and-shoot comfort of a camera drone for something rawer and far more thrilling: real flight, flown by hand. This guide is your on-ramp. It will save you crashes, save you money, and get you into the air the right way.</p>
+
+<p>FPV stands for <strong>first-person view</strong>. A tiny camera on the nose of the drone beams live video into goggles strapped to your face, so you see exactly what the drone sees — the horizon tilting, the gap in the trees rushing toward you, the roll of a barrel roll happening around <em>you</em>. There is no live map, no "return home" button you lean on, no gentle hover while you think. Most FPV flying is fully manual. You are the flight controller.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>FPV is manual flight through goggles — learn it in a simulator first, respect that there is no safety net, and you will be flying like you dreamed within a season.</p></div>
+
+<h2>Who this guide is for</h2>
+<p>You have flown a GPS camera drone, or you have watched FPV footage that made your stomach drop, and you want in. You do not need to be an engineer or a gamer. You need patience, a simulator, a cheap radio, and a willingness to crash a lot at first. Everyone crashes. The pilots who stay flying are simply the ones who started smart.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>A note on scope</div><p>This is a mindset-and-first-flights guide, not a build manual. We name gear categories and the general software involved without walking you through firmware menus, because those screens change constantly. When you are ready to tune, the community around whatever gear you buy will have current, step-by-step video for your exact setup.</p></div>
+
+<h2>What FPV is and why it feels like flying</h2>
+<p>A standard camera drone is a flying tripod. It holds itself in the sky, points a stabilized camera where you tell it, and waits for your next instruction. An FPV drone is a flying <em>vehicle</em>. It goes where you point it and keeps going. The difference is not a feature — it is the entire experience.</p>
+
+<h2>The signal chain, top to bottom</h2>
+<p>Four pieces make FPV work, and understanding the chain helps everything else make sense:</p>
+<ol class="steps">
+  <li><span class="sh">The drone and its camera.</span> A small aircraft with a forward-facing FPV camera on the nose. That camera has one job: send you a live view, right now, with as little delay as possible.</li>
+  <li><span class="sh">The video link.</span> A transmitter on the drone beams the camera feed through the air to your goggles. Low delay matters more than picture quality here — you are steering with this feed.</li>
+  <li><span class="sh">The goggles.</span> You wear the display on your face. The world outside disappears; you are looking out the drone's nose. This immersion is the magic and the responsibility.</li>
+  <li><span class="sh">The radio.</span> A separate controller in your hands sends your stick movements to the drone. Two sticks, four channels: throttle, yaw, pitch, roll. That is the whole language of flight.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Latency is the whole game</div><p>The delay between the drone's camera and your eyes is called latency, measured in milliseconds. Low latency feels like flying; high latency feels like steering a boat through molasses. This is why FPV gear prioritizes a fast, immediate feed over a pretty one — you are reacting to what you see in real time.</p></div>
+
+<blockquote>A camera drone shows you the sky. An FPV drone puts you in it.</blockquote>
+
+<p>That immersion is why FPV hooks people so hard. Your brain genuinely believes it is flying. It is also why FPV demands more of you: when you feel like you are in the cockpit, a crash feels personal, and a lost signal feels like the floor vanishing. The skills in this guide exist to keep that feeling thrilling instead of terrifying.</p>
+
+<h1><span class="n">CHAPTER 2</span>FPV vs. Standard Camera Drones — The Mindset Shift</h1>
+<p>If you are coming from a GPS camera drone, this is the most important chapter in the book. The habits that kept you safe there can hurt you here. FPV is not a harder camera drone; it is a different craft that happens to also have a camera.</p>
+
+<h2>What the camera drone did for you — that FPV won't</h2>
+<table>
+  <tr><th>The GPS drone quietly did this</th><th>In manual FPV, you do it</th></tr>
+  <tr><td>Hovers in place when you release the sticks</td><td>Nothing holds it — release the sticks and it keeps its momentum</td></tr>
+  <tr><td>Holds altitude with a barometer automatically</td><td>You manage every inch of altitude with the throttle</td></tr>
+  <tr><td>Fights wind to stay put</td><td>Wind pushes you; you correct constantly by hand</td></tr>
+  <tr><td>Returns to home on low battery or lost signal</td><td>There is no return-to-home in manual modes — a lost link means a fall</td></tr>
+  <tr><td>Stops at a virtual ceiling or geofence</td><td>The drone goes exactly as far and fast as you send it</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>No hover-in-place safety net</div><p>A camera drone forgives hesitation — freeze up and it just floats there. An FPV drone in manual flight is always doing <em>something</em>. If you stop flying it, gravity and momentum fly it for you, usually into the ground. You must actively pilot from takeoff to landing. This single fact is why sim practice is non-negotiable.</p></div>
+
+<h2>The good news about the trade</h2>
+<p>You give up automation and you get control — total, immediate, exhilarating control. You can dive a hillside, thread a doorway, chase a mountain biker, or float a smooth cinematic push through a room, all with movements no camera drone can make. The learning curve is real, but it is a curve, not a cliff. Climbing it in the right order is the entire point of the chapters ahead.</p>
+
+<div class="key"><div class="kt">The mindset shift</div><p>Stop expecting the drone to catch you. In FPV, you are not supervising an aircraft — you are flying one, every second it is in the air.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>The Gear — What You Actually Need</h1>
+<p>FPV gear looks intimidating in a photo and simple once you know the four buckets: goggles, a radio, the drone, and the video system that connects them. Buy in that order of importance to your <em>learning</em>, not to your Instagram feed.</p>
+
+<h2>Goggles and radio: buy these once, keep them for years</h2>
+<p>Your goggles and radio are your interface to every drone you will ever fly. They outlive individual aircraft, which crash and get rebuilt. Spend here first. A good radio should support a proper <strong>simulator</strong> over USB on day one — that is the feature that matters most before you own a single drone.</p>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Start with a radio that plugs into a sim</div><p>Before goggles, before a drone, buy a quality radio that connects to your computer as a USB game controller. It is the same set of sticks you will fly for real, and it turns your first weeks of practice into muscle memory instead of wasted crashes.</p></div>
+
+<h2>The drone classes</h2>
+<p>FPV is not one kind of aircraft. Pick the class that matches where and how you want to fly:</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🍼 Tiny Whoop</div><p>Palm-sized, ducted props, safe to fly indoors and around people. The perfect first real drone: cheap, durable, and it bounces off walls instead of destroying them.</p></div>
+  <div class="card"><div class="ch">🎥 Cinewhoop</div><p>A larger ducted drone built to carry a stabilized action camera for smooth, close-proximity video. Slower and heavier, forgiving indoors, made for cinematic moves.</p></div>
+  <div class="card"><div class="ch">🤸 Freestyle</div><p>The classic 5-inch quad. Fast, agile, powerful — built for tricks, dives, and acro. This is the "sports car" most people picture when they think FPV.</p></div>
+  <div class="card"><div class="ch">🛰️ Long-Range</div><p>Efficient, lightweight builds tuned to fly far on a single charge. For exploring landscapes and covering distance rather than throwing flips.</p></div>
+</div>
+
+<h2>Analog vs. digital HD video</h2>
+<p>The video link comes in two flavors, and it shapes your budget and your experience:</p>
+
+<table>
+  <tr><th></th><th>Analog</th><th>Digital HD</th></tr>
+  <tr><td>Picture</td><td>Lower resolution, "old TV" look</td><td>Crisp, high-definition feed</td></tr>
+  <tr><td>Signal loss</td><td>Degrades gracefully to static — you still see something</td><td>Can hold clean longer, then cut out more abruptly at the edge</td></tr>
+  <tr><td>Latency</td><td>Extremely low, time-tested</td><td>Very low on modern systems, but check the spec</td></tr>
+  <tr><td>Cost &amp; weight</td><td>Cheaper, lighter, tiny gear</td><td>Pricier, heavier, more capable</td></tr>
+  <tr><td>Best for</td><td>Learning, freestyle, tight budgets, tiny builds</td><td>Cinematic work, long-range clarity, footage you keep</td></tr>
+</table>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>There is no wrong choice to learn on</div><p>Analog's graceful fade-to-static is genuinely useful for a beginner — you get a warning as the signal weakens instead of a sudden black screen. Plenty of world-class pilots still fly analog. Digital is gorgeous and increasingly the default. Pick the one your budget likes; both will teach you to fly.</p></div>
+
+<h2>The starter kit, in one list</h2>
+<ul class="check">
+  <li>A radio that runs a simulator over USB.</li>
+  <li>FPV goggles compatible with your chosen video system.</li>
+  <li>A tiny whoop or a durable starter quad — something you will not cry over.</li>
+  <li>A stack of batteries and a proper charger (more on these in Chapter 9).</li>
+  <li>A small pack of spare props — you will need them the first day.</li>
+  <li>A simulator on your computer. Free or cheap, and the best money in FPV.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 4</span>Flight Modes — The Learning Ladder</h1>
+<p>FPV drones can fly in different <strong>modes</strong> that decide how much the drone helps you versus how much you do yourself. These are not skill levels the drone assigns you — they are settings <em>you</em> choose. Think of them as a ladder you climb deliberately, one rung at a time.</p>
+
+<div class="cards three">
+  <div class="card solid"><div class="ch">🅰️ Angle</div><p><strong>Self-leveling.</strong> Release the sticks and the drone returns to level, like a camera drone. It also limits how far it can tilt. The gentlest place to start.</p></div>
+  <div class="card solid"><div class="ch">🅷 Horizon</div><p><strong>Self-leveling, but unlimited.</strong> Still levels when you center the sticks, yet lets you push all the way over into flips and rolls. A bridge between assisted and manual.</p></div>
+  <div class="card solid"><div class="ch">🆎 Acro / Manual</div><p><strong>No leveling at all.</strong> The drone holds whatever attitude you last commanded. Total control, total responsibility. This is where real FPV lives.</p></div>
+</div>
+
+<h2>Why acro is the destination</h2>
+<p>In <strong>acro mode</strong> (also called rate or manual), the drone does not level itself. Tilt it and let go, and it stays tilted, gliding along on that angle. Every smooth dive, every clean flip, every cinematic swoop you have admired was flown in acro. Angle and horizon are training wheels — useful, honest training wheels, but training wheels. The goal is to graduate.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Acro and manual have NO GPS safety net</div><p>In acro mode there is no self-leveling, no altitude hold, no position hold, and typically no GPS rescue. If you take your hands off the sticks, the drone does not stop or hover — it keeps its momentum and falls. If your goggle feed cuts out, you are flying blind with nothing catching the aircraft. This is not a warning to scare you off; it is the reason the simulator chapter exists. Respect it and acro is pure joy.</p></div>
+
+<h2>How to actually use the ladder</h2>
+<ol class="steps">
+  <li><span class="sh">Start in the simulator, in acro.</span> Counterintuitive but true — sim crashes are free, so learn the hard mode where it costs nothing. Many pilots skip angle entirely in the sim.</li>
+  <li><span class="sh">On your first real drone, angle mode is a fine safety blanket.</span> Get comfortable seeing through the goggles and managing throttle without also fighting attitude.</li>
+  <li><span class="sh">Move to acro as soon as the sim says you're ready.</span> The longer you lean on self-leveling in the air, the harder the eventual switch. Rip the bandage.</li>
+</ol>
+
+<h1><span class="n">CHAPTER 5</span>Start in a Simulator — Seriously, First</h1>
+<p>Here is the advice that separates pilots who fly from pilots who quit: <strong>learn in a simulator before you fly a real drone.</strong> Not instead of real flying — before it. Every crash in a sim is free. Every crash in the sky costs props, time, and sometimes the whole aircraft.</p>
+
+<div class="key"><div class="kt">The most valuable rule in FPV</div><p>Plug your radio into a simulator and log real hours in acro before your first real flight. It is the single biggest predictor of whether you will still be flying in six months.</p></div>
+
+<h2>Why the sim works so well</h2>
+<p>An FPV simulator uses the exact same radio and stick inputs you will fly for real. Your thumbs cannot tell the difference. So the muscle memory you build — the tiny throttle corrections, the reflex to catch a wobble, the feel of momentum in acro — transfers almost perfectly to the real drone. You are not "playing a game." You are training the only part of FPV that can't be bought: your reflexes.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>How much sim time?</div><p>A common benchmark: log several hours a day for a couple of weeks, or roughly ten-plus hours total, before your maiden real flight. When you can fly a smooth lap around a sim track in acro, catch a botched flip, and land where you meant to, you're ready for the field. Keep the sim installed forever — pros still use it to warm up and learn new tricks.</p></div>
+
+<h2>What to practice in the sim, in order</h2>
+<ol class="steps">
+  <li><span class="sh">Hover in acro.</span> Just hold the drone in one spot. This alone teaches you the throttle-and-correction dance that acro demands.</li>
+  <li><span class="sh">Fly figure-eights.</span> Coordinated turns build the yaw-and-roll habit that makes flight feel smooth.</li>
+  <li><span class="sh">Practice a controlled dive and recovery.</span> Drop the nose, descend, and level out. The foundation of every cinematic and freestyle move.</li>
+  <li><span class="sh">Learn to recover from disorientation.</span> Deliberately get lost, then find level and throttle up. This reflex saves real drones.</li>
+</ol>
+
+<h1><span class="n">CHAPTER 6</span>Your First Real Flights</h1>
+<p>You have sim hours. Your gear is charged. Today you fly for real. The goal of your first sessions is not cool footage — it is building confidence and habits without breaking anything. Slow is fast here.</p>
+
+<h2>Line of sight first</h2>
+<p>Before you commit fully to the goggles, get to know the actual aircraft. Fly it a little while looking at it with your own eyes, or have a spotter watch it while you're in the goggles. Understanding how the real drone responds — how it drifts, how much power it has — makes the goggle view far less disorienting.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Always fly with a spotter</div><p>When your eyes are in the goggles, you cannot see the world around your drone — people walking in, a dog, a car, a low branch. A spotter standing beside you, watching the real aircraft and the surroundings, is your eyes. They call out hazards and keep the drone in sight. In many places a spotter is not just smart, it's required. Never fly goggles-only and alone in an unfamiliar spot.</p></div>
+
+<h2>Choose a safe space</h2>
+<ul class="check">
+  <li>A wide-open field with no people, roads, or property nearby.</li>
+  <li>No power lines, no crowds, nothing you would hate to hit.</li>
+  <li>Calm weather — wind is a fight you don't need on day one.</li>
+  <li>Permission to fly there, and awareness of local rules (see Chapter 10).</li>
+  <li>A spotter beside you before the props ever spin.</li>
+</ul>
+
+<h2>Your first-flight sequence</h2>
+<ol class="steps">
+  <li><span class="sh">Do a pre-flight check.</span> Props tight and undamaged, battery secure, goggle feed clear, radio bound and controls responding the right way.</li>
+  <li><span class="sh">Take off gently.</span> Ease the throttle up to a low hover. Just hold it a foot off the ground and breathe. This is a win.</li>
+  <li><span class="sh">Fly small, slow circles.</span> Stay low, stay close, keep it in front of you. Land often to check the battery and reset your nerves.</li>
+  <li><span class="sh">Land before the battery is empty.</span> Bring it down with margin to spare — a dead battery in the air is a crash, not a landing.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Low and close is a feature</div><p>Every crash from two feet up is cheap and educational. Every crash from a hundred feet is expensive and sometimes fatal to the drone. Earn altitude and distance slowly; there is no prize for going high on day one.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Building Control</h1>
+<p>Once you can take off, hover, and land without drama, you start actually flying. Control in FPV comes down to one master skill and a handful of building-block maneuvers that everything fancier is made from.</p>
+
+<h2>Throttle management is everything</h2>
+<p>In acro, the throttle does not set your height — it sets your <em>thrust</em>. How high you go depends on your thrust and your attitude together. A drone tilted forward at half throttle climbs less and moves more; the same throttle while level climbs more. Learning to feel this relationship is the core of smooth flight.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Fly the throttle, not the height</div><p>Beginners chase altitude by yanking the throttle up and down, which produces bouncy, nervous flight. Smooth pilots make tiny, constant throttle adjustments and think about thrust. Aim to always be feeding in some throttle, easing it, never slamming it to zero — in acro, zero throttle means you're falling.</p></div>
+
+<h2>The building-block maneuvers</h2>
+<ol class="steps">
+  <li><span class="sh">Coordinated turns.</span> Roll and yaw together to carve a smooth arc instead of skidding around flat. This makes everything look and feel like flying.</li>
+  <li><span class="sh">The roll.</span> A quick full rotation on the roll axis. Punch some throttle first for altitude cushion, snap the roll, catch it level.</li>
+  <li><span class="sh">The flip.</span> The same idea on the pitch axis, tumbling forward or back. Again: throttle up for margin, commit, catch it.</li>
+  <li><span class="sh">Power loops and beyond.</span> Once rolls and flips are reflexive, larger flowing moves become achievable. Build them in the sim first, always.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this drill</div><p>In the sim, hold a hover at a fixed height for sixty seconds without drifting more than a body-length in any direction. It sounds trivial and it is brutal at first. Master it and your throttle hand becomes calm — the foundation every trick is built on.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Cinematic FPV</h1>
+<p>Not all FPV is flips and dives. Some of the most jaw-dropping footage is slow, smooth, and impossibly close — gliding through a doorway, floating down a staircase, chasing a car at bumper height. This is <strong>cinematic FPV</strong>, and it is a discipline of restraint rather than speed.</p>
+
+<h2>The cinewhoop advantage</h2>
+<p>Cinematic work usually rides on a cinewhoop: a ducted drone that carries a stabilized action camera and, thanks to those prop guards, can fly safely inches from people and objects. The ducts protect the props <em>and</em> whatever you bump. That safety margin is exactly what lets you fly the tight, close moves that make cinematic FPV feel magical.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🌊 The smooth push</div><p>A slow, steady advance through a space — a hallway, a doorway, a crowd. Gentle throttle, minimal stick input, let the drone glide.</p></div>
+  <div class="card"><div class="ch">🎢 The dive</div><p>Falling alongside a building or hillside with the camera pointed down, then leveling into a reveal. Dramatic, and demanding — practice it in the sim relentlessly.</p></div>
+  <div class="card"><div class="ch">🚗 Proximity &amp; chase</div><p>Flying close to a subject — a runner, a bike, a car — to create speed and intimacy. The most thrilling look, and the riskiest.</p></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Proximity is where crashes hurt</div><p>Flying inches from walls, people, and vehicles leaves no room for error, and you are still in manual with no safety net. A momentary signal glitch or a twitchy throttle near a person is dangerous, not just expensive. Fly proximity only after you're genuinely smooth, keep people out of the flight path until you've earned it, and let a spotter watch every pass.</p></div>
+
+<blockquote>Freestyle shows off the pilot. Cinematic FPV hides the pilot and shows off the world.</blockquote>
+
+<h1><span class="n">CHAPTER 9</span>Batteries, Props &amp; Basic Maintenance</h1>
+<p>FPV drones are machines you maintain, not appliances you charge and forget. A little care keeps them flying safely and keeps the fun from turning into frustration — or a fire. None of this is hard; it just has to become routine.</p>
+
+<h2>Batteries deserve respect</h2>
+<p>FPV runs on high-discharge lithium-polymer (LiPo) packs. They are powerful and, if abused, genuinely hazardous. Treat them like the energetic things they are:</p>
+
+<ul class="check">
+  <li>Charge on a fireproof surface, and never leave charging batteries unattended.</li>
+  <li>Store packs at a partial "storage charge," not full and not empty, between flying days.</li>
+  <li>Never fly a pack all the way flat — land with margin to protect the cells.</li>
+  <li>Retire any battery that puffs, swells, or gets damaged. A swollen pack is done.</li>
+  <li>Let hot packs cool before charging, and don't charge in a hot car or cold garage.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>LiPo safety is real safety</div><p>Damaged or over-discharged LiPo batteries can catch fire. Use a fireproof bag or a metal container, charge where you can watch them, and never puncture, crush, or fly a swollen pack. This is the one area of FPV where "good enough" isn't.</p></div>
+
+<h2>Props: cheap, consumable, critical</h2>
+<p>Propellers are the parts that touch the ground first in every crash. They are meant to be replaced. Check them constantly — a chipped or cracked prop causes vibration that ruins your video feed and stresses the whole drone.</p>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Buy props by the bag</div><p>Keep far more spare props than you think you need. Swapping a set takes two minutes and a small tool. Inspect after every crash, and never fly a prop with a visible chip or crack — replace it and get back in the air.</p></div>
+
+<h2>The five-minute post-flight check</h2>
+<ol class="steps">
+  <li><span class="sh">Inspect the props.</span> Replace anything chipped, cracked, or bent.</li>
+  <li><span class="sh">Check the frame and motors.</span> Look for cracks, spin each motor by hand to feel for grit or wobble.</li>
+  <li><span class="sh">Re-seat connectors.</span> Vibration and crashes loosen plugs; a firm reseat prevents a lot of "mystery" failures.</li>
+  <li><span class="sh">Log battery condition.</span> Note any pack that felt weak or came down warm and swollen.</li>
+</ol>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Tuning, mentioned generically</div><p>Every FPV drone runs configuration software on your computer where you set up modes, calibrate, and eventually tune how the drone feels in the air. We won't walk you through menus here — versions change too fast — but know that when your flying outgrows the factory feel, tuning software is where you refine it, guided by current tutorials for your exact hardware.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>An FPV Progression Plan</h1>
+<p>Here is the whole journey on one page. Follow it in order and you compress months of frustration into weeks of steady progress. Skip steps and you'll pay for it in crashed drones.</p>
+
+<ol class="steps">
+  <li><span class="sh">Weeks 1–2: Simulator only.</span> Radio plugged into a sim, flying in acro. Hover, turn, dive, recover. No real drone yet.</li>
+  <li><span class="sh">Weeks 2–3: First real flights.</span> A tiny whoop or durable starter quad. Angle mode if you want the blanket, a spotter always, low and close in a safe space.</li>
+  <li><span class="sh">Weeks 3–6: Commit to acro.</span> Move to manual mode in the sim and then in the air. Master the throttle. Fly smooth circles before you fly tricks.</li>
+  <li><span class="sh">Months 2–3: Build control.</span> Rolls, flips, coordinated turns. Bigger fields, a little altitude, still with a spotter.</li>
+  <li><span class="sh">Months 3+: Specialize.</span> Chase cinematic smoothness on a cinewhoop, freestyle tricks on a 5-inch, or distance on a long-range build. Keep the sim installed forever.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Crashes are tuition, not failure</div><p>Every pilot you admire has a graveyard of broken props and bent frames behind them. Crashing is how you find the edge of your skill. The trick is to crash where it's cheap — the sim, low altitude, empty fields — so that by the time you fly high, fast, and close, your reflexes have already been there.</p></div>
+
+<h2>A word on the rules — the same laws still apply</h2>
+<p>Immersion changes nothing about your obligations. FPV drones are aircraft, and the same regulations that govern any drone govern yours — registration where required, weight thresholds, altitude limits, no-fly zones around airports and crowds, and the near-universal need for a spotter or visual observer when you're flying in goggles.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Check your local rules before you fly</div><p>Drone regulations vary by country and region and they change. Before your first flight, look up the current rules for where you live — registration, where you're allowed to fly, and the specific requirements for goggle (beyond-line-of-sight-feel) flying. It's a short bit of homework that keeps FPV legal, welcome, and open to the next pilot too.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Fly the simulator first, keep a spotter beside you always, and respect that acro flight has no safety net — do those three things and FPV gives you the closest feeling to flight that money can buy.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>

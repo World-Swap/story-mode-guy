@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Real Estate &amp; Property Drone Video — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #0891b2;
+  --accent2: #22d3ee;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">START A SIDE INCOME</div>
+    <div style="margin-top:auto"></div>
+    <h1>Real Estate &amp; Property Drone Video</h1>
+    <div class="rule"></div>
+    <div class="sub">Film Sellable Aerial Property Tours for Pay</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$39 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Film Sellable Aerial Property Tours for Pay. Written for side-hustlers, agents, and hosts filming their own listings.</div>
+  <ol><li><span class="t">The Property-Video Opportunity</span></li><li><span class="t">Legal & Safety for Paid Property Work</span></li><li><span class="t">Gear & Camera Settings for Property Aerials</span></li><li><span class="t">The Exterior & Lot Shot List</span></li><li><span class="t">The Signature Reveal & Orbit of a Home</span></li><li><span class="t">Altitude, Privacy & Neighbor Considerations</span></li><li><span class="t">Pairing Aerials With Ground Video for a Full Tour</span></li><li><span class="t">The Delivery Edit</span></li><li><span class="t">The Business</span></li><li><span class="t">A Property-Shoot Checklist</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>The Property-Video Opportunity</h1>
+<p class="lead-in">A single smooth aerial reveal of a house sells the whole listing before a viewer reads one word of the description. That thirty-second clip is worth real money to the agent, the host, or the seller who needs it — and if you own a modern drone and learn a handful of repeatable moves, you can be the person who shoots it. This guide turns your drone into a paid tool for filming property tours that actually look professional.</p>
+
+<p>Real estate is one of the few paid-video niches where the barrier is skill, not budget. The client already has the listing and already needs media. Aerial video is the upgrade that makes their listing stand out in a feed of flat, phone-shot walk-throughs — and most agents have no idea how to get it themselves. That gap is your business.</p>
+
+<p>Here is the honest framing before you spend a dollar of anyone's money: <strong>the flying is the easy part.</strong> Modern drones practically fly themselves. What you are actually selling is a small, learnable set of things — legal compliance, consistent smooth moves, a shot list that covers a property completely, and a clean edit delivered in usable formats. This guide covers all four.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Read this before you accept a single paid job</div><p>The moment you fly a drone for someone else's business — a listing, a rental, any commercial purpose — you have crossed from hobby into <strong>commercial operation</strong>, and most countries require a license for that. In the United States that means the <strong>FAA Part 107 Remote Pilot Certificate</strong>. Flying paid work without it is illegal and uninsurable, and "I was just helping a friend list their house" is not a defense if money or business promotion is involved. Rules differ by country and even by city — the UK, Canada, the EU, and Australia each have their own certification schemes. <strong>Verify the exact requirement where you fly, get certified, and only then take money.</strong> Chapter 2 walks through what this actually involves.</p></div>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Fly it legally, cover the property with a repeatable shot list, land a few signature smooth moves, and deliver a tight edit in the right formats — that is a sellable property tour.</p></div>
+
+<h2>Who this guide is for</h2>
+<p>You might be an agent who wants to shoot your own listings instead of paying a videographer. You might be a short-term-rental host trying to make your place pop on a booking site. Or you might be a side-hustler who wants aerial video to be an actual income stream. The workflow is the same for all three, and this guide is written for the person doing it themselves.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Gear-agnostic on purpose</div><p>Everything here works with any modern camera drone — a DJI Mini, Air, or Mavic, an Autel, or anything with a stabilized gimbal and a decent camera. Where a feature has different names between brands, we say so. You do not need the most expensive drone to shoot sellable property video; you need to fly the one you have well.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Legal &amp; Safety for Paid Property Work</h1>
+<p>This chapter is not the fun part, and it is the most important part. Skipping it does not just risk a fine — it means no insurance will cover you if something goes wrong, and a single incident over a client's property can end the whole side hustle. Treat legality as the foundation the business stands on, not a formality.</p>
+
+<h2>Certification: the non-negotiable</h2>
+<p>Commercial drone work — anything flown to support a business, including a real estate listing or a rental promotion — requires the appropriate remote pilot certification in almost every country.</p>
+
+<ul class="check">
+  <li><strong>United States:</strong> the FAA <strong>Part 107 Remote Pilot Certificate</strong>. You study, then pass a knowledge test at an approved center. It is very achievable in a few weeks of study.</li>
+  <li><strong>United Kingdom:</strong> operate under the CAA rules; most property work needs at least an Operator ID plus the appropriate flyer credential for your drone's category.</li>
+  <li><strong>Canada:</strong> a Transport Canada Pilot Certificate (Basic or Advanced, depending on where you fly).</li>
+  <li><strong>EU / EASA countries:</strong> registration plus the relevant Open-category competency for your drone class.</li>
+  <li><strong>Australia:</strong> commercial work is regulated by CASA; small drones flown for business have their own accreditation and registration path.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Verify locally — always</div><p>The list above is a starting map, not legal advice, and rules change. Before your first paid flight, confirm the current requirement with your national aviation authority directly, register your drone if required, and keep proof of certification where you can produce it. When a client or a curious neighbor asks "are you allowed to do this?", the right answer is a calm "yes, I'm certified and this airspace is cleared" — not a shrug.</p></div>
+
+<h2>Airspace: check it every single time</h2>
+<p>Not all sky is open. Airports, heliports, hospitals, military zones, and stadiums sit inside controlled or restricted airspace, and a property can easily fall within a few miles of one without you realizing. Checking airspace is a per-location habit, not a one-time thing.</p>
+
+<ol class="steps">
+  <li><span class="sh">Look up the property before you leave.</span> Use an official airspace app or map for your country. In the US, an authorized app that shows FAA data will tell you whether the location is in controlled airspace and what altitude is available.</li>
+  <li><span class="sh">Get authorization if it is controlled.</span> In many places near airports you can request near-instant electronic authorization to fly up to a set ceiling. In the US this is the LAANC system, accessed through approved apps. If authorization is required, get it <em>before</em> you fly — not after.</li>
+  <li><span class="sh">Respect the ceiling.</span> Every authorization comes with a maximum altitude. Stay under it. For property work you rarely need to go high anyway.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Build a pre-flight paper trail</div><p>Keep a simple log for each job: date, address, airspace status, authorization reference if any, weather, and any incidents. It takes two minutes and it is exactly what an insurer or authority wants to see if a question ever arises. Professionals log; hobbyists don't. Be the professional.</p></div>
+
+<h2>Insurance</h2>
+<p>Carry liability insurance for commercial drone work. It is inexpensive relative to the risk of a drone meeting a car, a window, or a person. Many providers offer per-day or annual policies aimed specifically at drone operators. Some clients and property managers will ask for proof of coverage before you fly — having it makes you look like the professional you are charging to be.</p>
+
+<h2>The pre-flight safety walk</h2>
+<ul class="check">
+  <li>Check weather: wind speed within your drone's rating, no rain, good visibility.</li>
+  <li>Scan for hazards: power lines, tall trees, wires between poles, flagpoles, antennas.</li>
+  <li>Locate people and pets on and near the property; plan to keep the drone away from them.</li>
+  <li>Confirm your takeoff and landing spot is flat, clear, and away from the home's windows.</li>
+  <li>Update firmware and calibrate the compass if the app prompts you, especially at a new site.</li>
+  <li>Confirm batteries are charged and you have enough for the shot list plus margin.</li>
+  <li>Keep the drone in visual line of sight throughout the flight.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>People are not props</div><p>Never fly directly over people who aren't part of the shoot, and never over moving traffic. Beyond the legal rules against it in many places, one gust or one battery fault over a crowd is a catastrophe. Compose so the drone is over the lot, the roof, or open ground — never over a sidewalk full of pedestrians.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Gear &amp; Camera Settings for Property Aerials</h1>
+<p>You do not need a cinema drone to shoot sellable property video. You need a stabilized gimbal, a camera that shoots clean footage in daylight, and a few settings dialed in so your clips cut together smoothly. This chapter gets your drone configured before you ever leave for a job.</p>
+
+<h2>What the drone actually needs to do</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🎥 Smooth, stabilized footage</div><p>A 3-axis gimbal is the baseline. Every modern camera drone has one. This is what separates "aerial video" from "shaky phone-from-a-ladder" footage.</p></div>
+  <div class="card"><div class="ch">📐 Enough resolution to crop</div><p>Shoot 4K when you can. Even if you deliver in 1080p, the extra resolution lets you stabilize, reframe, and crop in the edit without losing quality.</p></div>
+</div>
+
+<h2>Frame rate and resolution</h2>
+<p>For property work, <strong>4K at 30fps</strong> is a reliable default — sharp, smooth, and easy to edit on any computer. If you want the option of slow, dreamy slow-motion on a reveal, shoot <strong>4K at 60fps</strong> and slow it to half speed in the edit. Avoid mixing wildly different frame rates in one project unless you know how you'll handle it.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Property aerial — daylight default</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Resolution <b>4K</b></span><span class="chip">Frame rate <b>30fps</b></span><span class="chip">Shutter <b>1/60s</b></span><span class="chip">ISO <b>100</b></span><span class="chip">White balance <b>Locked (Sunny)</b></span></div>
+    <p class="small">The shutter-speed rule of thumb for video: set shutter to roughly double your frame rate (1/60s at 30fps) for natural motion. In bright sun this forces you to use a filter — see below.</p>
+  </div>
+</div>
+
+<h2>The one accessory that matters most: ND filters</h2>
+<p>In daylight, keeping your shutter at 1/60s means far too much light hits the sensor, and the footage looks harsh and slightly stuttery. A <strong>neutral-density (ND) filter</strong> is dark sunglasses for the lens — it cuts light so you can hold that shutter speed and get smooth, cinematic motion.</p>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Buy an ND filter set</div><p>A small kit of ND8, ND16, and ND32 filters (often under $50 for a drone) is the single highest-impact purchase for property video after the drone itself. ND16 is a good all-day-sun default. Without one, your clips look "video-ish"; with one, they look filmed.</p></div>
+
+<h2>Lock these settings so clips match</h2>
+<ul class="check">
+  <li><strong>White balance:</strong> lock it to a daylight/sunny preset. Auto white balance drifts between clips and makes the edit a nightmare to color-match.</li>
+  <li><strong>Exposure:</strong> shoot manual or lock exposure so the brightness doesn't jump as you fly past a dark treeline.</li>
+  <li><strong>ISO:</strong> keep it as low as possible (100) in daylight for clean footage; drone sensors get noisy fast when pushed.</li>
+  <li><strong>Color profile:</strong> a standard/normal profile is easier than a flat "log" profile for a beginner — it looks good straight out of the drone. Only use a flat profile if you're confident color-grading.</li>
+  <li><strong>Gimbal pitch:</strong> practice using the smoothest gimbal-speed setting so tilts don't jerk.</li>
+</ul>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Shoot a little wide and level</div><p>Frame slightly wider than you think you need and keep your horizon level. Extra room lets you stabilize and reframe in the edit, and a crooked horizon is the fastest way to make aerial footage look amateur. Many drones have a grid overlay — turn it on and use it.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>The Exterior &amp; Lot Shot List</h1>
+<p>A sellable property tour is not one clip — it is a small collection of deliberate shots that, cut together, let a viewer understand the whole property. This chapter is the exterior-and-lot half of that collection. Fly this list at every job and you will never come home missing a shot the client needed.</p>
+
+<h2>The core exterior shots</h2>
+<ul class="check">
+  <li><strong>The establishing wide.</strong> High and pulled back, showing the whole property in its setting — the house, the lot, the street or landscape around it. This is often the opening frame of the final video.</li>
+  <li><strong>The front-of-home hero.</strong> A clean, straight-on or gently angled view of the front facade, the shot the listing leads with.</li>
+  <li><strong>The approach.</strong> A slow forward push down the driveway or path toward the front door, as if the viewer is arriving.</li>
+  <li><strong>The lot boundaries.</strong> A move that shows how much land comes with the property — flying the perimeter or rising to show the full parcel.</li>
+  <li><strong>The backyard &amp; outdoor living.</strong> Pool, deck, patio, garden — the features buyers pay a premium for.</li>
+  <li><strong>The roofline &amp; condition.</strong> A top-down or high-angle pass showing the roof is sound (buyers and their agents genuinely look for this).</li>
+  <li><strong>The neighborhood context.</strong> A tasteful high shot showing proximity to a park, water, or a quiet street — selling the location, not just the house.</li>
+</ul>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Shoot each move twice</div><p>Fly every shot at least twice — once as a rehearsal to learn the obstacles and framing, once for real. Batteries are cheap; a wasted trip is not. The second take is almost always smoother because you already know where the tree branch is.</p></div>
+
+<h2>Features that sell — get a shot of each</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🏊 Pool &amp; water features</div><p>A slow orbit or overhead reveal of a pool is one of the most valuable clips you can deliver. Water reads beautifully from above.</p></div>
+  <div class="card"><div class="ch">🌳 Land &amp; privacy</div><p>Acreage, mature trees, and a fenced yard photograph as luxury from the air. Show the space and the seclusion.</p></div>
+  <div class="card"><div class="ch">🚗 Access &amp; parking</div><p>Long driveways, garages, and gated entries matter to buyers. A quick pass sells convenience.</p></div>
+  <div class="card"><div class="ch">🏡 Outdoor living</div><p>Decks, patios, outdoor kitchens, fire pits — the lifestyle features. Frame them the way someone would actually enjoy them.</p></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Sell the property, not the neighbors</div><p>When you frame the lot, keep the composition centered on the client's property. Sweeping wide to show the whole street means filming other people's homes and yards, which raises privacy issues covered fully in Chapter 6. Show enough context to sell the location, and keep the frame's attention on the listing.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this before a real job</div><p>Practice the whole exterior list on your own home or a friend's, with permission. Fly every shot, bring the clips home, and try to cut a 30-second tour. You'll instantly discover which shots you're missing and which of your moves are too shaky — far better to learn that on a practice run than on a paid one.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>The Signature Reveal &amp; Orbit of a Home</h1>
+<p>If the shot list is the substance, these are the moves that make a property video feel <em>cinematic</em> — the shots that make an agent say "how did you get that?" You only need a few, flown smoothly, to lift a tour from functional to premium. Master these and you have your signature look.</p>
+
+<h2>The reveal</h2>
+<p>A reveal hides the property, then unveils it. It creates a tiny moment of anticipation and payoff, which is exactly what makes a viewer keep watching. There are a few reliable ways to do it.</p>
+
+<div class="recipe">
+  <div class="rh"><span>The rise-and-reveal</span><span class="tag">SIGNATURE MOVE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Start <b>Low, behind an object</b></span><span class="chip">Move <b>Rise + tilt down</b></span><span class="chip">Speed <b>Slow &amp; steady</b></span><span class="chip">End <b>House filling frame</b></span></div>
+    <p class="small">Begin low behind a hedge, tree, or fence with the gimbal tilted up. Rise straight up while slowly tilting the camera down, and the house is "revealed" over the obstacle. The most reliable crowd-pleaser in the book.</p>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="card"><div class="ch">⬆️ The pull-back reveal</div><p>Start tight on the front door or a feature, then fly <em>backward</em> and up. The property grows into full view and its setting appears around it. Great as a closing shot.</p></div>
+  <div class="card"><div class="ch">🌲 The foreground wipe</div><p>Fly forward so a tree, wall, or roofline passes close through the frame and "wipes" to reveal the house behind it. Adds depth and a sense of arrival.</p></div>
+</div>
+
+<h2>The orbit — your most valuable single clip</h2>
+<p>The orbit (also called a "point of interest" circle) flies a smooth circle around the house while the camera stays locked on it. Done well, it shows every side of the property in one continuous, hypnotic shot. It is often the centerpiece of the whole tour.</p>
+
+<ol class="steps">
+  <li><span class="sh">Use the automated orbit mode if your drone has one.</span> Most modern drones can fly a locked circle around a point you set (branded "Point of Interest," "Orbit," or similar). It flies a far more perfect circle than you can by hand — use it.</li>
+  <li><span class="sh">Set a wide enough radius.</span> Give yourself room so the drone never comes near the roofline, trees, or wires as it comes around the far side. Watch the whole circle on the rehearsal pass.</li>
+  <li><span class="sh">Go slow.</span> A slow orbit looks expensive; a fast one looks frantic. Choose the slowest speed that still completes the circle within a battery-comfortable time.</li>
+  <li><span class="sh">Orbit for the light.</span> Position so the sun rakes across the house rather than blowing out one side. Golden hour orbits are stunning.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Fly slower than feels natural</div><p>The single biggest thing that separates amateur from professional aerial footage is speed. Beginners fly too fast because it feels productive. Cut every move's speed roughly in half and add smooth, gradual starts and stops. Slow, deliberate motion reads as cinematic; quick, jerky motion reads as a home video.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The "top-down descent"</div><p>Position the drone directly over the center of the house looking straight down, then descend slowly while rotating gently. It's a striking, modern shot that shows the roof, the lot layout, and the property's footprint all at once — and it's nearly foolproof because there's nothing to hit above you.</p></div>
+
+<h2>Timing: shoot in the good light</h2>
+<p>Aerial footage lives and dies by light. Midday sun is harsh, flattens everything, and casts hard shadows. The <strong>golden hours</strong> — the first hour after sunrise and the last hour before sunset — give warm, directional light that makes any property look its best. Overcast days are a soft, even, forgiving second choice. Schedule shoots for good light and charge accordingly; it is a big part of why your footage looks better than the client's phone.</p>
+
+<h1><span class="n">CHAPTER 6</span>Altitude, Privacy &amp; Neighbor Considerations</h1>
+<p>You are filming in a residential area, over and around homes where people live. How you handle altitude and privacy is both a legal matter and a professional-reputation matter. Get this right and neighbors leave you alone; get it wrong and you get complaints, confrontations, and a client who never rehires you.</p>
+
+<h2>Altitude: lower is usually better anyway</h2>
+<p>Two things govern how high you fly: the legal ceiling (Chapter 2) and what the shot actually needs. For property work the good news is they align — you rarely need to fly high. Most of your best shots live between rooftop height and a moderate altitude that keeps the home the star of the frame. Flying too high shrinks the house into a dot and starts sweeping neighboring properties into view.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Stay under the legal ceiling</div><p>Most countries cap uncontrolled recreational and standard commercial flight at a set altitude above ground level (400 feet / roughly 120 meters in the US and many other places), and any airspace authorization may set it lower still. Know the number where you fly and stay under it. Property video almost never needs the full ceiling.</p></div>
+
+<h2>Privacy over neighbors</h2>
+<p>This is the part new operators underestimate. Your job is to film the client's property — not the family next door in their backyard. Neighbors have a reasonable expectation of privacy, and pointing a camera into their windows or private yard from the air is exactly the kind of thing that generates complaints and, in some places, legal trouble.</p>
+
+<ul class="check">
+  <li>Compose so the client's property fills the frame; keep neighboring homes and yards out of the composition.</li>
+  <li>Never hover over or point the camera into a neighbor's windows, pool, or fenced yard.</li>
+  <li>Keep your flight path over the client's lot and open public space, not over adjacent private property.</li>
+  <li>If a neighbor's home unavoidably appears in a wide establishing shot, keep it distant and incidental — never the focus.</li>
+  <li>When you can, crop or reframe in the edit to remove a neighbor's private space that crept into a shot.</li>
+</ul>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>A knock goes a long way</div><p>For a big shoot in a tight neighborhood, a quick friendly heads-up to the immediate neighbors — "Hi, I'm shooting video of the house next door for its listing this morning, I'll only be up for about twenty minutes" — turns potential complainers into non-issues. People react far better to a courteous person with a plan than to a mystery drone over their yard.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>When someone objects</div><p>If a neighbor comes out upset, land, be calm and polite, and explain you're a certified operator shooting the listing next door and that you're keeping the camera on that property. Don't argue and don't get defensive. A professional demeanor defuses almost every encounter, and it protects your client's relationship with their own neighbors.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Pairing Aerials With Ground Video for a Full Tour</h1>
+<p>Aerial footage alone is a highlight reel, not a tour. The most sellable deliverable weaves your drone shots together with ground-level video that shows the details buyers actually stand in — the kitchen, the light through a window, the walk from the deck to the yard. You don't need a second camera; the drone and a phone or the drone's own low-altitude flying can cover it.</p>
+
+<h2>Why the pairing works</h2>
+<p>Aerials answer "what is this property and where is it?" Ground shots answer "what does it feel like to be here?" Cutting between the two gives a viewer both scale and intimacy, which is exactly the emotional one-two punch that makes them want to book a viewing.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🚁 Aerials handle</div><ul><li>The whole property and lot</li><li>Roof, land, and location</li><li>The dramatic reveal and orbit</li><li>Pool, yard, and outdoor space from above</li></ul></div>
+  <div class="card"><div class="ch">🚶 Ground video handles</div><ul><li>The front-door approach at eye level</li><li>Interior rooms and flow</li><li>Detail shots: fixtures, views, light</li><li>The human-scale feel of a space</li></ul></div>
+</div>
+
+<h2>The transition trick that ties them together</h2>
+<p>Many drones fly beautifully at low altitude and slow speed, which lets you shoot ground-level moving shots that match your aerials in smoothness. A low forward push through the front gate, or a rise from ground level up over the roof, becomes a seamless bridge between "on the ground" and "in the air."</p>
+
+<div class="recipe">
+  <div class="rh"><span>The ground-to-air transition</span><span class="tag">TOUR GLUE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Start <b>Low, at the door</b></span><span class="chip">Move <b>Rise straight up &amp; back</b></span><span class="chip">Speed <b>Slow, smooth ascent</b></span><span class="chip">Cut point <b>Mid-rise</b></span></div>
+    <p class="small">Begin at the front door at eye level and rise smoothly up and back until the whole house is in view. In the edit you can cut from an interior clip to the low start of this rise, and the tour lifts off literally and figuratively.</p>
+  </div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Match your movement direction</div><p>When you cut from a ground clip to an aerial, keep the motion flowing the same way — if the ground shot moves forward toward the house, let the aerial continue forward or rise. Matched motion across a cut feels intentional and smooth; a hard reversal of direction feels jarring.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Set client expectations on interiors</div><p>Flying a drone <em>inside</em> a house is an advanced skill with real risk in tight spaces — it is not a beginner move. For interiors, a phone gimbal or simply steady handheld ground video is safer and perfectly sellable. Be clear with clients about what your package includes so no one expects indoor drone footage you shouldn't be attempting.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>The Delivery Edit</h1>
+<p>Raw clips are not a product. The edit is where you turn a folder of footage into the thing the client pays for: a tight, well-paced tour that makes the property look its best and drops straight into a listing. This chapter is about assembling it and delivering it in the formats clients can actually use.</p>
+
+<h2>Order: tell the arrival story</h2>
+<p>Cut the tour the way a buyer would experience arriving. A reliable structure:</p>
+
+<ol class="steps">
+  <li><span class="sh">Open with the establishing wide or reveal.</span> Set the scene and create that first "wow." This is your hook — make it the strongest three seconds you shot.</li>
+  <li><span class="sh">Move to the front-of-home hero and approach.</span> Bring the viewer up to the house as if arriving.</li>
+  <li><span class="sh">Show the exterior features and the orbit.</span> The land, the pool, the outdoor living, and the signature circle that shows every side.</li>
+  <li><span class="sh">Weave in ground and interior shots.</span> Take the viewer inside and through the flow of the space.</li>
+  <li><span class="sh">Close with a memorable pull-back or golden-hour shot.</span> Leave them with the property looking its absolute best.</li>
+</ol>
+
+<h2>Pacing: shorter than you think</h2>
+<p>The most common beginner mistake is a tour that drags. Viewers on a listing site or in a social feed have almost no patience. Keep individual clips short — a few seconds each — and keep the whole thing tight.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Cut on the motion</div><p>Because your clips already move (a rise, an orbit, a push-in), you can cut while the motion is still going and the energy carries across the edit. Trim the slow, dead ends off each clip and keep only the good middle of the move. Every clip should feel like it's going somewhere.</p></div>
+
+<table>
+  <tr><th>Deliverable</th><th>Length</th><th>Feel</th></tr>
+  <tr><td>Social teaser (reels/stories)</td><td>15&ndash;30 sec</td><td>Fast, punchy, best shots only, hooks in 3 sec</td></tr>
+  <tr><td>Full listing tour</td><td>60&ndash;120 sec</td><td>Complete arrival story, exterior + interior</td></tr>
+  <tr><td>Premium/luxury film</td><td>90&ndash;180 sec</td><td>Cinematic, slower, music-led, golden-hour</td></tr>
+</table>
+
+<h2>Music and sound</h2>
+<p>Music sets the entire mood, and using the wrong track can get a client's listing muted or taken down. <strong>Only use properly licensed music.</strong> Free-with-attribution and paid royalty-free libraries exist specifically for this. Never pull a popular song off the radio for a commercial video — it is copyright infringement and it puts your client at risk. Pick calm, warm, uplifting tracks for most homes; save dramatic scores for genuine luxury properties.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Licensed music only — no exceptions</div><p>Using copyrighted commercial music in a listing video is illegal and routinely gets videos silenced or removed on social platforms, which makes you look unprofessional to the client. Build a small library of licensed tracks you're allowed to use commercially, and use only those. It protects you and the client.</p></div>
+
+<h2>Formats: deliver what the client can actually post</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🖥️ Listing / MLS</div><p>Horizontal <strong>16:9</strong>, 1080p or 4K, standard MP4 (H.264). This is the version that lives on the listing page and plays well everywhere. Check any length or file-size limits your client's platform imposes.</p></div>
+  <div class="card"><div class="ch">📱 Social</div><p>A separate <strong>vertical 9:16</strong> cut for reels and stories, plus optionally a square version. Because you shot 4K, you can crop a vertical version out of your footage without a quality loss.</p></div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Deliver a horizontal and a vertical every time</div><p>Handing the client both a 16:9 listing cut and a 9:16 social cut from the same shoot is a small amount of extra edit time and a big perceived value bump. It's often the difference between "nice video" and "I'm hiring you for all my listings." Bake it into your standard package.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>The Business</h1>
+<p>You can fly, you're certified, and your edits look sharp. Now for the part that makes it a side hustle instead of a hobby: packaging the work, pricing it, and finding the people who'll pay. None of this is guaranteed income — but there is a clear, repeatable way to build it.</p>
+
+<h2>Package it, don't sell "flights"</h2>
+<p>Clients don't want to buy drone time; they want to buy a finished thing they can post. Sell tiered packages with clear deliverables so the choice is easy and the scope is defined.</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">📦 Basic</div><ul><li>Exterior aerials only</li><li>Short edited tour (30&ndash;60s)</li><li>One horizontal format</li><li>A handful of aerial stills</li></ul></div>
+  <div class="card solid"><div class="ch">⭐ Standard</div><ul><li>Aerials + ground video</li><li>Full tour (60&ndash;120s)</li><li>Horizontal + vertical cuts</li><li>Licensed music, aerial stills</li></ul></div>
+  <div class="card"><div class="ch">💎 Premium</div><ul><li>Golden-hour cinematic film</li><li>Reveal + orbit + interiors</li><li>All formats + social teaser</li><li>Priority scheduling</li></ul></div>
+</div>
+
+<h2>What to charge</h2>
+<p>Pricing varies enormously by market, competition, and your experience, so treat these as a framework to reason with — <strong>not a promise of what you'll earn.</strong> Research what videographers in your specific area charge and position yourself deliberately within it.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Illustrative package pricing (research your own market)</span><span class="tag">FRAMEWORK, NOT A GUARANTEE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Basic <b>$150&ndash;300</b></span><span class="chip">Standard <b>$300&ndash;600</b></span><span class="chip">Premium <b>$600&ndash;1200+</b></span></div>
+    <p class="small">These ranges reflect common small-market to mid-market rates for edited property video and will differ widely by region, property value, and demand. Higher-value listings support higher fees. Start where you can win work, and raise prices as your reel and reputation grow.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't compete on being cheapest</div><p>Racing to the bottom on price attracts the worst clients and burns you out. Price for the value of a professional, edited, legally-flown deliverable. An agent selling a $500,000 home is not looking to save $50 — they're looking for media that helps the listing sell. Sell the outcome, not the discount.</p></div>
+
+<h2>What actually affects your price</h2>
+<ul class="check">
+  <li>Property value and size — bigger, more expensive listings support higher fees.</li>
+  <li>Deliverables — number of formats, length, stills, and turnaround time.</li>
+  <li>Travel time to the location.</li>
+  <li>Golden-hour or specific-time shoots (they cost you scheduling flexibility).</li>
+  <li>Rush turnaround — a same-day edit is worth a premium.</li>
+  <li>Your experience and the strength of your reel.</li>
+</ul>
+
+<h2>Finding clients</h2>
+<ol class="steps">
+  <li><span class="sh">Build a reel first.</span> Shoot two or three properties (yours, friends', or a willing agent's) for free or cheap and cut a killer highlight reel. Nobody hires a property videographer with nothing to show; the reel <em>is</em> your storefront.</li>
+  <li><span class="sh">Target local real estate agents directly.</span> Agents are repeat buyers — one who likes your work hires you for listing after listing. Reach out with your reel, not a cold pitch about yourself.</li>
+  <li><span class="sh">Serve short-term rental hosts.</span> Hosts on booking platforms compete on photos and video; aerial and tour footage of a rental is a direct booking advantage they'll pay for.</li>
+  <li><span class="sh">Let your work advertise itself.</span> Post your tours where local agents and homeowners will see them, tagged to the area. Good property video is its own marketing.</li>
+  <li><span class="sh">Turn one client into three.</span> Every happy agent knows other agents. Ask for referrals and make repeat work easy with reliable scheduling and turnaround.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Repeat clients are the whole game</div><p>The math of this business is not "find one client." It's "find a handful of agents who list regularly and keep hiring you." One agent doing two listings a month is a steady income stream. Deliver reliably, communicate clearly, and be easy to work with — that's what earns the repeat booking, more than any single fancy shot.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>A Property-Shoot Checklist</h1>
+<p>Everything in this guide, compressed into a run-of-show you can keep on your phone. Walk it top to bottom on every paid job and you won't skip the thing that matters.</p>
+
+<h2>Before you leave home</h2>
+<ul class="check">
+  <li>Certification current and proof accessible.</li>
+  <li>Airspace checked for the address; authorization obtained if required.</li>
+  <li>Insurance active.</li>
+  <li>Batteries charged (enough for the full shot list plus margin).</li>
+  <li>ND filters, spare props, and charging gear packed.</li>
+  <li>Weather checked: wind within rating, no rain, good light window planned.</li>
+  <li>Firmware updated; camera settings preset (4K, locked WB, correct shutter).</li>
+</ul>
+
+<h2>On site, before takeoff</h2>
+<ul class="check">
+  <li>Walk the property; note power lines, trees, wires, and antennas.</li>
+  <li>Pick a clear, flat launch/landing spot away from windows and people.</li>
+  <li>Note where neighbors' private spaces are so you can keep them out of frame.</li>
+  <li>Give immediate neighbors a courteous heads-up if it's a big or tight shoot.</li>
+  <li>Calibrate the compass if prompted; confirm GPS lock and home point.</li>
+  <li>Log the flight details: address, airspace status, weather, time.</li>
+</ul>
+
+<h2>The shots to get (don't leave without these)</h2>
+<ul class="check">
+  <li>Establishing wide of the whole property and setting.</li>
+  <li>Front-of-home hero and the driveway approach.</li>
+  <li>The signature reveal (rise-and-reveal or pull-back).</li>
+  <li>A slow orbit of the house.</li>
+  <li>Backyard, pool, and outdoor living features.</li>
+  <li>Roofline / top-down pass.</li>
+  <li>Land and lot boundaries; neighborhood context.</li>
+  <li>Ground-to-air transition and any ground/detail clips.</li>
+  <li>A closing golden-hour or pull-back shot.</li>
+</ul>
+
+<h2>Before you fly home</h2>
+<ul class="check">
+  <li>Review footage on site — reshoot anything soft, crooked, or shaky now, not later.</li>
+  <li>Confirm you have both wide reveal and orbit; they anchor the edit.</li>
+  <li>Land, power down safely, account for all gear and props.</li>
+  <li>Close out the flight log.</li>
+</ul>
+
+<h2>In the edit</h2>
+<ul class="check">
+  <li>Cut the arrival story: reveal &rarr; approach &rarr; features &rarr; interior &rarr; close.</li>
+  <li>Keep clips short; trim to the good middle of each move.</li>
+  <li>Add licensed music only; match the mood to the property.</li>
+  <li>Color-match and level any crooked horizons.</li>
+  <li>Export a 16:9 listing cut and a 9:16 social cut.</li>
+  <li>Deliver on time in the format the client requested, plus a bonus vertical.</li>
+</ul>
+
+<blockquote>The client is not buying a drone flight. They are buying thirty seconds that make a house look like a home worth seeing in person.</blockquote>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your first move this week</div><p>If you're not certified yet, start the study for your country's remote pilot credential today — it's the one thing standing between you and legal paid work. If you are certified, go shoot a full exterior list on any house you can get permission for and cut a 60-second tour. A finished reel and a valid certificate are the only two things you need to book your first client.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Fly it legally and land a smooth reveal, and you have turned a drone into paid property work — the certification makes it real, and the smooth move makes it sell.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

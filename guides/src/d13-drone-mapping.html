@@ -1,0 +1,271 @@
+<h1><span class="n">START HERE</span>Your Drone Is About to Become a Measuring Instrument</h1>
+<p class="lead-in">You already know how to fly. This guide teaches you the far more valuable skill of turning a stack of overlapping photos into a survey-grade map — a measurable, geo-located picture of the real world that engineers, farmers, and builders will pay you for. It is a different discipline than cinematic flying, and it rewards planning over instinct.</p>
+
+<p>Drone mapping — properly called <strong>aerial photogrammetry</strong> — is the science of reconstructing accurate 2D and 3D data from ordinary photographs. You fly a planned grid, the drone takes hundreds of overlapping images from known positions, and processing software stitches them into a single seamless map you can measure distances, areas, and volumes on. The pretty aerial photo is a byproduct; the <em>measurable</em> data is the product.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Overlapping nadir photos plus known ground positions become an accurate, measurable map — and every decision you make on the ground is about protecting that accuracy.</p></div>
+
+<h2>Who actually pays for this</h2>
+<p>The demand is real and it is not about impressive footage. It is about replacing slow, expensive, or dangerous ground surveys with a 20-minute flight. The people writing checks include:</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🏗️ Construction</div><p>Site progress, cut-and-fill earthwork volumes, and as-built verification against design plans.</p></div>
+  <div class="card"><div class="ch">🌾 Agriculture</div><p>Crop-health maps, stand counts, drainage planning, and variable-rate application data.</p></div>
+  <div class="card"><div class="ch">🏠 Land & Real Estate</div><p>Property boundaries visualized, acreage, topography, and marketing site plans.</p></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>This is commercial work — get certified first</div><p>Flying a drone for hire is regulated almost everywhere. In the United States that means an FAA Part 107 Remote Pilot Certificate; other countries have their own equivalents. You must have the required certification, registration, and (usually) insurance <strong>before</strong> you accept a single paid mapping job. This guide teaches the craft, not the law — treat the legal side as non-negotiable homework.</p></div>
+
+<h2>How to use this guide</h2>
+<p>Read Chapters 2 and 3 first — they teach the physics that every later decision depends on. Then plan, fly, process, and deliver in the order the middle chapters lay out. The final chapter is a printable pre-flight checklist you can keep on your phone.</p>
+
+<h1><span class="n">CHAPTER 2</span>How Photogrammetry Actually Works</h1>
+<p>To trust your maps, you need to understand — at least roughly — how a folder of flat photos becomes a 3D reconstruction of the world. The magic word is <strong>parallax</strong>: the same point on the ground, seen from two slightly different camera positions, appears to shift. Measure that shift across hundreds of overlapping images and software can triangulate exactly where that point sits in 3D space.</p>
+
+<h2>The reconstruction pipeline, conceptually</h2>
+<ol class="steps">
+  <li><span class="sh">Feature detection.</span> The software scans every image for thousands of distinctive points — corners, textures, edges — that it can recognize again in neighboring photos.</li>
+  <li><span class="sh">Feature matching.</span> It finds the same feature across multiple overlapping images. A rooftop corner might appear in nine or ten photos; each sighting is a clue to its true position.</li>
+  <li><span class="sh">Structure from Motion (SfM).</span> By solving the geometry of all those matches at once, the software works out where each photo was taken from and where each matched point lies in 3D. This produces a <strong>sparse point cloud</strong> plus the camera positions.</li>
+  <li><span class="sh">Densification.</span> Using the solved camera positions, it computes depth for far more pixels, producing a <strong>dense point cloud</strong> — millions of measured 3D points.</li>
+  <li><span class="sh">Surface &amp; texture.</span> The dense cloud becomes a mesh (a continuous 3D surface), and the original photos are draped over it as texture, plus flattened into a top-down map.</li>
+</ol>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Why overlap is everything</div><p>A point that appears in only two photos is weakly triangulated and error-prone. A point that appears in nine photos is locked down. This single fact — more overlapping views equal more accuracy — is the reason mapping flights look so redundant, and why "just fly it once across" never works.</p></div>
+
+<h2>Why it can go wrong</h2>
+<p>Photogrammetry needs <strong>texture</strong> and <strong>stable geometry</strong> to match features. It struggles with:</p>
+<ul class="check">
+  <li>Featureless surfaces — calm water, fresh snow, plain sand, uniform gravel.</li>
+  <li>Reflective or transparent things — glass, wet roads, mirrored panels.</li>
+  <li>Moving objects — traffic, blowing tree canopies, people walking through the scene.</li>
+  <li>Changing light — clouds racing across the sun mid-flight shift every shadow.</li>
+</ul>
+
+<blockquote>A map is only as honest as the overlap that built it. Skimp on coverage and the software will fill the gaps with confident guesses.</blockquote>
+
+<h1><span class="n">CHAPTER 3</span>The Key Concepts, Named and Numbered</h1>
+<p>Four terms carry almost the entire craft. Learn these cold and you will speak the language of every processing report and every client conversation.</p>
+
+<h2>GSD — Ground Sample Distance</h2>
+<p><strong>GSD is the real-world size of one pixel</strong>, measured on the ground. A GSD of 2 cm/px means each pixel in your map covers a 2 &times; 2 cm square of earth. It is the single best measure of a map's detail, and it is set almost entirely by your <strong>flight altitude</strong>: fly higher and each pixel covers more ground (coarser GSD); fly lower and detail improves (finer GSD) — at the cost of covering less area per battery.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Altitude &rarr; GSD, typical mapping camera</span><span class="tag">RULE OF THUMB</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">40m &rarr; <b>~1.1 cm/px</b></span><span class="chip">60m &rarr; <b>~1.6 cm/px</b></span><span class="chip">80m &rarr; <b>~2.2 cm/px</b></span><span class="chip">100m &rarr; <b>~2.7 cm/px</b></span><span class="chip">120m &rarr; <b>~3.3 cm/px</b></span></div>
+    <p class="small">Exact numbers depend on your sensor size, resolution, and lens — your flight app computes GSD for you. Use these to feel the relationship: GSD scales linearly with altitude.</p>
+  </div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Let the deliverable set the altitude</div><p>Work backwards. If a client needs to see 1-inch cracks, you need a GSD finer than that crack — fly low. If they just need site topography over 200 acres, a coarser 4 cm/px from higher up covers far more ground per flight. Detail and area are always a trade.</p></div>
+
+<h2>Overlap — front and side</h2>
+<p>Overlap is how much consecutive photos share the same ground. <strong>Frontlap</strong> (forward overlap) is the shared area between successive photos <em>along</em> a flight line. <strong>Sidelap</strong> is the shared area <em>between</em> adjacent flight lines. You set both as percentages in your flight app, and they are the biggest lever you have on accuracy.</p>
+
+<table>
+  <tr><th>Terrain / subject</th><th>Frontlap</th><th>Sidelap</th></tr>
+  <tr><td>Flat, open, well-textured ground</td><td>75%</td><td>65%</td></tr>
+  <tr><td>Agriculture / vegetation</td><td>80%</td><td>70%</td></tr>
+  <tr><td>Uniform or low-texture surfaces</td><td>80–85%</td><td>70–75%</td></tr>
+  <tr><td>Dense urban / tall structures</td><td>85%+</td><td>75%+</td></tr>
+  <tr><td>3D models of buildings</td><td>85%+</td><td>80%+</td></tr>
+</table>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>When in doubt, add overlap</div><p>The classic default of <strong>75% front / 65% side</strong> works for open, textured terrain. But overlap is nearly free — it costs a little battery and processing time — while a failed reconstruction costs you a whole return trip. For anything tall, uniform, or vegetated, push overlap higher and never regret it.</p></div>
+
+<h2>Nadir vs. oblique</h2>
+<p><strong>Nadir</strong> means the camera points straight down (90° to the ground). Nadir images are the backbone of flat mapping — orthomosaics and elevation models. <strong>Oblique</strong> means the camera is tilted (often 45°) to capture the <em>sides</em> of objects. You need obliques to reconstruct building facades, vertical structures, and realistic 3D models, because a straight-down camera never sees a wall.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">⬇️ Nadir (straight down)</div><p>Best for: orthomosaic maps, terrain/elevation models, area and volume of open ground. Efficient and simple to plan as a grid.</p></div>
+  <div class="card solid"><div class="ch">↘️ Oblique (tilted ~45°)</div><p>Best for: 3D building models, facades, complex vertical structures, inspection detail. Usually flown as an added orbit or a double-grid.</p></div>
+</div>
+
+<h2>Accuracy — relative vs. absolute</h2>
+<p>These two get confused constantly, and clients care about the difference.</p>
+<ul class="check">
+  <li><strong>Relative accuracy</strong> is how correct measurements are <em>within</em> the model — the distance between two points on your map versus reality. Good overlap alone can give strong relative accuracy.</li>
+  <li><strong>Absolute accuracy</strong> is how correctly the whole model sits on the <em>real Earth</em> — its true latitude, longitude, and elevation. This requires ground control or RTK/PPK (Chapter 6). A drone's bare GPS is often several meters off.</li>
+</ul>
+
+<div class="key"><div class="kt">Remember this distinction</div><p>Overlap buys you relative accuracy; ground control or RTK/PPK buys you absolute accuracy. Survey clients almost always need both.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Gear &amp; Software, by Category</h1>
+<p>You do not need the most expensive equipment to start — you need the <em>right category</em> for the accuracy your clients require. Here is how the landscape breaks down, described by type rather than by brand or version, which change constantly.</p>
+
+<h2>Drone types for mapping</h2>
+<table>
+  <tr><th>Type</th><th>Strength</th><th>Best for</th></tr>
+  <tr><td>Small camera multirotor</td><td>Cheap, portable, easy to fly</td><td>Small sites, learning, sub-decimeter work with ground control</td></tr>
+  <tr><td>RTK-enabled multirotor</td><td>Centimeter geotags on every photo</td><td>Survey-grade jobs with minimal ground control</td></tr>
+  <tr><td>Fixed-wing / VTOL</td><td>Long endurance, huge coverage</td><td>Corridors, large acreage, linear infrastructure</td></tr>
+  <tr><td>Payload / mapping rig</td><td>Larger sensor, mechanical shutter</td><td>Highest-detail professional deliverables</td></tr>
+</table>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>The one feature that matters most</div><p>A <strong>mechanical shutter</strong> (versus a rolling electronic shutter) prevents the smear you get photographing while moving, and dramatically improves reconstruction. If you are choosing a mapping drone, prioritize a mechanical or global shutter over almost any other spec.</p></div>
+
+<h2>Flight-planning apps</h2>
+<p>These run on your controller or tablet and fly the mission for you. As a category they let you draw an area, set altitude/GSD and overlap, and generate an automated grid the drone executes hands-off. Look for one that supports terrain-following (adjusts altitude to follow hills so GSD stays constant), oblique/3D mission types, and your specific drone. Many are free or subscription-based; the drone maker's own app often includes a basic mapping mode.</p>
+
+<h2>Processing software</h2>
+<p>This is where images become maps. The category splits into two homes:</p>
+<div class="cards">
+  <div class="card"><div class="ch">💻 Desktop processing</div><p>Runs on a powerful local computer with a strong GPU and lots of RAM. Full control, no per-project cost, your data stays local. Slower on weak hardware.</p></div>
+  <div class="card"><div class="ch">☁️ Cloud processing</div><p>Upload images; their servers do the heavy lifting and hand back deliverables. No expensive workstation needed, but ongoing cost and you must upload gigabytes.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Hardware reality check</div><p>Photogrammetry is one of the most demanding tasks you can give a computer. If you process locally, a modern multi-core CPU, a strong dedicated GPU, and 32 GB of RAM (64 GB for large jobs) is the practical floor. Underpowered machines don't just run slow — they can fail large projects outright.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Planning a Mapping Mission</h1>
+<p>The mission is won or lost at the planning table. A good plan makes the flight boring and the processing clean. Work through these decisions in order.</p>
+
+<ol class="steps">
+  <li><span class="sh">Define the area of interest.</span> Draw a boundary that extends a comfortable margin <em>beyond</em> what the client cares about — edges of a map are always the weakest, so give yourself buffer to trim.</li>
+  <li><span class="sh">Pick your GSD, which sets altitude.</span> Start from the deliverable's smallest important detail, choose a GSD finer than it, and let the app translate that into flight altitude.</li>
+  <li><span class="sh">Set overlap.</span> Use the Chapter 3 table. Bias higher for vegetation, tall structures, or uniform surfaces.</li>
+  <li><span class="sh">Choose the flight pattern.</span> A single grid of parallel lines for flat 2D maps; a crosshatch (double grid) or added orbit for 3D and buildings.</li>
+  <li><span class="sh">Estimate flight time and batteries.</span> The app gives you an estimate; divide by realistic battery endurance to know how many packs and swaps you need.</li>
+  <li><span class="sh">Plan for terrain.</span> On hilly ground, enable terrain-follow so the drone climbs and descends to hold constant GSD — otherwise hilltops are too detailed and valleys too coarse.</li>
+</ol>
+
+<div class="recipe">
+  <div class="rh"><span>Standard 2D orthomosaic mission</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Camera <b>Nadir 90°</b></span><span class="chip">Frontlap <b>75%</b></span><span class="chip">Sidelap <b>65%</b></span><span class="chip">GSD <b>~2.5 cm/px</b></span><span class="chip">Pattern <b>Single grid</b></span></div>
+    <p class="small">A dependable baseline for open, textured sites. For 3D or buildings, switch to a crosshatch, add a 45° oblique pass, and raise both overlaps.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Check airspace before you promise anything</div><p>Confirm the site is legal to fly — controlled airspace near airports may require authorization, and some areas are simply restricted. Verify altitude limits and any authorization needs during planning, not on the day. A grounded drone helps no one.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this before a paid job</div><p>Fly a small practice plot — your backyard or a park — end to end: plan, fly, drop a couple of measured targets, process, and inspect the accuracy report. Doing the whole loop once on low stakes teaches you more than any amount of reading, and reveals your personal weak link before a client's does.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Ground Control &amp; Accuracy</h1>
+<p>This chapter is what separates a nice picture from a survey deliverable. If a client needs to trust measurements against the real world, you need ground control, RTK/PPK, or both.</p>
+
+<h2>Ground Control Points (GCPs)</h2>
+<p>A <strong>GCP</strong> is a clearly visible marked target on the ground whose exact real-world coordinates you measure with a survey-grade GNSS receiver. You place several around and across the site, capture them in your photos, and then tell the processing software "this pixel is this real coordinate." The software anchors the entire model to those truths, delivering strong absolute accuracy.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>How many, and where</div><p>A common practical minimum is <strong>5 GCPs</strong> — one near each corner and one in the middle — with more on larger or hillier sites. Spread them across the area and across the elevation range, not clustered. Even coverage anchors the whole model; a cluster only anchors one spot and lets the rest drift.</p></div>
+
+<h2>Checkpoints — proving your accuracy</h2>
+<p>A <strong>checkpoint</strong> is a measured target you <em>withhold</em> from processing. After the model is built, you compare where the software placed that point against its true surveyed coordinate. The difference is your independent, honest accuracy statement — the number a professional puts in the report. GCPs anchor the model; checkpoints prove it.</p>
+
+<h2>RTK and PPK — accuracy without (or with fewer) GCPs</h2>
+<p>These technologies geotag each <em>photo</em> with centimeter-level position instead of the drone's normal few-meter GPS, reducing or eliminating the need for GCPs.</p>
+<table>
+  <tr><th></th><th>RTK</th><th>PPK</th></tr>
+  <tr><td>How</td><td>Live correction streamed to the drone in flight</td><td>Corrections applied afterward, on the computer</td></tr>
+  <tr><td>Needs signal in air</td><td>Yes — a live radio/data link</td><td>No — logs raw data, fixes it later</td></tr>
+  <tr><td>Failure mode</td><td>Lost link degrades geotags mid-flight</td><td>More robust; nothing to lose live</td></tr>
+  <tr><td>Best when</td><td>Reliable connectivity on site</td><td>Remote sites, maximum reliability</td></tr>
+</table>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>RTK/PPK still doesn't replace checkpoints</div><p>Even with centimeter geotags, drop at least one or two measured checkpoints to <em>verify</em> the result. Trusting the tech blindly is how a systematic vertical offset slips into a deliverable unnoticed. Best practice on high-stakes jobs: RTK/PPK for efficiency, a few GCPs for insurance, and checkpoints to prove it.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Flying the Mission</h1>
+<p>By now the drone does most of the flying — your job is to set it up right and manage the things automation can't. Treat the flight as data collection, not piloting.</p>
+
+<ol class="steps">
+  <li><span class="sh">Arrive, assess, and set up a home point</span> with clear takeoff and landing space and an unobstructed view of the sky for GPS.</li>
+  <li><span class="sh">Place and measure ground control</span> before you launch, so targets are captured in every relevant pass.</li>
+  <li><span class="sh">Calibrate as your drone requests</span> (compass/IMU) away from metal and interference.</li>
+  <li><span class="sh">Load the planned mission</span> and confirm altitude, overlap, camera angle, and battery-swap behavior.</li>
+  <li><span class="sh">Launch and monitor.</span> The drone flies the grid; you watch battery, signal, airspace, and any people or aircraft entering the area.</li>
+  <li><span class="sh">Swap batteries and resume.</span> Good apps continue exactly where the mission paused, so multi-battery jobs stitch seamlessly.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Consistent light beats bright light</div><p>Shoot in <strong>even, consistent</strong> lighting — overcast is often ideal because it kills harsh shadows that confuse feature matching. Avoid flying while clouds race across the sun; shadows shifting between photos wreck the reconstruction. Midday reduces long shadows for nadir work.</p></div>
+
+<h2>Batteries and endurance</h2>
+<ul class="check">
+  <li>Bring more packs than the estimate — cold, wind, and payload all cut endurance.</li>
+  <li>Keep batteries warm in cold weather; capacity drops sharply near freezing.</li>
+  <li>Never fly a pack to empty on a mapping job — land, swap, resume with margin.</li>
+  <li>Track which packs you've used so you don't reload a spent one.</li>
+</ul>
+
+<h2>Capturing obliques</h2>
+<p>When the deliverable is a 3D model or includes vertical faces, add oblique coverage. The two common methods:</p>
+<div class="cards">
+  <div class="card"><div class="ch">🔄 Orbit pass</div><p>After the nadir grid, fly one or more circular orbits around the structure with the camera tilted inward at ~45°, capturing every facade.</p></div>
+  <div class="card"><div class="ch">✚ Double grid</div><p>Fly a second grid perpendicular to the first with the camera tilted, so every surface is seen from multiple angles. The gold standard for building 3D.</p></div>
+</div>
+
+<h1><span class="n">CHAPTER 8</span>Processing — From Images to Map</h1>
+<p>You return with a memory card of hundreds of photos and (ideally) a list of measured GCPs. Processing turns that raw material into deliverables. The steps are similar across every software package, even though the buttons differ.</p>
+
+<ol class="steps">
+  <li><span class="sh">Import and inspect.</span> Load the images and their geotags. Cull anything blurry, over/underexposed, or from takeoff/landing that doesn't belong to the grid.</li>
+  <li><span class="sh">Align the images.</span> The software runs feature matching and Structure from Motion to solve camera positions and build the sparse point cloud. Review the result — gaps here mean weak overlap.</li>
+  <li><span class="sh">Add ground control.</span> Mark each GCP where it appears across your images and enter its surveyed coordinates. Re-optimize so the model snaps onto real-world position.</li>
+  <li><span class="sh">Build the dense point cloud.</span> The software computes depth for millions of points — the detailed 3D skeleton of everything it saw.</li>
+  <li><span class="sh">Generate the surface models.</span> From the dense cloud it builds the elevation model (DEM/DSM) and the mesh, then drapes photo texture over the mesh for the 3D model.</li>
+  <li><span class="sh">Produce the orthomosaic.</span> Every photo is geometrically corrected and blended into one seamless, distortion-free top-down map you can measure directly.</li>
+  <li><span class="sh">Read the accuracy report and check your checkpoints.</span> Confirm the errors are within what you promised before you export anything.</li>
+</ol>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>DEM vs. DSM vs. DTM</div><p>A <strong>DSM</strong> (Digital Surface Model) includes everything — buildings, trees, cars. A <strong>DTM</strong> (Digital Terrain Model) is the bare earth with objects removed. <strong>DEM</strong> is the umbrella term for either. Volume and drainage work usually wants a DTM; you generate it by filtering vegetation and structures out of the surface.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Garbage in stays garbage</div><p>Processing cannot rescue a bad flight. Too little overlap, motion-blurred frames, or shifting light produce holes, warps, and "doming" no software setting fixes. When a result looks wrong, the honest answer is almost always to re-fly with more overlap — not to hunt for a magic slider.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Deliverables &amp; Use Cases</h1>
+<p>Clients don't buy point clouds — they buy answers. Knowing which deliverable answers which question lets you scope jobs correctly and price them well.</p>
+
+<table>
+  <tr><th>Deliverable</th><th>What it is</th><th>Client uses it for</th></tr>
+  <tr><td>Orthomosaic</td><td>Seamless, geo-correct top-down map</td><td>Measuring distances &amp; areas, site plans, marketing</td></tr>
+  <tr><td>DEM / DSM / DTM</td><td>Elevation of the surface or bare earth</td><td>Topography, drainage, contours, slope analysis</td></tr>
+  <tr><td>3D model / mesh</td><td>Textured 3D surface</td><td>Visualization, facades, inspection, presentation</td></tr>
+  <tr><td>Point cloud</td><td>Millions of measured 3D points</td><td>Engineering/CAD import, detailed analysis</td></tr>
+  <tr><td>Volume report</td><td>Calculated stockpile/earthwork volumes</td><td>Cut-and-fill, inventory, billing</td></tr>
+  <tr><td>Contour lines</td><td>Elevation isolines from the DEM</td><td>Site design, grading plans</td></tr>
+</table>
+
+<h2>Where the money lives</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🏗️ Construction volumes</div><p>Fly a stockpile or excavation, and the software computes its volume to within a few percent — replacing a slow, hazardous manual survey with a short flight. Repeat monthly for progress and billing.</p></div>
+  <div class="card"><div class="ch">🌾 Crop health</div><p>With the right sensor, index maps highlight stressed or under-watered zones invisible from the ground, driving targeted treatment and saving inputs.</p></div>
+  <div class="card"><div class="ch">🏠 Real estate &amp; land</div><p>Orthomosaics and 3D models sell properties and visualize acreage, boundaries, and topography far better than a single aerial photo.</p></div>
+  <div class="card"><div class="ch">🔍 Inspection</div><p>High-resolution obliques and 3D models let engineers examine roofs, towers, and structures for damage without anyone climbing.</p></div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Repeat business is the real prize</div><p>The single flight pays once. The <em>monthly</em> construction progress map, the seasonal crop survey, the quarterly stockpile inventory — recurring deliverables are where a mapping business actually compounds. Scope for the relationship, not just the sortie.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>A Mapping-Mission Checklist</h1>
+<p>Print this. Walk it every job. A disciplined checklist is what separates a repeatable business from a lucky flight.</p>
+
+<h2>Before you leave</h2>
+<ul class="check">
+  <li>Certification, registration, and insurance current and valid.</li>
+  <li>Airspace checked; any authorization for the site secured.</li>
+  <li>Deliverable and required accuracy confirmed with the client — in writing.</li>
+  <li>Mission planned: area with buffer, GSD/altitude, overlap, pattern.</li>
+  <li>Batteries charged (drone, controller, tablet); count exceeds the estimate.</li>
+  <li>GCP targets and survey GNSS gear packed and charged, if the job needs them.</li>
+  <li>Firmware and flight app updated; SD cards formatted with space to spare.</li>
+</ul>
+
+<h2>On site, before launch</h2>
+<ul class="check">
+  <li>Weather and light assessed — steady conditions, acceptable wind.</li>
+  <li>GCPs placed, spread across area and elevation, and surveyed.</li>
+  <li>At least one checkpoint set aside to verify accuracy later.</li>
+  <li>Compass/IMU calibrated away from interference; home point clear.</li>
+  <li>Mission loaded and settings confirmed: altitude, overlap, camera angle.</li>
+</ul>
+
+<h2>In the air &amp; after</h2>
+<ul class="check">
+  <li>Battery, signal, and airspace monitored throughout; swaps done with margin.</li>
+  <li>Oblique orbit or double grid flown if the job needs 3D.</li>
+  <li>Coverage visually confirmed complete before leaving the site.</li>
+  <li>Images backed up in two places before the card is reused.</li>
+  <li>Processed, accuracy report and checkpoints reviewed, then delivered.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The legal &amp; commercial bottom line</div><p>Paid mapping is a regulated aviation activity. Hold the required remote-pilot certification (FAA Part 107 in the US, or your national equivalent), register your aircraft, respect airspace and altitude rules, and carry appropriate liability insurance. When you sell a "survey-grade" map, you are also making an accuracy claim — back it with checkpoints and state the real numbers. Your reputation is the deliverable clients remember.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Good overlap builds a map you can measure against itself, and solid ground control anchors it to the real world — together they are what make a drone map genuinely accurate.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>

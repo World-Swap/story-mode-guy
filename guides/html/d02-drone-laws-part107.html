@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Drone Laws, Registration &amp; Part 107 — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #b91c1c;
+  --accent2: #f87171;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">KNOW THE RULES</div>
+    <div style="margin-top:auto"></div>
+    <h1>Drone Laws, Registration &amp; Part 107</h1>
+    <div class="rule"></div>
+    <div class="sub">Fly Legally — and Unlock Getting Paid to Fly</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$34 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Fly Legally — and Unlock Getting Paid to Fly. Written for pilots unsure what&#x27;s legal, and anyone who wants to fly commercially.</div>
+  <ol><li><span class="t">Legal Flying Isn't Red Tape — It's the Door to Getting Paid</span></li><li><span class="t">Recreational vs. Commercial — The Fork in the Road</span></li><li><span class="t">Registering Your Drone</span></li><li><span class="t">The Recreational Path — TRUST</span></li><li><span class="t">Where You Can & Can't Fly</span></li><li><span class="t">The Core Flight Rules</span></li><li><span class="t">Part 107 — The Commercial Certificate</span></li><li><span class="t">Flying for Money — Legally</span></li><li><span class="t">Outside the US & Local Rules</span></li><li><span class="t">Your Pre-Flight Legal Checklist</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Legal Flying Isn't Red Tape — It's the Door to Getting Paid</h1>
+<p class="lead-in">Almost every rule that governs your drone was written for one of two reasons: to keep it from hitting an airplane, or to keep it from hurting someone on the ground. Once you understand the system that way, the whole thing stops feeling like bureaucracy and starts feeling like a checklist you can actually run — and the same checklist that keeps you legal is the one that lets you charge money to fly.</p>
+
+<p>This guide is built around the <strong>United States FAA (Federal Aviation Administration)</strong> system, the framework most of our readers fly under. If you fly elsewhere, Chapter 9 shows you how to find your own country's version — but read the whole thing first, because the core ideas (register the aircraft, know your airspace, keep it in sight, stay under the ceiling) are nearly universal.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Register your drone, learn the airspace above you, follow a short list of flight rules — and if you want to earn money, add the Part 107 certificate.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Read this before anything else — disclaimer</div><p>This guide is <strong>educational, not legal advice</strong>. Drone rules change often, and they vary enormously by country, state, and even city park. Every number and rule here reflects durable fundamentals of the U.S. FAA system as commonly understood, but regulations get updated. <strong>Before every flight, verify the current rules with your aviation authority</strong> — in the United States that is the FAA (faa.gov) and the official <em>B4UFLY</em>-style resources. Nothing here overrides what your regulator says today.</p></div>
+
+<h2>Why bother — two very real reasons</h2>
+<p>The first reason is the stick: flying illegally can bring civil penalties that run into serious money, and in the worst cases criminal exposure — especially near airports, over crowds, or in restricted airspace. Regulators enforce this, and "I didn't know" is not a defense.</p>
+<p>The second reason is the carrot: <strong>the same knowledge that keeps you legal is what lets you get paid.</strong> The moment a flight is "for money" — real estate photos, an inspection, a wedding, a paid YouTube shoot — the U.S. requires a commercial certificate. Earning it is not hard, and it turns your hobby into something you can invoice for.</p>
+
+<blockquote>The pilots who make money with drones aren't better fliers than you. They just did the paperwork you're about to understand.</blockquote>
+
+<h1><span class="n">CHAPTER 2</span>Recreational vs. Commercial — The Fork in the Road</h1>
+<p>Before a single other rule matters, you have to answer one question: <strong>why are you flying?</strong> In the U.S. system, the <em>purpose</em> of the flight — not the size of the drone, not how good the footage is — decides which set of rules you fall under. Get this fork right and everything downstream falls into place.</p>
+
+<h2>The line is "compensation," and it's broader than you think</h2>
+<p>Recreational flying means flying <strong>purely for personal enjoyment</strong>. The instant there is any expectation of compensation or you're furthering a business, the flight is commercial and needs Part 107. And "compensation" is interpreted broadly:</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🎈 Recreational (fun only)</div><ul><li>Flying your drone at the park for the joy of it</li><li>Personal photos you never sell or use for business</li><li>Practicing your flying skills</li></ul></div>
+  <div class="card"><div class="ch">💼 Commercial (needs Part 107)</div><ul><li>Real estate, wedding, or event photography for pay</li><li>Roof, tower, or crop inspections</li><li>Monetized YouTube / sponsored content</li><li>Anything "for the business," even unpaid</li></ul></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The "free favor" trap</div><p>Shooting your friend's business grand-opening for free still counts as commercial in the FAA's eyes, because it furthers a business. So does trading footage for product. If a flight is doing a job — even without cash changing hands — treat it as commercial and fly under Part 107. When unsure, the safe answer is always the commercial rulebook.</p></div>
+
+<h2>What each path requires — the short version</h2>
+<table>
+  <tr><th>Requirement</th><th>Recreational</th><th>Part 107 (Commercial)</th></tr>
+  <tr><td>Pass a knowledge test</td><td>TRUST (free, online, can't fail)</td><td>Aeronautical Knowledge Exam (proctored)</td></tr>
+  <tr><td>Register the drone (if &ge; ~250g)</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Carry proof while flying</td><td>TRUST certificate</td><td>Remote Pilot Certificate</td></tr>
+  <tr><td>Can you be paid?</td><td>No</td><td>Yes</td></tr>
+  <tr><td>Can request airspace waivers</td><td>Limited</td><td>Yes</td></tr>
+  <tr><td>Minimum age</td><td>None to fly recreationally</td><td>16</td></tr>
+</table>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>You can hold both</div><p>Most working pilots earn Part 107 and simply fly under it all the time — it's the more capable certificate. There's no rule saying a Part 107 pilot can't also fly for fun; the certificate just means you're <em>allowed</em> to do more. Getting 107 essentially retires the recreational question for you.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Registering Your Drone</h1>
+<p>Registration is the FAA putting a name and number to an aircraft. It's quick, cheap, and done through the official FAA <em>DroneZone</em> registration site — and skipping it when it's required is one of the easiest ways to get fined.</p>
+
+<h2>The weight threshold that decides everything</h2>
+<p>The magic number is <strong>250 grams (about 0.55 lb)</strong>. It is the single most important number for a new pilot to memorize.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">🪶 Under 250g, flying for fun</div><p>You generally do <strong>not</strong> have to register the drone. This is exactly why so many popular "mini" drones are built to land just under this line.</p></div>
+  <div class="card solid"><div class="ch">⚖️ 250g and up (any purpose)</div><p>You <strong>must</strong> register before you fly outdoors, recreational or commercial.</p></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Commercial erases the weight exemption</div><p>The under-250g "no registration" break applies to <strong>recreational</strong> flying. If you fly <em>any</em> drone commercially under Part 107 — even a tiny sub-250g one — it must be registered. Fly for money, register the aircraft, full stop.</p></div>
+
+<h2>How registration works</h2>
+<ol class="steps">
+  <li><span class="sh">Confirm you meet the age minimum.</span> Registration has a minimum age; a younger flyer registers under a responsible adult.</li>
+  <li><span class="sh">Register on the official FAA site.</span> You'll pay a small fee per registration and receive a registration number. Recreational flyers can register once and cover all their drones under a single number; commercial (Part 107) drones are each registered individually.</li>
+  <li><span class="sh">Mark the number on the outside of the drone.</span> It must be readable without tools — a label or paint pen on the body is fine. This is required, and inspectors do check.</li>
+  <li><span class="sh">Keep proof with you.</span> Carry the registration certificate (on your phone is fine) whenever you fly.</li>
+</ol>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Remote ID</div><p>Most drones that require registration must also broadcast <strong>Remote ID</strong> — think of it as a digital license plate that transmits the drone's location and identity while flying. Newer drones have it built in; older ones may need an add-on broadcast module. Check whether your specific model complies, because this requirement is now actively enforced.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Weigh it as you'll fly it</div><p>The 250g line is the drone's actual takeoff weight — with battery, propeller guards, and any accessory attached. A drone that's 249g bare can cross the line once you clip on prop guards or a bigger battery. If you're close, put it on a kitchen scale exactly as it flies.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>The Recreational Path — TRUST</h1>
+<p>If you're flying purely for fun, the U.S. gives you a streamlined path called the <strong>Exception for Recreational Flyers</strong>. It comes with one piece of homework — a short, free test called <strong>TRUST</strong> — and a handful of conditions you agree to follow.</p>
+
+<h2>TRUST in plain English</h2>
+<p>TRUST stands for <em>The Recreational UAS Safety Test</em>. It's a free, online safety test you take through an FAA-approved provider. It is designed so that <strong>you cannot fail</strong> — if you miss a question, it teaches you the answer and lets you continue. At the end you get a completion certificate.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Do it once, carry it forever</div><p>You only take TRUST one time, and the certificate doesn't expire. Save a copy to your phone the day you pass it — you're required to carry proof while flying recreationally, and a photo in your camera roll counts.</p></div>
+
+<h2>The conditions you're agreeing to</h2>
+<p>Passing TRUST isn't the whole deal — it comes bundled with the rules of the recreational exception. Fly for fun, and you agree to:</p>
+<ul class="check">
+  <li>Fly strictly for recreation — no compensation, no business purpose.</li>
+  <li>Keep the drone within your <strong>visual line of sight</strong> (or a visual observer's) at all times.</li>
+  <li>Give way to and never interfere with crewed aircraft.</li>
+  <li>Get authorization before flying in <strong>controlled airspace</strong> (Chapter 5), and stay at or below the ceiling in uncontrolled airspace.</li>
+  <li>Stay at or below <strong>400 feet</strong> above the ground in uncontrolled airspace.</li>
+  <li>Carry your TRUST certificate and drone registration.</li>
+  <li>Follow the safety guidelines of a recognized community-based organization.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>TRUST is not a pilot's license</div><p>TRUST lets you fly <em>for fun</em>, nothing more. It does not authorize a single paid flight. The day someone offers to pay you — or you decide to monetize — you need Part 107, no matter how many times you've passed TRUST.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Where You Can &amp; Can't Fly</h1>
+<p>This is the chapter that keeps you out of the most serious trouble, because the sky is not one open space — it's divided into layers of <strong>airspace</strong>, and drones aren't welcome everywhere. The good news: checking is fast once you know what you're looking at.</p>
+
+<h2>Controlled vs. uncontrolled airspace</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🟢 Uncontrolled — Class G</div><p>The airspace over most rural and suburban ground, away from airports. You may generally fly here <strong>up to 400 ft</strong> without asking permission (you still follow all the other rules).</p></div>
+  <div class="card"><div class="ch">🔴 Controlled — Class B, C, D, E</div><p>Airspace around airports and busy corridors, managed by air traffic control. You need <strong>authorization before you fly</strong> here — and near major airports it may be off-limits entirely.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>"Controlled" means near airplanes, not near buildings</div><p>People assume downtown is the restricted place and the countryside is free. It's often the reverse: a small regional airport can throw controlled airspace over a sleepy town, while a dense city block sits in wide-open Class G. Never assume from the ground — always check the map.</p></div>
+
+<h2>LAANC — instant airspace authorization</h2>
+<p>When you do need permission to fly in controlled airspace, you usually don't wait weeks. <strong>LAANC</strong> (the Low Altitude Authorization and Notification Capability) is a system that grants authorization — often in near real time — through FAA-approved apps, up to preset altitude ceilings shown on a grid over each airport.</p>
+<ol class="steps">
+  <li><span class="sh">Open an FAA-approved LAANC app.</span> Several free and paid apps are approved to issue authorizations; pick one and make an account before you're standing in a field.</li>
+  <li><span class="sh">Find your exact takeoff spot on the map.</span> The airport's airspace is broken into a grid, each cell showing the maximum altitude you can request there — sometimes 0, meaning no automatic approval.</li>
+  <li><span class="sh">Request at or below that ceiling.</span> If the grid says 100 ft, you cannot auto-authorize 200 ft; request 100 or less, or apply for a manual waiver.</li>
+  <li><span class="sh">Fly only after it's granted, and stay within it.</span> The authorization is tied to a location, altitude, and time window. Bust any of those and you're flying illegally.</li>
+</ol>
+
+<h2>No-fly zones you must respect regardless</h2>
+<ul class="check">
+  <li><strong>Airports</strong> — controlled airspace, and often a hard no near the runways.</li>
+  <li><strong>Temporary Flight Restrictions (TFRs)</strong> — pop up over stadiums during games, wildfires, VIP movements, and disasters. They change daily.</li>
+  <li><strong>National parks</strong> — launching and landing is broadly prohibited in U.S. national parks.</li>
+  <li><strong>Security-sensitive sites</strong> — military bases, some critical infrastructure, restricted zones around the capital.</li>
+  <li><strong>Local bans</strong> — a city or state park may ban drones even where the FAA airspace is open (more in Chapter 9).</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Check before every single flight</div><p>Airspace is not static. A TFR can appear over your usual field because a wildfire started 20 miles away, or because a politician is visiting. Open an official/aeronautical drone-airspace app <strong>the day of, at the spot</strong> — not last week, not "usually it's fine." This one habit prevents most serious violations.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>How to actually check</div><p>Use an aeronautical drone app that pulls official airspace and TFR data (the FAA's B4UFLY-style resources and approved LAANC apps do this). Look for: what airspace class you're in, the LAANC ceiling for your grid cell, any active TFRs, and any advisories like nearby helipads or wildlife areas. Confirm current rules on official sources — apps are a convenience layer over the FAA's data, not a substitute for it.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>The Core Flight Rules</h1>
+<p>Airspace tells you <em>where</em>; these rules tell you <em>how</em>. They're short, they apply to nearly every flight, and they're the ones investigators ask about first when something goes wrong. Memorize them.</p>
+
+<div class="key"><div class="kt">The five you never break</div><p>Stay under 400 ft, keep it in sight, don't fly over people or moving cars, give way to aircraft, and fly in daylight conditions unless you're properly equipped for twilight.</p></div>
+
+<h3>Stay at or below 400 feet AGL</h3>
+<p>The ceiling is <strong>400 feet above ground level (AGL)</strong> in uncontrolled airspace — measured from the ground beneath the drone, not from your launch point. Crewed aircraft generally stay well above this; the 400-foot cap is the buffer that keeps you and them apart. In controlled airspace your ceiling may be lower, set by LAANC.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>AGL vs. the hill</div><p>"Above ground level" matters on terrain. Fly toward a cliff or up a hillside and the ground rises toward the drone — you can bust 400 ft AGL even though your controller says the drone climbed less than that from where you're standing. Watch the terrain, not just the altitude number.</p></div>
+
+<h3>Keep visual line of sight (VLOS)</h3>
+<p>You (or a visual observer standing with you) must be able to see the actual drone with your own eyes throughout the flight — not just on the video feed. If it's a dot you can't reliably spot, or it ducked behind a building, you've lost VLOS. The camera view does not count.</p>
+
+<h3>Don't fly over people or moving vehicles</h3>
+<p>Do not fly over people who aren't part of your operation, and don't fly over moving vehicles, unless you specifically meet the rules that allow it (which depend on your drone's category and safety features). A drone that loses power over a crowd or a highway is the nightmare scenario these rules exist to prevent.</p>
+
+<h3>Day, night, and twilight</h3>
+<p>Flying is straightforward in daylight. Twilight and night flying are allowed <strong>only with proper anti-collision lighting</strong> visible for the required distance, and night operations carry extra knowledge requirements. If your drone doesn't have adequate lighting, treat night as off-limits.</p>
+
+<h3>One drone, one pilot, sober and clear</h3>
+<ul class="check">
+  <li>Fly one aircraft at a time — no operating a swarm solo.</li>
+  <li>Never fly impaired by alcohol or drugs; aviation rules here are strict.</li>
+  <li>Yield right of way to <em>all</em> crewed aircraft, always. If a helicopter appears, you get down and out of the way.</li>
+  <li>Don't fly carelessly or recklessly, and don't drop objects in a way that creates a hazard.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 7</span>Part 107 — The Commercial Certificate</h1>
+<p>Here's the certificate that turns your drone into a business tool. The <strong>Part 107 Remote Pilot Certificate</strong> is what the FAA requires for any commercial drone operation — and earning it is far more approachable than most people fear.</p>
+
+<h2>Who needs it</h2>
+<p>Anyone flying for money or in furtherance of a business, as we defined in Chapter 2. Real estate photographers, inspectors, mapping operators, event and wedding shooters, monetized content creators — all Part 107. If the flight isn't purely for personal fun, this is your lane.</p>
+
+<h2>What the exam covers</h2>
+<p>You pass a proctored <strong>Aeronautical Knowledge Exam</strong> at an approved testing center. It is a multiple-choice test with a passing threshold, and while the exact question count and pass mark can change, the <em>subjects</em> are stable. Expect to be tested on:</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🗺️ Airspace &amp; charts</div><p>Reading sectional charts, identifying airspace classes, understanding where you can and can't fly.</p></div>
+  <div class="card"><div class="ch">🌦️ Weather</div><p>How wind, clouds, density altitude, and weather reports affect a flight.</p></div>
+  <div class="card"><div class="ch">📋 Regulations</div><p>The Part 107 rules themselves — limits, waivers, responsibilities.</p></div>
+  <div class="card"><div class="ch">🚁 Operations</div><p>Loading, performance, crew resource management, radio communication basics, and physiology (like the effects of drugs and fatigue).</p></div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The chart-reading is the hard part — and it's learnable</div><p>Most people who study find airspace and sectional charts the trickiest section, because it's genuinely new. It's also the most useful thing you'll learn, because it's exactly what keeps you safe in the real world. A weekend or two with a reputable test-prep course gets the average motivated person through comfortably.</p></div>
+
+<h2>Getting and keeping the certificate</h2>
+<ol class="steps">
+  <li><span class="sh">Meet the basics.</span> You must be at least 16, able to read and speak English, and in a physical/mental condition to fly safely.</li>
+  <li><span class="sh">Register for the exam and get an FAA tracking number.</span> You'll schedule the test at an approved center — do this step through the official channels.</li>
+  <li><span class="sh">Study, then pass the knowledge exam.</span> Use a dedicated Part 107 prep course; they're built around exactly this test.</li>
+  <li><span class="sh">Complete the certificate application.</span> After passing, you finish the application through the FAA's official system and receive your Remote Pilot Certificate.</li>
+  <li><span class="sh">Stay current.</span> The certificate must be kept current through the FAA's recurrent training requirement. Don't let it lapse — verify the current interval and complete the refresher on time.</li>
+</ol>
+
+<h2>What it unlocks</h2>
+<blockquote>Part 107 is the difference between "nice hobby" and "line item on an invoice."</blockquote>
+<p>Beyond making paid flights legal, the certificate lets you <strong>request waivers</strong> to fly in ways the standard rules forbid — over people, at night, beyond visual line of sight — when you can show you'll do it safely. That's the growth path: certificate first, then waivers for the higher-paying work.</p>
+
+<h1><span class="n">CHAPTER 8</span>Flying for Money — Legally</h1>
+<p>You've got Part 107. Now let's turn it into a business that won't get you fined or sued. Legal commercial flying is mostly three habits: know your waivers, keep your records, and carry insurance.</p>
+
+<h2>Waivers — permission to break a specific rule, safely</h2>
+<p>The standard Part 107 rules have limits, but many can be <strong>waived</strong> if you apply and demonstrate an equivalent level of safety. Common waivers cover flying over people, night operations, and beyond-visual-line-of-sight work. Waivers take time and a solid safety case, so apply well before a job that needs one — never assume you'll get one same-day.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Authorization vs. waiver</div><p>Two different things. <strong>Authorization</strong> (via LAANC) is routine permission to fly in controlled airspace. A <strong>waiver</strong> is special permission to deviate from an operating rule (like the no-flying-over-people rule). A job downtown at night might need both.</p></div>
+
+<h2>Keep records like a professional</h2>
+<ul class="check">
+  <li>Log each flight: date, location, aircraft, and any authorizations or waivers used.</li>
+  <li>Save your LAANC authorizations and any TFR checks — screenshots are fine.</li>
+  <li>Keep maintenance notes: firmware updates, prop replacements, incidents.</li>
+  <li>File client contracts and releases, especially where you flew near people or property.</li>
+  <li>Retain your registration and certificate; have them accessible in the field.</li>
+</ul>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>A flight log is your defense</div><p>If anything ever goes wrong — a complaint, a close call, an insurance claim — a clean, contemporaneous flight log showing you checked airspace, had authorization, and flew within the rules is the single best thing you can produce. Start logging from your very first paid flight, not after your first problem.</p></div>
+
+<h2>Insurance — don't skip it</h2>
+<p>Insurance isn't legally required for most operations the way registration is, but flying a paid job without it is a serious business risk. Two kinds matter:</p>
+<div class="cards">
+  <div class="card"><div class="ch">🛡️ Liability</div><p>Covers damage or injury you cause to others — the essential one. Many clients and venues won't let you fly without proof of it, and some platforms sell it by the hour or by the day.</p></div>
+  <div class="card"><div class="ch">🔧 Hull</div><p>Covers damage to the drone itself. Nice to have, especially for expensive aircraft, but liability is the coverage that protects your business and your clients.</p></div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Pay-as-you-fly is real</div><p>You don't need an expensive annual policy to take one paid gig. Several providers sell short-term, per-flight or per-day liability coverage through an app — buy exactly the coverage a client asks for, only for the day you need it, and expense it to the job.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Outside the US &amp; Local Rules</h1>
+<p>Everything so far is the U.S. FAA system. Cross a border and the framework changes — sometimes a little, sometimes a lot. And even inside the U.S., the FAA controls the <em>airspace</em> but not the <em>ground</em>, which is where local rules sneak up on you.</p>
+
+<h2>The two-layer rule that trips everyone up</h2>
+<p>In the U.S., a crucial subtlety: the FAA governs the airspace, but state, city, and park authorities can regulate where you <strong>take off and land</strong> and privacy on the ground.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Legal airspace, illegal launch</div><p>A city park can ban drone launches even though the sky above it is open Class G. A homeowners' association, a beach, a stadium parking lot — any of them may prohibit takeoff and landing. "The FAA says I can fly here" does not override a local no-launch ordinance. Check both layers.</p></div>
+
+<h2>How other countries differ</h2>
+<p>Most developed aviation systems share the same skeleton — register the aircraft, keep it in sight, stay under a low-altitude ceiling, avoid airports and crowds, and require a certificate for commercial work. But the specifics diverge:</p>
+<ul class="check">
+  <li><strong>Different weight categories.</strong> The EU, for example, uses its own class system that isn't identical to the U.S. 250g line, though sub-250g is still treated more leniently in many places.</li>
+  <li><strong>Different authorities.</strong> The UK has the CAA, Canada has Transport Canada, Australia has CASA, the EU has EASA — each with its own registration, testing, and app.</li>
+  <li><strong>Different altitude limits and distances.</strong> Ceilings and minimum distances from people vary by country.</li>
+  <li><strong>Travel rules.</strong> Bringing a drone into another country can involve import, registration, or outright bans — check before you pack it.</li>
+</ul>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>How to find your rules anywhere</div><p>Search for your national <strong>civil aviation authority</strong> plus "drone" or "UAS" — that official site is the source of truth. Then find the country's approved airspace app. Do this <em>before</em> you travel, because you can't fly on assumptions borrowed from another country's system.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>Your Pre-Flight Legal Checklist</h1>
+<p>This is the chapter to keep on your phone. Run it before you launch — every flight, no exceptions. If any box is a "no," you don't fly until it's a "yes."</p>
+
+<h2>Before you leave home</h2>
+<ul class="check">
+  <li>Drone registered (if 250g / 0.55 lb or more, or flying commercially) and number marked on the body.</li>
+  <li>Registration certificate saved to your phone.</li>
+  <li>Correct certificate for your purpose — TRUST for fun, Part 107 for money — and it's current.</li>
+  <li>Remote ID working, if your drone requires it.</li>
+  <li>Batteries charged, firmware current, props checked.</li>
+</ul>
+
+<h2>At the launch site, day of</h2>
+<ul class="check">
+  <li>Checked the airspace for your exact spot in an official/approved app.</li>
+  <li>Confirmed your airspace class — got LAANC authorization if it's controlled.</li>
+  <li>Checked for active TFRs and advisories today.</li>
+  <li>Confirmed takeoff/landing is allowed here (no local or park ban).</li>
+  <li>Weather is safe and you have the visibility to keep VLOS.</li>
+</ul>
+
+<h2>In the air</h2>
+<ul class="check">
+  <li>Staying at or below 400 ft AGL (or your LAANC ceiling).</li>
+  <li>Drone in your visual line of sight the whole time.</li>
+  <li>Not over people or moving vehicles unless you meet the rules to.</li>
+  <li>Yielding to every crewed aircraft, immediately.</li>
+  <li>Flying in daylight, or properly lit for twilight/night.</li>
+</ul>
+
+<h2>If it's a paid flight</h2>
+<ul class="check">
+  <li>Flying under Part 107, certificate current.</li>
+  <li>Any needed waivers approved <em>before</em> today.</li>
+  <li>Liability insurance in force for this job.</li>
+  <li>Logging the flight and saving your authorizations.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Closing disclaimer — verify before you fly</div><p>This guide is <strong>educational and not legal advice</strong>. Drone regulations change and differ by country, state, and locality. Everything here reflects durable fundamentals of the U.S. FAA system, but rules get updated and exceptions exist. <strong>Always confirm the current rules with your aviation authority — the FAA in the United States — before every flight.</strong> When something here disagrees with what your regulator says today, your regulator wins.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Flying legally protects you from real penalties and, with Part 107, is the exact thing that lets you get paid to fly.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Drone Photography — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #ea580c;
+  --accent2: #fb923c;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">AERIAL STILLS</div>
+    <div style="margin-top:auto"></div>
+    <h1>Drone Photography</h1>
+    <div class="rule"></div>
+    <div class="sub">Striking Aerial Photos — Top-Down, Panos &amp; Golden Hour</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$29 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Striking Aerial Photos — Top-Down, Panos &amp; Golden Hour. Written for pilots who want striking stills, not just video.</div>
+  <ol><li><span class="t">The Aerial-Stills Mindset</span></li><li><span class="t">Top-Down Composition</span></li><li><span class="t">Panoramas — Wide and Sphere</span></li><li><span class="t">HDR & Bracketing (AEB)</span></li><li><span class="t">Shoot RAW & Expose for Stills</span></li><li><span class="t">Golden Hour & Light From Above</span></li><li><span class="t">Camera Settings for Tack-Sharp Aerials</span></li><li><span class="t">A Quick Aerial Editing Pass</span></li><li><span class="t">Composition Recipes by Scene</span></li><li><span class="t">An Aerial-Photo Field Plan</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>The Aerial-Stills Mindset</h1>
+<p class="lead-in">Most people buy a drone and shoot video. Then they scroll back through hundreds of clips and realize the best moments were single frames — a road cutting a green field in half, a coastline drawn in foam, a city grid glowing at dusk. This guide is about deliberately making those frames. Not grabbing lucky screenshots from footage, but flying to make photographs: sharp, high-resolution, print-worthy stills that only exist because you were two hundred feet in the air.</p>
+
+<p>The view from above is not the view from the ground made bigger. It is a genuinely different visual language. Down here you compose with a horizon, a foreground, and depth. Up there the horizon can vanish entirely, foreground and background collapse into one plane, and the whole world becomes <strong>pattern, shape, and line</strong>. Photographers who understand that stop taking postcards of pretty places and start making images that feel impossible.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Fly for the still, not the clip — pick the frame first, shoot RAW, keep the shutter honest, and the sky becomes an endless supply of new compositions.</p></div>
+
+<h2>What changes when you shoot for stills</h2>
+<p>Video rewards smooth motion and forgives a soft frame, because the next frame covers for it. A photograph has nowhere to hide. Every choice tightens: you slow down, you level the horizon, you watch the histogram, you bracket the tricky ones, and you fly the drone to a precise spot instead of drifting through the scene. The payoff is a file with real resolution — often 12, 20, or 48 megapixels — that prints large and holds detail a video screenshot never will.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Gear-agnostic on purpose</div><p>Everything here works whether you fly a compact folding drone with a 1/2-inch sensor or a larger craft with a 1-inch or Four Thirds sensor. Bigger sensors give you cleaner high-ISO files and more dynamic range, but the composition and technique are identical. Fly what you own well before you fly something expensive badly.</p></div>
+
+<h2>Learn to read the land from above</h2>
+<p>The biggest jump in aerial photography is learning to spot compositions that are invisible at eye level and obvious from the air. From above, the world resolves into four graphic elements — train your eye to hunt for them.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">➰ Lines</div><p>Roads, rivers, shorelines, tree rows, wave-wash. From above they become pure leading lines. A single curving road through empty land is a complete photograph.</p></div>
+  <div class="card"><div class="ch">🔷 Shapes</div><p>Fields, rooftops, pools, harbors. Altitude flattens the world into geometry — rectangles, circles, and wedges of color pressed together like a mosaic.</p></div>
+  <div class="card"><div class="ch">🌀 Patterns</div><p>Crop rows, parked cars, solar panels, orchard grids. Repetition reads as texture. Find the pattern, then find the one thing that breaks it.</p></div>
+  <div class="card"><div class="ch">🎨 Texture &amp; Tone</div><p>Sand ripples, forest canopy, plowed dirt, water shifting from teal to navy. When shape falls away, tone and texture carry the image.</p></div>
+</div>
+
+<blockquote>On the ground you photograph <em>things</em>. From the air you photograph the <em>relationships between things</em>.</blockquote>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this before you fly</div><p>Open a satellite map of your area and browse it like a gallery. Screenshot ten spots that look like photographs from directly overhead — a curved harbor, a color boundary where forest meets field, a spiral interchange. Those are your shot list, and you will have learned to see aerially without burning a single battery.</p></div>
+
+<h2>Fly legal, fly safe, fly again tomorrow</h2>
+<p>None of this matters if you lose the aircraft or the right to fly it. Know your local rules — registration, altitude ceilings (often around 400 ft / 120 m above ground), no-fly zones near airports, and line-of-sight requirements. Check airspace before every flight, respect people's privacy, and always leave yourself the battery margin to come home. A cautious pilot gets thousands of frames over years. A reckless one gets a crash video.</p>
+
+<h1><span class="n">CHAPTER 2</span>Top-Down Composition</h1>
+<p>The straight-down shot — camera gimbal pitched to a full 90 degrees, aimed at the earth — is the signature aerial photograph. It removes the horizon and turns the ground into a flat graphic surface. It is also the easiest composition to get wrong, because without a horizon your usual instincts stop working. Here is how to make it sing.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Altitude is a creative choice</div><p>Low keeps depth, scale, and a sense of place — you feel how tall the building is. High flattens everything into abstraction. Neither is correct; they are different pictures. Shoot the same subject from three heights and compare — often the frame you did not expect is the keeper.</p></div>
+
+<h2>Compose the flat frame like a graphic designer</h2>
+<ol class="steps">
+  <li><span class="sh">Find one strong element.</span> A single road, a lone boat, a solitary tree in a field. The top-down look thrives on isolation — one subject against a clean field of texture.</li>
+  <li><span class="sh">Use the grid overlay to level the geometry.</span> Turn on the rule-of-thirds grid. Align dominant lines to the grid so roads and edges run true, not slightly tilted. Crooked geometry looks like a mistake up here.</li>
+  <li><span class="sh">Decide: centered or off-center.</span> Perfect symmetry (a roundabout dead-center) feels formal and bold. The rule of thirds (a boat in one corner of open water) feels calm and spacious. Both work — just choose on purpose.</li>
+  <li><span class="sh">Fill or float.</span> Either fill the frame edge-to-edge with pattern, or let a small subject float in negative space. The weak middle ground — a subject that is neither filling nor floating — is what kills most top-downs.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Hunt for the break in the pattern</div><p>A field of identical parking spaces is texture. One red car among gray ones is a <em>photograph</em>. Trees in perfect rows are a pattern; the single gap where one is missing is the story. Repetition plus one interruption is the most reliable aerial composition there is.</p></div>
+
+<h2>The abstract look</h2>
+<p>Climb higher, pitch straight down, and zoom in on tone and texture until the viewer cannot tell scale — is that a river delta or a cracked wall, a coastline or a leaf? Ambiguity is the goal. These abstracts read like paintings and are among the most striking images a drone can make.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Watch your own shadow</div><p>When the sun is low and behind you on a straight-down shot, the drone casts a tiny four-armed shadow into the frame. Either climb high enough that it disappears, or shift the sun to your side. Scan the corners before you press the shutter.</p></div>
+
+<div class="recipe">
+  <div class="rh"><span>Top-down abstract</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Gimbal <b>-90&deg;</b></span><span class="chip">Aperture <b>f/4&ndash;f/5.6</b></span><span class="chip">Shutter <b>1/500s+</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Format <b>RAW</b></span></div>
+    <p class="small">A flat plane means everything is at the same focus distance — depth of field is a non-issue, so open up for the cleanest, sharpest aperture and keep ISO low.</p>
+  </div>
+</div>
+
+<h1><span class="n">CHAPTER 3</span>Panoramas — Wide and Sphere</h1>
+<p>A single aerial frame is wide, but stitching several together gives you enormous resolution and a field of view no single shot can match. Panoramas are how you turn a modest sensor into a huge, print-the-side-of-a-building file. Most drones have automated pano modes, but understanding what they do lets you shoot better ones by hand and fix them when the auto-stitch fails.</p>
+
+<h2>The three panoramas worth knowing</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">↔️ Wide Pano</div><p>A single row of frames swept left-to-right. Perfect for coastlines, mountain ranges, and skylines. Gives a cinematic 2:1 or 3:1 letterbox of huge width.</p></div>
+  <div class="card"><div class="ch">🔲 Grid / 180&deg;</div><p>Multiple rows and columns stitched into a big rectangle. Massive resolution for a scene with height and width — a valley, a full cityscape.</p></div>
+  <div class="card"><div class="ch">🌐 Sphere</div><p>The drone shoots in every direction and stitches a full 360&deg; ball. Flatten it in editing into a surreal "tiny planet" or "tunnel" image.</p></div>
+</div>
+
+<h2>The two rules that make stitching work</h2>
+<p>Whether the drone flies the pano automatically or you rotate it by hand, stitching software needs two things to line frames up cleanly:</p>
+<ol class="steps">
+  <li><span class="sh">Overlap every frame by 30&ndash;50%.</span> The software finds matching detail in the overlap zone and blends there. Too little overlap and it cannot find common points; the seam tears. When in doubt, overlap more.</li>
+  <li><span class="sh">Lock your exposure.</span> Set manual exposure (or lock AE) so every frame shares one shutter, aperture, and ISO. If exposure drifts frame to frame, you get visible brightness bands across the sky that no amount of editing fully hides.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Lock focus and white balance too</div><p>Before starting the sequence, set focus to infinity (or manual) and fix white balance to a preset like Daylight rather than Auto. Auto white balance will shift color between frames as it re-reads each part of the sky, leaving you cyan on one edge and warm on the other. One exposure, one focus, one white balance — for the whole sweep.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Hold position, only rotate</div><p>The cleanest hand-flown panos come from the drone hovering in one spot and only <em>rotating</em> (yawing) between frames, not drifting sideways. Rotating from a fixed point keeps parallax low so foreground and background stay aligned. Pick a calm-wind moment so the aircraft holds its position between shots.</p></div>
+
+<h2>Stitch it yourself when auto fails</h2>
+<p>The onboard stitcher works from lower-resolution previews and often flattens the file. For maximum quality, shoot the sequence, keep the individual RAW frames, and stitch them later in dedicated panorama software or your main editor. You get the full resolution and control over the projection (cylindrical for wide sweeps, spherical for the full ball).</p>
+
+<h1><span class="n">CHAPTER 4</span>HDR &amp; Bracketing (AEB)</h1>
+<p>The hardest light in aerial photography is a bright sky over darker land — a scene whose brightness range is wider than the sensor can capture in one frame. Expose for the land and the sky blows to white; expose for the sky and the ground goes black. The answer is <strong>bracketing</strong>: shoot the same frame at several exposures and blend them.</p>
+
+<h2>What AEB actually does</h2>
+<p>Auto Exposure Bracketing (AEB) fires a burst of frames at different exposures from a single press — typically 3 or 5 shots spaced 0.7 to 1 stop apart. One is darker (protects the bright sky), one is your metered exposure, one is brighter (opens up the shadowed land). Merge them and you get a single file that holds detail from the brightest cloud to the darkest tree line.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Bracketing a high-contrast scene</span><span class="tag">FIELD-TESTED</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mode <b>AEB 3 or 5</b></span><span class="chip">Spacing <b>0.7&ndash;1.0 EV</b></span><span class="chip">Aperture <b>f/4&ndash;f/5.6</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Format <b>RAW</b></span></div>
+    <p class="small">Use 3 frames for normal contrast, 5 for a brutal sunrise or backlit scene. Keep the aircraft dead-still during the burst so all frames align for the merge.</p>
+  </div>
+</div>
+
+<h2>When to bracket and when not to</h2>
+<table>
+  <tr><th>Scene</th><th>Bracket?</th><th>Why</th></tr>
+  <tr><td>Sunrise / sunset with bright sky</td><td>Yes, 5 frames</td><td>Huge range between sky and shadowed land</td></tr>
+  <tr><td>Backlit coast or mountains</td><td>Yes, 3&ndash;5 frames</td><td>Sun in or near frame overwhelms one exposure</td></tr>
+  <tr><td>Flat overcast light</td><td>No</td><td>Low contrast fits in one RAW frame easily</td></tr>
+  <tr><td>Straight-down top-down</td><td>Usually no</td><td>Even ground light rarely exceeds the sensor's range</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Wind is the enemy of bracketing</div><p>Because the frames merge, the drone must hover in nearly the same spot for the whole burst. In gusty wind the aircraft drifts between shots and the merge shows ghosting on hard edges. Bracket in calm air, shoot the burst fast, and reshoot if a gust hits mid-sequence.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>You may not even need HDR</div><p>A single RAW file from a decent sensor holds 11&ndash;14 stops of range — often enough to lift shadows and recover highlights without bracketing at all. Try one RAW first; reach for AEB only when the histogram tells you the scene genuinely exceeds what one frame can hold.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Shoot RAW &amp; Expose for Stills</h1>
+<p>If you take one technical instruction from this guide, take this: <strong>shoot RAW, not JPEG.</strong> A JPEG bakes in white balance, contrast, and sharpening and throws away most of the sensor's data. A RAW keeps everything, and up in that high-contrast aerial light you will need every bit of it to recover a sky or lift a shadow.</p>
+
+<h2>Read the histogram, not the screen</h2>
+<p>Your phone or controller screen lies. In bright daylight it looks too dark, so you overexpose to compensate and blow the sky. Ignore the brightness of the screen and read the <strong>histogram</strong> — the graph of tones from black on the left to white on the right.</p>
+
+<ol class="steps">
+  <li><span class="sh">Watch the right edge.</span> When the graph slams against the right wall, highlights are clipping to pure white with no detail — a blown sky you can never recover. Back off exposure until it just kisses the edge.</li>
+  <li><span class="sh">Turn on the highlight warning ("zebras").</span> Blinking stripes mark blown areas live. If the sky or clouds blink, reduce exposure until only tiny specular points (sun glints) remain.</li>
+  <li><span class="sh">Let shadows sit a little dark.</span> RAW lifts shadows cleanly but cannot rebuild blown highlights. When forced to choose, protect the highlights and recover the shadows later.</li>
+</ol>
+
+<div class="key"><div class="kt">The exposure priority up high</div><p>Protect the highlights first. A recovered shadow looks fine; a blown sky is gone forever. Expose so the brightest important detail stays just off the right wall of the histogram.</p></div>
+
+<h2>Expose to the right — carefully</h2>
+<p>"Expose to the right" (ETTR) means pushing the exposure as bright as you can <em>without</em> clipping highlights, capturing maximum data in the shadows for cleaner files. It is a great habit in even light. In high-contrast aerial scenes, though, it collides with highlight protection — so treat the histogram's right edge as a hard ceiling and stop there.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Nail white balance in the field anyway</div><p>RAW lets you fix white balance later, but setting Daylight (around 5500K) instead of Auto gives you a consistent, accurate live preview and a reliable starting point — essential the moment you shoot a panorama or bracket, where Auto would drift between frames.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Golden Hour &amp; Light From Above</h1>
+<p>The same scene is forgettable at noon and unforgettable an hour after sunrise. Light is what separates a snapshot of a place from a photograph of it — and from the air, low-angle light does something it cannot do on the ground: it rakes across the whole landscape and paints <strong>long shadows that reveal texture and shape</strong>.</p>
+
+<h2>Why golden hour is made for drones</h2>
+<p>At midday the sun is overhead, shadows collapse to nothing, and the land looks flat and gray from above. Near sunrise and sunset the sun is low, so every ridge, furrow, tree, and building throws a long shadow. From directly overhead those shadows become the composition — a lone tree's shadow can be more striking than the tree. Low light also warms everything to gold and softens harsh contrast.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">🌅 Golden hour</div><p>The hour after sunrise and before sunset. Warm, directional light and long shadows. The prime window for texture, form, and mood. Fly the whole hour — the light changes minute to minute.</p></div>
+  <div class="card solid"><div class="ch">🔵 Blue hour</div><p>The 20&ndash;30 minutes before sunrise and after sunset. Cool, even, and magic over cities when streetlights and windows glow against a deep blue sky. Longer exposures needed — steady air only.</p></div>
+</div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Chase the shadow, not the sun</div><p>Next golden hour, ignore the sunset itself for a few minutes. Pitch the gimbal straight down and photograph the long shadows raking across the land — a row of trees, a fence, a lone figure. Side-light from a low sun turns flat ground into sculpted relief. This is the shot most drone pilots never take.</p></div>
+
+<h2>Shooting into the sun</h2>
+<p>A low sun in the frame gives you glow, silhouettes, and drama — but also lens flare and a brightness range that demands bracketing. Keep the front element clean (dust flares badly backlit), bracket 5 frames, and accept that a small blown disc around the sun itself is normal and fine.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Plan the light before you launch</div><p>Golden hour is short and the battery is shorter. Use a sun-position app to know exactly where and when the sun sets, arrive early, launch with the aircraft already positioned, and have your compositions scouted. You get one pass at that light — do not spend it hunting for the shot.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Camera Settings for Tack-Sharp Aerials</h1>
+<p>A drone is a flying tripod that never fully stops moving. It hovers by making constant micro-corrections, and there is always a little vibration from the props and any breeze. That means the classic ground rule — "a tripod lets you use any slow shutter" — does not apply. Aerial sharpness lives and dies on <strong>keeping the shutter fast enough to freeze that motion.</strong></p>
+
+<h2>The shutter floor</h2>
+<p>Even hovering, keep your shutter at <strong>1/240s or faster</strong> for reliably sharp stills; go faster in any wind. The drone drifts and vibrates enough that a "safe" ground speed like 1/60s will give you soft, mushy files up high. Shutter speed is your non-negotiable — set it first, then balance the rest of the exposure around it.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Sharp aerial baseline</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Shutter <b>1/240s min</b></span><span class="chip">Aperture <b>f/4&ndash;f/5.6</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Focus <b>Infinity / MF</b></span><span class="chip">Format <b>RAW</b></span></div>
+    <p class="small">In wind or when shooting straight down while repositioning, raise the shutter to 1/500s or faster. Sharp beats clean — a little ISO noise is nothing next to a soft frame.</p>
+  </div>
+</div>
+
+<h2>Set the exposure in the right order</h2>
+<ol class="steps">
+  <li><span class="sh">Lock the shutter fast first.</span> Start at 1/240s (or 1/500s in wind). This is the sharpness guarantee; do not trade it away.</li>
+  <li><span class="sh">Pick the sharp aperture.</span> If your drone has an adjustable aperture, f/4&ndash;f/5.6 is usually its sweet spot. Fixed-aperture drones give you one value — just work around it.</li>
+  <li><span class="sh">Keep ISO as low as the light allows.</span> ISO 100 in daylight for the cleanest file. Raise it only to hold the shutter fast as light fades — a small sensor shows noise early, so watch it.</li>
+  <li><span class="sh">Confirm on the histogram.</span> Highlights just off the right edge, nothing blinking. Adjust ISO or shutter, never sacrifice the shutter floor.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Focus once, at infinity</div><p>Most aerial subjects are far enough away to sit at infinity focus. Autofocus can hunt against low-contrast ground or water and land soft. Tap to focus on a distinct distant edge, confirm it snaps sharp on a zoomed preview, then leave it — or switch to manual focus at infinity and stop worrying about it.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>An ND filter buys you the shutter you want</div><p>In bright sun, ISO 100 and a small aperture still may not let you slow down for balanced exposure — but for stills you rarely want to. Where an ND filter earns its place is if you deliberately want a <em>slower</em> shutter for silky water or moving clouds; a strong ND (ND16&ndash;ND64) lets you drop to 1/8s while the drone sits rock-steady in dead-calm air. For everything else, keep the shutter high.</p></div>
+
+<h2>Give the aircraft a beat before you shoot</h2>
+<p>After any stick input, the drone keeps micro-correcting for a second. Let it settle into a true hover, let the gimbal stabilize, then shoot — ideally a quick burst of three and pick the sharpest. In a gust, wait for the lull. Patience in the last two seconds is what separates a crisp file from a soft one.</p>
+
+<h1><span class="n">CHAPTER 8</span>A Quick Aerial Editing Pass</h1>
+<p>A good aerial RAW arrives a little flat — that is correct, it means you preserved the data. A five-minute edit turns it into the image you saw in your head. Here is an efficient order that works for almost every frame.</p>
+
+<ol class="steps">
+  <li><span class="sh">Set the profile and white balance.</span> Start from a neutral camera profile, then warm or cool the white balance to match the hour — golden hour a touch warm, blue hour cool.</li>
+  <li><span class="sh">Recover highlights, lift shadows.</span> Pull the highlight slider down to bring back sky and cloud detail; raise shadows to open the dark land. This is where RAW earns its keep — and where a good exposure makes it effortless.</li>
+  <li><span class="sh">Set the black and white points.</span> Nudge whites up and blacks down until the histogram just touches both ends. Instant contrast and punch without crushing anything.</li>
+  <li><span class="sh">Straighten and crop.</span> Level any horizon or geometry to dead-true — crooked lines scream "amateur" in aerial work. Crop to strengthen the composition; you have resolution to spare.</li>
+  <li><span class="sh">Add clarity and a little vibrance.</span> A touch of clarity/texture makes fields, water, and rooftops pop. Vibrance brings up muted color without turning it garish.</li>
+  <li><span class="sh">Dehaze for distance.</span> Aerial shots often carry atmospheric haze in the far distance. A small dehaze cuts through it and restores contrast — use it gently, it adds saturation fast.</li>
+  <li><span class="sh">Sharpen last, at 100%.</span> Apply output sharpening as the final step, viewing at full size, masked to edges so you do not amplify noise in smooth sky or water.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Fix the small sensor's two weak spots</div><p>Compact drones show noise and sometimes a soft, distorted frame edge. Apply a moderate luminance-noise reduction (10&ndash;20) to clean the sky without smearing detail, and enable the lens-correction profile to straighten edge distortion and clear up corner softness. Two clicks, noticeably cleaner file.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Restraint reads as quality</div><p>The temptation with aerials is to crank saturation, clarity, and dehaze until the image looks like a video-game screenshot. Resist it. The most striking aerial photographs look believable — rich but real. If it looks obviously processed, back every slider off by a third.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Composition Recipes by Scene</h1>
+<p>Theory is nice; a plan you can run is better. Here are field-ready approaches for the four scenes you will shoot most, each with a starting recipe and the one thing that makes or breaks it.</p>
+
+<h2>Coast</h2>
+<p>The meeting of land and water is the richest aerial subject there is — color, line, texture, and constant change. Shoot straight down where the surf meets sand for abstract wave patterns, or high-oblique to catch the color gradient from turquoise shallows to deep blue. Time it near low tide for exposed sand ripples and rock texture.</p>
+<div class="recipe">
+  <div class="rh"><span>Coastline</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Gimbal <b>-90&deg; or -60&deg;</b></span><span class="chip">Shutter <b>1/500s+</b></span><span class="chip">Aperture <b>f/4</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">Fast shutter freezes the moving water crisply. Look for the line where two water colors meet — that boundary is your composition.</p>
+  </div>
+</div>
+
+<h2>City</h2>
+<p>Cities are geometry factories: grids, intersections, rooftops, and at dusk, light. Shoot straight down on an intersection or roundabout for pure pattern, or fly at blue hour for the glow of streetlights and windows against a deep sky. Symmetry is powerful here — center a landmark and let the streets radiate.</p>
+<div class="recipe">
+  <div class="rh"><span>City at blue hour</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Shutter <b>1/240s</b></span><span class="chip">Aperture <b>f/4</b></span><span class="chip">ISO <b>200&ndash;400</b></span><span class="chip">WB <b>~4000K</b></span></div>
+    <p class="small">Dead-calm air only for the slower dusk shutter. Bracket the tricky range between bright lights and dark sky.</p>
+  </div>
+</div>
+
+<h2>Farmland</h2>
+<p>Agricultural land is a painter's palette from above — blocks of green, gold, and brown stitched together, laced with tractor lines and irrigation circles. Shoot straight down for the patchwork-quilt look, and use golden-hour side light to bring out the corduroy texture of plowed rows and crop lines.</p>
+<div class="recipe">
+  <div class="rh"><span>Farmland patchwork</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Gimbal <b>-90&deg;</b></span><span class="chip">Shutter <b>1/320s</b></span><span class="chip">Aperture <b>f/5.6</b></span><span class="chip">ISO <b>100</b></span></div>
+    <p class="small">Fly a wide pano to stitch several fields into one huge, ultra-detailed patchwork. Low sun makes the furrows pop.</p>
+  </div>
+</div>
+
+<h2>Forest</h2>
+<p>A forest from above is texture — a rolling carpet of canopy. The challenge is finding structure in the sameness: a river cutting through, a road, a color shift where one tree species meets another, a single splash of autumn color in a sea of green. In fall, forests become the most colorful aerial subject of all.</p>
+<div class="recipe">
+  <div class="rh"><span>Forest canopy</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Gimbal <b>-90&deg;</b></span><span class="chip">Shutter <b>1/320s</b></span><span class="chip">Aperture <b>f/4</b></span><span class="chip">ISO <b>100&ndash;200</b></span></div>
+    <p class="small">Find the interruption — a river, a clearing, one different-colored tree. Pure canopy is texture; the break is the photograph.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The universal aerial composition</div><p>Notice the thread across all four scenes: find a large area of repeating texture, then find the one line, shape, or color that breaks it, and build the frame around that break. Master that single move and you can walk into any landscape and know what to shoot.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>An Aerial-Photo Field Plan</h1>
+<p>Great aerial stills are made on the ground, before takeoff. Here is the pre-flight routine that turns a battery of luck into a battery of keepers. Run it every time until it is muscle memory.</p>
+
+<h2>Before you leave home</h2>
+<ul class="check">
+  <li>Scout the location on a satellite map; screenshot 3&ndash;5 top-down compositions.</li>
+  <li>Check the sunrise/sunset time and sun angle with a sun-position app.</li>
+  <li>Check weather — wind under about 15&ndash;20 mph for sharp stills; clear or interesting clouds.</li>
+  <li>Verify the airspace is legal to fly and note any no-fly zones.</li>
+  <li>Charge every battery and the controller; format a cleared memory card.</li>
+</ul>
+
+<h2>On site, before takeoff</h2>
+<ul class="check">
+  <li>Set the camera to RAW and the largest image size.</li>
+  <li>Set white balance to Daylight, not Auto.</li>
+  <li>Turn on the histogram, highlight warning (zebras), and rule-of-thirds grid.</li>
+  <li>Dial a baseline: shutter 1/240s or faster, aperture f/4&ndash;f/5.6, ISO 100.</li>
+  <li>Wipe the lens clean and check the gimbal moves freely.</li>
+  <li>Confirm home point and that you have battery margin to return.</li>
+</ul>
+
+<h2>In the air, for every frame</h2>
+<ol class="steps">
+  <li><span class="sh">Fly to the spot and let it settle.</span> Reach the position, release the sticks, and let the aircraft hover truly still before you shoot.</li>
+  <li><span class="sh">Check the histogram and the corners.</span> Highlights off the right edge, nothing blinking, and no drone shadow or prop in the frame.</li>
+  <li><span class="sh">Shoot the three heights and both gimbal angles.</span> Straight-down and high-oblique, low and high. Storage is cheap; the flight is not.</li>
+  <li><span class="sh">Bracket the high-contrast ones.</span> Sunrise, backlight, big sky-to-land range &rarr; fire an AEB burst in the calm.</li>
+  <li><span class="sh">Shoot a pano when the scene is bigger than one frame.</span> Lock exposure, focus, and white balance; overlap generously.</li>
+  <li><span class="sh">Burst three, pick the sharpest.</span> A quick burst insures you against a stray gust of micro-shake.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your one-battery challenge</div><p>Next flight, give yourself a single battery and one subject. Photograph it every way this guide describes — top-down, oblique, three heights, a pano, a bracket, golden-hour side light. One subject, one battery, ten genuinely different photographs. You will learn more about aerial seeing in fifteen minutes than a month of casual flying.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>The sky is not a higher viewpoint — it is a whole new set of compositions, waiting for a pilot patient enough to fly for the still.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

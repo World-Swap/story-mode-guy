@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Drone Flying for Beginners — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #0284c7;
+  --accent2: #38bdf8;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">START FLYING</div>
+    <div style="margin-top:auto"></div>
+    <h1>Drone Flying for Beginners</h1>
+    <div class="rule"></div>
+    <div class="sub">From Unboxing to a Confident First Flight</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$27 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">From Unboxing to a Confident First Flight. Written for brand-new pilots nervous about their first takeoff.</div>
+  <ol><li><span class="t">Your First Flight Is Supposed to Feel Big</span></li><li><span class="t">Know Your Drone & Controller</span></li><li><span class="t">The Pre-Flight Checklist</span></li><li><span class="t">Calibration & GPS Lock</span></li><li><span class="t">Your First Takeoff & Hover</span></li><li><span class="t">Basic Maneuvers</span></li><li><span class="t">Reading Your Telemetry</span></li><li><span class="t">Batteries & Range</span></li><li><span class="t">Landing Confidently</span></li><li><span class="t">Building Good Habits</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Your First Flight Is Supposed to Feel Big</h1>
+<p class="lead-in">Standing in a field with a brand-new drone and a racing heart is not a sign you're unready — it's a sign you respect the thing. This guide takes you from a sealed box to a calm, controlled first hover, and hands you a routine steady pilots use every single time they fly. No stunts. No jargon you can't cash in. Just a confident takeoff and a safe landing, on purpose.</p>
+
+<p>Let's name the fear out loud: you're worried the drone will shoot off sideways, hit something, and it'll be over in three seconds. Here's the truth that shrinks that fear — <strong>a modern GPS drone mostly flies itself.</strong> Sticks centered, it doesn't drift away. It stops, hovers, and waits for you. Your job on day one isn't to master flight; it's to make small, gentle inputs and learn what each one does.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>A good first flight is slow, high enough to be safe, close enough to see clearly, and ended with plenty of battery to spare.</p></div>
+
+<h2>What a calm first flight actually looks like</h2>
+<p>Picture it, because you're about to do it. You take off into a steady hover about head height. The drone just sits there. You nudge it left a foot, then right a foot. You spin it slowly in place, raise it, lower it. After a few minutes you bring it straight down and land a few steps in front of you. That's the whole win — not a photo, not a flip, just a machine that went up, obeyed you, and came home. Everything else is built on that.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Written for most consumer drones</div><p>This guide targets the common consumer setup: a GPS-stabilized quadcopter (DJI-style) flown with a two-stick controller and a phone app. Your exact model's buttons may sit in different spots, but the principles — sticks, calibration, satellites, battery habits — are the same across nearly every beginner drone.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Laws are a separate conversation</div><p>Registration, no-fly zones, altitude limits, and where you're legally allowed to fly are covered in a <em>separate</em> guide — they change by country and region and deserve their own space. Before your first flight, check your local rules. This guide handles the flying itself; that guide handles the paperwork.</p></div>
+
+<h1><span class="n">CHAPTER 1</span>Know Your Drone &amp; Controller</h1>
+<p>You can't fly calmly if the controls feel like a mystery. So before anything spins, let's make the two sticks, the app, and the camera feel like old friends. Ten minutes here saves you a panic later.</p>
+
+<h2>The two sticks (Mode 2, the standard layout)</h2>
+<p>Almost every consumer drone ships in <strong>Mode 2</strong>, and it's what we teach here. The two sticks split the work cleanly: the left stick controls how the drone moves through the <em>air column</em> (up/down and spinning in place), the right stick how it moves across the <em>ground</em> (forward/back and side to side). Say it out loud a few times — left is altitude and spin, right is travel.</p>
+
+<table>
+  <tr><th>Stick</th><th>Direction</th><th>What the drone does</th></tr>
+  <tr><td><strong>Left</strong> (Throttle / Yaw)</td><td>Push up / pull down</td><td>Climbs higher / descends lower</td></tr>
+  <tr><td><strong>Left</strong> (Throttle / Yaw)</td><td>Push left / right</td><td>Rotates (yaws) in place, like turning your head</td></tr>
+  <tr><td><strong>Right</strong> (Pitch / Roll)</td><td>Push up / pull down</td><td>Flies forward / flies backward</td></tr>
+  <tr><td><strong>Right</strong> (Pitch / Roll)</td><td>Push left / right</td><td>Slides left / slides right (no turning)</td></tr>
+</table>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Yaw vs. roll — the confusing pair</div><p>Left-stick sideways <strong>spins</strong> the drone to face a new direction (yaw). Right-stick sideways <strong>slides</strong> it sideways while it keeps facing the same way (roll). Beginners mix these up constantly. Remember: left turns the drone's "nose," right shoves its "body."</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Center means stop</div><p>Let go of both sticks and — on a GPS drone — they spring back to center and the aircraft <strong>holds position and hovers.</strong> This is your emergency reset every single time. Overwhelmed? Take your thumbs off. The drone stops and waits. Burn this into muscle memory before you ever take off.</p></div>
+
+<h2>The app on your screen</h2>
+<p>Your phone or the controller's built-in screen shows the live camera feed plus a band of numbers around the edges — altitude, distance, battery, satellites, signal. We'll decode every one in Chapter 6. For now, just know the app is your instrument panel and your camera viewfinder at once. Mount your phone before takeoff, never during flight.</p>
+
+<h2>The camera gimbal</h2>
+<p>That camera on a motorized cradle underneath is the <strong>gimbal</strong>. Its job is to stay level and smooth no matter how the drone tilts; a dial or slider on the controller tilts it up and down. Two rules: never force the gimbal by hand, and always take its protective clip off before powering on — leaving it on can make the motors strain and error out.</p>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Charge everything the night before</div><p>The drone battery, the controller, and your phone all need charge. A dead controller mid-flight is as bad as a dead drone. Chargers are slow; start the night before so you're not pacing the kitchen on flight morning.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>The Pre-Flight Checklist</h1>
+<p>Every confident pilot runs the same boring routine before takeoff, because boring is what keeps drones out of trees. Skipping steps is how good days go wrong. Make this a ritual — the same order, every time.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Before every flight</span><span class="tag">RUN IN ORDER</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Firmware <b>updated</b></span><span class="chip">Props <b>tight &amp; clean</b></span><span class="chip">Battery <b>100%</b></span><span class="chip">SD card <b>in</b></span><span class="chip">Area <b>clear</b></span><span class="chip">Wind <b>calm</b></span></div>
+    <p class="small">If any one of these is a "no," you don't fly yet. There's no shame in scrubbing a flight — every real pilot does.</p>
+  </div>
+</div>
+
+<h2>Walk the checklist</h2>
+<ol class="steps">
+  <li><span class="sh">Update firmware at home, on Wi-Fi.</span> When you first power on and open the app, it may flag an update. Do these <em>before</em> you leave for the field — they can take a while and sometimes need a restart. Never start an update with low battery.</li>
+  <li><span class="sh">Inspect and seat the propellers.</span> Look for nicks, cracks, or bends — a chipped prop causes violent vibration. Give each a gentle wiggle to confirm it's locked on. Many props are paired to specific arms; match them correctly.</li>
+  <li><span class="sh">Fit a fully charged battery until it clicks.</span> A battery that isn't fully seated can cut out in the air. Push until you hear and feel the click, then tug lightly to confirm.</li>
+  <li><span class="sh">Insert the SD card</span> if you want to record. Nothing stings like landing from a perfect flight to find you had no card in.</li>
+  <li><span class="sh">Remove the gimbal guard.</span> That clear plastic clip protecting the camera must come off before you power up.</li>
+</ol>
+
+<h2>Pick a forgiving spot</h2>
+<p>Your first field matters more than your first settings. You want a <strong>wide-open area</strong> — a big park, an empty field, a quiet stretch away from crowds.</p>
+<ul class="check">
+  <li>No trees, buildings, or power lines within a generous radius.</li>
+  <li>No people, pets, or roads underneath your flight zone.</li>
+  <li>A flat, firm launch surface — short grass or bare ground, not tall weeds.</li>
+  <li>Open sky overhead (dense tree canopy blocks GPS signal).</li>
+  <li>Away from anything that transmits — cell towers, big metal structures — which can disturb the compass.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Wind is the beginner's enemy</div><p>Don't fly your first flight in more than a light breeze. If leaves are fluttering hard or flags are snapping, wait for a calmer day. A rule of thumb: a small drone struggles when wind approaches roughly a third to half of its top speed, and up high the wind is always stronger than at ground level. Calm, dry, and bright is beginner weather.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Calibration &amp; GPS Lock</h1>
+<p>Before the drone can hold that magical, hands-off hover, it needs to know two things: which way is which (the compass), and exactly where it is (the satellites). Rushing this step is the single most common cause of a drone "flying away." Give it the ten seconds it wants.</p>
+
+<h2>Compass &amp; IMU calibration</h2>
+<p>The <strong>compass</strong> tells the drone which way it's pointing relative to the earth; the <strong>IMU</strong> (the internal motion sensor) tells it what's level and still. When your app asks you to calibrate the compass — usually when you fly somewhere new, or if it warns of interference — do it. The routine is a little dance: you hold the drone and rotate it horizontally, then vertically, following the on-screen prompts.</p>
+
+<ol class="steps">
+  <li><span class="sh">Calibrate away from metal.</span> Step onto open grass or dirt, well clear of cars, rebar, keys, phones on the ground, and buried pipes. Metal near the drone corrupts the compass reading.</li>
+  <li><span class="sh">Follow the on-screen dance exactly.</span> Rotate the aircraft slowly and smoothly through the prompted axes until the app confirms success.</li>
+  <li><span class="sh">Only calibrate the IMU on flat, level, still ground</span> when the app specifically asks — and leave the drone dead still while it runs.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't calibrate for no reason</div><p>Compass calibration is for new locations or when the app warns you. Calibrating on a metal balcony or near your car can make things <em>worse</em> by teaching the drone a bad reference. If the app isn't asking, and it's not a new area, you usually don't need to.</p></div>
+
+<h2>Waiting for enough satellites</h2>
+<p>Power on and set the drone down. The app shows a satellite count that climbs as it connects to GPS. <strong>Do not take off until you have a solid lock</strong> — most systems want roughly ten or more satellites and will show a "Ready to Go" or green GPS status. This can take thirty seconds to a couple of minutes, especially the first flight of the day. That wait is the drone learning exactly where it is so it can come back to that spot.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>More sky, more satellites</div><p>Satellites lock faster in the open. Under trees, beside a tall building, or on a covered porch, the count crawls. Walk into the clearest patch of sky you can find and set the drone down there.</p></div>
+
+<h2>Setting the home point (and why it's everything)</h2>
+<p>Once GPS is locked, the drone records a <strong>home point</strong> — the exact spot it's sitting. This is the location it will fly back to if it loses signal, gets low on battery, or you press Return-to-Home. The app usually confirms with a message like "Home Point Updated."</p>
+
+<div class="key"><div class="kt">Remember</div><p>No solid GPS lock means no reliable home point — and no safe automatic return. Always wait for the green light before you lift off.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>The home point is where you launched</div><p>The drone returns to where it <em>took off</em>, not to where you're standing now. Walk 200 feet after launching and Return-to-Home flies back to the launch pad, not your feet. On early flights, take off and land from the same clear spot and don't wander.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Your First Takeoff &amp; Hover</h1>
+<p>This is the moment. Take a breath — your genuinely calm ally here is the fact that the drone <em>wants</em> to hover. It doesn't want to run away. Sticks centered, it just sits in the sky. All you're going to do is get it up there and let it hang.</p>
+
+<h2>Arm and take off</h2>
+<ol class="steps">
+  <li><span class="sh">Stand behind the drone.</span> Position yourself so the nose points away from you, the same direction you're facing. Now the controls match your view — "forward" sends it away, not toward you. This one habit prevents most beginner confusion.</li>
+  <li><span class="sh">Arm the motors.</span> Either pull both sticks down-and-inward toward the bottom corners for a second, or use the app's auto-takeoff button — check which your model uses. The props spin up to a gentle idle.</li>
+  <li><span class="sh">Ease the left stick up smoothly.</span> A slow, steady push lifts the drone off the ground. Don't jab it. Bring it up to about head height — five or six feet — and center the stick.</li>
+  <li><span class="sh">Let go and just watch.</span> Sticks centered, the drone hovers. Breathe. It's holding position on its own. That stable hover is proof your GPS and calibration are good.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The auto-takeoff button is your friend</div><p>Most drones have a one-tap takeoff that lifts to about four feet and holds a rock-steady hover, hands-off. On flight one, use it. Let the machine put itself in the air while you get used to just <em>watching</em> it hover before you touch a thing.</p></div>
+
+<h2>Get comfortable in the hover</h2>
+<p>Spend a full minute holding a hover at head height. This isn't wasted time — it's you learning the drone is stable and you're in control. Watch how it sits, notice the sound, let your heart rate come down. When you feel steady, and only then, move on.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>If it drifts, don't panic-yank</div><p>A little drift in a breeze is normal. Make a <em>small</em> correction with the right stick and return to center. Beginners overcorrect — they shove the stick, the drone lurches, they shove back the other way, and now it's oscillating. Small nudges. Center is always your reset.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Basic Maneuvers</h1>
+<p>Now you'll actually fly — gently. Keep the drone close, high enough to have room to fix mistakes (head height or a bit above), and make one input at a time until each becomes second nature. Scales before songs.</p>
+
+<h2>One axis at a time</h2>
+<ol class="steps">
+  <li><span class="sh">Forward and back (right stick, up/down).</span> Nudge it forward a few feet, center, then pull it back to the start. Small pushes. The nose still points away, so forward is away from you.</li>
+  <li><span class="sh">Left and right slide (right stick, sideways).</span> Push right — it slides right without turning. Push left — it slides back, still facing the same way. This is roll: pure sideways travel.</li>
+  <li><span class="sh">Up and down (left stick, up/down).</span> Raise it a few feet, hold, lower it back. Get a feel for how much stick equals how much climb.</li>
+  <li><span class="sh">Yaw turns (left stick, sideways).</span> Gently push the left stick right — the drone rotates in place to face a new direction. Turn it a quarter-turn, stop, turn it back. This is the one that spins the camera around.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The moment the controls "reverse"</div><p>Yaw the drone so its nose points <em>back toward you</em> and the left/right controls feel mirrored — pushing right sends it to <em>your</em> left. This trips up every beginner. Fix: keep the nose pointed away on early flights, and if you get disoriented, thumbs off. It hovers. Reorient, then continue.</p></div>
+
+<h2>Combining inputs</h2>
+<p>Once single moves feel easy, gently combine two — a slow forward push with a slight left slide traces a curve. The key word stays <em>gentle</em>. Smooth, blended inputs are exactly what make drone footage look cinematic later, so this practice pays off twice.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>The figure-8 drill</div><p>Once you can hold a hover and do each single move, fly a slow, wide figure-8 in front of you using only forward and sideways inputs — no yaw, nose kept away. It forces you to blend gentle inputs and read the drone's position. Fly it five times each session. When a smooth figure-8 feels boring, you've genuinely learned to fly.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Learn a beginner mode if you have one</div><p>Many drones include a Beginner or Cine mode that caps speed and shrinks how far the drone will travel. Turn it on for your first several flights. Slower response gives your thumbs time to think, and gentle is exactly the habit you want to build.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Reading Your Telemetry</h1>
+<p>Those numbers ringing your screen aren't clutter — they're the difference between a pilot and a passenger. You don't stare at the drone <em>or</em> the screen; you flick between them. Here's what each readout means and when it should grab your attention.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">📏 Altitude (H)</div><p>Height above your launch point, in feet or meters. Keep first flights low — head height to maybe 30 feet — so a mistake is a short drop, not a long one.</p></div>
+  <div class="card"><div class="ch">📐 Distance (D)</div><p>How far the drone is from home, horizontally. Keep it close on day one. If the number is climbing and you didn't mean it to, bring it back.</p></div>
+  <div class="card"><div class="ch">🔋 Battery %</div><p>The number that ends every flight. Watch it constantly. When it hits your return threshold, you come home — no "one more minute."</p></div>
+  <div class="card"><div class="ch">🛰️ Satellites</div><p>Your GPS health. A high count means a rock-solid hover and reliable home point. If it suddenly drops, be cautious and bring it closer.</p></div>
+</div>
+
+<h2>Signal strength</h2>
+<p>An icon shows the radio link between controller and drone. Full bars mean crisp control and a smooth feed. Bars falling off — because you flew too far, or behind a building or trees — means you're near the edge of control. The fix is immediate: <strong>bring the drone back toward you</strong> until the signal recovers. Never chase "just a little farther" on a weakening signal.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Numbers over instinct</div><p>Your eyes lie about distance and height once a drone is a small dot in the sky. The telemetry doesn't. When your gut and the numbers disagree, trust the numbers and come home.</p></div>
+
+<blockquote>A calm pilot flies the numbers, not the nerves.</blockquote>
+
+<h1><span class="n">CHAPTER 7</span>Batteries &amp; Range</h1>
+<p>Nearly every beginner scare traces back to two things: pushing a battery too far, or flying past where you can see and control the drone. Master these two and most of what goes wrong simply doesn't.</p>
+
+<h2>The low-battery return habit</h2>
+<p>Drone flight times are short — often 20 to 30 minutes in ideal conditions, less in wind or cold — and a drone flying away from you needs battery to fly <em>back</em>. So build one non-negotiable habit:</p>
+
+<div class="key"><div class="kt">The ~30% rule</div><p>When the battery hits about 30%, you start heading home. When it hits ~20%, you're landing — no exceptions. Those last percentages are your safety margin against wind, distance, and a battery that sags faster than you expect near the end.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Cold and wind eat batteries fast</div><p>Low temperatures and headwinds drain a pack much quicker than the calm-day estimate. In cold or breezy conditions, treat 40% as your "head home" number. The drone's automatic low-battery warning is a backstop, not your plan — you should already be on the way home before it ever fires.</p></div>
+
+<h2>LiPo battery care</h2>
+<p>Your drone runs on lithium-polymer (LiPo) cells — powerful, but longest-lived when treated with a little respect.</p>
+<ul class="check">
+  <li>Don't store batteries fully charged for weeks — most are happiest sitting around half-charged for long storage.</li>
+  <li>Never leave them in a hot car or in direct summer sun; heat kills LiPos.</li>
+  <li>Let a battery cool after flying before recharging it.</li>
+  <li>Retire any battery that's puffed, swollen, or physically damaged — don't fly it.</li>
+  <li>Fly to your ~20% floor, not to zero; deep-draining a pack shortens its life.</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>A spare battery changes the day</div><p>One battery means a 20-minute outing and a long drive home. A second (or third) pack turns it into a real session. If you buy one accessory after the drone, make it another battery — it's the upgrade that most increases how much you actually fly and learn.</p></div>
+
+<h2>Range and line of sight</h2>
+<p>Your controller may claim miles of range, but that's a radio spec, not a flying rule. The real limit is simpler and safer: <strong>keep the drone where you can see it with your own eyes.</strong> Once it's a speck you can't tell the front from the back of, you've lost the ability to react. Staying in visual line of sight keeps you in control and, in most places, keeps you legal too.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Fly out into the wind, come back with it</div><p>If there's any breeze, fly the outbound leg <em>into</em> the wind while your battery is fresh. Then the wind helps push you home while the pack is low. Doing it backwards — riding the wind out, fighting it home on a dying battery — is how drones come up short of the landing zone.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Landing Confidently</h1>
+<p>A flight isn't finished until the drone is safely back on the ground with the motors off. There are three ways down, and a steady pilot knows when to use each.</p>
+
+<h2>Manual descent</h2>
+<p>The most controlled landing is the one you fly yourself. Bring the drone back over your clear launch spot, hold a low hover, then ease the left stick <em>gently</em> down until the legs touch.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Beware the ground effect wobble</div><p>In the last foot or two, the drone's own downwash bounces off the ground and it can feel twitchy or float. Don't fight it with big inputs. Ease down smoothly and, once the legs touch, hold the left stick fully down for a couple of seconds to cut the motors. Pulling the stick down and holding is the standard "stop the motors" command on landing.</p></div>
+
+<h2>Auto-land</h2>
+<p>Most drones have an auto-land button: it descends straight down from wherever it's hovering and shuts off on touchdown. It's handy, but it lands <em>directly below the drone</em> — so only use it when you've first positioned the aircraft over a clear, flat, safe spot. Auto-land is not smart about what's underneath it.</p>
+
+<h2>Return-to-Home (RTH)</h2>
+<p>Return-to-Home flies the drone back to the recorded home point and lands automatically. It triggers three ways: you press the button, the battery gets critically low, or the signal is lost. A genuine safety net — but respect how it behaves.</p>
+
+<ol class="steps">
+  <li><span class="sh">It climbs first, then flies.</span> RTH usually ascends to a preset height before heading home, so it clears low obstacles. Set that RTH height <em>taller than the tallest thing</em> between you and the drone before you fly.</li>
+  <li><span class="sh">It returns to launch, not to you.</span> Same rule as the home point — it comes back to where you took off. Keep that spot clear the whole flight.</li>
+  <li><span class="sh">You can usually cancel it.</span> If RTH triggers and you'd rather land manually or it's heading somewhere you don't like, most drones let you cancel and take back control. Know that button before you need it.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Precision landing</div><p>Some drones photograph the launch pad at takeoff and use it to touch down within inches on RTH. It's slick, but only works if the spot looks the same on return — don't rely on it over shifting grass or shadow. When in doubt, cancel the auto-land in the final few feet and set it down yourself. A human on the sticks beats a clever algorithm near the ground.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Building Good Habits</h1>
+<p>The pilots who never have scary days aren't luckier than you — they just run the same routine every time until it's automatic. Here's yours. Do it in this order, every flight, forever. Within a few sessions it'll take ninety seconds and feel as natural as buckling a seatbelt.</p>
+
+<div class="recipe">
+  <div class="rh"><span>The repeatable flight routine</span><span class="tag">EVERY TIME</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">1. Check gear</span><span class="chip">2. Clear area</span><span class="chip">3. Power on</span><span class="chip">4. Wait for GPS</span><span class="chip">5. Confirm home point</span><span class="chip">6. Hover check</span><span class="chip">7. Fly the numbers</span><span class="chip">8. Home at ~30%</span></div>
+    <p class="small">Same order, every flight. The routine is what turns nervous into confident.</p>
+  </div>
+</div>
+
+<ol class="steps">
+  <li><span class="sh">Check the gear.</span> Props tight, battery clicked in, gimbal guard off, firmware current, SD card in.</li>
+  <li><span class="sh">Clear the area.</span> Open sky, no people or obstacles under your zone, calm wind, firm launch spot.</li>
+  <li><span class="sh">Power on and wait for GPS.</span> Solid satellite lock and a "ready" status before anything spins up.</li>
+  <li><span class="sh">Confirm the home point.</span> See the "home updated" message; know it returns to launch, not to you.</li>
+  <li><span class="sh">Do a hover check.</span> Take off, hold head-height, confirm it sits stable and responds gently before you go anywhere.</li>
+  <li><span class="sh">Fly the numbers.</span> Glance at altitude, distance, battery, satellites, and signal throughout — don't get target-fixated on the camera.</li>
+  <li><span class="sh">Start home at ~30%.</span> Land with margin to spare. Then power down, let the battery cool, and note anything you'd do differently.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your first three sessions</div><p><strong>Session 1:</strong> takeoff, hover, land — nothing else, until it's boring. <strong>Session 2:</strong> single-axis moves and the figure-8 drill, nose kept away. <strong>Session 3:</strong> add gentle yaw turns and start reading telemetry mid-flight. Three short, calm sessions and you'll fly like you've done it for years.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Keep a two-line flight log</div><p>After each flight, jot the date, conditions, and one thing you learned. It sounds fussy, but it turns scattered outings into real progress — you'll spot your own patterns, remember which spots fly well, and watch your confidence climb in writing.</p></div>
+
+<p>That's the whole path — from a sealed box and a pounding heart to a pilot who takes off, flies with intention, and lands with battery to spare. You don't need to be fearless. You need a routine, gentle thumbs, and the discipline to come home early. Everything else grows naturally from that calm foundation. Now go find an open field.</p>
+
+<div class="key"><div class="kt">Remember</div><p>Fly slow, fly the numbers, come home early — do that every time and calm, confident flying stops being something you hope for and becomes just how you fly.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

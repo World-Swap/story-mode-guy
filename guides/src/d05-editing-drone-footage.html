@@ -1,0 +1,236 @@
+<h1><span class="n">START HERE</span>Aerials That Won't Match the Edit</h1>
+<p class="lead-in">You flew the shot of your life — a clean reveal over the coast, the horizon dead level — and the moment you drop it into your timeline it looks like it came from a different film. Too flat, too green, a little wobbly, and somehow both too smooth and too jittery at once. This guide fixes that. It teaches you to correct, grade, and match drone footage so your aerials feel like they belong to the same story as everything shot on the ground.</p>
+
+<p>Here is the honest reason aerials clash: a drone hands you footage that is deliberately <em>unfinished</em>. Flat or D-Log color profiles record a dull, low-contrast image on purpose so you have room to grade. A rolling-shutter sensor smears fast motion into "jello." A gimbal that is 95% smooth still leaves a 5% drift that the eye reads as floaty. None of that is a mistake — it is raw material. The edit is where a drone clip becomes a shot.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Aerials clash because they arrive raw — fix the motion, correct the color to neutral, grade the look, then match it to the ground, in that order.</p></div>
+
+<h2>How to use this guide</h2>
+<p>The chapters run in the order you should actually work: organize, stabilize, time, correct, grade, match, cut, and export. If your only problem is "my drone shots look green and flat," jump to Chapters 5 and 6. If they look wobbly or warped, start at Chapter 3. But the first time through, read it in order — the workflow in Chapter 10 assumes you understand each stage.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Software-agnostic, with real notes</div><p>Everything here works in DaVinci Resolve (free), Premiere Pro, and CapCut. Rather than menu paths that change every update, we name the <em>tool or effect</em> to look for — "the stabilizer," "the log-to-linear conversion," "the qualifier" — so you can find it in whatever you run. Where a feature only exists in one app, we say so plainly.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Work from the original file when you can</div><p>Editing a re-compressed export or a screen-recorded clip throws away the color data you need to grade. Pull the original MP4/MOV straight off the SD card. If you shot D-Log, HLG, or any flat profile, that untouched file is the only version with the latitude to correct exposure and match to ground.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Organize &amp; Cull Your Aerial Clips</h1>
+<p>Drone missions produce a specific kind of mess: forty near-identical files with camera-generated names, half of them takeoffs, landings, and re-positioning moves you will never use. Grading and matching are slow, careful work — you do not want to spend that effort on clips that never make the cut. Cull hard first.</p>
+
+<h2>Get the files off the card intact</h2>
+<ol class="steps">
+  <li><span class="sh">Copy, don't cut.</span> Move the whole card to a dated folder on your drive and keep the card untouched until the project is exported. SD cards fail; your one good reveal should not live in a single place.</li>
+  <li><span class="sh">Note the color profile.</span> Before anything else, know whether these clips are D-Log, HLG, a "flat" cine profile, or standard/vivid. That single fact determines your entire grading approach in Chapters 5 and 6.</li>
+  <li><span class="sh">Keep clips at native frame rate and resolution.</span> If you shot 4K 60p to slow it down later, do not transcode it to 30p now — you would throw away the frames that make smooth slow-motion possible.</li>
+</ol>
+
+<h2>The three-pass cull</h2>
+<p>Do not grade first and cull later. Watch everything once, decide fast, and only carry keepers into the real work.</p>
+<ol class="steps">
+  <li><span class="sh">Pass one — delete the obvious junk.</span> Takeoffs, landings, propeller-in-frame moments, repositioning, and any clip where you fought the wind. Gone.</li>
+  <li><span class="sh">Pass two — flag the "hero" moves.</span> The clean reveal, the smooth orbit, the confident push-in. These earn full attention later. Use your editor's flag or color-label so you can filter to them.</li>
+  <li><span class="sh">Pass three — mark the usable middles.</span> Most aerial clips are only good in the center: the drone accelerated at the start and drifted at the end. Set rough in/out points around the stable stretch now, so you are grading four seconds, not forty.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Name shots by what they do</div><p>Rename or label keepers by <em>move</em> — "reveal-coast," "orbit-lighthouse," "pushin-cabin" — not by the camera's DJI_0413. When you are three hours into an edit hunting for "that reveal," a descriptive name saves you every time.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Build a proxy workflow for 4K/5.4K</div><p>Aerial footage is heavy. In Resolve and Premiere, generate low-resolution proxies and edit against those, then relink to the originals for the final grade and export. Playback stays smooth, the stabilizer and grade still render off the full-quality source. CapCut handles this automatically at lower quality on weaker machines.</p></div>
+
+<h2>A quick sanity check before you commit</h2>
+<ul class="check">
+  <li>Every keeper is trimmed to its stable middle, not its full length.</li>
+  <li>You know the color profile of each clip.</li>
+  <li>Hero moves are flagged so you can filter to them instantly.</li>
+  <li>The original card is still safe until export.</li>
+  <li>Frame rate is preserved on anything you plan to slow down.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 3</span>Fix Rolling Shutter / "Jello" &amp; Stabilize</h1>
+<p>Two different motion problems get blamed on each other. <strong>Jello</strong> is a warp — straight lines wobble like gelatin because a rolling-shutter sensor reads top-to-bottom and the drone vibrated during that read. <strong>Instability</strong> is drift and micro-jitter across whole frames. They have different fixes, and the stabilizer does not solve the first one. Diagnose before you reach for a tool.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🍮 Rolling shutter (jello)</div><p>Vertical or straight lines <strong>wobble and skew</strong> during motion, worst on props, buildings, and horizons. Caused by sensor read-out during vibration. Needs a <em>rolling-shutter repair</em> tool, not stabilization.</p></div>
+  <div class="card"><div class="ch">〰️ Instability (drift/jitter)</div><p>The <strong>whole frame</strong> floats, bobs, or twitches. The gimbal held roughly but not perfectly. This is what a <em>stabilizer</em> is for — within limits.</p></div>
+</div>
+
+<h2>Killing jello</h2>
+<p>Most editors have a dedicated rolling-shutter reduction (Premiere's "Rolling Shutter Repair" effect, Resolve's rolling-shutter control inside its stabilization panel). It analyzes the skew between the top and bottom of each frame and un-warps it.</p>
+<ol class="steps">
+  <li><span class="sh">Apply the rolling-shutter repair before stabilizing.</span> Fix the warp first, then smooth the motion — never the reverse, or you smooth a distorted frame.</li>
+  <li><span class="sh">Raise the correction amount until lines stop wobbling.</span> Push it too far and you introduce a different rubbery artifact; back off to the lowest setting that looks straight.</li>
+  <li><span class="sh">Attack the real cause next time.</span> Jello comes from vibration — worn or dirty propellers, a loose gimbal, or flying in gusts. Balanced, clean props prevent 90% of it at the source.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Stabilizing jello makes it worse</div><p>A stabilizer assumes the frame is rigid and shifts it around. If the frame is internally warped, the stabilizer pushes that warp through your shot and the wobble crawls. Always de-jello first.</p></div>
+
+<h2>Stabilizing — and its real limits</h2>
+<p>Warp Stabilizer (Premiere) and the built-in Stabilizer (Resolve, in the tracker/stabilize panel) work by tracking points across frames and cropping in to hide the correction. That crop is the catch: <strong>every bit of smoothing costs resolution.</strong></p>
+
+<div class="recipe">
+  <div class="rh"><span>Sane stabilizer starting points</span><span class="tag">START HERE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Smoothness <b>8–15%</b></span><span class="chip">Method <b>Position, Scale, Rotation</b></span><span class="chip">Crop <b>Stabilize only, minimal</b></span><span class="chip">Result <b>Smooth Motion</b></span></div>
+    <p class="small">A gimbal is already stable — you are polishing, not rescuing. Keep smoothness low. High values invent floaty, seasick motion that looks worse than the original micro-jitter.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Where the stabilizer fails</div><p>It cannot fix a shot with no static reference (dense clouds, flat open water), it warps parallax in fast low-altitude flights into a "swimming" background, and heavy smoothing on a shot you already cropped for framing can zoom you past usable resolution. If a clip needs more than about 20% smoothing to look right, it is usually a re-fly, not an edit fix.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Match, don't maximize</div><p>Perfectly smooth aerials clash with handheld ground footage. If your ground clips breathe a little, over-stabilized air looks fake beside them. Aim for the <em>same</em> amount of life in both, not the smoothest possible drone shot in isolation.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Speed — Ramps, Slow-Mo &amp; Reveals</h1>
+<p>Speed is where an aerial goes from "nice drone shot" to "cinematic." A reveal that eases into its subject, an orbit that slows at the peak of the view — these are edit decisions, not flight decisions. The tools are retiming and time remapping, and the rules are the same in every app.</p>
+
+<h2>Slow-motion the right way</h2>
+<p>Smooth slow-motion needs frames to spare. If you shot 4K 60p and drop it into a 24p or 30p timeline, you can slow it to 40% (60→24) or 50% (60→30) with every frame real and sharp.</p>
+<ol class="steps">
+  <li><span class="sh">Match your timeline to your delivery frame rate first.</span> A 24p timeline for film-feel, 30p for standard web, 60p if you deliver high-frame-rate.</li>
+  <li><span class="sh">Slow only as far as your frames allow.</span> 60p footage in a 24p timeline plays cleanly at 40%. Below that, the editor must invent frames.</li>
+  <li><span class="sh">Choose the right frame-blending mode.</span> "Optical Flow" (Premiere/Resolve) or "Nearest/Frame Blend" — optical flow generates new in-between frames and looks smoothest, but it smears on complex motion. Check edges and props at 100%.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Optical flow artifacts</div><p>On aerials with fine detail — tree canopies, waves, power lines — optical flow can tear or ghost the invented frames. If you see warping, switch that clip to plain frame blending, or slow it less. Test at full resolution, not in a laggy preview.</p></div>
+
+<h2>Speed ramps — the reveal's secret</h2>
+<p>A speed ramp changes velocity <em>within</em> a shot: fast, then a smooth glide into slow as the subject appears. Done with time remapping and eased keyframes, it directs the viewer's eye to the reveal.</p>
+<div class="recipe">
+  <div class="rh"><span>Classic reveal ramp</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">In fast <b>150–200%</b></span><span class="chip">Ease into <b>40–60%</b></span><span class="chip">Hold slow <b>on the subject</b></span><span class="chip">Keyframes <b>eased, not linear</b></span></div>
+    <p class="small">Ramp down <em>just before</em> the subject clears the foreground, so the slowdown lands exactly on the payoff. Ease the speed keyframes so the change feels like deceleration, not a cut.</p>
+  </div>
+</div>
+
+<ol class="steps">
+  <li><span class="sh">Enable time remapping on the clip.</span> Resolve calls it "Retime Curve," Premiere "Time Remapping," CapCut "Speed &rarr; Curve."</li>
+  <li><span class="sh">Set speed keyframes on either side of the reveal.</span> High speed before, low speed after.</li>
+  <li><span class="sh">Ease the transition.</span> Drag the keyframe handles so the velocity curves rather than steps. A linear ramp reads as a glitch; an eased one reads as intent.</li>
+  <li><span class="sh">Add optical flow only if the slow section stutters.</span> Fast sections rarely need it; the slow tail sometimes does.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>CapCut speed curves</div><p>CapCut ships preset curves — "Montage," "Hero," "Bullet" — that are essentially pre-eased ramps. Start from one, then drag its points to land the slowdown on your subject. It is the fastest way to a decent ramp on mobile or the free desktop app.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Color-Correct Aerials First</h1>
+<p>Do not grade a look yet. Correction and grading are two different jobs: <strong>correction</strong> makes the image neutral and accurate — right exposure, neutral white balance, sane contrast. <strong>Grading</strong> is the stylistic look on top. Skip correction and every creative move you make fights a wrong foundation. Neutralize first.</p>
+
+<div class="key"><div class="kt">Correct, then grade</div><p>You cannot match or stylize a shot that is exposed wrong and tinted green. Get it neutral and accurate first; the look comes after.</p></div>
+
+<h2>Read your scopes, not your monitor</h2>
+<p>Your eyes adapt and your screen lies. Every serious editor has scopes — a Waveform for exposure and a Vectorscope/Parade for color. Resolve and Premiere both include them; CapCut does not, so on CapCut you correct by eye against a known-good reference frame.</p>
+<ol class="steps">
+  <li><span class="sh">Set exposure on the Waveform.</span> Bring the darkest shadows near the bottom without crushing them to zero, and the brightest highlights (clouds, sun on water) near the top without clipping off the scale. Aerials blow out skies easily — protect the highlights.</li>
+  <li><span class="sh">Neutralize white balance on the Parade.</span> Find something that should be neutral — concrete, white surf, a gray roof — and adjust temperature and tint until its red, green, and blue channels line up level on the Parade.</li>
+  <li><span class="sh">Kill the aerial haze.</span> Distant landscapes read hazy and low-contrast from atmospheric scatter. A gentle contrast increase and a touch of the dehaze/clarity control restores the punch that distance stole.</li>
+</ol>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Why aerials skew a specific way</div><p>Drone footage often lands cool, green, and hazy: cool because the sky's blue light dominates at altitude, green because flat profiles record with a green cast, hazy because you are shooting through miles of atmosphere. Expect to add warmth, pull green, and restore contrast on almost every clip.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Correct each clip, then match — not the reverse</div><p>Two clips from the same flight can differ if the sun moved or you turned into the light. Correct each to neutral on its own first. Only once every clip is individually accurate do you match them to each other — trying to match two wrong clips just averages two mistakes.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Grade the Look — D-Log, Flat Footage &amp; LUTs</h1>
+<p>Now the fun part — and the part people get backwards. If you shot D-Log, HLG, or any flat profile, the image is a dull, washed-out mess by design. It is not broken; it is holding maximum detail in a low-contrast container, waiting for you to expand it. That expansion is the first step of grading, and a LUT alone will not do it correctly.</p>
+
+<h2>Convert log to a normal image first</h2>
+<p>Flat/log footage must be brought back to standard contrast and color before you style it. There are two clean ways:</p>
+<div class="cards">
+  <div class="card solid"><div class="ch">🎚️ Color-managed pipeline</div><p>Tell your editor the clip's input color space (e.g. "DJI D-Log") and let it convert to a standard working space. Resolve does this with its color management; it is the most accurate route and it un-flattens the image predictably.</p></div>
+  <div class="card solid"><div class="ch">🎬 A conversion LUT</div><p>Apply the manufacturer's <em>technical</em> LUT (e.g. "D-Log to Rec.709") that maps the flat profile back to normal contrast. This is a correction LUT, not a look — it is the starting line, not the finish.</p></div>
+</div>
+
+<div class="key"><div class="kt">Why a LUT alone fails</div><p>A LUT is a fixed color map built for correctly-exposed footage in one specific color space. Drop it on a clip that is a stop underexposed or in the wrong space and it crushes shadows, clips highlights, and shifts skin — because it cannot adapt to <em>your</em> exposure. Correct exposure first, apply the LUT, then adjust.</p></div>
+
+<h2>The correct order for a graded aerial</h2>
+<ol class="steps">
+  <li><span class="sh">Correct exposure and white balance</span> on the flat clip (Chapter 5) so the LUT receives what it expects.</li>
+  <li><span class="sh">Convert log to standard</span> via color management or a technical LUT — the image snaps to normal contrast.</li>
+  <li><span class="sh">Add your creative look on top</span> — a stylistic LUT or manual grade, kept at partial strength so it flavors rather than dominates.</li>
+  <li><span class="sh">Refine after the LUT.</span> Nudge contrast, saturation, and the highlight roll-off so clouds and water don't clip. The LUT is a starting point you finish by hand.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Dial LUTs back</div><p>Most creative LUTs are built strong to look impressive on a store page. Apply at 100%, then reduce to 40–70% opacity/strength. A subtle graded aerial cuts against ground footage far better than a heavy teal-and-orange slam that no ground shot can match.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Grade skies and land separately</div><p>A drone frame is often half sky, half ground with different needs. Use a mask, gradient, or the sky/luma qualifier to grade them apart — warm the land, hold the sky's blue, tame a blown highlight — without one dragging the other. Resolve's qualifier and Premiere's masks both do this; CapCut only offers global adjustments.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Match Air to Ground Footage</h1>
+<p>This is the chapter that solves your actual complaint. A corrected, graded aerial can still feel foreign next to ground footage because the two came from different sensors with different color science, contrast, and sharpness. Matching is the deliberate work of making them read as one camera. You match <em>to</em> a reference — usually your best ground shot — never the other way around.</p>
+
+<h2>Pick and pin your reference</h2>
+<ol class="steps">
+  <li><span class="sh">Choose the hero ground shot</span> that sets the look for the whole piece — the one with the mood you want everything to share.</li>
+  <li><span class="sh">Grade that reference fully first.</span> It becomes the target. Every aerial gets pulled toward it.</li>
+  <li><span class="sh">Put them side by side.</span> Use a split-screen/reference-wipe (Resolve's wipe, Premiere's Comparison view) so you judge air against ground on the same monitor, not from memory.</li>
+</ol>
+
+<h2>Match in this order</h2>
+<table>
+  <tr><th>Step</th><th>What you match</th><th>How to read it</th></tr>
+  <tr><td>1</td><td>Exposure &amp; contrast</td><td>Waveform — align black point and white point of both clips to the same levels</td></tr>
+  <tr><td>2</td><td>White balance</td><td>Parade — make neutral tones sit at the same RGB balance in both</td></tr>
+  <tr><td>3</td><td>Saturation</td><td>Vectorscope — pull the aerial's overall color intensity to match the ground's spread</td></tr>
+  <tr><td>4</td><td>Skin &amp; key tones</td><td>If people appear in both, match skin first — the eye forgives everything else before it forgives wrong skin</td></tr>
+  <tr><td>5</td><td>Shadow/highlight tint</td><td>Match the color of the darks and lights — warm shadows or cool highlights must agree across shots</td></tr>
+</table>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Use the automatic color-match, then fix it</div><p>Resolve's shot-match and Premiere's "Match Color" analyze two clips and pull one toward the other automatically. They get you 70% there in a click — but they overreach on aerials with lots of sky. Run it, then correct by eye on the scopes. It is a head start, not the finish.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't forget sharpness and grain</div><p>Drone sensors often render sharper and cleaner than a ground camera. A razor-sharp, noise-free aerial cut against slightly soft, grainy ground footage still feels "off" even with perfect color. Add a touch of grain and pull sharpness down a hair on the aerial so texture matches too.</p></div>
+
+<blockquote>Matching isn't making the aerial look good — it's making it look like it came from the same camera as everything around it.</blockquote>
+
+<h1><span class="n">CHAPTER 8</span>Cutting Aerials Into a Sequence</h1>
+<p>Even a perfectly graded, matched aerial fails if it is cut wrong. Drone shots have their own pacing rules because they are slow, wide, and establishing by nature. Use them like punctuation, not paragraphs.</p>
+
+<h2>Where aerials belong</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🎬 The opener</div><p>A wide aerial establishes place in one shot — where we are, what kind of world this is. The single strongest use of a drone clip.</p></div>
+  <div class="card"><div class="ch">🌉 The transition</div><p>An aerial move bridges two scenes or two locations, giving the viewer a breath and a sense of geography between beats.</p></div>
+  <div class="card"><div class="ch">✨ The payoff</div><p>A slow reveal that pays off tension built on the ground — save your best orbit or rising reveal for a moment that has earned it.</p></div>
+</div>
+
+<h2>Pacing rules for aerials</h2>
+<ol class="steps">
+  <li><span class="sh">Hold them longer than ground shots.</span> Wide aerials carry more information and move slowly; give the eye 4–8 seconds to travel the frame. Cutting a majestic reveal after two seconds wastes it.</li>
+  <li><span class="sh">Cut on the motion, not against it.</span> Enter an aerial as its move begins and leave as it settles or peaks — cutting mid-drift feels jarring. Let the move have a beginning and an end.</li>
+  <li><span class="sh">Don't chain three aerials in a row.</span> Two back-to-back can work; three reads as a real-estate listing. Break air with ground to keep human scale in the piece.</li>
+  <li><span class="sh">Match the move to the music.</span> Land the peak of a reveal or the top of a rise on a musical accent. Aerials are slow enough that you can retime them to hit the beat exactly.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Direction of travel matters</div><p>Cut so movement flows across the cut — a left-moving aerial into a left-moving ground shot keeps energy continuous. A hard direction reversal between adjacent shots feels like a bump unless you mean it as a beat.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this cut</div><p>Take one reveal aerial and cut it three ways: as a 6-second opener, as a 2-second flash transition, and as a music-synced payoff with a speed ramp. Watch all three in context. You will feel instantly which job that specific shot was born to do — and you'll start flying with the edit in mind.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Export for YouTube, Reels/TikTok &amp; Client Delivery</h1>
+<p>You corrected, graded, matched, and cut — do not lose it all to a bad export. Aerials suffer worse than most footage from wrong export settings, because slow motion across huge skies and fine landscape detail are exactly what low bitrates smear into blocky mush. Match the export to where it lands.</p>
+
+<table>
+  <tr><th>Destination</th><th>Resolution / Frame rate</th><th>Codec &amp; bitrate</th><th>Notes</th></tr>
+  <tr><td>YouTube (standard)</td><td>3840&times;2160 or 1920&times;1080, source fps</td><td>H.264/H.265, 4K 45–65 Mbps · 1080p 16–20 Mbps</td><td>Upload 4K even for a 1080p audience — YouTube gives 4K uploads a better bitrate, so 1080p viewers see cleaner skies</td></tr>
+  <tr><td>Reels / TikTok / Shorts</td><td>1080&times;1920 vertical, 30 or 60 fps</td><td>H.264, 12–20 Mbps</td><td>Reframe aerials for 9:16 — use the wide original and pan/scan within it so you keep the move</td></tr>
+  <tr><td>Client / master file</td><td>Source resolution &amp; fps</td><td>ProRes 422 HQ or DNxHR HQ</td><td>An intermediate codec, not H.264 — high bitrate, re-editable, no generational loss</td></tr>
+  <tr><td>Instagram feed</td><td>1080&times;1350 (4:5) or 1080&times;1080</td><td>H.264, 12–16 Mbps</td><td>4:5 gives an aerial more room than square; crop within the wide frame</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Match export frame rate to your timeline</div><p>Export at the frame rate you edited in. Forcing 24p footage to a 30p export (or the reverse) introduces stutter and judder that is brutally visible on the smooth, sweeping motion of an aerial. Timeline fps and export fps must agree.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Keyframe/GOP and bitrate on big skies</div><p>Push bitrate higher than you think for aerials. A gradient sky and moving water are where compression shows first as banding and blockiness. If a platform re-compresses your upload (they all do), giving it a high-bitrate source means its re-compression starts from clean data. When available, choose a 2-pass or higher-quality encode for the final render.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>CapCut export reality</div><p>CapCut's free export caps and re-encodes more aggressively than Resolve or Premiere. For social delivery it is fine. For a paying client, master out of Resolve or Premiere in an intermediate codec — CapCut is not a delivery tool for high-value work.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>A Repeatable Aerial-Edit Workflow</h1>
+<p>Everything in this guide collapses into one order of operations you can run on every project. Do the stages in sequence — each one assumes the last is done — and your aerials will match, every time, without guesswork.</p>
+
+<ol class="steps">
+  <li><span class="sh">Ingest &amp; cull.</span> Copy the card intact, note the color profile, three-pass cull to trimmed keepers, flag heroes, build proxies for heavy 4K.</li>
+  <li><span class="sh">De-jello, then stabilize.</span> Rolling-shutter repair first, then light stabilization (8–15%). If it needs more than ~20%, mark it as a re-fly.</li>
+  <li><span class="sh">Retime.</span> Set the timeline to delivery fps, apply slow-motion within your frame budget, build eased speed ramps on reveals, check optical-flow artifacts at 100%.</li>
+  <li><span class="sh">Correct.</span> Neutralize exposure and white balance on the scopes, cut the haze — every clip made accurate on its own first.</li>
+  <li><span class="sh">Grade.</span> Convert log to standard, apply the creative look at partial strength, grade sky and land separately, refine after the LUT.</li>
+  <li><span class="sh">Match.</span> Grade the hero ground shot as your reference, pull each aerial toward it on the scopes with a reference-wipe, match texture and grain too.</li>
+  <li><span class="sh">Cut.</span> Place aerials as openers, transitions, and payoffs; hold them long; cut on the motion; land peaks on the music.</li>
+  <li><span class="sh">Export.</span> Match fps, pick the codec and bitrate for the destination, push bitrate on big-sky shots, master to an intermediate for clients.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Build it once, reuse it forever</div><p>In Resolve or Premiere, save your correction-plus-conversion as a preset or a node/adjustment layer you can drag onto any clip. Save your matched grade as a still or preset too. Next project, the first four stages become one drag — you spend your time on the creative choices, not the setup.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>When a shot still won't sit</div><p>If one aerial fights every fix, ask whether it was shot wrong — a badly clipped sky or the wrong white balance baked into a non-log profile can be unrecoverable. Sometimes the honest answer is to cut it shorter, bury it in a fast montage, or leave it out. A great edit is also knowing which clip doesn't make it.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Correct your aerials to neutral first, grade the look on top of that, then match everything to your ground footage — in that order, every time.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
