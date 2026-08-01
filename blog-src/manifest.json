@@ -1,0 +1,34 @@
+{
+  "articles": [
+    {
+      "slug": "best-sunset-spots-santa-cruz",
+      "title": "The Best Sunset Spots in Santa Cruz (From Someone Who Shoots Them)",
+      "description": "Seven of the best places to watch and photograph the sunset in Santa Cruz, California — plus the timing, parking, and light notes I've learned shooting them for years.",
+      "keywords": "santa cruz sunset, best sunset spots santa cruz, where to watch sunset santa cruz, west cliff drive sunset, natural bridges sunset, santa cruz photography",
+      "hero": "photo-01.jpg",
+      "hero_alt": "Sunset over the Santa Cruz coastline",
+      "date": "2026-08-01",
+      "date_h": "August 1, 2026"
+    },
+    {
+      "slug": "why-are-my-photos-blurry",
+      "title": "Why Are My Photos Blurry? The 3 Real Causes (and the Fix for Each)",
+      "description": "Almost every blurry photo comes down to one of three causes: camera shake, subject motion, or missed focus. Here's how to tell them apart and fix each one for good.",
+      "keywords": "why are my photos blurry, blurry photos, how to fix blurry photos, sharp photos, camera shake, focus problems, shutter speed for sharp photos",
+      "hero": "photo-08.jpg",
+      "hero_alt": "A sharp, crisp coastal photograph at golden hour",
+      "date": "2026-08-01",
+      "date_h": "August 1, 2026"
+    },
+    {
+      "slug": "camera-settings-for-golden-hour",
+      "title": "The Best Camera Settings for Golden Hour (a Simple Starting Point)",
+      "description": "A no-nonsense starting point for golden hour: the aperture, shutter speed, ISO, white balance, and metering choices that get you a keeper, plus how to adjust as the light drops.",
+      "keywords": "golden hour camera settings, best settings for sunset photos, aperture for golden hour, iso for sunset, white balance golden hour, manual mode sunset",
+      "hero": "photo-20.jpg",
+      "hero_alt": "Warm golden-hour light over the Santa Cruz coast",
+      "date": "2026-08-01",
+      "date_h": "August 1, 2026"
+    }
+  ]
+}
