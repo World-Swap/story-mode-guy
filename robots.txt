@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /blog-src/
+Disallow: /promo/
 
 Sitemap: https://storymodeguy.com/sitemap.xml
