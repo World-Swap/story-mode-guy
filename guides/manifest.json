@@ -242,6 +242,126 @@
       "accent2": "#64748b",
       "reader": "New shooters who want a printable field reference",
       "short": "The Videographer's Cheat-Sheet Pack"
+    },
+    {
+      "id": "d01-drone-beginners",
+      "line": "drone",
+      "kicker": "START FLYING",
+      "title": "Drone Flying for Beginners",
+      "subtitle": "From Unboxing to a Confident First Flight",
+      "price": "$27",
+      "accent": "#0284c7",
+      "accent2": "#38bdf8",
+      "reader": "Brand-new pilots nervous about their first takeoff",
+      "short": "Drone Flying for Beginners"
+    },
+    {
+      "id": "d02-drone-laws-part107",
+      "line": "drone",
+      "kicker": "KNOW THE RULES",
+      "title": "Drone Laws, Registration & Part 107",
+      "subtitle": "Fly Legally — and Unlock Getting Paid to Fly",
+      "price": "$34",
+      "accent": "#b91c1c",
+      "accent2": "#f87171",
+      "reader": "Pilots unsure what's legal, and anyone who wants to fly commercially",
+      "short": "Drone Laws, Registration & Part 107"
+    },
+    {
+      "id": "d03-cinematic-drone-moves",
+      "line": "drone",
+      "kicker": "THE SIGNATURE SHOTS",
+      "title": "Cinematic Drone Moves",
+      "subtitle": "The Aerial Shots That Make Footage Look Like a Film",
+      "price": "$29",
+      "accent": "#4f46e5",
+      "accent2": "#818cf8",
+      "reader": "Pilots whose footage is steady but boring",
+      "short": "Cinematic Drone Moves"
+    },
+    {
+      "id": "d04-drone-camera-settings",
+      "line": "drone",
+      "kicker": "AERIAL CAMERA",
+      "title": "Drone Camera Settings for Video",
+      "subtitle": "Frame Rate, ND Filters & the Settings for Smooth Aerials",
+      "price": "$27",
+      "accent": "#0d9488",
+      "accent2": "#2dd4bf",
+      "reader": "Pilots whose footage looks juddery, over-sharp, or flat",
+      "short": "Drone Camera Settings for Video"
+    },
+    {
+      "id": "d05-editing-drone-footage",
+      "line": "drone",
+      "kicker": "POST-PRODUCTION",
+      "title": "Editing & Grading Drone Footage",
+      "subtitle": "Stabilize, Color, and Make Aerials Match Your Edit",
+      "price": "$29",
+      "accent": "#1d4ed8",
+      "accent2": "#60a5fa",
+      "reader": "Pilots whose aerial clips won't match the rest of the video",
+      "short": "Editing & Grading Drone Footage"
+    },
+    {
+      "id": "d06-add-drone-to-videos",
+      "line": "drone",
+      "kicker": "AIR MEETS GROUND",
+      "title": "Add Drone Shots to Your Videos",
+      "subtitle": "Turn Aerial Clips Into a Story That Holds Attention",
+      "price": "$27",
+      "accent": "#7c3aed",
+      "accent2": "#a78bfa",
+      "reader": "Creators with great aerial clips but flat-feeling videos",
+      "short": "Add Drone Shots to Your Videos"
+    },
+    {
+      "id": "d07-real-estate-drone",
+      "line": "drone",
+      "kicker": "START A SIDE INCOME",
+      "title": "Real Estate & Property Drone Video",
+      "subtitle": "Film Sellable Aerial Property Tours for Pay",
+      "price": "$39",
+      "accent": "#0891b2",
+      "accent2": "#22d3ee",
+      "reader": "Side-hustlers, agents, and hosts filming their own listings",
+      "short": "Real Estate & Property Drone Video"
+    },
+    {
+      "id": "d08-drone-photography",
+      "line": "drone",
+      "kicker": "AERIAL STILLS",
+      "title": "Drone Photography",
+      "subtitle": "Striking Aerial Photos — Top-Down, Panos & Golden Hour",
+      "price": "$29",
+      "accent": "#ea580c",
+      "accent2": "#fb923c",
+      "reader": "Pilots who want striking stills, not just video",
+      "short": "Drone Photography"
+    },
+    {
+      "id": "d09-fly-safe-no-crash",
+      "line": "drone",
+      "kicker": "DON'T CRASH IT",
+      "title": "Fly Safe: Avoid Crashes & Flyaways",
+      "subtitle": "The Habits That Keep Your Drone in the Air",
+      "price": "$24",
+      "accent": "#15803d",
+      "accent2": "#4ade80",
+      "reader": "Pilots terrified of crashing or losing an expensive drone",
+      "short": "Fly Safe: Avoid Crashes & Flyaways"
+    },
+    {
+      "id": "d10-drone-cheat-sheet",
+      "line": "drone",
+      "kicker": "FIELD REFERENCE",
+      "title": "The Drone Pilot's Cheat-Sheet Pack",
+      "subtitle": "Grab-and-Go Cards for Pre-Flight, Settings & Safety",
+      "price": "$17",
+      "accent": "#334155",
+      "accent2": "#64748b",
+      "reader": "New pilots who want a printable field reference",
+      "short": "The Drone Pilot's Cheat-Sheet Pack"
     }
   ]
 }
