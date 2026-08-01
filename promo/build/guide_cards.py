@@ -19,7 +19,7 @@ body{{font-family:'DejaVu Sans','Liberation Sans',sans-serif}}
 .dark{{background:linear-gradient(160deg, {ACC} 0%, color-mix(in srgb, {ACC} 42%, #0a0c10) 100%)}}
 .glow{{position:absolute;width:820px;height:820px;border-radius:50%;top:-240px;right:-160px;
   background:radial-gradient(circle, rgba(255,255,255,.14), transparent 62%)}}
-.wrap{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:150px 96px}}
+.wrap{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:160px 96px 330px}}
 .logo{{width:112px;height:112px;border-radius:26px;object-fit:cover;box-shadow:0 12px 40px rgba(0,0,0,.45)}}
 .kick{{margin-top:36px;font-size:27px;letter-spacing:.34em;font-weight:700;text-transform:uppercase;color:rgba(255,255,255,.9)}}
 .serif{{font-family:'Bitstream Charter','DejaVu Serif',Georgia,serif}}
@@ -41,9 +41,9 @@ ul.feat li::before{{content:"\\2713";position:absolute;left:12px;top:20px;width:
 .pill{{margin-top:40px;display:inline-block;border:2px solid rgba(255,255,255,.55);border-radius:60px;padding:20px 46px;font-size:34px;font-weight:600;letter-spacing:.03em}}
 /* bar */
 .barcard{{position:relative;width:1080px;height:1920px;background:transparent}}
-.bar{{position:absolute;left:0;right:0;bottom:0;height:230px;
+.bar{{position:absolute;left:0;right:0;bottom:0;height:560px;
   background:linear-gradient(0deg, rgba(6,7,10,.82) 0%, rgba(6,7,10,.4) 55%, rgba(6,7,10,0) 100%);
-  display:flex;align-items:flex-end;justify-content:space-between;padding:0 60px 60px;color:#fff}}
+  display:flex;align-items:flex-end;justify-content:space-between;padding:0 60px 330px;color:#fff}}
 .bl{{display:flex;align-items:center;gap:22px}}
 .bl img{{width:82px;height:82px;border-radius:16px;object-fit:cover}}
 .bl .nm{{font-size:38px;font-weight:800}}

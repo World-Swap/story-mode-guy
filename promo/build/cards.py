@@ -19,7 +19,7 @@ body{{font-family:'DejaVu Sans','Liberation Sans',sans-serif}}
 .dark{{background:radial-gradient(120% 80% at 50% 15%, #23232e 0%, #16161c 55%, #0c0c10 100%)}}
 .glow{{position:absolute;width:900px;height:900px;border-radius:50%;top:-260px;left:50%;transform:translateX(-50%);
   background:radial-gradient(circle, {ACCENT}44, transparent 62%)}}
-.wrap{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:150px 90px}}
+.wrap{{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:160px 90px 330px}}
 .logo{{width:150px;height:150px;border-radius:26px;object-fit:cover;box-shadow:0 12px 40px rgba(0,0,0,.5)}}
 .kick{{margin-top:38px;font-size:30px;letter-spacing:.42em;font-weight:700;color:{ACCENT};text-transform:uppercase}}
 .serif{{font-family:'Bitstream Charter','Liberation Serif',Georgia,serif}}
@@ -35,9 +35,9 @@ h1{{font-size:118px;line-height:1.02;font-weight:800;margin-top:auto;letter-spac
   padding:20px 46px;font-size:34px;font-weight:600;letter-spacing:.04em}}
 /* brand bar (transparent, content at bottom) */
 .barcard{{position:relative;width:1080px;height:1920px;background:transparent}}
-.bar{{position:absolute;left:0;right:0;bottom:0;height:230px;
+.bar{{position:absolute;left:0;right:0;bottom:0;height:560px;
   background:linear-gradient(0deg, rgba(6,7,10,.82) 0%, rgba(6,7,10,.45) 55%, rgba(6,7,10,0) 100%);
-  display:flex;align-items:flex-end;justify-content:space-between;padding:0 60px 60px}}
+  display:flex;align-items:flex-end;justify-content:space-between;padding:0 60px 330px}}
 .bl{{display:flex;align-items:center;gap:22px}}
 .bl img{{width:82px;height:82px;border-radius:16px;object-fit:cover}}
 .bl .nm{{font-size:38px;font-weight:800;letter-spacing:.01em}}

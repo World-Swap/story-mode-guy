@@ -16,16 +16,16 @@ CSS = f"""
   font-family:'DejaVu Sans','Liberation Sans',sans-serif;color:#fff}}
 .gtop{{position:absolute;top:0;left:0;right:0;height:620px;
   background:linear-gradient(180deg, rgba(6,8,12,.62) 0%, rgba(6,8,12,.18) 55%, rgba(6,8,12,0) 100%)}}
-.gbot{{position:absolute;bottom:0;left:0;right:0;height:520px;
+.gbot{{position:absolute;bottom:0;left:0;right:0;height:720px;
   background:linear-gradient(0deg, rgba(6,8,12,.72) 0%, rgba(6,8,12,.22) 55%, rgba(6,8,12,0) 100%)}}
-.top{{position:absolute;top:96px;left:0;right:0;text-align:center;padding:0 90px}}
+.top{{position:absolute;top:140px;left:0;right:0;text-align:center;padding:0 90px}}
 .logo{{width:104px;height:104px;border-radius:50%;object-fit:cover;
   box-shadow:0 6px 24px rgba(0,0,0,.5);border:3px solid rgba(255,255,255,.85)}}
 .title{{font-family:'Bitstream Charter','DejaVu Serif',Georgia,serif;font-weight:700;
   font-size:62px;line-height:1.08;margin-top:30px;text-shadow:0 3px 20px rgba(0,0,0,.55);letter-spacing:-.5px}}
 .kicker{{margin-top:18px;font-size:25px;letter-spacing:.34em;font-weight:700;
   color:rgba(255,255,255,.92);text-transform:uppercase;text-shadow:0 2px 10px rgba(0,0,0,.6)}}
-.bot{{position:absolute;bottom:120px;left:0;right:0;text-align:center}}
+.bot{{position:absolute;bottom:330px;left:0;right:0;text-align:center}}
 .brand{{font-size:46px;font-weight:800;letter-spacing:.06em;text-shadow:0 3px 16px rgba(0,0,0,.6)}}
 .tag{{margin-top:14px;font-size:23px;letter-spacing:.28em;font-weight:700;text-transform:uppercase;
   color:rgba(255,255,255,.9);text-shadow:0 2px 10px rgba(0,0,0,.6)}}
