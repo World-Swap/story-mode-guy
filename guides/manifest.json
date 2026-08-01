@@ -12,7 +12,8 @@
       "accent": "#0f766e",
       "accent2": "#14b8a6",
       "reader": "Anyone with a phone who wants photos that look like a camera took them",
-      "short": "Pro Photos From Your Pocket"
+      "short": "Pro Photos From Your Pocket",
+      "line": "photography"
     },
     {
       "id": "02-lightroom-blueprint",
@@ -23,7 +24,8 @@
       "accent": "#1d4ed8",
       "accent2": "#3b82f6",
       "reader": "Photographers whose edits look muddy, flat, or inconsistent",
-      "short": "The Lightroom Blueprint"
+      "short": "The Lightroom Blueprint",
+      "line": "photography"
     },
     {
       "id": "03-product-photography",
@@ -34,7 +36,8 @@
       "accent": "#b45309",
       "accent2": "#f59e0b",
       "reader": "Etsy, Shopify & Amazon sellers photographing their own products",
-      "short": "Product Photos That Sell"
+      "short": "Product Photos That Sell",
+      "line": "photography"
     },
     {
       "id": "04-exposure-manual-mode",
@@ -45,7 +48,8 @@
       "accent": "#7c2d12",
       "accent2": "#ea580c",
       "reader": "New DSLR & mirrorless owners intimidated by the mode dial",
-      "short": "Master Your Camera in a Weekend"
+      "short": "Master Your Camera in a Weekend",
+      "line": "photography"
     },
     {
       "id": "05-why-blurry",
@@ -56,7 +60,8 @@
       "accent": "#9f1239",
       "accent2": "#e11d48",
       "reader": "Frustrated hobbyists whose shots keep coming out soft",
-      "short": "Why Are My Photos Blurry?"
+      "short": "Why Are My Photos Blurry?",
+      "line": "photography"
     },
     {
       "id": "06-real-estate-photography",
@@ -67,7 +72,8 @@
       "accent": "#0e7490",
       "accent2": "#06b6d4",
       "reader": "Aspiring side-hustlers and hosts shooting their own listings",
-      "short": "Real Estate & Airbnb Photography"
+      "short": "Real Estate & Airbnb Photography",
+      "line": "photography"
     },
     {
       "id": "07-natural-light-portraits",
@@ -78,7 +84,8 @@
       "accent": "#7e22ce",
       "accent2": "#a855f7",
       "reader": "Hobbyists photographing family, friends, and clients",
-      "short": "Natural-Light Portraits & Posing"
+      "short": "Natural-Light Portraits & Posing",
+      "line": "photography"
     },
     {
       "id": "08-astrophotography",
@@ -89,7 +96,8 @@
       "accent": "#3730a3",
       "accent2": "#6366f1",
       "reader": "Landscape and travel shooters chasing the night sky",
-      "short": "Astrophotography for Beginners"
+      "short": "Astrophotography for Beginners",
+      "line": "photography"
     },
     {
       "id": "09-low-light-night",
@@ -100,7 +108,8 @@
       "accent": "#1e293b",
       "accent2": "#0ea5e9",
       "reader": "Beginners shooting concerts, cities, and indoor events",
-      "short": "Low-Light & Night Photography"
+      "short": "Low-Light & Night Photography",
+      "line": "photography"
     },
     {
       "id": "10-cheat-sheet-pack",
@@ -111,7 +120,128 @@
       "accent": "#166534",
       "accent2": "#22c55e",
       "reader": "New camera owners who want a printable field reference",
-      "short": "The Photographer's Cheat-Sheet Pack"
+      "short": "The Photographer's Cheat-Sheet Pack",
+      "line": "photography"
+    },
+    {
+      "id": "v01-cinematic-look",
+      "line": "videography",
+      "kicker": "THE CINEMATIC LOOK",
+      "title": "Make Your Videos Look Cinematic",
+      "subtitle": "Camera Settings & Habits That Kill the 'Home-Video' Look",
+      "price": "$29",
+      "accent": "#6d28d9",
+      "accent2": "#a78bfa",
+      "reader": "Creators whose footage looks flat, choppy, or like a home video",
+      "short": "Make Your Videos Look Cinematic"
+    },
+    {
+      "id": "v02-phone-video",
+      "line": "videography",
+      "kicker": "MOBILE FILMMAKING",
+      "title": "Shoot Better Video on Your Phone",
+      "subtitle": "Pro-Looking Footage From the Phone in Your Pocket",
+      "price": "$29",
+      "accent": "#0891b2",
+      "accent2": "#22d3ee",
+      "reader": "Creators and small businesses filming on a smartphone",
+      "short": "Shoot Better Video on Your Phone"
+    },
+    {
+      "id": "v03-editing-blueprint",
+      "line": "videography",
+      "kicker": "VIDEO EDITING",
+      "title": "The Video Editing Blueprint",
+      "subtitle": "A Repeatable Workflow for Premiere, DaVinci & CapCut",
+      "price": "$37",
+      "accent": "#1d4ed8",
+      "accent2": "#3b82f6",
+      "reader": "Anyone who films but stalls at the timeline",
+      "short": "The Video Editing Blueprint"
+    },
+    {
+      "id": "v04-color-grading",
+      "line": "videography",
+      "kicker": "COLOR",
+      "title": "Color Grading Demystified",
+      "subtitle": "Log, LUTs & the Filmic Look — Without the Guesswork",
+      "price": "$34",
+      "accent": "#be185d",
+      "accent2": "#f43f5e",
+      "reader": "Shooters whose footage looks flat, grey, or inconsistent",
+      "short": "Color Grading Demystified"
+    },
+    {
+      "id": "v05-audio-for-video",
+      "line": "videography",
+      "kicker": "SOUND FOR VIDEO",
+      "title": "Fix Your Audio",
+      "subtitle": "Clean, Professional Sound for Any Video",
+      "price": "$24",
+      "accent": "#c2410c",
+      "accent2": "#fb923c",
+      "reader": "Creators whose picture is fine but the sound lets them down",
+      "short": "Fix Your Audio"
+    },
+    {
+      "id": "v06-video-lighting",
+      "line": "videography",
+      "kicker": "LIGHTING",
+      "title": "Lighting for Video",
+      "subtitle": "From One Light to a Full Setup That Looks Great",
+      "price": "$27",
+      "accent": "#a16207",
+      "accent2": "#facc15",
+      "reader": "Anyone filming interviews, talking-head, or indoor video",
+      "short": "Lighting for Video"
+    },
+    {
+      "id": "v07-broll-storytelling",
+      "line": "videography",
+      "kicker": "STORYTELLING",
+      "title": "B-roll & Visual Storytelling",
+      "subtitle": "Turn Flat Clips Into Videos People Watch to the End",
+      "price": "$27",
+      "accent": "#0f766e",
+      "accent2": "#14b8a6",
+      "reader": "Creators whose videos feel boring or aimless",
+      "short": "B-roll & Visual Storytelling"
+    },
+    {
+      "id": "v08-camera-movement",
+      "line": "videography",
+      "kicker": "CAMERA MOVEMENT",
+      "title": "Smooth, Cinematic Camera Movement",
+      "subtitle": "Handheld & Gimbal Moves That Look Intentional",
+      "price": "$24",
+      "accent": "#4338ca",
+      "accent2": "#818cf8",
+      "reader": "Gimbal and camera owners fighting shaky, aimless footage",
+      "short": "Smooth, Cinematic Camera Movement"
+    },
+    {
+      "id": "v09-real-estate-video",
+      "line": "videography",
+      "kicker": "START A SIDE INCOME",
+      "title": "Real Estate & Airbnb Video Tours",
+      "subtitle": "Film Bright, Sellable Property Walkthroughs for Pay",
+      "price": "$39",
+      "accent": "#0e7490",
+      "accent2": "#06b6d4",
+      "reader": "Side-hustlers, agents, and hosts filming their own listings",
+      "short": "Real Estate & Airbnb Video Tours"
+    },
+    {
+      "id": "v10-video-cheat-sheet",
+      "line": "videography",
+      "kicker": "FIELD REFERENCE",
+      "title": "The Videographer's Cheat-Sheet Pack",
+      "subtitle": "Grab-and-Go Cards for Frame Rates, Audio & Export",
+      "price": "$17",
+      "accent": "#334155",
+      "accent2": "#64748b",
+      "reader": "New shooters who want a printable field reference",
+      "short": "The Videographer's Cheat-Sheet Pack"
     }
   ]
 }
