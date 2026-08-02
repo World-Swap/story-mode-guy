@@ -289,4 +289,40 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://storymodeguy.com/tools/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/tools/golden-hour-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/tools/long-exposure-nd-filter-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/tools/exposure-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/tools/shutter-angle-frame-rate-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/tools/drone-preflight-checklist.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
