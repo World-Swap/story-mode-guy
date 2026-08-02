@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Story Mode Guy — Journal</title>
+  <link>https://storymodeguy.com/blog/</link>
+  <atom:link href="https://storymodeguy.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Photography, video &amp; drone stories, tips, and guides from the Santa Cruz coast.</description>
+  <language>en-us</language>
+  <item>
+    <title>The Best Sunset Spots in Santa Cruz (From Someone Who Shoots Them)</title>
+    <link>https://storymodeguy.com/blog/best-sunset-spots-santa-cruz.html</link>
+    <guid>https://storymodeguy.com/blog/best-sunset-spots-santa-cruz.html</guid>
+    <pubDate>Sat, 01 Aug 2026 08:00:00 GMT</pubDate>
+    <description>Seven of the best places to watch and photograph the sunset in Santa Cruz, California — plus the timing, parking, and light notes I&#x27;ve learned shooting them for years.</description>
+  </item>
+  <item>
+    <title>Why Are My Photos Blurry? The 3 Real Causes (and the Fix for Each)</title>
+    <link>https://storymodeguy.com/blog/why-are-my-photos-blurry.html</link>
+    <guid>https://storymodeguy.com/blog/why-are-my-photos-blurry.html</guid>
+    <pubDate>Sat, 01 Aug 2026 08:00:00 GMT</pubDate>
+    <description>Almost every blurry photo comes down to one of three causes: camera shake, subject motion, or missed focus. Here&#x27;s how to tell them apart and fix each one for good.</description>
+  </item>
+  <item>
+    <title>The Best Camera Settings for Golden Hour (a Simple Starting Point)</title>
+    <link>https://storymodeguy.com/blog/camera-settings-for-golden-hour.html</link>
+    <guid>https://storymodeguy.com/blog/camera-settings-for-golden-hour.html</guid>
+    <pubDate>Sat, 01 Aug 2026 08:00:00 GMT</pubDate>
+    <description>A no-nonsense starting point for golden hour: the aperture, shutter speed, ISO, white balance, and metering choices that get you a keeper, plus how to adjust as the light drops.</description>
+  </item>
+</channel>
+</rss>

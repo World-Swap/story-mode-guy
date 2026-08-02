@@ -59,8 +59,13 @@ per run. Additive only — never touch anything outside `blog/`, `blog-src/`, an
    If working from a non-`main` checkout, use a detached `origin/main` worktree,
    copy `blog/*.html` + `sitemap.xml` in, commit, and `git push origin HEAD:main`.
    The changed set must be only `blog/**`, `blog-src/**`, and `sitemap.xml`.
+   (Note: `blog.py` also writes `blog/feed.xml` — it's inside `blog/`, so it's already staged.)
 
-6. **Done.** GitHub Pages redeploys `main` automatically. Do not post anywhere, do
+6. **Ping IndexNow** so Bing/Yandex crawl the new page fast (no account needed):
+   `python3 promo/build/indexnow.py https://storymodeguy.com/blog/<slug>.html https://storymodeguy.com/blog/`
+   This is best-effort — if it errors, ignore it and continue.
+
+7. **Done.** GitHub Pages redeploys `main` automatically. Do not post anywhere, do
    not message the user unless something failed. End the run.
 
 ## Guardrails
