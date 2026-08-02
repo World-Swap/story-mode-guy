@@ -52,7 +52,8 @@ button.act{font-family:var(--sans);font-size:14px;font-weight:600;padding:9px 16
 .tcard:hover{transform:translateY(-2px);text-decoration:none}
 .tcard h3{font-family:var(--serif);font-size:19px;color:var(--ink);margin:0 0 4px}
 .tcard p{font-size:14px;color:var(--ash);margin:0}
-</style></head><body>
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Depth of Field Calculator", "applicationCategory": "MultimediaApplication", "operatingSystem": "Web (all browsers)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Calculate depth of field, near/far focus limits and hyperfocal distance for any camera, lens and aperture. Free DoF calculator, no sign-up."}</script></head><body>
 <div class="nav"><a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a><span class="sp"></span><a class="lnk" href="/tools/">Tools</a><a class="lnk" href="/learn/">Learn</a><a class="lnk" href="/blog/">Journal</a></div>
 <main class="wrap">
 <div class="eyebrow">Free Tool</div>
@@ -82,6 +83,8 @@ document.getElementById('total').textContent=m(total/1000);document.getElementBy
 ['crop','focal','fnum','dist'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});calc();
 </script>
 <div class="cta"><h3>Take control of focus and sharpness</h3><p>Aperture, focus, and the settings for exactly the depth of field you want.</p><a class="btn" href="/learn/04-exposure-manual-mode.html">See the guide →</a></div>
+
+<section style="margin-top:40px"><h2 style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:6px">More free tools</h2><div class="cards"><a class="tcard" href="/tools/golden-hour-calculator.html"><h3>Golden Hour Calculator</h3><p>Sunrise, sunset, golden hour &amp; blue hour for any spot — the best light of the day.</p></a><a class="tcard" href="/tools/long-exposure-nd-filter-calculator.html"><h3>ND Filter &amp; Long Exposure Calculator</h3><p>Pick your base shutter and ND strength — get the corrected long-exposure time.</p></a><a class="tcard" href="/tools/exposure-calculator.html"><h3>Equivalent Exposure Calculator</h3><p>Change one setting and see how to trade the others to keep the same brightness.</p></a><a class="tcard" href="/tools/shutter-angle-frame-rate-calculator.html"><h3>Video Shutter Speed (180° Rule)</h3><p>Pick your frame rate — get the shutter speed that gives natural, cinematic motion blur.</p></a><a class="tcard" href="/tools/drone-preflight-checklist.html"><h3>Drone Pre-Flight Checklist</h3><p>Run this before every flight. Most crashes and flyaways are prevented on the ground.</p></a><a class="tcard" href="/tools/handheld-shutter-speed-calculator.html"><h3>Handheld Shutter Speed</h3><p>The slowest shutter you can hand-hold sharp — from your focal length, sensor and stabilization.</p></a><a class="tcard" href="/tools/time-lapse-calculator.html"><h3>Time-Lapse Calculator</h3><p>Plan a time-lapse: set the interval and target clip length — get shots needed and shooting time.</p></a><a class="tcard" href="/tools/crop-factor-calculator.html"><h3>Crop Factor Calculator</h3><p>See the full-frame-equivalent focal length and depth-of-field aperture for your camera.</p></a><a class="tcard" href="/tools/print-size-calculator.html"><h3>Print Size Calculator</h3><p>How big can you print? Enter your image&#x27;s pixel dimensions or megapixels.</p></a></div></section>
 </main>
 <div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> · <a href="/tools/">Free tools</a> · <a href="/learn/">Guides</a> · <a href="/blog/">Journal</a></div>
 </body></html>
