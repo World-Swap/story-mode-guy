@@ -243,6 +243,58 @@ document.getElementById('reset').onclick=function(){state={};localStorage.remove
 document.getElementById('print').onclick=function(){window.print();};
 </script>"""
 },
+{
+ "slug":"depth-of-field-calculator","accent":"#9333ea",
+ "title":"Depth of Field Calculator","desc":"Calculate depth of field, near/far focus limits and hyperfocal distance for any camera, lens and aperture. Free DoF calculator, no sign-up.",
+ "h1":"Depth of Field Calculator","sub":"How much will be in focus? Set your camera, focal length, aperture and focus distance.",
+ "cta_h":"Take control of focus and sharpness","cta_p":"Aperture, focus, and the settings for exactly the depth of field you want.","cta_url":"/learn/04-exposure-manual-mode.html","cta_btn":"See the guide",
+ "body":"""<div class="tool">
+<label>Camera / sensor</label>
+<select id="crop"><option value="1">Full frame (1.0×)</option><option value="1.5">APS-C (1.5×)</option><option value="1.6">Canon APS-C (1.6×)</option><option value="2">Micro 4/3 (2.0×)</option><option value="2.7">1-inch (2.7×)</option></select>
+<div class="row"><div><label>Focal length (mm)</label><input id="focal" type="number" value="50"></div>
+<div><label>Aperture (f/)</label><input id="fnum" type="number" step="0.1" value="2.8"></div></div>
+<label>Focus distance (meters)</label><input id="dist" type="number" step="0.1" value="3">
+<div class="out"><div class="grid2">
+<div><div class="lab">Near limit</div><div class="big" id="near">—</div></div>
+<div><div class="lab">Far limit</div><div class="big" id="far">—</div></div>
+<div><div class="lab">Total in focus</div><div class="big" id="total">—</div></div>
+<div><div class="lab">Hyperfocal distance</div><div class="big" id="hyp">—</div></div>
+</div><div class="note">Focus at the hyperfocal distance to keep everything from half that distance to infinity sharp.</div></div>
+</div>
+<script>
+function m(x){if(!isFinite(x))return "∞";if(x<1)return (x*100).toFixed(0)+" cm";return x.toFixed(x<10?2:1)+" m";}
+function calc(){var crop=parseFloat(document.getElementById('crop').value);var f=parseFloat(document.getElementById('focal').value);var N=parseFloat(document.getElementById('fnum').value);var s=parseFloat(document.getElementById('dist').value)*1000;
+var coc=0.03/crop;var H=(f*f)/(N*coc)+f;
+var near=(H*s)/(H+(s-f));var far=(s<H)?(H*s)/(H-(s-f)):Infinity;
+var total=isFinite(far)?(far-near):Infinity;
+document.getElementById('near').textContent=m(near/1000);document.getElementById('far').textContent=m(far/1000);
+document.getElementById('total').textContent=m(total/1000);document.getElementById('hyp').textContent=m(H/1000);}
+['crop','focal','fnum','dist'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});calc();
+</script>"""
+},
+{
+ "slug":"handheld-shutter-speed-calculator","accent":"#9f1239",
+ "title":"Handheld Shutter Speed Calculator (Reciprocal Rule)","desc":"Find the slowest shutter speed for sharp handheld photos using the reciprocal rule, adjusted for your sensor and image stabilization.",
+ "h1":"Handheld Shutter Speed","sub":"The slowest shutter you can hand-hold sharp — from your focal length, sensor and stabilization.",
+ "cta_h":"Never take a blurry photo again","cta_p":"Diagnose the three kinds of blur and fix each one — the complete sharpness guide.","cta_url":"/learn/05-why-blurry.html","cta_btn":"See the guide",
+ "body":"""<div class="tool">
+<div class="row"><div><label>Focal length (mm)</label><input id="focal" type="number" value="50"></div>
+<div><label>Sensor</label><select id="crop"><option value="1">Full frame</option><option value="1.5">APS-C (1.5×)</option><option value="1.6">Canon APS-C</option><option value="2">Micro 4/3</option></select></div></div>
+<label>Image stabilization</label>
+<select id="is"><option value="0">None</option><option value="2">Basic (2 stops)</option><option value="4">Good (4 stops)</option><option value="6">Excellent (6 stops)</option></select>
+<div class="out"><div class="lab">Slowest safe shutter</div><div class="big" id="res">—</div>
+<div class="note" id="tip"></div></div>
+</div>
+<script>
+function nearestSh(sec){var std=[1/4000,1/2000,1/1000,1/500,1/250,1/125,1/60,1/30,1/15,1/8,1/4,1/2,1,2,4];var best=std[0];std.forEach(function(s){if(s<=sec)best=s;});return best;}
+function lab(sec){if(sec<1)return "1/"+Math.round(1/sec)+" sec";return sec+" sec";}
+function calc(){var f=parseFloat(document.getElementById('focal').value);var crop=parseFloat(document.getElementById('crop').value);var is=parseFloat(document.getElementById('is').value);
+var equiv=f*crop;var base=1/equiv;var allowed=base*Math.pow(2,is);var pick=nearestSh(allowed);
+document.getElementById('res').textContent=lab(pick)+" or faster";
+document.getElementById('tip').textContent="At "+f+"mm on this sensor (≈"+Math.round(equiv)+"mm equivalent), the reciprocal rule says 1/"+Math.round(equiv)+"s"+(is>0?", and your "+is+"-stop stabilization buys you down to about "+lab(pick):"")+". For moving subjects, go faster regardless.";}
+['focal','crop','is'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);document.getElementById(id).addEventListener('change',calc);});calc();
+</script>"""
+},
 ]
 
 for t in TOOLS:

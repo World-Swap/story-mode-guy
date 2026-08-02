@@ -109,6 +109,26 @@ STORIES = [
    page("p4","photo-05.jpg","Battery","04","Land at 30% battery","Don't chase one more shot. Batteries are the quiet crash cause."),
    outlink_page("cta","thumb-guide-21.jpg","Drone guides","Learn to fly, film & get paid","The complete drone library — flying, laws, cinematic moves and more.", "/learn/d01-drone-beginners.html","See the drone guides"),
  ]},
+{
+ "slug":"why-are-my-photos-blurry","title":"Why Are My Photos Blurry? The 3 Causes","poster":"thumb-guide-05.jpg",
+ "desc":"Almost every blurry photo is camera shake, subject motion, or missed focus. Here's the fix for each.",
+ "pages":[
+   page("c","photo-08.jpg","Sharp photo","Story Mode Guy","Why Are My Photos Blurry?","There are only three causes — and a fix for each.",cover=True),
+   page("p1","photo-11.jpg","Camera shake","Cause 1","The whole frame is soft","Camera shake. Raise your shutter speed and brace yourself."),
+   page("p2","photo-17.jpg","Subject motion","Cause 2","Background sharp, subject smeared","Subject motion. Match a faster shutter to how fast it moves."),
+   page("p3","photo-25.jpg","Missed focus","Cause 3","Something sharp — but not your subject","Missed focus. Single-point AF on the eye, and stop down a little."),
+   outlink_page("cta","thumb-guide-05.jpg","Sharpness guide","Get tack-sharp every time","Name the blur and fix the cause — the complete fix-it guide.", "/learn/05-why-blurry.html","See the guide"),
+ ]},
+{
+ "slug":"make-videos-look-cinematic","title":"Make Your Videos Look Cinematic","poster":"thumb-guide-11.jpg",
+ "desc":"Three settings separate home-video footage from cinematic footage. Here's what to change.",
+ "pages":[
+   page("c","photo-20.jpg","Cinematic video","Story Mode Guy","Make Videos Look Cinematic","It's mostly three settings — not a better camera.",cover=True),
+   page("p1","photo-02.jpg","Frame rate","01","Shoot 24fps","The frame rate that reads as 'film' to your eye."),
+   page("p2","photo-14.jpg","Shutter","02","Use the 180° rule","Shutter at about double your frame rate for natural motion blur."),
+   page("p3","photo-06.jpg","Flat profile","03","Shoot a flat/log profile","More room to grade — and that filmic, controlled contrast."),
+   outlink_page("cta","thumb-guide-11.jpg","Cinematic guide","Kill the home-video look","Settings and habits that make footage look like a film.", "/learn/v01-cinematic-look.html","See the guide"),
+ ]},
 ]
 
 for s in STORIES: build(s)

@@ -349,4 +349,28 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://storymodeguy.com/tools/depth-of-field-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/tools/handheld-shutter-speed-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/stories/why-are-my-photos-blurry.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/stories/make-videos-look-cinematic.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
