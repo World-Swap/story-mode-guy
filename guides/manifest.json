@@ -398,6 +398,18 @@
       "accent2": "#14b8a6",
       "reader": "Pilots moving into technical mapping and survey work",
       "short": "Drone Mapping & Surveying"
+    },
+    {
+      "id": "free-field-cheatsheet",
+      "line": "free",
+      "kicker": "FREE STARTER",
+      "title": "The Field Cheat Sheet",
+      "subtitle": "Your Free Photography, Video & Drone Quick-Reference",
+      "price": "$19",
+      "accent": "#0b7a6f",
+      "accent2": "#22c7b8",
+      "reader": "Anyone starting out who wants a printable quick-reference",
+      "short": "The Field Cheat Sheet"
     }
   ]
 }

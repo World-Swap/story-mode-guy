@@ -1,0 +1,49 @@
+========================================================================
+ PAYHIP LISTING - FREE LEAD MAGNET (builds your email list)
+========================================================================
+This is the most important product you'll list. It's FREE - its job is not
+to make money directly, it's to collect EMAILS. Every person who downloads it
+becomes someone you can email your paid guides to, again and again. That list
+is the asset that turns visitors into sales.
+
+------------------------------------------------------------------------
+SET UP IN PAYHIP (2 minutes):
+1. Products -> Add new product -> Digital product.
+2. Upload:  guides/pdf/free-field-cheatsheet.pdf
+3. Cover image:  thumb-free-cheatsheet.jpg
+4. PRICE:  set to "Pay what you want" with a MINIMUM of $0  (so it's free but
+   people CAN tip). If Payhip requires it, just set price $0.
+5. IMPORTANT - turn ON email collection: in the product/checkout settings make
+   sure "collect customer email" is enabled (Payhip does this by default at
+   checkout). This is the whole point - you're building a list.
+6. After it's live, send me the URL and I'll put a big "Free cheat sheet"
+   banner across the homepage, the /learn pages, the blog, and the tools so
+   every visitor is offered it.
+------------------------------------------------------------------------
+
+TITLE:
+The Field Cheat Sheet - Free Photography, Video & Drone Quick-Reference
+
+SHORT DESCRIPTION:
+A free, printable cheat sheet - exposure starting points, a sharpness fix, the
+best light, the video shutter rule, and a drone pre-flight. Keep it in your bag.
+
+FULL DESCRIPTION:
+The fastest, most useful bits from the full Story Mode Guy libraries, free and
+printable. Inside: exposure quick-start recipes for common scenes, the 10-second
+sharpness diagnostic, golden & blue hour timing, the 180-degree rule that makes
+video look cinematic, and a 30-second drone pre-flight checklist. Print it, keep
+it in your bag, and start getting better shots today. Instant free PDF download.
+
+TAGS:
+free photography cheat sheet, photography basics, camera settings, videography,
+drone checklist, learn photography, printable, beginner photography
+
+------------------------------------------------------------------------
+WHAT HAPPENS NEXT (I'll help with all of it):
+- Once you have a few hundred people on the list, Payhip lets you email them.
+- I'll write you a short welcome email + a simple 3-email sequence that offers
+  your paid guides. You just paste and hit send (or schedule) in Payhip.
+- This is how the first real sales usually come: not from cold traffic, but
+  from a warm list that already got value from you for free.
+========================================================================

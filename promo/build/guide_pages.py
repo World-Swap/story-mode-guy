@@ -164,7 +164,7 @@ def page(g, related):
 {FOOT}
 </body></html>"""
 
-guides = M["guides"]
+guides = [g for g in M["guides"] if g.get("line") != "free"]
 for g in guides:
     same = [x for x in guides if x["line"]==g["line"] and x["id"]!=g["id"]][:4]
     (OUT / f"{g['id']}.html").write_text(page(g, same))

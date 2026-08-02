@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The Field Cheat Sheet — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #0b7a6f;
+  --accent2: #22c7b8;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">FREE STARTER</div>
+    <div style="margin-top:auto"></div>
+    <h1>The Field Cheat Sheet</h1>
+    <div class="rule"></div>
+    <div class="sub">Your Free Photography, Video &amp; Drone Quick-Reference</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$19 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Your Free Photography, Video &amp; Drone Quick-Reference. Written for anyone starting out who wants a printable quick-reference.</div>
+  <ol><li><span class="t">Your Free Field Cheat Sheet</span></li><li><span class="t">Exposure Quick-Start</span></li><li><span class="t">The 10-Second Sharpness Fix</span></li><li><span class="t">The Light: Golden & Blue Hour</span></li><li><span class="t">Video: The One Rule That Fixes the Look</span></li><li><span class="t">Drone: Pre-Flight in 30 Seconds</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Your Free Field Cheat Sheet</h1>
+<p class="lead-in">Keep this in your camera bag. It's the fastest, most useful bits from the full Story Mode Guy libraries — exposure starting points, a sharpness fix, the light, the video shutter rule, and a drone pre-flight — all on a few printable pages. No fluff.</p>
+
+<p>This is the <strong>free</strong> starter. If it helps, the full guides go far deeper — but you can get real results with just what's on these pages. Print it, dog-ear it, and take it shooting.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>How to use this</div><p>Don't memorize it — <em>use</em> it. Pick the card that matches what's in front of you, dial in the starting point, then adjust by what your eyes and histogram tell you.</p></div>
+
+<h1><span class="n">CARD 01</span>Exposure Quick-Start</h1>
+<p>Start here, then fine-tune. These are reliable starting points for common scenes — not rigid rules.</p>
+
+<div class="recipe"><div class="rh"><span>Bright daylight portrait</span><span class="tag">STARTING POINT</span></div>
+<div class="rb"><div class="chips"><span class="chip">Aperture <b>f/2.8</b></span><span class="chip">Shutter <b>1/500s</b></span><span class="chip">ISO <b>100</b></span></div>
+<p class="small">Wide aperture for a soft background. Watch for blown highlights on skin.</p></div></div>
+
+<div class="recipe"><div class="rh"><span>Landscape, everything sharp</span><span class="tag">STARTING POINT</span></div>
+<div class="rb"><div class="chips"><span class="chip">Aperture <b>f/8–f/11</b></span><span class="chip">Shutter <b>auto</b></span><span class="chip">ISO <b>100</b></span></div>
+<p class="small">Tripod if the shutter drops below 1/60s. Focus about a third into the scene.</p></div></div>
+
+<div class="recipe"><div class="rh"><span>Indoors / low light</span><span class="tag">STARTING POINT</span></div>
+<div class="rb"><div class="chips"><span class="chip">Aperture <b>f/1.8–f/2.8</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>800–3200</b></span></div>
+<p class="small">Let ISO rise before the shutter drops too slow to hand-hold. Noise beats blur.</p></div></div>
+
+<div class="key"><div class="kt">Remember</div><p>Aperture controls depth. Shutter controls motion. ISO is the last resort for brightness. Move one, compensate with another.</p></div>
+
+<h1><span class="n">CARD 02</span>The 10-Second Sharpness Fix</h1>
+<p>Blurry shots aren't bad luck — they're one of three problems. Diagnose, then fix.</p>
+
+<table>
+<tr><th>What you see</th><th>The cause</th><th>The fix</th></tr>
+<tr><td>The whole frame is soft</td><td>Camera shake</td><td>Faster shutter (≥ 1/focal length); brace or use a tripod</td></tr>
+<tr><td>Background sharp, subject smeared</td><td>Subject motion</td><td>Faster shutter to match: walking 1/250s, running 1/500s+</td></tr>
+<tr><td>Something's sharp — just not your subject</td><td>Missed focus</td><td>Single-point AF on the eye; stop down to f/2.8–f/4</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The silent culprit</div><p>Most blur is a too-slow shutter you never noticed because the camera was on Auto in dim light. Watch that number.</p></div>
+
+<h1><span class="n">CARD 03</span>The Light: Golden &amp; Blue Hour</h1>
+<p>The single biggest upgrade to any photo is <em>when</em> you shoot it.</p>
+<ul class="check">
+<li><strong>Golden hour</strong> — the hour after sunrise / before sunset. Soft, warm, directional. The most flattering light there is.</li>
+<li><strong>Blue hour</strong> — the ~20 minutes after sunset. Deep blue sky, glowing lights, glassy water. Bring a tripod.</li>
+<li><strong>Stay late.</strong> The best color often comes <em>after</em> the sun is gone. Most people leave too early.</li>
+<li><strong>Face away from the sun too.</strong> The eastern sky often glows a soft pink while everyone points west.</li>
+</ul>
+
+<h1><span class="n">CARD 04</span>Video: The One Rule That Fixes the Look</h1>
+<p>If your video looks like a home movie, it's usually the shutter speed. Match it to your frame rate — the <strong>180° rule</strong>.</p>
+
+<table>
+<tr><th>Frame rate</th><th>Shutter speed</th><th>Use it for</th></tr>
+<tr><td>24 fps</td><td>1/50s</td><td>The cinematic, "film" look</td></tr>
+<tr><td>30 fps</td><td>1/60s</td><td>Standard web / social video</td></tr>
+<tr><td>60 fps</td><td>1/125s</td><td>Smooth motion &amp; slow-motion</td></tr>
+</table>
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Bright day?</div><p>To keep that slow shutter outdoors you'll need an <strong>ND filter</strong> — think of it as sunglasses for your lens. It's the one accessory that makes video look pro.</p></div>
+
+<h1><span class="n">CARD 05</span>Drone: Pre-Flight in 30 Seconds</h1>
+<p>Most crashes and flyaways are prevented on the ground. Run this before every flight.</p>
+<ul class="check">
+<li>Firmware &amp; app updated; propellers checked for cracks</li>
+<li>Batteries charged (drone <em>and</em> controller); SD card in with space</li>
+<li>Enough GPS satellites &amp; home point set</li>
+<li><strong>Return-to-Home altitude set above the tallest nearby obstacle</strong></li>
+<li>Wind &amp; weather within your drone's limit</li>
+<li>Airspace checked and legal to fly; clear line of sight</li>
+</ul>
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Two habits that save drones</div><p>Land at ~30% battery — don't chase one more shot. And in the US, any flight <em>for money</em> needs an FAA Part 107 certificate. Always verify current rules before you fly.</p></div>
+
+<div class="key"><div class="kt">You've got the basics — now go deeper</div><p>This is the tip of the iceberg. The full guides walk you through every one of these, step by step, with the settings and workflows the pros use.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Full photography, video &amp; drone guides at storymodeguy.com/learn · Guides for people who treat everything like it has a plot.</div></div>
+
+</body></html>
