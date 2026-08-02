@@ -129,6 +129,36 @@ STORIES = [
    page("p3","photo-06.jpg","Flat profile","03","Shoot a flat/log profile","More room to grade — and that filmic, controlled contrast."),
    outlink_page("cta","thumb-guide-11.jpg","Cinematic guide","Kill the home-video look","Settings and habits that make footage look like a film.", "/learn/v01-cinematic-look.html","See the guide"),
  ]},
+{
+ "slug":"blue-hour-photography","title":"Blue Hour: The Best 20 Minutes Most People Miss","poster":"photo-20.jpg",
+ "desc":"The window just after sunset gives you deep skies, glowing lights and glassy reflections. Here's how to shoot it.",
+ "pages":[
+   page("c","photo-20.jpg","Blue hour","Story Mode Guy","Blue Hour","The best 20 minutes of light — and most people leave before it.",cover=True),
+   page("p1","photo-12.jpg","Deep blue sky","When","Right after sunset","Blue hour arrives about 15–25 minutes after the sun goes down."),
+   page("p2","photo-08.jpg","Lights on","Why","Deep sky, glowing lights","City and boardwalk lights balance perfectly against a deep blue sky."),
+   page("p3","photo-03.jpg","Tripod","How","Bring a tripod","Light is low — use a slow shutter and a steady base for glassy water."),
+   outlink_page("cta","photo-01.jpg","Guide","Catch the best light","When to shoot, what to set, and how to plan for it.", "/learn/09-low-light-night.html","See the guide"),
+ ]},
+{
+ "slug":"do-i-need-a-license-to-fly-a-drone","title":"Do I Need a License to Fly a Drone?","poster":"thumb-guide-22.jpg",
+ "desc":"US drone rules in plain English — registration, the recreational test, and Part 107 for paid work.",
+ "pages":[
+   page("c","photo-14.jpg","Drone sky","Story Mode Guy","Do I Need a Drone License?","US rules, in plain English. Always verify with the FAA before you fly.",cover=True),
+   page("p1","photo-18.jpg","Register","Step 1","Register your drone","Most drones over 250g must be registered — quick and inexpensive."),
+   page("p2","photo-22.jpg","Recreational","Just for fun?","Pass the free TRUST test","Recreational flyers take a short, free safety test and follow the rules."),
+   page("p3","photo-30.jpg","Part 107","Getting paid?","You need Part 107","Any flight 'for money' in the US requires the commercial certificate."),
+   outlink_page("cta","thumb-guide-22.jpg","Drone laws guide","Fly legal, get paid","Registration, airspace, and the Part 107 path — made simple.", "/learn/d02-drone-laws-part107.html","See the guide"),
+ ]},
+{
+ "slug":"how-to-color-grade-video","title":"How to Color Grade Video: Correct, Then Style","poster":"thumb-guide-14.jpg",
+ "desc":"Flat, grey footage isn't broken — it's ungraded. Correct first, then build the look.",
+ "pages":[
+   page("c","photo-02.jpg","Color grading","Story Mode Guy","Color Grade Like a Pro","Flat footage isn't broken — it's waiting to be graded.",cover=True),
+   page("p1","photo-06.jpg","Correct","Step 1","Correct before you grade","Fix exposure and white balance first — a neutral base."),
+   page("p2","photo-11.jpg","Scopes","Step 2","Trust the scopes, not your eyes","Your monitor lies. Read the waveform and vectorscope."),
+   page("p3","photo-17.jpg","Match","Step 3","Match every shot","Consistency across a scene is what reads as 'professional'."),
+   outlink_page("cta","thumb-guide-14.jpg","Color guide","Get the filmic look","Log, LUTs, skin tones, and matching — without the guesswork.", "/learn/v04-color-grading.html","See the guide"),
+ ]},
 ]
 
 for s in STORIES: build(s)

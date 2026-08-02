@@ -373,4 +373,40 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://storymodeguy.com/tools/time-lapse-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/tools/crop-factor-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/tools/print-size-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/stories/blue-hour-photography.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/stories/do-i-need-a-license-to-fly-a-drone.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://storymodeguy.com/stories/how-to-color-grade-video.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

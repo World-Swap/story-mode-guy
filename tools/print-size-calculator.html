@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Print Size Calculator (Megapixels to Print) | Story Mode Guy</title>
+<meta name="description" content="Find the biggest sharp print you can make from your photo&#x27;s megapixels at 300, 240, and 150 DPI. Free print size calculator.">
+<link rel="canonical" href="https://storymodeguy.com/tools/print-size-calculator.html">
+<link rel="icon" type="image/png" href="/smg-logo.png">
+<meta property="og:title" content="Photo Print Size Calculator (Megapixels to Print)"><meta property="og:description" content="Find the biggest sharp print you can make from your photo&#x27;s megapixels at 300, 240, and 150 DPI. Free print size calculator.">
+<meta property="og:url" content="https://storymodeguy.com/tools/print-size-calculator.html"><meta property="og:image" content="https://storymodeguy.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--parch:#fefffc;--ink:#1b1b20;--char:#3a3a40;--ash:#6a6a72;--fog:#b4b8b4;--mist:#e3e6ea;
+--blue:#41a1cf;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--accent:#b45309}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--char);background:var(--parch);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:14px;justify-content:center;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--mist);padding:12px 16px}
+.nav .brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-size:17px;color:var(--ink)}
+.nav .brand img{width:30px;height:30px;border-radius:50%}
+.nav .sp{flex:1}.nav .lnk{font-size:14px;font-weight:500;color:var(--char)}
+.wrap{max-width:680px;margin:0 auto;padding:40px 22px 30px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.6vw,40px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:10px}
+.sub{font-size:18px;color:var(--ash);margin-bottom:26px}
+.tool{background:#fff;border:1px solid var(--mist);border-radius:16px;padding:24px 22px;box-shadow:0 10px 34px rgba(0,0,0,.05)}
+label{display:block;font-size:13px;font-weight:600;color:var(--ash);text-transform:uppercase;letter-spacing:.05em;margin:14px 0 6px}
+input,select{width:100%;font-family:var(--sans);font-size:17px;padding:11px 12px;border:1px solid var(--mist);border-radius:10px;background:var(--parch);color:var(--ink)}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.out{margin-top:22px;background:var(--parch);border:1px dashed var(--mist);border-radius:12px;padding:18px 18px}
+.out .big{font-family:var(--serif);font-size:30px;color:var(--ink);font-weight:600}
+.out .lab{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ash);margin-bottom:2px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pill{display:inline-block;background:var(--accent);color:#fff;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px}
+.note{font-size:13px;color:var(--ash);margin-top:12px}
+.cta{background:linear-gradient(135deg,var(--accent),#0b1220);color:#fff;border-radius:16px;padding:22px 22px;margin-top:30px;text-align:center}
+.cta h3{color:#fff;font-family:var(--serif);font-weight:600;font-size:21px;margin-bottom:6px}
+.cta p{color:rgba(255,255,255,.9);margin-bottom:14px;font-size:15px}
+.cta a.btn{display:inline-block;background:#fff;color:#111;font-weight:600;padding:11px 22px;border-radius:44px}
+.cta a.btn:hover{text-decoration:none;filter:brightness(.97)}
+.foot{border-top:1px solid var(--mist);margin-top:30px;padding:24px 22px;text-align:center;font-size:13px;color:var(--fog);max-width:680px;margin:30px auto 0}
+.foot a{color:var(--ash)}
+ul.check{list-style:none;padding:0;margin:6px 0}
+ul.check li{padding:9px 0;border-bottom:1px solid var(--mist);display:flex;align-items:center;gap:10px;font-size:16px;color:var(--ink)}
+ul.check input{width:20px;height:20px;flex:0 0 auto}
+ul.check li.done{color:var(--fog);text-decoration:line-through}
+.btnrow{display:flex;gap:10px;margin-top:14px}
+button.act{font-family:var(--sans);font-size:14px;font-weight:600;padding:9px 16px;border-radius:22px;border:1px solid var(--mist);background:#fff;color:var(--char);cursor:pointer}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:12px}
+.tcard{display:block;border:1px solid var(--mist);border-radius:14px;padding:18px;background:#fff;transition:transform .15s}
+.tcard:hover{transform:translateY(-2px);text-decoration:none}
+.tcard h3{font-family:var(--serif);font-size:19px;color:var(--ink);margin:0 0 4px}
+.tcard p{font-size:14px;color:var(--ash);margin:0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Photo Print Size Calculator (Megapixels to Print)", "applicationCategory": "MultimediaApplication", "operatingSystem": "Web (all browsers)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Find the biggest sharp print you can make from your photo's megapixels at 300, 240, and 150 DPI. Free print size calculator."}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What DPI do I need for a print?", "acceptedAnswer": {"@type": "Answer", "text": "300 DPI is the standard for sharp prints viewed up close (photo books, small prints). 240 DPI is excellent for most wall prints. 150 DPI is fine for large prints viewed from a distance, like posters."}}, {"@type": "Question", "name": "How many megapixels do I need to print big?", "acceptedAnswer": {"@type": "Answer", "text": "At 300 DPI, a 24-megapixel image prints beautifully to about 13\u00d720 inches. For larger prints you rely on normal viewing distance \u2014 a 24MP file makes a great 24\u00d736 poster at ~150 DPI."}}]}</script></head><body>
+<div class="nav"><a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a><span class="sp"></span><a class="lnk" href="/tools/">Tools</a><a class="lnk" href="/learn/">Learn</a><a class="lnk" href="/blog/">Journal</a></div>
+<main class="wrap">
+<div class="eyebrow">Free Tool</div>
+<h1>Print Size Calculator</h1>
+<div class="sub">How big can you print? Enter your image&#x27;s pixel dimensions or megapixels.</div>
+<div class="tool">
+<div class="row"><div><label>Image width (pixels)</label><input id="w" type="number" value="6000"></div>
+<div><label>Image height (pixels)</label><input id="h" type="number" value="4000"></div></div>
+<div class="out"><div class="lab" id="mp"></div>
+<div class="grid2" style="margin-top:8px">
+<div><div class="lab">At 300 DPI (gallery)</div><div class="big" id="d300">—</div></div>
+<div><div class="lab">At 240 DPI (wall)</div><div class="big" id="d240">—</div></div>
+<div><div class="lab">At 150 DPI (poster)</div><div class="big" id="d150">—</div></div>
+</div></div>
+</div>
+<script>
+function sz(w,h,dpi){return (w/dpi).toFixed(1)+" × "+(h/dpi).toFixed(1)+" in";}
+function calc(){var w=parseFloat(document.getElementById('w').value);var h=parseFloat(document.getElementById('h').value);
+document.getElementById('mp').textContent=((w*h)/1e6).toFixed(1)+" megapixels";
+document.getElementById('d300').textContent=sz(w,h,300);document.getElementById('d240').textContent=sz(w,h,240);document.getElementById('d150').textContent=sz(w,h,150);}
+['w','h'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});calc();
+</script>
+<div class="cta"><h3>Make prints worth hanging</h3><p>Shoot, edit, and export for beautiful fine-art prints.</p><a class="btn" href="/learn/02-lightroom-blueprint.html">See the guide →</a></div>
+<section style="margin-top:36px"><h2 style="font-family:var(--serif);font-size:24px;color:var(--ink);margin-bottom:8px">Questions</h2><h3 style="font-family:var(--serif);font-size:19px;color:var(--ink);margin:18px 0 4px">What DPI do I need for a print?</h3><p>300 DPI is the standard for sharp prints viewed up close (photo books, small prints). 240 DPI is excellent for most wall prints. 150 DPI is fine for large prints viewed from a distance, like posters.</p><h3 style="font-family:var(--serif);font-size:19px;color:var(--ink);margin:18px 0 4px">How many megapixels do I need to print big?</h3><p>At 300 DPI, a 24-megapixel image prints beautifully to about 13×20 inches. For larger prints you rely on normal viewing distance — a 24MP file makes a great 24×36 poster at ~150 DPI.</p></section>
+<section style="margin-top:40px"><h2 style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:6px">More free tools</h2><div class="cards"><a class="tcard" href="/tools/golden-hour-calculator.html"><h3>Golden Hour Calculator</h3><p>Sunrise, sunset, golden hour &amp; blue hour for any spot — the best light of the day.</p></a><a class="tcard" href="/tools/long-exposure-nd-filter-calculator.html"><h3>ND Filter &amp; Long Exposure Calculator</h3><p>Pick your base shutter and ND strength — get the corrected long-exposure time.</p></a><a class="tcard" href="/tools/exposure-calculator.html"><h3>Equivalent Exposure Calculator</h3><p>Change one setting and see how to trade the others to keep the same brightness.</p></a><a class="tcard" href="/tools/shutter-angle-frame-rate-calculator.html"><h3>Video Shutter Speed (180° Rule)</h3><p>Pick your frame rate — get the shutter speed that gives natural, cinematic motion blur.</p></a><a class="tcard" href="/tools/drone-preflight-checklist.html"><h3>Drone Pre-Flight Checklist</h3><p>Run this before every flight. Most crashes and flyaways are prevented on the ground.</p></a><a class="tcard" href="/tools/depth-of-field-calculator.html"><h3>Depth of Field Calculator</h3><p>How much will be in focus? Set your camera, focal length, aperture and focus distance.</p></a><a class="tcard" href="/tools/handheld-shutter-speed-calculator.html"><h3>Handheld Shutter Speed</h3><p>The slowest shutter you can hand-hold sharp — from your focal length, sensor and stabilization.</p></a><a class="tcard" href="/tools/time-lapse-calculator.html"><h3>Time-Lapse Calculator</h3><p>Plan a time-lapse: set the interval and target clip length — get shots needed and shooting time.</p></a><a class="tcard" href="/tools/crop-factor-calculator.html"><h3>Crop Factor Calculator</h3><p>See the full-frame-equivalent focal length and depth-of-field aperture for your camera.</p></a></div></section>
+</main>
+<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> · <a href="/tools/">Free tools</a> · <a href="/learn/">Guides</a> · <a href="/blog/">Journal</a></div>
+</body></html>

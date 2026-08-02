@@ -62,6 +62,21 @@ def shell(t):
     body = t["body"]
     cta = (f'<div class="cta"><h3>{html.escape(t["cta_h"])}</h3><p>{html.escape(t["cta_p"])}</p>'
            f'<a class="btn" href="{t["cta_url"]}">{html.escape(t["cta_btn"])} →</a></div>')
+    # FAQ block + FAQPage schema
+    faq_html = ""; schemas = [{
+        "@context":"https://schema.org","@type":"SoftwareApplication","name":t["title"],
+        "applicationCategory":"MultimediaApplication","operatingSystem":"Web (all browsers)",
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":t["desc"]}]
+    if t.get("faq"):
+        rows = "".join(f'<h3 style="font-family:var(--serif);font-size:19px;color:var(--ink);margin:18px 0 4px">{html.escape(q)}</h3><p>{html.escape(a)}</p>' for q,a in t["faq"])
+        faq_html = f'<section style="margin-top:36px"><h2 style="font-family:var(--serif);font-size:24px;color:var(--ink);margin-bottom:8px">Questions</h2>{rows}</section>'
+        schemas.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in t["faq"]]})
+    schema_html = "".join(f'<script type="application/ld+json">{json.dumps(s)}</script>' for s in schemas)
+    # related tools strip
+    others = [x for x in TOOLS if x["slug"] != t["slug"]]
+    rel_cards = "".join(f'<a class="tcard" href="/tools/{x["slug"]}.html"><h3>{html.escape(x["h1"])}</h3><p>{html.escape(x["sub"])}</p></a>' for x in others)
+    related = f'<section style="margin-top:40px"><h2 style="font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:6px">More free tools</h2><div class="cards">{rel_cards}</div></section>'
     return ("""<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>__TITLE__ | Story Mode Guy</title>
@@ -73,7 +88,8 @@ def shell(t):
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>__CSS__</style></head><body>
+<style>__CSS__</style>
+__SCHEMA__</head><body>
 __NAV__
 <main class="wrap">
 <div class="eyebrow">Free Tool</div>
@@ -81,14 +97,17 @@ __NAV__
 <div class="sub">__SUB__</div>
 __BODY__
 __CTA__
+__FAQ__
+__RELATED__
 </main>
 __FOOT__
 </body></html>"""
         .replace("__CSS__", CSS.replace("__ACCENT__", t["accent"]))
-        .replace("__NAV__", nav()).replace("__FOOT__", FOOT)
+        .replace("__NAV__", nav()).replace("__FOOT__", FOOT).replace("__SCHEMA__", schema_html)
         .replace("__TITLE__", html.escape(t["title"])).replace("__DESC__", html.escape(t["desc"]))
         .replace("__SLUG__", t["slug"]).replace("__H1__", html.escape(t["h1"]))
-        .replace("__SUB__", html.escape(t["sub"])).replace("__BODY__", body).replace("__CTA__", cta))
+        .replace("__SUB__", html.escape(t["sub"])).replace("__BODY__", body).replace("__CTA__", cta)
+        .replace("__FAQ__", faq_html).replace("__RELATED__", related))
 
 TOOLS = [
 {
@@ -97,6 +116,9 @@ TOOLS = [
  "desc":"Find today's golden hour, blue hour, sunrise and sunset times for any location. Free, instant, no sign-up.",
  "h1":"Golden Hour Calculator","sub":"Sunrise, sunset, golden hour & blue hour for any spot — the best light of the day.",
  "cta_h":"Shoot the golden hour like a pro","cta_p":"The best light is worth planning for. Learn to expose and edit it beautifully.","cta_url":"/learn/04-exposure-manual-mode.html","cta_btn":"See the guide",
+ "faq":[("What is the golden hour?","The golden hour is the roughly one-hour window just after sunrise and just before sunset, when the sun is low and the light is soft, warm, and directional — the most flattering natural light of the day."),
+   ("What is the blue hour?","The blue hour is the short period before sunrise and after sunset when the sun is below the horizon and the sky glows deep blue. It's ideal for cityscapes, the boardwalk, and long-exposure water."),
+   ("Are these times exact?","Sunrise and sunset are calculated precisely for your location and date. The golden and blue-hour windows are based on the sun's angle and are accurate to a few minutes — enough to plan a shoot.")],
  "body":"""<div class="tool">
 <div class="row"><div><label>Latitude</label><input id="lat" type="number" step="0.0001" value="36.9741"></div>
 <div><label>Longitude</label><input id="lng" type="number" step="0.0001" value="-122.0308"></div></div>
@@ -293,6 +315,78 @@ var equiv=f*crop;var base=1/equiv;var allowed=base*Math.pow(2,is);var pick=neare
 document.getElementById('res').textContent=lab(pick)+" or faster";
 document.getElementById('tip').textContent="At "+f+"mm on this sensor (≈"+Math.round(equiv)+"mm equivalent), the reciprocal rule says 1/"+Math.round(equiv)+"s"+(is>0?", and your "+is+"-stop stabilization buys you down to about "+lab(pick):"")+". For moving subjects, go faster regardless.";}
 ['focal','crop','is'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);document.getElementById(id).addEventListener('change',calc);});calc();
+</script>"""
+},
+{
+ "slug":"time-lapse-calculator","accent":"#0891b2",
+ "title":"Time-Lapse Calculator","desc":"Work out your time-lapse shooting interval, number of shots, and how long you need to shoot for a clip of any length. Free, no sign-up.",
+ "h1":"Time-Lapse Calculator","sub":"Plan a time-lapse: set the interval and target clip length — get shots needed and shooting time.",
+ "cta_h":"Shoot smooth, cinematic time-lapses","cta_p":"Settings, intervals, and the editing workflow for time-lapse and hyperlapse.","cta_url":"/learn/v01-cinematic-look.html","cta_btn":"See the guide",
+ "faq":[("What interval should I use for a time-lapse?","Slow scenes like sunsets or stars: 5–30 seconds between shots. Faster action like clouds or crowds: 1–3 seconds. Very fast subjects like traffic: 1 second or less."),
+   ("How long do I need to shoot?","Shooting time = interval × (clip length in seconds × output fps). This calculator does the math for you — a 10-second clip at 30fps needs 300 frames, so at a 3-second interval that's 15 minutes of shooting.")],
+ "body":"""<div class="tool">
+<div class="row"><div><label>Interval between shots (sec)</label><input id="int" type="number" step="0.5" value="3"></div>
+<div><label>Output frame rate (fps)</label><select id="fps"><option>24</option><option selected>30</option><option>60</option></select></div></div>
+<label>Desired final clip length (seconds)</label><input id="len" type="number" value="10">
+<div class="out"><div class="grid2">
+<div><div class="lab">Frames (shots) needed</div><div class="big" id="shots">—</div></div>
+<div><div class="lab">Total shooting time</div><div class="big" id="dur">—</div></div>
+</div><div class="note" id="tip"></div></div>
+</div>
+<script>
+function hms(s){var h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=Math.round(s%60);var o=[];if(h)o.push(h+"h");if(m)o.push(m+"m");o.push(ss+"s");return o.join(" ");}
+function calc(){var i=parseFloat(document.getElementById('int').value);var fps=parseFloat(document.getElementById('fps').value);var len=parseFloat(document.getElementById('len').value);
+var shots=Math.round(len*fps);var dur=shots*i;
+document.getElementById('shots').textContent=shots.toLocaleString();document.getElementById('dur').textContent=hms(dur);
+document.getElementById('tip').textContent="At a "+i+"s interval you'll capture "+shots.toLocaleString()+" frames over "+hms(dur)+" to make a "+len+"s clip at "+fps+"fps. Bring enough battery and card space.";}
+['int','fps','len'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);document.getElementById(id).addEventListener('change',calc);});calc();
+</script>"""
+},
+{
+ "slug":"crop-factor-calculator","accent":"#4338ca",
+ "title":"Crop Factor & Equivalent Focal Length Calculator","desc":"Convert any lens to its full-frame equivalent focal length and see the effective aperture for your sensor. Free crop factor calculator.",
+ "h1":"Crop Factor Calculator","sub":"See the full-frame-equivalent focal length and depth-of-field aperture for your camera.",
+ "cta_h":"Understand your gear","cta_p":"Focal length, aperture, and how your sensor changes the look — made simple.","cta_url":"/learn/04-exposure-manual-mode.html","cta_btn":"See the guide",
+ "faq":[("What is crop factor?","Crop factor compares your sensor to full frame (35mm). A smaller sensor 'crops' the view, so a lens acts like a longer one. Multiply the focal length by the crop factor to get the full-frame-equivalent field of view."),
+   ("Does crop factor change my aperture?","It doesn't change exposure, but it does change depth of field. For an equivalent look, multiply the aperture by the crop factor too — f/2.8 on Micro 4/3 gives roughly the depth of field of f/5.6 on full frame.")],
+ "body":"""<div class="tool">
+<div class="row"><div><label>Sensor</label><select id="crop"><option value="1">Full frame (1.0×)</option><option value="1.5" selected>APS-C (1.5×)</option><option value="1.6">Canon APS-C (1.6×)</option><option value="2">Micro 4/3 (2.0×)</option><option value="2.7">1-inch (2.7×)</option></select></div>
+<div><label>Focal length (mm)</label><input id="focal" type="number" value="35"></div></div>
+<label>Aperture (f/)</label><input id="fnum" type="number" step="0.1" value="1.8">
+<div class="out"><div class="grid2">
+<div><div class="lab">Equivalent focal length</div><div class="big" id="ef">—</div></div>
+<div><div class="lab">Equivalent depth-of-field aperture</div><div class="big" id="ea">—</div></div>
+</div><div class="note">Same field of view and depth-of-field look as this on a full-frame camera.</div></div>
+</div>
+<script>
+function calc(){var c=parseFloat(document.getElementById('crop').value);var f=parseFloat(document.getElementById('focal').value);var a=parseFloat(document.getElementById('fnum').value);
+document.getElementById('ef').textContent=Math.round(f*c)+" mm";document.getElementById('ea').textContent="f/"+(a*c).toFixed(1);}
+['crop','focal','fnum'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);document.getElementById(id).addEventListener('change',calc);});calc();
+</script>"""
+},
+{
+ "slug":"print-size-calculator","accent":"#b45309",
+ "title":"Photo Print Size Calculator (Megapixels to Print)","desc":"Find the biggest sharp print you can make from your photo's megapixels at 300, 240, and 150 DPI. Free print size calculator.",
+ "h1":"Print Size Calculator","sub":"How big can you print? Enter your image's pixel dimensions or megapixels.",
+ "cta_h":"Make prints worth hanging","cta_p":"Shoot, edit, and export for beautiful fine-art prints.","cta_url":"/learn/02-lightroom-blueprint.html","cta_btn":"See the guide",
+ "faq":[("What DPI do I need for a print?","300 DPI is the standard for sharp prints viewed up close (photo books, small prints). 240 DPI is excellent for most wall prints. 150 DPI is fine for large prints viewed from a distance, like posters."),
+   ("How many megapixels do I need to print big?","At 300 DPI, a 24-megapixel image prints beautifully to about 13×20 inches. For larger prints you rely on normal viewing distance — a 24MP file makes a great 24×36 poster at ~150 DPI.")],
+ "body":"""<div class="tool">
+<div class="row"><div><label>Image width (pixels)</label><input id="w" type="number" value="6000"></div>
+<div><label>Image height (pixels)</label><input id="h" type="number" value="4000"></div></div>
+<div class="out"><div class="lab" id="mp"></div>
+<div class="grid2" style="margin-top:8px">
+<div><div class="lab">At 300 DPI (gallery)</div><div class="big" id="d300">—</div></div>
+<div><div class="lab">At 240 DPI (wall)</div><div class="big" id="d240">—</div></div>
+<div><div class="lab">At 150 DPI (poster)</div><div class="big" id="d150">—</div></div>
+</div></div>
+</div>
+<script>
+function sz(w,h,dpi){return (w/dpi).toFixed(1)+" × "+(h/dpi).toFixed(1)+" in";}
+function calc(){var w=parseFloat(document.getElementById('w').value);var h=parseFloat(document.getElementById('h').value);
+document.getElementById('mp').textContent=((w*h)/1e6).toFixed(1)+" megapixels";
+document.getElementById('d300').textContent=sz(w,h,300);document.getElementById('d240').textContent=sz(w,h,240);document.getElementById('d150').textContent=sz(w,h,150);}
+['w','h'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});calc();
 </script>"""
 },
 ]
