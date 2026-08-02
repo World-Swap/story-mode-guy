@@ -9,6 +9,11 @@ ROOT = pathlib.Path("/home/user/story-mode-guy")
 OUT = ROOT / "tools"; OUT.mkdir(exist_ok=True)
 
 CSS = """
+.freebar{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#0b7a6f;color:#fff;padding:9px 16px;font-size:14px;font-weight:500;text-align:center;line-height:1.4}
+.freebar:hover{text-decoration:none;filter:brightness(1.06)}
+.freebar strong{font-weight:700}
+.freebar .get{text-decoration:underline;white-space:nowrap}
+
 :root{--parch:#fefffc;--ink:#1b1b20;--char:#3a3a40;--ash:#6a6a72;--fog:#b4b8b4;--mist:#e3e6ea;
 --blue:#41a1cf;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--accent:__ACCENT__}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -52,6 +57,8 @@ button.act{font-family:var(--sans);font-size:14px;font-weight:600;padding:9px 16
 .tcard h3{font-family:var(--serif);font-size:19px;color:var(--ink);margin:0 0 4px}
 .tcard p{font-size:14px;color:var(--ash);margin:0}
 """
+
+FREEBAR = '<a class="freebar" href="https://payhip.com/b/aUu78" target="_blank" rel="noopener">🎁 <span><strong>Free:</strong> The Field Cheat Sheet — photography, video &amp; drone quick-reference.</span> <span class="get">Grab it free →</span></a>'
 
 def nav(): return ('<div class="nav"><a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a>'
     '<span class="sp"></span><a class="lnk" href="/tools/">Tools</a><a class="lnk" href="/learn/">Learn</a><a class="lnk" href="/blog/">Journal</a></div>')
@@ -103,7 +110,7 @@ __RELATED__
 __FOOT__
 </body></html>"""
         .replace("__CSS__", CSS.replace("__ACCENT__", t["accent"]))
-        .replace("__NAV__", nav()).replace("__FOOT__", FOOT).replace("__SCHEMA__", schema_html)
+        .replace("__NAV__", nav()+FREEBAR).replace("__FOOT__", FOOT).replace("__SCHEMA__", schema_html)
         .replace("__TITLE__", html.escape(t["title"])).replace("__DESC__", html.escape(t["desc"]))
         .replace("__SLUG__", t["slug"]).replace("__H1__", html.escape(t["h1"]))
         .replace("__SUB__", html.escape(t["sub"])).replace("__BODY__", body).replace("__CTA__", cta)
@@ -411,7 +418,7 @@ __NAV__
 <main class="wrap"><div class="eyebrow">Free Tools</div><h1>Free tools for photographers &amp; filmmakers</h1>
 <div class="sub">Handy calculators — no sign-up, no ads. Bookmark them.</div>
 <div class="cards">__CARDS__</div></main>
-__FOOT__</body></html>""".replace("__CSS__",CSS.replace("__ACCENT__","#41a1cf")).replace("__NAV__",nav()).replace("__FOOT__",FOOT).replace("__CARDS__",cards))
+__FOOT__</body></html>""".replace("__CSS__",CSS.replace("__ACCENT__","#41a1cf")).replace("__NAV__",nav()+FREEBAR).replace("__FOOT__",FOOT).replace("__CARDS__",cards))
 (OUT/"index.html").write_text(idx)
 print("  wrote tools/index.html")
 

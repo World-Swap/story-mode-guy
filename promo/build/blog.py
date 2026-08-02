@@ -12,6 +12,11 @@ OUT = ROOT / "blog"; OUT.mkdir(exist_ok=True)
 M = json.loads((SRC / "manifest.json").read_text())
 
 CSS = """
+.freebar{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;background:#0b7a6f;color:#fff;padding:9px 16px;font-size:14px;font-weight:500;text-align:center;line-height:1.4}
+.freebar:hover{text-decoration:none;filter:brightness(1.06)}
+.freebar strong{font-weight:700}
+.freebar .get{text-decoration:underline;white-space:nowrap}
+
 :root{--paper:#fff;--parch:#fefffc;--linen:#f9faf7;--ink:#1b1b20;--char:#3a3a40;--ash:#6a6a72;
 --fog:#b4b8b4;--mist:#e3e6ea;--blue:#41a1cf;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -62,6 +67,8 @@ NAV = """<div class="nav">
 FOOT = """<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> ·
 <a href="/blog/">Journal</a> · <a href="/privacy.html">Privacy</a></div>"""
 
+FREEBAR = '<a class="freebar" href="https://payhip.com/b/aUu78" target="_blank" rel="noopener">🎁 <span><strong>Free:</strong> The Field Cheat Sheet — photography, video &amp; drone quick-reference.</span> <span class="get">Grab it free →</span></a>'
+
 def page(a, related):
     body = (SRC / f"{a['slug']}.html").read_text()
     ld = {
@@ -93,6 +100,7 @@ def page(a, related):
 <script type="application/ld+json">{json.dumps(ld)}</script>
 </head><body>
 {NAV}
+{FREEBAR}
 <main class="wrap">
 <div class="eyebrow">Journal</div>
 <h1>{html.escape(a['title'])}</h1>
@@ -129,6 +137,7 @@ idx = f"""<!DOCTYPE html><html lang="en"><head>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body>
 {NAV}
+{FREEBAR}
 <main class="wrap"><div class="eyebrow">The Journal</div>
 <h1>Stories, tips & guides from the coast</h1>
 <div class="meta">Photography from Santa Cruz — and how it's made.</div>
