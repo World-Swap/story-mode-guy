@@ -1,5 +1,5 @@
 {
-  "_comment": "Topic backlog for the autonomous blog engine. Each fire, take the FIRST entry, write its article, move it into manifest.json's articles array, and delete it from here. ~2 weeks apart = ~6 months of runway. Heroes are photo-NN.jpg that exist on main (01-109). Refill this list when it runs low.",
+  "_comment": "Topic backlog for the autonomous blog engine. Each fire (WEEKLY, Mondays), take the FIRST entry, write its article, move it into manifest.json's articles array, and delete it from here. Weekly cadence. Refill this list when it runs low. Heroes are photo-NN.jpg that exist on main (01-109).",
   "topics": [
     {
       "slug": "how-to-fly-a-drone-for-beginners",
@@ -123,6 +123,17 @@
       "cta_button": "Get the Phone Video guide ($29) →"
     },
     {
+      "slug": "best-drone-camera-settings",
+      "title": "The Best Drone Camera Settings for Smooth, Cinematic Video",
+      "description": "Frame rate, the shutter rule, and why ND filters are the aerial must-have. The settings that stop your drone footage looking juddery or flat.",
+      "keywords": "best drone camera settings, drone nd filters, drone video settings, drone shutter speed, cinematic drone",
+      "hero": "photo-18.jpg",
+      "hero_alt": "A wide aerial-style coastal landscape",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
+    },
+    {
       "slug": "how-to-edit-photos-in-lightroom",
       "title": "How to Edit Photos in Lightroom: A Simple Order of Operations",
       "description": "Editing gets easy when you stop shoving sliders around and follow a repeatable order. Here's the sequence I use to take a flat RAW file to a finished photo.",
@@ -143,6 +154,17 @@
       "product": "Color Grading Demystified ($34)",
       "cta_url": "https://payhip.com/b/QtcBz",
       "cta_button": "Get the Color Grading guide ($34) →"
+    },
+    {
+      "slug": "how-to-edit-drone-footage",
+      "title": "How to Edit Drone Footage So It Matches the Rest of Your Video",
+      "description": "Stabilize the jello, fix the color, add speed ramps, and make your aerials match your ground footage - a simple order that works in any editor.",
+      "keywords": "how to edit drone footage, drone video editing, color grade drone footage, stabilize drone video, drone editing",
+      "hero": "photo-12.jpg",
+      "hero_alt": "A richly colored coastal scene",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
     },
     {
       "slug": "how-to-pose-people-for-natural-portraits",
@@ -167,6 +189,17 @@
       "cta_button": "Get the Camera Movement guide ($24) →"
     },
     {
+      "slug": "how-to-add-drone-shots-to-your-videos",
+      "title": "How to Add Drone Shots to Your Videos (Without It Feeling Random)",
+      "description": "Aerials are b-roll with a job. Here's how to use them as establishing shots, cut between ground and air, and build a sequence that holds attention.",
+      "keywords": "how to use drone footage in videos, drone b-roll, adding aerial shots, drone video editing, establishing shot",
+      "hero": "photo-08.jpg",
+      "hero_alt": "A sweeping view of the coastline",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
+    },
+    {
       "slug": "product-photography-at-home",
       "title": "Product Photography at Home: A $30 Setup That Looks Expensive",
       "description": "You don't need a studio to make products look premium. Here's a cheap home setup and the settings that turn a kitchen table into a storefront.",
@@ -187,6 +220,17 @@
       "product": "Master Your Camera in a Weekend ($27)",
       "cta_url": "https://payhip.com/b/1TJzr",
       "cta_button": "Get the manual-mode guide ($27) →"
+    },
+    {
+      "slug": "real-estate-drone-video-tips",
+      "title": "Real Estate Drone Video: How to Film Sellable Property Tours",
+      "description": "Bright, smooth aerial tours that sell listings - the shot list, the reveal and orbit, the legal must-dos, and what to charge. (Paid work needs Part 107 in the US.)",
+      "keywords": "real estate drone video, property drone video, real estate videography, drone real estate, aerial property tour",
+      "hero": "photo-22.jpg",
+      "hero_alt": "A bright coastal property view",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
     },
     {
       "slug": "real-estate-photography-tips",
@@ -211,6 +255,17 @@
       "cta_button": "Browse the wallpaper collection →"
     },
     {
+      "slug": "drone-photography-tips",
+      "title": "Drone Photography Tips: Striking Aerial Photos, Not Just Video",
+      "description": "Top-down composition, panoramas, HDR for high-contrast scenes, and golden-hour light from above - how to make aerial stills that stop the scroll.",
+      "keywords": "drone photography, aerial photography, drone photo tips, top down photography, drone panorama",
+      "hero": "photo-05.jpg",
+      "hero_alt": "A dramatic aerial-style coastal vista",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
+    },
+    {
       "slug": "what-is-blue-hour-photography",
       "title": "Blue Hour: The Best 20 Minutes of Light Most People Miss",
       "description": "The window just after sunset — blue hour — gives you deep skies, glowing lights, and glassy reflections. Here's how to catch it and shoot it.",
@@ -231,6 +286,17 @@
       "product": "Master Your Camera in a Weekend ($27)",
       "cta_url": "https://payhip.com/b/1TJzr",
       "cta_button": "Get the manual-mode guide ($27) →"
+    },
+    {
+      "slug": "how-to-make-money-with-a-drone",
+      "title": "How to Make Money With a Drone (A Realistic Starting Point)",
+      "description": "Real estate, inspections, events, and social content - the services that sell, how to price them, and the legal step you need first.",
+      "keywords": "how to make money with a drone, drone business, get paid to fly, drone side hustle, part 107 jobs",
+      "hero": "photo-30.jpg",
+      "hero_alt": "Open sky over the Santa Cruz coast",
+      "product": "The Complete Drone Library ($79)",
+      "cta_url": "https://storymodeguy.com/#complete-library",
+      "cta_button": "See the drone library →"
     },
     {
       "slug": "best-time-of-day-for-photos",
