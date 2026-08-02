@@ -81,6 +81,7 @@ def page(a, related):
 <meta name="keywords" content="{html.escape(a['keywords'])}">
 <link rel="canonical" href="https://storymodeguy.com/blog/{a['slug']}.html">
 <link rel="icon" type="image/png" href="/smg-logo.png">
+<link rel="alternate" type="application/rss+xml" title="Story Mode Guy — Journal" href="/blog/feed.xml">
 <meta property="og:type" content="article"><meta property="og:title" content="{html.escape(a['title'])}">
 <meta property="og:description" content="{html.escape(a['description'])}">
 <meta property="og:url" content="https://storymodeguy.com/blog/{a['slug']}.html">
@@ -122,6 +123,7 @@ idx = f"""<!DOCTYPE html><html lang="en"><head>
 <link rel="canonical" href="https://storymodeguy.com/blog/">
 <link rel="icon" type="image/png" href="/smg-logo.png">
 <meta property="og:title" content="Journal — Story Mode Guy"><meta property="og:type" content="website">
+<link rel="alternate" type="application/rss+xml" title="Story Mode Guy — Journal" href="/blog/feed.xml">
 <meta property="og:image" content="https://storymodeguy.com/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -134,6 +136,34 @@ idx = f"""<!DOCTYPE html><html lang="en"><head>
 {FOOT}</body></html>"""
 (OUT / "index.html").write_text(idx)
 print("  wrote blog/index.html")
+
+# RSS 2.0 feed
+import datetime as _dt
+def _rfc822(d):
+    try: return _dt.datetime.strptime(d, "%Y-%m-%d").strftime("%a, %d %b %Y 08:00:00 GMT")
+    except Exception: return d
+items = "".join(
+    f"""  <item>
+    <title>{html.escape(a['title'])}</title>
+    <link>https://storymodeguy.com/blog/{a['slug']}.html</link>
+    <guid>https://storymodeguy.com/blog/{a['slug']}.html</guid>
+    <pubDate>{_rfc822(a['date'])}</pubDate>
+    <description>{html.escape(a['description'])}</description>
+  </item>
+""" for a in arts)
+feed = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Story Mode Guy — Journal</title>
+  <link>https://storymodeguy.com/blog/</link>
+  <atom:link href="https://storymodeguy.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Photography, video &amp; drone stories, tips, and guides from the Santa Cruz coast.</description>
+  <language>en-us</language>
+{items}</channel>
+</rss>
+"""
+(OUT / "feed.xml").write_text(feed)
+print("  wrote blog/feed.xml")
 
 # sitemap injection
 sm = ROOT / "sitemap.xml"
