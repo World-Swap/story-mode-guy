@@ -25,7 +25,7 @@ PAY = {
  "v07-broll-storytelling":"https://payhip.com/b/1olQD","v08-camera-movement":"https://payhip.com/b/zhSxf",
  "v09-real-estate-video":"https://payhip.com/b/BcxD9","v10-video-cheat-sheet":"https://payhip.com/b/9QMfo",
 }
-DRONE_BUNDLE = "https://storymodeguy.com/#complete-library"   # swap to drone-bundle Payhip URL when live
+DRONE_BUNDLE = "https://payhip.com/b/4QFxq"   # The Complete Drone Library
 
 LINE_LABEL = {"photography":"Photography Guide","videography":"Videography Guide","drone":"Drone Guide"}
 
