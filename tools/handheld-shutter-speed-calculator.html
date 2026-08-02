@@ -1,15 +1,17 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Photography, Video & Drone Tools | Story Mode Guy</title>
-<meta name="description" content="Free calculators for photographers and filmmakers — golden hour, ND filters, exposure, video shutter speed, and a drone pre-flight checklist.">
-<link rel="canonical" href="https://storymodeguy.com/tools/">
+<title>Handheld Shutter Speed Calculator (Reciprocal Rule) | Story Mode Guy</title>
+<meta name="description" content="Find the slowest shutter speed for sharp handheld photos using the reciprocal rule, adjusted for your sensor and image stabilization.">
+<link rel="canonical" href="https://storymodeguy.com/tools/handheld-shutter-speed-calculator.html">
 <link rel="icon" type="image/png" href="/smg-logo.png">
-<meta property="og:title" content="Free Photography, Video & Drone Tools"><meta property="og:image" content="https://storymodeguy.com/og-image.jpg">
+<meta property="og:title" content="Handheld Shutter Speed Calculator (Reciprocal Rule)"><meta property="og:description" content="Find the slowest shutter speed for sharp handheld photos using the reciprocal rule, adjusted for your sensor and image stabilization.">
+<meta property="og:url" content="https://storymodeguy.com/tools/handheld-shutter-speed-calculator.html"><meta property="og:image" content="https://storymodeguy.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--parch:#fefffc;--ink:#1b1b20;--char:#3a3a40;--ash:#6a6a72;--fog:#b4b8b4;--mist:#e3e6ea;
---blue:#41a1cf;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--accent:#41a1cf}
+--blue:#41a1cf;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--accent:#9f1239}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--sans);color:var(--char);background:var(--parch);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
@@ -52,7 +54,28 @@ button.act{font-family:var(--sans);font-size:14px;font-weight:600;padding:9px 16
 .tcard p{font-size:14px;color:var(--ash);margin:0}
 </style></head><body>
 <div class="nav"><a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a><span class="sp"></span><a class="lnk" href="/tools/">Tools</a><a class="lnk" href="/learn/">Learn</a><a class="lnk" href="/blog/">Journal</a></div>
-<main class="wrap"><div class="eyebrow">Free Tools</div><h1>Free tools for photographers &amp; filmmakers</h1>
-<div class="sub">Handy calculators — no sign-up, no ads. Bookmark them.</div>
-<div class="cards"><a class="tcard" href="/tools/golden-hour-calculator.html"><h3>Golden Hour Calculator</h3><p>Sunrise, sunset, golden hour &amp; blue hour for any spot — the best light of the day.</p></a><a class="tcard" href="/tools/long-exposure-nd-filter-calculator.html"><h3>ND Filter &amp; Long Exposure Calculator</h3><p>Pick your base shutter and ND strength — get the corrected long-exposure time.</p></a><a class="tcard" href="/tools/exposure-calculator.html"><h3>Equivalent Exposure Calculator</h3><p>Change one setting and see how to trade the others to keep the same brightness.</p></a><a class="tcard" href="/tools/shutter-angle-frame-rate-calculator.html"><h3>Video Shutter Speed (180° Rule)</h3><p>Pick your frame rate — get the shutter speed that gives natural, cinematic motion blur.</p></a><a class="tcard" href="/tools/drone-preflight-checklist.html"><h3>Drone Pre-Flight Checklist</h3><p>Run this before every flight. Most crashes and flyaways are prevented on the ground.</p></a><a class="tcard" href="/tools/depth-of-field-calculator.html"><h3>Depth of Field Calculator</h3><p>How much will be in focus? Set your camera, focal length, aperture and focus distance.</p></a><a class="tcard" href="/tools/handheld-shutter-speed-calculator.html"><h3>Handheld Shutter Speed</h3><p>The slowest shutter you can hand-hold sharp — from your focal length, sensor and stabilization.</p></a></div></main>
-<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> · <a href="/tools/">Free tools</a> · <a href="/learn/">Guides</a> · <a href="/blog/">Journal</a></div></body></html>
+<main class="wrap">
+<div class="eyebrow">Free Tool</div>
+<h1>Handheld Shutter Speed</h1>
+<div class="sub">The slowest shutter you can hand-hold sharp — from your focal length, sensor and stabilization.</div>
+<div class="tool">
+<div class="row"><div><label>Focal length (mm)</label><input id="focal" type="number" value="50"></div>
+<div><label>Sensor</label><select id="crop"><option value="1">Full frame</option><option value="1.5">APS-C (1.5×)</option><option value="1.6">Canon APS-C</option><option value="2">Micro 4/3</option></select></div></div>
+<label>Image stabilization</label>
+<select id="is"><option value="0">None</option><option value="2">Basic (2 stops)</option><option value="4">Good (4 stops)</option><option value="6">Excellent (6 stops)</option></select>
+<div class="out"><div class="lab">Slowest safe shutter</div><div class="big" id="res">—</div>
+<div class="note" id="tip"></div></div>
+</div>
+<script>
+function nearestSh(sec){var std=[1/4000,1/2000,1/1000,1/500,1/250,1/125,1/60,1/30,1/15,1/8,1/4,1/2,1,2,4];var best=std[0];std.forEach(function(s){if(s<=sec)best=s;});return best;}
+function lab(sec){if(sec<1)return "1/"+Math.round(1/sec)+" sec";return sec+" sec";}
+function calc(){var f=parseFloat(document.getElementById('focal').value);var crop=parseFloat(document.getElementById('crop').value);var is=parseFloat(document.getElementById('is').value);
+var equiv=f*crop;var base=1/equiv;var allowed=base*Math.pow(2,is);var pick=nearestSh(allowed);
+document.getElementById('res').textContent=lab(pick)+" or faster";
+document.getElementById('tip').textContent="At "+f+"mm on this sensor (≈"+Math.round(equiv)+"mm equivalent), the reciprocal rule says 1/"+Math.round(equiv)+"s"+(is>0?", and your "+is+"-stop stabilization buys you down to about "+lab(pick):"")+". For moving subjects, go faster regardless.";}
+['focal','crop','is'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);document.getElementById(id).addEventListener('change',calc);});calc();
+</script>
+<div class="cta"><h3>Never take a blurry photo again</h3><p>Diagnose the three kinds of blur and fix each one — the complete sharpness guide.</p><a class="btn" href="/learn/05-why-blurry.html">See the guide →</a></div>
+</main>
+<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> · <a href="/tools/">Free tools</a> · <a href="/learn/">Guides</a> · <a href="/blog/">Journal</a></div>
+</body></html>

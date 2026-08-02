@@ -61,9 +61,10 @@ per run. Additive only — never touch anything outside `blog/`, `blog-src/`, an
    The changed set must be only `blog/**`, `blog-src/**`, and `sitemap.xml`.
    (Note: `blog.py` also writes `blog/feed.xml` — it's inside `blog/`, so it's already staged.)
 
-6. **Ping IndexNow** so Bing/Yandex crawl the new page fast (no account needed):
-   `python3 promo/build/indexnow.py https://storymodeguy.com/blog/<slug>.html https://storymodeguy.com/blog/`
-   This is best-effort — if it errors, ignore it and continue.
+6. **Ping IndexNow** so Bing/Yandex crawl the new page fast (no account needed). Include the
+   new post plus the section index pages so the whole site stays fresh:
+   `python3 promo/build/indexnow.py https://storymodeguy.com/blog/<slug>.html https://storymodeguy.com/blog/ https://storymodeguy.com/learn/ https://storymodeguy.com/tools/ https://storymodeguy.com/stories/`
+   This is best-effort — if it errors (e.g. network policy blocks it), ignore it and continue.
 
 7. **Done.** GitHub Pages redeploys `main` automatically. Do not post anywhere, do
    not message the user unless something failed. End the run.
