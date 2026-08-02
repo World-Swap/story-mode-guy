@@ -26,6 +26,14 @@ PAY = {
  "v09-real-estate-video":"https://payhip.com/b/BcxD9","v10-video-cheat-sheet":"https://payhip.com/b/9QMfo",
 }
 DRONE_BUNDLE = "https://payhip.com/b/4QFxq"   # The Complete Drone Library
+# Individually-sold drone guides (d11 FPV / d12 business / d13 mapping stay bundle-only)
+DRONE_PAY = {
+ "d01-drone-beginners":"https://payhip.com/b/QnSal","d02-drone-laws-part107":"https://payhip.com/b/HQcaZ",
+ "d03-cinematic-drone-moves":"https://payhip.com/b/uZcwj","d04-drone-camera-settings":"https://payhip.com/b/zLJZu",
+ "d05-editing-drone-footage":"https://payhip.com/b/J0DPk","d06-add-drone-to-videos":"https://payhip.com/b/s0NHk",
+ "d07-real-estate-drone":"https://payhip.com/b/FoLqC","d08-drone-photography":"https://payhip.com/b/VJkNI",
+ "d09-fly-safe-no-crash":"https://payhip.com/b/I81r2","d10-drone-cheat-sheet":"https://payhip.com/b/hoz5L",
+}
 
 LINE_LABEL = {"photography":"Photography Guide","videography":"Videography Guide","drone":"Drone Guide"}
 
@@ -96,16 +104,20 @@ NAV = """<div class="nav"><a class="brand" href="/"><img src="/smg-logo.png" alt
 FOOT = """<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> · <a href="/learn/">All guides</a> · <a href="/blog/">Journal</a></div>"""
 
 def buy_for(g):
-    return PAY.get(g["id"], DRONE_BUNDLE)
+    return PAY.get(g["id"]) or DRONE_PAY.get(g["id"]) or DRONE_BUNDLE
 
 def page(g, related):
     gid=g["id"]; chapters, lead = extract(gid)
     thumb = thumb_for(gid)
     buy = buy_for(g)
     is_drone = g["line"]=="drone"
-    price_line = (f'<div class="price"><b>{html.escape(g["price"])}</b> · instant PDF download</div>'
-                  if not is_drone else
-                  f'<div class="price">Included in <b>The Complete Drone Library ($79)</b> &amp; the Everything bundle</div>')
+    sold_single = (gid in PAY) or (gid in DRONE_PAY)
+    if not is_drone:
+        price_line = f'<div class="price"><b>{html.escape(g["price"])}</b> · instant PDF download</div>'
+    elif sold_single:
+        price_line = f'<div class="price"><b>{html.escape(g["price"])}</b> · instant PDF download — or get all 13 in <a href="{DRONE_BUNDLE}">The Complete Drone Library ($79)</a></div>'
+    else:
+        price_line = f'<div class="price">Included in <b>The Complete Drone Library ($79)</b> &amp; the Everything bundle</div>'
     inside = "".join(f"<li>{html.escape(c)}</li>" for c in chapters)
     ld={"@context":"https://schema.org","@type":"Product","name":g["title"],
         "description":g["subtitle"],"image":f"https://storymodeguy.com/{thumb}",
@@ -113,7 +125,7 @@ def page(g, related):
         "offers":{"@type":"Offer","priceCurrency":"USD","price":re.sub(r"[^0-9.]","",g["price"]),
                   "url":buy,"availability":"https://schema.org/InStock"}}
     rel="".join(f'<a href="/learn/{r["id"]}.html">{html.escape(r["title"])}</a>' for r in related)
-    cta_label = "Get the guide" if not is_drone else "Get the Drone Library"
+    cta_label = "Get the Drone Library" if (is_drone and not sold_single) else "Get the guide"
     return f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{html.escape(g['title'])} — {html.escape(g['subtitle'])} | Story Mode Guy</title>
