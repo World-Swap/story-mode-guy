@@ -12,19 +12,19 @@
     "audio": "ambient only - fire crackle, wind, reeds, distant low drone. No speech.",
     "aspect_ratio_note": "Locked to 16:9 (YouTube). Shot text is written natively for this ratio. For a vertical cut, build_prompts.py --vertical appends framing guidance, but wide landscape drifts should be regenerated rather than cropped."
   },
-  "style_block": "2D animated fantasy illustration in flat vector-cel colour over soft gradient skies, Art Nouveau flowing linework, anime-influenced expressive faces with large eyes, heavy dark ink outlines, painterly comic key-art lighting, cinematic composition, warm ember palette of burnt orange, gold, deep blood-red and bone-cream, with pale silver reserved for the broken sky-ring, organic curves in every natural form, rigid straight lines and hard facets only on Ironfolk metal, no text, no lettering, no speech bubbles, no watermark, no logo, no signature",
+  "style_block": "2D animated fantasy illustration in flat vector-cel colour over soft gradient skies, bold flowing linework with Art Nouveau influence in the natural forms only, anime-influenced expressive faces with large eyes, heavy dark ink outlines, painterly comic key-art lighting, cinematic composition, warm ember palette of burnt orange, gold, deep blood-red and bone-cream, with pale silver reserved for the broken sky-ring, organic curves in every natural form, rigid straight lines and hard facets only on Ironfolk metal, no decorative border, no filigree frame, no text, no lettering, no speech bubbles, no watermark, no logo, no signature",
   "character_blocks": {
-    "ROOK": "a young man with wind-blown loose dark hair, sharp quiet eyes, layered hide and bark-cloth clothing in ember-orange and bone, barefoot, a curved bone knife at his belt, tribal tattoos on his arms",
-    "CINDER": "a large horned wildcat about the size of a big hound, not lion-sized, with orange and cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back from its brow",
-    "SORREL": "a wiry thirteen-year-old girl with dark braided hair, bright open face, ember-orange and bone hide clothing, barefoot, tribal tattoos",
-    "MOTH": "a small flame-lynx cub with silver and orange fur, oversized paws, tiny budding horns",
-    "BRAM": "a proud headstrong seventeen-year-old with tied-back dark hair, heavier build, ember and bone hide clothing, tribal tattoos",
+    "ROOK": "a young man with wind-blown loose dark hair, sharp quiet eyes, normal human skin, fully clothed in a layered tunic and trousers of tanned leather and woven bark-cloth in burnt orange and pale cream, barefoot, a curved pale knife at his belt, simple tribal tattoo bands on his arms",
+    "CINDER": "a large horned wildcat about the size of a big hound, not lion-sized, with orange and cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back from its brow, an ordinary furry animal made of fur not fire, no flames on the animal",
+    "SORREL": "a wiry thirteen-year-old girl with dark braided hair and a bright open face, normal human skin, wearing a modest practical full-length layered tunic of tanned leather and woven bark-cloth in burnt orange and pale cream that covers her shoulders chest and legs, simple tribal tattoo bands on her forearms, barefoot",
+    "MOTH": "a small horned lynx kitten with soft silver and orange tabby fur, oversized paws, two tiny budding horns on its brow, an ordinary furry animal made of fur not fire, no flames on the animal, no glowing",
+    "BRAM": "a proud headstrong seventeen-year-old with tied-back dark hair, heavier build, normal human skin, fully clothed in a layered tunic and trousers of tanned leather and woven cloth in burnt orange and pale cream, simple tribal tattoo bands",
     "THORNCLAW": "a lean dark-furred horned wildcat",
-    "YARROW": "an ancient Vael elder, blind in one eye, deeply lined face, long grey hair, draped bone and ember robes hung with charms",
-    "SEDGE": "a wary man in reed-teal and bone marsh clothing, wet dark hair, marsh-dry expression, a long green serpent coiled about his shoulders",
-    "BRACKEN": "a straight-backed older matriarch in teal and bone robes, grey hair bound tight, guarded expression, a great pale serpent coiled at her feet",
-    "WREN": "a nineteen-year-old marsh woman with cropped dark hair, teal and bone clothing, carrying a thick bundle of knotted record-cords at her hip, no bonded creature beside her",
-    "KESTREL": "a proud clan leader in storm-violet and bone, feathered shoulder mantle, windburnt face, standing beside a huge violet-grey storm-bird",
+    "YARROW": "an ancient Vael elder, blind in one eye, deeply lined face, long grey hair, fully clothed in draped robes of woven cloth in pale cream and burnt orange hung with small carved charms",
+    "SEDGE": "a wary man fully clothed in a tunic of woven cloth in reed-teal and pale cream, wet dark hair, marsh-dry expression, a long green serpent coiled about his shoulders",
+    "BRACKEN": "a straight-backed older matriarch fully clothed in layered robes of woven cloth in teal and pale cream, grey hair bound tight, guarded expression, a great pale serpent coiled at her feet",
+    "WREN": "a nineteen-year-old woman with cropped dark hair, fully clothed in a tunic of woven cloth in teal and pale cream, carrying a thick bundle of knotted record-cords at her hip, no animal of any kind beside her",
+    "KESTREL": "a proud clan leader fully clothed in layered garments of woven cloth in storm-violet and pale cream with a feathered shoulder mantle, windburnt face, standing beside a huge violet-grey storm-bird",
     "HALCYON": "a very old seated Sky Clan keeper in storm-violet robes, white hair, frail hands, calm unreadable face",
     "SHRIKE": "a hooded one-eyed Sky Clan man in weathered storm-violet, hard set jaw, no bird beside him",
     "ASH": "a gaunt soot-grey woman, hair shorn to stubble, an angular brand half-filed off her own brow, stripped dark Ironfolk under-armour, no bonded creature",
@@ -146,7 +146,7 @@
         {
           "n": 1,
           "beat": "Camp at night",
-          "shot": "a Vael forest camp at night, a great bonfire ringed by figures in hide and bone, vast curving trunks behind, the shattered silver sky-ring overhead",
+          "shot": "a Vael forest camp at night, a great bonfire ringed by figures in tanned leather and woven cloth, vast curving trunks behind, the shattered silver sky-ring overhead",
           "motion": "slow drift around the fire",
           "characters": [],
           "environment": "FOREST"
@@ -220,7 +220,7 @@
         {
           "n": 2,
           "beat": "Sedge unmasked",
-          "shot": "a wary man in reed-teal and bone lowering his hood in a pole-boat, marsh-dry expression, a green serpent moving across his shoulders",
+          "shot": "a wary man in reed-teal and pale cream woven cloth lowering his hood in a pole-boat, marsh-dry expression, a green serpent moving across his shoulders",
           "motion": "slow push in",
           "characters": [
             "SEDGE"
@@ -238,7 +238,7 @@
         {
           "n": 4,
           "beat": "Bracken",
-          "shot": "a straight-backed older matriarch in teal and bone robes on a raft deck, a great pale serpent coiled at her feet, guarded expression",
+          "shot": "a straight-backed older matriarch in teal and pale cream woven robes on a raft deck, a great pale serpent coiled at her feet, guarded expression",
           "motion": "hold, lantern light and water moving",
           "characters": [
             "BRACKEN"
@@ -248,7 +248,7 @@
         {
           "n": 5,
           "beat": "Two tribes",
-          "shot": "two groups of tribespeople facing each other across dark water at dusk, one in ember-orange hide, one in reed-teal, neither moving",
+          "shot": "two groups of tribespeople facing each other across dark water at dusk, one in burnt-orange tanned leather clothing, one in reed-teal, neither moving",
           "motion": "very slow push in",
           "characters": [
             "ROOK",
@@ -351,7 +351,7 @@
         {
           "n": 2,
           "beat": "Kestrel",
-          "shot": "a proud clan leader in storm-violet and bone with a feathered shoulder mantle standing on a rock ledge beside a huge violet-grey storm-bird, wind in the feathers",
+          "shot": "a proud clan leader in storm-violet and pale cream woven cloth with a feathered shoulder mantle standing on a rock ledge beside a huge violet-grey storm-bird, wind in the feathers",
           "motion": "slow push in, feathers ruffling",
           "characters": [
             "KESTREL"
@@ -781,5 +781,30 @@
       "Cinder size anchored to hound-scale",
       "Vane size anchored to 1.34x, not colossal"
     ]
+  },
+  "prompt_traps": [
+    "NEVER write 'flame-lynx' in a generation prompt. The models literalise it into a fire elemental with flames, chrome fur and antennae. Say 'horned lynx' and let the palette carry the ember association. The species name is for the script, not the prompt.",
+    "ALWAYS state clothing coverage explicitly for Sorrel. Left unspecified, the models produced a bare-midriff outfit on a thirteen-year-old. Say 'modest practical full-length tunic covering shoulders chest and legs'.",
+    "'Art Nouveau linework' alone tips into decorative gold filigree borders framing the image. Say 'Art Nouveau influence in the natural forms only' and add 'no decorative border, no filigree frame'.",
+    "Character plates drift further from house style than environment plates. Environment plates came back consistent; the character plate did not. Re-check every character plate against an approved one before accepting it.",
+    "NEVER leave 'hide' and 'bone' as bare colour/material adjectives. A figure described as 'in ember-orange and bone hide' rendered as a creature covered in fire-coloured fur with a skeleton showing through. Always attach a garment noun - 'a layered tunic of tanned leather and woven cloth' - and use 'pale cream' rather than 'bone' as a colour. Add 'no skeleton, no exposed bones, no fur' to any prompt describing a clothed Vael."
+  ],
+  "reference_plates": {
+    "approved": {
+      "ROOK+CINDER": "plates/plate_rook-cinder_riven-sky.jpg",
+      "SORREL+MOTH": "plates/plate_sorrel-moth.jpg",
+      "SEDGE+MARSH": "plates/plate_sedge_marsh.jpg",
+      "VANE": "plates/plate_vane_scale.jpg",
+      "FOREST": "plates/plate_forest_riven-sky.jpg",
+      "SCAR": "plates/plate_straight-scar.jpg",
+      "RINGS": "plates/plate_rings_riven-sky.jpg",
+      "RUINS": "plates/plate_ruins.jpg"
+    },
+    "rejected": {
+      "plates/rejected/plate_vane_OVERSIZED-rejected.jpg": "Vane rendered 2-3x human height and the companion Vael rendered as a fire-furred figure with a visible skeleton. Both traps now fixed in the blocks.",
+      "plates/rejected/plate_sorrel-moth_FIRE-ELEMENTAL-rejected.jpg": "'flame-lynx' literalised into a fire elemental with flames for fur; Sorrel rendered in a bare-midriff outfit. Both traps now fixed in the blocks."
+    },
+    "model": "byte-plus-seedream-4-5 text2image, 2K, 16:9, 15 credits each",
+    "note": "plate_ruins.jpg came from nano-banana-2-lite at 1K and is slightly softer than the rest; regenerate on seedream if it proves too low-res as a video reference."
   }
 }

@@ -97,11 +97,17 @@ tribal tattoos on his arms`
 cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back from its brow`
 > Rook's flame-lynx. Runt of his litter. Feels danger before Rook does. Life-linked to Rook.
 
-**SORREL** — `a wiry thirteen-year-old girl with dark braided hair, bright open face, ember-orange
-and bone hide clothing, barefoot, tribal tattoos`
+**SORREL** — `a wiry thirteen-year-old girl with dark braided hair and a bright open face, wearing a
+modest practical full-length layered tunic of hide and woven bark-cloth in ember-orange and bone
+that covers her shoulders chest and legs, simple tribal tattoo bands on her forearms, barefoot`
+> ⚠️ State the coverage every time. Left unspecified, the models put a thirteen-year-old in a
+> bare-midriff outfit.
 > The initiate whose bonding opens the saga. The story's honest heart. **The namer.**
 
-**MOTH** — `a small flame-lynx cub with silver and orange fur, oversized paws, tiny budding horns`
+**MOTH** — `a small horned lynx kitten with soft silver and orange tabby fur, oversized paws, two tiny
+budding horns on its brow, an ordinary furry animal made of fur not fire, no flames on the animal,
+no glowing`
+> ⚠️ **Never write "flame-lynx" in a prompt.** It renders as a literal fire elemental.
 > Sorrel's cub. Keeps looking at Wren.
 
 **BRAM** — `a proud headstrong seventeen-year-old with tied-back dark hair, heavier build, ember
@@ -174,6 +180,27 @@ straight-line, smooth alien arcs and true circles, half-buried in earth`
 
 ---
 
+## 5b · Prompt traps (learned in production)
+
+Four failures found while generating the first plate set. All four are now fixed in the blocks
+above; they are recorded here because they will recur if anyone writes a fresh prompt from canon.
+
+1. **Never write "flame-lynx".** It is the species name in the script, and the models literalise
+   it — the first Moth plate came back as a fire elemental with flames for fur, chrome plating,
+   beaded antennae and a flower on its tail. Write **"horned lynx"** and let the ember palette
+   carry the association.
+2. **Always state clothing coverage for Sorrel.** With only "hide clothing" specified, the model
+   produced a bare-midriff outfit on a thirteen-year-old. Say *modest practical full-length tunic
+   covering shoulders, chest and legs* every time.
+3. **"Art Nouveau linework" tips into decorative borders.** The scar plate came back with gold
+   filigree frame ornament in the corners. Say *Art Nouveau influence in the natural forms only*
+   and add *no decorative border, no filigree frame*.
+4. **Character plates drift more than environment plates.** All the environment plates held the
+   house style; the one character plate did not. Always compare a new character plate against an
+   approved one before accepting it.
+
+---
+
 ## 6 · Motion grammar (video prompts)
 
 Current video models generate a **single continuous shot**. Never ask for a cut inside a shot.
@@ -241,12 +268,18 @@ roughly linearly, so a 10s shot ≈ double. **Video is the entire cost of this p
 
 Two things about this plan matter more than the headline number.
 
-**1. The unlimited image models make the entire image side free.** Nano Banana 2 Lite, Qwen
-Image 3.0, MiniMax H3 and FLUX 3 are unlimited on this plan. Every reference plate, character
-sheet, environment plate, thumbnail and poster costs **zero credits**. That means 100% of the
-24,000 goes to video, and the reference-locking strategy in §7 — which is what holds the series
-to one look — becomes free to iterate on. Generate reference plates until they are exactly
-right; it costs nothing.
+**1. ⚠️ The "unlimited" image models are NOT unlimited through this MCP connection.**
+Measured directly against the account balance on 2026-08-20: a `nano-banana-2-lite` job — one of
+the four models the plan lists as UNLIMITED — was charged the full **15 credits**, identical to
+`seedream-4-5`. Seven image jobs took the balance from 24,000 to 23,895, exactly 15 each.
+
+The unlimited tier appears to apply only in the OpenArt web UI, not to API/MCP usage. **Plan the
+budget as if every image costs credits**, because through this pipeline it does. This corrects an
+earlier assumption in this document that the image side would be free.
+
+The practical impact is small — a full reference-plate set is roughly 15–20 plates, about
+225–300 credits, well under 2% of a month — but it is not zero, and re-rolling plates freely is
+no longer costless.
 
 **2. "~300 videos" is optimistic.** 24,000 ÷ 300 = 80 credits per video, which only holds at the
 cheapest tier. The real number depends entirely on model:
