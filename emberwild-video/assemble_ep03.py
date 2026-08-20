@@ -81,8 +81,17 @@ def main():
     else:
         silent.rename(out)
         print(f"wrote {out.name} (no ambient bed - Ep1 audio unavailable)")
-    print(f"{out.stat().st_size//1024//1024} MB  {probe(out):.1f}s  "
-          f"{len(clips)} shots, {len(captions)} captions")
+    mb = out.stat().st_size // 1024 // 1024
+    print(f"{mb} MB  {probe(out):.1f}s  {len(clips)} shots, {len(captions)} captions")
+    if mb > 95:
+        # GitHub rejects any file over 100 MB, and this repo is how the episodes
+        # are delivered. Ep3's moor grass is expensive to encode and landed at
+        # 108 MB at crf 18; crf 21 brings it to 74 MB with no visible loss on
+        # flat cel art at 720p.
+        print(f"WARNING: {mb} MB exceeds GitHub's 100 MB limit. Re-encode at a "
+              f"higher crf before committing:\n"
+              f"  ffmpeg -i {out.name} -c:v libx264 -preset slow -crf 21 "
+              f"-c:a copy -movflags +faststart small.mp4")
 
 
 if __name__ == "__main__":
