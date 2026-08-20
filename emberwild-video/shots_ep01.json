@@ -1,0 +1,526 @@
+{
+  "episode": 1,
+  "title": "The Bonding",
+  "tagline": "to bond is to stop being alone.",
+  "accent": "#e8662e",
+  "source": "scripts/ep01_the-bonding.txt (author-supplied full script)",
+  "format": {
+    "shot_seconds": 5,
+    "shots": 41,
+    "runtime_s": 205,
+    "model": "kling-3-omni element2video, std 720p, 16:9, generateSound true",
+    "credits_per_shot": 175,
+    "credits_total": 7175
+  },
+  "style_block": "2D animated fantasy illustration, flat cel colour, bold flowing linework with Art Nouveau influence in the natural forms only, anime-influenced expressive faces with large eyes, heavy dark ink outlines, painterly comic key-art lighting, cinematic composition, warm ember palette of burnt orange, gold, deep blood-red and pale cream, with pale silver reserved for the broken sky-ring, organic curves in every natural form, no decorative border, no filigree frame, no text, no lettering, no speech bubbles, no watermark, no logo, no signature",
+  "audio_clause": "Ambient sound only. No speech, no voices, no singing, no narration.",
+  "character_blocks": {
+    "ROOK": "a young man in his early twenties with wind-blown loose dark hair, sharp quiet eyes, normal human skin, fully clothed in a layered tunic and trousers of tanned leather and woven bark-cloth in burnt orange and pale cream, barefoot, a curved pale knife at his belt, simple tribal tattoo bands on his arms",
+    "CINDER": "a horned wildcat the size of a big hound, not lion-sized, orange and cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back, an ordinary furry animal, fur not fire, no flames on the animal",
+    "SORREL": "a wiry thirteen-year-old girl with dark braided hair and a bright open face, normal human skin, wearing a modest practical full-length layered tunic of tanned leather and woven bark-cloth in burnt orange and pale cream covering her shoulders chest and legs, simple tribal tattoo bands on her forearms, barefoot",
+    "MOTH": "a small horned lynx kitten with soft silver and orange tabby fur, oversized paws, two tiny budding horns, an ordinary furry animal, fur not fire, no flames, no glowing, no antennae, no flowers",
+    "BRAM": "a proud headstrong seventeen-year-old with tied-back dark hair, heavier build, normal human skin, fully clothed in a layered tunic and trousers of tanned leather in burnt orange and pale cream, tribal tattoo bands",
+    "THORNCLAW": "a lean dark-furred horned wildcat, an ordinary furry animal, fur not fire",
+    "YARROW": "a very old Vael elder woman, one eye milk-white and blind, deeply lined face, long grey hair, fully clothed in draped robes of woven cloth in pale cream and burnt orange hung with feathers and small carved bone charms, holding a gnarled wooden staff",
+    "SEDGE": "a wary lean man fully clothed in a tunic of woven cloth in reed-teal and pale cream, wet dark hair, marsh-dry expression, a long green water-serpent coiled about his shoulders"
+  },
+  "plates_needed_new": [
+    "CAMP",
+    "YARROW",
+    "BRAM+THORNCLAW",
+    "FIREPIT",
+    "VALLEY"
+  ],
+  "plates_reused": [
+    "FOREST",
+    "SORREL+MOTH",
+    "ROOK+CINDER",
+    "SCAR",
+    "SEDGE+MARSH"
+  ],
+  "shots": [
+    {
+      "n": 1,
+      "page": "p1",
+      "beat": "The world is curves",
+      "shot": "a vast night forest seen from high above, an endless canopy of curving treetops silvered by moonlight, an enormous shattered ring of pale silver light arcing across the entire sky above, broken into separate segments with clear gaps, tiny orange campfires glowing far below like embers dropped into black moss",
+      "motion": "slow aerial drift forward over the canopy",
+      "plate": "FOREST",
+      "caption": "They say the sky was whole, once.",
+      "characters": []
+    },
+    {
+      "n": 2,
+      "page": "p1",
+      "beat": "No one remembers",
+      "shot": "a vast shattered ring of pale silver light filling the night sky above a curving forest canopy, the broken segments drifting with faint shimmer, stars between them",
+      "motion": "very slow tilt up along the broken ring",
+      "plate": "FOREST",
+      "caption": "No one now living remembers it unbroken - and no one remembers what broke it.",
+      "characters": []
+    },
+    {
+      "n": 3,
+      "page": "p2",
+      "beat": "The camp",
+      "shot": "a Vael forest camp at night in a hollow ringed by enormous ancient curving trees, hide tents, drying racks and woven lanterns glowing warm, a low cooking fire, lived-in and peaceful",
+      "motion": "slow drift through the camp, lantern light swaying",
+      "plate": "CAMP",
+      "caption": "The Vael move when the land tells them to. Tonight, the land said: stay.",
+      "characters": []
+    },
+    {
+      "n": 4,
+      "page": "p2",
+      "beat": "Dread",
+      "shot": "a wiry thirteen-year-old girl crouched alone at the edge of a firelit camp, knees drawn to her chest, staring out into the dark forest, wide frightened eyes",
+      "motion": "slow push in on her face",
+      "plate": "SORREL+MOTH",
+      "caption": null,
+      "characters": [
+        "SORREL"
+      ]
+    },
+    {
+      "n": 5,
+      "page": "p2",
+      "beat": "You haven't eaten",
+      "shot": "a young man crouching down to the level of a seated thirteen-year-old girl at the edge of a night camp, offering her a strip of dried meat, both half-lit by firelight",
+      "motion": "hold, firelight flicker, slight push in",
+      "plate": "ROOK+CINDER",
+      "caption": null,
+      "characters": [
+        "ROOK",
+        "SORREL"
+      ]
+    },
+    {
+      "n": 6,
+      "page": "p2",
+      "beat": "Cinder arrives",
+      "shot": "a large horned wildcat padding quietly into frame behind a seated young man at a night campfire, its scarred muzzle and torn ear catching the firelight",
+      "motion": "slow lateral drift as the animal enters frame",
+      "plate": "ROOK+CINDER",
+      "caption": "Everyone's stomach is full of moths, their first bonding. Mine was.",
+      "characters": [
+        "ROOK",
+        "CINDER"
+      ]
+    },
+    {
+      "n": 7,
+      "page": "p3",
+      "beat": "He's so big",
+      "shot": "a large horned wildcat lowering its great head to sniff a young girl's hair as she sits very still, delighted and frightened, warm firelight",
+      "motion": "slow push in on the two heads",
+      "plate": "ROOK+CINDER",
+      "caption": null,
+      "characters": [
+        "SORREL",
+        "CINDER"
+      ]
+    },
+    {
+      "n": 8,
+      "page": "p3",
+      "beat": "Honest",
+      "shot": "a young man scratching the torn ear of a large horned wildcat, the animal's eyes half closing in contentment, firelight",
+      "motion": "hold, small movements only",
+      "plate": "ROOK+CINDER",
+      "caption": "The bond cares whether you are honest. Lynxes cannot stand a liar.",
+      "characters": [
+        "ROOK",
+        "CINDER"
+      ]
+    },
+    {
+      "n": 9,
+      "page": "p3",
+      "beat": "Bram",
+      "shot": "a proud headstrong seventeen-year-old walking past a campfire with a lean dark-furred horned wildcat at his heel, younger children trailing behind him, firelight catching the animal's eyes",
+      "motion": "slow lateral tracking as he passes",
+      "plate": "BRAM+THORNCLAW",
+      "caption": "Or whether you are worthy. Some people the fire just says no to.",
+      "characters": [
+        "BRAM",
+        "THORNCLAW"
+      ]
+    },
+    {
+      "n": 10,
+      "page": "p3",
+      "beat": "Between them",
+      "shot": "a young man rising slowly to stand between a swaggering older boy and a small seated girl at a night camp, calm and unhurried, not raising his voice",
+      "motion": "slow push in from behind Rook",
+      "plate": "ROOK+CINDER",
+      "caption": "The fire has not refused a Vael child in my lifetime.",
+      "characters": [
+        "ROOK",
+        "BRAM"
+      ]
+    },
+    {
+      "n": 11,
+      "page": "p4",
+      "beat": "The weight",
+      "shot": "a young man watching someone walk away, a flicker of tiredness crossing his face, one hand resting on the curved pale knife at his belt, firelight",
+      "motion": "very slow push in on his face",
+      "plate": "ROOK+CINDER",
+      "caption": "He did not yet feel like a chief. He felt like a boy wearing his mother's knife.",
+      "characters": [
+        "ROOK"
+      ]
+    },
+    {
+      "n": 12,
+      "page": "p4",
+      "beat": "Only the honest",
+      "shot": "a young man crouched level with a thirteen-year-old girl by firelight, speaking to her honestly and directly, both faces lit warm",
+      "motion": "hold, slow push in",
+      "plate": "ROOK+CINDER",
+      "caption": "Because you are scared of it. Only the honest ones are scared.",
+      "characters": [
+        "ROOK",
+        "SORREL"
+      ]
+    },
+    {
+      "n": 13,
+      "page": "p5",
+      "beat": "The drum",
+      "shot": "an elder striking a great hide drum at night, concentric rings of light rippling outward through the air from the drumskin, the camp turning toward the sound",
+      "motion": "hold, the rings ripple outward",
+      "plate": "CAMP",
+      "caption": null,
+      "characters": []
+    },
+    {
+      "n": 14,
+      "page": "p5",
+      "beat": "Yarrow calls it",
+      "shot": "a very old blind-eyed elder woman raising a gnarled staff at the mouth of a stone-ringed fire pit, feathers and bone charms hanging from her robes, tall firelight on her face",
+      "motion": "slow push in",
+      "plate": "YARROW",
+      "caption": "The land said stay. The fire says now.",
+      "characters": [
+        "YARROW"
+      ]
+    },
+    {
+      "n": 15,
+      "page": "p5",
+      "beat": "Half a soul",
+      "shot": "a whole tribe gathered in a wide ring around a stone-ringed fire pit at night, faces lit gold, a small girl being walked toward the centre",
+      "motion": "slow drift around the outside of the ring",
+      "plate": "FIREPIT",
+      "caption": "Every Vael is born half a soul. The other half waits in the fire.",
+      "characters": []
+    },
+    {
+      "n": 16,
+      "page": "p6",
+      "beat": "Not with your eyes",
+      "shot": "a stone-ringed ceremonial fire burning strangely, flames too tall and too orange, faint shapes seeming to move within the fire, beautiful and unnerving",
+      "motion": "slow push in toward the flames",
+      "plate": "FIREPIT",
+      "caption": "Look into it, child. Not with your eyes.",
+      "characters": []
+    },
+    {
+      "n": 17,
+      "page": "p6",
+      "beat": "Alone at the fire",
+      "shot": "a thirteen-year-old girl standing alone at the edge of a tall ceremonial fire, firelight painting her face, the silent watching tribe dark behind her",
+      "motion": "slow push in on her face",
+      "plate": "FIREPIT",
+      "caption": null,
+      "characters": [
+        "SORREL"
+      ]
+    },
+    {
+      "n": 18,
+      "page": "p6",
+      "beat": "Stop looking. Ask.",
+      "shot": "a very old blind-eyed elder woman standing behind a young girl at a fire, her staff planted in the ground, speaking low and certain",
+      "motion": "hold, firelight flicker",
+      "plate": "YARROW",
+      "caption": "You are looking. Stop looking. Ask.",
+      "characters": [
+        "YARROW"
+      ]
+    },
+    {
+      "n": 19,
+      "page": "p6",
+      "beat": "Is someone there",
+      "shot": "extreme close up on a girl's eye with a tall fire reflected in it, and within the reflection two smaller lights appearing like a pair of eyes opening in the flame",
+      "motion": "very slow push in on the eye",
+      "plate": "FIREPIT",
+      "caption": "...is someone there?",
+      "characters": [
+        "SORREL"
+      ]
+    },
+    {
+      "n": 20,
+      "page": "p7",
+      "beat": "Through the fire",
+      "shot": "a lynx kitten formed of ember-light stepping out from within a tall fire and coalescing into fur and flesh as it walks forward, curling flame-tendrils around it, low angle",
+      "motion": "slow push in, flames and embers moving",
+      "plate": "FIREPIT",
+      "caption": "They do not come from the fire. They come through it -",
+      "characters": []
+    },
+    {
+      "n": 21,
+      "page": "p7",
+      "beat": "Where the half waits",
+      "shot": "a small horned lynx kitten walking out of firelight toward the viewer, its fur resolving from ember-glow into ordinary silver and orange tabby fur",
+      "motion": "slow push in on the kitten",
+      "plate": "SORREL+MOTH",
+      "caption": "- from wherever the other half of a Vael soul has been waiting.",
+      "characters": [
+        "MOTH"
+      ]
+    },
+    {
+      "n": 22,
+      "page": "p8",
+      "beat": "Hello",
+      "shot": "a thirteen-year-old girl slowly kneeling and holding out one trembling hand to a small horned lynx kitten, tears standing in her wide eyes, firelight",
+      "motion": "hold, slow push in",
+      "plate": "SORREL+MOTH",
+      "caption": "Hello.",
+      "characters": [
+        "SORREL",
+        "MOTH"
+      ]
+    },
+    {
+      "n": 23,
+      "page": "p8",
+      "beat": "The bond",
+      "shot": "a small horned lynx kitten pressing its forehead into a girl's open palm, a soft pulse of warm light radiating outward from the touch in concentric rings",
+      "motion": "hold, the light pulses outward",
+      "plate": "SORREL+MOTH",
+      "caption": null,
+      "characters": [
+        "SORREL",
+        "MOTH"
+      ]
+    },
+    {
+      "n": 24,
+      "page": "p8",
+      "beat": "Not alone",
+      "shot": "close on a thirteen-year-old girl's face as she gasps in recognition, eyes wide and wet, firelight, a small lynx kitten's head under her hand",
+      "motion": "very slow push in on her face",
+      "plate": "SORREL+MOTH",
+      "caption": "To bond is to stop being alone in a way you never knew you were.",
+      "characters": [
+        "SORREL",
+        "MOTH"
+      ]
+    },
+    {
+      "n": 25,
+      "page": "p9",
+      "beat": "The tribe erupts",
+      "shot": "a whole tribe around a great night fire throwing their arms up in celebration, horned wildcats yowling, a girl spinning with a lynx kitten held in her arms, sparks flying up",
+      "motion": "hold, wide, everything moving",
+      "plate": "CAMP",
+      "caption": null,
+      "characters": []
+    },
+    {
+      "n": 26,
+      "page": "p9",
+      "beat": "Moth",
+      "shot": "a thirteen-year-old girl holding a small horned lynx kitten up above her head, fierce and certain, all fear burned off, firelit tribe behind her",
+      "motion": "slow push in on the girl and kitten",
+      "plate": "SORREL+MOTH",
+      "caption": "Moth. Her name is Moth.",
+      "characters": [
+        "SORREL",
+        "MOTH"
+      ]
+    },
+    {
+      "n": 27,
+      "page": "p10",
+      "beat": "Celebration",
+      "shot": "a night celebration around a high fire, food passed hand to hand, a reed pipe playing, children chasing lynx cubs between the tents, warm and full and alive",
+      "motion": "slow drift through the celebration",
+      "plate": "CAMP",
+      "caption": "The Vael have few certain things. So they hold hard to the ones they have.",
+      "characters": []
+    },
+    {
+      "n": 28,
+      "page": "p10",
+      "beat": "Where do they wait",
+      "shot": "a young man and a thirteen-year-old girl sitting together at the quiet edge of a fire, a lynx kitten asleep in her lap, a large horned wildcat sprawled at his feet",
+      "motion": "hold, firelight flicker, slow push in",
+      "plate": "ROOK+CINDER",
+      "caption": "Where do they wait? Before?",
+      "characters": [
+        "ROOK",
+        "SORREL",
+        "MOTH",
+        "CINDER"
+      ]
+    },
+    {
+      "n": 29,
+      "page": "p10",
+      "beat": "Same place the sky went",
+      "shot": "a young man looking up past dark treetops at an enormous shattered ring of pale silver light in the night sky, wondering, firelight below on his face",
+      "motion": "slow tilt up from his face to the broken ring",
+      "plate": "FOREST",
+      "caption": "No one does. Same place the sky went, maybe.",
+      "characters": [
+        "ROOK"
+      ]
+    },
+    {
+      "n": 30,
+      "page": "p11",
+      "beat": "Peace for one night",
+      "shot": "two young men sitting near a low fire late at night, a large horned wildcat and a lean dark-furred horned wildcat touching noses between them, tired and companionable",
+      "motion": "hold, firelight flicker",
+      "plate": "CAMP",
+      "caption": "You are allowed to let people in.",
+      "characters": [
+        "ROOK",
+        "BRAM",
+        "CINDER",
+        "THORNCLAW"
+      ]
+    },
+    {
+      "n": 31,
+      "page": "p12",
+      "beat": "One of the good nights",
+      "shot": "a sleeping Vael camp deep at night, lanterns guttering low, the enormous broken silver ring bright overhead, wide and quiet and beautiful",
+      "motion": "very slow drift across the sleeping camp",
+      "plate": "CAMP",
+      "caption": "It was, everyone agreed later, one of the good nights.",
+      "characters": []
+    },
+    {
+      "n": 32,
+      "page": "p12",
+      "beat": "Cinder wakes",
+      "shot": "close on a large horned wildcat's scarred face in darkness, lit only by pale ring-light, its eyes snapping open and ears going up, a low growl building",
+      "motion": "hold, only the eyes and ears move",
+      "plate": "ROOK+CINDER",
+      "caption": null,
+      "characters": [
+        "CINDER"
+      ]
+    },
+    {
+      "n": 33,
+      "page": "p13",
+      "beat": "That's not the dawn",
+      "shot": "a young man crouched barefoot at the edge of a dark camp beside a large horned wildcat, both staring east, his hand already on the knife at his belt",
+      "motion": "slow push in from behind them",
+      "plate": "ROOK+CINDER",
+      "caption": null,
+      "characters": [
+        "ROOK",
+        "CINDER"
+      ]
+    },
+    {
+      "n": 34,
+      "page": "p13",
+      "beat": "The wrong light",
+      "shot": "a dull orange glow staining the night sky far off above a black treeline, seen across a dark forest, the wrong direction and the wrong colour for dawn",
+      "motion": "very slow push in toward the glow",
+      "plate": "SCAR",
+      "caption": "...that's not the dawn.",
+      "characters": []
+    },
+    {
+      "n": 35,
+      "page": "p14",
+      "beat": "Ironfolk",
+      "shot": "a very old blind-eyed elder woman leaning on a gnarled staff at the edge of a dark camp, her blind white eye turned toward a distant orange glow as if she can feel it",
+      "motion": "slow push in on her face",
+      "plate": "YARROW",
+      "caption": "The old word is Ironfolk.",
+      "characters": [
+        "YARROW"
+      ]
+    },
+    {
+      "n": 36,
+      "page": "p16",
+      "beat": "Break camp",
+      "shot": "a Vael camp being struck at first grey light, tents coming down, packs loaded, elders steadied, cubs carried, hurried but controlled",
+      "motion": "slow drift through the breaking camp",
+      "plate": "CAMP",
+      "caption": "This time the land did not ask.",
+      "characters": []
+    },
+    {
+      "n": 37,
+      "page": "p18",
+      "beat": "The straight scar",
+      "shot": "a black scar of felled and burned trees cut dead straight through a vast curving forest canopy, seen from a high ridge, straight as no natural thing is straight",
+      "motion": "slow drift along the straight scar",
+      "plate": "SCAR",
+      "caption": "Only one thing draws a straight line. Something that wants to.",
+      "characters": []
+    },
+    {
+      "n": 38,
+      "page": "p17",
+      "beat": "A chief walks last",
+      "shot": "a young man walking at the rear of a long column of tribespeople on a forest trail, turning to walk backward a few steps to watch the way they came, a horned wildcat beside him",
+      "motion": "slow tracking behind him",
+      "plate": "FOREST",
+      "caption": "A chief walks last, so he is the final thing between his people and the dark.",
+      "characters": [
+        "ROOK",
+        "CINDER"
+      ]
+    },
+    {
+      "n": 39,
+      "page": "p21",
+      "beat": "New land",
+      "shot": "a wide unfamiliar valley opening below a ridge at golden hour, a silver river snaking through it, strange rock formations, a tribe cresting the rise above",
+      "motion": "slow tilt down to reveal the valley",
+      "plate": "VALLEY",
+      "caption": "By dusk they had gone farther west than any of them had ever walked.",
+      "characters": []
+    },
+    {
+      "n": 40,
+      "page": "p22",
+      "beat": "Not the last",
+      "shot": "a lone figure crouched half-hidden among tall reeds across a wide river at last light, with no wildcat beside them but a long water-serpent coiled around their shoulders, head raised",
+      "motion": "slow push in across the water toward the figure",
+      "plate": "SEDGE+MARSH",
+      "caption": "The Vael believed themselves the last of their kind.",
+      "characters": [
+        "SEDGE"
+      ]
+    },
+    {
+      "n": 41,
+      "page": "p22",
+      "beat": "They were wrong",
+      "shot": "close on a wary figure among river reeds turning their head sharply toward the viewer, caught and alarmed, a long water-serpent rearing at their shoulder with its hood flaring",
+      "motion": "hold, the head turns and the serpent rears",
+      "plate": "SEDGE+MARSH",
+      "caption": "They were wrong.",
+      "characters": [
+        "SEDGE"
+      ]
+    }
+  ]
+}

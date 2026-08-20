@@ -14,12 +14,22 @@ One caveat: balloons within a page come out in layout order, not reading order, 
 lines inside a page sometimes appear shuffled. Re-sequence against the page's dramatic
 logic when writing shots — the wording is exact, the ordering is not.
 
+## Two kinds of source
+
+**Author-supplied full scripts are the source of truth** where they exist. They carry panel
+descriptions, correct reading order, and the artist's staging notes — everything the PDF
+extraction loses. Episodes 1 and 2 have them.
+
+PDF extraction is the fallback for the rest. It recovers the exact wording but scrambles
+balloon order within a page and carries no panel direction. A `_PDF-EXTRACT` suffix marks
+a file that came from a PDF rather than from the author.
+
 ## Availability
 
 | Ep | Title | Script source | Status |
 |---|---|---|---|
-| 1 | The Bonding | — | **MISSING from Drive** |
-| 2 | Strangers in the Reeds | `ep02_strangers-in-the-reeds.txt` | extracted |
+| 1 | The Bonding | `ep01_the-bonding.txt` | supplied by the author |
+| 2 | Strangers in the Reeds | `ep02_strangers-in-the-reeds.txt` | **author-supplied** (full script with panel directions) |
 | 3 | Old Wounds | Drive PDF | extractable |
 | 4 | The Sky Cage | Drive PDF + .md | extractable |
 | 5 | The Deserter | Drive PDF | extractable |
