@@ -70,7 +70,11 @@
   "BRACKEN": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254391952c891133c7aa592195d19c3080f8a135dec6afd_0_1787254413434_c5af0ccc.jpeg",
   "CUT_CHANNEL": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254407240f2dfc9d17a425ad03ee233374d263661d2cd40_0_1787254421418_ff760b1c.jpeg",
   "SORREL_ALONE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872511060739e89f26b858b9d25ce524a85522bfdaf265de0_0_1787251116566_83f41ca5.jpeg",
-  "CUT_CHANNEL_v2": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787257439241fdccfc102ca12157f94275e78054dc3b9e6dae_0_1787257451346_26c91f09.jpeg"
+  "CUT_CHANNEL_v2": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787257439241fdccfc102ca12157f94275e78054dc3b9e6dae_0_1787257451346_26c91f09.jpeg",
+  "WREN": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787261926351c2670fe791a5f29d61bdea8e0ada6c5d84b352_0_1787261935721_9431407c.jpeg",
+  "MOOR": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787261752064124404eabe9b927fceaa7c0eaca8bf7a3c4d24_0_1787261760810_14197acc.jpeg",
+  "CORDS": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787261758406b52b40748efca76dec1583940832f7e49d1d3b_0_1787261766208_fe7059e5.jpeg",
+  "RINGS": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724285268877dd13f2098096eba9569e39b59e750caeb4c2_0_1787242863153_0e722131.jpeg"
  },
  "shots": [
   {
@@ -580,5 +584,27 @@
    "motion": "hold, then a very slow push in as it turns back",
    "caption": "\u201cIt looked back. At the stones. A tool doesn't grieve a thing it's leaving.\u201d"
   }
- ]
+ ],
+ "qa": {
+  "plates": {
+   "WREN": "Re-rolled once. First attempt fired the filigree-border trap despite the style guard and rendered the robe off one shoulder. Fix: pulled the border negatives out of the trailing style tail into their own explicit clause, and specified high closed neckline, long sleeves, both shoulders covered.",
+   "MOOR": "Approved first pass.",
+   "CORDS": "Approved first pass."
+  },
+  "parallel_limit": "OpenArt rejects submissions past roughly 10 concurrent jobs with PARALLEL_LIMIT_EXCEEDED. The rejection happens at submit time and is not charged. Submit in batches of about 5 and let earlier jobs drain."
+ },
+ "moderation_policy": "No Ironfolk reference plate is used anywhere in this episode. In Episode 2 the CUT_CHANNEL plate showing masked figures in formation tripped Kling's risk control on five shots; the same shots passed once the plate was regenerated figure-free. The marked one and the column are therefore described in prompt text only, over the RINGS and MOOR environment plates.",
+ "generation_log": {
+  "1": "j0dl3k73R0xY6YUuIOVH",
+  "2": "yweZHlKiBv7lAnz1Jsu0",
+  "3": "0L2Uh8Y67OT1Ou8KnlPY",
+  "4": "N86HRiHZfhvS71DZjGQ7",
+  "5": "oBocwDDGfm3BvkBg4r27",
+  "6": "qJYQ8KbMtggAJ5we9hz6",
+  "7": "z9DY2eLjV3TJO9y1WjEl",
+  "8": "lSNHcXnSjI6wqkGG1aPz",
+  "9": "ZOQJosjzCRxBJIuM8HXo",
+  "11": "xM5ZNJBbzQCOIsQjYPQD",
+  "12": "LDypOmcRfD840YIPJsps"
+ }
 }
