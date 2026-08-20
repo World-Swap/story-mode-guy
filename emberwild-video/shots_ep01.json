@@ -20,7 +20,7 @@
     "SORREL": "a wiry thirteen-year-old girl with dark braided hair and a bright open face, normal human skin, wearing a modest practical full-length layered tunic of tanned leather and woven bark-cloth in burnt orange and pale cream covering her shoulders chest and legs, simple tribal tattoo bands on her forearms, barefoot",
     "MOTH": "a small horned lynx kitten with soft silver and orange tabby fur, oversized paws, two tiny budding horns, an ordinary furry animal, fur not fire, no flames, no glowing, no antennae, no flowers",
     "BRAM": "a proud headstrong seventeen-year-old with tied-back dark hair, heavier build, normal human skin, fully clothed in a layered tunic and trousers of tanned leather in burnt orange and pale cream, tribal tattoo bands",
-    "THORNCLAW": "a lean dark-furred horned wildcat, an ordinary furry animal, fur not fire",
+    "THORNCLAW": "a large black-furred cat, unmistakably feline with a broad flat cat face, whiskers, tufted ears, soft paws and a long cat tail, with two short curved horns on its brow, about the size of a big hound, not a goat and not a ram, no hooves, an ordinary furry animal, fur not fire",
     "YARROW": "a very old Vael elder woman, one eye milk-white and blind, deeply lined face, long grey hair, fully clothed in draped robes of woven cloth in pale cream and burnt orange hung with feathers and small carved bone charms, holding a gnarled wooden staff",
     "SEDGE": "a wary lean man fully clothed in a tunic of woven cloth in reed-teal and pale cream, wet dark hair, marsh-dry expression, a long green water-serpent coiled about his shoulders"
   },
@@ -522,5 +522,47 @@
         "SEDGE"
       ]
     }
-  ]
+  ],
+  "prompt_traps": [
+    "NEVER write 'flame-lynx' in a generation prompt. The models literalise it into a fire elemental with flames, chrome fur and antennae. Say 'horned lynx' and let the palette carry the ember association. The species name is for the script, not the prompt.",
+    "ALWAYS state clothing coverage explicitly for Sorrel. Left unspecified, the models produced a bare-midriff outfit on a thirteen-year-old. Say 'modest practical full-length tunic covering shoulders chest and legs'.",
+    "'Art Nouveau linework' alone tips into decorative gold filigree borders framing the image. Say 'Art Nouveau influence in the natural forms only' and add 'no decorative border, no filigree frame'.",
+    "Character plates drift further from house style than environment plates. Environment plates came back consistent; the character plate did not. Re-check every character plate against an approved one before accepting it.",
+    "NEVER leave 'hide' and 'bone' as bare colour/material adjectives. A figure described as 'in ember-orange and bone hide' rendered as a creature covered in fire-coloured fur with a skeleton showing through. Always attach a garment noun - 'a layered tunic of tanned leather and woven cloth' - and use 'pale cream' rather than 'bone' as a colour. Add 'no skeleton, no exposed bones, no fur' to any prompt describing a clothed Vael.",
+    "A 'horned wildcat' with 'curved ridged horns sweeping back' renders as a GOAT or antelope - goat face, hooves, long spiral horns. Cinder survives because his description is dense with cat cues (scarred muzzle, torn ear, orange tabby fur). For any other bonded cat, anchor felinity explicitly: 'unmistakably feline, broad flat cat face, whiskers, tufted ears, paws, long cat tail' plus 'two SHORT curved horns' and an explicit negative - 'not a goat, not a ram, not an antelope, no hooves, no beard, no long spiral horns'."
+  ],
+  "plate_urls": {
+    "FOREST": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872427960711386b9a8ed856c57501cfa946ce34c98aeb240_0_1787242805789_65556f89.jpeg",
+    "SORREL+MOTH": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724299229134865fa4f4ec67e4268045741fa8093f9b237f_0_1787243004088_4d8a3f49.jpeg",
+    "ROOK+CINDER": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872417866629953a9193bc3926b190298875f636f3ebb5ec9_0_1787241798088_a3c6387f.jpeg",
+    "SCAR": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872427999129953a9193bc3926b190298875f636f3ea3bd05_0_1787242809639_5681d66a.jpeg",
+    "SEDGE+MARSH": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872428521596362ddeee9049477b0b29b68d55a9ae97d5b3e_0_1787242861435_618145e3.jpeg",
+    "CAMP": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246751004e3e9275467fdb9818f9fefcdf3ebba71585615_0_1787246758847_1eb0d3a3.jpeg",
+    "YARROW": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246814320904c389cfd819598df3df498c1c52189f7d405_0_1787246822926_c56d252b.jpeg",
+    "FIREPIT": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724684388322877b9ff06629ca98d99f0267ba452ba6532c_0_1787246852762_0b32d280.jpeg",
+    "VALLEY": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246856766b825dd5258dc4c388f66926d17e5fb9c73d216_0_1787246864510_4f7e6d6c.jpeg",
+    "BRAM+THORNCLAW": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872479863663cb8a93f7287826a4278aac7f0d089f95d3e23_0_1787247996394_8f26c1a6.jpeg"
+  },
+  "generation_log": {
+    "1": "X2ovd9DivuwgHSTTnhsT",
+    "2": "TmempeSezZHO7yr1y91N",
+    "3": "qbHrnjsnCfIuR60yaeU0",
+    "4": "ciRPFLLTT8Rr87VtL9LH",
+    "5": "dCf7HMWRinrwRjsIOzMv",
+    "6": "ih7wdqrIZiiwWgvHyU7g",
+    "7": "sOqpjWgOSnHMugXrYxxb",
+    "8": "ACVqGFH96pVaqBVlVPJR",
+    "9": "MePMY8PQCT0pATy0H7CO",
+    "10": "YllU9lGekmJLGlH6wcSh",
+    "11": "kHc5wedXtmkbUK0jliXs",
+    "12": "OOcDqZNTGdJ7C6SDz9MS",
+    "13": "edzxQKk1uxdbmsU3fpMm",
+    "14": "FbXysBqiCTCL2UcVwywk",
+    "15": "aqbXoPmOUqGfHXhJ4k7o",
+    "16": "1wOCsu6tLnS1JkklODHg",
+    "17": "7OFEKhageOj3I5zJr5dJ",
+    "18": "l8iepFQiRCV2ww0xo7A3",
+    "19": "6PUhOrnp6k5ikBB3qPhA",
+    "20": "RgBB322wKkN9JRQzP4VJ"
+  }
 }
