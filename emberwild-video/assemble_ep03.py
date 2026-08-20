@@ -13,7 +13,11 @@ FF = imageio_ffmpeg.get_ffmpeg_exe()
 HERE = pathlib.Path(__file__).parent
 SRC = HERE / "shots_ep03"
 REROLL = HERE / "shots_out"
-SUBS = {}          # QA re-rolls that supersede the original render
+# QA re-rolls that supersede the original render. See shots_ep03.json -> qa.shots.
+SUBS = {
+    21: HERE / "shots_ep03_rr" / "rr21_corrected-out-loud.mp4",
+    42: HERE / "shots_ep03_rr" / "rr42_it-looked-back.mp4",
+}
 
 
 def ambient_bed(seconds, out):
