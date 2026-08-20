@@ -562,7 +562,8 @@
     "MARSH_VILLAGE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254355889f99996bc9b27db5cda0ac6dd5ae68edad24248_0_1787254365554_53c7477d.jpeg",
     "BRACKEN": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254391952c891133c7aa592195d19c3080f8a135dec6afd_0_1787254413434_c5af0ccc.jpeg",
     "CUT_CHANNEL": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254407240f2dfc9d17a425ad03ee233374d263661d2cd40_0_1787254421418_ff760b1c.jpeg",
-    "SORREL_ALONE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872511060739e89f26b858b9d25ce524a85522bfdaf265de0_0_1787251116566_83f41ca5.jpeg"
+    "SORREL_ALONE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872511060739e89f26b858b9d25ce524a85522bfdaf265de0_0_1787251116566_83f41ca5.jpeg",
+    "CUT_CHANNEL_v2": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787257439241fdccfc102ca12157f94275e78054dc3b9e6dae_0_1787257451346_26c91f09.jpeg"
   },
   "generation_log": {
     "1": "UpicU9FBne734FEM5jdC",
@@ -595,13 +596,13 @@
     "28": "F1CWAZT0h0YXPOmNdRFs",
     "29": "2hRAmIEy71WQZPspzywm",
     "30": "ZPSmcK5pEWRYFVUuXk1t",
-    "31": "2doS6Gk23r0UYKtA0Lvq",
+    "31": "rrOlnPCZErMPWeJgqAvA",
     "32": "oQqds74d9Ddo7MvQzetv",
     "33": "tRbOS9UXDkovSgxGXci7",
     "34": "d7LubMWsmyG7gofMmpJ9",
-    "35": "5sG1LKaOgBlbUAh9SjyT",
-    "36": "xyd0VN58absO7hHGidLK",
-    "37": "opHgdvrDstgwLEpsngtv",
+    "35": "Ek5C2sflK2Vd0V261Qv0",
+    "36": "yQwNrzfSccr1wRajCRBK",
+    "37": "a3IIzQOrHCgwJYPP9og0",
     "38": "dQWm4UQ2ViUxSrZwJ8gi",
     "39": "tEPYgEBfwfZMVwLLJkFa",
     "40": "yKzxtmmNTs6knB27zxju",
@@ -609,9 +610,8 @@
     "42": "2h36LtuKjlIR16HCVCH8"
   },
   "qa": {
-    "moderation_failures": {
-      "count": 5,
-      "shots": [
+    "moderation": {
+      "failed_shots": [
         31,
         33,
         35,
@@ -620,7 +620,14 @@
       ],
       "reason": "[kling] Failure to pass the risk control system",
       "refunded": true,
-      "fix": "Rewrote all five to convey the same beats by implication rather than depiction."
+      "first_diagnosis_WRONG": "Blamed combat wording and sanitised the prompts. Four of the five failed again - including shot 37, whose prompt was reduced to 'an abandoned machine tangled with reeds'. Harmless wording, same rejection.",
+      "actual_cause": "The CUT_CHANNEL plate itself. It depicted masked figures in formation beside a machine, which Kling's risk control reads as military. Every shot referencing that image failed regardless of prompt. Shot 33, the only one moved to a different plate, passed immediately.",
+      "fix": "Regenerated the plate with no people in it at all - machine and straight cut only - and re-ran the shots against it. All passed."
+    },
+    "canon_fix": {
+      "shot": 35,
+      "issue": "The first recovery used the VANE plate, so the figure read as Iron Warden Vane, whose full reveal the handoff notes hold for Episode 6.",
+      "fix": "Re-rolled against the figure-free plate with an explicitly anonymous helm - no crest, no glowing slit - so it reads as a nameless cutter."
     }
   }
 }

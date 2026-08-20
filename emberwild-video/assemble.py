@@ -20,6 +20,12 @@ CREAM, GOLD, INK = (239, 228, 198), (242, 205, 132), (20, 16, 13)
 W, H = 1280, 720
 
 
+def has_audio(p):
+    """Ep2 onward is generated with generateSound off, so clips have no audio stream."""
+    err = subprocess.run([FF, "-i", str(p)], capture_output=True, text=True).stderr
+    return "Audio:" in err
+
+
 def probe(p):
     err = subprocess.run([FF, "-i", str(p)], capture_output=True, text=True).stderr
     h, m, s = re.search(r"Duration: (\d+):(\d+):([\d.]+)", err).groups()
@@ -58,6 +64,7 @@ def text_png(text, path, font_path, size, colour, y_frac, wrap=46):
 def build(clips, captions, out, title=None, subtitle=None):
     tmp = HERE / "_tmp"; tmp.mkdir(exist_ok=True)
     staged = []
+    src_audio = any(has_audio(c) for c in clips)
     for i, c in enumerate(clips):
         dur = probe(c)
         st = tmp / f"s{i:02d}.mp4"
@@ -73,28 +80,33 @@ def build(clips, captions, out, title=None, subtitle=None):
         if i == 0:
             filt.append(("[v]" if filt else "[0:v]") + "fade=t=in:st=0:d=0.8[v]")
         if filt:
-            cmd += ["-filter_complex", ";".join(filt), "-map", "[v]", "-map", "0:a"]
-        cmd += ["-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
-                "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2", str(st)]
+            cmd += ["-filter_complex", ";".join(filt), "-map", "[v]"]
+            cmd += ["-map", "0:a"] if aud else ["-an"]
+        cmd += ["-c:v", "libx264", "-preset", "veryfast", "-crf", "16"]
+        if aud:
+            cmd += ["-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2"]
+        cmd += [str(st)]
         subprocess.run(cmd, capture_output=True, check=True)
         staged.append(st)
 
     if title:
         card, layers = tmp / "title.mp4", []
         text_png(title, tmp / "t1.png", FONT_TITLE, 108, GOLD, 0.44)
-        cmd = [FF, "-y", "-f", "lavfi", "-i", f"color=c=0x14100d:s={W}x{H}:d=3.2",
-               "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo:d=3.2",
-               "-loop", "1", "-framerate", "24", "-t", "3.2", "-i", str(tmp / "t1.png")]
-        chain = "[2:v]format=rgba,fade=t=in:st=0.2:d=0.7:alpha=1,fade=t=out:st=2.5:d=0.6:alpha=1[t1];[0:v][t1]overlay=0:0[v1]"
+        cmd = [FF, "-y", "-f", "lavfi", "-i", f"color=c=0x14100d:s={W}x{H}:d=3.2"]
+        if src_audio:
+            cmd += ["-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo:d=3.2"]
+        cmd += ["-loop", "1", "-framerate", "24", "-t", "3.2", "-i", str(tmp / "t1.png")]
+        ti = 2 if src_audio else 1
+        chain = f"[{ti}:v]format=rgba,fade=t=in:st=0.2:d=0.7:alpha=1,fade=t=out:st=2.5:d=0.6:alpha=1[t1];[0:v][t1]overlay=0:0[v1]"
         if subtitle:
             text_png(subtitle, tmp / "t2.png", FONT_CAP, 36, CREAM, 0.60)
             cmd += ["-loop", "1", "-framerate", "24", "-t", "3.2", "-i", str(tmp / "t2.png")]
-            chain += ";[3:v]format=rgba,fade=t=in:st=0.9:d=0.6:alpha=1,fade=t=out:st=2.5:d=0.6:alpha=1[t2];[v1][t2]overlay=0:0[v]"
+            chain += f";[{ti+1}:v]format=rgba,fade=t=in:st=0.9:d=0.6:alpha=1,fade=t=out:st=2.5:d=0.6:alpha=1[t2];[v1][t2]overlay=0:0[v]"
         else:
             chain += ";[v1]null[v]"
-        cmd += ["-filter_complex", chain, "-map", "[v]", "-map", "1:a",
-                "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
-                "-c:a", "aac", "-b:a", "192k", "-shortest", str(card)]
+        cmd += ["-filter_complex", chain, "-map", "[v]"]
+        cmd += ["-map", "1:a", "-c:a", "aac", "-b:a", "192k"] if src_audio else ["-an"]
+        cmd += ["-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-shortest", str(card)]
         subprocess.run(cmd, capture_output=True, check=True)
         staged.append(card)
 

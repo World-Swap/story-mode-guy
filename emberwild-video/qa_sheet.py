@@ -17,6 +17,6 @@ for gi in range(0,len(frames),12):
     for f in grp: cmd+=["-i",str(f)]
     n=len(grp)
     cmd+=["-filter_complex",f"{''.join(f'[{i}:v]' for i in range(n))}xstack=inputs={n}:layout={'|'.join(f'{(i%4)*400}_{(i//4)*225}' for i in range(n))}" if n==12 else
-          f"{''.join(f'[{i}:v]' for i in range(n))}hstack=inputs={n}", "-frames:v","1",str(OUT/f"qa_ep01_{gi//12+1}.jpg")]
+          f"{''.join(f'[{i}:v]' for i in range(n))}hstack=inputs={n}", "-frames:v","1",str(OUT/f"qa_{SRC.name}_{gi//12+1}.jpg")]
     subprocess.run(cmd,capture_output=True)
 print("\n".join(f"{i+1:2d}. {c.stem}" for i,c in enumerate(clips)))
