@@ -1,0 +1,584 @@
+{
+ "episode": 3,
+ "title": "Old Wounds",
+ "tagline": "two tribes who each thought they were the last. one knife to undo it all.",
+ "accent": "#bcd4e2",
+ "source": "scripts/ep03_old-wounds.txt (extracted from the finished 22-page issue)",
+ "format": {
+  "shot_seconds": 5,
+  "shots": 42,
+  "runtime_s": 212,
+  "model": "kling-3-omni element2video, std 720p, 16:9, generateSound FALSE",
+  "credits_per_shot": 125,
+  "credits_total": 5250,
+  "audio": "Generated audio OFF. Ambient bed harvested from Episode 1 clips, as Ep2."
+ },
+ "style_block": "2D animated fantasy illustration, flat cel colour, bold flowing linework with Art Nouveau influence in the natural forms only, anime-influenced expressive faces with large eyes, heavy dark ink outlines, painterly comic key-art lighting, cinematic composition, warm ember palette of burnt orange, gold, deep blood-red and pale cream, with pale silver reserved for the broken sky-ring, organic curves in every natural form, no decorative border, no filigree frame, no text, no lettering, no speech bubbles, no watermark, no logo, no signature",
+ "character_blocks": {
+  "ROOK": "a young man in his early twenties with wind-blown loose dark hair, sharp quiet eyes, normal human skin, fully clothed in a layered tunic and trousers of tanned leather and woven bark-cloth in burnt orange and pale cream, barefoot, a curved pale knife at his belt, simple tribal tattoo bands on his arms",
+  "CINDER": "a horned wildcat the size of a big hound, not lion-sized, orange and cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back, an ordinary furry animal, fur not fire, no flames on the animal",
+  "SORREL": "a wiry thirteen-year-old girl with dark braided hair and a bright open face, normal human skin, wearing a modest practical full-length layered tunic of tanned leather and woven bark-cloth in burnt orange and pale cream covering her shoulders chest and legs, simple tribal tattoo bands on her forearms, barefoot",
+  "MOTH": "a small horned lynx kitten with soft silver and orange tabby fur, oversized paws, two tiny budding horns, an ordinary furry animal, fur not fire, no flames, no glowing, no antennae, no flowers",
+  "BRAM": "a proud headstrong seventeen-year-old with tied-back dark hair, heavier build, normal human skin, fully clothed in a layered tunic and trousers of tanned leather in burnt orange and pale cream, tribal tattoo bands",
+  "THORNCLAW": "a large black-furred cat, unmistakably feline with a broad flat cat face, whiskers, tufted ears, soft paws and a long cat tail, with two short curved horns on its brow, about the size of a big hound, not a goat and not a ram, no hooves, an ordinary furry animal, fur not fire",
+  "YARROW": "a very old Vael elder woman, one eye milk-white and blind, deeply lined face, long grey hair, fully clothed in draped robes of woven cloth in pale cream and burnt orange hung with feathers and small carved bone charms, holding a gnarled wooden staff",
+  "SEDGE": "a wary lean man fully clothed in a tunic of woven cloth in reed-teal and pale cream, wet dark hair, marsh-dry expression, a long green water-serpent coiled about his shoulders",
+  "BRACKEN": "a straight-backed older matriarch, grey hair bound tight, guarded closed-door expression, normal human skin, fully clothed in layered robes of woven cloth in reed-teal and pale cream, a great pale serpent coiled at her feet",
+  "RILL": "a long green water-serpent with smooth scales, head raised and tongue tasting the air, coiled about a person's shoulder and arm, an ordinary snake, no legs, no fire",
+  "CUTTER": "an angular soot-grey Ironfolk cutter in hard flat straight-edged plate armour with a blank featureless soot mask, no eyes, no bonded creature, human-sized, every edge rigid and geometric",
+  "WREN": "a nineteen-year-old marsh woman with dark hair pulled back from a still watchful face, normal human skin, fully clothed in plain layered robes of woven cloth in reed-teal and pale cream covering her shoulders chest and legs, a bundle of knotted record-cords hanging at her waist, no bonded creature anywhere near her, no animal on her shoulder, alone",
+  "MARKED_ONE": "a taller angular soot-grey Ironfolk figure in hard flat straight-edged plate armour, a blank featureless soot mask with a single incised line across the brow, no eyes, no face, no bonded creature, every edge rigid and geometric, standing alone",
+  "STRANGER": "a hooded figure in a weathered travelling cloak, face mostly shadowed, one visible eye, the other side of the face lost in the hood, no bonded creature, standing alone at a distance",
+  "CORDS": "a bundle of long knotted record-cords of twisted plant fibre in pale cream and reed-teal, dozens of deliberate knots along each cord, held in two hands, an ordinary object, no glow, no magic light"
+ },
+ "prompt_traps": [
+  "NEVER write 'flame-lynx' in a generation prompt. The models literalise it into a fire elemental with flames, chrome fur and antennae. Say 'horned lynx' and let the palette carry the ember association. The species name is for the script, not the prompt.",
+  "ALWAYS state clothing coverage explicitly for Sorrel. Left unspecified, the models produced a bare-midriff outfit on a thirteen-year-old. Say 'modest practical full-length tunic covering shoulders chest and legs'.",
+  "'Art Nouveau linework' alone tips into decorative gold filigree borders framing the image. Say 'Art Nouveau influence in the natural forms only' and add 'no decorative border, no filigree frame'.",
+  "Character plates drift further from house style than environment plates. Environment plates came back consistent; the character plate did not. Re-check every character plate against an approved one before accepting it.",
+  "NEVER leave 'hide' and 'bone' as bare colour/material adjectives. A figure described as 'in ember-orange and bone hide' rendered as a creature covered in fire-coloured fur with a skeleton showing through. Always attach a garment noun - 'a layered tunic of tanned leather and woven cloth' - and use 'pale cream' rather than 'bone' as a colour. Add 'no skeleton, no exposed bones, no fur' to any prompt describing a clothed Vael.",
+  "A 'horned wildcat' with 'curved ridged horns sweeping back' renders as a GOAT or antelope - goat face, hooves, long spiral horns. Cinder survives because his description is dense with cat cues (scarred muzzle, torn ear, orange tabby fur). For any other bonded cat, anchor felinity explicitly: 'unmistakably feline, broad flat cat face, whiskers, tufted ears, paws, long cat tail' plus 'two SHORT curved horns' and an explicit negative - 'not a goat, not a ram, not an antelope, no hooves, no beard, no long spiral horns'.",
+  "Kling's risk-control system rejects combat language outright, returning '[kling] Failure to pass the risk control system' as an upstream_error. In Ep2 it killed all five shots of the Ironfolk fight - 'ambush', 'fang and horn', 'dragged off the machine', 'carrying their dead', 'blank mask, no eyes', 'armoured figures in rigid formation'. Failed jobs ARE refunded, so the cost is time not credits. Write violence by implication instead: reeds bursting outward, spray, indistinct silhouettes, a machine left stalled and tangled. It reads better anyway - and note the comic itself stages this fight in exactly that register."
+ ],
+ "plates_needed_new": [
+  "WREN",
+  "MOOR",
+  "CORDS"
+ ],
+ "plates_reused": [
+  "RINGS",
+  "BRACKEN",
+  "YARROW",
+  "FIREPIT",
+  "MARSH_VILLAGE",
+  "SEDGE+MARSH",
+  "ROOK+CINDER",
+  "SORREL+MOTH"
+ ],
+ "plate_urls": {
+  "FOREST": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872427960711386b9a8ed856c57501cfa946ce34c98aeb240_0_1787242805789_65556f89.jpeg",
+  "SORREL+MOTH": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724299229134865fa4f4ec67e4268045741fa8093f9b237f_0_1787243004088_4d8a3f49.jpeg",
+  "ROOK+CINDER": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872417866629953a9193bc3926b190298875f636f3ebb5ec9_0_1787241798088_a3c6387f.jpeg",
+  "SCAR": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872427999129953a9193bc3926b190298875f636f3ea3bd05_0_1787242809639_5681d66a.jpeg",
+  "SEDGE+MARSH": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872428521596362ddeee9049477b0b29b68d55a9ae97d5b3e_0_1787242861435_618145e3.jpeg",
+  "CAMP": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246751004e3e9275467fdb9818f9fefcdf3ebba71585615_0_1787246758847_1eb0d3a3.jpeg",
+  "YARROW": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246814320904c389cfd819598df3df498c1c52189f7d405_0_1787246822926_c56d252b.jpeg",
+  "FIREPIT": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724684388322877b9ff06629ca98d99f0267ba452ba6532c_0_1787246852762_0b32d280.jpeg",
+  "VALLEY": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246856766b825dd5258dc4c388f66926d17e5fb9c73d216_0_1787246864510_4f7e6d6c.jpeg",
+  "BRAM+THORNCLAW": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872479863663cb8a93f7287826a4278aac7f0d089f95d3e23_0_1787247996394_8f26c1a6.jpeg",
+  "MARSH_VILLAGE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254355889f99996bc9b27db5cda0ac6dd5ae68edad24248_0_1787254365554_53c7477d.jpeg",
+  "BRACKEN": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254391952c891133c7aa592195d19c3080f8a135dec6afd_0_1787254413434_c5af0ccc.jpeg",
+  "CUT_CHANNEL": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254407240f2dfc9d17a425ad03ee233374d263661d2cd40_0_1787254421418_ff760b1c.jpeg",
+  "SORREL_ALONE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872511060739e89f26b858b9d25ce524a85522bfdaf265de0_0_1787251116566_83f41ca5.jpeg",
+  "CUT_CHANNEL_v2": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787257439241fdccfc102ca12157f94275e78054dc3b9e6dae_0_1787257451346_26c91f09.jpeg"
+ },
+ "shots": [
+  {
+   "n": 1,
+   "page": "p1",
+   "beat": "The knife held out",
+   "plate": "ROOK+CINDER",
+   "characters": [
+    "ROOK",
+    "CINDER"
+   ],
+   "shot": "a young man standing at the edge of dark water at dawn holding a curved pale bone knife out flat on both palms toward people who will not take it, tall reeds behind him, a horned wildcat at his side, both tribes watching in silence from the banks",
+   "motion": "very slow push in on the offered knife",
+   "caption": "No one had crossed the water since Bracken spoke."
+  },
+  {
+   "n": 2,
+   "page": "p1",
+   "beat": "Legs shaking",
+   "plate": "ROOK+CINDER",
+   "characters": [
+    "ROOK"
+   ],
+   "shot": "close on a curved pale bone knife lying flat across two open trembling hands, tribal tattoo bands on the forearms, cold dawn light, dark water behind",
+   "motion": "slow drift in, the hands trembling slightly",
+   "caption": "He held it out until his legs shook, waiting for someone to take it. No one had."
+  },
+  {
+   "n": 3,
+   "page": "p2",
+   "beat": "Put it away",
+   "plate": "BRACKEN",
+   "characters": [
+    "BRACKEN"
+   ],
+   "shot": "a straight-backed older matriarch in reed-teal robes standing on a reed bank refusing to look down at what is being offered her, a great pale serpent coiled at her feet, dawn mist on the water",
+   "motion": "slow push in on her face, she does not look down",
+   "caption": "\u201cPut it away, forest-chief. Holding it out doesn't unmake it.\u201d"
+  },
+  {
+   "n": 4,
+   "page": "p2",
+   "beat": "Bone and binding",
+   "plate": "BRACKEN",
+   "characters": [
+    "BRACKEN",
+    "ROOK"
+   ],
+   "shot": "an older matriarch in reed-teal robes and a young man in burnt orange facing each other across a few feet of reed bank at dawn, the water between the two camps behind them",
+   "motion": "slow lateral drift between the two figures",
+   "caption": "\u201cA knife is bone and binding. What was taken can't sit on my palm.\u201d"
+  },
+  {
+   "n": 5,
+   "page": "p2",
+   "beat": "Where it happened",
+   "plate": "MARSH_VILLAGE",
+   "characters": [
+    "BRACKEN"
+   ],
+   "shot": "an older matriarch in reed-teal robes turning away from the water to look inland toward a pale empty horizon beyond the reeds, stilt-huts and teal lanterns behind her, dawn",
+   "motion": "slow tilt from the village to the empty inland horizon",
+   "caption": "\u201cThen we don't talk here. Truth this old belongs where it happened.\u201d"
+  },
+  {
+   "n": 6,
+   "page": "p3",
+   "beat": "Wren",
+   "plate": "WREN",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "a young marsh woman with a bundle of knotted record-cords at her waist standing very still among reeds at dawn, alarmed, her hand closed protectively over the cords, nothing on her shoulder",
+   "motion": "slow push in on her face and the cords at her waist",
+   "caption": "\u201cNo one's walked to the Rings in \u2014 the cords don't even end the counting.\u201d"
+  },
+  {
+   "n": 7,
+   "page": "p3",
+   "beat": "Bring the oldest cord",
+   "plate": "WREN",
+   "characters": [
+    "BRACKEN",
+    "WREN"
+   ],
+   "shot": "an older matriarch in reed-teal robes speaking down to a younger woman who holds knotted record-cords, close together among reeds, the older woman's hand out for the cords",
+   "motion": "slow push in on the two women",
+   "caption": "\u201cYou hold the cords. If I misremember, you'll correct me. Out loud.\u201d"
+  },
+  {
+   "n": 8,
+   "page": "p3",
+   "beat": "Same wound, two ways",
+   "plate": "YARROW",
+   "characters": [
+    "YARROW"
+   ],
+   "shot": "a very old elder woman with one milk-white blind eye and a gnarled staff turning her blind side toward someone, listening rather than looking, pale dawn light",
+   "motion": "very slow push in on the blind eye",
+   "caption": "\u201cWe keep records in smoke and song. You keep yours in knots.\u201d"
+  },
+  {
+   "n": 9,
+   "page": "p4",
+   "beat": "One boat",
+   "plate": "MARSH_VILLAGE",
+   "characters": [
+    "ROOK",
+    "SEDGE"
+   ],
+   "shot": "a long flat pole-boat carrying figures in burnt orange and figures in reed-teal together across dark water at morning, both crowded banks watching them go, tall reeds, low mist",
+   "motion": "slow aerial drift alongside the boat",
+   "caption": "Both tribes watched them go \u2014 forest and marsh in one boat, for the first time."
+  },
+  {
+   "n": 10,
+   "page": "p4",
+   "beat": "Then I'm in the boat",
+   "plate": "SEDGE+MARSH",
+   "characters": [
+    "SEDGE",
+    "BRAM"
+   ],
+   "shot": "a wary lean man in reed-teal with a green serpent about his shoulders arguing good-naturedly with a heavier-built proud young man in burnt orange, both standing in a pole-boat among reeds",
+   "motion": "slow push in, reeds sliding past",
+   "caption": "\u201cSomeone has to keep the fire-chief from getting eaten by a moor.\u201d"
+  },
+  {
+   "n": 11,
+   "page": "p5",
+   "beat": "The reeds thin",
+   "plate": "MOOR",
+   "characters": [],
+   "shot": "a wide bleak open moor of bone-pale grass stalks under a huge low grey sky, the last of the green reeds giving out at the near edge, the shattered silver sky-ring arcing overhead, wind moving through the pale stalks, no trees anywhere",
+   "motion": "slow aerial drift forward over the pale moor grass",
+   "caption": "They left the water by midday. The grass gave way to bone-pale stalks that hissed in a wind with nothing to stop it."
+  },
+  {
+   "n": 12,
+   "page": "p5",
+   "beat": "The sky is broken",
+   "plate": "MOOR",
+   "characters": [
+    "SORREL",
+    "MOTH",
+    "YARROW"
+   ],
+   "shot": "a wiry thirteen-year-old girl with a small horned lynx kitten at her heel looking up uneasily at a huge open sky, a very old elder woman with a staff beside her, bone-pale moor grass to the horizon, the shattered silver ring above",
+   "motion": "slow tilt up from the girl's face to the broken ring",
+   "caption": "\u201cThe sky isn't watching, child. The sky is broken. It stopped watching long ago.\u201d"
+  },
+  {
+   "n": 13,
+   "page": "p6",
+   "beat": "A small blaze",
+   "plate": "FIREPIT",
+   "characters": [
+    "YARROW"
+   ],
+   "shot": "a very small fire coaxed in a shallow stone hollow on open moorland at dusk, figures seated close around it, no trees anywhere, bone-pale grass, wind, the shattered silver ring faint above",
+   "motion": "slow push in toward the small fire",
+   "caption": "No trees for a proper fire. Yarrow coaxed a small blaze in a stone hollow, and the truth began."
+  },
+  {
+   "n": 14,
+   "page": "p6",
+   "beat": "We were one people",
+   "plate": "FIREPIT",
+   "characters": [
+    "BRACKEN"
+   ],
+   "shot": "an older matriarch in reed-teal robes lit from below by a small fire on open moorland at night, speaking, her face grave, other seated figures listening in the dark",
+   "motion": "very slow push in on her firelit face",
+   "caption": "\u201cWe were one people. Forest and marsh, before either had a name.\u201d"
+  },
+  {
+   "n": 15,
+   "page": "p6",
+   "beat": "The cord says otherwise",
+   "plate": "WREN",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "a young marsh woman holding a long knotted record-cord open across both hands by firelight at night, reading the knots with her fingers, her face apologetic but certain",
+   "motion": "slow push in on the knotted cord in her hands",
+   "caption": "\u201cThe cord says otherwise, Keeper. It says you left the Rings. I'm sorry.\u201d"
+  },
+  {
+   "n": 16,
+   "page": "p7",
+   "beat": "The halves stop arriving",
+   "plate": "RINGS",
+   "characters": [],
+   "shot": "a bleak night moor under a shattered silver sky-ring, a broken circle of tall standing stones dark on the horizon, bone-pale grass, cold and empty, no people",
+   "motion": "very slow push in toward the distant stones",
+   "caption": "A people whose souls come in halves, and the halves stop arriving. That is a people with a counted end."
+  },
+  {
+   "n": 17,
+   "page": "p7",
+   "beat": "Where the First stood",
+   "plate": "RINGS",
+   "characters": [],
+   "shot": "a broken circle of tall standing stones on a bleak moor at night, one place at the centre of the circle catching a faint warm light while everything around it is cold silver, the shattered ring directly above",
+   "motion": "slow push in toward the warm light at the centre",
+   "caption": "One among them remembered the sky before it broke. Where the First stood, the bonds held. Every time."
+  },
+  {
+   "n": 18,
+   "page": "p7",
+   "beat": "They took",
+   "plate": "FIREPIT",
+   "characters": [
+    "BRACKEN"
+   ],
+   "shot": "an older matriarch in reed-teal robes lit from below by a small fire, her face hard with an old grief, naming something terrible aloud, night moor behind her",
+   "motion": "slow push in, firelight flickering across her face",
+   "caption": "\u201cThey did not ask to take the First. They took. In the night. With a blade cut from the First's own people's bone.\u201d"
+  },
+  {
+   "n": 19,
+   "page": "p8",
+   "beat": "Any knot that makes it smaller",
+   "plate": "YARROW",
+   "characters": [
+    "YARROW"
+   ],
+   "shot": "a very old elder woman with one milk-white blind eye lit by a small fire at night, her face open and pleading, asking a question she does not want the answer to",
+   "motion": "slow push in on her face",
+   "caption": "\u201cIs there a knot that says we asked. That we begged, and were refused.\u201d"
+  },
+  {
+   "n": 20,
+   "page": "p8",
+   "beat": "A knot for hunger",
+   "plate": "WREN",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "a young marsh woman by firelight running her fingers along the knots of a long record-cord, finding one particular knot and stopping on it, her face steady",
+   "motion": "very slow push in on her fingers finding the knot",
+   "caption": "\u201cThere's a knot for hunger, Keeper. Your people were starving too. Both sides were dying.\u201d"
+  },
+  {
+   "n": 21,
+   "page": "p9",
+   "beat": "Corrected, out loud",
+   "plate": "BRACKEN",
+   "characters": [
+    "BRACKEN"
+   ],
+   "shot": "an older matriarch in reed-teal robes by firelight, jaw tightening, absorbing a correction in front of others without answering it",
+   "motion": "hold on her face, only the firelight moves",
+   "caption": "Bracken's jaw tightened. Corrected, out loud, exactly as ordered."
+  },
+  {
+   "n": 22,
+   "page": "p9",
+   "beat": "It cost us the sky",
+   "plate": "FIREPIT",
+   "characters": [
+    "BRACKEN",
+    "ROOK"
+   ],
+   "shot": "an older matriarch in reed-teal and a young man in burnt orange seated across a small fire from each other on a night moor, neither looking away",
+   "motion": "slow lateral drift across the fire between them",
+   "caption": "\u201cThe theft didn't cost us the First. We grieved the First and lived. It cost us the sky.\u201d"
+  },
+  {
+   "n": 23,
+   "page": "p9",
+   "beat": "Your easy bondings",
+   "plate": "WREN",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "a young marsh woman sitting slightly apart from a small fire on a night moor, nothing on her shoulder, listening to herself being spoken about, her face perfectly still",
+   "motion": "very slow push in on her still face",
+   "caption": "\u201cOur bonds got harder. Slower. Wren is nineteen and waits still.\u201d"
+  },
+  {
+   "n": 24,
+   "page": "p10",
+   "beat": "The real thing you want",
+   "plate": "FIREPIT",
+   "characters": [
+    "ROOK"
+   ],
+   "shot": "a young man with wind-blown dark hair lit from below by a small fire on a night moor, leaning forward, asking a direct question",
+   "motion": "slow push in on his firelit face",
+   "caption": "\u201cThen what does making it right mean? Tell me the real thing you want, not the knife.\u201d"
+  },
+  {
+   "n": 25,
+   "page": "p10",
+   "beat": "Piecing the memory back",
+   "plate": "FIREPIT",
+   "characters": [
+    "BRACKEN"
+   ],
+   "shot": "an older matriarch in reed-teal robes by a small fire at night, looking up past the fire toward the shattered silver ring in the sky above the moor",
+   "motion": "slow tilt from her face up to the broken ring",
+   "caption": "\u201cThe gathering isn't about numbers. It's about finding whoever remembers the sky.\u201d"
+  },
+  {
+   "n": 26,
+   "page": "p11",
+   "beat": "The Rings",
+   "plate": "RINGS",
+   "characters": [],
+   "shot": "a broken circle of tall weathered standing stones on a bleak moor under low cloud, the shattered silver sky-ring hanging directly above the broken circle, the two broken shapes echoing each other, bone-pale grass moving in wind",
+   "motion": "slow tilt up from the stones to the broken ring above",
+   "caption": "The Rings. Where the Vael were one \u2014 and stopped being one."
+  },
+  {
+   "n": 27,
+   "page": "p11",
+   "beat": "The bond is louder here",
+   "plate": "RINGS",
+   "characters": [
+    "SORREL",
+    "MOTH"
+   ],
+   "shot": "a wiry thirteen-year-old girl standing between two tall standing stones with a small horned lynx kitten pressed against her leg, both alert, both turning their heads the same way at the same moment",
+   "motion": "slow push in on the girl and the kitten",
+   "caption": "\u201cMoth won't settle. It's like the bond's louder here.\u201d"
+  },
+  {
+   "n": 28,
+   "page": "p12",
+   "beat": "Stand in the centre",
+   "plate": "RINGS",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "a young marsh woman walking alone toward the exact centre of a broken circle of standing stones on a bleak moor, seen from behind, the others left standing at the stones",
+   "motion": "slow push in following her from behind",
+   "caption": "The girl who had waited nineteen years to bond, standing where bonding was born."
+  },
+  {
+   "n": 29,
+   "page": "p12",
+   "beat": "Is someone there?",
+   "plate": "WREN",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "a young marsh woman standing alone at the centre of a circle of standing stones with her eyes closed and her face lifted, nothing beside her, nothing coming, the shattered silver ring above",
+   "motion": "very slow push in on her closed eyes, wind in her hair",
+   "caption": "\u201c...is someone there?\u201d"
+  },
+  {
+   "n": 30,
+   "page": "p13",
+   "beat": "Not even here",
+   "plate": "WREN",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "a young marsh woman opening her eyes at the centre of a circle of standing stones, entirely alone, nothing has come, the empty ground around her, her face steady and not crying",
+   "motion": "hold, only the wind moves",
+   "caption": "\u201c...No. Not even here.\u201d"
+  },
+  {
+   "n": 31,
+   "page": "p13",
+   "beat": "Better than the not-knowing",
+   "plate": "WREN",
+   "characters": [
+    "WREN",
+    "BRACKEN"
+   ],
+   "shot": "an older matriarch in reed-teal robes reaching a hand toward a young woman at the centre of a stone circle, the younger woman lifting her chin, refusing to be pitied",
+   "motion": "slow push in on the two women",
+   "caption": "\u201cI wanted to know. Now I know. That's better than the not-knowing.\u201d"
+  },
+  {
+   "n": 32,
+   "page": "p13",
+   "beat": "They're coming here",
+   "plate": "RINGS",
+   "characters": [
+    "ROOK",
+    "CINDER"
+   ],
+   "shot": "a young man and a horned wildcat both turning sharply to look out across a bleak moor from inside a circle of standing stones, the wildcat already low and alert",
+   "motion": "fast whip of attention outward, then hold",
+   "caption": "\u201cThey're not chasing us. They're coming here. To the stones.\u201d"
+  },
+  {
+   "n": 33,
+   "page": "p14",
+   "beat": "They know what the Rings are",
+   "plate": "MOOR",
+   "characters": [],
+   "shot": "a distant dead-straight column of soot-grey figures moving across a bleak pale moor toward a broken circle of standing stones, seen from far away and high up, the straightness of their line wrong against the curved land",
+   "motion": "slow aerial drift toward the distant straight line",
+   "caption": "\u201cIf the bonds hold strongest where the First stood, this is the one place on the moor worth taking.\u201d"
+  },
+  {
+   "n": 34,
+   "page": "p14",
+   "beat": "A place that mends souls",
+   "plate": "RINGS",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "a young marsh woman standing among tall standing stones with her hand on the cords at her waist, looking out at something distant, afraid and thinking hard",
+   "motion": "slow push in on her face",
+   "caption": "\u201cWhat do they want with a place that mends souls?\u201d"
+  },
+  {
+   "n": 35,
+   "page": "p15",
+   "beat": "Take the cords",
+   "plate": "CORDS",
+   "characters": [
+    "BRACKEN",
+    "WREN"
+   ],
+   "shot": "an older matriarch in reed-teal robes pressing a single old knotted record-cord into a younger woman's hands among standing stones, both hands closed over it together, urgent",
+   "motion": "slow push in on the two pairs of hands and the cord",
+   "caption": "\u201cTake the cords, take Moth, go back to the water. If we lose the Rings, we don't lose the memory too.\u201d"
+  },
+  {
+   "n": 36,
+   "page": "p15",
+   "beat": "Swear it",
+   "plate": "CORDS",
+   "characters": [
+    "WREN"
+   ],
+   "shot": "close on a young woman's hands closing tight around an old knotted record-cord, knuckles pale, standing stones blurred behind",
+   "motion": "very slow push in on the gripped cord",
+   "caption": "\u201cIf you don't \u2014 it burns before they touch it. Swear it.\u201d \u2014 \u201cI swear.\u201d"
+  },
+  {
+   "n": 37,
+   "page": "p16",
+   "beat": "Four go, four stay",
+   "plate": "RINGS",
+   "characters": [
+    "SEDGE",
+    "BRAM"
+   ],
+   "shot": "four figures walking away fast across bone-pale moor grass in one direction while four other figures and two horned wildcats turn to face the opposite way among standing stones, dusk",
+   "motion": "slow lateral drift showing both groups moving apart",
+   "caption": "Bracken, Wren, Sorrel and Moth fled with the cords. Rook, Sedge, Bram and Yarrow stayed."
+  },
+  {
+   "n": 38,
+   "page": "p16",
+   "beat": "Let's see how it likes iron",
+   "plate": "RINGS",
+   "characters": [
+    "YARROW"
+   ],
+   "shot": "a very old elder woman planting a gnarled staff into moor turf between two standing stones, unafraid, her blind eye toward the open ground, wind in her robes",
+   "motion": "slow push in, low angle, wind moving her robes",
+   "caption": "\u201cThis ground made bonds when the world was young. Let's see how it likes iron.\u201d"
+  },
+  {
+   "n": 39,
+   "page": "p17",
+   "beat": "They did not slow",
+   "plate": "RINGS",
+   "characters": [],
+   "shot": "soot-grey angular figures moving in a dead-straight line straight through a circle of tall standing stones without slowing or turning, the curved stones and the straight line colliding, dusk",
+   "motion": "hard tracking push along the straight line",
+   "caption": "To them a Ring was a shape, and shapes were only things to make straight."
+  },
+  {
+   "n": 40,
+   "page": "p17",
+   "beat": "Hold the centre",
+   "plate": "RINGS",
+   "characters": [
+    "ROOK",
+    "CINDER",
+    "SEDGE"
+   ],
+   "shot": "a young man with a horned wildcat and a lean man with a green serpent standing back to back at the centre of a circle of standing stones at dusk, braced, facing outward",
+   "motion": "slow orbit around the two men at the centre",
+   "caption": "\u201cThen we don't leave the circle. Hold the centre!\u201d"
+  },
+  {
+   "n": 41,
+   "page": "p18",
+   "beat": "That one is looking",
+   "plate": "RINGS",
+   "characters": [
+    "MARKED_ONE"
+   ],
+   "shot": "one taller soot-grey angular figure with a single incised line across its blank mask standing motionless among tall standing stones and turning its blank face slowly across them, not like a tool, like something looking",
+   "motion": "very slow push in as the blank face turns across the stones",
+   "caption": "\u201cThat one's looking. They don't look. That one is looking at the stones the way we do.\u201d"
+  },
+  {
+   "n": 42,
+   "page": "p19",
+   "beat": "It looked back",
+   "plate": "RINGS",
+   "characters": [
+    "MARKED_ONE"
+   ],
+   "shot": "one taller soot-grey angular figure pausing alone at the outer edge of a circle of standing stones and turning its blank masked face back toward the stones one last time, everything else already gone, empty dusk moor",
+   "motion": "hold, then a very slow push in as it turns back",
+   "caption": "\u201cIt looked back. At the stones. A tool doesn't grieve a thing it's leaving.\u201d"
+  }
+ ]
+}
