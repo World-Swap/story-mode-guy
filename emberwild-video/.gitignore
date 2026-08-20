@@ -9,3 +9,5 @@ __pycache__/
 shots_ep02/
 shots_ep03/
 shots_ep03_rr/
+# Silent intermediate; the ambient bed is muxed on top and this is unlinked
+_ep*_silent.mp4

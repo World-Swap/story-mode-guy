@@ -16,7 +16,7 @@ REROLL = HERE / "shots_out"
 # QA re-rolls that supersede the original render. See shots_ep03.json -> qa.shots.
 SUBS = {
     21: HERE / "shots_ep03_rr" / "rr21_corrected-out-loud.mp4",
-    42: HERE / "shots_ep03_rr" / "rr42_it-looked-back.mp4",
+    42: HERE / "shots_ep03_rr" / "rr42b_it-looked-back.mp4",
 }
 
 
