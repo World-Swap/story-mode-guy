@@ -4,3 +4,4 @@ _tmp/
 # every shot's historyId and CDN url is recorded in shots.json under
 # generation_log, and each lives permanently in the OpenArt account library.
 shots_out/
+shots_ep01/
