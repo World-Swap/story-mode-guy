@@ -81,9 +81,9 @@ def build(clips, captions, out, title=None, subtitle=None):
             filt.append(("[v]" if filt else "[0:v]") + "fade=t=in:st=0:d=0.8[v]")
         if filt:
             cmd += ["-filter_complex", ";".join(filt), "-map", "[v]"]
-            cmd += ["-map", "0:a"] if aud else ["-an"]
+            cmd += ["-map", "0:a"] if src_audio else ["-an"]
         cmd += ["-c:v", "libx264", "-preset", "veryfast", "-crf", "16"]
-        if aud:
+        if src_audio:
             cmd += ["-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2"]
         cmd += [str(st)]
         subprocess.run(cmd, capture_output=True, check=True)
