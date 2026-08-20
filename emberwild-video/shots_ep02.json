@@ -1,0 +1,550 @@
+{
+  "episode": 2,
+  "title": "Strangers in the Reeds",
+  "tagline": "we thought we were the last.",
+  "accent": "#2f8f7a",
+  "source": "scripts/ep02_strangers-in-the-reeds.txt (author-supplied full script)",
+  "format": {
+    "shot_seconds": 5,
+    "shots": 42,
+    "runtime_s": 210,
+    "model": "kling-3-omni element2video, std 720p, 16:9, generateSound FALSE",
+    "credits_per_shot": 125,
+    "credits_total": 5250,
+    "audio": "Generated audio is OFF to save 29% per shot. Ambient beds are harvested from Episode 1's clips and laid continuously under the cut, which also removes the 5-second audio jump-cuts that per-shot generation creates."
+  },
+  "style_block": "2D animated fantasy illustration, flat cel colour, bold flowing linework with Art Nouveau influence in the natural forms only, anime-influenced expressive faces with large eyes, heavy dark ink outlines, painterly comic key-art lighting, cinematic composition, warm ember palette of burnt orange, gold, deep blood-red and pale cream, with pale silver reserved for the broken sky-ring, organic curves in every natural form, no decorative border, no filigree frame, no text, no lettering, no speech bubbles, no watermark, no logo, no signature",
+  "character_blocks": {
+    "ROOK": "a young man in his early twenties with wind-blown loose dark hair, sharp quiet eyes, normal human skin, fully clothed in a layered tunic and trousers of tanned leather and woven bark-cloth in burnt orange and pale cream, barefoot, a curved pale knife at his belt, simple tribal tattoo bands on his arms",
+    "CINDER": "a horned wildcat the size of a big hound, not lion-sized, orange and cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back, an ordinary furry animal, fur not fire, no flames on the animal",
+    "SORREL": "a wiry thirteen-year-old girl with dark braided hair and a bright open face, normal human skin, wearing a modest practical full-length layered tunic of tanned leather and woven bark-cloth in burnt orange and pale cream covering her shoulders chest and legs, simple tribal tattoo bands on her forearms, barefoot",
+    "MOTH": "a small horned lynx kitten with soft silver and orange tabby fur, oversized paws, two tiny budding horns, an ordinary furry animal, fur not fire, no flames, no glowing, no antennae, no flowers",
+    "BRAM": "a proud headstrong seventeen-year-old with tied-back dark hair, heavier build, normal human skin, fully clothed in a layered tunic and trousers of tanned leather in burnt orange and pale cream, tribal tattoo bands",
+    "THORNCLAW": "a large black-furred cat, unmistakably feline with a broad flat cat face, whiskers, tufted ears, soft paws and a long cat tail, with two short curved horns on its brow, about the size of a big hound, not a goat and not a ram, no hooves, an ordinary furry animal, fur not fire",
+    "YARROW": "a very old Vael elder woman, one eye milk-white and blind, deeply lined face, long grey hair, fully clothed in draped robes of woven cloth in pale cream and burnt orange hung with feathers and small carved bone charms, holding a gnarled wooden staff",
+    "SEDGE": "a wary lean man fully clothed in a tunic of woven cloth in reed-teal and pale cream, wet dark hair, marsh-dry expression, a long green water-serpent coiled about his shoulders",
+    "BRACKEN": "a straight-backed older matriarch, grey hair bound tight, guarded closed-door expression, normal human skin, fully clothed in layered robes of woven cloth in reed-teal and pale cream, a great pale serpent coiled at her feet",
+    "RILL": "a long green water-serpent with smooth scales, head raised and tongue tasting the air, coiled about a person's shoulder and arm, an ordinary snake, no legs, no fire",
+    "CUTTER": "an angular soot-grey Ironfolk cutter in hard flat straight-edged plate armour with a blank featureless soot mask, no eyes, no bonded creature, human-sized, every edge rigid and geometric"
+  },
+  "prompt_traps": [
+    "NEVER write 'flame-lynx' in a generation prompt. The models literalise it into a fire elemental with flames, chrome fur and antennae. Say 'horned lynx' and let the palette carry the ember association. The species name is for the script, not the prompt.",
+    "ALWAYS state clothing coverage explicitly for Sorrel. Left unspecified, the models produced a bare-midriff outfit on a thirteen-year-old. Say 'modest practical full-length tunic covering shoulders chest and legs'.",
+    "'Art Nouveau linework' alone tips into decorative gold filigree borders framing the image. Say 'Art Nouveau influence in the natural forms only' and add 'no decorative border, no filigree frame'.",
+    "Character plates drift further from house style than environment plates. Environment plates came back consistent; the character plate did not. Re-check every character plate against an approved one before accepting it.",
+    "NEVER leave 'hide' and 'bone' as bare colour/material adjectives. A figure described as 'in ember-orange and bone hide' rendered as a creature covered in fire-coloured fur with a skeleton showing through. Always attach a garment noun - 'a layered tunic of tanned leather and woven cloth' - and use 'pale cream' rather than 'bone' as a colour. Add 'no skeleton, no exposed bones, no fur' to any prompt describing a clothed Vael.",
+    "A 'horned wildcat' with 'curved ridged horns sweeping back' renders as a GOAT or antelope - goat face, hooves, long spiral horns. Cinder survives because his description is dense with cat cues (scarred muzzle, torn ear, orange tabby fur). For any other bonded cat, anchor felinity explicitly: 'unmistakably feline, broad flat cat face, whiskers, tufted ears, paws, long cat tail' plus 'two SHORT curved horns' and an explicit negative - 'not a goat, not a ram, not an antelope, no hooves, no beard, no long spiral horns'."
+  ],
+  "plates_needed_new": [
+    "MARSH_VILLAGE",
+    "BRACKEN",
+    "CUT_CHANNEL"
+  ],
+  "plates_reused": [
+    "VALLEY",
+    "CAMP",
+    "YARROW",
+    "SORREL+MOTH",
+    "ROOK+CINDER",
+    "SEDGE+MARSH",
+    "BRAM+THORNCLAW"
+  ],
+  "shots": [
+    {
+      "n": 1,
+      "page": "p1",
+      "beat": "The world ran out of names",
+      "shot": "first light over a wide unfamiliar valley, low mist lying over a broad teal-dark river braiding through tall reeds, soft dawn light, everything water and softness",
+      "motion": "slow aerial drift forward over the misty river",
+      "plate": "VALLEY",
+      "caption": "They had walked west until the world ran out of names.",
+      "characters": []
+    },
+    {
+      "n": 2,
+      "page": "p1",
+      "beat": "Water and reeds",
+      "shot": "a still teal marsh at dawn, banded mist over dark water, tall reeds standing motionless, something unseen watching from the far bank",
+      "motion": "very slow push in through the reeds",
+      "plate": "MARSH_VILLAGE",
+      "caption": "Fire behind them. Ahead - water, and reeds, and something that watched from the far bank and did not run.",
+      "characters": []
+    },
+    {
+      "n": 3,
+      "page": "p2",
+      "beat": "No one had slept",
+      "shot": "a small forest camp clinging to a wooded slope above a misty river valley at dawn, tents half-struck, people awake and glancing down at the water, tense and sleepless",
+      "motion": "slow drift across the slope camp",
+      "plate": "CAMP",
+      "caption": "No one had slept.",
+      "characters": []
+    },
+    {
+      "n": 4,
+      "page": "p2",
+      "beat": "It watched us and left",
+      "shot": "a young man crouched at a slope edge studying a far riverbank through reeds, a proud older boy beside him with arms crossed, a lean black horned cat low and bristling at their feet, dawn mist below",
+      "motion": "slow push in from behind the two",
+      "plate": "ROOK+CINDER",
+      "caption": null,
+      "characters": [
+        "ROOK",
+        "BRAM",
+        "THORNCLAW"
+      ]
+    },
+    {
+      "n": 5,
+      "page": "p3",
+      "beat": "To water, to stone, to sky",
+      "shot": "a very old blind-eyed elder woman leaning on a gnarled staff at a slope edge, her blind white eye turned toward the marsh below as if reading it, grey dawn light",
+      "motion": "slow push in on her face",
+      "plate": "YARROW",
+      "caption": "The old stories say the Vael scattered, long ago. To water, to stone, to sky.",
+      "characters": [
+        "YARROW"
+      ]
+    },
+    {
+      "n": 6,
+      "page": "p3",
+      "beat": "Not all of them are gentle",
+      "shot": "close on an ancient elder woman's deeply lined face, uneasy, her one milk-white blind eye catching the dawn, grey hair moving in a light wind",
+      "motion": "hold, very slight push in",
+      "plate": "YARROW",
+      "caption": "And not all of them are gentle.",
+      "characters": [
+        "YARROW"
+      ]
+    },
+    {
+      "n": 7,
+      "page": "p3",
+      "beat": "I am coming",
+      "shot": "a wiry thirteen-year-old girl stepping forward with a small horned lynx kitten riding on her shoulders, brave and blunt, facing a young man who is about to refuse her",
+      "motion": "hold, slow push in on the girl",
+      "plate": "SORREL+MOTH",
+      "caption": "If they are Vael, they will trust honest faster than they trust a chief with a knife.",
+      "characters": [
+        "SORREL",
+        "MOTH"
+      ]
+    },
+    {
+      "n": 8,
+      "page": "p4",
+      "beat": "The marsh swallowed sound",
+      "shot": "two figures and two animals wading down a mist-filled channel into tall reeds, the world going soft and grey and close around them, the camp behind them vanishing into fog",
+      "motion": "slow tracking behind them into the mist",
+      "plate": "MARSH_VILLAGE",
+      "caption": "The marsh swallowed sound. Their own footsteps went quiet.",
+      "characters": [
+        "ROOK",
+        "CINDER"
+      ]
+    },
+    {
+      "n": 9,
+      "page": "p4",
+      "beat": "Things are in it",
+      "shot": "looking down into clear teal shallows at the river's edge where long dark shapes move beneath the surface and are gone, ripples spreading, reeds at the frame edges",
+      "motion": "slow tilt down into the water",
+      "plate": "MARSH_VILLAGE",
+      "caption": "Rook. The water. Things are in it.",
+      "characters": []
+    },
+    {
+      "n": 10,
+      "page": "p4",
+      "beat": "There",
+      "shot": "a large horned wildcat freezing mid-step with one paw raised, staring fixedly into mist-filled reeds ahead, ears forward, utterly still",
+      "motion": "hold, only the ears and mist move",
+      "plate": "ROOK+CINDER",
+      "caption": null,
+      "characters": [
+        "CINDER"
+      ]
+    },
+    {
+      "n": 11,
+      "page": "p5",
+      "beat": "The stranger in the reeds",
+      "shot": "a lean wary man standing knee-deep in teal water among tall reeds, a long green water-serpent coiled around one shoulder and arm with its head raised and tongue tasting the air, wet dark hair, teal and pale cream clothing, no weapon",
+      "motion": "slow push in through the reeds toward him",
+      "plate": "SEDGE+MARSH",
+      "caption": null,
+      "characters": [
+        "SEDGE",
+        "RILL"
+      ]
+    },
+    {
+      "n": 12,
+      "page": "p5",
+      "beat": "Cat and serpent",
+      "shot": "a large horned wildcat and a long green water-serpent locking eyes across still water, each sizing the other up, neither moving at all, mist between them",
+      "motion": "hold absolutely still, only mist and water move",
+      "plate": "SEDGE+MARSH",
+      "caption": null,
+      "characters": [
+        "CINDER",
+        "RILL"
+      ]
+    },
+    {
+      "n": 13,
+      "page": "p5",
+      "beat": "You smell like ash",
+      "shot": "close on a wary lean man speaking flatly and unimpressed, wet dark hair, a green serpent's head rising beside his cheek, reeds and dawn mist behind",
+      "motion": "slow push in on his face",
+      "plate": "SEDGE+MARSH",
+      "caption": "You smell like ash and you do not know how to walk in water.",
+      "characters": [
+        "SEDGE",
+        "RILL"
+      ]
+    },
+    {
+      "n": 14,
+      "page": "p6",
+      "beat": "We came west with the smoke",
+      "shot": "a young man standing in shallow water with his hands open and visible at his sides, steady and unprovoked, mist and reeds around him",
+      "motion": "hold, slow push in",
+      "plate": "ROOK+CINDER",
+      "caption": "We are fire-people. Our home burned. We came west with the smoke.",
+      "characters": [
+        "ROOK"
+      ]
+    },
+    {
+      "n": 15,
+      "page": "p6",
+      "beat": "Say that again",
+      "shot": "close on a wary man going very still, the cold cracking slightly into something raw, the serpent at his shoulder lowering its head",
+      "motion": "very slow push in on his face",
+      "plate": "SEDGE+MARSH",
+      "caption": "...say that again.",
+      "characters": [
+        "SEDGE",
+        "RILL"
+      ]
+    },
+    {
+      "n": 16,
+      "page": "p6",
+      "beat": "Not the last",
+      "shot": "two men facing each other across shallow teal water in the mist, one in burnt orange, one in reed-teal, really looking at each other for the first time",
+      "motion": "slow lateral drift between them",
+      "plate": "SEDGE+MARSH",
+      "caption": "And here you are. Standing in my reeds. Smelling of ash. Not the last.",
+      "characters": [
+        "ROOK",
+        "SEDGE"
+      ]
+    },
+    {
+      "n": 17,
+      "page": "p7",
+      "beat": "The halves back together",
+      "shot": "a small horned lynx kitten and a long green water-serpent touching noses over still water, both curious and entirely unbothered, their humans out of focus behind",
+      "motion": "hold, gentle movement only",
+      "plate": "SORREL+MOTH",
+      "caption": "The bond does not care what shape the other half takes.",
+      "characters": [
+        "MOTH",
+        "RILL"
+      ]
+    },
+    {
+      "n": 18,
+      "page": "p8",
+      "beat": "A path you could only see",
+      "shot": "figures wading single file along a hidden channel between towering walls of reed, mist parting ahead of them, the way visible only because someone knows it",
+      "motion": "slow tracking forward down the channel",
+      "plate": "MARSH_VILLAGE",
+      "caption": "There was a path. You could only see it if you already knew it was there.",
+      "characters": []
+    },
+    {
+      "n": 19,
+      "page": "p9",
+      "beat": "The Marsh Vael",
+      "shot": "a village of stilt-huts and floating reed-rafts strung across a wide still lagoon half-hidden in mist, narrow boats poling between rafts, woven bridges swaying, teal lanterns hanging",
+      "motion": "slow reveal drift as the reeds open onto the lagoon",
+      "plate": "MARSH_VILLAGE",
+      "caption": "The forest Vael had names for many things. They had no name for this.",
+      "characters": []
+    },
+    {
+      "n": 20,
+      "page": "p10",
+      "beat": "They are afraid of us",
+      "shot": "marsh people lining the rafts in wary silence as strangers arrive, some with serpents rising defensively, children peering from behind adults, teal lantern light",
+      "motion": "slow drift past the watching rafts",
+      "plate": "MARSH_VILLAGE",
+      "caption": "They are afraid of us.",
+      "characters": []
+    },
+    {
+      "n": 21,
+      "page": "p10",
+      "beat": "Bracken rises",
+      "shot": "a straight-backed older matriarch rising from a woven seat on the largest raft, grey hair bound tight, teal and pale cream robes, a great pale serpent draped at her feet, her face a closed door",
+      "motion": "slow push in on her as she rises",
+      "plate": "BRACKEN",
+      "caption": null,
+      "characters": [
+        "BRACKEN"
+      ]
+    },
+    {
+      "n": 22,
+      "page": "p10",
+      "beat": "You brought fire into my reeds",
+      "shot": "close on an older matriarch's cold measuring face across a few feet of swaying reed raft, unwelcoming, teal lantern light",
+      "motion": "hold, very slight push in",
+      "plate": "BRACKEN",
+      "caption": "Sedge. You brought fire into my reeds.",
+      "characters": [
+        "BRACKEN"
+      ]
+    },
+    {
+      "n": 23,
+      "page": "p11",
+      "beat": "We are the last",
+      "shot": "two leaders facing each other across a swaying raft, an older matriarch and a young man taking each other's measure, the village watching in silence around them",
+      "motion": "slow lateral drift around the two",
+      "plate": "BRACKEN",
+      "caption": "We are the last. We survive because we trust no one else.",
+      "characters": [
+        "BRACKEN",
+        "ROOK"
+      ]
+    },
+    {
+      "n": 24,
+      "page": "p11",
+      "beat": "Then I found you",
+      "shot": "a young man standing respectful but not cowed on a reed raft, learning to stand like a chief, teal water and lanterns behind him",
+      "motion": "slow push in on him",
+      "plate": "ROOK+CINDER",
+      "caption": "I thought the same, three days ago. Then I found you.",
+      "characters": [
+        "ROOK"
+      ]
+    },
+    {
+      "n": 25,
+      "page": "p11",
+      "beat": "Wounds have two sides",
+      "shot": "extreme close on an older woman's narrowed eyes, a flicker crossing them - she knows more than she is saying",
+      "motion": "very slow push in on the eyes",
+      "plate": "BRACKEN",
+      "caption": "The scattering is not a story for guests. It is a wound. And wounds have two sides.",
+      "characters": [
+        "BRACKEN"
+      ]
+    },
+    {
+      "n": 26,
+      "page": "p12",
+      "beat": "Cutting them straight",
+      "shot": "a young marsh scout poling in fast and panicked across the lagoon, serpent thrashing, pointing back toward smoke rising in the east",
+      "motion": "slow push in as the boat rushes toward camera",
+      "plate": "MARSH_VILLAGE",
+      "caption": "Something is cutting the reeds - cutting them straight -",
+      "characters": []
+    },
+    {
+      "n": 27,
+      "page": "p12",
+      "beat": "Nothing here cuts straight",
+      "shot": "everyone on the rafts frozen mid-motion, the word landing cold, mist and lantern light, absolute stillness",
+      "motion": "hold, only lantern light and water move",
+      "plate": "MARSH_VILLAGE",
+      "caption": "The reeds do not cut straight. Nothing here cuts straight.",
+      "characters": []
+    },
+    {
+      "n": 28,
+      "page": "p12",
+      "beat": "It followed us",
+      "shot": "close on a young man's face as the realisation lands, cold and certain, teal light on one side",
+      "motion": "very slow push in",
+      "plate": "ROOK+CINDER",
+      "caption": "No. Nothing does. It followed us. It is here.",
+      "characters": [
+        "ROOK"
+      ]
+    },
+    {
+      "n": 29,
+      "page": "p13",
+      "beat": "Together we hold the channel",
+      "shot": "a young man and a lean marsh man talking fast and close on a raft edge, planning under pressure, a serpent and a horned cat alert beside them",
+      "motion": "hold, urgent small movements",
+      "plate": "SEDGE+MARSH",
+      "caption": "Your people know the water. Mine know how to fight what comes on land.",
+      "characters": [
+        "ROOK",
+        "SEDGE"
+      ]
+    },
+    {
+      "n": 30,
+      "page": "p13",
+      "beat": "Worth bleeding for",
+      "shot": "two men looking at each other across a raft, one having just offered to bleed for a place he saw this morning, the other not understanding why",
+      "motion": "hold, slow push in",
+      "plate": "SEDGE+MARSH",
+      "caption": "I want to not be alone again. That means the reeds are worth bleeding for.",
+      "characters": [
+        "ROOK",
+        "SEDGE"
+      ]
+    },
+    {
+      "n": 31,
+      "page": "p14",
+      "beat": "The world went straight",
+      "shot": "a bladed iron machine grinding forward through tall reeds, laying a dead-straight channel behind it, angular soot-grey figures walking beside it in rigid formation, smoke and mist",
+      "motion": "slow lateral tracking alongside the machine",
+      "plate": "CUT_CHANNEL",
+      "caption": "They simply advanced, and the world went straight where they passed.",
+      "characters": []
+    },
+    {
+      "n": 32,
+      "page": "p14",
+      "beat": "On your word",
+      "shot": "a young man and a lean marsh man crouched low and unseen in tall reeds at a channel edge, the young man signing a plan with his hands, both utterly still",
+      "motion": "hold, only reeds move",
+      "plate": "SEDGE+MARSH",
+      "caption": "On your word, fire-boy.",
+      "characters": [
+        "ROOK",
+        "SEDGE"
+      ]
+    },
+    {
+      "n": 33,
+      "page": "p15",
+      "beat": "The strike",
+      "shot": "horned wildcats hitting an angular iron crew on land in a blur of fang and horn while long serpents come up out of the water behind them, reeds thrashing, spray",
+      "motion": "fast tracking through the strike",
+      "plate": "CUT_CHANNEL",
+      "caption": null,
+      "characters": [
+        "CUTTER"
+      ]
+    },
+    {
+      "n": 34,
+      "page": "p15",
+      "beat": "Back to back",
+      "shot": "a young man with a curved pale knife and a lean marsh man with a reed-spear fighting back to back in shallow water, covering each other without needing to speak",
+      "motion": "slow orbit around the two",
+      "plate": "CUT_CHANNEL",
+      "caption": null,
+      "characters": [
+        "ROOK",
+        "SEDGE"
+      ]
+    },
+    {
+      "n": 35,
+      "page": "p15",
+      "beat": "They look through you",
+      "shot": "close on a blank featureless soot-grey iron mask turning toward the viewer, no eyes, no expression, fighting like a tool redirected rather than a person",
+      "motion": "very slow push in on the mask",
+      "plate": "CUT_CHANNEL",
+      "caption": "They do not even look at you - they look through you -",
+      "characters": [
+        "CUTTER"
+      ]
+    },
+    {
+      "n": 36,
+      "page": "p16",
+      "beat": "Deciding to stop",
+      "shot": "angular iron figures disengaging and retreating in a perfectly straight line back into smoke, carrying their dead, without a word or a backward glance",
+      "motion": "hold, they withdraw in a straight line",
+      "plate": "CUT_CHANNEL",
+      "caption": "That was not winning. That was them deciding to stop.",
+      "characters": []
+    },
+    {
+      "n": 37,
+      "page": "p16",
+      "beat": "A thing of straight iron",
+      "shot": "an abandoned bladed cutting machine standing fouled with reed and coil in a curving marsh, a thing of straight iron in a world of curves, deeply wrong",
+      "motion": "slow push in on the machine",
+      "plate": "CUT_CHANNEL",
+      "caption": "A thing of straight iron in a world of curves. Deeply wrong.",
+      "characters": []
+    },
+    {
+      "n": 38,
+      "page": "p17",
+      "beat": "You would die without me",
+      "shot": "a young man and a lean marsh man sitting at a raft's edge with their feet in teal water, exhausted, an understanding between them, a serpent and a horned cat resting nearby",
+      "motion": "hold, water and lantern light moving",
+      "plate": "SEDGE+MARSH",
+      "caption": "I am saying you would die without me. Same thing.",
+      "characters": [
+        "ROOK",
+        "SEDGE"
+      ]
+    },
+    {
+      "n": 39,
+      "page": "p18",
+      "beat": "That knife",
+      "shot": "close on an older matriarch's face as her eyes fall on something across the water and she goes rigid, recognition and old fury blooming cold",
+      "motion": "very slow push in on her eyes",
+      "plate": "BRACKEN",
+      "caption": "...that knife.",
+      "characters": [
+        "BRACKEN"
+      ]
+    },
+    {
+      "n": 40,
+      "page": "p19",
+      "beat": "The mark in the bone",
+      "shot": "extreme close on a curved pale bone knife turned over in a young man's hands, revealing a small carved sigil cut into the heel of the handle, lantern light raking across it",
+      "motion": "slow push in on the mark",
+      "plate": "ROOK+CINDER",
+      "caption": "It is the mark of the Marsh Vael. That is our bone. Our making.",
+      "characters": [
+        "ROOK"
+      ]
+    },
+    {
+      "n": 41,
+      "page": "p20",
+      "beat": "They pull apart",
+      "shot": "two groups of tribespeople drawing apart onto their separate rafts across dark water, a single young man left standing alone in the middle with a knife in his hand",
+      "motion": "slow pull focus to the lone figure",
+      "plate": "MARSH_VILLAGE",
+      "caption": "A forest chief should not be carrying it. Unless a forest chief took it.",
+      "characters": [
+        "ROOK"
+      ]
+    },
+    {
+      "n": 42,
+      "page": "p22",
+      "beat": "They took the first of us",
+      "shot": "close on an older matriarch naming the wound at last, fear and fury finally speaking, teal lantern light on her face, the whole gathering hanging on her",
+      "motion": "very slow push in, ending held on her face",
+      "plate": "BRACKEN",
+      "caption": "They took the first of us. The one who remembered the sky before it broke.",
+      "characters": [
+        "BRACKEN"
+      ]
+    }
+  ]
+}
