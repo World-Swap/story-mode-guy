@@ -69,7 +69,10 @@ CHAPTERS
 
 START HERE
 New to the saga? Episode One — "The Bonding" is the beginning:
-https://youtube.com — (paste the Episode One watch link here after upload)
+https://youtu.be/cwfuEfUbW7I
+
+The series trailer, if you want the whole shape of it in forty-five seconds:
+https://youtu.be/HAzl6mmNSUE
 
 READ THE COMIC
 Episode Two — "Strangers in the Reeds" is available now as an illustrated PDF:

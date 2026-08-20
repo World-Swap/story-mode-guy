@@ -41,8 +41,10 @@ A complete, planned story with a real ending — thirteen episodes, no filler, n
 ━━━━━━━━━━━━━━━━━━━━━━
 
 START WATCHING
-Episode One — "The Bonding" is out now.
-Episode Two — "Strangers in the Reeds" is out now.
+Episode One — "The Bonding":
+https://youtu.be/cwfuEfUbW7I
+
+Episode Two — "Strangers in the Reeds" is out now — link in the playlist below.
 
 New episodes release on a fixed schedule until the saga is finished.
 
@@ -118,7 +120,7 @@ All three carry the gold `EMBERWILD` wordmark with "A 13-PART ANIMATED SAGA" abo
   only asset built to explain the whole series to someone who has never heard of it.
 - **End screen:** point at Episode One. A trailer that doesn't hand the viewer somewhere is
   wasted.
-- **Pinned comment:** the Episode One watch link, not the Payhip link — at this stage of the
+- **Pinned comment:** the Episode One watch link (https://youtu.be/cwfuEfUbW7I), not the Payhip link — at this stage of the
   funnel the goal is a second view, not a sale.
 - **Do not** leak Act III in the description or the comments. The buried arc and what's inside
   it are the saga's payoff; the trailer deliberately stops at the Pact.

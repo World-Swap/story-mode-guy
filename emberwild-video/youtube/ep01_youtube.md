@@ -67,6 +67,12 @@ CHAPTERS
 
 ━━━━━━━━━━━━━━━━━━━━━━
 
+THE TRAILER
+The whole saga in forty-five seconds:
+https://youtu.be/HAzl6mmNSUE
+
+━━━━━━━━━━━━━━━━━━━━━━
+
 READ THE COMIC
 Episode One — "The Bonding" is available now as an illustrated PDF:
 https://payhip.com/b/bMoJ7
