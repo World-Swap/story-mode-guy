@@ -10,7 +10,8 @@
     "cheapest_video_model": "pixverseV6",
     "aspect_ratio": "16:9",
     "audio": "ambient only - fire crackle, wind, reeds, distant low drone. No speech.",
-    "aspect_ratio_note": "Locked to 16:9 (YouTube). Shot text is written natively for this ratio. For a vertical cut, build_prompts.py --vertical appends framing guidance, but wide landscape drifts should be regenerated rather than cropped."
+    "aspect_ratio_note": "Locked to 16:9 (YouTube). Shot text is written natively for this ratio. For a vertical cut, build_prompts.py --vertical appends framing guidance, but wide landscape drifts should be regenerated rather than cropped.",
+    "video_audio_clause": "ambient sound only: fire crackle, wind, distant low drone, no speech, no voices, no singing, no narration"
   },
   "style_block": "2D animated fantasy illustration in flat vector-cel colour over soft gradient skies, bold flowing linework with Art Nouveau influence in the natural forms only, anime-influenced expressive faces with large eyes, heavy dark ink outlines, painterly comic key-art lighting, cinematic composition, warm ember palette of burnt orange, gold, deep blood-red and bone-cream, with pale silver reserved for the broken sky-ring, organic curves in every natural form, rigid straight lines and hard facets only on Ironfolk metal, no decorative border, no filigree frame, no text, no lettering, no speech bubbles, no watermark, no logo, no signature",
   "character_blocks": {
@@ -805,6 +806,81 @@
       "plates/rejected/plate_sorrel-moth_FIRE-ELEMENTAL-rejected.jpg": "'flame-lynx' literalised into a fire elemental with flames for fur; Sorrel rendered in a bare-midriff outfit. Both traps now fixed in the blocks."
     },
     "model": "byte-plus-seedream-4-5 text2image, 2K, 16:9, 15 credits each",
-    "note": "plate_ruins.jpg came from nano-banana-2-lite at 1K and is slightly softer than the rest; regenerate on seedream if it proves too low-res as a video reference."
+    "note": "plate_ruins.jpg came from nano-banana-2-lite at 1K and is slightly softer than the rest; regenerate on seedream if it proves too low-res as a video reference.",
+    "cdn_urls": {
+      "FOREST": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872427960711386b9a8ed856c57501cfa946ce34c98aeb240_0_1787242805789_65556f89.jpeg",
+      "SORREL+MOTH": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724299229134865fa4f4ec67e4268045741fa8093f9b237f_0_1787243004088_4d8a3f49.jpeg",
+      "SCAR": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872427999129953a9193bc3926b190298875f636f3ea3bd05_0_1787242809639_5681d66a.jpeg",
+      "ROOK+CINDER": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872417866629953a9193bc3926b190298875f636f3ebb5ec9_0_1787241798088_a3c6387f.jpeg",
+      "SEDGE+MARSH": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872428521596362ddeee9049477b0b29b68d55a9ae97d5b3e_0_1787242861435_618145e3.jpeg",
+      "VANE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787243099341651bcb683a664fec8e1b815c68d8e2de960e6a_0_1787243112468_18f8d739.jpeg",
+      "RINGS": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724285268877dd13f2098096eba9569e39b59e750caeb4c2_0_1787242863153_0e722131.jpeg",
+      "RUINS": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/image_1787242907616_d4406ea4_1787242907692_e668c739.jpg"
+    },
+    "visual_reference_shape": {
+      "note": "visualReferences items are built directly from these URLs - no upload step needed for plates generated on OpenArt.",
+      "example": {
+        "type": "image",
+        "id": "<the url>",
+        "url": "<the url>",
+        "label": "<plate name>"
+      }
+    }
+  },
+  "generation_log": {
+    "T1_series_trailer": {
+      "model": "kling-3-omni element2video, 5s, std (720p), 16:9, generateSound true",
+      "credits_per_shot": 175,
+      "shots": {
+        "1": {
+          "historyId": "38UkDBCdAvDKLIiPqOso",
+          "plate": "FOREST",
+          "status": "COMPLETED",
+          "file": "shots_out/T1_shot01_forest-tilt.mp4",
+          "verdict": "APPROVED - tilt from fire up to the Riven Sky executed exactly as directed, style held from the plate"
+        },
+        "2": {
+          "historyId": "ECKynOhaje1nqTMOVUIk",
+          "plate": "SORREL+MOTH",
+          "status": "submitted"
+        },
+        "3": {
+          "historyId": "wW0H129npOGXLAPfyjyB",
+          "plate": "SCAR",
+          "status": "submitted"
+        },
+        "4": {
+          "historyId": "JdOH163MirqgKlMaB7vy",
+          "plate": "ROOK+CINDER",
+          "status": "submitted"
+        },
+        "5": {
+          "historyId": "DiUyWErwrAqNXhPYvWN4",
+          "plate": "SEDGE+MARSH",
+          "status": "submitted"
+        },
+        "6": {
+          "historyId": "MrGCwJPp7YLWfpbz6RgZ",
+          "plate": "VANE",
+          "status": "submitted"
+        },
+        "7": {
+          "historyId": "AicJZtEFcgOQLfDnUjUC",
+          "plate": "RINGS",
+          "status": "submitted"
+        },
+        "8": {
+          "historyId": "4C7HU6pZALv1cmhPVqfW",
+          "plate": "ROOK+CINDER",
+          "status": "submitted"
+        }
+      }
+    }
+  },
+  "measured_costs": {
+    "seedream-4-5 text2image 2K 16:9": 15,
+    "nano-banana-2-lite text2image 16:9": 15,
+    "kling-3-omni element2video 5s std 16:9 with sound": 175,
+    "note": "All measured directly against the account balance, not quoted. The plan's 'unlimited' image models are charged normally through MCP."
   }
 }

@@ -1,0 +1,6 @@
+# Intermediate encode staging - rebuilt by assemble.py
+_tmp/
+# Raw per-shot renders. Kept out of git to avoid bloating the site repo;
+# every shot's historyId and CDN url is recorded in shots.json under
+# generation_log, and each lives permanently in the OpenArt account library.
+shots_out/
