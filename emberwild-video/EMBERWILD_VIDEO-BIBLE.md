@@ -93,8 +93,8 @@ bark-cloth clothing in ember-orange and bone, barefoot, a curved bone knife at h
 tribal tattoos on his arms`
 > Reluctant young chief. Walks last. Won't lie, even to comfort. The knife is the stolen blade.
 
-**CINDER** — `a large horned wildcat with orange and cream fur, a scarred muzzle and one torn
-ear, curved ridged horns sweeping back from its brow`
+**CINDER** — `a large horned wildcat about the size of a big hound, not lion-sized, with orange and
+cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back from its brow`
 > Rook's flame-lynx. Runt of his litter. Feels danger before Rook does. Life-linked to Rook.
 
 **SORREL** — `a wiry thirteen-year-old girl with dark braided hair, bright open face, ember-orange
@@ -143,9 +143,11 @@ own brow, stripped dark Ironfolk under-armour, no bonded creature`
 > The Ironfolk deserter. Name and bond **cut out of her** as a child. Her bondlessness is a
 > wound, not a boast. Sorrel names her.
 
-**IRON WARDEN VANE** — `a towering armoured figure built entirely of hard flat angular plates and
-diamond rivets in cold grey iron, no eyes, a full-width horizontal forge-red glow slit across
-the helm, a tall crest fin, carrying a perfectly straight command rod`
+**IRON WARDEN VANE** — `a tall armoured figure built entirely of hard flat angular plates and
+diamond rivets in cold grey iron, no eyes and no face, a full-width horizontal forge-red glow slit
+across the helm, a tall crest fin, carrying a perfectly straight command rod, standing about one
+and a third times the height of a person beside him — taller and broader than a man but not a
+giant, human-scaled`
 > **Draws at ~1.34× any Vael in the same shot.** No curves anywhere on him. Never show his face —
 > there isn't one.
 

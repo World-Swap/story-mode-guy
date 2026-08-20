@@ -15,7 +15,7 @@
   "style_block": "2D animated fantasy illustration in flat vector-cel colour over soft gradient skies, Art Nouveau flowing linework, anime-influenced expressive faces with large eyes, heavy dark ink outlines, painterly comic key-art lighting, cinematic composition, warm ember palette of burnt orange, gold, deep blood-red and bone-cream, with pale silver reserved for the broken sky-ring, organic curves in every natural form, rigid straight lines and hard facets only on Ironfolk metal, no text, no lettering, no speech bubbles, no watermark, no logo, no signature",
   "character_blocks": {
     "ROOK": "a young man with wind-blown loose dark hair, sharp quiet eyes, layered hide and bark-cloth clothing in ember-orange and bone, barefoot, a curved bone knife at his belt, tribal tattoos on his arms",
-    "CINDER": "a large horned wildcat with orange and cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back from its brow",
+    "CINDER": "a large horned wildcat about the size of a big hound, not lion-sized, with orange and cream fur, a scarred muzzle and one torn ear, curved ridged horns sweeping back from its brow",
     "SORREL": "a wiry thirteen-year-old girl with dark braided hair, bright open face, ember-orange and bone hide clothing, barefoot, tribal tattoos",
     "MOTH": "a small flame-lynx cub with silver and orange fur, oversized paws, tiny budding horns",
     "BRAM": "a proud headstrong seventeen-year-old with tied-back dark hair, heavier build, ember and bone hide clothing, tribal tattoos",
@@ -28,7 +28,7 @@
     "HALCYON": "a very old seated Sky Clan keeper in storm-violet robes, white hair, frail hands, calm unreadable face",
     "SHRIKE": "a hooded one-eyed Sky Clan man in weathered storm-violet, hard set jaw, no bird beside him",
     "ASH": "a gaunt soot-grey woman, hair shorn to stubble, an angular brand half-filed off her own brow, stripped dark Ironfolk under-armour, no bonded creature",
-    "VANE": "a towering armoured figure built entirely of hard flat angular plates and diamond rivets in cold grey iron, no eyes, a full-width horizontal forge-red glow slit across the helm, a tall crest fin, carrying a perfectly straight command rod, drawn about one and a third times the height of any person near him"
+    "VANE": "a tall armoured figure built entirely of hard flat angular plates and diamond rivets in cold grey iron, no eyes and no face, a full-width horizontal forge-red glow slit across the helm, a tall crest fin, carrying a perfectly straight command rod, standing about one and a third times the height of a person beside him - taller and broader than a man but not a giant, human-scaled"
   },
   "environment_plates": {
     "FOREST": "ancient old-growth forest of vast curving trunks and hanging moss, warm ember firelight, drifting sparks and smoke",
@@ -47,7 +47,9 @@
     "The Riven Sky is broken - a whole ring is correct only in T2_ep09 shot 2 as a vision",
     "Only Ironfolk things draw straight lines",
     "Ash's brand is half-filed off, by her own hand",
-    "Moth is a cub and stays small"
+    "Moth is a cub and stays small",
+    "Vane is ~1.34x a Vael - taller and broader, NOT a colossus. The first style test rendered him 2-3x; say 'not a giant, human-scaled' in the prompt.",
+    "Cinder is a lynx, roughly hound-sized. The first style test rendered him lion-sized; anchor the size in the prompt."
   ],
   "sequences": {
     "T1_series_trailer": {
@@ -765,5 +767,19 @@
         }
       ]
     }
+  },
+  "style_test": {
+    "date": "2026-08-20",
+    "model": "byte-plus-seedream-4-5 text2image, 2K, 16:9",
+    "credits_spent": 30,
+    "plates": [
+      "plates/plate_rook-cinder_riven-sky.jpg",
+      "plates/plate_vane_scale.jpg"
+    ],
+    "verdict": "Pipeline validated. House style, palette and the Riven Sky all render correctly and the two plates match each other stylistically.",
+    "corrections_applied": [
+      "Cinder size anchored to hound-scale",
+      "Vane size anchored to 1.34x, not colossal"
+    ]
   }
 }
