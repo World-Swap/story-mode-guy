@@ -591,7 +591,8 @@
    "MOOR": "Approved first pass.",
    "CORDS": "Approved first pass."
   },
-  "parallel_limit": "OpenArt rejects submissions past roughly 10 concurrent jobs with PARALLEL_LIMIT_EXCEEDED. The rejection happens at submit time and is not charged. Submit in batches of about 5 and let earlier jobs drain."
+  "parallel_limit": "OpenArt rejects submissions past roughly 10 concurrent jobs with PARALLEL_LIMIT_EXCEEDED. The rejection happens at submit time and is not charged. Submit in batches of about 5 and let earlier jobs drain.",
+  "moderation": "All 42 shots submitted with zero risk-control rejections, including the Ironfolk column (33), the column entering the circle (39) and both marked-one shots (41, 42). Confirms the Ep2 finding: the trigger was the reference plate showing masked figures, not the language. Describing Ironfolk in prompt text over an environment plate passes cleanly."
  },
  "moderation_policy": "No Ironfolk reference plate is used anywhere in this episode. In Episode 2 the CUT_CHANNEL plate showing masked figures in formation tripped Kling's risk control on five shots; the same shots passed once the plate was regenerated figure-free. The marked one and the column are therefore described in prompt text only, over the RINGS and MOOR environment plates.",
  "generation_log": {
@@ -633,6 +634,9 @@
   "36": "HzyQcdVUHzjIfPuXHsqD",
   "37": "pLC8M16662Vf02Oc8ruo",
   "38": "qdcBtdQ5FAfguHHKiR6L",
-  "39": "0BLV5nAkkC9AaGlnFxgy"
+  "39": "0BLV5nAkkC9AaGlnFxgy",
+  "40": "LfYgAMqeBfudJZ9En7ol",
+  "41": "MW2y0UPmZmFxQz2Mj07u",
+  "42": "jA13EPg60dmSdIKvwSAi"
  }
 }
