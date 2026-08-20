@@ -585,5 +585,52 @@
     "39": "GEHOwH7BIHwXTwCQTFmK",
     "40": "k5oVqQz2V5LEYLBbEnxp",
     "41": "e54hlABqtVo6frOCXWIs"
+  },
+  "qa": {
+    "date": "2026-08-20",
+    "passed": 37,
+    "rerolled": 4,
+    "reroll_rate": "10%",
+    "rerolls": {
+      "17": {
+        "reason": "CONTINUITY BREAK - Moth was present beside Sorrel BEFORE the bonding. The SORREL+MOTH plate dragged the kitten into a pre-bonding shot, which would have gutted the ceremony.",
+        "fix": "Generated a SORREL ALONE plate (no animal) and re-rolled against it plus the fire pit. Costume fidelity kept, kitten gone.",
+        "cost_credits": 190
+      },
+      "34": {
+        "reason": "CONTINUITY BREAK - rendered the full straight scar instead of a distant glow, revealing the Ironfolk cut three shots early. Violates the script note: 'one cold note at the end. Do not tip the threat early.'",
+        "fix": "Re-rolled off the FOREST plate with explicit negatives - no straight line, no cut, no scar, only a diffuse glow on the horizon.",
+        "cost_credits": 175
+      },
+      "39": {
+        "reason": "Weak composition - the valley reveal came back as mostly empty sky.",
+        "fix": "Re-rolled with the land filling the frame and only a narrow band of sky.",
+        "cost_credits": 175
+      },
+      "29": {
+        "reason": "Weak composition - Rook's face was lost before the tilt began.",
+        "fix": "Re-rolled starting close on his face, then rising with his gaze.",
+        "cost_credits": 175
+      }
+    },
+    "accepted_drift": [
+      "Cinder's horns render as large curled ram-like horns rather than short wildcat horns. Inherited from the approved ROOK+CINDER plate and CONSISTENT across every shot. His body is properly feline. Re-plating would mean re-rolling ~15 shots (~2,600 credits). Consistency judged worth more than the literal reading; flagged to the author.",
+      "Cinder reads lion-sized rather than the hound-scale specified - same plate inheritance.",
+      "Moth has small bead/flower bobbles on his horn-buds. Not canon, persistent across renders, tiny in frame."
+    ],
+    "standouts": [
+      "19 - the extreme close-up on Sorrel's eye with two lights opening inside the reflected fire, exactly as scripted",
+      "23 - the bond-pulse in concentric rings",
+      "24 - Sorrel's face at the moment of recognition",
+      "35 - Yarrow naming the Ironfolk",
+      "37 - the straight scar through the curving landscape",
+      "41 - Sedge and the rearing serpent, the closing hook"
+    ]
+  },
+  "cost_actual": {
+    "shots": 7175,
+    "rerolls": 715,
+    "plates_new": 90,
+    "total": 7980
   }
 }
