@@ -8,8 +8,9 @@
     "recommended_model": "kling-3-omni",
     "recommended_model_reason": "cheapest model with both element2video identity references and synchronized audio",
     "cheapest_video_model": "pixverseV6",
-    "aspect_ratio": "UNDECIDED - see bible section 10",
-    "audio": "ambient only - fire crackle, wind, reeds, distant low drone. No speech."
+    "aspect_ratio": "16:9",
+    "audio": "ambient only - fire crackle, wind, reeds, distant low drone. No speech.",
+    "aspect_ratio_note": "Locked to 16:9 (YouTube). Shot text is written natively for this ratio. For a vertical cut, build_prompts.py --vertical appends framing guidance, but wide landscape drifts should be regenerated rather than cropped."
   },
   "style_block": "2D animated fantasy illustration in flat vector-cel colour over soft gradient skies, Art Nouveau flowing linework, anime-influenced expressive faces with large eyes, heavy dark ink outlines, painterly comic key-art lighting, cinematic composition, warm ember palette of burnt orange, gold, deep blood-red and bone-cream, with pale silver reserved for the broken sky-ring, organic curves in every natural form, rigid straight lines and hard facets only on Ironfolk metal, no text, no lettering, no speech bubbles, no watermark, no logo, no signature",
   "character_blocks": {

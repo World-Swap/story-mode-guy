@@ -299,11 +299,12 @@ should be laid over the cut in an editor instead. Where audio is generated, ask 
 
 ---
 
-## 10 · What is NOT locked, and needs a decision
+## 10 · Decisions
 
-- **Aspect ratio.** 16:9 for YouTube, 9:16 for Reels/Shorts/TikTok. The shot list is written
-  framing-agnostic; §11 of `SHOTLIST.md` notes the reframe per shot. Vertical favours single
-  figures and tilts; horizontal favours the landscapes and the Riven Sky.
+- ~~**Aspect ratio.**~~ **DECIDED: 16:9 (YouTube).** The shot list is written natively for this
+  ratio — the landscapes, the Riven Sky tilts and the Vane scale shots all depend on it. A
+  vertical cut for Reels/Shorts remains possible later via `build_prompts.py --vertical`, but
+  wide landscape drifts should be regenerated framed vertically rather than cropped.
 - **Whether Act III's reveals may appear in T1.** The series trailer is strongest if it teases
   the fall from the sky — but the handoff notes say *"Ep9 'The Fallen Ring' is the big reveal…
   do not leak it before Act III."* The shot list keeps T1 clean of it; overriding that is the
