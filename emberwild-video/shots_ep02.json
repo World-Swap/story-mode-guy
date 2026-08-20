@@ -546,5 +546,35 @@
         "BRACKEN"
       ]
     }
-  ]
+  ],
+  "plate_urls": {
+    "FOREST": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872427960711386b9a8ed856c57501cfa946ce34c98aeb240_0_1787242805789_65556f89.jpeg",
+    "SORREL+MOTH": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724299229134865fa4f4ec67e4268045741fa8093f9b237f_0_1787243004088_4d8a3f49.jpeg",
+    "ROOK+CINDER": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872417866629953a9193bc3926b190298875f636f3ebb5ec9_0_1787241798088_a3c6387f.jpeg",
+    "SCAR": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872427999129953a9193bc3926b190298875f636f3ea3bd05_0_1787242809639_5681d66a.jpeg",
+    "SEDGE+MARSH": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872428521596362ddeee9049477b0b29b68d55a9ae97d5b3e_0_1787242861435_618145e3.jpeg",
+    "CAMP": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246751004e3e9275467fdb9818f9fefcdf3ebba71585615_0_1787246758847_1eb0d3a3.jpeg",
+    "YARROW": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246814320904c389cfd819598df3df498c1c52189f7d405_0_1787246822926_c56d252b.jpeg",
+    "FIREPIT": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/02178724684388322877b9ff06629ca98d99f0267ba452ba6532c_0_1787246852762_0b32d280.jpeg",
+    "VALLEY": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787246856766b825dd5258dc4c388f66926d17e5fb9c73d216_0_1787246864510_4f7e6d6c.jpeg",
+    "BRAM+THORNCLAW": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872479863663cb8a93f7287826a4278aac7f0d089f95d3e23_0_1787247996394_8f26c1a6.jpeg",
+    "MARSH_VILLAGE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254355889f99996bc9b27db5cda0ac6dd5ae68edad24248_0_1787254365554_53c7477d.jpeg",
+    "BRACKEN": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254391952c891133c7aa592195d19c3080f8a135dec6afd_0_1787254413434_c5af0ccc.jpeg",
+    "CUT_CHANNEL": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/021787254407240f2dfc9d17a425ad03ee233374d263661d2cd40_0_1787254421418_ff760b1c.jpeg",
+    "SORREL_ALONE": "https://cdn.openart.ai/openart-ai/production/2026-08/create-image/VVX6CDT0Bu1PrRNMqp3s/0217872511060739e89f26b858b9d25ce524a85522bfdaf265de0_0_1787251116566_83f41ca5.jpeg"
+  },
+  "generation_log": {
+    "1": "UpicU9FBne734FEM5jdC",
+    "2": "LSNEMf1v3nIn3wVRe2zt",
+    "3": "eNvQpEeRtrF4U1j4vMbD",
+    "4": "JHfPSscmSaaffsSknyee",
+    "5": "e979ligO75ey3Qw6Ri3M",
+    "6": "EVrqPMgJo2RefJNcC8fb",
+    "7": "U1eIrmvI6CAMtKOqaP4F",
+    "8": "feFI6sTEd7fjocaSiYvg",
+    "9": "8MOfYloUXYg97p3vPvC8",
+    "10": "RjAXLqRl4jx1GqYyLamU",
+    "11": "3ZEC0GDNnLvFDEk531iH",
+    "12": "acY0FLU5vN5jnZxnuTSx"
+  }
 }
