@@ -33,7 +33,8 @@
     "'Art Nouveau linework' alone tips into decorative gold filigree borders framing the image. Say 'Art Nouveau influence in the natural forms only' and add 'no decorative border, no filigree frame'.",
     "Character plates drift further from house style than environment plates. Environment plates came back consistent; the character plate did not. Re-check every character plate against an approved one before accepting it.",
     "NEVER leave 'hide' and 'bone' as bare colour/material adjectives. A figure described as 'in ember-orange and bone hide' rendered as a creature covered in fire-coloured fur with a skeleton showing through. Always attach a garment noun - 'a layered tunic of tanned leather and woven cloth' - and use 'pale cream' rather than 'bone' as a colour. Add 'no skeleton, no exposed bones, no fur' to any prompt describing a clothed Vael.",
-    "A 'horned wildcat' with 'curved ridged horns sweeping back' renders as a GOAT or antelope - goat face, hooves, long spiral horns. Cinder survives because his description is dense with cat cues (scarred muzzle, torn ear, orange tabby fur). For any other bonded cat, anchor felinity explicitly: 'unmistakably feline, broad flat cat face, whiskers, tufted ears, paws, long cat tail' plus 'two SHORT curved horns' and an explicit negative - 'not a goat, not a ram, not an antelope, no hooves, no beard, no long spiral horns'."
+    "A 'horned wildcat' with 'curved ridged horns sweeping back' renders as a GOAT or antelope - goat face, hooves, long spiral horns. Cinder survives because his description is dense with cat cues (scarred muzzle, torn ear, orange tabby fur). For any other bonded cat, anchor felinity explicitly: 'unmistakably feline, broad flat cat face, whiskers, tufted ears, paws, long cat tail' plus 'two SHORT curved horns' and an explicit negative - 'not a goat, not a ram, not an antelope, no hooves, no beard, no long spiral horns'.",
+    "Kling's risk-control system rejects combat language outright, returning '[kling] Failure to pass the risk control system' as an upstream_error. In Ep2 it killed all five shots of the Ironfolk fight - 'ambush', 'fang and horn', 'dragged off the machine', 'carrying their dead', 'blank mask, no eyes', 'armoured figures in rigid formation'. Failed jobs ARE refunded, so the cost is time not credits. Write violence by implication instead: reeds bursting outward, spray, indistinct silhouettes, a machine left stalled and tangled. It reads better anyway - and note the comic itself stages this fight in exactly that register."
   ],
   "plates_needed_new": [
     "MARSH_VILLAGE",
@@ -594,17 +595,32 @@
     "28": "F1CWAZT0h0YXPOmNdRFs",
     "29": "2hRAmIEy71WQZPspzywm",
     "30": "ZPSmcK5pEWRYFVUuXk1t",
-    "31": "yW4SeD9RArskJiUemRLq",
+    "31": "2doS6Gk23r0UYKtA0Lvq",
     "32": "oQqds74d9Ddo7MvQzetv",
-    "33": "skICegXcFb1de4TW7teJ",
+    "33": "tRbOS9UXDkovSgxGXci7",
     "34": "d7LubMWsmyG7gofMmpJ9",
-    "35": "9GJyzd5tKwEJPt8WEiVJ",
-    "36": "OrvzxsXgE1k8SeJroJj2",
-    "37": "TKAfB7KaoM0W2uoK4nX4",
+    "35": "5sG1LKaOgBlbUAh9SjyT",
+    "36": "xyd0VN58absO7hHGidLK",
+    "37": "opHgdvrDstgwLEpsngtv",
     "38": "dQWm4UQ2ViUxSrZwJ8gi",
     "39": "tEPYgEBfwfZMVwLLJkFa",
     "40": "yKzxtmmNTs6knB27zxju",
     "41": "AmzvO1Ejp29kMVkjLzWx",
     "42": "2h36LtuKjlIR16HCVCH8"
+  },
+  "qa": {
+    "moderation_failures": {
+      "count": 5,
+      "shots": [
+        31,
+        33,
+        35,
+        36,
+        37
+      ],
+      "reason": "[kling] Failure to pass the risk control system",
+      "refunded": true,
+      "fix": "Rewrote all five to convey the same beats by implication rather than depiction."
+    }
   }
 }
