@@ -592,7 +592,23 @@
    "CORDS": "Approved first pass."
   },
   "parallel_limit": "OpenArt rejects submissions past roughly 10 concurrent jobs with PARALLEL_LIMIT_EXCEEDED. The rejection happens at submit time and is not charged. Submit in batches of about 5 and let earlier jobs drain.",
-  "moderation": "All 42 shots submitted with zero risk-control rejections, including the Ironfolk column (33), the column entering the circle (39) and both marked-one shots (41, 42). Confirms the Ep2 finding: the trigger was the reference plate showing masked figures, not the language. Describing Ironfolk in prompt text over an environment plate passes cleanly."
+  "moderation": "All 42 shots submitted with zero risk-control rejections, including the Ironfolk column (33), the column entering the circle (39) and both marked-one shots (41, 42). Confirms the Ep2 finding: the trigger was the reference plate showing masked figures, not the language. Describing Ironfolk in prompt text over an environment plate passes cleanly.",
+  "shots": {
+   "reviewed": "All 42 clips pulled and reviewed on mid-frame contact sheets, with 0.5s and 4.3s checks on anything that looked doubtful.",
+   "rerolled": {
+    "21": "The BRACKEN plate overpowered the scene description and rendered her on a raft at the marsh village in daylight, with the pale serpent - four pages and a day's walk out of place. She should be at a small fire on the night moor. Re-rolled with the FIREPIT plate added and explicit negatives for water, village, lanterns, boat and serpent.",
+    "42": "The marked one never appeared. The clip is an empty stone circle for its whole five seconds, checked at 0.5s, 2.5s and 4.2s. This is the episode's closing image, so it has to carry the figure. Re-rolled with the figure as the subject - large, foreground, described first - rather than a detail inside an environment prompt."
+   },
+   "kept_after_second_look": {
+    "12": "Mid-frame is mostly grass, but the tilt lands on the broken ring at 4.3s. Working as intended.",
+    "25": "Same - the tilt from Bracken up to the ring resolves beautifully in the last second.",
+    "32": "Strong at 0.5s with Rook and Cinder close and alert; the camera drifts back rather than in, but the opening beat is the one that reads in a cut."
+   },
+   "accepted_drift": {
+    "yarrow": "Yarrow renders with an eye patch rather than a milk-white blind eye. Checked against Episode 1 - she has the patch there too, so this is consistent across the run and stays.",
+    "cinder": "Still reads closer to lion-sized than hound-sized. Inherited from the approved plate and consistent everywhere."
+   }
+  }
  },
  "moderation_policy": "No Ironfolk reference plate is used anywhere in this episode. In Episode 2 the CUT_CHANNEL plate showing masked figures in formation tripped Kling's risk control on five shots; the same shots passed once the plate was regenerated figure-free. The marked one and the column are therefore described in prompt text only, over the RINGS and MOOR environment plates.",
  "generation_log": {
