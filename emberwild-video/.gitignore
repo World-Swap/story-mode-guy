@@ -5,3 +5,4 @@ _tmp/
 # generation_log, and each lives permanently in the OpenArt account library.
 shots_out/
 shots_ep01/
+__pycache__/
