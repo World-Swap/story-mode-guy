@@ -43,3 +43,17 @@ Episode 1's PDF and script are in neither the `EMBERWILD`, `EMBERWILD - FINAL`, 
 `emberwild-final` Drive folders. The project handoff notes place them in a Claude
 project workspace (`/mnt/project`, `/mnt/user-data/outputs`) that this session cannot
 reach. **To build Episode 1, add its PDF or script to the Drive EMBERWILD folder.**
+
+## Episode 3 — extracted from the finished issue
+
+`ep03_old-wounds.txt` was extracted with `pdftotext -layout` from
+`EMBERWILD_Episode3_illustrated-comic.pdf` in Google Drive (EMBERWILD - FINAL,
+file id `1vrH_Vy77K7FNbhxV5RaDJ-42egtD-6Gi`). Ep3 has no separate script file —
+the illustrated 22-page issue *is* the source of truth, per the continuity audit.
+
+Extraction is clean and complete: all 22 pages, captions in sentence case and
+dialogue in caps prefixed by speaker, ending on the Ep3 p22 stranger.
+
+`poppler-utils` is not preinstalled in the session container — `apt-get update &&
+apt-get install -y poppler-utils` first. The same route works for Eps 5–10, whose
+finished PDFs are also in Drive.
