@@ -64,3 +64,20 @@ player set to loop shows no discontinuity at all. Final runtime is 210s (3m30s).
 - **Plex / Jellyfin** — drop it in a library and enable repeat.
 
 It has no audio track, so anything you're already playing keeps running over it.
+
+## YouTube upload
+
+`youtube.md` holds the title, description, tags and upload settings.
+`thumbnails/` holds three 1280×720 options built from real frames by
+`thumbnail.py`.
+
+The upload version is not committed — a 3-hour cut is ~3.4 GB, well past
+GitHub's 100 MB per-file limit. Build it locally instead:
+
+```sh
+./make-long.sh 3        # ~3 hours, 52 loops, stream copy, ~1 minute
+```
+
+It repeats `nature-loop.mp4` a whole number of times with `-c copy`, so there
+is no re-encode and no quality loss. Whole loops only: trimming to a round
+number of hours would leave a hard cut at the end of the file.
