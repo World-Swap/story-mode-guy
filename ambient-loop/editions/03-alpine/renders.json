@@ -1,9 +1,64 @@
 {
   "edition": "03-alpine",
   "jobs": [
-    {"id":"01","slug":"cloud-over-ridge","historyId":"ORUxDkIjDTHN4MRvGlrd","status":"RUNNING"},
-    {"id":"13","slug":"snowfield-wind","historyId":"1iA8hfRDBNv2HbsldkAI","status":"RUNNING"}
+    {
+      "id": "01",
+      "slug": "cloud-over-ridge",
+      "historyId": "TSm3hyL7ac0uF2DbpVHi",
+      "status": "COMPLETED",
+      "note": "second attempt; first was too dark and motion decayed"
+    },
+    {
+      "id": "02",
+      "slug": "glacial-lake",
+      "historyId": "TLS1yfSKTPpdBVTNwRQi",
+      "status": "RUNNING"
+    },
+    {
+      "id": "03",
+      "slug": "meltwater-cascade",
+      "historyId": "nOZTuWrzRA92zUHpGokA",
+      "status": "RUNNING"
+    },
+    {
+      "id": "04",
+      "slug": "spindrift-peak",
+      "historyId": "MJ3GzFDg4lnoegx3AAOS",
+      "status": "RUNNING"
+    },
+    {
+      "id": "05",
+      "slug": "alpine-meadow",
+      "historyId": "OX9IDeARp9pRneDjtnLg",
+      "status": "RUNNING"
+    },
+    {
+      "id": "06",
+      "slug": "valley-cloud-sea",
+      "historyId": "Z6nxI2uIS44rworbBbOs",
+      "status": "RUNNING"
+    },
+    {
+      "id": "07",
+      "slug": "snow-conifers",
+      "historyId": "O1z2GvkPcGd9uAbjHmi7",
+      "status": "RUNNING"
+    }
   ],
-  "queued": ["02","03","04","05","06","07","08","09","10","11","12","14","15"],
-  "note": "Two probes first: 01 is the hero shot, 13 is the one most likely to render as a still. Alpine's failure mode is a beautiful motionless photograph."
+  "queued": [
+    "08 tarn-reflection",
+    "09 scree-mist",
+    "10 glacier-ice",
+    "11 waterfall-cliff",
+    "12 larch-slope",
+    "14 lichen-rock",
+    "15 high-panorama"
+  ],
+  "note": "Two probes first: 01 is the hero shot, 13 is the one most likely to render as a still. Alpine's failure mode is a beautiful motionless photograph.",
+  "abandoned": [
+    {
+      "slug": "snowfield-wind",
+      "reason": "two attempts, motion decayed both times (0.52, then 1.14 falling to 0.75); a flat white field gives the model nothing to sustain"
+    }
+  ]
 }

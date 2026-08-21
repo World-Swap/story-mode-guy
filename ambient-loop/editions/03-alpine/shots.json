@@ -12,7 +12,7 @@
   },
   "creditsPerClip": 450,
   "style_suffix": "Photorealistic live-action footage, shot on a full-frame cinema camera with a 35mm prime at f4, natural tripod steadiness, true-to-life colour, realistic atmospheric haze and depth of field. Bright high-altitude daylight under a luminous overcast sky, clean airy light, brilliant white snow, pale blue distance, dark green conifer. Well exposed and open, never dim, never dusk, never night. Fine real-world texture: granite grain, snow crust, lichen, running meltwater. Not an illustration, not a painting, not CGI, not a render, no stylisation, no HDR look, no oversaturation. No people, no buildings, no roads, no cable cars, no animals, no text, no camera movement, no cuts. The movement is continuous and sustained for the entire shot, constantly replenished, never settling, never dissipating, never coming to rest.",
-  "notes": "1080p at 450 credits per clip. Same 15-shot, 15-second structure. Style suffix mirrors edition 02's, which produced consistently photoreal results - only the palette and the excluded objects change. Alpine has a specific failure mode: static rock and snow with nothing moving. Every shot names a moving element (cloud, meltwater, spindrift, grass, mist) so no clip renders as a still. First probes of 01 and 13 came back too dark and near-motionless (mean frame delta 0.88 and 0.52 against 1.65 for edition 02's calmest shot). 'Slate' and 'cool blue-grey' were reading as dusk, and 'gentle motion' let the movement dissipate mid-shot, so the suffix now names bright high-altitude light and demands sustained, replenished motion.",
+  "notes": "1080p at 450 credits per clip. Same 15-shot, 15-second structure. Style suffix mirrors edition 02's, which produced consistently photoreal results - only the palette and the excluded objects change. Alpine has a specific failure mode: static rock and snow with nothing moving. Every shot names a moving element (cloud, meltwater, spindrift, grass, mist) so no clip renders as a still. First probes of 01 and 13 came back too dark and near-motionless (mean frame delta 0.88 and 0.52 against 1.65 for edition 02's calmest shot). 'Slate' and 'cool blue-grey' were reading as dusk, and 'gentle motion' let the movement dissipate mid-shot, so the suffix now names bright high-altitude light and demands sustained, replenished motion. snowfield-wind was cut after two attempts: a flat white field gives the model nothing to sustain motion with, and it decayed from 1.26 to 0.75 across the shot even when brightness was fixed. Dropping it leaves 14 shots (3m16s loop after crossfades) and keeps ~615 credits in reserve for one re-roll, which a 15th shot would have consumed.",
   "shots": [
     {
       "id": "01",
@@ -73,11 +73,6 @@
       "id": "12",
       "slug": "larch-slope",
       "prompt": "Static locked-off camera, single continuous unbroken shot. A slope of alpine larch in autumn gold, needles trembling in a light breeze, low cloud moving slowly through the trees and thinning to reveal grey peaks behind."
-    },
-    {
-      "id": "13",
-      "slug": "snowfield-wind",
-      "prompt": "Static locked-off camera, single continuous unbroken shot. A bright open snowfield in a strong steady wind, with long visible streamers of loose surface snow racing low and fast across the frame from left to right without pause, ground blizzard blowing continuously over sculpted white sastrugi. Brilliant white snow, pale sunlit ridges beyond."
     },
     {
       "id": "14",
