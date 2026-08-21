@@ -5,7 +5,7 @@ Frame + minimal text: a real frame from the video, lightly graded, with a
 letterspaced serif title and a duration line over a bottom scrim. Nothing is
 claimed here that the video does not deliver - no resolution or audio badge.
 """
-import os, subprocess
+import json, os, subprocess
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
 HERE = os.getcwd()   # run from an edition directory
@@ -15,16 +15,15 @@ W, H = 1280, 720
 SERIF = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
 SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
-TITLE = "MISTY RAINFOREST"
-SUBTITLE = "3 HOURS  ·  RAIN & FOREST WIND"
 WORDMARK = "THE OPEN LANDS"   # channel mark, bottom-right; keep it quiet
 
+# Title, subtitle and which frames to use come from the edition's shots.json,
+# so a new edition needs no edit here - only its own shot list.
+_cfg = json.load(open(os.path.join(HERE, "shots.json")))["thumbnail"]
+TITLE, SUBTITLE = _cfg["title"], _cfg["subtitle"]
+
 # (output name, source clip, timestamp) - one frame per candidate composition.
-VARIANTS = [
-    ("a-god-rays", "09-god-rays-ferns", 11),
-    ("b-cathedral", "01-cathedral-cedars", 12),
-    ("c-valley-fog", "15-valley-fog", 9),
-]
+VARIANTS = [tuple(v) for v in _cfg["variants"]]
 
 def grab(clip, t, dest):
     """Pull a single full-resolution frame out of a clip."""

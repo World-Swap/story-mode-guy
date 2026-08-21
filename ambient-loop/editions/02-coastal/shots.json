@@ -91,5 +91,31 @@
       "slug": "wide-coast",
       "prompt": "Static locked-off camera, single continuous unbroken shot. Wide elevated view along a wild empty coastline, headland after headland fading paler into sea fog, long slow lines of white surf moving up the beach far below."
     }
-  ]
+  ],
+  "thumbnail": {
+    "title": "WILD COAST",
+    "subtitle": "3 HOURS  ·  OCEAN WAVES",
+    "variants": [
+      [
+        "a-sea-stacks",
+        "02-sea-stacks",
+        9
+      ],
+      [
+        "b-long-swell",
+        "01-long-swell",
+        8
+      ],
+      [
+        "c-wide-coast",
+        "15-wide-coast",
+        10
+      ],
+      [
+        "d-spray",
+        "11-spray-headland",
+        9
+      ]
+    ]
+  }
 }

@@ -132,13 +132,18 @@ def main():
 
     chain = os.path.join(HERE, "chain.mp4")
     final = os.path.join(HERE, "nature-loop.mp4")
+    # ffmpeg writes here and the file is renamed only once it completes, so a
+    # half-encoded file never appears under the real name. A `git add -A` during
+    # a 15-minute 1080p encode would otherwise commit a truncated video.
+    partial = final + ".partial"
 
     print("Pass 1/2: crossfading clips")
     total = build_chain(clips, chain)
     print(f"  chain = {total:.1f}s")
 
     print("Pass 2/2: sealing the loop point")
-    length = wrap_seamless(chain, total, final)
+    length = wrap_seamless(chain, total, partial)
+    os.replace(partial, final)          # atomic: the real name appears complete
     os.remove(chain)
 
     mins, secs = divmod(length, 60)

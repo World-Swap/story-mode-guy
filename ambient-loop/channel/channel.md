@@ -53,4 +53,4 @@ stays recognisable.
 | # | Edition | Video |
 |---|---|---|
 | 01 | Misty Rainforest | https://youtu.be/YQVLMjDPSX4 |
-| 02 | Wild Coast | not yet published |
+| 02 | Wild Coast | built, not yet uploaded |
