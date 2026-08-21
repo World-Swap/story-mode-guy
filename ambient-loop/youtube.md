@@ -11,16 +11,11 @@
 ```
 Quiet places, on your screen, for hours at a time.
 
-The Open Lands makes long, seamless ambient video for televisions — forests in
-fog, coastlines, rain on still water, open country. Gentle natural sound, no
-narration, no cuts. Just a window onto somewhere calm.
+The Open Lands makes long, seamless ambient video for televisions — forests in fog, coastlines, rain on still water, open country. Gentle natural sound, no narration, no cuts. Just a window onto somewhere calm.
 
-Every video is a true loop. Picture and sound run together for hours with no
-visible restart and no audible seam, so you can leave it on through dinner, a
-working afternoon, or a night's sleep.
+Every video is a true loop. Picture and sound run together for hours with no visible restart and no audible seam, so you can leave it on through dinner, a working afternoon, or a night's sleep.
 
-New places added regularly. If there is somewhere you would like to sit for a
-few hours, say so in the comments.
+New places added regularly. If there is somewhere you would like to sit for a few hours, say so in the comments.
 
 All footage is created using generative AI.
 ```
@@ -66,13 +61,9 @@ term available here, so it goes early.
 ## Description
 
 ```
-Three hours of quiet old-growth rainforest — drifting fog, shafts of morning
-light, running water and rain on ferns, over a soft bed of rain and forest wind.
-No narration, no interruptions. Made to sit on a TV in a living room or bedroom
-and simply be there.
+Three hours of quiet old-growth rainforest — drifting fog, shafts of morning light, running water and rain on ferns, over a soft bed of rain and forest wind. No narration, no interruptions. Made to sit on a TV in a living room or bedroom and simply be there.
 
-The sound is gentle and unchanging by design: nothing builds, nothing resolves,
-nothing asks for your attention.
+The sound is gentle and unchanging by design: nothing builds, nothing resolves, nothing asks for your attention.
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
