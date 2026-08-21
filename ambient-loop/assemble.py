@@ -15,6 +15,7 @@ import glob, json, os, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 XFADE = 1.0          # crossfade length, seconds
+FPS = 24             # matches the source clips; resampling here would judder
 CRF, PRESET = 18, "slow"
 
 def ffmpeg_exe():
@@ -51,7 +52,7 @@ def build_chain(clips, out):
     parts, acc = [], durs[0]
     for i in range(len(clips)):
         parts.append(f"[{i}:v]scale=1280:720:force_original_aspect_ratio=increase,"
-                     f"crop=1280:720,fps=24,format=yuv420p,setsar=1[c{i}]")
+                     f"crop=1280:720,fps={FPS},format=yuv420p,setsar=1[c{i}]")
     last = "c0"
     for i in range(1, len(clips)):
         offset = acc - XFADE
@@ -68,10 +69,13 @@ def build_chain(clips, out):
 def wrap_seamless(src, total, out):
     """Fold the tail onto the head so the file loops without a visible cut."""
     t, end = XFADE, total
+    # trim drops the constant frame rate that xfade and concat both require,
+    # so each branch is re-timed with fps= before it is used.
+    retime = f"setpts=PTS-STARTPTS,fps={FPS},setsar=1"
     fc = (
-        f"[0:v]trim=start={t}:end={end - t},setpts=PTS-STARTPTS[body];"
-        f"[0:v]trim=start={end - t}:end={end},setpts=PTS-STARTPTS[tail];"
-        f"[0:v]trim=start=0:end={t},setpts=PTS-STARTPTS[head];"
+        f"[0:v]trim=start={t}:end={end - t},{retime}[body];"
+        f"[0:v]trim=start={end - t}:end={end},{retime}[tail];"
+        f"[0:v]trim=start=0:end={t},{retime}[head];"
         f"[tail][head]xfade=transition=fade:duration={t}:offset=0[blend];"
         f"[body][blend]concat=n=2:v=1:a=0[out]"
     )
