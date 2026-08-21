@@ -32,7 +32,9 @@
     {
       "id": "04",
       "slug": "kelp-surge",
-      "prompt": "Static locked-off camera, single continuous unbroken shot. Thick amber kelp fronds lifting and falling in a slow clear surge over submerged rock, water swirling around them continuously. Shafts of soft light move through the shallow green water."
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Thick amber kelp fronds lifting and falling in a slow clear surge over submerged rock, water swirling around them continuously. Shafts of soft light move through the shallow green water.",
+      "grade": "colorbalance=rs=-0.15:rm=-0.28:bs=0.12:bm=0.24,eq=saturation=0.80",
+      "grade_reason": "Rendered at mean R-B +30.2 while the other fourteen shots measured 0 to -41.5 - a genuine outlier, not a judgement call. This pulls it to -12.3, mid-set, while leaving the kelp amber, since kelp really is amber."
     },
     {
       "id": "05",

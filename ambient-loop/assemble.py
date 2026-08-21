@@ -53,6 +53,21 @@ def run(args):
     if r.returncode:
         sys.exit(f"ffmpeg failed:\n{r.stderr[-3000:]}")
 
+def grades():
+    """Per-shot colour corrections from shots.json, keyed by clip filename stem.
+
+    Editions occasionally contain one shot the model rendered far off-palette.
+    Rather than re-rolling it, shots.json can carry a `grade` filter string,
+    applied here so the fix is reproducible and its reasoning stays with the
+    shot list instead of living in somebody's shell history.
+    """
+    path = os.path.join(HERE, "shots.json")
+    if not os.path.exists(path):
+        return {}
+    data = json.load(open(path))
+    return {f"{sh['id']}-{sh['slug']}": sh["grade"]
+            for sh in data.get("shots", []) if sh.get("grade")}
+
 def build_chain(clips, out):
     """Crossfade clips together end to end."""
     durs = [duration(c) for c in clips]
@@ -68,9 +83,14 @@ def build_chain(clips, out):
         inputs += ["-i", c]
 
     # Every clip is normalised to a common format first so xfade can chain them.
+    g = grades()
     parts, acc = [], durs[0]
-    for i in range(len(clips)):
-        parts.append(f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase,"
+    for i, clip in enumerate(clips):
+        stem = os.path.splitext(os.path.basename(clip))[0]
+        pre = f"{g[stem]}," if stem in g else ""
+        if pre:
+            print(f"  grading {stem}")
+        parts.append(f"[{i}:v]{pre}scale={W}:{H}:force_original_aspect_ratio=increase,"
                      f"crop={W}:{H},fps={FPS},format=yuv420p,setsar=1[c{i}]")
     last = "c0"
     for i in range(1, len(clips)):

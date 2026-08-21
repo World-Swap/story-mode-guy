@@ -54,49 +54,57 @@
       "id": "08",
       "slug": "rockpool-cascade",
       "historyId": "UGQGBX0uv3lTY0qaMI4w",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/bd2b1860-e8d6-4f75-bebd-e9aa50f2f3d8_seed549830517_1787336589105_aafa3229.mp4"
     },
     {
       "id": "09",
       "slug": "driftwood-shore",
       "historyId": "vwbJr8CnO03el46e6oJc",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/34acd546-b1b9-43cc-8b93-7d6e592b2397_seed1052900564_1787336577566_8ea1aeda.mp4"
     },
     {
       "id": "10",
       "slug": "shallow-turquoise",
       "historyId": "duf23f1Rzsed8C2OFwQe",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/cc07e70f-840a-4922-bf4d-b5097be9d8d3_seed2042573514_1787336655662_a78bf3b6.mp4"
     },
     {
       "id": "11",
       "slug": "spray-headland",
       "historyId": "3H1qj39oS6pU3lzT9N0w",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/c7c31ad1-88a3-4e3d-add5-961f68ae6f75_seed209605414_1787336555845_6bb0c3f7.mp4"
     },
     {
       "id": "12",
       "slug": "dune-grass",
       "historyId": "nRIonlLHZtaAsnoGplT9",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/53a703e7-1878-47a5-a9da-b30ab1d0242a_seed1048925158_1787336558831_5d8cf998.mp4"
     },
     {
       "id": "13",
       "slug": "estuary-fog",
       "historyId": "gIhytHDnKzWeqilbhLd9",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/1647eea0-c8e7-4330-8945-320c4b1ccad2_seed2038349734_1787336567053_0d447725.mp4"
     },
     {
       "id": "14",
       "slug": "barnacle-close",
       "historyId": "DHpZrZlXhFWsvIoMB9eF",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/f7b459a3-dd81-4b2b-a902-b5544e65714d_seed2094548933_1787336566115_48714c8c.mp4"
     },
     {
       "id": "15",
       "slug": "wide-coast",
       "historyId": "RB3wOu1Lg2D9oninM1G4",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/7282cd94-8cc2-4851-818b-5dc2a0fc3cb3_seed2031282994_1787336570229_80412096.mp4"
     }
   ],
   "queued": []
