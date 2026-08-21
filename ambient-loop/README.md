@@ -79,6 +79,21 @@ without a click at the seam. The video is stream-copied, never re-encoded.
 Because the audio period equals the video period, the long cut is one repeating
 unit of picture and sound rather than two cycles drifting against each other.
 
+## Channel art
+
+```sh
+python3 avatar.py     # -> avatars/   800x800, plus 96px circular previews
+python3 banner.py     # -> banners/   2048x1152, plus per-device crop proofs
+```
+
+Both are built from frames of the loop so the channel art and the videos share
+one grade and palette.
+
+YouTube shows a banner differently per device from a single upload: 2048x1152
+on TVs, 2048x423 on desktop, and a centred 1235x338 "safe area" that is all
+that is guaranteed visible everywhere. All banner text sits inside that band,
+and `banner.py` writes a proof image of the three crops so it stays verifiable.
+
 ## YouTube upload
 
 `youtube.md` holds the title, description, tags and upload settings.
