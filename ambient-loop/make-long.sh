@@ -11,19 +11,39 @@
 set -euo pipefail
 
 HOURS="${1:-3}"
-SRC="$(cd "$(dirname "$0")" && pwd)/nature-loop.mp4"
+DIR="$(cd "$(dirname "$0")" && pwd)"
+SRC="$DIR/nature-loop.mp4"
 LOOP_SECS=210.625
 
-[ -f "$SRC" ] || { echo "nature-loop.mp4 not found next to this script"; exit 1; }
-command -v ffmpeg >/dev/null || { echo "ffmpeg not found (try: pip install imageio-ffmpeg)"; exit 1; }
+[ -f "$SRC" ] || { echo "ERROR: nature-loop.mp4 not found next to this script."; exit 1; }
+
+# Prefer a real ffmpeg on PATH; fall back to the one pip's imageio-ffmpeg ships.
+if command -v ffmpeg >/dev/null 2>&1; then
+  FF=ffmpeg
+elif FF=$(python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())" 2>/dev/null) && [ -x "$FF" ]; then
+  :
+else
+  echo "ERROR: ffmpeg not found. Install it with one of:"
+  echo "  macOS:    brew install ffmpeg"
+  echo "  Ubuntu:   sudo apt install ffmpeg"
+  echo "  anywhere: pip install imageio-ffmpeg"
+  exit 1
+fi
 
 N=$(python3 -c "import math;print(math.ceil($HOURS*3600/$LOOP_SECS))")
-OUT="nature-loop-${HOURS}h.mp4"
+OUT="$DIR/nature-loop-${HOURS}h.mp4"
 LIST=$(mktemp)
-python3 -c "print(\"file '$SRC'\n\"*$N, end='')" > "$LIST"
+trap 'rm -f "$LIST"' EXIT
 
-echo "Repeating $N loops -> $OUT"
-ffmpeg -y -f concat -safe 0 -i "$LIST" -c copy -movflags +faststart "$OUT" -loglevel error
-rm -f "$LIST"
-ffmpeg -i "$OUT" -hide_banner 2>&1 | grep Duration
+# One line per repetition. Absolute path: concat resolves entries relative to
+# the list file, which lives in the temp dir.
+python3 -c "
+import sys
+src, n = sys.argv[1], int(sys.argv[2])
+sys.stdout.write(''.join(\"file '%s'\n\" % src for _ in range(n)))
+" "$SRC" "$N" > "$LIST"
+
+echo "Repeating $N loops -> $(basename "$OUT")"
+"$FF" -y -f concat -safe 0 -i "$LIST" -c copy -movflags +faststart "$OUT" -loglevel error
+"$FF" -i "$OUT" -hide_banner 2>&1 | grep Duration || true
 echo "Done -> $OUT"
