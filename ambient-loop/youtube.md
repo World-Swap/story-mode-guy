@@ -47,20 +47,20 @@ background, seamless loop, ambient tv, background video for tv
 
 ## Title
 
-**Primary (69 chars):**
+**Primary (55 chars):**
 ```
-Misty Rainforest Ambience — 3 Hours | Silent TV Screensaver, No Music
+Misty Rainforest — 3 Hours of Rain & Forest Wind Sounds
 ```
 
 Alternates:
 ```
-3 Hours of Misty Rainforest — Silent Ambient Video for Your TV (No Music)
-Misty Rainforest — 3 Hour Seamless Loop | Silent TV Ambience, No Music
-Rainforest Fog & Light — 3 Hours Silent Ambience | Living Room TV Screensaver
+Misty Rainforest Ambience — 3 Hours of Rain & Forest Wind | Sleep & Focus
+3 Hours of Rain in an Old-Growth Rainforest — Ambient Video for Your TV
+Rainforest Fog & Light — 3 Hour Ambience | Rain, Wind, Seamless Loop
 ```
 
-Keywords are front-loaded, and "Silent / No Music" is stated in the title on
-purpose — see the note at the bottom.
+Keywords are front-loaded. "Rain" carries far more search volume than any other
+term available here, so it goes early.
 
 ---
 
@@ -68,11 +68,12 @@ purpose — see the note at the bottom.
 
 ```
 Three hours of quiet old-growth rainforest — drifting fog, shafts of morning
-light, running water and rain on ferns. No music, no narration, no interruptions.
-Made to sit on a TV in a living room or bedroom and simply be there.
+light, running water and rain on ferns, with a soft bed of rain and forest wind.
+No music, no narration, no interruptions. Made to sit on a TV in a living room
+or bedroom and simply be there.
 
-Because there is no audio track, you can play your own music, a podcast, or
-nothing at all over it. Nothing competes.
+The sound is gentle and unchanging by design: nothing builds, nothing resolves,
+nothing asks for your attention.
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
@@ -91,16 +92,16 @@ cathedral cedars in fog · moss-draped maple · a shallow creek over stones
 · dew on lichen · fog rolling through a conifer valley
 
 DETAILS
-• 3 hours 2 minutes, seamless loop
+• 3 hours 2 minutes, seamless loop in both picture and sound
 • 1280×720, 16:9
-• No audio track
+• Rain and forest wind ambience — no music, no narration
 • No people, no animals, no text on screen
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 This video was created using generative AI.
 
-#ambience #screensaver #rainforest #relaxing #nature
+#rainsounds #ambience #rainforest #relaxing #sleepsounds
 ```
 
 ---

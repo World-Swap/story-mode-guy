@@ -16,7 +16,7 @@ SERIF = "/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf"
 SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 TITLE = "MISTY RAINFOREST"
-SUBTITLE = "3 HOURS  ·  TV SCREENSAVER  ·  NO MUSIC"
+SUBTITLE = "3 HOURS  ·  RAIN & FOREST WIND"
 WORDMARK = "THE OPEN LANDS"   # channel mark, bottom-right; keep it quiet
 
 # (output name, source clip, timestamp) - one frame per candidate composition.
