@@ -1,10 +1,10 @@
 chain.mp4
-*.partial
+*.partial.mp4
 __pycache__/
 nature-loop-*h*.mp4
 
 # 1080p masters exceed GitHub's 100 MB per-file limit (edition 02 is 193 MB).
-# The clips are committed, so a master is rebuilt with assemble.py in ~15 min.
+# The clips are committed, so a master is rebuilt with assemble.py.
 # Edition 01's 720p master is 64 MB and was tracked before this rule, so it
 # stays tracked - ignore rules do not affect already-tracked files.
 nature-loop.mp4

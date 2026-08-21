@@ -135,10 +135,18 @@ def main():
     # ffmpeg writes here and the file is renamed only once it completes, so a
     # half-encoded file never appears under the real name. A `git add -A` during
     # a 15-minute 1080p encode would otherwise commit a truncated video.
-    partial = final + ".partial"
+    # The .mp4 suffix has to stay last: ffmpeg chooses its muxer from the
+    # extension, and "nature-loop.mp4.partial" makes it give up entirely.
+    partial = os.path.join(HERE, "nature-loop.partial.mp4")
 
-    print("Pass 1/2: crossfading clips")
-    total = build_chain(clips, chain)
+    expected = sum(15.0 for _ in clips) - XFADE * (len(clips) - 1)
+    if os.path.exists(chain) and abs(duration(chain) - expected) < 5:
+        total = duration(chain)
+        print(f"Pass 1/2: reusing existing chain.mp4 ({total:.1f}s)")
+        print("          delete it to force a rebuild")
+    else:
+        print("Pass 1/2: crossfading clips")
+        total = build_chain(clips, chain)
     print(f"  chain = {total:.1f}s")
 
     print("Pass 2/2: sealing the loop point")
