@@ -109,12 +109,19 @@ This video was created using generative AI.
 ## Tags
 
 ```
-rainforest ambience, silent ambience, tv screensaver, ambient video, nature
-screensaver, no music, seamless loop, forest ambience, misty forest, relaxing
-video, background video for tv, living room ambience, bedroom ambience, fog
-forest, calm background, 3 hour ambience, ambient tv, screensaver 3 hours,
-nature background, quiet background video
+rain sounds, rain sounds for sleeping, forest rain, rainforest ambience, rain
+ambience, forest ambience, nature sounds, rain and wind sounds, misty forest,
+3 hours rain sounds, ambient video, tv screensaver, background video for tv,
+living room ambience, bedroom ambience, relaxing rain, calm background, sleep
+sounds, study background, seamless loop
 ```
+
+Paste as one comma-separated line. YouTube caps the field at 500 characters
+across all tags — this set is well under, leaving room to add.
+
+Tags are a weak ranking signal now; title, thumbnail and description do the
+real work. Their remaining value is catching phrasings the title cannot hold,
+so the list leans on search terms rather than describing the video again.
 
 ---
 
