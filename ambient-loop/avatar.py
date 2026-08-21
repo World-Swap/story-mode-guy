@@ -1,118 +1,97 @@
 #!/usr/bin/env python3
 """Build channel avatars for The Open Lands (800x800).
 
-YouTube crops the avatar to a circle and renders it as small as ~48px, so
-these are flat vector-style marks, not photographs: layered ridgelines in fog,
-which is both the channel's subject and a shape that survives being tiny.
+YouTube crops to a circle and renders down to ~48px, so legibility at small
+size drives every choice here: three ridge layers, not five; hard tonal steps
+between them rather than blended fog; one dominant peak per layer so there is
+a real silhouette to recognise.
 
-Rendered at 4x and downsampled so the edges stay clean.
+An earlier version used five low-contrast layers with soft fog between them.
+It looked fine at 800px and turned into an indistinct blob at 96px, which is
+the size that actually matters.
+
+Rendered at 4x and downsampled for clean edges.
 """
 import math, os
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "avatars")
 S = 800
-SS = 4                      # supersampling factor
+SS = 4
 N = S * SS
 
 def lerp(a, b, t):
     return tuple(round(x + (y - x) * t) for x, y in zip(a, b))
 
 def sky(draw, top, bottom):
-    """Vertical gradient background."""
     for y in range(N):
         draw.line([(0, y), (N, y)], fill=lerp(top, bottom, y / N))
 
-def ridge(draw, base, amp, seed, colour):
-    """One mountain layer, as a filled polygon under a summed-sine skyline."""
+def ridge(draw, base, amp, phase, freq, colour):
+    """One layer, dominated by a single low-frequency peak so it reads small."""
     pts = []
-    for x in range(0, N + 1, max(1, N // 400)):
+    for x in range(0, N + 1, max(1, N // 600)):
         u = x / N
-        h = (math.sin(u * 6.0 + seed) * 0.55
-             + math.sin(u * 13.0 + seed * 2.1) * 0.28
-             + math.sin(u * 23.0 + seed * 3.7) * 0.17)
-        pts.append((x, base * N + h * amp * N))
+        h = (math.sin(u * freq + phase)
+             + math.sin(u * freq * 2.7 + phase * 1.9) * 0.22
+             + math.sin(u * freq * 5.1 + phase * 3.3) * 0.08)
+        pts.append((x, base * N - h * amp * N))
     pts += [(N, N), (0, N)]
     draw.polygon(pts, fill=colour)
 
-def fog_band(img, y, height, strength):
-    """Soft horizontal mist sitting on top of a ridge."""
-    band = Image.new("RGBA", (N, N), (0, 0, 0, 0))
-    d = ImageDraw.Draw(band)
-    d.rectangle([0, y * N, N, y * N + height * N], fill=(226, 235, 231, strength))
-    band = band.filter(ImageFilter.GaussianBlur(N * 0.035))
-    return Image.alpha_composite(img, band)
-
-def build(name, palette, sun=None):
-    img = Image.new("RGBA", (N, N), (0, 0, 0, 255))
+def build(name, p):
+    img = Image.new("RGB", (N, N), (0, 0, 0))
     d = ImageDraw.Draw(img)
-    sky(d, palette["sky_top"], palette["sky_bottom"])
+    sky(d, p["sky_top"], p["sky_bottom"])
 
-    if sun:
-        glow = Image.new("RGBA", (N, N), (0, 0, 0, 0))
-        g = ImageDraw.Draw(glow)
-        cx, cy, r = sun["x"] * N, sun["y"] * N, sun["r"] * N
-        g.ellipse([cx - r, cy - r, cx + r, cy + r], fill=sun["colour"])
-        glow = glow.filter(ImageFilter.GaussianBlur(N * 0.05))
-        img = Image.alpha_composite(img, glow)
-        d = ImageDraw.Draw(img)
+    if p.get("disc"):
+        cx, cy, r = (p["disc"]["x"] * N, p["disc"]["y"] * N, p["disc"]["r"] * N)
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=p["disc"]["colour"])
 
-    # Back to front: each ridge darker and lower, which reads as depth.
-    for i, (base, amp, seed, colour) in enumerate(palette["ridges"]):
-        ridge(d, base, amp, seed, colour)
-        if i < len(palette["ridges"]) - 1:
-            img = fog_band(img, base - 0.02, 0.10, palette["fog"])
-            d = ImageDraw.Draw(img)
+    for base, amp, phase, freq, colour in p["ridges"]:
+        ridge(d, base, amp, phase, freq, colour)
 
-    img = img.resize((S, S), Image.LANCZOS).convert("RGB")
-    dest = os.path.join(OUT, f"avatar-{name}.png")
-    img.save(dest)
+    img = img.resize((S, S), Image.LANCZOS)
+    img.save(os.path.join(OUT, f"avatar-{name}.png"))
 
-    # Circle-cropped preview at real display size, to check it survives small.
-    prev = img.copy()
+    prev = img.copy().convert("RGBA")
     mask = Image.new("L", (S, S), 0)
-    ImageDraw.Draw(mask).ellipse([0, 0, S, S], fill=255)
+    ImageDraw.Draw(mask).ellipse([0, 0, S - 1, S - 1], fill=255)
     prev.putalpha(mask)
     prev.resize((96, 96), Image.LANCZOS).save(os.path.join(OUT, f"preview-{name}-96.png"))
     print(f"  avatar-{name}.png")
-    return dest
 
+# base, amplitude, phase, frequency, colour - back layer first.
+DAWN = {
+    "sky_top": (226, 232, 226), "sky_bottom": (198, 210, 203),
+    "disc": {"x": 0.60, "y": 0.34, "r": 0.085, "colour": (247, 238, 216)},
+    "ridges": [
+        (0.62, 0.10, 0.6, 3.0, (139, 160, 152)),
+        (0.78, 0.11, 2.4, 2.4, (72, 100, 89)),
+        (0.94, 0.10, 4.3, 2.0, (26, 44, 36)),
+    ],
+}
 COOL = {
-    "sky_top": (206, 220, 216), "sky_bottom": (150, 172, 168), "fog": 120,
+    "sky_top": (219, 228, 224), "sky_bottom": (176, 195, 190),
     "ridges": [
-        (0.44, 0.05, 0.4, (122, 143, 138)),
-        (0.56, 0.05, 2.2, (86, 110, 102)),
-        (0.68, 0.05, 4.1, (55, 79, 68)),
-        (0.80, 0.05, 6.3, (32, 51, 43)),
-        (0.92, 0.04, 8.0, (18, 32, 27)),
+        (0.60, 0.11, 1.4, 2.7, (125, 150, 145)),
+        (0.77, 0.11, 3.1, 2.2, (62, 92, 84)),
+        (0.94, 0.10, 5.0, 1.8, (22, 40, 34)),
     ],
 }
-WARM = {
-    "sky_top": (233, 226, 205), "sky_bottom": (188, 196, 180), "fog": 130,
+DUSK = {
+    "sky_top": (188, 206, 209), "sky_bottom": (120, 148, 154),
+    "disc": {"x": 0.36, "y": 0.30, "r": 0.070, "colour": (232, 240, 236)},
     "ridges": [
-        (0.46, 0.05, 1.1, (140, 152, 132)),
-        (0.58, 0.05, 3.0, (99, 118, 97)),
-        (0.70, 0.05, 5.2, (62, 84, 64)),
-        (0.82, 0.05, 7.4, (36, 55, 40)),
-        (0.93, 0.04, 9.1, (20, 34, 25)),
-    ],
-}
-DEEP = {
-    "sky_top": (176, 198, 199), "sky_bottom": (96, 126, 130), "fog": 105,
-    "ridges": [
-        (0.42, 0.06, 0.9, (96, 122, 124)),
-        (0.55, 0.06, 2.7, (64, 92, 92)),
-        (0.68, 0.05, 4.9, (39, 64, 62)),
-        (0.81, 0.05, 7.1, (22, 42, 40)),
-        (0.93, 0.04, 9.6, (12, 26, 25)),
+        (0.61, 0.10, 2.0, 2.9, (94, 124, 126)),
+        (0.78, 0.11, 3.8, 2.3, (46, 76, 76)),
+        (0.94, 0.10, 5.7, 1.9, (16, 34, 34)),
     ],
 }
 
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     print("Building avatars")
-    build("cool", COOL)
-    build("warm", WARM, sun={"x": 0.62, "y": 0.30, "r": 0.10,
-                             "colour": (255, 243, 214, 190)})
-    build("deep", DEEP)
+    for n, p in (("dawn", DAWN), ("cool", COOL), ("dusk", DUSK)):
+        build(n, p)
