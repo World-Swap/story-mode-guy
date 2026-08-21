@@ -16,7 +16,7 @@ is verified rather than assumed.
 import os, subprocess
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.getcwd()   # run from an edition directory
 OUT = os.path.join(HERE, "banners")
 W, H = 2048, 1152
 SAFE_W, SAFE_H = 1235, 338

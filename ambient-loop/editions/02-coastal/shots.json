@@ -1,0 +1,93 @@
+{
+  "project": "Wild Coast — Ambient TV Loop",
+  "edition": "02-coastal",
+  "model": "pixverseV6",
+  "mode": "text2video",
+  "config": {
+    "videoCount": 1,
+    "duration": 15,
+    "resolution": "1080p",
+    "aspectRatio": "16:9",
+    "generateAudio": false
+  },
+  "creditsPerClip": 450,
+  "style_suffix": "Photorealistic live-action footage, shot on a full-frame cinema camera with a 35mm prime at f4, natural handheld-free tripod steadiness, true-to-life colour, realistic atmospheric haze and depth of field. Cool grey-green and pale blue palette, soft diffused overcast daylight, natural dynamic range, no colour grading tricks. Fine real-world texture: wet rock, sand grain, salt spray, foam bubbles. Not an illustration, not a painting, not CGI, not a render, no stylisation, no HDR look, no oversaturation. No people, no boats, no buildings, no birds, no text, no camera movement, no cuts. Calm, meditative, endless gentle motion.",
+  "notes": "1080p at 450 credits per clip against 210 at 720p. Same 15-shot, 15-second structure as edition 01: 3m45s unique, 3m30s after crossfades. Prompts lead with photographic specifics and explicitly exclude the illustrated look, which is what keeps these from drifting toward a render.",
+  "shots": [
+    {
+      "id": "01",
+      "slug": "long-swell",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Long slow ocean swell rolling in toward a grey pebble beach under heavy sea fog, each wave rising, breaking into a wide sheet of white foam and sliding back. The horizon dissolves into pale mist."
+    },
+    {
+      "id": "02",
+      "slug": "sea-stacks",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Towering dark sea stacks standing offshore in drifting fog, swell breaking white around their bases in a slow endless rhythm. Layers of haze soften each stack further into the distance."
+    },
+    {
+      "id": "03",
+      "slug": "tidepool",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. A clear tidepool set in dark wet rock, its surface rippling gently, fringed with olive and rust seaweed that sways with each small surge of water. Reflected pale sky shifts on the surface."
+    },
+    {
+      "id": "04",
+      "slug": "kelp-surge",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Thick amber kelp fronds lifting and falling in a slow clear surge over submerged rock, water swirling around them continuously. Shafts of soft light move through the shallow green water."
+    },
+    {
+      "id": "05",
+      "slug": "foam-sand",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Close low view of thin sheets of white foam running up dark wet sand and soaking away, again and again, leaving a shifting lace of bubbles. Wet sand mirrors the pale overcast sky."
+    },
+    {
+      "id": "06",
+      "slug": "cliff-mist",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. High rugged coastal cliffs draped in wet green grass, sea mist drifting slowly up their faces from the surf far below. Pale sky above, ocean fading into fog at the horizon."
+    },
+    {
+      "id": "07",
+      "slug": "rain-on-sea",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Steady soft rain falling on a calm grey sea, countless small rings spreading and overlapping across the slow swell. Distant shoreline dissolving into rain haze."
+    },
+    {
+      "id": "08",
+      "slug": "rockpool-cascade",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Seawater spilling in thin continuous streams from one weed-covered rock shelf into the pool below, foam curling on the surface. Barnacled dark stone, everything glistening wet."
+    },
+    {
+      "id": "09",
+      "slug": "driftwood-shore",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Great bleached driftwood logs piled on a wild grey shore, pale surf running in behind them in a slow steady rhythm. Sea fog hangs over the treeline at the far end of the beach."
+    },
+    {
+      "id": "10",
+      "slug": "shallow-turquoise",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Clear shallow water over pale rippled sand, gentle turquoise-green waves sliding in and drawing back, sunlight caustics wavering endlessly across the seabed."
+    },
+    {
+      "id": "11",
+      "slug": "spray-headland",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Swell striking a dark rocky headland and throwing slow plumes of white spray that drift sideways on the wind, over and over. Grey sky, cold spray haze in the air."
+    },
+    {
+      "id": "12",
+      "slug": "dune-grass",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Pale marram grass on a coastal dune bending and rippling in a steady sea breeze, fine sand streaming low across the crest. Soft grey ocean and horizon beyond."
+    },
+    {
+      "id": "13",
+      "slug": "estuary-fog",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. A wide still tidal estuary at low tide, glassy channels winding through dark mudflats, thick fog drifting slowly across the water and continually reshaping the far bank."
+    },
+    {
+      "id": "14",
+      "slug": "barnacle-close",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Extreme close view of barnacled rock at the waterline, small waves washing over and receding, water beading and running off the shells. Behind, soft grey bokeh of the moving sea."
+    },
+    {
+      "id": "15",
+      "slug": "wide-coast",
+      "prompt": "Static locked-off camera, single continuous unbroken shot. Wide elevated view along a wild empty coastline, headland after headland fading paler into sea fog, long slow lines of white surf moving up the beach far below."
+    }
+  ]
+}

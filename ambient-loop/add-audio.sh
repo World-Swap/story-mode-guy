@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Mux an audio bed into the seamless master loop.
 #
-#   ./add-audio.sh path/to/track.mp3
-#   ./add-audio.sh -w 1,0.55 wind.mp3 rain.mp3     # blend two beds
+#   ../../add-audio.sh path/to/track.mp3
+#   ../../add-audio.sh -w 1,0.55 wind.mp3 rain.mp3     # blend two beds
 #
 # Writes nature-loop-sound.mp4. Then rebuild the long cut from it:
-#   ./make-long.sh 3 nature-loop-sound.mp4
+#   ../../make-long.sh 3 nature-loop-sound.mp4
 #
 # Two things this does that dragging a file into an editor does not:
 #
@@ -22,16 +22,18 @@ set -euo pipefail
 WEIGHTS=""
 if [ "${1:-}" = "-w" ]; then WEIGHTS="$2"; shift 2; fi
 
-DIR="$(cd "$(dirname "$0")" && pwd)"
+# Paths resolve against the edition directory you are standing in,
+# so one copy of this script serves every edition.
+DIR="$PWD"
 SRC="$DIR/nature-loop.mp4"
 OUT="$DIR/nature-loop-sound.mp4"
 XF=2.0                       # audio crossfade at the loop seam, seconds
 
-[ "$#" -ge 1 ] || { echo "usage: ./add-audio.sh [-w w1,w2] track.mp3 [track2.mp3 ...]"; exit 1; }
+[ "$#" -ge 1 ] || { echo "usage: ../../add-audio.sh [-w w1,w2] track.mp3 [track2.mp3 ...]"; exit 1; }
 for t in "$@"; do
   [ -f "$t" ] || { echo "ERROR: no such audio file: $t"; exit 1; }
 done
-[ -f "$SRC" ] || { echo "ERROR: nature-loop.mp4 not found next to this script"; exit 1; }
+[ -f "$SRC" ] || { echo "ERROR: nature-loop.mp4 not found in this directory"; exit 1; }
 [ -n "$WEIGHTS" ] || WEIGHTS=$(python3 -c "print(','.join(['1']*$#))")
 
 if command -v ffmpeg >/dev/null 2>&1; then
@@ -76,4 +78,4 @@ NV=$#          # video is the input after all the tracks
 
 "$FF" -i "$OUT" -hide_banner 2>&1 | grep -E "Duration|Stream #" || true
 echo "Done -> $OUT"
-echo "Next:  ./make-long.sh 3 nature-loop-sound.mp4"
+echo "Next:  ../../make-long.sh 3 nature-loop-sound.mp4"

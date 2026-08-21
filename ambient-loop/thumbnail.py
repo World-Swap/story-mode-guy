@@ -8,7 +8,7 @@ claimed here that the video does not deliver - no resolution or audio badge.
 import os, subprocess
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.getcwd()   # run from an edition directory
 OUT = os.path.join(HERE, "thumbnails")
 W, H = 1280, 720
 

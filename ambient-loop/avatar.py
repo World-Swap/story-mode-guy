@@ -14,7 +14,7 @@ writes a 96px circular preview so that is checkable rather than assumed.
 import os, subprocess
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.getcwd()   # run from an edition directory
 OUT = os.path.join(HERE, "avatars")
 S = 800
 SRC_H = 720          # source clips are 1280x720; a square crop is 720 wide

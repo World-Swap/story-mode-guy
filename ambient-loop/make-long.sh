@@ -5,22 +5,24 @@
 # minute. The loop is only ever repeated whole - trimming to a round number of
 # hours mid-loop would put a hard cut at the end of the file.
 #
-#   ./make-long.sh 3      -> ~3 hours  (52 loops, ~3.4 GB)
-#   ./make-long.sh 1      -> ~1 hour   (18 loops, ~1.2 GB)
-#   ./make-long.sh 10     -> ~10 hours (171 loops, ~11 GB)
+#   ../../make-long.sh 3      -> ~3 hours  (52 loops, ~3.4 GB)
+#   ../../make-long.sh 1      -> ~1 hour   (18 loops, ~1.2 GB)
+#   ../../make-long.sh 10     -> ~10 hours (171 loops, ~11 GB)
 #
 # A second argument picks a different source loop, e.g. the one with a
 # soundtrack muxed in:
 #
-#   ./make-long.sh 3 nature-loop-sound.mp4
+#   ../../make-long.sh 3 nature-loop-sound.mp4
 set -euo pipefail
 
 HOURS="${1:-3}"
-DIR="$(cd "$(dirname "$0")" && pwd)"
+# Paths resolve against the edition directory you are standing in,
+# so one copy of this script serves every edition.
+DIR="$PWD"
 SRC="$DIR/${2:-nature-loop.mp4}"
 LOOP_SECS=210.625
 
-[ -f "$SRC" ] || { echo "ERROR: $(basename "$SRC") not found next to this script."; exit 1; }
+[ -f "$SRC" ] || { echo "ERROR: $(basename "$SRC") not found in this directory."; exit 1; }
 
 # Prefer a real ffmpeg on PATH; fall back to the one pip's imageio-ffmpeg ships.
 if command -v ffmpeg >/dev/null 2>&1; then
@@ -37,7 +39,7 @@ managed", and avoids compiling anything):
   python3 -m venv ~/ffmpeg-venv
   ~/ffmpeg-venv/bin/pip install imageio-ffmpeg
   source ~/ffmpeg-venv/bin/activate
-  ./make-long.sh 3
+  ../../make-long.sh 3
 
 To put ffmpeg on PATH for good instead:
 

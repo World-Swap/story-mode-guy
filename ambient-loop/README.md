@@ -1,112 +1,71 @@
-# Misty Rainforest — Ambient TV Loop
+# The Open Lands — ambient video pipeline
 
-A ~3.5 minute seamlessly-looping nature ambience video for a living room or
-bedroom TV. Silent, 720p, 16:9, no cuts or camera moves — built to sit on a
-screen indefinitely without drawing attention to itself.
+Long, seamlessly-looping nature ambience for televisions, built from OpenArt
+clips. Each video is an *edition*; the scripts are shared.
 
-## What's here
+```
+channel/channel.md              channel name, About copy, keywords, art in use
+editions/01-misty-rainforest/   published — https://youtu.be/YQVLMjDPSX4
+editions/02-coastal/            in progress
+```
 
-| File | |
-|---|---|
-| `nature-loop.mp4` | The finished loop. This is the deliverable. |
-| `player.html` | Fullscreen looping player — open it, click for fullscreen. |
-| `shots.json` | The 15 shot prompts and the exact generation config. |
-| `renders.json` | Generated clip URLs, written as each render completes. |
-| `download.py` | Pulls the clips in `renders.json` into `clips/`. |
-| `assemble.py` | Crossfades the clips and seals the loop point. |
-| `clips/` | The 15 raw 15-second source clips. |
+## Scripts
 
-## How it was made
-
-15 clips × 15s were generated on OpenArt with **PixVerse V6** (`text2video`,
-720p, 16:9, silent) at 210 credits each — 3,150 credits total.
-
-720p at 15s was the cheapest usable configuration on offer, at 14 credits per
-second of footage. 1080p costs 30 credits/second, which would have bought only
-1m45s of runtime; for soft, fog-heavy nature footage viewed across a room, more
-runtime is worth more than more pixels.
-
-Every prompt pins the camera down (`static locked-off camera`, `no camera
-movement`, `no cuts`) and asks for continuous motion — drifting fog, running
-water, trembling ferns. Motion that never resolves is what lets a shot be cut
-into a loop without an obvious beginning or end.
-
-## Rebuilding
+Every script runs **from inside an edition directory** and resolves paths
+against the current directory, so one copy serves all editions:
 
 ```sh
-pip install imageio-ffmpeg
-python3 download.py     # clips/ <- renders.json
-python3 assemble.py     # -> nature-loop.mp4
+cd editions/02-coastal
+python3 ../../download.py          # pull rendered clips listed in renders.json
+python3 ../../assemble.py          # clips/ -> nature-loop.mp4 (seamless)
+../../add-audio.sh -w 1,0.55 wind.mp3 rain.mp3   # -> nature-loop-sound.mp4
+../../make-long.sh 3 nature-loop-sound.mp4       # -> nature-loop-3h-sound.mp4
+python3 ../../thumbnail.py         # -> thumbnails/
 ```
 
-## The loop seam
-
-`assemble.py` runs two passes.
-
-**Pass 1** crossfades each clip into the next with a 1s `xfade`, giving a chain
-of `15×15 − 14×1 = 211s`.
-
-**Pass 2** is what makes it actually loop. Playing the chain on repeat would
-still snap from shot 15 back to shot 1. So the chain is rebuilt as:
-
-```
-chain[1s … 210s]  +  xfade(chain[210s … 211s], chain[0s … 1s])
-```
-
-The result starts on the frame at `t=1s` and *ends* on that same frame, so a
-player set to loop shows no discontinuity at all. Final runtime is 210s (3m30s).
-
-## Playing it on a TV
-
-- **Cast / AirPlay** — open `player.html` on a laptop, fullscreen it, cast the tab.
-- **USB stick** — copy `nature-loop.mp4` across; most TVs have a repeat setting
-  in their media player.
-- **Plex / Jellyfin** — drop it in a library and enable repeat.
-
-It has no audio track, so anything you're already playing keeps running over it.
-
-## Adding a soundtrack
+Channel art is made once, from whichever edition has the best frames:
 
 ```sh
-./add-audio.sh ~/Downloads/track.mp3     # -> nature-loop-sound.mp4
-./make-long.sh 3 nature-loop-sound.mp4   # -> nature-loop-3h-sound.mp4
+python3 ../../avatar.py            # -> avatars/   800x800 + 96px previews
+python3 ../../banner.py            # -> banners/   2048x1152 + crop proofs
 ```
 
-`add-audio.sh` loops the track to exactly the video's length and crossfades its
-tail onto its own head, the same wrap the picture uses, so the soundtrack loops
-without a click at the seam. The video is stream-copied, never re-encoded.
+## How the loop is made seamless
 
-Because the audio period equals the video period, the long cut is one repeating
-unit of picture and sound rather than two cycles drifting against each other.
+`assemble.py` crossfades each clip into the next, then folds the chain's tail
+onto its own head, so the last frame matches the first and a looping player
+never shows a cut. `add-audio.sh` applies the same wrap to the soundtrack, and
+because the audio period equals the video period, a long cut is one repeating
+unit of picture and sound.
 
-## Channel art
+`make-long.sh` repeats that master a whole number of times with `-c copy` —
+lossless, no re-encode, about a minute for three hours. Whole loops only:
+trimming to a round runtime would leave a hard cut at the end of the file.
+
+Geometry and frame rate are probed from the clips, not assumed, so editions can
+differ in resolution (01 is 720p, 02 is 1080p).
+
+## Long cuts are not committed
+
+A 3-hour file is ~3.4 GB, past GitHub's 100 MB per-file limit, so it is
+gitignored and rebuilt locally. The 3m30s master is committed.
+
+## ffmpeg
+
+If `brew install ffmpeg` compiles from source and stalls (macOS 13 and older
+have no bottle), use a venv instead — no PEP 668 trouble, nothing to compile:
 
 ```sh
-python3 avatar.py     # -> avatars/   800x800, plus 96px circular previews
-python3 banner.py     # -> banners/   2048x1152, plus per-device crop proofs
+python3 -m venv ~/ffmpeg-venv
+~/ffmpeg-venv/bin/pip install imageio-ffmpeg
+source ~/ffmpeg-venv/bin/activate
 ```
 
-Both are built from frames of the loop so the channel art and the videos share
-one grade and palette.
+## Costs
 
-YouTube shows a banner differently per device from a single upload: 2048x1152
-on TVs, 2048x423 on desktop, and a centred 1235x338 "safe area" that is all
-that is guaranteed visible everywhere. All banner text sits inside that band,
-and `banner.py` writes a proof image of the three crops so it stays verifiable.
+| Config | Per 15s clip | 15 clips |
+|---|---|---|
+| PixVerse V6, 720p | 210 | 3,150 |
+| PixVerse V6, 1080p | 450 | 6,750 |
 
-## YouTube upload
-
-`youtube.md` holds the title, description, tags and upload settings.
-`thumbnails/` holds three 1280×720 options built from real frames by
-`thumbnail.py`.
-
-The upload version is not committed — a 3-hour cut is ~3.4 GB, well past
-GitHub's 100 MB per-file limit. Build it locally instead:
-
-```sh
-./make-long.sh 3        # ~3 hours, 52 loops, stream copy, ~1 minute
-```
-
-It repeats `nature-loop.mp4` a whole number of times with `-c copy`, so there
-is no re-encode and no quality loss. Whole loops only: trimming to a round
-number of hours would leave a hard cut at the end of the file.
+720p carries an SD badge on YouTube; HD starts at 1080p.

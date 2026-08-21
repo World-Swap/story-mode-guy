@@ -7,7 +7,7 @@ sort order in assemble.py are the same thing.
 """
 import json, os, shutil, subprocess, sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.getcwd()   # run from an edition directory
 CLIPS = os.path.join(HERE, "clips")
 
 CA = "/root/.ccr/ca-bundle.crt"
