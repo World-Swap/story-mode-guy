@@ -1,5 +1,50 @@
 # YouTube upload kit — Misty Rainforest
 
+## Channel
+
+**Name:** The Open Lands
+**Handle:** @theopenlands
+**Tagline:** Long, silent ambient video for your TV.
+
+### About page description
+
+```
+Quiet places, on your screen, for hours at a time.
+
+The Open Lands makes long, seamless ambient video for televisions — forests in
+fog, coastlines, rain on still water, open country. No music, no narration, no
+cuts. Just a window onto somewhere calm.
+
+Every video is a true loop. It runs for hours without a visible restart, so you
+can leave it on through dinner, a working afternoon, or a night's sleep. And
+because there is no audio track, you can play whatever you like over the top —
+your own music, a podcast, or nothing at all.
+
+New places added regularly. If there is somewhere you would like to sit for a
+few hours, say so in the comments.
+
+All footage is created using generative AI.
+```
+
+### Title convention
+
+Keep every upload on one pattern so the channel reads as a series and the
+keywords stay in front:
+
+```
+{Place} Ambience — {N} Hours | Silent TV Screensaver, No Music
+```
+
+The channel name carries the brand; the title carries the search terms. Do not
+put "The Open Lands" in titles — it costs characters and earns nothing.
+
+### Channel keywords
+
+```
+ambient video, tv screensaver, silent ambience, nature loop, relaxing
+background, seamless loop, ambient tv, background video for tv
+```
+
 ## Title
 
 **Primary (69 chars):**

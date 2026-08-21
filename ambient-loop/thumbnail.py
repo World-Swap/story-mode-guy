@@ -17,6 +17,7 @@ SANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 TITLE = "MISTY RAINFOREST"
 SUBTITLE = "3 HOURS  ·  TV SCREENSAVER  ·  NO MUSIC"
+WORDMARK = "THE OPEN LANDS"   # channel mark, bottom-right; keep it quiet
 
 # (output name, source clip, timestamp) - one frame per candidate composition.
 VARIANTS = [
@@ -85,6 +86,14 @@ def build(name, clip, t):
 
     tracked(d, (x0 + 1, rule_y + 25), SUBTITLE, sub_f, (0, 0, 0, 150), 2.4)
     tracked(d, (x0, rule_y + 24), SUBTITLE, sub_f, (236, 240, 238, 232), 2.4)
+
+    # Channel mark, bottom-right. Deliberately small and low-contrast: it is
+    # there to make a grid of uploads read as one channel, not to be read first.
+    mark_f = ImageFont.truetype(SANS, 19)
+    mw = tracked_width(d, WORDMARK, mark_f, 3.0)
+    mx, my = W - 74 - mw, H - 62
+    tracked(d, (mx + 1, my + 1), WORDMARK, mark_f, (0, 0, 0, 130), 3.0)
+    tracked(d, (mx, my), WORDMARK, mark_f, (255, 255, 255, 150), 3.0)
 
     dest = os.path.join(OUT, f"thumbnail-{name}.jpg")
     img.convert("RGB").save(dest, quality=92, optimize=True)
