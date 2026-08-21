@@ -1,13 +1,103 @@
 {
   "edition": "02-coastal",
   "jobs": [
-    {"id":"01","slug":"long-swell",       "historyId":"TGMTF0jZrbVPlQ4mDSI3","status":"COMPLETED","url":"https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/d1e40367-d739-4806-87f5-2e3849b2c471_seed1461757059_1787335772944_99a69ca7.mp4"},
-    {"id":"02","slug":"sea-stacks",       "historyId":"qvJacNRadowt2hvt7mND","status":"RUNNING"},
-    {"id":"03","slug":"tidepool",         "historyId":"s9fCZe3K8CWk2XCMAUpX","status":"RUNNING"},
-    {"id":"04","slug":"kelp-surge",       "historyId":"5RHLFUFk52zZbloaQDdZ","status":"RUNNING"},
-    {"id":"05","slug":"foam-sand",        "historyId":"oiB08TxcYYeV4rTcERC9","status":"RUNNING"},
-    {"id":"06","slug":"cliff-mist",       "historyId":"jqdMHkIiCXqFVcZms7Qr","status":"RUNNING"},
-    {"id":"07","slug":"rain-on-sea",      "historyId":"0vLKTvH2Rfxk1sP4HJ6x","status":"RUNNING"}
+    {
+      "id": "01",
+      "slug": "long-swell",
+      "historyId": "TGMTF0jZrbVPlQ4mDSI3",
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/d1e40367-d739-4806-87f5-2e3849b2c471_seed1461757059_1787335772944_99a69ca7.mp4"
+    },
+    {
+      "id": "02",
+      "slug": "sea-stacks",
+      "historyId": "qvJacNRadowt2hvt7mND",
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/dfd44770-194b-4015-8d19-d68b6e551d3a_seed1388997467_1787336087891_d6994958.mp4"
+    },
+    {
+      "id": "03",
+      "slug": "tidepool",
+      "historyId": "s9fCZe3K8CWk2XCMAUpX",
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/5cdb0580-98af-45e0-a873-82a3461c0e8b_seed1986986967_1787336077620_fd6dbe44.mp4"
+    },
+    {
+      "id": "04",
+      "slug": "kelp-surge",
+      "historyId": "5RHLFUFk52zZbloaQDdZ",
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/d22e2a65-3c48-4508-8e11-f8f242016ec0_seed1349272835_1787336079184_983cdb6b.mp4"
+    },
+    {
+      "id": "05",
+      "slug": "foam-sand",
+      "historyId": "oiB08TxcYYeV4rTcERC9",
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/cec90432-1291-460e-a88f-b5cc2155bdd9_seed1890323233_1787336146232_30e63e7c.mp4"
+    },
+    {
+      "id": "06",
+      "slug": "cliff-mist",
+      "historyId": "jqdMHkIiCXqFVcZms7Qr",
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/f1d4490b-a44e-4afa-89b0-3c59525aaa2e_seed1397115791_1787336088553_262f56c1.mp4"
+    },
+    {
+      "id": "07",
+      "slug": "rain-on-sea",
+      "historyId": "0vLKTvH2Rfxk1sP4HJ6x",
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/f0588b6c-c6ac-454a-80d2-64e6c83bafcf_seed94690319_1787336086894_59fc9f97.mp4"
+    },
+    {
+      "id": "08",
+      "slug": "rockpool-cascade",
+      "historyId": "UGQGBX0uv3lTY0qaMI4w",
+      "status": "RUNNING"
+    },
+    {
+      "id": "09",
+      "slug": "driftwood-shore",
+      "historyId": "vwbJr8CnO03el46e6oJc",
+      "status": "RUNNING"
+    },
+    {
+      "id": "10",
+      "slug": "shallow-turquoise",
+      "historyId": "duf23f1Rzsed8C2OFwQe",
+      "status": "RUNNING"
+    },
+    {
+      "id": "11",
+      "slug": "spray-headland",
+      "historyId": "3H1qj39oS6pU3lzT9N0w",
+      "status": "RUNNING"
+    },
+    {
+      "id": "12",
+      "slug": "dune-grass",
+      "historyId": "nRIonlLHZtaAsnoGplT9",
+      "status": "RUNNING"
+    },
+    {
+      "id": "13",
+      "slug": "estuary-fog",
+      "historyId": "gIhytHDnKzWeqilbhLd9",
+      "status": "RUNNING"
+    },
+    {
+      "id": "14",
+      "slug": "barnacle-close",
+      "historyId": "DHpZrZlXhFWsvIoMB9eF",
+      "status": "RUNNING"
+    },
+    {
+      "id": "15",
+      "slug": "wide-coast",
+      "historyId": "RB3wOu1Lg2D9oninM1G4",
+      "status": "RUNNING"
+    }
   ],
-  "queued": ["08 rockpool-cascade","09 driftwood-shore","10 shallow-turquoise","11 spray-headland","12 dune-grass","13 estuary-fog","14 barnacle-close","15 wide-coast"]
+  "queued": []
 }
