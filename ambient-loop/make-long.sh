@@ -8,14 +8,19 @@
 #   ./make-long.sh 3      -> ~3 hours  (52 loops, ~3.4 GB)
 #   ./make-long.sh 1      -> ~1 hour   (18 loops, ~1.2 GB)
 #   ./make-long.sh 10     -> ~10 hours (171 loops, ~11 GB)
+#
+# A second argument picks a different source loop, e.g. the one with a
+# soundtrack muxed in:
+#
+#   ./make-long.sh 3 nature-loop-sound.mp4
 set -euo pipefail
 
 HOURS="${1:-3}"
 DIR="$(cd "$(dirname "$0")" && pwd)"
-SRC="$DIR/nature-loop.mp4"
+SRC="$DIR/${2:-nature-loop.mp4}"
 LOOP_SECS=210.625
 
-[ -f "$SRC" ] || { echo "ERROR: nature-loop.mp4 not found next to this script."; exit 1; }
+[ -f "$SRC" ] || { echo "ERROR: $(basename "$SRC") not found next to this script."; exit 1; }
 
 # Prefer a real ffmpeg on PATH; fall back to the one pip's imageio-ffmpeg ships.
 if command -v ffmpeg >/dev/null 2>&1; then
@@ -50,7 +55,8 @@ EOF
 fi
 
 N=$(python3 -c "import math;print(math.ceil($HOURS*3600/$LOOP_SECS))")
-OUT="$DIR/nature-loop-${HOURS}h.mp4"
+SUFFIX=""; [ -n "${2:-}" ] && [ "${2}" != "nature-loop.mp4" ] && SUFFIX="-sound"
+OUT="$DIR/nature-loop-${HOURS}h${SUFFIX}.mp4"
 LIST=$(mktemp)
 trap 'rm -f "$LIST"' EXIT
 

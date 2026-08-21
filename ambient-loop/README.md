@@ -65,6 +65,20 @@ player set to loop shows no discontinuity at all. Final runtime is 210s (3m30s).
 
 It has no audio track, so anything you're already playing keeps running over it.
 
+## Adding a soundtrack
+
+```sh
+./add-audio.sh ~/Downloads/track.mp3     # -> nature-loop-sound.mp4
+./make-long.sh 3 nature-loop-sound.mp4   # -> nature-loop-3h-sound.mp4
+```
+
+`add-audio.sh` loops the track to exactly the video's length and crossfades its
+tail onto its own head, the same wrap the picture uses, so the soundtrack loops
+without a click at the seam. The video is stream-copied, never re-encoded.
+
+Because the audio period equals the video period, the long cut is one repeating
+unit of picture and sound rather than two cycles drifting against each other.
+
 ## YouTube upload
 
 `youtube.md` holds the title, description, tags and upload settings.
