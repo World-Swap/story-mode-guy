@@ -1,0 +1,9 @@
+{
+  "edition": "03-alpine",
+  "jobs": [
+    {"id":"01","slug":"cloud-over-ridge","historyId":"ORUxDkIjDTHN4MRvGlrd","status":"RUNNING"},
+    {"id":"13","slug":"snowfield-wind","historyId":"1iA8hfRDBNv2HbsldkAI","status":"RUNNING"}
+  ],
+  "queued": ["02","03","04","05","06","07","08","09","10","11","12","14","15"],
+  "note": "Two probes first: 01 is the hero shot, 13 is the one most likely to render as a still. Alpine's failure mode is a beautiful motionless photograph."
+}
