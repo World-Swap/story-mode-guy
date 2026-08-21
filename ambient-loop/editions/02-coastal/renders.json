@@ -1,0 +1,13 @@
+{
+  "edition": "02-coastal",
+  "jobs": [
+    {"id":"01","slug":"long-swell",       "historyId":"TGMTF0jZrbVPlQ4mDSI3","status":"COMPLETED","url":"https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/d1e40367-d739-4806-87f5-2e3849b2c471_seed1461757059_1787335772944_99a69ca7.mp4"},
+    {"id":"02","slug":"sea-stacks",       "historyId":"qvJacNRadowt2hvt7mND","status":"RUNNING"},
+    {"id":"03","slug":"tidepool",         "historyId":"s9fCZe3K8CWk2XCMAUpX","status":"RUNNING"},
+    {"id":"04","slug":"kelp-surge",       "historyId":"5RHLFUFk52zZbloaQDdZ","status":"RUNNING"},
+    {"id":"05","slug":"foam-sand",        "historyId":"oiB08TxcYYeV4rTcERC9","status":"RUNNING"},
+    {"id":"06","slug":"cliff-mist",       "historyId":"jqdMHkIiCXqFVcZms7Qr","status":"RUNNING"},
+    {"id":"07","slug":"rain-on-sea",      "historyId":"0vLKTvH2Rfxk1sP4HJ6x","status":"RUNNING"}
+  ],
+  "queued": ["08 rockpool-cascade","09 driftwood-shore","10 shallow-turquoise","11 spray-headland","12 dune-grass","13 estuary-fog","14 barnacle-close","15 wide-coast"]
+}
