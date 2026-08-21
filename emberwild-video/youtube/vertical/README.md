@@ -12,6 +12,8 @@ meets the series on a Short recognises it on the main channel.
 | `ep01_9x16_B.jpg` | Moth in the ceremony fire |
 | `ep02_9x16_A.jpg` | Rook and Sedge across the mist — **recommended** |
 | `ep02_9x16_B.jpg` | Sedge alone in the pole-boat |
+| `ep03_9x16_A.jpg` | Wren in the Rings under the broken sky — **recommended** |
+| `ep03_9x16_B.jpg` | Rook and Cinder under a red sky |
 
 ## How these are composed
 
