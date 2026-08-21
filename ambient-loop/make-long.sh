@@ -23,10 +23,29 @@ if command -v ffmpeg >/dev/null 2>&1; then
 elif FF=$(python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())" 2>/dev/null) && [ -x "$FF" ]; then
   :
 else
-  echo "ERROR: ffmpeg not found. Install it with one of:"
-  echo "  macOS:    brew install ffmpeg"
-  echo "  Ubuntu:   sudo apt install ffmpeg"
-  echo "  anywhere: pip install imageio-ffmpeg"
+  cat >&2 <<'EOF'
+ERROR: ffmpeg not found.
+
+Most portable route (works even where a system pip is PEP 668 "externally
+managed", and avoids compiling anything):
+
+  python3 -m venv ~/ffmpeg-venv
+  ~/ffmpeg-venv/bin/pip install imageio-ffmpeg
+  source ~/ffmpeg-venv/bin/activate
+  ./make-long.sh 3
+
+To put ffmpeg on PATH for good instead:
+
+  sudo cp "$(~/ffmpeg-venv/bin/python -c 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())')" /usr/local/bin/ffmpeg
+  sudo chmod +x /usr/local/bin/ffmpeg
+
+Package managers, where they have a prebuilt binary:
+
+  macOS:  brew install ffmpeg     (builds from source on macOS 13 and older,
+                                   which needs ffmpeg.org + code.videolan.org
+                                   reachable - use the venv route if it hangs)
+  Ubuntu: sudo apt install ffmpeg
+EOF
   exit 1
 fi
 
