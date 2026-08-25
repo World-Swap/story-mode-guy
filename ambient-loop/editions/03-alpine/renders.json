@@ -6,7 +6,9 @@
       "slug": "cloud-over-ridge",
       "historyId": "TSm3hyL7ac0uF2DbpVHi",
       "status": "COMPLETED",
-      "note": "second attempt; first was too dark and motion decayed"
+      "note": "second attempt; first was too dark and motion decayed",
+      "motion": 1.87,
+      "verdict": "pass"
     },
     {
       "id": "02",
@@ -15,76 +17,99 @@
       "status": "COMPLETED",
       "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/ffe8a8bc-b237-4068-8c23-f89f02c09385_seed1029978632_1787341866448_b1bd0d89.mp4",
       "motion": 0.19,
-      "problem": "Frozen. The prompt itself asked for it - 'a still glacial lake ... stirred by the faintest wind ripple'. Needs a re-roll with motion named as the subject, budget permitting."
+      "problem": "Frozen. The prompt itself asked for it - 'a still glacial lake ... stirred by the faintest wind ripple'. Needs a re-roll with motion named as the subject, budget permitting.",
+      "verdict": "fail"
     },
     {
       "id": "03",
       "slug": "meltwater-cascade",
       "historyId": "nOZTuWrzRA92zUHpGokA",
       "status": "COMPLETED",
-      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/31773a75-36f9-49d2-8964-2bd7404d123e_seed554330352_1787341859085_a46640a7.mp4"
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/31773a75-36f9-49d2-8964-2bd7404d123e_seed554330352_1787341859085_a46640a7.mp4",
+      "motion": 1.84,
+      "verdict": "pass"
     },
     {
       "id": "04",
       "slug": "spindrift-peak",
       "historyId": "MJ3GzFDg4lnoegx3AAOS",
       "status": "COMPLETED",
-      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/7f9cd327-4d6d-4562-8cbe-80e8ff3ef534_seed7335222_1787341869883_4768c01f.mp4"
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/7f9cd327-4d6d-4562-8cbe-80e8ff3ef534_seed7335222_1787341869883_4768c01f.mp4",
+      "motion": 2.94,
+      "verdict": "pass"
     },
     {
       "id": "05",
       "slug": "alpine-meadow",
       "historyId": "OX9IDeARp9pRneDjtnLg",
       "status": "COMPLETED",
-      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/f2c57592-0a81-4337-883c-10b4e95afd0a_seed50210352_1787341887265_d950c385.mp4"
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/f2c57592-0a81-4337-883c-10b4e95afd0a_seed50210352_1787341887265_d950c385.mp4",
+      "motion": 1.3,
+      "verdict": "fail"
     },
     {
       "id": "06",
       "slug": "valley-cloud-sea",
       "historyId": "Z6nxI2uIS44rworbBbOs",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "motion": 4.6,
+      "verdict": "pass"
     },
     {
       "id": "07",
       "slug": "snow-conifers",
       "historyId": "O1z2GvkPcGd9uAbjHmi7",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "motion": 3.66,
+      "verdict": "pass"
     },
     {
       "id": "08",
       "slug": "tarn-reflection",
       "historyId": "X5T4eBmcxmKHPojDUM7c",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "motion": 0.73,
+      "verdict": "fail"
     },
     {
       "id": "09",
       "slug": "scree-mist",
       "historyId": "GRPmaVanGRV4nZjdXVQ4",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "motion": 3.57,
+      "verdict": "pass"
     },
     {
       "id": "10",
       "slug": "glacier-ice",
       "historyId": "x3tSlsAR0NArogWPcKcX",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "motion": 0.18,
+      "verdict": "fail"
     },
     {
       "id": "11",
       "slug": "waterfall-cliff",
       "historyId": "kL2NW85ccb2G2u4Ko03O",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "motion": 0.39,
+      "verdict": "fail"
     },
     {
       "id": "12",
       "slug": "larch-slope",
       "historyId": "XmVNSXVzV3Jwy0RW5sjR",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "motion": 0.47,
+      "verdict": "fail"
     },
     {
       "id": "14",
       "slug": "lichen-rock",
       "historyId": "SUZCwBQKODeJ7OLHtVCj",
-      "status": "RUNNING"
+      "status": "RUNNING",
+      "motion": 2.54,
+      "verdict": "pass"
     }
   ],
   "queued": [
@@ -98,14 +123,23 @@
     }
   ],
   "motion_check": {
-    "threshold": "mean frame delta >= 1.4, late >= 60% of early",
-    "reference": "edition 02 calmest shot = 1.65 mean, 99 brightness",
+    "threshold": "mean frame delta >= 1.4 and late third >= 60% of early third",
+    "reference": "edition 02 calmest shot = 1.65 mean",
     "results": {
       "01": 1.87,
       "02": 0.19,
       "03": 1.84,
       "04": 2.94,
-      "05": 1.3
-    }
+      "05": 1.3,
+      "06": 4.6,
+      "07": 3.66,
+      "08": 0.73,
+      "09": 3.57,
+      "10": 0.18,
+      "11": 0.39,
+      "12": 0.47,
+      "14": 2.54
+    },
+    "diagnosis": "Seven pass, six fail, and the split is not random. Every passing shot has its moving element filling the frame: cloud pouring over a ridge, a whole valley of cloud, falling snow, mist across scree, water over rock. Every failing shot has motion as a small feature of a mostly static scene - a still lake, a reflection, a thin waterfall on a large cliff, trees on a slope. Even the waterfall measured 0.39, because the frame is mostly motionless cliff. The model animates what dominates the frame and leaves the rest as a photograph, so the fix is reframing rather than rewording: push in until the moving element is the subject."
   }
 }
