@@ -12,25 +12,31 @@
       "id": "02",
       "slug": "glacial-lake",
       "historyId": "TLS1yfSKTPpdBVTNwRQi",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/ffe8a8bc-b237-4068-8c23-f89f02c09385_seed1029978632_1787341866448_b1bd0d89.mp4",
+      "motion": 0.19,
+      "problem": "Frozen. The prompt itself asked for it - 'a still glacial lake ... stirred by the faintest wind ripple'. Needs a re-roll with motion named as the subject, budget permitting."
     },
     {
       "id": "03",
       "slug": "meltwater-cascade",
       "historyId": "nOZTuWrzRA92zUHpGokA",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/31773a75-36f9-49d2-8964-2bd7404d123e_seed554330352_1787341859085_a46640a7.mp4"
     },
     {
       "id": "04",
       "slug": "spindrift-peak",
       "historyId": "MJ3GzFDg4lnoegx3AAOS",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/7f9cd327-4d6d-4562-8cbe-80e8ff3ef534_seed7335222_1787341869883_4768c01f.mp4"
     },
     {
       "id": "05",
       "slug": "alpine-meadow",
       "historyId": "OX9IDeARp9pRneDjtnLg",
-      "status": "RUNNING"
+      "status": "COMPLETED",
+      "url": "https://cdn.openart.ai/openart-ai/production/2026-08/create-video/VVX6CDT0Bu1PrRNMqp3s/f2c57592-0a81-4337-883c-10b4e95afd0a_seed50210352_1787341887265_d950c385.mp4"
     },
     {
       "id": "06",
@@ -43,15 +49,45 @@
       "slug": "snow-conifers",
       "historyId": "O1z2GvkPcGd9uAbjHmi7",
       "status": "RUNNING"
+    },
+    {
+      "id": "08",
+      "slug": "tarn-reflection",
+      "historyId": "X5T4eBmcxmKHPojDUM7c",
+      "status": "RUNNING"
+    },
+    {
+      "id": "09",
+      "slug": "scree-mist",
+      "historyId": "GRPmaVanGRV4nZjdXVQ4",
+      "status": "RUNNING"
+    },
+    {
+      "id": "10",
+      "slug": "glacier-ice",
+      "historyId": "x3tSlsAR0NArogWPcKcX",
+      "status": "RUNNING"
+    },
+    {
+      "id": "11",
+      "slug": "waterfall-cliff",
+      "historyId": "kL2NW85ccb2G2u4Ko03O",
+      "status": "RUNNING"
+    },
+    {
+      "id": "12",
+      "slug": "larch-slope",
+      "historyId": "XmVNSXVzV3Jwy0RW5sjR",
+      "status": "RUNNING"
+    },
+    {
+      "id": "14",
+      "slug": "lichen-rock",
+      "historyId": "SUZCwBQKODeJ7OLHtVCj",
+      "status": "RUNNING"
     }
   ],
   "queued": [
-    "08 tarn-reflection",
-    "09 scree-mist",
-    "10 glacier-ice",
-    "11 waterfall-cliff",
-    "12 larch-slope",
-    "14 lichen-rock",
     "15 high-panorama"
   ],
   "note": "Two probes first: 01 is the hero shot, 13 is the one most likely to render as a still. Alpine's failure mode is a beautiful motionless photograph.",
@@ -60,5 +96,16 @@
       "slug": "snowfield-wind",
       "reason": "two attempts, motion decayed both times (0.52, then 1.14 falling to 0.75); a flat white field gives the model nothing to sustain"
     }
-  ]
+  ],
+  "motion_check": {
+    "threshold": "mean frame delta >= 1.4, late >= 60% of early",
+    "reference": "edition 02 calmest shot = 1.65 mean, 99 brightness",
+    "results": {
+      "01": 1.87,
+      "02": 0.19,
+      "03": 1.84,
+      "04": 2.94,
+      "05": 1.3
+    }
+  }
 }
