@@ -19,6 +19,8 @@ NEWEST_COUNT = 14   # how many of the newest photos appear in the homepage slide
 
 A = lambda s: html.escape(s, quote=True)   # for attributes
 T = lambda s: html.escape(s, quote=False)  # for visible text
+# Files are zero-padded to at least 2 digits: photo-01.jpg ... photo-123.jpg
+fn = lambda n: f"{n:02d}"
 
 
 def slides_html(items):
@@ -27,7 +29,7 @@ def slides_html(items):
         n, cap = m["n"], m["cap"]
         active = " is-active" if i == 0 else ""
         lazy = "" if i == 0 else ' loading="lazy"'
-        rows.append(f'        <figure class="slide{active}"><img src="photo-{n}.jpg" '
+        rows.append(f'        <figure class="slide{active}"><img src="photo-{fn(n)}.jpg" '
                     f'alt="{A(cap)}"{lazy}><figcaption>{T(cap)}</figcaption></figure>')
     return "\n" + "\n".join(rows) + "\n      "
 
@@ -37,7 +39,7 @@ def bestof_html(items):
     for m in items:
         n, cap = m["n"], m["cap"]
         rows.append(f'      <a class="scard" href="gallery.html" aria-label="{A(cap)}">\n'
-                    f'        <img src="photo-{n}.jpg" alt="{A(cap)}" loading="lazy">\n'
+                    f'        <img src="photo-{fn(n)}.jpg" alt="{A(cap)}" loading="lazy">\n'
                     f'        <span class="scap">{T(cap)}</span>\n'
                     f'      </a>')
     return "\n" + "\n".join(rows) + "\n    "
@@ -47,8 +49,8 @@ def grid_html(items):
     rows = []
     for m in items:
         n, cap = m["n"], m["cap"]
-        rows.append(f'      <button class="gtile" data-full="photo-{n}.jpg" data-cap="{A(cap)}" aria-label="{A(cap)}">\n'
-                    f'        <img src="thumb-photo-{n}.jpg" alt="{A(cap)}" loading="lazy">\n'
+        rows.append(f'      <button class="gtile" data-full="photo-{fn(n)}.jpg" data-cap="{A(cap)}" aria-label="{A(cap)}">\n'
+                    f'        <img src="thumb-photo-{fn(n)}.jpg" alt="{A(cap)}" loading="lazy">\n'
                     f'        <span class="gcap">{T(cap)}</span>\n'
                     f'      </button>')
     return "\n" + "\n".join(rows) + "\n  "
@@ -62,7 +64,10 @@ def replace_region(text, name, new_inner):
 
 
 newest = MAN[:NEWEST_COUNT]
-best = [m for m in MAN if m.get("best")]
+# best-of band: items with a truthy integer "best" rank, shown in rank order
+# (1 = featured, big tile). Kept separate from "newest" so it showcases the
+# whole archive instead of repeating the latest uploads.
+best = sorted([m for m in MAN if m.get("best")], key=lambda m: m["best"])
 
 idx = (ROOT / "index.html").read_text(encoding="utf-8")
 idx = replace_region(idx, "NEWEST", slides_html(newest))
