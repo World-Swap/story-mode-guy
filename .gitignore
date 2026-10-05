@@ -29,3 +29,7 @@ drone-guides-payhip.zip
 free-leadmagnet.zip
 inbloom-wallpapers.zip
 promo/inbloom/
+
+# reel overlay build temp (any nesting)
+**/_overlays.html
+**/_ov.js
