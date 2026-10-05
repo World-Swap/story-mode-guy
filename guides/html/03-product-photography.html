@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Product Photos That Sell — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #b45309;
+  --accent2: #f59e0b;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">SELL MORE ONLINE</div>
+    <div style="margin-top:auto"></div>
+    <h1>Product Photos That Sell</h1>
+    <div class="rule"></div>
+    <div class="sub">Shoot-at-Home Photography for Etsy &amp; Small Shops</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$34 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Shoot-at-Home Photography for Etsy &amp; Small Shops. Written for etsy, Shopify &amp; Amazon sellers photographing their own products.</div>
+  <ol><li><span class="t">Your Photo Is the Only Salesperson You Get</span></li><li><span class="t">The $30 Home Studio</span></li><li><span class="t">Light It So It Looks Expensive</span></li><li><span class="t">Camera & Phone Settings for Crisp Products</span></li><li><span class="t">The Clean White-Background Shot</span></li><li><span class="t">Styled & Lifestyle Shots That Convert</span></li><li><span class="t">Tricky Materials, Solved</span></li><li><span class="t">A Fast Editing Workflow</span></li><li><span class="t">Build a Consistent Brand Look & Shot List</span></li><li><span class="t">From Photos to Sales</span></li></ol>
+</div>
+<h1><span class="n">INTRODUCTION</span>Your Photo Is the Only Salesperson You Get</h1>
+<p class="lead-in">A shopper will never hold your product, smell it, feel its weight, or turn it over in their hands. They will look at a photo on a screen the size of a playing card and decide, in about two seconds, whether you are worth their money. That photo is not "part of" your listing — it <em>is</em> your storefront, your salesperson, and your first impression, all at once. This guide teaches you to shoot photos that do that job, at home, with the gear you already own.</p>
+
+<p>Here is the truth most sellers learn too late: <strong>the product is not what sells. The photo of the product is what sells.</strong> Two shops can list the identical handmade candle. One photographs it on a cluttered kitchen counter under a yellow ceiling bulb; the other on a clean, bright, softly lit sweep with one thoughtful prop. Same candle. The second shop sells three times as many — and can often charge more, because the photo signals "this is a real, trustworthy business."</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Better photos are the cheapest, fastest, highest-return upgrade you can make to your shop — nothing else you spend $34 on will move sales as reliably as learning to light and shoot your own product well.</p></div>
+
+<h2>Why this pays for itself</h2>
+<p>Think in terms of return, because that is the only honest way to think about it. If your main photo lifts your click-through rate on a marketplace search page even slightly, more people land on your listing. If those listing photos then convert a few more of those visitors into buyers, the effect compounds every single day, across every product, for as long as your shop is open. You are not buying a skill. You are buying a permanent multiplier on traffic you are already paying to attract.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Phone or camera — both work</div><p>Everything in this guide works with a modern smartphone <em>or</em> a dedicated camera. Good product photography is 80% light and setup and 20% gear. A phone in great light beats a $2,000 camera in bad light every time. Where a setting differs between a phone and a camera, this guide gives you both.</p></div>
+
+<h2>How to use this guide</h2>
+<p>Read Chapters 2 and 3 first — the studio setup and the lighting. They are the foundation everything else stands on, and they are where most home sellers go wrong. Then work through settings, the white-background shot, and styling. Chapter 9 gives you a repeatable shot list you will use on every product from now on, and Chapter 10 turns your photos into clicks and sales. Keep it practical: read a chapter, then go shoot.</p>
+
+<blockquote>Buyers can't touch your product. The photo does 100% of the selling — so make it do the job.</blockquote>
+
+<h1><span class="n">CHAPTER 1</span>The $30 Home Studio</h1>
+<p>You do not need a studio. You need a window, something white to bounce light, and a clean surface. That is genuinely most of it. The photography world will happily sell you ring lights, colored gels, and $400 "product tables," and you will not need any of it to make photos that outsell 90% of your competition. Let's separate what actually matters from what is marketing.</p>
+
+<h2>What you actually need</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🪟 A window</div><p>A medium-to-large window that gets bright, <strong>indirect</strong> daylight is the best light source you own, and it's free. North-facing is ideal (soft all day), but any window works if you manage the sun.</p></div>
+  <div class="card"><div class="ch">◻️ A bounce card</div><p>A piece of white foam board or a white poster board from the dollar store. This "fills" the dark side of your product with soft light. It is the single most important $2 you will spend.</p></div>
+  <div class="card"><div class="ch">📄 A sweep / backdrop</div><p>A large sheet of white paper, poster board, or a roll of craft paper curved from table to wall behind the product. It removes the horizon line and gives you that clean, seamless look.</p></div>
+  <div class="card"><div class="ch">🎚️ A cheap tripod</div><p>Any tripod — even a $15 phone tripod — keeps the camera dead still so you can use crisp, low-ISO settings and shoot a whole catalog from the identical angle.</p></div>
+</div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>The whole kit, itemized</div><p>White foam board or poster board (bounce): $2. Second board or craft-paper roll (sweep): $5–10. Phone or camera tripod: $15. A roll of matte white or neutral paper for backgrounds: $8. That is a complete product studio for around $30. Everything else is optional.</p></div>
+
+<h2>What you can skip (for now)</h2>
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't buy these first</div><p><strong>Ring lights</strong> throw an ugly donut reflection onto anything shiny and give flat, characterless light. <strong>Cheap LED panels</strong> often have a green or magenta color cast that wrecks your product's true color. <strong>Novelty backdrops</strong> (fake wood, marble contact paper) look cheap on camera. Master the window and the bounce before you spend a dime on artificial light.</p></div>
+
+<h3>The one accessory worth considering: a lightbox</h3>
+<p>A collapsible lightbox (light tent) is a fabric cube with built-in or add-your-own lighting and a seamless white interior. For <strong>small items</strong> — jewelry, cosmetics, small crafts — it delivers clean, consistent, shadow-controlled shots with almost no setup, and folds flat between shoots. If your products fit inside one and you shoot many small SKUs, a $30–50 lightbox can be the best convenience purchase in this whole guide. For anything larger than a shoebox, skip it and use the window.</p>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Lightbox reality check</div><p>A lightbox is a shortcut to <em>consistency</em>, not to <em>beauty</em>. It's perfect for the clean catalog shot and useless for lifestyle photos. Buy one if you sell small items and value speed; don't buy one expecting it to make styled, story-driven photos.</p></div>
+
+<h2>Your setup checklist</h2>
+<ul class="check">
+  <li>A window with bright, indirect daylight — no direct sun beam hitting the product.</li>
+  <li>A sturdy table pulled near the window, side-on to the light.</li>
+  <li>A sweep: paper or board curving up from the tabletop to the wall behind.</li>
+  <li>A white bounce card on the shadow side, opposite the window.</li>
+  <li>A tripod so every shot is sharp and every product is framed identically.</li>
+  <li>A tidy space — no clutter, cords, or reflections sneaking into frame.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 2</span>Light It So It Looks Expensive</h1>
+<p>Expensive-looking photos almost always come down to one thing: <strong>big, soft light.</strong> Cheap-looking photos come from small, hard light — a bare bulb, a phone flash, a point-source LED. Once you understand that single idea, you can make a $12 product look like a $60 one, and you'll never reach for that on-camera flash again.</p>
+
+<h2>Big and soft beats small and hard</h2>
+<p>"Soft" light wraps gently around your product, with shadows that fade off smoothly. "Hard" light comes from a small source and slams down harsh, sharp-edged shadows that look cheap and amateur. The rule of physics behind it is simple: <strong>the larger the light source is relative to your product, the softer the light.</strong> A big window a few feet from a small item is enormous by comparison — which is exactly why window light looks so good.</p>
+
+<div class="key"><div class="kt">Remember</div><p>Soft light sells. A large window, or any large diffused source, wraps your product in flattering light that makes texture and color read true. Small hard light (bulbs, flash) makes everything look cheap.</p></div>
+
+<h2>The one-light recipe</h2>
+<p>You do not need three lights. You need one great light and something to bounce it back. Here is the setup that works for almost every product:</p>
+<ol class="steps">
+  <li><span class="sh">Put the window to one side of your product.</span> Side light (light coming from the left or right, roughly 45–90° off the camera) reveals texture and shape — the qualities that make a product look real and touchable.</li>
+  <li><span class="sh">Place your bounce card on the opposite side.</span> The window lights one side; the shadow side goes too dark; the white card catches spill light and throws it softly back in. Now both sides read, with gentle dimension in between.</li>
+  <li><span class="sh">Adjust the gap between product and card.</span> Card closer = brighter fill, softer shadows. Card farther = deeper shadows, more drama. Slide it until the shadow side looks natural, not muddy.</li>
+</ol>
+
+<div class="recipe">
+  <div class="rh"><span>Classic clean product light</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Source <b>Large window</b></span><span class="chip">Angle <b>45–90° side</b></span><span class="chip">Fill <b>White bounce, shadow side</b></span><span class="chip">Time <b>Midday, indirect</b></span></div>
+    <p class="small">Bright but no direct sun beam. If shadows are too harsh, diffuse the window (below). If the shadow side is too dark, slide the bounce card closer.</p>
+  </div>
+</div>
+
+<h2>When the sun is harsh, diffuse it</h2>
+<p>Direct sunlight blasting through the window is small and hard — it creates ugly, high-contrast shadows and blown-out hot spots. Don't fight it; soften it. Tape a sheet of white tracing paper, a thin white bedsheet, or a shower curtain over the window. Suddenly the whole window becomes your soft light source, and harsh sun becomes beautiful.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The sheer-curtain trick</div><p>A cheap white sheer curtain across a sunny window is the fastest softbox you'll ever own. It turns a harsh beam into a big, even, flattering wash of light. Keep one pinned up wherever you shoot.</p></div>
+
+<h2>The mistake that ruins color: mixed light</h2>
+<p>The most common home-photo killer is <strong>mixing light of different colors</strong> — daylight from the window plus a warm yellow ceiling bulb plus a bluish LED. Each has a different color temperature, so your product ends up half-warm, half-cool, and impossible to color-correct. Your camera can only balance for one.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Turn off the room lights</div><p>When you shoot by a window, switch off every overhead and lamp in the room. Let the window be your <em>only</em> light source. One color of light in, one clean color to correct. This one habit fixes more "why do my photos look off?" problems than anything else.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Think in gradients, not flat</div><p>Beginners try to eliminate every shadow and end up with flat, lifeless photos. Pros keep a gentle gradient — a little brighter on the light side, a little softer on the fill side. That subtle falloff is what tells the eye "this is a real, three-dimensional object," and it's what makes a product look premium.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Camera &amp; Phone Settings for Crisp Products</h1>
+<p>Product photography has a different priority than portraits or landscapes: you usually want the <strong>entire product sharp</strong>, front to back, edge to edge. That single goal drives every setting below. Blurry or partially-soft product photos read as low-quality and cost you sales, so let's lock in crisp.</p>
+
+<h2>Aperture: stop down for full sharpness</h2>
+<p>That dreamy blurry-background look (wide aperture, low f-number) is wrong for most product shots — it throws part of your product out of focus. You want <strong>depth of field</strong>, so stop down. Around <strong>f/8</strong> is the classic product aperture: enough depth to keep the whole item sharp, without pushing so far that diffraction softens the image.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Sharp-everywhere product settings (camera)</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/8</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Shutter <b>Whatever balances (tripod)</b></span><span class="chip">Mode <b>Aperture Priority (A/Av)</b></span></div>
+    <p class="small">On a tripod, shutter speed doesn't matter for sharpness — the camera can take as long as it needs. Set aperture and ISO; let shutter float. For tiny items needing even more depth, go f/11.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't over-stop-down</div><p>It's tempting to crank to f/22 for "maximum sharpness," but past roughly f/11–f/16 <strong>diffraction</strong> actually softens the whole frame. Live around f/8; only push to f/11 when a deep item genuinely needs it.</p></div>
+
+<h2>ISO: keep it low, keep it clean</h2>
+<p>Because your camera is on a tripod and your product is not moving, you have no reason to raise ISO. Set it to your camera's base — <strong>ISO 100</strong> (or 64/200 depending on brand). Low ISO means no grain, maximum detail, and the cleanest color. This is a luxury still-life photography gives you that action photography never does; use it.</p>
+
+<h2>Tripod and timer: the free sharpness upgrade</h2>
+<ol class="steps">
+  <li><span class="sh">Mount the camera or phone on the tripod.</span> This alone lets you use base ISO and any shutter speed without a hint of shake.</li>
+  <li><span class="sh">Use the 2-second self-timer</span> (or a remote / your phone's timer). Even pressing the shutter button nudges the camera; the timer lets that vibration settle before the shot fires.</li>
+  <li><span class="sh">Frame once, shoot the whole catalog.</span> With the rig locked down, every product is photographed from the identical height and angle — instant catalog consistency, no extra effort.</li>
+</ol>
+
+<h2>White balance: get color right in-camera</h2>
+<p>Your product's color must be accurate — a mustard scarf that photographs orange gets returned, and returns quietly destroy small shops. If you're shooting in one color of light (as Chapter 2 insists), set white balance to match: <strong>Daylight/Sunny</strong> for window light. Even better, shoot in <strong>RAW</strong> if your camera allows, so you can fine-tune color perfectly later with zero quality loss.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The gray card / white card trick</div><p>Photograph a plain neutral-gray or pure-white card in your scene as your first frame. In editing, click it with the white-balance eyedropper and your color snaps to perfectly accurate — then apply that correction to every photo from the same setup. It's how catalogs keep color identical across hundreds of shots.</p></div>
+
+<h2>Tiny items: focus stacking basics</h2>
+<p>For very small products shot up close — a ring, a small pin — even f/11 may not keep the whole thing sharp, because closeness shrinks depth of field dramatically. The pro fix is <strong>focus stacking</strong>: take several identical shots, each focused on a different slice (front, middle, back), then blend them in software so the whole item is sharp. Many phones and cameras have automated versions; free and paid apps can blend the stack for you.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>You rarely need to stack</div><p>Focus stacking is a niche tool for extreme close-ups. For most products, f/8–f/11 on a tripod keeps everything sharp in a single frame. Reach for stacking only when you're shooting macro-close on a deep, tiny object and one shot can't hold it all.</p></div>
+
+<h2>Shooting on a phone</h2>
+<p>Phones don't give you an aperture dial, but you get the same results with equivalent moves:</p>
+<div class="cards">
+  <div class="card solid"><div class="ch">📱 Lock focus &amp; exposure</div><p>Tap your product to focus, then press-and-hold to lock (AE/AF Lock) so the phone can't drift between shots. Turn <strong>off</strong> Portrait mode — you want everything sharp, not a fake blur.</p></div>
+  <div class="card solid"><div class="ch">📱 Use the timer &amp; grid</div><p>Turn on the 3-second timer to avoid shake, and enable the gridlines to keep products level and centered. Clean the lens — a fingerprint smear is the #1 cause of hazy phone photos.</p></div>
+  <div class="card solid"><div class="ch">📱 Set white balance</div><p>Use a pro/manual camera app (or lock WB in your camera app) so color stays consistent. Avoid mixing light exactly as a camera would.</p></div>
+  <div class="card solid"><div class="ch">📱 Don't zoom — move</div><p>Pinch-zoom degrades quality. Physically move the phone closer, or shoot a touch wider and crop later. Use the main (1×) lens, which is sharpest.</p></div>
+</div>
+
+<h1><span class="n">CHAPTER 4</span>The Clean White-Background Shot</h1>
+<p>Every product needs one non-negotiable photo: the clean, bright, distraction-free shot on white. It's what marketplaces expect, what shoppers scan for, and what makes a catalog look professional. Some marketplaces don't just prefer it — they <strong>require</strong> it.</p>
+
+<h2>Know your marketplace's rules</h2>
+<p>Amazon requires the <strong>main image</strong> of most products to be on a <strong>pure white background</strong> (specifically RGB 255, 255, 255), with the product filling roughly 85% of the frame, no props, no text, no logos, no watermarks. Etsy and Shopify are far more flexible and let you lead with styled photos — but even there, a clean white shot belongs somewhere in your set, because it's the clearest possible look at the actual item. Check your specific platform's image spec and shoot to the strictest one you sell on.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Pure white is a real spec, not a vibe</div><p>"Looks white" isn't the same as RGB 255. Amazon's system reads actual pixel values. If your background photographs as light gray (say 240, 240, 240), it can fail. You'll hit true white by exposing correctly <em>and</em> cleaning up in editing — both steps below.</p></div>
+
+<h2>Expose for the white</h2>
+<p>Cameras are built to make everything average out to mid-gray, so pointing one at a white background makes it <em>underexpose</em> — your bright white comes out dull gray. The fix is to deliberately overexpose:</p>
+<ol class="steps">
+  <li><span class="sh">Add exposure compensation.</span> Dial in <strong>+1 to +1.7 stops</strong> (or slide your phone's exposure up) until the background reads bright white without the product itself blowing out and losing detail.</li>
+  <li><span class="sh">Watch the product, not the background.</span> The goal is a bright background <em>and</em> a correctly-exposed product. If pushing the background to white overexposes the product, you need more separation — move the product farther from the backdrop, or light the background separately.</li>
+  <li><span class="sh">Light the background if you can.</span> A second window, lamp, or bounce aimed at the sweep behind the product blows it clean white while your main light handles the product. Separation of the two is the pro secret to effortless white.</li>
+</ol>
+
+<div class="recipe">
+  <div class="rh"><span>Pure-white background shot</span><span class="tag">MARKETPLACE-READY</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/8</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Exposure <b>+1 to +1.7</b></span><span class="chip">Backdrop <b>White sweep, lit separately</b></span></div>
+    <p class="small">Product fills ~85% of frame, centered, level, on a tripod. Finish the last few percent of white in editing.</p>
+  </div>
+</div>
+
+<h2>Simple background cleanup</h2>
+<p>Even a good in-camera white usually needs a final nudge to hit true 255. In any editor, raise the exposure/whites on the background until it reads pure white, then use a brush or "whiten background" tool to clean the corners and remove stray shadows or dust. For a flawless result, some sellers cut the product out and drop it onto a pure-white layer. Keep a soft, natural contact shadow under the product if your marketplace allows it — it stops the item from looking like it's floating.</p>
+
+<h2>Consistency across the catalog</h2>
+<div class="key"><div class="kt">Consistency is trust</div><p>A shop where every white-background shot is the same brightness, angle, and framing looks like a real business. A shop where each photo is a different shade of "white" at a different angle looks like a hobby. Shoppers feel the difference even when they can't name it.</p></div>
+
+<ul class="check">
+  <li>Same background, same distance, same angle for every product.</li>
+  <li>Same exposure settings, dialed in once and reused.</li>
+  <li>Same white-balance correction applied across the batch (use that gray-card frame).</li>
+  <li>Product centered and level, filling a consistent portion of the frame.</li>
+  <li>Export at the same dimensions and aspect ratio every time.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 5</span>Styled &amp; Lifestyle Shots That Convert</h1>
+<p>The clean white shot proves what the product <em>is</em>. The styled shot sells what the product <em>does</em> — and it's usually the photo that earns the click and closes the sale. This is where you show scale, use, and a little story, and where you get to differentiate from every other seller listing the same white-background item.</p>
+
+<h2>Props with a purpose</h2>
+<p>Props are not decoration; they're information. Each one should answer a buyer's silent question. A coffee mug beside your candle says "this is cozy-home sized." A hand holding your earrings says "this is how big they actually are and how they'll look on you." Choose props that <strong>support the product</strong> and never steal focus from it.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The hero must stay the hero</div><p>The single most common styling mistake is props that overwhelm the product. If a viewer's eye lands on your beautiful vintage tray instead of the soap you're selling, the shot failed. Keep the product biggest, sharpest, and best-lit. Everything else supports.</p></div>
+
+<h2>Show scale — always</h2>
+<p>Online, buyers cannot judge size, and a wrong guess means a return. Give them a reference in at least one photo:</p>
+<div class="cards">
+  <div class="card"><div class="ch">✋ In-hand</div><p>Holding the item instantly communicates size and invites the viewer to imagine holding it themselves. Perfect for jewelry, small goods, gadgets.</p></div>
+  <div class="card"><div class="ch">🧍 On-model / in-use</div><p>Worn, used, or placed in a real setting — a scarf on a person, a print on a wall, a bag on a shoulder. Shows fit, drape, and proportion at once.</p></div>
+  <div class="card"><div class="ch">📐 Next to a known object</div><p>A common reference — a coin, a book, a plant — silently answers "how big is this?" Use when a hand or model doesn't fit the vibe.</p></div>
+  <div class="card"><div class="ch">🏠 In context</div><p>The product where it'll live: mug on a desk, print in a room, planter on a shelf. Helps the buyer picture it in <em>their</em> space.</p></div>
+</div>
+
+<h2>The flat lay</h2>
+<p>Shooting straight down onto an arranged scene — the flat lay — is a workhorse for small goods, sets, and anything that reads well from above. Shoot it directly overhead (a tripod with a horizontal arm, or the phone held flat and level), on a clean surface, with props arranged to guide the eye toward the product. Leave breathing room; don't cram the frame.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this: the three-photo story</div><p>For your next product, shoot three lifestyle frames that tell a mini-story: (1) the product in use, (2) a close detail that shows quality, (3) the product in the setting where a buyer would enjoy it. Line them up in your listing. You've just walked the buyer from "what is it" to "I want it."</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Borrow the negative space</div><p>Styled shots with clean empty space around the product don't just look premium — that space is where marketplace overlays, sale badges, and your own text can go later without covering the product. Compose a little loose on purpose.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Tricky Materials, Solved</h1>
+<p>Some products fight back. Shiny things throw reflections of you and your room; transparent things vanish; dark things turn to muddy blobs; texture goes flat. Each has a specific, reliable trick — here they are, one material at a time.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">💍 Reflective &amp; shiny (jewelry, glass, metal)</div><p>Shiny surfaces mirror everything around them, including <em>you</em>. Surround the item with white — shoot inside a lightbox or a ring of white boards so it reflects clean white, not clutter. Use a large soft source, kill hard hotspots by diffusing, and shoot slightly off-axis so your lens isn't staring back at you in the reflection.</p></div>
+  <div class="card solid"><div class="ch">🫙 Transparent (glass, bottles, resin)</div><p>Clear items disappear on white. Give them <strong>edges</strong>: light the background bright so the object's outline reads, or place thin dark cards just out of frame on each side so the edges catch a defining dark line. Backlighting through the object makes it glow and shows clarity.</p></div>
+  <div class="card solid"><div class="ch">⚫ Dark products (black items)</div><p>Dark objects lose all shape on a dark or even neutral background and confuse the camera's meter. Add a subtle rim of light or a light-gray background for separation, brighten the exposure a touch so detail emerges, and use side light to rake across the surface and reveal form and edges.</p></div>
+  <div class="card solid"><div class="ch">🧶 Textured &amp; fabric (knits, wood, leather)</div><p>Texture is the selling point — so <em>light it to show</em>. Use strong side light (window at 90°) so the raking light casts tiny shadows in every fiber and grain, making the surface look touchable. Flat front light erases texture; side light celebrates it.</p></div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The universal reflective-surface rule</div><p>You don't light a shiny object — you light what it <em>reflects</em>. A polished ring shows a picture of its surroundings, so control the surroundings: big white cards for clean highlights, black cards to carve in definition. Once you think "what is this surface reflecting?" instead of "where do I point the light?", reflective products stop being scary.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Fingerprints and dust are the enemy</div><p>Reflective and dark surfaces show every speck. Wipe glass, metal, and black items with a microfiber cloth right before shooting, and check at 100% zoom. Cleaning in-camera beats cloning out dust for an hour in editing.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>A Fast Editing Workflow</h1>
+<p>Editing isn't cheating — it's the darkroom step every professional photo goes through. The goal for a shop is <strong>speed plus consistency</strong>: get one photo right, then apply that recipe to the whole batch so your catalog looks like it came from one studio on one day. Here's a workflow that takes minutes, not hours.</p>
+
+<h2>Edit one, sync the rest</h2>
+<ol class="steps">
+  <li><span class="sh">Perfect your "reference" photo first.</span> Correct white balance (use that gray-card frame), set exposure, brighten the background, straighten, and finish. This one photo defines the look for the whole product line.</li>
+  <li><span class="sh">Copy the settings to the batch.</span> Any real editor (Lightroom, Capture One, and many free tools) lets you copy or "sync" adjustments across every selected photo shot in the same light. Your entire catalog gets consistent color and brightness in one click.</li>
+  <li><span class="sh">Spot-fix individuals.</span> Then walk through and nudge only the few that need it. Most won't, because you shot them consistently in the first place.</li>
+</ol>
+
+<h2>The core adjustments, in order</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🎨 White balance</div><p>Set it first — everything else depends on accurate color. Eyedrop the gray/white card, or adjust until the product color matches real life.</p></div>
+  <div class="card"><div class="ch">☀️ Exposure &amp; whites</div><p>Brighten so the product reads true and the background pushes toward clean white. For marketplace white, raise whites until the background hits 255 without haloing the product.</p></div>
+  <div class="card"><div class="ch">📐 Straighten &amp; crop</div><p>Level the horizon, square up the product, and crop to your marketplace's aspect ratio. Center the product consistently across the set.</p></div>
+  <div class="card"><div class="ch">✨ Cleanup &amp; sharpen</div><p>Remove dust and stray marks with the heal tool, then apply modest sharpening last, viewed at 100%. A little sharpening; never a lot.</p></div>
+</div>
+
+<h2>Keep color accurate — it protects your bottom line</h2>
+<div class="key"><div class="kt">Remember</div><p>Inaccurate color is the silent profit-killer. If the photo is a brighter, richer color than the real item, the buyer feels tricked, leaves a bad review, and returns it. Edit to make the product look its best <em>true</em> self — never a color it isn't.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't over-edit</div><p>Cranked saturation, heavy filters, and aggressive sharpening scream "amateur" and set false expectations. Your edit should make the product look like the best version of exactly what it is. If a buyer would be surprised unboxing it, you edited too far.</p></div>
+
+<h2>Resize to marketplace dimensions</h2>
+<p>Each platform has an ideal image size, and larger source files let zoom features show off your product's detail. As a rule, shoot at full resolution, then export a large, sharp copy — many marketplaces reward images at least 2,000 pixels on the long edge because it enables zoom-to-inspect. Export in the platform's preferred format (usually JPEG at high quality), at the aspect ratio the platform displays, so nothing gets awkwardly cropped by the site.</p>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Batch export presets</div><p>Save an export preset per marketplace — dimensions, format, quality, sharpening for screen. Then exporting a finished catalog is one click. Set it up once; save yourself an afternoon on every product drop.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Build a Consistent Brand Look &amp; Shot List</h1>
+<p>A random pile of nice photos is not a brand. A <em>repeatable system</em> that produces the same set of shots for every product — that's a brand, and it's what turns a browsing stranger into someone who trusts you enough to buy. The tool that makes it repeatable is a shot list.</p>
+
+<h2>The five shots every product needs</h2>
+<p>For each product you list, capture this same set, in this same style, every time. It covers every question a buyer has and gives your listing a complete, professional feel.</p>
+
+<table>
+  <tr><th>Shot</th><th>What it shows</th><th>Buyer question it answers</th></tr>
+  <tr><td><strong>Hero</strong></td><td>The whole product, beautifully lit, styled or on clean white</td><td>"What is this and is it nice?"</td></tr>
+  <tr><td><strong>Detail</strong></td><td>Close-up of texture, material, craftsmanship, or a key feature</td><td>"Is it well made? What's the quality?"</td></tr>
+  <tr><td><strong>Scale</strong></td><td>In-hand, on-model, or beside a known object</td><td>"How big is it actually?"</td></tr>
+  <tr><td><strong>Lifestyle</strong></td><td>The product in use or in its natural setting</td><td>"How would this fit my life?"</td></tr>
+  <tr><td><strong>Packaging / extras</strong></td><td>How it arrives, variations, what's included, angles/back</td><td>"What exactly do I get?"</td></tr>
+</table>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this: print your shot list</div><p>Tape the five-shot table next to your shooting spot. Before you break down the set for a product, tick off all five. You'll never again publish a listing that's missing the scale shot or the detail shot — the two most common gaps that cost sales.</p></div>
+
+<h2>What makes it a <em>brand</em> look</h2>
+<p>Consistency is the whole game. Pick your defaults and hold them across every product:</p>
+<ul class="check">
+  <li>The same background(s) — e.g. white for hero, one warm surface for lifestyle.</li>
+  <li>The same lighting direction and softness in every shot.</li>
+  <li>The same one or two recurring props, so your shop has a recognizable signature.</li>
+  <li>The same editing recipe — color, brightness, and crop feel identical.</li>
+  <li>The same shot order in every listing, so browsing your shop feels effortless.</li>
+</ul>
+
+<div class="key"><div class="kt">Consistency = trust = sales</div><p>When every listing in your shop shares one visual language, a shopper's brain reads it as "established, reliable, professional" before they've read a single word. That trust is what lets a home seller charge more than a faceless competitor — and it's built entirely with repeatable photos.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Build a template scene</div><p>Take a photo of your ideal setup — camera position, product placement, light and bounce, props. Save it as your "recipe." Next shoot, recreate it exactly. A template scene turns consistency from a discipline into a five-minute setup you can repeat forever, even months apart.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>From Photos to Sales</h1>
+<p>You've shot beautiful, consistent photos. Now let's make them <em>work</em> — because how you order, choose, and test your images decides whether all that effort actually moves your numbers. This is the final, highest-ROI step: turning great photos into clicks and clicks into orders.</p>
+
+<h2>The thumbnail wins or loses the click</h2>
+<p>On a search results page, your product is a tiny thumbnail fighting dozens of others for attention. If nobody clicks, nothing else matters. Your <strong>main image</strong> must be instantly clear and appealing at postage-stamp size.</p>
+
+<ol class="steps">
+  <li><span class="sh">Fill the frame with the product.</span> A big, clear product reads at thumbnail size; a small product in a busy scene disappears. Crop in so the item dominates.</li>
+  <li><span class="sh">Keep the main image clean.</span> Bright, sharp, uncluttered. On Amazon it must be pure white by rule; on Etsy/Shopify a clean styled shot often wins — test both.</li>
+  <li><span class="sh">Make it obvious what you're selling.</span> A confused shopper scrolls past. One glance should answer "what is this?"</li>
+</ol>
+
+<h2>Order your listing photos like a pitch</h2>
+<p>Once you've earned the click, your photo sequence should walk the buyer to "add to cart." Lead with the strongest image, then build the case:</p>
+<div class="cards">
+  <div class="card solid"><div class="ch">1️⃣ Main / hero</div><p>Your best, clearest, click-winning shot. This is the one that shows in search.</p></div>
+  <div class="card solid"><div class="ch">2️⃣ Lifestyle / in-use</div><p>Immediately show it in context so they picture owning it.</p></div>
+  <div class="card solid"><div class="ch">3️⃣ Detail &amp; scale</div><p>Prove quality and answer the size question before they have to ask.</p></div>
+  <div class="card solid"><div class="ch">4️⃣ Variations &amp; packaging</div><p>Options, angles, and what arrives — close the last doubts.</p></div>
+</div>
+
+<h2>A/B test your main image</h2>
+<p>You don't have to guess which photo wins — you can find out. Swap your main image for an alternative and watch what happens to your click-through and conversion over a couger of weeks; keep the winner. Some platforms have built-in experiment tools; even without one, changing the main image and tracking the before/after in your own stats tells you a lot.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Test one thing at a time</div><p>Change only the main image, and leave the title, price, and everything else alone during the test. Otherwise you won't know what caused the change. One variable, clear answer.</p></div>
+
+<h2>Mistakes that quietly kill conversions</h2>
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The conversion-killer checklist</div><p><strong>Dim or yellow photos</strong> that look cheap. <strong>Inconsistent</strong> images that look like a hobby, not a shop. <strong>No scale shot</strong>, so buyers can't judge size and don't risk it. <strong>Cluttered backgrounds</strong> that hide the product. <strong>Only one photo</strong>, when buyers want to inspect from every angle. <strong>Over-edited color</strong> that leads to returns and bad reviews. Fix any one of these and you'll usually see it in your numbers.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your first move this week</div><p>Pick your single best-selling product. Reshoot its main image using this guide — window light, bounce card, tripod, f/8, clean background, filled frame. Swap it in. Watch your views and sales on that one listing for two weeks. That single before-and-after will convince you, in your own data, that photos are the highest-return work in your shop.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Your buyer can't touch the product — so the photo does all the selling. Master light, shoot a consistent set, and put your best image forward, and better photos will out-earn every other upgrade you make to your shop.</p></div>
+
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Photography guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Smooth, Cinematic Camera Movement — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #4338ca;
+  --accent2: #818cf8;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">CAMERA MOVEMENT</div>
+    <div style="margin-top:auto"></div>
+    <h1>Smooth, Cinematic Camera Movement</h1>
+    <div class="rule"></div>
+    <div class="sub">Handheld &amp; Gimbal Moves That Look Intentional</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$24 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Handheld &amp; Gimbal Moves That Look Intentional. Written for gimbal and camera owners fighting shaky, aimless footage.</div>
+  <ol><li><span class="t">Movement Is a Sentence, Not a Fidget</span></li><li><span class="t">Why Handheld Looks Shaky</span></li><li><span class="t">Handheld Techniques With No Gear</span></li><li><span class="t">The Core Gimbal Moves</span></li><li><span class="t">Set Up a Gimbal Right</span></li><li><span class="t">Move at the Right Speed</span></li><li><span class="t">When NOT to Move</span></li><li><span class="t">Other Tools for Movement</span></li><li><span class="t">Fix It in Post — and Its Limits</span></li><li><span class="t">Movement Recipes by Shot</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Movement Is a Sentence, Not a Fidget</h1>
+<p class="lead-in">A camera that drifts, wobbles, and wanders makes footage that feels nervous — like the operator wasn't sure why they were moving. A camera that moves with purpose makes footage that feels directed. The difference isn't a smoother gimbal or a steadier hand. It's knowing <em>why</em> you're moving before you press record. This guide teaches you to move like you mean it.</p>
+
+<p>Here is the whole idea, stated plainly: <strong>every camera move should answer a question the shot is asking.</strong> Where are we? Push in on the face to say <em>here, this matters</em>. What's around the corner? Arc around the wall to reveal it. Who is this person? Follow them and let us walk in their shoes. When a move answers a question, the audience never notices the move — they only feel the meaning. When a move answers nothing, they feel seasick.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Motivated movement disappears into story; random movement announces itself as amateur — so give every move a job before you start it.</p></div>
+
+<h2>Motivated vs. random movement</h2>
+<p>A <strong>motivated</strong> move has a reason baked into the frame. The camera pushes in because the character just realized something. It cranes up because the space is bigger than we thought. It follows because the subject is leading us somewhere. The motivation can be emotional, spatial, or literal — but it exists, and it has a clear start and stop.</p>
+<p>A <strong>random</strong> move is the camera moving because you were holding it and moving felt like "doing videography." It floats. It never settles. It has no beginning and no destination. Cut it into a timeline and it fights every other shot.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The test before every move</div><p>Ask out loud: "Where does this move start, where does it end, and what does the ending show me that the start didn't?" If you can't answer all three in one breath, lock the camera down and shoot it static instead. A clean static shot beats a pretty wander every time.</p></div>
+
+<h2>How to use this guide</h2>
+<p>Read Chapter 1 to understand <em>why</em> handheld shakes, so the fixes in Chapter 2 make sense in your hands instead of just in your head. Chapters 3 through 5 are the core moves and how to run a gimbal that actually earns its weight. The back half — speed, restraint, and post — is where good operators become intentional ones. The final chapter is a printable recipe card set; keep it on your phone for the shoot.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with what you own</div><p>Everything here applies whether you shoot on a phone, a mirrorless body, a cinema camera, a two-axis phone gimbal, or a three-axis full-frame stabilizer. Where a term differs between brands, we say so. You do not need a bigger rig to move well — you need intent and a handful of repeatable techniques.</p></div>
+
+<h1><span class="n">CHAPTER 1</span>Why Handheld Looks Shaky</h1>
+<p>Before you can smooth a move, you have to understand what "shake" actually is. It is not one big wobble — it is a stack of tiny, involuntary movements your body makes every second you're alive, all of them registering on the sensor. Once you can see the physics, you can fight it in the right places.</p>
+
+<h2>The three layers of shake</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">〰️ Micro-jitter</div><p>High-frequency tremor from your muscles, pulse, and breathing. Small, fast, and constant. This is what makes static handheld footage feel "buzzy."</p></div>
+  <div class="card"><div class="ch">🚶 Step bounce</div><p>The vertical thump every time your foot hits the ground while walking. Big, rhythmic, and the most nauseating kind of shake on screen.</p></div>
+  <div class="card"><div class="ch">🎢 Drift &amp; sway</div><p>Slow low-frequency wander as your arms tire and your framing lists sideways. The reason handheld shots slowly tilt off-level.</p></div>
+</div>
+
+<p>A gimbal is fantastic at the first two and helpful with the third. Your <em>body</em> — bracing, breathing, and how you walk — is what actually kills them at the source. The best footage comes from a gimbal handed a body that was already doing the work.</p>
+
+<h2>Why longer lenses make it worse</h2>
+<p>This is the single most overlooked cause of "why is my footage so shaky." A telephoto lens magnifies your subject — and it magnifies your shake by exactly the same amount. Every degree of hand-tremor becomes a bigger sweep across the frame the longer the lens. A wobble that's invisible at 16mm is a full-blown earthquake at 100mm.</p>
+
+<blockquote>Shake is magnification. The wider you shoot, the smoother you look — for free.</blockquote>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The focal-length trap</div><p>People buy a gimbal to smooth their 70&ndash;200mm footage and are baffled when it still shakes. No stabilizer fully beats the magnification of a long lens handheld. If you must go tight and moving, add distance and physical support, slow the move way down, and expect to lean on post stabilization too.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Frame rate hides some of it</div><p>Higher frame rates capture shake more crisply, which sounds good but reads as <em>more</em> jitter. Shooting 24fps with proper motion blur (Chapter 6) naturally smears micro-jitter into something the eye forgives. Part of "cinematic smoothness" is simply the right shutter, not a steadier hand.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Handheld Techniques With No Gear</h1>
+<p>You can shoot startlingly smooth footage with nothing but the camera and your body — operators did it for decades before gimbals existed. These techniques cost nothing and, honestly, make your gimbal work better too. Learn them first.</p>
+
+<h2>Turn your body into the rig</h2>
+<ol class="steps">
+  <li><span class="sh">Two hands, elbows locked to your ribs.</span> Pull the camera into your body so your torso becomes the tripod. A floating camera held at arm's length has nothing damping it; a camera pinned to your chest borrows your whole skeleton for stability.</li>
+  <li><span class="sh">Breathe out, then roll.</span> Start any static-ish shot at the bottom of a slow exhale, the same moment a shooter takes a shot. Your body is stillest between breaths. For longer takes, breathe shallow and high in the chest so the diaphragm doesn't heave the camera.</li>
+  <li><span class="sh">Lead with your core, not your arms.</span> To pan or track, keep your arms frozen and rotate from the hips and feet. Arms are full of small unstable joints; your torso swings as one smooth mass.</li>
+</ol>
+
+<h3>The "walk like a ninja"</h3>
+<p>The step-bounce is the killer, and it comes from your heels slamming down. Fix the walk and you fix the footage:</p>
+<ul class="check">
+  <li>Bend your knees deep and stay low — think Groucho Marx creeping, not a proud march. Your legs become the shock absorbers.</li>
+  <li>Roll each foot heel-to-toe and place it, don't drop it. Silent steps are smooth steps.</li>
+  <li>Keep your upper body a "floating platform" — imagine carrying a full cup of coffee you refuse to spill.</li>
+  <li>Walk slightly heel-out, feet tracing a narrow line, so your hips don't rock side to side.</li>
+</ul>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this drill</div><p>Film yourself walking toward a doorway twice: once normally, once in the ninja crouch with the coffee-cup mindset. Play both back at 100%. The crouch version will look like you strapped on a gimbal you don't own. Fifteen minutes here pays off on every handheld shot forever.</p></div>
+
+<h3>Brace against the world</h3>
+<p>The environment is a free tripod. Lean a shoulder into a wall, press your back against a pillar, set the camera on a railing or a car roof, kneel and rest your elbows on your knees. Every point of contact you add steals a layer of shake. For a locked-feeling static shot with no tripod, find something solid and become part of it.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Go wide to hide shake</div><p>The cheapest stabilizer on earth is a wider lens. Shooting at 16&ndash;24mm instead of 50mm shrinks every wobble proportionally and gives you far more forgiving footage. When you must be handheld and can't get smooth, get wide and get closer to your subject instead of zooming in.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The neck-strap trick</div><p>Let the strap out to full length, hold the camera at the bottom of it, and push down until the strap is taut against the back of your neck or shoulder. The tension damps vertical bounce like a poor man's stabilizer — a genuine pro habit for run-and-gun work with no rig.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>The Core Gimbal Moves</h1>
+<p>A gimbal is not a "make it smooth" button — it's an instrument that lets you perform specific, repeatable moves cleanly. Master this handful and you have a complete cinematic vocabulary. Everything fancy is just a combination of these.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🎭 The Reveal</div><p>Start with the frame blocked or empty, then move to uncover the subject. Slide past a foreground pillar, tilt up from the ground, or arc around a wall so the subject "appears." The most satisfying move in the book.</p></div>
+  <div class="card"><div class="ch">🔄 The Orbit / Arc</div><p>Circle around a stationary subject, keeping them centered. A full orbit builds importance; a gentle arc adds subtle life to a talking head or a hero product. Walk a curved path, not a straight one.</p></div>
+  <div class="card"><div class="ch">➡️ Push-In &amp; Pull-Out</div><p>Move the whole camera toward the subject (push) to draw the viewer in on a moment, or away (pull) to reveal context or let a scene breathe out. This is real movement, not a zoom — the perspective shifts.</p></div>
+  <div class="card"><div class="ch">👣 Follow / Tracking</div><p>Move with a subject — behind, in front, or beside — holding them at a constant size. Puts the audience in the scene alongside them. The workhorse of documentary and narrative alike.</p></div>
+  <div class="card"><div class="ch">⬇️ Low-Mode Move</div><p>Flip the gimbal underslung and skim just above the ground — through grass, along a floor, past feet. A dramatic, dynamic perspective you can't get any other way handheld.</p></div>
+  <div class="card"><div class="ch">🏗️ The Crane / Boom</div><p>Raise or lower the whole camera vertically — rising up over a crowd, or booming down to a detail. On a gimbal you do it with your arms and a slow squat or press-up. Reveals scale.</p></div>
+</div>
+
+<h2>Executing the reveal</h2>
+<ol class="steps">
+  <li><span class="sh">Find a foreground element to hide behind.</span> A doorway, a tree, a person's shoulder, a wall edge. The block is what makes the reveal land.</li>
+  <li><span class="sh">Frame on the blocker, start recording, hold a full second.</span> Let the audience register "something's in the way" before you move.</li>
+  <li><span class="sh">Move steadily until the subject is fully uncovered, then hold again.</span> The pause at each end gives you clean edit points and lets the reveal breathe.</li>
+</ol>
+
+<h2>Executing a clean orbit</h2>
+<ol class="steps">
+  <li><span class="sh">Pick your radius and mark your path.</span> Decide how far out you'll circle and glance at the ground for obstacles before you start — you'll be watching the screen, not your feet.</li>
+  <li><span class="sh">Use pan-follow mode (Chapter 5)</span> so the gimbal eases into your rotation instead of fighting it, keeping the subject glued to center.</li>
+  <li><span class="sh">Crab-walk sideways along the curve.</span> Cross one foot over the other, ninja-crouched, torso steady, eyes on your subject. Slow and even wins.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Watch your footing, not the framing</div><p>Most ruined gimbal shots die because the operator tripped or over-corrected. Clear your path <em>before</em> you roll, walk slower than feels natural, and keep moves short. A five-second clean orbit is worth more than a fifteen-second one that stumbles at second twelve.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Combine two moves for depth</div><p>The pros rarely run one move in isolation. Push in <em>while</em> you arc slightly, or reveal <em>while</em> booming up. Layering a small secondary move over a primary one adds parallax and dimensionality — but master each one solo first, or you'll just multiply your mistakes.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Set Up a Gimbal Right</h1>
+<p>A gimbal that isn't balanced before you turn it on will drift, drain its battery, strain its motors, and never hold a horizon. Ninety percent of "my gimbal is junk" is really "my gimbal was never balanced." This is the boring step that makes everything after it work.</p>
+
+<div class="key"><div class="kt">The rule that saves every shot</div><p>Balance the gimbal <strong>before</strong> you power it on. The motors should hold a good balance, not create one — a balanced rig runs smoother, lasts longer per charge, and recovers from fast moves cleanly.</p></div>
+
+<h2>Balance every axis, in order</h2>
+<ol class="steps">
+  <li><span class="sh">Mount the camera with everything attached.</span> Lens, battery, memory card, filters — set to the focal length you'll shoot. Adding anything later throws off the balance you just dialed in.</li>
+  <li><span class="sh">Balance the tilt (up/down) axis first.</span> With motors off, the camera should stay put when tipped nose-up or nose-down. Slide it forward/back until it holds level on its own.</li>
+  <li><span class="sh">Balance the roll (side-to-side) axis.</span> The camera shouldn't flop left or right. Shift it sideways until it stays horizon-level, hands off.</li>
+  <li><span class="sh">Balance the pan axis last.</span> Tip the whole gimbal forward slightly; the camera shouldn't swing to either side. Adjust until it stays put in any direction.</li>
+  <li><span class="sh">Now power on and calibrate.</span> With the physical balance right, run the auto-tune/calibration and set the motor stiffness for your camera's weight.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Recalibrate when things change</div><p>Swap a lens, add a filter, change altitude or temperature dramatically, or notice a slow horizon drift? Rebalance and recalibrate. A gimbal that was perfect yesterday can need a two-minute tune-up today. Build it into your setup routine, not your panic routine.</p></div>
+
+<h2>Know your follow modes</h2>
+<table>
+  <tr><th>Mode</th><th>What it does</th><th>Use it for</th></tr>
+  <tr><td>Pan-follow</td><td>Camera follows your left/right turns smoothly; keeps a level horizon and fixed tilt</td><td>The default. Tracking, orbits, walking follows — most everyday shots</td></tr>
+  <tr><td>Lock / lock-off</td><td>Camera stays pointed one fixed direction no matter how you turn the handle</td><td>Push-ins, pull-outs, holding on a subject while you reposition your body</td></tr>
+  <tr><td>Follow (pan + tilt)</td><td>Camera follows both your turning and your tilting</td><td>Booming up a tall subject, tracking something rising or falling</td></tr>
+  <tr><td>POV / all-follow</td><td>Camera mimics all your movements including roll</td><td>Dynamic first-person action, dutch angles, energetic B-roll</td></tr>
+</table>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Live in pan-follow, switch deliberately</div><p>Leave the gimbal in pan-follow for eighty percent of shots — it looks the most natural. Flick to lock mode when you specifically want to push straight in on a subject without the frame drifting. Knowing <em>which</em> mode a shot needs is half of looking professional.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Move at the Right Speed</h1>
+<p>The most common reason gimbal footage looks amateur isn't shake — it's <strong>speed</strong>. Beginners move too fast because it feels like "action." Cinematic movement is almost always slower than you think, and it's married to your shutter and frame rate. Get the speed right and even a simple push-in feels expensive.</p>
+
+<h2>Slower than feels natural</h2>
+<p>Your body wants to move at walking pace. On screen, that reads as rushed and jittery. Cut your instinct roughly in half. A push-in should ooze forward. An orbit should feel almost meditative. When you're bored by how slow you're moving, you're probably close to right.</p>
+
+<blockquote>If the move feels a little too slow while you're shooting it, it's usually perfect on the timeline.</blockquote>
+
+<h2>The 24fps + 180° foundation</h2>
+<p>"Cinematic" motion blur comes from a simple pairing: shoot <strong>24fps</strong> (or 25) with your shutter at roughly <strong>double the frame rate</strong> — about 1/50s. This is the 180-degree shutter rule, and it produces the exact amount of natural blur our eyes read as "film." Too fast a shutter (1/500s) strips the blur out and every move looks stuttery and shaky; too slow smears everything to mush.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Cinematic movement baseline</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Frame rate <b>24fps</b></span><span class="chip">Shutter <b>1/50s</b></span><span class="chip">Move speed <b>half your instinct</b></span></div>
+    <p class="small">Bright outdoors? Add an ND filter to keep 1/50s instead of raising the shutter — never break the 180° rule just to fight sunlight.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The high-shutter shake trap</div><p>Shooting a fast shutter (1/500s and up) makes every frame razor-sharp — which means every tiny jitter is razor-sharp too. Sharp frames with no motion blur amplify shake and give footage a stuttery, security-camera look. If your movement seems shaky even on a gimbal, check your shutter before you blame your hands.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>The ND filter is not optional</div><p>To hold 1/50s in daylight you'll be badly overexposed without a neutral-density filter — it's sunglasses for your lens. A variable ND (or a small set of fixed ones) is the accessory that actually unlocks cinematic movement outdoors. Budget for it before your next gimbal upgrade.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Shoot slow-mo when the move must be fast</div><p>Some moves genuinely need speed — a fast whip-pan, a running follow. Shoot those at 60 or 120fps and slow them down in post. The extra frames smooth the motion and the slow-down hides residual shake. Fast action almost always looks better slightly slowed.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>When NOT to Move</h1>
+<p>Here's the secret that separates operators from tourists with gimbals: <strong>the most powerful shot is often the one where the camera doesn't move at all.</strong> A locked-off frame lets the audience settle, study, and feel. If every shot floats, nothing has weight. Restraint is a technique.</p>
+
+<div class="key"><div class="kt">The counterintuitive truth</div><p>Movement means more when it's rare. A film of constant motion is exhausting; a locked shot that suddenly, slowly pushes in lands like a punch — because you earned it with stillness.</p></div>
+
+<h2>Let the subject move instead</h2>
+<p>You don't need the camera to move to have movement in the frame. Lock off a beautiful composition and let life happen inside it: a person walks through, steam rises, traffic streaks past, a door opens. The static frame becomes a stage, and the motion within it feels composed instead of chaotic.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">🔒 Lock off for dialogue</div><p>Conversations and interviews want stillness. A drifting camera under someone's words is distracting. Put it on sticks, frame well, and let the performance carry it.</p></div>
+  <div class="card solid"><div class="ch">🖼️ Lock off for beauty</div><p>A gorgeous landscape or a designed composition doesn't need help. Hold it. Let the viewer's eye wander the frame instead of chasing your camera.</p></div>
+</div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>The one-in-three rule</div><p>On your next shoot, make every third shot completely static — no gimbal, no drift, locked down. When you edit, you'll find those stillness beats are the spine that makes your moving shots feel intentional. Movement needs stillness around it to read as movement at all.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Other Tools for Movement</h1>
+<p>A gimbal isn't the only way to move a camera smoothly — and for many shots it's not even the best way. Different tools produce different <em>qualities</em> of movement. Knowing which one a shot wants is what makes footage feel deliberate.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">➡️ Slider</div><p>Produces a perfectly linear, mechanical glide — ideal for controlled push-ins, product reveals, and parallax B-roll. Movement a gimbal can only approximate. Small ones are cheap and pack flat.</p></div>
+  <div class="card"><div class="ch">🎬 Fluid-head tripod</div><p>The foundation of professional movement: buttery pans and tilts from a fixed point, plus rock-solid locked-off shots. If you buy one movement tool, buy a decent fluid head first.</p></div>
+  <div class="card"><div class="ch">🦯 Monopod</div><p>A one-legged compromise between handheld freedom and tripod stability. Kills vertical bounce, pivots for fast pans, and sets up in a second. Superb for run-and-gun and events.</p></div>
+  <div class="card"><div class="ch">🛠️ DIY &amp; cheap options</div><p>A rolling office chair for a dolly, a wheelchair or shopping cart for tracking, a skateboard for low glides, a broomstick-and-string "poor man's steadicam." Real moves, near-zero budget.</p></div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Match the tool to the move</div><p>A slider for a precise product push-in. A fluid head for interviews and pans. A gimbal for following a moving subject through space. A monopod for fast events. Reaching for the gimbal on <em>every</em> shot is why some footage feels samey — variety of tool creates variety of feel.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Buy stability before you buy motion</div><p>If your budget is tight, a solid tripod with a fluid head will improve more of your footage than a gimbal will — because most shots want to be still and well-composed, not moving. Get rock-steady first; add motion tools once stillness is handled.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Fix It in Post — and Its Limits</h1>
+<p>Editing software can stabilize footage, and it's genuinely useful — but it's a safety net, not a substitute for shooting smooth. Understand exactly what it does and where it breaks, so you never rely on it for a shot it can't save.</p>
+
+<h2>What stabilization actually does</h2>
+<p>Warp or optical stabilization analyzes how the frame moves and shifts, scales, and warps each frame to counteract it. To have room to push the image around, it <strong>crops in</strong> — so you lose resolution and field of view. Shoot slightly wider than your final frame, and in higher resolution than you deliver, to give post something to work with.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The three ways post-stabilization fails</div><p><strong>Warp wobble:</strong> heavily stabilized footage can develop a jelly-like ripple as the software over-corrects — worst on shots with lots of shake. <strong>Rolling shutter / jello:</strong> fast moves on many sensors skew straight lines into wobbling diagonals, which stabilization can amplify into a rubbery mess. <strong>Crop creep:</strong> the shakier the source, the harder the crop, until your wide shot becomes an accidental close-up. Bad footage in, worse footage out.</p></div>
+
+<h2>Give post the best possible source</h2>
+<ul class="check">
+  <li>Shoot smooth in-camera first — stabilization multiplies quality, it can't create it.</li>
+  <li>Frame a little wider than final so cropping doesn't cost your composition.</li>
+  <li>Shoot in higher resolution than you deliver (4K for a 1080p project) so the crop still holds detail.</li>
+  <li>Keep moves slow and shutter at 1/50s — less rolling shutter, less for the software to fight.</li>
+  <li>Stabilize in modest amounts; back off if you see warp wobble creeping in.</li>
+</ul>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>The honest rule</div><p>Post-stabilization turns <em>slightly</em> shaky footage into smooth footage. It cannot turn a bouncing, jello-ridden mess into a gimbal shot. Fix it on set; treat stabilization as polish, not rescue — exactly like sharpening a photo.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Movement Recipes by Shot</h1>
+<p>Tape these to your gimbal case. Each recipe is a complete move you can execute on your next shoot — motivation, mode, settings, and technique in one card. Learn the four and you can cover almost any scene with intention.</p>
+
+<div class="recipe">
+  <div class="rh"><span>The Reveal</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mode <b>pan-follow</b></span><span class="chip">Speed <b>slow, even</b></span><span class="chip">Lens <b>wide 16&ndash;35mm</b></span></div>
+    <p class="small">Hide the subject behind a foreground blocker, hold one second, glide sideways or tilt up to uncover them, hold again. Motivation: introducing a person, place, or product with a beat of anticipation.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>The Follow</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mode <b>pan-follow</b></span><span class="chip">Walk <b>ninja crouch</b></span><span class="chip">Distance <b>constant</b></span></div>
+    <p class="small">Move with the subject — behind, ahead, or beside — holding them the same size in frame. Ninja-walk to kill step bounce. Motivation: putting the audience in the scene, traveling with someone through space.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>The Establishing Orbit</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mode <b>pan-follow</b></span><span class="chip">Path <b>curved crab-walk</b></span><span class="chip">Speed <b>meditative</b></span></div>
+    <p class="small">Circle a stationary hero subject, keeping them centered, crossing feet along a marked radius. Clear your path first. Motivation: building importance, showing a subject in the round, opening a scene with scale.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>The Product Push-In</span><span class="tag">RECIPE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mode <b>lock-off</b></span><span class="chip">Tool <b>slider or gimbal</b></span><span class="chip">Move <b>slow, straight</b></span></div>
+    <p class="small">Lock the gimbal so the frame won't drift, then glide straight toward the subject — no zoom, real movement for real parallax. A slider does it most cleanly. Motivation: "look here, this matters," focusing attention on a detail or a face.</p>
+  </div>
+</div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your practice week</div><p>Shoot one clean version of each recipe on the same subject — a reveal, a follow, an orbit, a push-in. Cut them together in that order. In under an hour you'll have a sequence that looks directed, and four moves burned into muscle memory you'll reach for on every shoot after.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>A camera that moves with a reason vanishes into the story; give every move a job, move slower than feels natural, and let stillness make your motion mean something.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

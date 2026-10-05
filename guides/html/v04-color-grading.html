@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Color Grading Demystified — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #be185d;
+  --accent2: #f43f5e;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">COLOR</div>
+    <div style="margin-top:auto"></div>
+    <h1>Color Grading Demystified</h1>
+    <div class="rule"></div>
+    <div class="sub">Log, LUTs &amp; the Filmic Look — Without the Guesswork</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$34 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Log, LUTs &amp; the Filmic Look — Without the Guesswork. Written for shooters whose footage looks flat, grey, or inconsistent.</div>
+  <ol><li><span class="t">Your Footage Isn't Broken — It's Just Uncooked</span></li><li><span class="t">Read the Image With Scopes</span></li><li><span class="t">Correction Step 1 — Exposure & Contrast</span></li><li><span class="t">Correction Step 2 — White Balance</span></li><li><span class="t">Log Footage & LUTs — What's Actually Going On</span></li><li><span class="t">The Primary Grade — Lift, Gamma, Gain</span></li><li><span class="t">Skin Tones — Keep People Looking Human</span></li><li><span class="t">Secondary & Selective Color</span></li><li><span class="t">Matching Shots Across a Scene</span></li><li><span class="t">Save the Look & Export Right</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Your Footage Isn't Broken — It's Just Uncooked</h1>
+<p class="lead-in">You bought a camera that shoots log, watched a tutorial that promised "cinematic," dragged a LUT onto your clip, and it still looks flat, grey, or weirdly green. The problem isn't your camera and it isn't your eye — it's that nobody told you color happens in two separate stages, in a fixed order, using tools that measure the image instead of guessing at it. This guide fixes that.</p>
+
+<p>Here is the whole thing stated plainly: <strong>you correct first, then you grade.</strong> These are two different jobs, and doing them out of order is the single most common reason footage looks amateur.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🔧 Color Correction</div><p><strong>Making it right.</strong> Neutral exposure, accurate white balance, proper black and white points, believable skin. A clean, honest image that could go anywhere. No mood yet.</p></div>
+  <div class="card"><div class="ch">🎨 Color Grading</div><p><strong>Making it feel.</strong> Warm and nostalgic, cold and tense, teal-shadowed and moody. Style layered <em>on top of</em> a corrected image — never in place of one.</p></div>
+</div>
+
+<h2>Why the order is non-negotiable</h2>
+<p>A creative "look" is a set of adjustments calibrated to expect a normal image underneath. Apply it to raw log footage — which is flat, low-contrast, and desaturated on purpose — and the look has nothing sane to work with. The shadows are already lifted, the colors already muted, so it pushes an already-broken starting point further out of whack. That's the green, plasticky, "why does this look worse" moment everyone hits.</p>
+
+<blockquote>You cannot style an image you haven't first made true.</blockquote>
+
+<p>Correct first and the same look drops on cleanly, because now it's adjusting a normal image the way it was designed to. This is why two editors can use the identical LUT and get wildly different results — one corrected first, one didn't.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Correct the image until it's neutral and true, <em>then</em> style it — and use the scopes to tell you when each step is done, because your eyes and your monitor will both lie to you.</p></div>
+
+<h2>The pipeline you'll build</h2>
+<p>Read Chapter 2 first — the scopes are the language everything else is written in. Then work the chapters in order on a real clip:</p>
+<ol class="steps">
+  <li><span class="sh">Read the image with scopes.</span> Learn what a correct frame looks like as data, not just to your (lying) eyes.</li>
+  <li><span class="sh">Correct exposure, contrast, and white balance.</span> Set black and white points on the waveform; neutralize casts on the parade.</li>
+  <li><span class="sh">Convert log if needed, then build the primary grade.</span> Get to a normal image, then shape shadows, mids, and highlights into a base look.</li>
+  <li><span class="sh">Protect skin, isolate regions, match shots, and export right.</span> The finishing that makes a sequence feel like one film.</li>
+</ol>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Resolve first, Premiere alongside</div><p>Every technique here is described for <strong>DaVinci Resolve</strong> (the free version does all of it) because its color tools are the industry standard. Where Premiere's <strong>Lumetri</strong> panel does the same job under a different name, we say so. Nothing depends on a specific software version or menu location — we describe the tool and what it does.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Read the Image With Scopes</h1>
+<p>Here is an uncomfortable truth: <strong>you cannot trust your eyes, and you almost certainly cannot trust your monitor either.</strong> Your eyes adapt — stare at a slightly orange image for thirty seconds and your brain quietly decides it's neutral. Your laptop screen is probably too blue, too bright, and uncalibrated, so grading by eye on it makes footage look wrong on every screen but yours. Scopes are the fix: they measure the actual pixel values and never adapt, fatigue, or lie.</p>
+
+<div class="key"><div class="kt">Remember</div><p>Grade with your eyes for taste, but confirm with the scopes for truth — the scopes are the only thing in the room that isn't fooling you.</p></div>
+
+<h2>The three scopes that matter</h2>
+
+<h3>Waveform — your exposure map</h3>
+<p>The waveform plots brightness (luminance) against the horizontal position of the frame. The bottom is pure black (0), the top pure white (1023 on a 10-bit scale, or 100 IRE). Tall traces mean bright pixels there; low traces mean dark ones. This is how you <em>see</em> exposure as data — what's crushing to black, what's clipping to white, and where your midtones sit.</p>
+
+<h3>RGB Parade — your color balance map</h3>
+<p>The parade is three waveforms side by side, one each for red, green, and blue — the single most useful scope for correction. On something that should be neutral (grey, white, or black), the three channels line up at the same height. If blue sits higher than red and green in the shadows, you have a blue shadow cast — one you literally cannot see because your eyes have adapted to it.</p>
+
+<h3>Vectorscope — your hue and saturation map</h3>
+<p>A circular graph: distance from center is saturation (how vivid), angle around the circle is hue (which color). A neutral grey image is a dot dead center; the more color, the more the trace spreads outward. It has one feature that will save your footage over and over — a diagonal <strong>skin-tone line</strong> that all human skin, of every ethnicity, falls along when correct. More in Chapter 7.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Find them fast</div><p>In Resolve, the scopes live on the Color page — open the scope panel and you can switch between Waveform, Parade, Vectorscope, and Histogram, or view all at once. In Premiere, they're the <strong>Lumetri Scopes</strong> panel; right-click inside it to choose which scope and which scale (use the same 0&ndash;1023 or 0&ndash;100 range consistently). Keep at least the parade visible at all times.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Set target values, not vibes</div><p>Pros don't say "that looks about right." They say "shadows sitting around 5&ndash;10, highlights topping out near 90&ndash;100, no clipping." Learn to give exposure a number. Numbers are repeatable across shots; vibes are not, which is exactly why your clips don't match.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this now</div><p>Open any clip and just watch the parade while you scrub. Find a shot with a white wall or a grey road and notice whether the three channels line up or one runs high. You've just spotted a color cast your eyes were hiding from you. That's the whole skill — everything else is acting on what the scopes tell you.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Correction Step 1 — Exposure &amp; Contrast</h1>
+<p>Correction starts with brightness, because color decisions made on a wrongly-exposed image are decisions you'll have to redo. Your first job is to set the <strong>black point</strong> and <strong>white point</strong> — anchoring the darkest and brightest parts of the frame so the image has a full, honest tonal range.</p>
+
+<h2>Set the black point and white point on the waveform</h2>
+<ol class="steps">
+  <li><span class="sh">Open the waveform (or parade) and find your darkest real shadow.</span> Use the <strong>Lift</strong> wheel (Resolve) or the <strong>Shadows</strong>/Blacks control (Lumetri) to bring the bottom of the trace down until your true blacks sit just above 0 — around 5 to 10, not slammed to the floor.</li>
+  <li><span class="sh">Find your brightest real highlight.</span> Use the <strong>Gain</strong> wheel (Resolve) or <strong>Highlights</strong>/Whites (Lumetri) to lift the top of the trace up toward 90&ndash;100 without clipping — unless it's a light source or specular sparkle, which is allowed to blow out.</li>
+  <li><span class="sh">Adjust the midtones last.</span> Use the <strong>Gamma</strong> wheel (Resolve) or <strong>Exposure</strong>/Midtones (Lumetri) to place the overall brightness where the image reads correctly. Faces should generally sit in the upper-middle of the waveform.</li>
+</ol>
+
+<div class="recipe">
+  <div class="rh"><span>Healthy exposure targets</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Black point <b>5&ndash;10</b></span><span class="chip">Skin/midtones <b>~50&ndash;70</b></span><span class="chip">White point <b>90&ndash;100</b></span><span class="chip">Clipping <b>only light sources</b></span></div>
+    <p class="small">Values on a 0&ndash;100 IRE scale. These are targets to correct <em>toward</em>, then bend for creative effect afterward.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't crush your blacks</div><p>Slamming the shadows all the way to 0 to make an image "punchy" throws away detail you can never get back — texture in dark clothing, shadow gradients, the roll-off that makes footage feel filmic. Crushed blacks are the number-one giveaway of an over-eager beginner. Leave a little life at the bottom; you can always take it down later for a specific look.</p></div>
+
+<h2>Build contrast — but as a shape, not a slider</h2>
+<p>Contrast is just the distance between your black point and white point plus how the midtones curve between them. Once your points are set, a gentle <strong>S-curve</strong> on the custom curve tool is the most filmic way to add contrast: pull the shadows down a touch and lift the highlights a touch, leaving the middle anchored. This deepens the image without the harsh, video-y look of just cranking a contrast slider.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Highlight roll-off is the "film" feeling</div><p>Digital tends to hit its white ceiling abruptly, which reads as harsh. A soft S-curve that eases the brightest tones as they approach the top — rather than a hard clip — is a big part of what people mean when they say footage looks "cinematic" versus "like video." Roll the highlights, don't wall them.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Correction Step 2 — White Balance</h1>
+<p>With brightness honest, fix color. White balance means making things that should be neutral — a white shirt, a grey wall, a cloudy sky — actually read as neutral instead of tinted orange, blue, or green. The RGB parade is your instrument, because it shows a cast as a plain height difference between channels that no amount of eye-adaptation can hide.</p>
+
+<h2>Neutralize a cast with the parade</h2>
+<ol class="steps">
+  <li><span class="sh">Find something in frame that should be neutral.</span> A white wall, grey pavement, the whites of an eye, a silver object. This is your reference.</li>
+  <li><span class="sh">Watch that area on the parade.</span> If red runs high and blue runs low, the shot is too warm. If blue runs high, too cool. If green runs high, that's the ugly fluorescent/log-green cast.</li>
+  <li><span class="sh">Balance the channels at each range.</span> Nudge the <strong>Lift</strong> wheel to align the three channels in the shadows, <strong>Gamma</strong> to align them in the mids, and <strong>Gain</strong> to align them in the highlights. When all three traces sit level on neutral objects, your cast is gone.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Let the eyedropper do the first pass</div><p>Resolve and Lumetri both have a white-balance <strong>eyedropper/picker</strong>. Click it on something that should be neutral grey and the software auto-balances the channels for you. Use it as a fast starting point, then refine on the parade by eye — the auto-pick gets you 80% there in one click.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Balancing the shadows and highlights separately</div><p>A shot can be warm in the highlights but cool in the shadows — common under mixed lighting, like tungsten lamps plus window daylight. That's why you balance Lift, Gamma, and Gain independently instead of using one global temperature slider. Aligning all three ranges is what makes a mixed-light shot finally look clean.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Neutral is the target, not the destination</div><p>You are correcting to neutral so you have a true baseline — you are <em>not</em> committing to a neutral final look. A cozy interior <em>should</em> feel a little warm in the end. But add that warmth deliberately in the grade, on purpose, on top of a neutral base — don't leave in an accidental cast and call it a style.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Log Footage &amp; LUTs — What's Actually Going On</h1>
+<p>If your footage looks washed-out, grey, and lifeless straight off the camera, and you shot in a mode called Log (S-Log, C-Log, V-Log, Log3, HLG's cousin), that flatness is <strong>on purpose</strong> and it's a good thing. Understanding why is what finally makes LUTs make sense.</p>
+
+<h2>What log is and why it looks flat</h2>
+<p>A camera sensor captures a wide range of brightness — deep shadows to bright highlights — but a normal video file can only store so much before it clips. Log recording squeezes that huge range into the file with a logarithmic curve: it lifts shadows, pulls down highlights, and mutes colors so nothing gets thrown away. It looks flat and grey because the contrast and saturation have been <em>deliberately compressed and stored for later</em>. Log is a raw ingredient — maximum information, no seasoning.</p>
+
+<blockquote>Log footage isn't ugly. It's undeveloped — all the range is there, waiting for you to expand it back out.</blockquote>
+
+<h2>Conversion (technical) LUTs vs look (creative) LUTs</h2>
+<p>A LUT — Look-Up Table — is just a recipe that maps every input color to an output color. There are two fundamentally different kinds, and confusing them is the root of most LUT frustration.</p>
+
+<table>
+  <tr><th></th><th>Conversion / Technical LUT</th><th>Look / Creative LUT</th></tr>
+  <tr><td><strong>Job</strong></td><td>Undo log — expand it back to a normal, neutral image</td><td>Add a creative mood on top of a normal image</td></tr>
+  <tr><td><strong>Example names</strong></td><td>"S-Log3 to Rec.709", "LogC to Rec709"</td><td>"Teal Sunset", "Vintage Film 03"</td></tr>
+  <tr><td><strong>When to apply</strong></td><td>First, to get to a correct baseline</td><td>Last, after correction</td></tr>
+  <tr><td><strong>Interchangeable?</strong></td><td>No — must match your exact camera/log profile</td><td>No — expects a normal image underneath</td></tr>
+</table>
+
+<p>A <strong>conversion LUT</strong> is the "develop" step that turns your specific log profile back into a standard Rec.709 image. It must match your camera and log format exactly — an S-Log3 clip needs an S-Log3-to-Rec709 LUT, not a Canon one. Apply it early and grey footage snaps back to a normal starting point. A <strong>look LUT</strong> is creative — someone's pre-baked mood, designed to sit on a <em>normal</em> Rec.709 image, not on raw log.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Why a look LUT alone fails</div><p>Drop a creative "look" LUT straight onto uncorrected log and it has to fight the flat, lifted, desaturated starting point it was never designed for. You get muddy shadows, weird green skin, and blown, oversaturated highlights. The look isn't broken — it's being asked to style an image that was never developed. Convert (or correct) first, then the same look drops on beautifully.</p></div>
+
+<h2>The correct order with log</h2>
+<ol class="steps">
+  <li><span class="sh">Apply the conversion LUT (or convert manually).</span> Use your camera's matching log-to-Rec709 LUT, or use Resolve's Color Space Transform, to get to a normal image. In Resolve this is often better handled by setting the project's <strong>Color Management</strong> to interpret your log input automatically.</li>
+  <li><span class="sh">Do your correction on top.</span> Fine-tune exposure and white balance as in Chapters 3 and 4 — the conversion gets you close, but every shot still needs balancing.</li>
+  <li><span class="sh">Now grade, or apply a look LUT.</span> With a corrected image underneath, creative looks finally behave.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Dial back any LUT with one slider</div><p>Both Resolve and Lumetri let you reduce a LUT's <strong>intensity/mix</strong>. Look LUTs are almost always too strong at 100%. Apply it, then pull it back to 40&ndash;70% until it enhances the image instead of steamrolling it. A LUT is a starting point, never the finished grade.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>The Primary Grade — Lift, Gamma, Gain</h1>
+<p>Correction is done: the image is neutral and true. Now comes the fun part — the <strong>primary grade</strong>, where you shape the whole frame into a base look using the three color wheels. Master these and you can build almost any mood.</p>
+
+<h2>What each wheel actually controls</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">🌑 Lift = Shadows</div><p>Moves your darkest tones. Push it blue for cool, moody shadows; nudge it warm for a softer black. This is where a lot of "mood" lives.</p></div>
+  <div class="card"><div class="ch">🌗 Gamma = Midtones</div><p>Moves the middle — where most of your subject and skin sit. Small moves here have the biggest visible effect on overall feel.</p></div>
+  <div class="card"><div class="ch">🌕 Gain = Highlights</div><p>Moves your brightest tones. Warm gain gives golden, sunny highlights; cool gain gives a clean, clinical light.</p></div>
+</div>
+
+<p>In Resolve these are the three color wheels on the Color page (with a fourth, <strong>Offset</strong>, that shifts everything at once). In Premiere's Lumetri, the same idea lives in the <strong>Color Wheels</strong> section (Shadows / Midtones / Highlights) plus the temperature and tint sliders.</p>
+
+<h2>A reliable base-look recipe</h2>
+<ol class="steps">
+  <li><span class="sh">Set your contrast and pivot first.</span> Confirm the S-curve from Chapter 3 is giving you clean depth before adding color.</li>
+  <li><span class="sh">Choose a shadow direction.</span> Most cinematic looks push shadows slightly cool. A tiny blue-teal nudge in Lift adds instant atmosphere. Keep it subtle.</li>
+  <li><span class="sh">Warm the highlights or midtones slightly.</span> A touch of warmth where the light and skin live makes people look healthy and the scene inviting.</li>
+  <li><span class="sh">Set overall saturation.</span> Bring saturation to taste — usually a modest lift. Watch the vectorscope so you don't oversaturate into cartoon territory.</li>
+</ol>
+
+<div class="recipe">
+  <div class="rh"><span>Warm, natural base look</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Lift <b>slightly cool</b></span><span class="chip">Gamma <b>neutral / faint warm</b></span><span class="chip">Gain <b>slightly warm</b></span><span class="chip">Saturation <b>+5 to +15</b></span></div>
+    <p class="small">A safe, flattering starting grade for people and daylight scenes. Small moves — you should barely see the wheels leave center.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The orange-and-teal cliché</div><p>Pushing highlights hard orange and shadows hard teal is the most overused grade of the last fifteen years. A little of that complementary split is genuinely flattering; a lot of it screams "I just discovered color wheels." If your footage looks like a blockbuster movie poster, dial it back by half. Restraint reads as taste.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Grade in nodes, not one pile</div><p>In Resolve, keep separate <strong>nodes</strong> for each job: one for the log conversion, one for exposure/balance correction, one for the primary look, one for skin, one for windows/masks. If a shot looks off later, you can fix the exact stage responsible instead of untangling everything. In Premiere, stack multiple Lumetri instances for the same reason — one effect per job.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Skin Tones — Keep People Looking Human</h1>
+<p>Audiences forgive almost any stylistic choice except one: sickly-looking skin. Green, orange, purple, or grey faces break the shot instantly, because everyone knows what people are supposed to look like. Fortunately, healthy skin has a precise, measurable target — and it's the same target for every human being on Earth.</p>
+
+<h2>The skin-tone line on the vectorscope</h2>
+<p>The vectorscope has a diagonal reference line running from the center toward the upper-left, sometimes labeled "I" or "skin tone." Here's the remarkable part: <strong>correctly-lit skin of every ethnicity falls along this same line.</strong> Darker and lighter skin differ in <em>saturation</em> — how far the trace extends along the line — but the <em>angle</em> is the same for everyone. It's a property of blood under skin, and it's astonishingly consistent.</p>
+
+<div class="key"><div class="kt">Remember</div><p>If your subject's skin trace is drifting off the skin-tone line on the vectorscope, they will look unwell — pull it back onto the line and they look human again, every time.</p></div>
+
+<h2>How to check and fix skin</h2>
+<ol class="steps">
+  <li><span class="sh">Isolate the face if you can.</span> Use a temporary window/mask or a qualifier (Chapter 8) so the vectorscope shows mostly skin, not the whole busy frame.</li>
+  <li><span class="sh">Look at the angle of the skin trace.</span> It should point along the skin-tone line. Too far clockwise reads green/yellow; too far counter-clockwise reads pink/magenta.</li>
+  <li><span class="sh">Nudge hue and balance until it sits on the line.</span> Small pushes to your midtone balance or a hue adjustment bring skin back onto target. Fix the whole-image cast first (Chapter 4) — often skin snaps onto the line the moment your overall white balance is right.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Green skin is the log tell</div><p>If faces look faintly green, it's usually leftover log/fluorescent cast that correction missed. Take a little green out of the midtones (add magenta) and watch the skin trace rotate back onto the line. This one move rescues more footage than any creative grade.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't over-warm to "fix" skin</div><p>Beginners drown a face in orange to make it look "healthy" and end up with an Oompa-Loompa. The target is the vectorscope line, not "more orange." Trust the scope over the impulse to keep cranking warmth.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Secondary &amp; Selective Color</h1>
+<p>Everything so far was <em>primary</em> grading — it affects the whole frame at once. <strong>Secondary</strong> grading affects only part of the frame: just the sky, the skin, the red jacket. This is how you make one element pop, tame a distracting color, or fix skin without touching the background. Two tools do the isolating.</p>
+
+<h2>Qualifiers (keys) — isolate by color</h2>
+<p>A <strong>qualifier</strong> (Resolve) or <strong>HSL Secondary</strong> (Lumetri) lets you pick a color with an eyedropper and grade only pixels that match it. Click the sky and you can deepen just the blue; click skin and you can smooth just the faces. You then refine the selection with hue/saturation/luminance sliders until only the thing you want is selected.</p>
+
+<ol class="steps">
+  <li><span class="sh">Pick the color with the eyedropper.</span> Click the element you want to isolate — sky, skin, a green wall.</li>
+  <li><span class="sh">Turn on the selection highlight.</span> View the matte in black-and-white so you can see exactly what's selected. Widen or narrow the hue/sat/luma ranges until only your target is white.</li>
+  <li><span class="sh">Blur/soften the edge slightly.</span> A little softening on the key prevents a hard, cut-out look. Then grade — shift the hue, drop or boost saturation, brighten or darken just that region.</li>
+</ol>
+
+<h2>Power windows &amp; masks — isolate by shape</h2>
+<p>A <strong>power window</strong> (Resolve) or <strong>mask</strong> (Lumetri) isolates a region by drawing a shape — a circle, a rectangle, a free-drawn curve — rather than by color. Use it to darken the corners of the frame (a subtle vignette that pulls the eye to your subject), brighten a face, or hold back an overexposed window.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Track the window so it follows motion</div><p>If your subject moves, a static window will slide off them. Both Resolve and Lumetri have <strong>tracking</strong> — analyze the motion and the window follows the subject through the shot automatically. This is how you keep a face-brightening mask locked on someone as they walk across frame.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Combine a window and a qualifier</div><p>Want to boost only the sky, but the eyedropper also grabs a blue shirt? Draw a power window around the upper part of the frame and put the qualifier inside it. Now you're selecting "blue pixels, but only up here." Shape plus color together is how you isolate almost anything cleanly.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Subtlety is the whole game</div><p>Over-cooked secondaries — a radioactive blue sky, a vignette you can see the edge of, skin smoothed into plastic — look worse than doing nothing. The best secondary work is invisible; the viewer feels the shot is clean and their eye lands where you want, without knowing why.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Matching Shots Across a Scene</h1>
+<p>A single graded shot can look gorgeous and still ruin your edit if the next shot looks nothing like it. Nothing screams "amateur" louder than a conversation where one angle is warm and bright and the reverse angle is cool and dark. <strong>Shot matching</strong> is the workflow that makes a whole sequence feel like one continuous world.</p>
+
+<h2>The hero-shot workflow</h2>
+<ol class="steps">
+  <li><span class="sh">Grade your best "hero" shot first.</span> Pick the most important or best-lit shot in the scene, correct and grade it fully, and make it your reference for everything else.</li>
+  <li><span class="sh">Match every other shot to the hero using scopes.</span> Put the hero and the next shot side by side. Compare their parades: line up the black points, the white points, and the channel balance so both read the same. Match the numbers, not just the feel.</li>
+  <li><span class="sh">Correct each shot to neutral, then copy the look.</span> Balance each new shot on its own first, <em>then</em> apply the same creative grade. This is why correction-before-grading matters at sequence scale: a shared look only lands consistently on shots that were each neutralized first.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Use the split-screen and stills</div><p>Resolve lets you <strong>grab a still</strong> of your hero shot and wipe it against the current clip for a direct side-by-side comparison. Premiere users can use a comparison view or simply toggle between clips. Matching against a reference image beats matching from memory every time — your eyes forget the last shot within seconds.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Match faces and neutrals, not the whole frame</div><p>Two shots of the same scene may frame different backgrounds, so don't try to make the whole image identical. Match the things that <em>should</em> be constant: skin tone on the same person, a white shirt, the color of the light. Get those consistent and the eye reads the whole scene as matched, even if the backgrounds differ.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Beware the auto-match button</div><p>Resolve's <strong>Shot Match</strong> and similar auto tools can get you a rough starting point, but they frequently overshoot or misread mixed lighting. Treat any automatic match as a first draft to refine on the scopes — never as the final answer.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>Save the Look &amp; Export Right</h1>
+<p>You've corrected, graded, protected skin, isolated regions, and matched your scene. Two things remain: <strong>saving your look so you can reuse it</strong>, and <strong>exporting so it survives the trip to YouTube, Instagram, and everyone's phone</strong> without turning washed-out or dark.</p>
+
+<h2>Save and reuse your grade</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🎞️ Export a still / grade</div><p>In Resolve, save a graded shot as a <strong>still</strong> (in the gallery) or copy the grade from clip to clip. This carries your exact node tree to the next shot instantly.</p></div>
+  <div class="card"><div class="ch">📤 Export a LUT</div><p>Once you've built a look you love, export it as a <strong>.cube LUT</strong>. Now you can reuse that exact grade on future projects — or drop it in Premiere. Your own signature look, bottled.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Export the look on a clean node</div><p>When you export a LUT, remember it captures the color transform, not shot-specific corrections. Build your reusable look on a node that assumes an already-corrected image — so the LUT stays a "look" and doesn't bake in one clip's exposure fix.</p></div>
+
+<h2>Deliver in Rec.709 so it doesn't wash out</h2>
+<p>Here is the last trap, and it catches almost everyone: you finish a beautiful grade, export, upload — and online it looks flat, grey, or washed-out. The cause is a <strong>color space mismatch</strong>. Standard web video expects <strong>Rec.709</strong>, the reference standard for normal (non-HDR) video. If your project or export isn't set up for Rec.709, players and phones misinterpret your colors and the contrast falls apart.</p>
+
+<div class="key"><div class="kt">Remember</div><p>Grade and monitor in Rec.709, and export in Rec.709 — matching your grading environment to your delivery target is what keeps the image you built from washing out the moment it leaves your machine.</p></div>
+
+<ul class="check">
+  <li>Set your project timeline/output color space to <strong>Rec.709</strong> for normal web and social delivery.</li>
+  <li>Grade on a monitor showing Rec.709, not raw log, so what you see is what you export.</li>
+  <li>Export with a widely-compatible codec (H.264/H.265) at a healthy bitrate — low bitrate crushes your careful gradients into banding.</li>
+  <li>Keep the tag/flag correct: a Rec.709 file marked as something else is exactly what makes footage look faded online.</li>
+  <li>Test on a phone before you publish — most of your audience watches there, and it's where mismatches show worst.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't accidentally deliver raw log</div><p>Exporting the flat log image because you forgot the conversion is the most washed-out result possible. If your export looks grey and lifeless, check that your log-to-Rec709 conversion is active on the render, not just in your viewer preview.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your practice project this week</div><p>Take one 30-second clip and run the whole pipeline in order: read the scopes, set black and white points, balance on the parade, convert the log, build a primary look, check skin on the vectorscope, then export in Rec.709. Do it once, start to finish, and the sequence will finally be muscle memory instead of a pile of disconnected tutorials.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The habit that separates pros</div><p>Every professional colorist does the same unglamorous thing: they correct to neutral and confirm it on the scopes <em>before</em> they have any fun with the look. Build that discipline and consistency stops being luck — your footage matches, your skin looks human, and your grade survives the upload.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Color isn't a filter you apply — it's a craft you build, one honest correction at a time, until the mood you felt on set is the mood on the screen.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

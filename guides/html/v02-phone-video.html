@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Shoot Better Video on Your Phone — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #0891b2;
+  --accent2: #22d3ee;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">MOBILE FILMMAKING</div>
+    <div style="margin-top:auto"></div>
+    <h1>Shoot Better Video on Your Phone</h1>
+    <div class="rule"></div>
+    <div class="sub">Pro-Looking Footage From the Phone in Your Pocket</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$29 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Pro-Looking Footage From the Phone in Your Pocket. Written for creators and small businesses filming on a smartphone.</div>
+  <ol><li><span class="t">The Cinema Camera in Your Pocket</span></li><li><span class="t">The Settings That Matter</span></li><li><span class="t">Lock Focus & Exposure</span></li><li><span class="t">Hold It Steady</span></li><li><span class="t">Native Camera vs. Pro Camera Apps</span></li><li><span class="t">Light Is the Whole Game</span></li><li><span class="t">Phone Audio Is the Weak Link</span></li><li><span class="t">Edit on the Phone</span></li><li><span class="t">Gear That Actually Helps</span></li><li><span class="t">A Simple, Repeatable Workflow</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>The Cinema Camera in Your Pocket</h1>
+<p class="lead-in">The phone in your hand shoots sharper, more color-accurate footage than the film cameras that made blockbusters a generation ago. So why does your video still look like "phone video" and someone else's looks like a commercial? It is almost never the phone. It is a short list of habits — settings, light, sound, and how you hold the thing — and every one of them is free to fix.</p>
+
+<p>Here is the truth nobody selling you a $2,000 camera wants to say out loud: <strong>a modern smartphone is a genuinely professional video tool.</strong> Filmmakers shoot festival films on them. Brands shoot ad campaigns on them. The sensor and processor in your pocket are astonishing. What separates "phone video" from "camera video" is not the camera — it is a handful of choices the pro makes automatically and the beginner never knows to make.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Pro-looking phone video comes from five controllable things — steady framing, locked focus and exposure, good light, clean audio, and the right settings — not from a better phone.</p></div>
+
+<h2>What actually separates phone video from "camera" video</h2>
+<p>When people say footage looks "cheap," they are almost always reacting to one of these five tells. None of them require new hardware.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🤳 Shaky, drifting frames</div><p>The camera never sits still. Real productions lock the shot down. Chapter 4 fixes this with your hands and free settings.</p></div>
+  <div class="card"><div class="ch">😵 Focus &amp; exposure "pulsing"</div><p>The image hunts, brightens, and re-focuses mid-shot. That auto-adjusting is the single biggest amateur giveaway. Chapter 3 kills it.</p></div>
+  <div class="card"><div class="ch">🔦 Flat or ugly light</div><p>Overhead bulbs, backlit windows, dark faces. Light is what "cinematic" actually means. Chapter 6.</p></div>
+  <div class="card"><div class="ch">🎙️ Thin, echoey sound</div><p>Audiences forgive soft video but never bad audio. It is your weakest link. Chapter 7.</p></div>
+</div>
+
+<h2>How to use this guide</h2>
+<p>Read Chapters 2 and 3 first — settings and locking focus/exposure are the foundation everything else sits on. Then work through light and audio, which do more for "cinematic" than any camera setting. The last chapter is a repeatable workflow you can run on every single shoot.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works on iPhone and Android</div><p>Everything here is true across both. Menu wording differs by phone and updates constantly, so this guide describes <em>what to look for</em>, not exact taps. When a feature has different names, we give the common variants.</p></div>
+
+<h1><span class="n">CHAPTER 1</span>The Settings That Matter</h1>
+<p>Your phone ships with video settings chosen to save storage, not to look good. A few deliberate changes in your camera settings — done once — put you ahead of ninety percent of phone shooters. Let's separate the settings that genuinely matter from the ones that don't.</p>
+
+<h2>Resolution: shoot 4K, always</h2>
+<p><strong>4K</strong> means roughly four times the pixels of 1080p. Even if your final video lives on Instagram or a phone screen, shoot in 4K anyway. The extra resolution lets you <em>crop and reframe</em> in editing — punch in for a tighter shot, straighten a horizon, or fix loose framing — without the image going soft. It is the cheapest insurance in video.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>4K gives you a free second angle</div><p>Shoot a wide 4K interview, then in your 1080p edit you can zoom in for a "close-up" cutaway from the same clip. One take, two shots. That trick alone is worth the storage.</p></div>
+
+<h2>Frame rate: what 24, 30, and 60 actually do</h2>
+<p>Frame rate is how many still images per second the phone records. It changes the <em>feel</em> of motion more than almost anything.</p>
+
+<table>
+  <tr><th>Frame rate</th><th>Feel</th><th>Use it for</th></tr>
+  <tr><td><strong>24 fps</strong></td><td>The "film" look — a subtle, dreamy motion blur cinema trained us to read as premium</td><td>Story, brand, mood, anything you want to feel like a movie</td></tr>
+  <tr><td><strong>30 fps</strong></td><td>Clean, neutral, "broadcast" — slightly crisper motion than 24</td><td>Talking-head, tutorials, social, a safe default</td></tr>
+  <tr><td><strong>60 fps</strong></td><td>Ultra-smooth, hyper-real — and it can slow to gorgeous slow motion</td><td>Action, sports, product motion, B-roll you'll slow down</td></tr>
+</table>
+
+<h3>Why not just shoot 60 for everything?</h3>
+<p>Because 60 fps looks <em>too</em> smooth for storytelling — it reads as "live TV" or "home video," the opposite of cinematic. It also doubles your file sizes and demands more light. Use 60 fps intentionally, for motion you plan to slow down or for action you want crisp, not as a default.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Pick a frame rate and commit</div><p>Mixing 24 and 30 fps clips in one edit makes motion stutter. Choose one frame rate for a project and shoot the whole thing at it. Only break out 60 fps for clips you specifically intend to slow down.</p></div>
+
+<h2>Format: efficiency vs. quality</h2>
+<p>Your phone offers a choice of how it compresses video. On iPhone this is <strong>High Efficiency (HEVC/H.265)</strong> vs. <strong>Most Compatible (H.264)</strong>; on Android it is usually an HEVC toggle. There's also the pro tier: <strong>ProRes</strong> (iPhone) and <strong>log/high-bitrate</strong> modes.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">📦 High Efficiency (HEVC)</div><p>Smaller files, excellent quality. The right default for almost everyone. Editing apps like CapCut handle it fine.</p></div>
+  <div class="card"><div class="ch">🎬 ProRes / high-bitrate</div><p>Huge files, maximum quality and color flexibility for grading. For serious projects with lots of storage — most creators don't need it.</p></div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Your everyday default</span><span class="tag">SET IT ONCE</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Resolution <b>4K</b></span><span class="chip">Frame rate <b>24 or 30 fps</b></span><span class="chip">Format <b>HEVC / High Efficiency</b></span></div>
+    <p class="small">This is the "make everything look better" baseline. Set it in your camera's video settings and forget it.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Slow-motion &amp; action</span><span class="tag">WHEN MOTION MATTERS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Resolution <b>4K</b></span><span class="chip">Frame rate <b>60 fps</b></span><span class="chip">Format <b>HEVC / High Efficiency</b></span></div>
+    <p class="small">Shoot at 60, drop it into a 24 or 30 fps timeline, and it plays back in smooth slow motion.</p>
+  </div>
+</div>
+
+<h1><span class="n">CHAPTER 2</span>Lock Focus &amp; Exposure</h1>
+<p>If you fix only one thing in this entire guide, make it this. That distracting moment where your video suddenly brightens, dims, or re-focuses on its own — the "hunting" or "pulsing" — is the loudest amateur signal there is. Professionals lock focus and exposure so the image stays rock-steady. Your phone can do it for free, right now.</p>
+
+<h2>Why the phone keeps re-adjusting</h2>
+<p>By default your camera is <em>continuously</em> guessing what to focus on and how bright the scene should be. Someone walks past, you tilt the phone, a cloud moves — and the camera "corrects," visibly, mid-shot. Great for a quick snapshot, terrible for a controlled video.</p>
+
+<h2>Tap and hold to lock it (AE/AF Lock)</h2>
+<p>On nearly every phone, <strong>tap and hold</strong> on your subject for a second. A banner appears — "AE/AF Lock" on iPhone, a lock icon on Android — and now both focus and exposure are frozen exactly where you want them. The image stops hunting instantly.</p>
+
+<ol class="steps">
+  <li><span class="sh">Frame your shot first.</span> Decide what should be sharp and how bright the scene should be.</li>
+  <li><span class="sh">Tap and hold on your subject.</span> Hold until the lock indicator appears, then let go. Focus and exposure are now locked to that spot.</li>
+  <li><span class="sh">Record.</span> The image will not drift no matter what moves through the frame. Tap once anywhere to release the lock when you're done.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Locked focus means locked distance</div><p>Once focus is locked, moving closer or farther will soften your subject. Lock at the distance you'll actually film at, and if you need to move a lot, either re-lock or use a pro app that lets you pull focus (Chapter 5).</p></div>
+
+<h2>Exposure compensation: dial the brightness by hand</h2>
+<p>After you lock exposure, most cameras let you <strong>slide a little sun icon up or down</strong> to make the shot brighter or darker to taste. This is exposure compensation, and it's how you stop the phone from blowing out a bright window or crushing a face into shadow.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Protect the highlights</div><p>When in doubt, expose <em>slightly darker</em>. A face that's a touch dark can be lifted in editing; a bright sky or window that's blown to pure white is gone forever. Slide exposure down until the brightest parts just hold their detail.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this right now</div><p>Film a friend standing in front of a bright window twice. First let the camera auto-adjust — watch their face fall into silhouette. Then tap-hold to lock on their face and slide exposure up. The difference between "phone video" and "controlled video" will be sitting right there on your screen.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Hold It Steady</h1>
+<p>Shaky footage screams amateur louder than almost anything. The fix is partly technique — how you physically hold the phone — and partly knowing which stabilization to lean on and which to switch off. You can get remarkably smooth footage with no gimbal at all.</p>
+
+<h2>Grip and bracing</h2>
+<p>Your body is a tripod you already own. Use it.</p>
+
+<ul class="check">
+  <li>Hold the phone with <strong>both hands</strong>, not one — a two-handed grip halves your shake instantly.</li>
+  <li>Tuck your <strong>elbows into your ribs</strong> to lock your arms against your torso.</li>
+  <li>Exhale slowly as you start recording; hold your breath through short shots.</li>
+  <li>Lean against a wall, doorframe, or car — any point of contact steals shake.</li>
+  <li>To move, walk <strong>heel-to-toe</strong> with bent knees, gliding rather than stepping.</li>
+</ul>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The "human tripod" turn</div><p>For a smooth pan, don't twist your wrists — plant your feet, hold the phone locked to your chest, and rotate your <em>whole torso</em> from the hips. Your arms stay rigid; your body does the moving. It's the smoothest pan you can get without gear.</p></div>
+
+<h2>Built-in stabilization modes</h2>
+<p>Modern phones stabilize video in software, and it's genuinely good. iPhones apply it automatically; many also offer an <strong>Action</strong> mode for heavy movement. Android phones often have a <strong>Steady/Super Steady</strong> toggle. For normal handheld shooting, leave the standard stabilization on — it smooths out your micro-shake for free.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>When to turn stabilization off</div><p>Aggressive modes (Action / Super Steady) crop in tighter, hurt low-light quality, and can produce a floaty, warping "jello" wobble on slow or static shots. If you're locked on a tripod or filming a calm, still scene, switch the heavy stabilization <strong>off</strong> — you don't need it, and it can add motion that wasn't there.</p></div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>The cheapest upgrade of all</div><p>A small tripod or a phone grip costs a few dollars and eliminates shake entirely for any static shot — interviews, product, tutorials. Before you consider a gimbal, own a tripod.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Native Camera vs. Pro Camera Apps</h1>
+<p>Your built-in camera app is excellent and, for most shoots, all you need. But there's a tier of "pro" camera apps that hand you manual control the native app hides. Knowing what they add — and whether you actually need it — saves you both money and menu-fumbling.</p>
+
+<h2>What the native app does well</h2>
+<p>The stock camera is fast, reliable, and superbly tuned by the phone maker. With tap-to-lock focus/exposure and the settings from Chapter 1, it produces beautiful results. Never feel you <em>must</em> graduate to something else.</p>
+
+<h2>What pro apps add</h2>
+<p>Apps like <strong>Blackmagic Camera</strong> (free) and <strong>Filmic Pro</strong> exist to give you direct, independent control over the things the native app decides for you.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🎛️ Manual control</div><p>Set shutter, ISO, and white balance independently — and crucially, <em>lock</em> them so nothing drifts between shots.</p></div>
+  <div class="card"><div class="ch">🎯 Focus pulling</div><p>Smoothly rack focus from one subject to another mid-shot, a signature cinematic move the native app can't do.</p></div>
+  <div class="card"><div class="ch">📊 Pro monitoring</div><p>Tools like zebras (overexposure warning), focus peaking, and histograms to nail exposure and focus precisely.</p></div>
+  <div class="card"><div class="ch">🎨 Log recording</div><p>A flat, low-contrast "log" profile that captures more shadow and highlight detail for heavy color grading in the edit.</p></div>
+</div>
+
+<h3>A word on "log" on phones</h3>
+<p><strong>Log</strong> is a flat picture profile that records the widest range of brightness the sensor can hold, giving you maximum freedom to color-grade later. Newer iPhones can shoot <strong>Apple Log</strong>; some pro apps offer their own log modes. It's powerful — but only worth it if you actually <em>grade</em> your footage afterward. Log footage looks washed-out and gray straight off the phone and must be corrected in editing.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Do you need a pro app?</div><p>If you shoot talking-head content, social clips, or product videos, the native app plus locked exposure is plenty. Reach for a pro app when you need manual shutter control, focus pulls, or log — i.e. when you're grading and want cinematic control. Otherwise the native app wins on speed and reliability.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The 180° shutter rule (for the curious)</div><p>If a pro app lets you set shutter speed, the film-look convention is to keep it at <strong>double your frame rate</strong> — 1/48s (or 1/50s) for 24 fps, 1/60s for 30 fps. This gives motion the natural blur cinema uses. Too fast a shutter makes movement look stuttery and video-gamey. Don't touch this in the native app; it's an advanced, pro-app-only control.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Light Is the Whole Game</h1>
+<p>Ask a professional what makes footage "cinematic" and they won't say the camera — they'll say the light. Your phone's tiny sensor is a magnificent thing in good light and a noisy, mushy mess in bad light. Master light and even an old phone looks expensive. Ignore it and no phone can save you.</p>
+
+<div class="key"><div class="kt">The core truth</div><p>Phones love light and hate the dark. Ninety percent of "cinematic" is just putting good light on your subject.</p></div>
+
+<h2>The window is your studio</h2>
+<p>A large window is the best free light you own — soft, flattering, and directional. The rule is simple: <strong>face your subject toward the window,</strong> so the light falls <em>on</em> them, not behind them.</p>
+
+<ol class="steps">
+  <li><span class="sh">Put the window in front of your subject.</span> They face it; you and the phone stand between them and the window (or off to one side).</li>
+  <li><span class="sh">Never film with the window behind the subject.</span> Backlight tricks the camera into darkening the face into a silhouette — the classic "why is my video so dark" mistake.</li>
+  <li><span class="sh">Use a sheer curtain to soften harsh sun.</span> Direct sunlight is hard and unflattering; diffused window light is gorgeous.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Side light adds depth</div><p>Light hitting your subject from a 45° angle carves out shape and dimension — it looks far more "produced" than flat light blasting straight on. Turn your subject slightly so one side of the face is a touch brighter than the other.</p></div>
+
+<h2>Avoid the overhead-light trap</h2>
+<p>Standard ceiling lights come from straight above, casting ugly shadows into eye sockets and under noses — the "raccoon eyes" look. Whenever you can, turn overheads off and light your subject from the front instead, with a window or a lamp roughly at eye level.</p>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>One cheap light changes everything</div><p>A small LED panel or a ring light (often $15–40) placed in front of your subject, slightly above eye level, gives you clean, controllable light any time of day. It's the single most cost-effective way to make indoor phone video look intentional.</p></div>
+
+<h2>Why the phone hates low light</h2>
+<p>In dim scenes the phone cranks up its sensitivity to see anything at all, and that introduces <strong>noise</strong> — that grainy, crawling, smeary texture that instantly reads as "cheap." The phone also slows down and struggles to focus. There's no setting that fixes darkness. The only real cure is <em>more light on the subject.</em></p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this</div><p>Film yourself talking in a dim room, then again facing a bright window. Same phone, same words. The window version will look like a different, far more expensive camera. That gap is light — and it's entirely in your control.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Phone Audio Is the Weak Link</h1>
+<p>Here's a hard rule of video: audiences will forgive footage that's a little soft, but they will click away in seconds from bad audio. Thin, echoey, distant sound is the fastest way to look amateur — and your phone's built-in microphone is, honestly, the weakest part of the whole system.</p>
+
+<h2>Why the built-in mic struggles</h2>
+<p>Your phone's mic is tiny and lives far from your subject. It picks up the <em>room</em> as much as the voice — echo off hard walls, air conditioning, traffic, the hollow "filmed in a bathroom" sound. And because it's far away, voices come out thin and distant. None of that is fixable in editing; you have to capture clean sound at the source.</p>
+
+<div class="key"><div class="kt">The one rule of audio</div><p>Get the microphone close to the mouth. Distance is the enemy of good sound.</p></div>
+
+<h2>The fixes, cheapest first</h2>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">📏 Get close</div><p>Free. Halve the distance between mic and mouth and you dramatically improve clarity and cut room echo. If you're using the phone's mic, film from a few feet, not across the room.</p></div>
+  <div class="card solid"><div class="ch">🎙️ A cheap lav/external mic</div><p>A small clip-on (lavalier) or plug-in mic gets the microphone inches from the mouth. This is the highest-impact upgrade in phone video — often more than a new phone.</p></div>
+  <div class="card solid"><div class="ch">🔇 Control the room</div><p>Record in a soft, small space — carpet, curtains, a closet of clothes. Hard, empty rooms echo. Kill fans, AC, and background noise before you roll.</p></div>
+  <div class="card solid"><div class="ch">🎧 Record separately</div><p>For interviews, record audio on a second phone or recorder placed close to the subject, then sync it to the video in editing. Pro-level clean sound for almost nothing.</p></div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Wireless lav systems are the sweet spot</div><p>Compact wireless mic kits that plug straight into your phone have gotten cheap and excellent. You clip a tiny transmitter on your subject and it beams close-up, broadcast-clean audio to your phone. For any talking-based content, this is the upgrade that makes people ask what camera you used.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Always monitor and test</div><p>Record ten seconds and play it back <em>before</em> the real take. Listen for wind, hum, clipping, and echo. Nothing is more painful than a perfect performance ruined by audio you never checked.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Edit on the Phone</h1>
+<p>You don't need a computer. Free mobile editors like <strong>CapCut</strong>, along with the built-in Photos editor and apps like InShot, are powerful enough to cut a polished video entirely on your phone. Here's a simple, repeatable workflow that keeps editing fast instead of overwhelming.</p>
+
+<h2>A simple mobile edit, start to finish</h2>
+<ol class="steps">
+  <li><span class="sh">Import your clips and set your aspect ratio first.</span> Decide vertical or horizontal (below) before you cut, so your framing choices make sense.</li>
+  <li><span class="sh">Cut for pace.</span> Trim the dead air off the start and end of each clip. Get to the point fast — attention is short. Cut anything that doesn't move the story.</li>
+  <li><span class="sh">Lay in your best audio.</span> Sync any separately recorded sound, then add music quietly under the voice — never so loud it competes.</li>
+  <li><span class="sh">Add captions.</span> A huge share of viewers watch muted. Auto-captions make your video watchable without sound (see below).</li>
+  <li><span class="sh">Color and polish last.</span> A touch of contrast and warmth. If you shot log, this is where you grade it back to life.</li>
+  <li><span class="sh">Export at 1080p (or 4K) and check it on your phone before posting.</span></li>
+</ol>
+
+<h2>Verticals vs. horizontals</h2>
+<p>Shape your video to where it will live, and ideally frame for it while shooting.</p>
+
+<table>
+  <tr><th>Format</th><th>Aspect ratio</th><th>Where it belongs</th></tr>
+  <tr><td><strong>Vertical</strong></td><td>9:16</td><td>Reels, TikTok, Shorts, Stories — anything watched on a phone held upright</td></tr>
+  <tr><td><strong>Horizontal</strong></td><td>16:9</td><td>YouTube, websites, TVs, presentations — the classic "cinematic" frame</td></tr>
+  <tr><td><strong>Square</strong></td><td>1:1</td><td>In-feed social posts where either orientation gets cropped</td></tr>
+</table>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Shoot 4K horizontal, crop to vertical later</div><p>If you're unsure where a clip will end up, film it horizontally in 4K. The extra pixels let you crop a clean vertical version out of it in editing — one shoot feeds both YouTube and Reels.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Captions matter more than you think</div><p>Auto-caption tools in CapCut and similar apps transcribe your speech into on-screen text in seconds. Always proofread them — they mishear names and jargon — but captioned video holds viewers far longer, especially the silent scrollers.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Gear That Actually Helps</h1>
+<p>You can shoot beautiful video with nothing but your phone. But a few cheap accessories punch far above their price — and a few popular ones are a waste until much later. Here's where your money actually moves the needle, in order.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🥇 Tripod / phone grip</div><p><strong>Buy first.</strong> Cheap, and it eliminates shake for every static shot instantly. The highest value-per-dollar in your kit.</p></div>
+  <div class="card"><div class="ch">🥈 An external mic</div><p><strong>Buy second.</strong> Fixes your weakest link. A lav or wireless kit does more for perceived quality than almost any other purchase.</p></div>
+  <div class="card"><div class="ch">🥉 A small light</div><p><strong>Buy third.</strong> An LED panel or ring light rescues indoor and night shooting where the phone struggles most.</p></div>
+  <div class="card"><div class="ch">🎯 A gimbal</div><p><strong>Buy later.</strong> Gives buttery motion for moving shots — but built-in stabilization is so good now that most creators don't need one early.</p></div>
+</div>
+
+<h2>What to skip (for now)</h2>
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Save your money on these</div><p><strong>Clip-on phone lenses</strong> mostly add flare and softness and rarely beat your phone's own lenses. <strong>Expensive filters</strong> and gadget-y rigs won't fix technique. And a <strong>new phone</strong> is almost never the answer — a tripod, a mic, and a light will transform your video for a fraction of the cost.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Spend in this order</div><p>Tripod, then mic, then light, then — only if your work genuinely needs smooth moving shots — a gimbal. Master the free technique in this guide before spending a cent, and you'll know exactly what you're missing when you do buy.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>A Simple, Repeatable Workflow</h1>
+<p>Here's everything in this guide compressed into a checklist you can run on every shoot. Do these in order and your footage will look controlled, clean, and intentional — the whole difference between "phone video" and "video that happens to be shot on a phone."</p>
+
+<div class="recipe">
+  <div class="rh"><span>Before you press record</span><span class="tag">RUN EVERY TIME</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Settings <b>4K · 24/30 fps · HEVC</b></span><span class="chip">Focus/exposure <b>tap &amp; hold to lock</b></span><span class="chip">Audio <b>close &amp; tested</b></span></div>
+    <p class="small">Three checks, ten seconds. They prevent the mistakes you can't fix later.</p>
+  </div>
+</div>
+
+<h2>The full field checklist</h2>
+<ul class="check">
+  <li><strong>Settings set:</strong> 4K, your chosen frame rate, High Efficiency format.</li>
+  <li><strong>Light sorted:</strong> subject facing a window or light, never backlit; overheads off.</li>
+  <li><strong>Frame chosen:</strong> vertical or horizontal decided before you shoot.</li>
+  <li><strong>Steady:</strong> tripod for static shots, or two-handed braced grip; heavy stabilization off if you're locked down.</li>
+  <li><strong>Focus &amp; exposure locked:</strong> tap-and-hold on your subject, exposure nudged to protect highlights.</li>
+  <li><strong>Audio close and tested:</strong> mic near the mouth, ten-second test played back.</li>
+  <li><strong>Roll a few seconds of handle</strong> before and after the action, so you have room to trim in editing.</li>
+</ul>
+
+<h2>Then, in the edit</h2>
+<ol class="steps">
+  <li><span class="sh">Trim ruthlessly for pace.</span> Cut dead air; start on the action.</li>
+  <li><span class="sh">Clean up the audio and add music low.</span> Voice always wins over music.</li>
+  <li><span class="sh">Add and proofread captions.</span> Half your audience is watching muted.</li>
+  <li><span class="sh">Grade last, gently.</span> A little contrast and warmth; bring log footage back to life here.</li>
+  <li><span class="sh">Export and watch it through once on your phone before it goes live.</span></li>
+</ol>
+
+<blockquote>The pro isn't the one with the best camera. It's the one who locked the exposure, faced the light, and got the mic close — every single time.</blockquote>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your challenge this week</div><p>Shoot one 30-second clip running this entire checklist — 4K, locked exposure, window light, close mic, on a tripod. Then watch an old clip you shot without it. Seeing that gap on your own footage is the moment phone video stops being a compromise and becomes your camera.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>The best camera is the one in your pocket — and once you control the light, the sound, and the settings, it's every bit as cinematic as the expensive one you don't need.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

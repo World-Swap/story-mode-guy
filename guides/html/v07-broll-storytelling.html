@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>B-roll &amp; Visual Storytelling — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #0f766e;
+  --accent2: #14b8a6;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">STORYTELLING</div>
+    <div style="margin-top:auto"></div>
+    <h1>B-roll &amp; Visual Storytelling</h1>
+    <div class="rule"></div>
+    <div class="sub">Turn Flat Clips Into Videos People Watch to the End</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$27 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Turn Flat Clips Into Videos People Watch to the End. Written for creators whose videos feel boring or aimless.</div>
+  <ol><li><span class="t">Your Videos Aren't Boring — They're Under-Covered</span></li><li><span class="t">What B-roll Is & Why It Saves Every Edit</span></li><li><span class="t">Think in Sequences, Never Single Clips</span></li><li><span class="t">The 5-Shot Method</span></li><li><span class="t">Build a Shot List</span></li><li><span class="t">Matching Action & Motivated Cuts</span></li><li><span class="t">Story Structure Without a Script</span></li><li><span class="t">Get Enough Coverage</span></li><li><span class="t">Pace, Music & Emotion</span></li><li><span class="t">A Repeatable B-roll Workflow</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Your Videos Aren't Boring — They're Under-Covered</h1>
+<p class="lead-in">You point the camera at yourself, you say the thing, you hit stop. The footage is fine. And yet nobody watches to the end — including you, when you rewatch it. The problem almost never lives in what you said. It lives in the fact that there was only ever <em>one thing to look at</em>. This guide fixes that, permanently.</p>
+
+<p>Here is the good news, stated plainly: <strong>an engaging video is an assembly problem, not a personality problem.</strong> You don't need to be more charismatic on camera. You need more <em>pieces</em> — more angles, more moments, more detail — so that the edit always has somewhere interesting to cut. That pile of extra pieces has a name: B-roll. And learning to shoot and use it is the single biggest jump most creators ever make.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>People stay for stories, and stories are built from coverage — so shoot every moment as a small sequence of shots, not a single clip.</p></div>
+
+<h2>A-roll vs B-roll</h2>
+<p>Two words to lock in before anything else, because the rest of the guide leans on them.</p>
+<div class="cards">
+  <div class="card"><div class="ch">🎙️ A-roll</div><p>Your <strong>main</strong> footage — the thing carrying the message. Someone talking to camera, an interview, a voiceover-driving scene. It's the spine.</p></div>
+  <div class="card"><div class="ch">🎬 B-roll</div><p>Everything you cut <strong>away</strong> to — hands working, the room, the product, the street, a close-up of a face reacting. It's the muscle and skin on the spine.</p></div>
+</div>
+
+<p>Beginners shoot only A-roll and wonder why it feels flat. It feels flat because a single unbroken clip of a person talking gives the eye nothing to discover. B-roll gives the eye somewhere to go, hides your edits, and — this is the part people miss — it's how you actually <em>show a story</em> instead of just narrating one.</p>
+
+<h2>What "story" actually means here</h2>
+<p>Forget three-act screenwriting for a second. At the working level, a story is just this: <strong>something changes, and you take the viewer along for the change.</strong> Coffee beans become a finished cup. An empty room becomes a set. A confused person becomes a confident one. Your job is to capture the <em>before</em>, the <em>middle</em>, and the <em>after</em> — and B-roll is how you make each of those visible.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with any camera</div><p>Everything here applies to a cinema camera, a mirrorless body, or the phone in your pocket. Story and coverage are habits, not gear. A shot list costs nothing and improves a phone video more than any lens ever will.</p></div>
+
+<h2>How to use this guide</h2>
+<p>Read in order the first time — each chapter builds on the last. Chapters 3–6 are the craft core (sequences, the 5-shot method, shot lists, cutting). Chapter 10 is a one-page workflow you can run on any shoot; screenshot it and keep it on your phone.</p>
+
+<h1><span class="n">CHAPTER 2</span>What B-roll Is &amp; Why It Saves Every Edit</h1>
+<p>B-roll isn't decoration you sprinkle on at the end. It's a structural tool that does three specific jobs in the edit — and once you see the jobs, you'll start shooting for them on purpose.</p>
+
+<h2>Job 1 — It hides your cuts</h2>
+<p>Say you filmed yourself explaining something in two takes, and you want to stitch the good half of each together. Cut A-roll straight to A-roll and you get a "jump cut" — the person visibly teleports, and it looks like a mistake. Lay a piece of B-roll over the seam and the jump vanishes. The viewer sees relevant imagery; the audio flows underneath; the edit is invisible.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The covering cut</div><p>Any time you need to shorten, tighten, or splice your talking, ask: "What could the viewer be looking at instead of my face right here?" That shot is your cover. This one trick is why B-roll exists in the first place.</p></div>
+
+<h2>Job 2 — It adds context and proof</h2>
+<p>You <em>say</em> "I roasted these beans this morning." B-roll <em>shows</em> the beans, the roaster, the timer. Telling is weak; showing is proof. Whenever your A-roll makes a claim or names a thing, there's a B-roll shot that backs it up — and the video instantly feels more credible and more alive.</p>
+
+<h2>Job 3 — It controls pace</h2>
+<p>A wall of talking-head is exhausting to watch. Cutting to a quiet B-roll shot lets a point land and gives the viewer a breath. Cutting to a fast series of tight shots injects energy. B-roll is the throttle: you speed up and slow down the feel of a video by <em>how</em> and <em>how often</em> you cut away.</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🩹 Cover</div><p>Hide jump cuts and tighten rambling A-roll so edits disappear.</p></div>
+  <div class="card"><div class="ch">🧾 Context</div><p>Show the thing you're talking about — proof beats description.</p></div>
+  <div class="card"><div class="ch">🎚️ Pace</div><p>Speed a scene up or let a moment breathe by controlling the cuts.</p></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>B-roll is not "random pretty shots"</div><p>The most common mistake is filming aimless scenery that has nothing to do with what's being said, then wondering why it feels like filler. Good B-roll is <em>motivated</em> — it illustrates the exact idea on screen at that moment. If a shot doesn't cover, contextualize, or pace, you probably don't need it.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Think in Sequences, Never Single Clips</h1>
+<p>Here is the mental shift that separates flat video from cinematic video: <strong>you never film "a thing." You film a sequence about a thing.</strong> One clip of a coffee cup is inventory. Four clips of that cup — from far, from mid, from close, and a tiny detail — is a scene the eye can move through.</p>
+
+<h2>The four shot sizes</h2>
+<p>Every subject can be covered at four distances. Learn these four words and you'll never stand there wondering what to shoot next.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🏞️ Wide (establishing)</div><p>Shows the whole scene and where everything is. The café, the room, the person <em>in</em> their space. It answers "where are we?"</p></div>
+  <div class="card"><div class="ch">🧍 Medium</div><p>Waist-up on a person, or the subject and its immediate surroundings. The workhorse shot — natural, conversational, easy to cut to.</p></div>
+  <div class="card"><div class="ch">🔍 Tight (close-up)</div><p>Fills the frame with the subject — a face, two hands at work. This is where emotion and intent live.</p></div>
+  <div class="card"><div class="ch">💧 Detail (macro / insert)</div><p>The tiny specific: a drip, a switch, a label, an eye. Details make a video feel considered and expensive.</p></div>
+</div>
+
+<h2>Example — filming someone making coffee</h2>
+<p>Don't shoot "a person making coffee" as one clip. Shoot the <em>sequence</em>:</p>
+<ul class="check">
+  <li><strong>Wide:</strong> the whole kitchen, person entering the frame toward the machine.</li>
+  <li><strong>Medium:</strong> them at the counter, grinding, waist-up.</li>
+  <li><strong>Tight:</strong> hands tamping the grounds, close on the portafilter.</li>
+  <li><strong>Detail:</strong> the first drip of espresso hitting the cup; steam curling off the top.</li>
+</ul>
+<p>Cut those together and you have thirty seconds that feel like a film. Shoot the same action as one wide clip and you have security-camera footage. Same coffee, same person — the difference is entirely coverage.</p>
+
+<blockquote>Amateurs film what happened. Editors give themselves choices.</blockquote>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this</div><p>Pick any everyday action — pouring cereal, tying a shoe, unlocking a door. Film it four ways: wide, medium, tight, detail. Cut them in order. You just made your first real sequence, and it took ninety seconds.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>The 5-Shot Method</h1>
+<p>There's a classic coverage system taught to news and documentary shooters because it never fails: whatever the action, get these five shots and you are guaranteed a complete, cuttable sequence. It's the fastest way to stop guessing on set.</p>
+
+<h2>The five shots</h2>
+<p>Let's use a concrete example throughout: <strong>a woodworker sanding a small wooden bowl.</strong></p>
+
+<ol class="steps">
+  <li><span class="sh">Close-up on the hands.</span> What are the hands <em>doing</em>? Frame tight on the fingers gripping the bowl and the sandpaper moving across it. This is the action itself, up close.</li>
+  <li><span class="sh">Close-up on the face.</span> Who is doing it, and how do they feel? Tight on the woodworker's eyes, focused on the work. This shot carries emotion and intent.</li>
+  <li><span class="sh">Wide shot.</span> Where is this happening? Pull back to show the whole workshop — the bench, the tools, the person at work in their world. This orients the viewer.</li>
+  <li><span class="sh">Over-the-shoulder.</span> Shoot from behind the person, looking past them at the bowl. This links the hands and the face into one space and shows their point of view.</li>
+  <li><span class="sh">A different / unusual angle.</span> Break the pattern — shoot low from the bench surface, straight down from above, or through the sawdust in the air. This is the shot that makes the sequence feel crafted instead of routine.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Why these five, in this order</div><p>Hands, face, wide, over-the-shoulder, and one wildcard cover the three questions every viewer subconsciously asks — <em>what's happening, who's doing it, and where are we?</em> — plus give the editor variety to cut on. Shoot them in that order and you'll never leave a location missing a shot you needed.</p></div>
+
+<h2>The same five, applied to a product</h2>
+<table>
+  <tr><th>Shot</th><th>Woodworker</th><th>Product (a watch)</th></tr>
+  <tr><td>Close on hands/action</td><td>Fingers sanding the bowl</td><td>Fingers fastening the clasp</td></tr>
+  <tr><td>Close on face/subject</td><td>Focused eyes</td><td>The watch face, tight</td></tr>
+  <tr><td>Wide / establishing</td><td>The whole workshop</td><td>The watch on the wrist, arm resting on a desk</td></tr>
+  <tr><td>Over-the-shoulder / POV</td><td>Looking past them at the bowl</td><td>Looking down at your own wrist as a wearer would</td></tr>
+  <tr><td>Unusual angle</td><td>Low across the bench</td><td>Extreme macro on the ticking second hand</td></tr>
+</table>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Get all five before you move</div><p>Move around the subject and collect all five while you're already there. Realizing at the edit that you never got the wide shot means driving back — or living with a hole. Five shots, then you leave.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Build a Shot List</h1>
+<p>The single habit that most reliably turns flat videos into good ones costs nothing and happens before you touch a camera: you decide, on paper, what you need to film. Improvising every shot on location is how you end up with forty clips of the same medium angle and no way to cut them together.</p>
+
+<h2>Shoot for the edit, not for the moment</h2>
+<p>This is the mindset behind every shot list: you're not collecting footage, you're collecting <em>the pieces a future edit will need</em>. Before a shoot, picture the finished video in your head and ask what shots that video is made of. Then go get exactly those.</p>
+
+<div class="key"><div class="kt">The editor's golden rule</div><p>You can only cut with footage you actually shot. Every gap in your coverage becomes a compromise in the edit — so plan the coverage first.</p></div>
+
+<h2>A simple shot-list template</h2>
+<p>You don't need software. A note on your phone with these columns is plenty:</p>
+<div class="cards">
+  <div class="card solid"><div class="ch">📝 What to log per shot</div><ul><li><strong>Shot #</strong> — so you can check them off</li><li><strong>Size</strong> — wide / medium / tight / detail</li><li><strong>Subject &amp; action</strong> — "hands pouring water"</li><li><strong>Why</strong> — covers which line or beat</li></ul></div>
+  <div class="card solid"><div class="ch">☕ Example: a café brand video</div><ul><li>Wide — street view of the café front</li><li>Medium — barista at the machine</li><li>Tight — steaming the milk</li><li>Detail — latte art finishing pour</li><li>Tight — customer's first sip &amp; smile</li></ul></div>
+</div>
+
+<h2>Before-you-shoot checklist</h2>
+<ul class="check">
+  <li>What is the <em>one</em> thing this video is about? Write it in a sentence.</li>
+  <li>What's the beginning, middle, and end? (Even a 30-second clip has these.)</li>
+  <li>List every A-roll line, then note a B-roll shot that covers each.</li>
+  <li>Run the 5-shot method for each key action.</li>
+  <li>Add 3–4 "atmosphere" shots of the location for pacing and openers.</li>
+  <li>Check batteries, cards, and audio before you leave — a dead battery is a cancelled shoot.</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Gear note</div><p>The two upgrades that improve B-roll most aren't cameras: a small tripod or gimbal for steady, deliberate shots, and a cheap external mic so your A-roll audio is clean enough to carry the whole video underneath your cutaways. Stable footage and good sound read as "professional" before resolution ever does.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Matching Action &amp; Motivated Cuts</h1>
+<p>Having the shots isn't enough — <em>how</em> you join them is what makes an edit feel smooth instead of jarring. Two ideas do most of the work: cutting on movement, and making every cut motivated.</p>
+
+<h2>Cut on the action</h2>
+<p>The smoothest place to cut between two shots of the same event is <strong>in the middle of a movement.</strong> Someone reaches for a mug: cut from the wide shot mid-reach to the tight shot as the hand lands on the handle. The motion carries the eye across the cut and the viewer never registers the edit. Cut when everything is still, and the join feels like a bump.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Match the action across the cut</div><p>For it to work, the movement has to <em>continue</em> across both clips — the hand is going the same direction, at the same moment, in both. This is why you shoot the same action multiple times from multiple angles: so the editor has matching movement to cut on.</p></div>
+
+<h2>Continuity — keep the world consistent</h2>
+<p>If a person holds the mug in their right hand in the wide shot, it needs to be the right hand in the tight shot too. If they were mid-sip, they can't be setting the cup down in the next angle. Small mismatches — a moved object, a changed hand, a different light — quietly tell the viewer "this is fake," even if they can't say why.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Mind the eyeline and the 180</div><p>Keep a subject looking in a consistent direction across cuts, and try to keep your camera on <em>one side</em> of the action (the "180-degree" idea). Jump to the opposite side and left suddenly becomes right — the viewer gets disoriented even in a simple two-person scene.</p></div>
+
+<h2>Motivated cuts</h2>
+<p>A <strong>motivated cut</strong> is one the video gives you a <em>reason</em> for. The best cutaways are triggered by something in the A-roll:</p>
+<div class="cards">
+  <div class="card"><div class="ch">👀 Motivated by a look</div><p>The subject glances off-screen — cut to what they're looking at. Their look "asks the question," your cut answers it.</p></div>
+  <div class="card"><div class="ch">🔊 Motivated by sound</div><p>You hear the grinder before you see it, then cut to it. Sound leading picture is one of the most satisfying edits there is.</p></div>
+  <div class="card"><div class="ch">💬 Motivated by a word</div><p>They say "the roaster" — cut to the roaster. The narration names it; the picture delivers it.</p></div>
+  <div class="card"><div class="ch">⏱️ Motivated by rhythm</div><p>On music, cut on the beat. The song itself becomes the reason, and the edit feels intentional.</p></div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The J-cut and L-cut</div><p>Let audio and picture change at different moments. In a <em>J-cut</em>, you hear the next scene's sound before you see it. In an <em>L-cut</em>, the current scene's audio lingers over the next shot. Overlapping sound and picture like this is the invisible glue in nearly every professional edit — it's why their cuts feel like flowing conversation instead of slides.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Story Structure Without a Script</h1>
+<p>You don't need a screenplay to tell a story. You need a shape. The oldest shape there is — beginning, middle, end — works for a two-minute vlog, a brand video, or a thirty-second reel. Impose it on your footage and even ordinary material feels like it's <em>going somewhere.</em></p>
+
+<h2>The simple three-act, for any short video</h2>
+<ol class="steps">
+  <li><span class="sh">Beginning — set it up.</span> Establish who/what/where and, crucially, pose a question or promise. "I'm going to make the best coffee of my life." Now the viewer has a reason to stay: they want to see if you do.</li>
+  <li><span class="sh">Middle — the process and the friction.</span> Show the work, and let there be some tension — a problem, a challenge, a not-sure-this-will-work moment. Smooth videos where nothing's at stake are the boring ones. A little struggle is what holds attention.</li>
+  <li><span class="sh">End — the resolution.</span> Deliver on the promise. The cup is poured, the sip is taken, the result is shown. Answer the question you opened with. That closure is what makes a viewer feel the video was "worth it."</li>
+</ol>
+
+<div class="key"><div class="kt">Tension is attention</div><p>A video with a question at the start and an answer at the end is watchable even if nothing else is fancy. Open a loop; close it at the end.</p></div>
+
+<h2>The hook — earn the first five seconds</h2>
+<p>The beginning has a beginning: the opening seconds decide whether anyone sees the rest. Don't start with a slow logo or "hey guys, so today." Start with the most interesting image or the promise itself. Show the finished coffee for half a second, then cut back to the start — now they'll watch to see how you got there.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this</div><p>Take any clip you've already shot and write its story in three lines: <em>the promise, the friction, the payoff.</em> If you can't fill all three, you've found exactly which shots you still need to go get.</p></div>
+
+<h2>Let the structure guide your shooting</h2>
+<p>Once you think in beginning/middle/end, your shot list writes itself. You need establishing shots for the beginning, process and detail shots for the middle, and a satisfying reveal for the end. Structure isn't something you add in the edit — it's something you shoot <em>toward.</em></p>
+
+<h1><span class="n">CHAPTER 8</span>Get Enough Coverage</h1>
+<p>The most common reason an edit falls apart isn't bad shots — it's <em>not enough</em> shots. New shooters film exactly what they think they'll use and no more, then discover in the edit that clips are too short, angles don't cut together, or there's simply nothing to cover a rough patch. Coverage is insurance, and it's cheap.</p>
+
+<h2>Hold every shot longer than feels natural</h2>
+<p>A clip you'll use for 3 seconds needs to be filmed for at least <strong>10.</strong> You need clean handles on both ends — a beat before the action starts and a beat after it ends — so the editor has room to trim and to overlap audio. A shot that's too short is unusable; a shot that's too long is trimmed in one click.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The two-second scramble</div><p>Panning around, hitting record for two seconds, and moving on is the classic beginner trap. Those clips are too brief to cut cleanly and too shaky to hold. Plant the camera, count "one-one-thousand" to ten, <em>then</em> stop. Slow is usable; frantic is trash.</p></div>
+
+<h2>Overlap the action</h2>
+<p>When you re-shoot an action from a new angle, have the person <em>repeat the whole action</em>, not just the part you think you need. Overlapping full takes from each angle is what lets you cut freely between them and find matching movement. Fragments don't cut together; full overlapping takes do.</p>
+
+<h2>Chase variety on purpose</h2>
+<ul class="check">
+  <li>Every shot at a <strong>different size</strong> than the last (don't shoot five mediums in a row).</li>
+  <li>Change your <strong>height</strong> — get low, get above, not everything at eye level.</li>
+  <li>Get shots <strong>with movement</strong> (a slow push, a gentle pan) and shots that are locked-off still.</li>
+  <li>Grab <strong>atmosphere</strong> shots that aren't the main action — the room, the light, the hands at rest — for pacing and openers.</li>
+  <li>Film a few <strong>reactions</strong> — faces responding — because you never have enough of these in the edit.</li>
+</ul>
+
+<div class="key"><div class="kt">The rule that saves every edit</div><p>Shoot more than you think you need — then shoot a little more. You will never sit in the edit wishing you had <em>fewer</em> options.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>The "one more, different" habit</div><p>Every time you finish a shot and are about to move on, force yourself to grab one more version — a different size or angle of the same thing. It takes twenty seconds on location and repeatedly saves the edit. Pros do this reflexively; that's most of the secret.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Pace, Music &amp; Emotion</h1>
+<p>Now the coverage pays off. Pacing is how you spend all those shots — the rhythm of your cuts is what a video actually <em>feels</em> like. And nothing controls that rhythm more than music.</p>
+
+<h2>Cut to the music</h2>
+<p>Pick your music <em>before</em> you edit the pictures, not after. The track's tempo tells you how fast to cut. An upbeat song wants quick cuts landing on the beat; a slow, warm track wants long, lingering shots that breathe. When your cuts align with the beat, the whole video snaps into a groove viewers feel in their body even if they never notice why.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Find the beat, then cut on it</div><p>Drop markers on the strong beats of your track first, then place cuts on those markers. Cutting on the beat is the fastest route to an edit that feels "professionally paced" — it's a rhythm trick, not a talent you're missing.</p></div>
+
+<h2>Match energy to content</h2>
+<table>
+  <tr><th>Feel you want</th><th>Cut rhythm</th><th>Music</th></tr>
+  <tr><td>Energetic, exciting</td><td>Fast — shots of 0.5–2s, cut on the beat</td><td>Upbeat, high tempo</td></tr>
+  <tr><td>Calm, premium, emotional</td><td>Slow — shots held 4–8s, long dissolves</td><td>Soft, sparse, ambient</td></tr>
+  <tr><td>Building / a reveal</td><td>Start slow, accelerate toward the payoff</td><td>A track that grows or drops</td></tr>
+</table>
+
+<h2>Let moments breathe</h2>
+<p>Speed isn't the goal — <em>contrast</em> is. If everything is fast, nothing feels fast, and the viewer burns out. The magic is in the change of pace: race through a montage, then hold on one quiet shot and let it sit. That held moment — a face, a final drip, a landscape — is where emotion actually lands. Cutting away too soon robs your best shots of their power.</p>
+
+<blockquote>Energy comes from cutting fast. Emotion comes from the shot you were brave enough to hold.</blockquote>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Sound design counts too</div><p>The pace of a video isn't only its cuts — it's its sound. Real ambient audio (the hiss of steam, the scrape of sandpaper, footsteps) makes B-roll feel present and alive. A silent cutaway feels dead; the same shot with its natural sound underneath feels like <em>being there.</em></p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this</div><p>Take one B-roll sequence and edit it twice — once to a fast track cutting on every beat, once to a slow track holding each shot four seconds. Same footage, two completely different feelings. That contrast <em>is</em> pacing, and now it's a dial you control.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>A Repeatable B-roll Workflow</h1>
+<p>Everything in this guide compresses into one routine you can run on any shoot — a vlog, a product clip, a brand piece, a travel reel. Screenshot this and work it top to bottom.</p>
+
+<h2>Before you shoot</h2>
+<ul class="check">
+  <li>Write the video's point in <strong>one sentence.</strong></li>
+  <li>Name its <strong>beginning, middle, and end</strong> — the promise, the friction, the payoff.</li>
+  <li>Draft a <strong>shot list:</strong> a B-roll shot for every A-roll line, plus atmosphere.</li>
+  <li>Plan the <strong>hook</strong> — the strongest opening image or promise.</li>
+  <li>Check batteries, cards, and audio.</li>
+</ul>
+
+<h2>While you shoot</h2>
+<ol class="steps">
+  <li><span class="sh">Think in sequences.</span> For every subject, grab wide, medium, tight, and detail — never one clip of a thing.</li>
+  <li><span class="sh">Run the 5-shot method on each key action.</span> Hands, face, wide, over-the-shoulder, unusual angle — then move on.</li>
+  <li><span class="sh">Hold every shot 10+ seconds</span> with clean handles on both ends.</li>
+  <li><span class="sh">Overlap the action</span> — repeat the full action for each new angle so it cuts together.</li>
+  <li><span class="sh">Chase variety</span> — change size, height, and movement shot to shot.</li>
+  <li><span class="sh">Grab reactions and ambient sound</span> — you always want more of both.</li>
+  <li><span class="sh">"One more, different"</span> before you leave each setup.</li>
+</ol>
+
+<h2>While you edit</h2>
+<ol class="steps">
+  <li><span class="sh">Pick the music first;</span> let its tempo set your cutting rhythm.</li>
+  <li><span class="sh">Lay the A-roll spine,</span> tighten the talking, then cover every seam with motivated B-roll.</li>
+  <li><span class="sh">Cut on movement</span> and let looks, sounds, and words motivate your cutaways.</li>
+  <li><span class="sh">Use J- and L-cuts</span> so audio and picture flow instead of snapping.</li>
+  <li><span class="sh">Vary the pace</span> — race a montage, then hold one shot and let it breathe.</li>
+  <li><span class="sh">Check continuity</span> — hands, eyelines, and objects consistent across cuts.</li>
+</ol>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Start smaller than you think</div><p>You don't need to nail all ten shots your first time out. Pick one habit — "think in sequences" — and apply only that on your next shoot. Add the 5-shot method the time after. Layered in one at a time, this becomes automatic within a handful of videos.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>You don't have to be more interesting on camera — you have to give the edit more to look at, and coverage is how every ordinary moment becomes a story worth watching to the end.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Fix Your Audio — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #c2410c;
+  --accent2: #fb923c;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">SOUND FOR VIDEO</div>
+    <div style="margin-top:auto"></div>
+    <h1>Fix Your Audio</h1>
+    <div class="rule"></div>
+    <div class="sub">Clean, Professional Sound for Any Video</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$24 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Clean, Professional Sound for Any Video. Written for creators whose picture is fine but the sound lets them down.</div>
+  <ol><li><span class="t">Bad Audio Is the Fastest Way to Lose a Viewer</span></li><li><span class="t">Why Your Built-in Mic Fails</span></li><li><span class="t">Mic Types & When to Use Each</span></li><li><span class="t">The Golden Rule — Get the Mic Close</span></li><li><span class="t">Tame the Room</span></li><li><span class="t">Set Levels & Monitor</span></li><li><span class="t">Recording Options & Syncing</span></li><li><span class="t">Rescue It in Post</span></li><li><span class="t">Music & Mixing</span></li><li><span class="t">The Field Audio Checklist</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Bad Audio Is the Fastest Way to Lose a Viewer</h1>
+<p class="lead-in">People will forgive a soft-focus shot, a shaky handheld pan, even a slightly blown-out sky. They will not forgive sound they have to strain to understand. The instant a video sounds hollow, hissy, or echoey, the brain reads it as "amateur" and the thumb reaches for the next thing. This guide teaches you to record clean, clear, professional sound with whatever you already own.</p>
+
+<p>Here is the truth nobody tells beginners: <strong>audio is half of video, and it is the half you can actually control.</strong> You can't move the sun, but you can move a microphone. And almost every "why does my sound suck" problem traces back to just three culprits — the mic is too far away, the room is fighting you, or your levels are set wrong. Learn to spot those three and you fix bad sound at the source instead of trying to rescue it later.</p>
+
+<blockquote>Nobody clicks away thinking "the signal-to-noise ratio is poor." They click away thinking "this feels cheap."</blockquote>
+
+<p>Clear speech feels effortless to listen to, and effortless reads as competent. The moment a listener has to work — leaning in, rewinding, guessing at a word — a small alarm goes off that says "this creator didn't have it together." That alarm fires even when the viewer can't name what's wrong. They just feel it and leave. The flip side is the opportunity: because audio is judged so harshly, it's also the fastest quality upgrade available to you. A modest camera with clean, close, well-leveled sound looks more professional than an expensive camera with echoey phone audio.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Great sound comes from getting the right mic close to the mouth, taming the room, and setting levels you can hear in headphones — everything else is polish.</p></div>
+
+<h2>The three things that ruin sound</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">📏 Distance</div><p>The mic is too far from the mouth, so the voice is thin and buried under everything else in the room.</p></div>
+  <div class="card"><div class="ch">🏠 The Room</div><p>Bare walls bounce sound back as echo and reverb. Your voice arrives at the mic three times — direct, then two ghosts.</p></div>
+  <div class="card"><div class="ch">🎚️ Levels</div><p>Recorded too quiet and you amplify hiss later; too hot and it clips into permanent distortion.</p></div>
+</div>
+
+<h2>How to use this guide</h2>
+<p>If your sound is broken right now, read Chapter 4 (get the mic close) and Chapter 6 (levels) first — they fix the majority of problems by tonight. Then work through the rest to make good sound repeatable. The final chapter is a printable pre-roll checklist; keep it on your phone.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Gear-agnostic on purpose</div><p>Everything here works with a phone, a mirrorless camera, a DSLR, or a dedicated recorder. Where a mic type has different names, we say so. You do not need expensive gear to sound professional — you need the right kind of mic in the right place at the right level.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The blind test</div><p>Close your eyes and listen to your last video. If you'd assume it was made by a beginner, so does your audience. Your ears are the only quality meter that matters — start trusting them.</p></div>
+
+<h1><span class="n">CHAPTER 1</span>Why Your Built-in Mic Fails</h1>
+<p>The mic in your camera or phone isn't broken — it's just doing an impossible job from the wrong place. Once you understand the two reasons it can't win, you'll never be surprised by hollow sound again.</p>
+
+<h2>Reason one: it's too far away</h2>
+<p>Sound obeys the <strong>inverse-square law</strong> — every time you double the distance from a sound source, the loudness drops to roughly a quarter. A mic on your camera sitting six feet from your subject is receiving a voice that's a fraction of the strength a mic six inches away would get. To hear the distant voice at all, the camera cranks up its gain — and that same gain amplifies the air conditioner, the room echo, and the electronic hiss right alongside the words.</p>
+
+<div class="key"><div class="kt">The distance principle</div><p>It is not that a close mic is "louder." It is that a close mic captures far more voice relative to everything else — which is the entire game.</p></div>
+
+<h2>Reason two: it hears everything</h2>
+<p>Built-in mics are usually <strong>omnidirectional</strong> — they pick up sound equally from all directions. That's great for capturing a whole scene and terrible for capturing one person, because it treats the traffic behind you and the voice in front of you as equally important. A good external mic is <em>directional</em>: it listens hard where you point it and ignores the rest.</p>
+
+<h3>Pickup pattern, in plain terms</h3>
+<p>A pickup pattern is simply the shape of what a mic "hears." Picture it as an invisible zone of sensitivity around the mic:</p>
+<div class="cards">
+  <div class="card solid"><div class="ch">🔵 Omnidirectional</div><p>Hears a full sphere — every direction equally. Built-in mics and many lavaliers. Natural, but grabs the whole room.</p></div>
+  <div class="card solid"><div class="ch">❤️ Cardioid</div><p>Hears mostly the front, rejects the rear. The workhorse pattern for a single person talking. USB and desktop mics live here.</p></div>
+  <div class="card solid"><div class="ch">🎯 Supercardioid / Shotgun</div><p>A tight forward beam that rejects the sides. Reaches a bit farther and isolates one source — the interview and film standard.</p></div>
+  <div class="card solid"><div class="ch">➡️ Bidirectional</div><p>Hears front and back, rejects the sides. Useful for two people facing each other across one mic.</p></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>A directional mic is not a zoom lens</div><p>A shotgun mic <em>rejects</em> off-axis sound better than a wide pattern, but it does not "reach across the room." Even the tightest shotgun still sounds best a foot or two from the mouth. Directionality reduces the room; it does not replace closeness.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Mic Types &amp; When to Use Each</h1>
+<p>There is no single "best microphone" — there's the right tool for how you shoot. Here are the four categories that cover almost everything a video creator does, and exactly when to reach for each.</p>
+
+<table>
+  <tr><th>Mic type</th><th>Best for</th><th>Pattern</th><th>Watch out for</th></tr>
+  <tr><td>Lavalier (clip-on / lav)</td><td>Interviews, talking-head, run-and-gun, moving subjects</td><td>Omni or cardioid</td><td>Clothing rustle; being visible in frame</td></tr>
+  <tr><td>Shotgun (on-camera or boomed)</td><td>Interviews, scenes, dialogue you want off-camera</td><td>Supercardioid</td><td>Room echo if too far; wind outdoors</td></tr>
+  <tr><td>USB / desktop</td><td>Voiceover, tutorials, podcasts, seated to-camera</td><td>Cardioid</td><td>Desk thumps; not portable; picks up room</td></tr>
+  <tr><td>Phone-connected (wireless or plug-in)</td><td>Mobile creators, vlogs, quick social clips</td><td>Omni (lav) or cardioid</td><td>Adapters/compatibility; battery life</td></tr>
+</table>
+
+<h3>Lavalier microphones</h3>
+<p>A tiny mic that clips near the collar, six to eight inches from the mouth. Because it's always close and moves with the person, it's the most forgiving choice for anyone who talks and moves. Wireless lav systems free your subject from cables; wired lavs are cheaper and never drop out.</p>
+
+<h3>Shotgun microphones</h3>
+<p>A long, narrow mic with a tight forward pattern. Mounted on the camera it's convenient; on a boom pole or stand just outside the frame, angled down at the mouth, it sounds cinematic. This is what most film and interview work uses.</p>
+
+<h3>USB and desktop microphones</h3>
+<p>Plug straight into a computer for voiceover, tutorials, and podcasts. Large-diaphragm cardioid mics sound rich up close. They're not built to travel, but for a seated creator at a desk they're the easiest path to a full, professional voice.</p>
+
+<h3>Phone-connected microphones</h3>
+<p>Small wireless transmitters or plug-in mics designed for phones and mirrorless cameras. Modern wireless lav kits are astonishingly good for the size and have become the default for mobile creators and vloggers.</p>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>If you buy one mic</div><p>For most creators, a <strong>wireless lavalier kit</strong> is the highest-impact purchase — it guarantees a close mic on the person talking, works on phones and cameras, and handles both interviews and run-and-gun. If you shoot seated tutorials only, buy a cardioid USB mic instead.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>The Golden Rule — Get the Mic Close</h1>
+<p>If you remember nothing else from this guide, remember this chapter. Ninety percent of "professional versus amateur" sound is a single variable: <strong>how far the microphone is from the mouth.</strong> Close mic = strong voice, quiet room, low noise. Far mic = thin voice swimming in echo and hiss. Everything else is a rounding error next to distance.</p>
+
+<div class="key"><div class="kt">The golden rule</div><p>Get the microphone as close to the mouth as you can without it being in the shot or in the way — then get it a little closer.</p></div>
+
+<h2>Placement by scenario</h2>
+
+<div class="recipe">
+  <div class="rh"><span>Interview (seated, off-camera mic)</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mic type <b>Shotgun or lav</b></span><span class="chip">Distance <b>6&ndash;18 in</b></span><span class="chip">Angle <b>Toward mouth</b></span></div>
+    <p class="small">Boom a shotgun from above, angled down at the mouth, just out of frame — or clip a lav six to eight inches below the chin. Aim at the mouth, not the chest.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Talking-head (to camera, seated)</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mic type <b>USB or lav</b></span><span class="chip">Distance <b>6&ndash;12 in</b></span><span class="chip">Position <b>Below, off-axis</b></span></div>
+    <p class="small">Place a desktop mic just below the frame line, angled up at the mouth. Speaking slightly across it (off-axis) softens hard plosives on words like "p" and "b".</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Run-and-gun / vlog (moving)</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Mic type <b>Wireless lav</b></span><span class="chip">Distance <b>6&ndash;8 in</b></span><span class="chip">Backup <b>Camera scratch track</b></span></div>
+    <p class="small">Clip the lav high on the chest. Let the camera's own mic record a rough "scratch" track too — it's a lifesaver for syncing and as a backup if the wireless drops.</p>
+  </div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Lav placement without rustle</div><p>Clip the lav where fabric won't brush it — a lapel, collar edge, or placket, not the middle of a shifting shirt. Loop the cable into a small "P" shape and tape it to the back of the clip so cable tension never tugs the capsule. Route the wire under clothing to hide it.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Beware the plosive blast</div><p>Aiming a mic straight at the mouth from a few inches away turns every "p" and "b" into a thump of air. Position the mic slightly off to the side or below, so that burst of breath passes <em>across</em> the capsule rather than into it. A foam windscreen helps too.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Tame the Room</h1>
+<p>You've got the mic close — but if the space is fighting you, the voice still arrives with a hollow, boxy, distant quality. That's <strong>reverb</strong>: your voice bouncing off hard surfaces and reaching the mic again a few milliseconds late, over and over. Small rooms with bare walls are the worst offenders, and it's the single hardest thing to remove later. Fix it at the source.</p>
+
+<h2>Why bare rooms sound bad</h2>
+<p>Sound waves bounce off anything hard and flat — drywall, windows, tile floors, empty desks. Each bounce is a copy of your voice arriving late, smearing clarity into an echoey wash. Soft, irregular surfaces absorb those waves instead of reflecting them. A room that sounds bad is simply a room with too many hard, parallel surfaces and nothing soft to soak up the energy.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>The clap test</div><p>Stand where you'll record and clap once, sharply. If you hear a ring, a slap, or a little "boing" trailing off, the room is reflective and your voice will too. Clap in a closet full of clothes — that dead, instant thud is what you're aiming for. Treat the room until the clap dies fast.</p></div>
+
+<h2>Cheap treatment that actually works</h2>
+<ul class="check">
+  <li>Record in the room with the most soft stuff — a bedroom beats a kitchen or garage.</li>
+  <li>Add soft mass: hang blankets, put up curtains, lay down a rug, fill bookshelves.</li>
+  <li>Break up big flat walls behind and beside you; those are the worst reflectors.</li>
+  <li>Get close to the mic — a close mic captures more direct voice and less reflected room automatically.</li>
+  <li>Avoid the center of an empty room; corners and soft-furnished areas are friendlier.</li>
+  <li>For voiceover in a pinch, drape a blanket over yourself and the mic like a tent.</li>
+</ul>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Closeness is free room treatment</div><p>Doubling your distance from the mic doesn't just weaken the voice — it strengthens the room's share of what's recorded. Every inch closer tilts the balance toward direct sound and away from reverb. Before you buy a single acoustic panel, close the gap between the mic and the mouth.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Set Levels &amp; Monitor</h1>
+<p>You can have the perfect mic in the perfect spot and still ruin the take with the wrong level. Audio is measured in <strong>dBFS</strong> (decibels relative to full scale), a negative scale where 0 dBFS is the absolute ceiling — the loudest a digital recording can hold. Go over it and the waveform slams into that wall and distorts. The whole job is to record strong, but never touch the ceiling.</p>
+
+<h2>Your target: peaks around -12 to -6 dBFS</h2>
+<p>Aim for the loudest parts of speech to peak somewhere between <strong>-12 and -6 dBFS</strong>, with your average voice sitting lower, around -18 to -12. That leaves comfortable <em>headroom</em> — a safety gap above your peaks — so an unexpected laugh or emphasized word doesn't clip. Watch the meters as you do a test line at your real speaking volume, and set the gain so the peaks land in that zone.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Level targets</span><span class="tag">DIGITAL AUDIO</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Peaks <b>-12 to -6 dBFS</b></span><span class="chip">Average <b>-18 to -12 dBFS</b></span><span class="chip">Ceiling <b>0 dBFS (never touch)</b></span><span class="chip">Headroom <b>keep 6 dB+</b></span></div>
+    <p class="small">Set gain with a real test line at your true volume — not a timid "test, test." People get louder once they're rolling.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Clipping is permanent</div><p>When audio hits 0 dBFS it doesn't just get loud — the peaks are sliced flat and the information is <strong>gone</strong>. No plugin, no AI, nothing brings it back; it will always sound like harsh crackling distortion. When in doubt, record a little quieter. A quiet clean take can be turned up. A clipped take is trash.</p></div>
+
+<h2>Always monitor with headphones</h2>
+<p>This is the habit that separates people who get clean sound from people who get surprised by it. Your eyes on a meter tell you the level; only your ears in headphones tell you the <em>quality</em> — the wireless dropout, the clothing rustle, the AC that kicked on, the buzz from a bad cable. Meters can't hear those. You can.</p>
+
+<div class="key"><div class="kt">The one non-negotiable habit</div><p>If you cannot hear the recording live in headphones, you are not recording sound — you are gambling on it.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Confirm you're hearing the mic, not the room</div><p>Plug headphones into the device that's actually recording and confirm you hear the microphone's signal through them, not just ambient sound leaking past the earcups. If it's silent in the phones, the mic isn't getting to the recorder — better to find out now than in the edit.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Recording Options &amp; Syncing</h1>
+<p>Where the sound actually lands — inside the camera, on a separate recorder, or both — shapes your whole workflow. Here's how to choose, and how to marry sound back to picture when they're recorded apart.</p>
+
+<h2>Three ways to capture</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">🎥 In-camera</div><p>Mic plugs into the camera; sound and picture record together. Simplest — nothing to sync. Limited by the camera's audio circuitry and monitoring.</p></div>
+  <div class="card"><div class="ch">🎙️ External recorder</div><p>Mic feeds a dedicated audio recorder. Better preamps, better metering, real headphone monitoring. You'll sync to picture later.</p></div>
+  <div class="card"><div class="ch">🔗 Dual-system</div><p>Record sound externally <em>and</em> a scratch track in-camera. The pro standard: best quality plus an easy sync reference and a backup.</p></div>
+</div>
+
+<h3>In-camera</h3>
+<p>The easiest path: everything's already together, and for talking-head and vlog work it's often all you need. Just confirm your camera lets you monitor with headphones and set levels manually — auto-gain circuits pump the noise floor up and down and should be turned off when possible.</p>
+
+<h3>External recorder &amp; dual-system</h3>
+<p>Recording to a separate device gives you cleaner preamps and proper monitoring, at the cost of syncing sound to picture in the edit. The professional move is <strong>dual-system</strong>: record the good audio externally while also letting the camera capture a rough scratch track. That scratch track is what you'll sync against, and it saves the day if the main recording ever fails.</p>
+
+<h2>Getting sound and picture in sync</h2>
+<ol class="steps">
+  <li><span class="sh">Clap or slate at the top of every take.</span> A sharp clap (or a slate/clapperboard) makes a spike in the audio and a single frame where hands meet in video — line those up and everything after is locked.</li>
+  <li><span class="sh">Or let software auto-sync.</span> Most editors can match the external audio to the camera's scratch track by analyzing the waveforms — which is exactly why you always record that scratch track.</li>
+  <li><span class="sh">Check sync on a hard consonant.</span> After aligning, watch a "p" or "b" or a clap and confirm lips and sound hit together. If it drifts over a long take, re-sync at the drift point.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The clap is free insurance</div><p>Even when you plan to auto-sync, clap anyway. It costs one second and gives you a foolproof manual fallback for the one clip where the automatic match refuses to cooperate.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Rescue It in Post</h1>
+<p>Editing can't perform miracles — it can't un-clip distortion or un-echo a bad room — but a handful of tools, applied in the right order, turn <em>good</em> raw sound into <em>polished</em> sound. Here's the processing chain that professionals use, described so you can find each tool in any editor regardless of what the menus call it.</p>
+
+<h2>The processing order that works</h2>
+<ol class="steps">
+  <li><span class="sh">Noise reduction first.</span> Remove steady background noise — hum, hiss, AC drone. Give the tool a "noise print" from a second of silence, then apply gently. Push it too hard and the voice turns watery and robotic; a light touch is invisible.</li>
+  <li><span class="sh">EQ to shape the voice.</span> Cut low-end rumble below roughly 80&ndash;100 Hz to kill traffic and handling thumps. Then, if the voice sounds dull, add a gentle lift in the <em>presence</em> range (around 3&ndash;6 kHz) for clarity and articulation.</li>
+  <li><span class="sh">Compression to even it out.</span> Compression tames the loud parts and lifts the quiet parts so the voice sits at a consistent level — no more leaning in for whispers and flinching at shouts. Aim for gentle, natural evening-out, not a squashed, breathing sound.</li>
+  <li><span class="sh">De-ess if needed.</span> If "s" and "sh" sounds are harsh and sizzly, a de-esser tames just that narrow high-frequency band without dulling the rest of the voice.</li>
+  <li><span class="sh">Loudness normalization last.</span> Set the final overall loudness to the platform target so your video isn't jarringly louder or quieter than everything else.</li>
+</ol>
+
+<h2>Loudness targets for platforms</h2>
+<p>Streaming and social platforms measure perceived loudness in <strong>LUFS</strong> (Loudness Units Full Scale) and quietly turn videos up or down toward their own target. Deliver near that target yourself and your sound stays consistent and clean.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Loudness normalization</span><span class="tag">DELIVERY</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Web / social <b>~-14 LUFS</b></span><span class="chip">True peak <b>-1 dBTP</b></span><span class="chip">Dialogue-led <b>-16 to -14 LUFS</b></span></div>
+    <p class="small">Around -14 LUFS integrated is a safe modern target for online video. Keep true peaks at -1 dB or below so platform encoding never clips.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Post is polish, not rescue</div><p>Every tool here improves clean audio. None of them fixes clipping, heavy reverb, or a voice buried under noise — those are recording problems, and the only real fix is to record them right. Treat post as the last 10%, not the plan.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Print silence for noise reduction</div><p>At the top of every recording, capture two seconds of "room tone" — everyone silent, cameras rolling. That clean sample of the room's noise floor is exactly what noise-reduction tools need to learn what to remove, and it's priceless for patching edits later.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Music &amp; Mixing</h1>
+<p>Music sets mood and energy — and it's where beginners most often bury their own dialogue. The goal of a mix is simple: the viewer never notices the mix. Voice is always clearly on top, music supports underneath, and nothing ever gets a copyright strike.</p>
+
+<h2>Set music under dialogue, not over it</h2>
+<p>The instant a viewer strains to hear words under a track, you've lost them. Voice is the lead; music is the cushion. When someone is speaking, the music should drop well below the voice — quiet enough that you notice it only if it stops.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Music vs. dialogue levels</span><span class="tag">MIXING</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Voice <b>the star, up front</b></span><span class="chip">Music under speech <b>~15&ndash;20 dB lower</b></span><span class="chip">Music, no speech <b>bring it up</b></span></div>
+    <p class="small">A rough guide: under dialogue, music sits far enough below the voice that it never competes. In gaps with no talking, let it swell to fill the space.</p>
+  </div>
+</div>
+
+<h2>Ducking: let the voice push the music down</h2>
+<p>Rather than riding the music fader by hand, use <strong>ducking</strong> (also called sidechain compression): the music automatically drops whenever the voice is present and rises back up when the voice stops. Set it up once and every dialogue moment stays clear while the music breathes in the gaps — smooth, automatic, professional.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Mix on the ears people will use</div><p>Check your final mix on cheap earbuds and a phone speaker, not just good headphones. Most viewers watch on tiny speakers where music masks voice far more easily. If the dialogue is clear on a phone speaker, it's clear everywhere.</p></div>
+
+<h2>Licensing: don't get struck</h2>
+<p>Using a commercial song you don't have rights to can get your video muted, demonetized, or taken down — and content-matching systems catch it automatically, often within minutes of upload. Protect yourself:</p>
+<ul class="check">
+  <li>Use royalty-free or properly licensed music libraries made for creators.</li>
+  <li>Read the license: confirm it covers your use (monetized, commercial, the platform you're on).</li>
+  <li>Keep proof — save the license or download receipt in case you need to clear a false claim.</li>
+  <li>"I credited the artist" is not a license. Credit does not grant rights.</li>
+  <li>When unsure, don't use it. One strike isn't worth a track you could have replaced free.</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Free to listen is not free to use</div><p>A song being on a streaming service, or easy to download, says nothing about your right to put it in a video. Sync rights for video are separate and specific. Assume every commercial song is off-limits unless a license explicitly says otherwise.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>The Field Audio Checklist</h1>
+<p>Tape this inside your bag. Run it before every shoot, before the moment you can't recreate. Ninety seconds here saves a ruined recording.</p>
+
+<h2>Before you hit record</h2>
+<ul class="check">
+  <li>Right mic for the job — lav on a mover, shotgun for a scene, USB at the desk.</li>
+  <li>Mic as close to the mouth as the shot allows, angled at the mouth.</li>
+  <li>Lav clipped where fabric won't rustle; cable strain-relieved and hidden.</li>
+  <li>Windscreen or dead-cat on outdoor mics; check for wind on the meter.</li>
+  <li>Room checked with a clap; softened it if it rang.</li>
+  <li>Levels set from a real test line — peaks landing around -12 to -6 dBFS.</li>
+  <li>Auto-gain / auto-levels turned OFF; gain set manually.</li>
+  <li>Headphones plugged into the recording device, mic confirmed audible through them.</li>
+  <li>Batteries charged and storage space confirmed on recorder and wireless kit.</li>
+  <li>Two seconds of room tone captured for later noise reduction.</li>
+  <li>Camera scratch track rolling as a sync reference and backup.</li>
+  <li>Clap or slate at the top of the take.</li>
+</ul>
+
+<h2>While rolling</h2>
+<ul class="check">
+  <li>Eyes flick to the meters — nothing kissing 0 dBFS.</li>
+  <li>Ears on the headphones — no dropouts, buzzes, rustle, or new noise.</li>
+  <li>Listen for the AC, fridge, or phone buzz that kicked on mid-take.</li>
+</ul>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your drill this week</div><p>Record the same 20-second line four ways: camera mic across the room, camera mic up close, an external mic at arm's length, and that same mic six inches away. Listen back on headphones. You will hear, unmistakably, that distance beats gear — and you'll never again wonder why your sound is thin.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Get the right mic close, kill the room, watch your levels in headphones — do those three things and your sound will already be better than most of what people scroll past.</p></div>
+
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

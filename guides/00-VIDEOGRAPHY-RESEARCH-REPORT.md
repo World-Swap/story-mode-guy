@@ -1,0 +1,117 @@
+# Market Research — High-Demand Videography Guides ($20–50 PDFs)
+
+**Prepared:** August 2026 · For: Story Mode Guy
+**Goal:** Identify the most-searched videography help topics with proven paid demand, then produce a line of sellable PDF guides priced $17–39 (plus a bundle) — mirroring the photography-guide line that's already live.
+**Method:** Same framework as the photography report — convergent signal from SEO/keyword patterns, beginner-question roundups, and live paid products (Amazon KDP, Gumroad, Udemy/Skillshare, YouTube creator products) with observed price points.
+
+---
+
+## How to read this
+
+Each topic is scored on three signals:
+1. **Search demand** — how often people look this up.
+2. **Paid demand** — is someone already *selling* this, and at what price? (Proof a market exists.)
+3. **Buyer motivation** — urgency ("my video audio sounds terrible") or ROI ("get paid to film") converts far better than "nice to know."
+
+> **Data caveat:** Keyword tools block automated access, so exact monthly-volume integers aren't all extractable. Rankings rest on convergent qualitative signal + live price points. Validate the final shortlist in Google Keyword Planner / Ahrefs before scaling.
+
+## Why videography is a strong second line
+The photography buyer and the videography buyer are increasingly the **same person** — the hybrid "content creator" who bought a camera or a good phone and now wants their *video* to look as good as their stills. That means: (a) warm cross-sell from the existing 10 photo guides, (b) higher willingness-to-pay (video gear/courses cost more, so buyers expect to pay more for help), and (c) a huge, still-growing search base driven by YouTube, TikTok, and Reels. The pain points are also more *urgent* than in photography — bad audio and shaky footage are viscerally frustrating — which converts.
+
+---
+
+## The 13 candidate topics
+
+| # | Topic | Search | Paid demand | Price | Buyer |
+|---|-------|--------|-------------|-------|-------|
+| 1 | Make Videos Look Cinematic (settings/the look) | ★★★★★ | Proven | $29 | New shooter, creator |
+| 2 | Smartphone / iPhone Videography | ★★★★★ | **Proven at scale** | $29 | Anyone with a phone |
+| 3 | Video Editing Blueprint (Premiere/DaVinci/CapCut) | ★★★★★ | **Extremely proven** | $37 | Everyone who films |
+| 4 | Color Grading (log, LUTs, the filmic grade) | ★★★★ | High margin | $34 | Footage-looks-flat crowd |
+| 5 | Fix Your Audio (sound for video) | ★★★★ | **Under-served** | $24 | "My audio sounds bad" |
+| 6 | Lighting for Video | ★★★★ | Proven | $27 | Interview/indoor shooter |
+| 7 | B-roll & Visual Storytelling | ★★★★ | Proven | $27 | "My videos are boring" |
+| 8 | Smooth, Cinematic Camera Movement | ★★★★ | Proven | $24 | Gimbal/handheld owner |
+| 9 | Real Estate & Airbnb Video Tours | ★★★★ | **High WTP (income)** | $39 | Side-hustler / agent |
+| 10 | Videographer's Cheat-Sheet Pack | ★★★ | **Proven on Etsy** | $17 | New owner / add-on |
+| 11 | Start & Grow a YouTube Channel (filming side) | ★★★★★ | Free-content heavy | $34 | Aspiring creator |
+| 12 | Drone Video for Beginners | ★★★★ | Excellent margins | $34 | Drone owner (niche) |
+| 13 | Wedding / Event Videography | ★★★ | Career-ROI | $37 | Aspiring pro |
+
+---
+
+## Recommended line — the top 10 (parallel to the photo line)
+
+This spread walks a creator through the entire pipeline — **camera → phone → edit → color → audio → light → story → movement → income → reference** — so guides cross-sell each other and the bundle sells the whole journey. Chosen over #11–13 because YouTube-growth is heavily served by free content, and drone/wedding are narrower gear/career niches (great *future* add-ons, not launch core).
+
+### 1. Make Your Videos Look Cinematic — *$29*
+- **Search:** "how to make videos look cinematic / cinematic camera settings" is a top-tier evergreen video search.
+- **Paid:** Proven across courses; under-served at the tight, well-designed PDF level.
+- **Buyer:** New camera/creator who films but it looks "like a home video."
+- **Covers:** frame rate & the 180° shutter rule · picture profiles / flat vs. log · aperture & the cinematic depth look · white balance · exposure tools (zebras, false color) · the anti-"video look" checklist.
+
+### 2. Shoot Better Video on Your Phone — *$29*
+- **Search:** Enormous — iPhone/Android video is how most people start.
+- **Paid:** Proven at scale (mirrors the #1-selling photo guide's mobile angle).
+- **Buyer:** Creators and small businesses filming on the phone in their pocket.
+- **Covers:** locking focus/exposure · frame rate & resolution settings · stabilization · native vs. pro-camera apps · phone audio fixes · quick mobile editing · lenses/rigs that actually help.
+
+### 3. The Video Editing Blueprint — *$37* (flagship)
+- **Search:** "how to edit videos" is one of the highest-volume creative searches, period.
+- **Paid:** Extremely proven (parallels the Lightroom Blueprint bestseller).
+- **Buyer:** Anyone who films and stalls at the timeline.
+- **Covers:** a repeatable edit order-of-operations · organizing/culling footage · the assembly→rough→fine cut · pacing & the cut-on-motion · transitions that aren't cheesy · titles/captions · export settings for YouTube/Reels. Software-agnostic with notes for **Premiere, DaVinci Resolve (free), and CapCut**.
+
+### 4. Color Grading Demystified — *$34*
+- **Search:** "how to color grade / what is log footage / LUTs" — strong, rising.
+- **Paid:** High-margin; buyers expect to pay for "the look."
+- **Buyer:** Shooters whose footage looks flat/grey and don't know why.
+- **Covers:** color-correct vs. color-grade · reading a scope · log & LUTs (and why LUTs alone fail) · white-balance rescue · skin tones · matching shots · building a repeatable grade.
+
+### 5. Fix Your Audio: Pro Sound for Video — *$24*
+- **Search:** "why does my video audio sound bad / how to get good audio" — urgent, high-intent.
+- **Paid:** **Under-served** as a dedicated product — mostly scattered free tips. The blurry-photos of the video world: a "make this stop" pain point.
+- **Buyer:** Creator whose picture is fine but sound is echoey/hissy/quiet.
+- **Covers:** why built-in mics fail · mic types (lav/shotgun/USB) & when to use each · getting the mic close · rooms & echo · levels & headphones · cleaning audio in the edit (noise, EQ, loudness).
+
+### 6. Lighting for Video — *$27*
+- **Search:** "video lighting setup / how to light an interview" — steady, evergreen.
+- **Buyer:** Anyone filming indoors, interviews, talking-head, or product video.
+- **Covers:** soft vs. hard light · one-light setups that look great · three-point lighting · using windows (free light) · background separation & practicals · avoiding flicker & mixed color.
+
+### 7. B-roll & Visual Storytelling — *$27*
+- **Search:** "how to shoot b-roll / how to tell a story with video" — strong creator search.
+- **Buyer:** People whose videos are "just talking to the camera" and feel flat.
+- **Covers:** what b-roll is & why it saves edits · the shot-list & sequence (wide/medium/tight) · the 5-shot method · matching action · motivated cuts · building a beginning-middle-end without a script.
+
+### 8. Smooth, Cinematic Camera Movement — *$24*
+- **Search:** "how to get smooth video / gimbal movements / cinematic shots."
+- **Buyer:** Owners of a gimbal (or just a camera) who get shaky, aimless footage.
+- **Covers:** handheld techniques with no gear · the core gimbal moves (reveal, orbit, push-in, follow) · when NOT to move · pairing movement with shutter/frame rate · stabilizing in post.
+
+### 9. Real Estate & Airbnb Video Tours — *$39* (income)
+- **Search:** "real estate video / property walkthrough" — high buyer intent, income ROI.
+- **Paid:** Highest willingness-to-pay (parallels the $39 real-estate photo guide) because it pays for itself.
+- **Buyer:** Side-hustlers, agents, and hosts filming their own listings.
+- **Covers:** the walkthrough plan & flow · settings for bright interiors · smooth movement through rooms · exterior/drone-optional b-roll · music & pacing · a fast delivery edit · what to charge.
+
+### 10. The Videographer's Cheat-Sheet Pack — *$17* (add-on)
+- **Search:** printable "camera settings / frame rate cheat sheet" sells steadily on Etsy.
+- **Buyer:** New owner; impulse add-on that lifts average order value.
+- **Covers:** printable field cards — frame-rate & shutter-angle table · resolution/bitrate · picture-profile quick-set · audio-level checklist · b-roll shot list · export-settings cards · a pre-shoot checklist.
+
+**Bundle — The Complete Videography Library (all 10) — ~$99** (vs. $290 à la carte). Mirrors the photo bundle; anchors value and lifts average order size.
+
+---
+
+## Pricing rationale
+Video buyers pay more than photo buyers (gear and courses cost more), so the floor is a touch higher. Spread: one $17 add-on, a cluster at $24–29 (impulse-friendly single-topic), two premium at $34–37 (edit/color, the highest-value skills), one $39 income guide, and a ~$99 bundle to anchor. Every price undercuts the $150–500 courses that dominate this space while out-designing the $5 Kindle ebooks.
+
+## How this plugs into what's already built
+- **Website:** a new "Videography Guides" section on the homepage (same card-slider pattern as the photo guides), or a tab within the existing `#guides` section.
+- **Blog engine:** each guide seeds 1–2 backlog articles (e.g. "why does my video sound bad," "how to make videos look cinematic," "best frame rate for video") that funnel to the product — extending the auto-publishing schedule.
+- **Reels:** the same covers-only reel template used for the photo guides applies directly.
+
+---
+
+*Next step: approve the lineup (or swap any topic for #11–13), then build all 10 through the existing `guides/` pipeline — same polished cover + TOC + component design as the photography guides.*

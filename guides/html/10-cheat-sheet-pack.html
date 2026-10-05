@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The Photographer&#x27;s Cheat-Sheet Pack — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #166534;
+  --accent2: #22c55e;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">FIELD REFERENCE</div>
+    <div style="margin-top:auto"></div>
+    <h1>The Photographer&#x27;s Cheat-Sheet Pack</h1>
+    <div class="rule"></div>
+    <div class="sub">Grab-and-Go Cards for Every Shooting Situation</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$17 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Grab-and-Go Cards for Every Shooting Situation. Written for new camera owners who want a printable field reference.</div>
+  <ol><li><span class="t">How to Use This Pack</span></li><li><span class="t">The Exposure Triangle</span></li><li><span class="t">Settings Recipes</span></li><li><span class="t">Aperture & Depth of Field</span></li><li><span class="t">Shutter Speed</span></li><li><span class="t">ISO & Noise</span></li><li><span class="t">White Balance</span></li><li><span class="t">Autofocus</span></li><li><span class="t">Composition</span></li><li><span class="t">Troubleshooting Flowchart</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>How to Use This Pack</h1>
+<p class="lead-in">This is not a book you read once and shelve. It's a deck of field cards — each one dense, self-contained, and built to live in your bag. Print them, laminate them, and pull the right card the moment you're standing in front of a scene and blanking on where to start.</p>
+
+<p>Every card that follows is a standalone reference. There's a card for exposure, a card packed with ready-to-shoot recipes, and one card each for aperture, shutter, ISO, white balance, autofocus, and composition — plus a troubleshooting card for when a shot comes out wrong. Nothing depends on anything else. Grab the one you need.</p>
+
+<div class="key"><div class="kt">How to get the most from this pack</div><p>Print each card, keep them in your camera bag, and reach for the recipe card first — it turns nine common scenes into settings you can dial in without thinking.</p></div>
+
+<h2>Three ways to use these cards</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">🖨️ Print &amp; laminate</div><p>Each <strong>card starts on its own page</strong>, sized to trim down and slip into a pocket. Laminate them so they survive rain, sweat, and the bottom of your bag.</p></div>
+  <div class="card"><div class="ch">📱 Keep on your phone</div><p>Save the PDF to your phone. When you're out and unsure, the recipe and troubleshooting cards are two taps away.</p></div>
+  <div class="card"><div class="ch">🎓 Learn by repetition</div><p>Shoot the recipes as written, then adjust. After a few outings the numbers live in your hands and you won't need the card.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with any camera</div><p>Every setting here applies to DSLRs, mirrorless bodies, and most phones in Pro mode. Where a control has different names by brand, both are given (for example, "Continuous AF (AF-C / AI Servo)"). Treat every number as a <em>starting point</em>, not a law — check your shot and nudge from there.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>The one habit that ties it all together</div><p>Before every shot, glance at three things: shutter (is it fast enough to be sharp?), aperture (is enough in focus?), and ISO (is it as low as the light allows?). These cards exist to make that three-second check automatic.</p></div>
+
+<h1><span class="n">CARD 1</span>The Exposure Triangle</h1>
+<p>Three controls decide how bright your photo is — and each one also changes <em>how the picture looks</em>. That second effect is the whole game. Change one, and you trade for a side effect somewhere else.</p>
+
+<div class="cards three">
+  <div class="card solid"><div class="ch">🔘 Aperture</div><p>The hole in the lens. <strong>Lower f-number = bigger hole = more light</strong> and a blurrier background. Controls <em>depth of field</em>.</p></div>
+  <div class="card solid"><div class="ch">⏱️ Shutter</div><p>How long the sensor is exposed. <strong>Faster = less light</strong> but freezes motion. Controls <em>motion blur</em>.</p></div>
+  <div class="card solid"><div class="ch">📈 ISO</div><p>Sensor sensitivity. <strong>Higher = brighter</strong> but grainier. Controls <em>noise</em>.</p></div>
+</div>
+
+<h2>What each control does — and what it costs</h2>
+<table>
+  <tr><th>Control</th><th>Typical range</th><th>Turn it up to…</th><th>Side effect</th></tr>
+  <tr><td>Aperture</td><td>f/1.8 – f/16</td><td>Blur background (low f) / keep all sharp (high f)</td><td>Depth of field shrinks or grows</td></tr>
+  <tr><td>Shutter</td><td>30s – 1/4000s</td><td>Freeze motion (fast) / show motion (slow)</td><td>Motion blur &amp; hand-shake risk</td></tr>
+  <tr><td>ISO</td><td>100 – 12800</td><td>Brighten in dark scenes</td><td>Noise / grain increases</td></tr>
+</table>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>The "stop" is the shared unit</div><p>A <strong>stop</strong> is a doubling or halving of light. Open one stop of aperture, and you can use a shutter twice as fast — or an ISO half as high — for the same brightness. That's how you trade between the three without changing exposure.</p></div>
+
+<div class="key"><div class="kt">The exposure triangle in one line</div><p>Pick the look you need first — frozen or flowing, deep or dreamy — then balance the other two to keep the brightness right.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Which one to set first</div><p>Decide what matters most in the scene. Motion? Set shutter first (use S / Tv mode). Background blur or sharpness front-to-back? Set aperture first (use A / Av mode). Let the camera and Auto ISO handle the rest.</p></div>
+
+<h1><span class="n">CARD 2</span>Settings Recipes</h1>
+<p>Nine everyday scenes, each with a starting point you can dial in fast. Set these, take a shot, check the brightness, and nudge. When light is dim, let Auto ISO climb before you slow the shutter below the numbers here.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Portrait (one person)</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/2.8</b></span><span class="chip">Shutter <b>1/200s</b></span><span class="chip">ISO <b>100–400</b></span><span class="chip">AF <b>Eye / Single</b></span></div>
+    <p class="small">Wide aperture melts the background. Focus on the near eye. Go f/4 for two people so both stay sharp.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Landscape</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/8–f/11</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Focus <b>1/3 into scene</b></span></div>
+    <p class="small">Narrow aperture keeps everything sharp. On a tripod, drop the shutter and keep ISO at base.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Sports / action</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/4</b></span><span class="chip">Shutter <b>1/1000s+</b></span><span class="chip">ISO <b>Auto</b></span><span class="chip">AF <b>Continuous + burst</b></span></div>
+    <p class="small">Shutter Priority (S / Tv). Freeze the peak moment; let ISO rise to keep the shutter fast.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Indoor / party</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/1.8–f/2.8</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>1600–6400</b></span><span class="chip">WB <b>Auto / Tungsten</b></span></div>
+    <p class="small">Open up, embrace high ISO. Keep shutter at 1/125s so people don't smear. Find a window or lamp.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Sunset / golden hour</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/8</b></span><span class="chip">Shutter <b>1/250s</b></span><span class="chip">ISO <b>100–200</b></span><span class="chip">WB <b>Cloudy / Shade</b></span></div>
+    <p class="small">Dial exposure down 1/3–2/3 stop to keep the sky rich. Warm WB deepens the glow.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Night city</span><span class="tag">TRIPOD</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/8</b></span><span class="chip">Shutter <b>2–10s</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Timer <b>2s</b></span></div>
+    <p class="small">On a tripod, long exposure turns traffic into light trails. Use the timer so pressing the shutter doesn't shake it.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Waterfall / silky water</span><span class="tag">TRIPOD</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/11–f/16</b></span><span class="chip">Shutter <b>1/2–4s</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Filter <b>ND if bright</b></span></div>
+    <p class="small">Slow shutter blurs water to silk. In daylight you'll need an ND filter to get the shutter that slow.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Product / still life</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/8</b></span><span class="chip">Shutter <b>1/125s</b></span><span class="chip">ISO <b>100</b></span><span class="chip">Focus <b>Single-point</b></span></div>
+    <p class="small">Sharp front-to-back detail. Soft window light on one side; a white card bounces fill on the other.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Pets</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Aperture <b>f/2.8–f/4</b></span><span class="chip">Shutter <b>1/500s</b></span><span class="chip">ISO <b>Auto</b></span><span class="chip">AF <b>Continuous / Animal Eye</b></span></div>
+    <p class="small">Get down to their eye level. Fast shutter for the sudden zoomies; continuous AF tracks the wander.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Build your own recipe in ten seconds</div><p>Ask: <em>Is anything moving?</em> Set the shutter to freeze it. <em>How much do I want in focus?</em> Set the aperture. <em>Is it bright enough?</em> Raise ISO last. Three questions, in that order, and you've built a recipe for any scene not on this card.</p></div>
+
+<h1><span class="n">CARD 3</span>Aperture &amp; Depth of Field</h1>
+<p>Aperture is the f-number. It sets how much of your scene is in sharp focus — the <em>depth of field</em>. Small number, shallow focus, creamy background. Big number, deep focus, everything sharp.</p>
+
+<table>
+  <tr><th>f-number</th><th>Opening</th><th>Depth of field</th><th>Best for</th></tr>
+  <tr><td>f/1.4 – f/2</td><td>Very wide</td><td>Very shallow</td><td>Dramatic portraits, low light, background blur</td></tr>
+  <tr><td>f/2.8 – f/4</td><td>Wide</td><td>Shallow</td><td>Portraits, pets, subject separation</td></tr>
+  <tr><td>f/5.6 – f/8</td><td>Medium</td><td>Moderate–deep</td><td>Groups, street, general sharpness sweet spot</td></tr>
+  <tr><td>f/11 – f/16</td><td>Narrow</td><td>Deep</td><td>Landscapes, architecture, front-to-back sharp</td></tr>
+  <tr><td>f/22+</td><td>Very narrow</td><td>Deepest (but softer)</td><td>Rarely worth it — diffraction blurs the whole frame</td></tr>
+</table>
+
+<div class="cards">
+  <div class="card"><div class="ch">🌸 Use a WIDE aperture (low f) when…</div><ul><li>You want a blurred, creamy background</li><li>Light is low and you need every photon</li><li>One subject should pop from its surroundings</li></ul></div>
+  <div class="card"><div class="ch">🏔️ Use a NARROW aperture (high f) when…</div><ul><li>You need everything sharp, near to far</li><li>Shooting landscapes or group photos</li><li>Detail across the frame matters most</li></ul></div>
+</div>
+
+<div class="key"><div class="kt">The sharpness sweet spot</div><p>Almost every lens is sharpest around <strong>f/5.6 to f/8</strong>. When ultimate detail matters and you don't need shallow focus, live there.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't chase f/22 for sharpness</div><p>Stopping down past f/11–f/16 triggers <em>diffraction</em>, which softens the entire image. To get more depth of field without going too narrow, step back or focus about a third of the way into the scene instead.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Three things change depth of field</div><p>It's not just aperture. <strong>Getting closer</strong> to your subject and using a <strong>longer focal length</strong> both shrink depth of field too. That's why a close-up portrait at 85mm f/2.8 blurs the background far more than a wide landscape shot at the same f-number.</p></div>
+
+<h1><span class="n">CARD 4</span>Shutter Speed</h1>
+<p>Shutter speed is how long the sensor sees light. Fast freezes; slow flows. It controls both motion blur in your subject and shake blur from your own hands.</p>
+
+<table>
+  <tr><th>Shutter speed</th><th>Effect</th><th>Use for</th></tr>
+  <tr><td>1/2000s – 1/1000s</td><td>Freezes fast action</td><td>Sports, birds, cars, splashing water</td></tr>
+  <tr><td>1/500s – 1/250s</td><td>Freezes everyday motion</td><td>Kids, pets, walking people</td></tr>
+  <tr><td>1/125s – 1/60s</td><td>Sharp for still subjects</td><td>Portraits, street, handheld general</td></tr>
+  <tr><td>1/30s – 1/4s</td><td>Motion starts to blur</td><td>Panning, intentional blur, low light on support</td></tr>
+  <tr><td>1s – 30s</td><td>Long streaks &amp; smooth water</td><td>Light trails, waterfalls, stars (tripod only)</td></tr>
+</table>
+
+<h2>The handholding rule</h2>
+<p>To avoid shake blur, your shutter should be <strong>at least 1 divided by your focal length</strong>. At 50mm, use 1/50s or faster. At 200mm, use 1/200s or faster — long lenses magnify shake as much as they magnify the subject.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Crop-sensor correction</div><p>On a crop-sensor body, multiply focal length by the crop factor first — 1.5× for most brands, 1.6× for Canon. A 50mm lens then wants about 1/80s, not 1/50s. When unsure, round up.</p></div>
+
+<div class="recipe">
+  <div class="rh"><span>Shutter speeds to freeze a subject</span><span class="tag">FIELD-TESTED</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Still portrait → <b>1/125s</b></span><span class="chip">Walking → <b>1/250s</b></span><span class="chip">Kids &amp; pets → <b>1/500s</b></span><span class="chip">Running / sport → <b>1/1000s</b></span><span class="chip">Birds &amp; cars → <b>1/2000s</b></span></div>
+    <p class="small">Motion <em>across</em> the frame needs a faster shutter than motion coming toward you. Sideways streaks the most.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Stabilization helps shake, not subjects</div><p>In-body (IBIS) or in-lens stabilization buys 2–5 stops of slower shutter for <em>your</em> shake — but it does nothing for a moving subject. Turn it off on a tripod, where it can hunt and add blur.</p></div>
+
+<h1><span class="n">CARD 5</span>ISO &amp; Noise</h1>
+<p>ISO brightens the photo when aperture and shutter can't gather enough light. The cost is noise — the grainy speckle that grows as ISO climbs. The rule: keep ISO as low as the scene allows, but never so low that the shot goes blurry.</p>
+
+<table>
+  <tr><th>Lighting</th><th>ISO to start</th><th>Notes</th></tr>
+  <tr><td>Bright sun</td><td>100</td><td>Base ISO — cleanest possible image</td></tr>
+  <tr><td>Overcast / shade</td><td>200–400</td><td>Still very clean</td></tr>
+  <tr><td>Indoors, good light</td><td>800–1600</td><td>Minor noise, easily usable</td></tr>
+  <tr><td>Dim indoors / evening</td><td>3200–6400</td><td>Visible grain, still a keeper</td></tr>
+  <tr><td>Very dark / night</td><td>6400–12800+</td><td>Noisy but rescues the shot</td></tr>
+</table>
+
+<div class="key"><div class="kt">The noise tradeoff</div><p>A grainy sharp photo is a keeper. A clean blurry one is deleted. When forced to choose, raise ISO and keep the shutter fast.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Base ISO is your cleanest setting</div><p>Every sensor has a <strong>base ISO</strong> — usually 100 — where it produces the least noise and the most dynamic range. Use it whenever there's enough light, especially on a tripod where you don't need speed.</p></div>
+
+<h2>Auto ISO — set it and forget it</h2>
+<ul class="check">
+  <li>Turn on Auto ISO so the camera raises it only as needed.</li>
+  <li>Set a <strong>maximum</strong> (say 6400) so noise never runs away.</li>
+  <li>Set a <strong>minimum shutter speed</strong> (a "shutter floor") so it never slows below your safe handheld speed.</li>
+  <li>Now shoot in Aperture or Shutter Priority and let ISO float underneath.</li>
+</ul>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Expose it right in camera</div><p>Noise gets worse when you brighten a dark photo later. Getting the exposure right — or slightly bright — at capture keeps noise lower than rescuing an underexposed file in editing.</p></div>
+
+<h1><span class="n">CARD 6</span>White Balance</h1>
+<p>White balance tells the camera what "white" looks like under the current light, so colors come out true instead of orange or blue. Auto handles most scenes, but knowing the presets lets you fix — or stylize — the mood on purpose.</p>
+
+<table>
+  <tr><th>Preset</th><th>Kelvin (approx)</th><th>Use when…</th></tr>
+  <tr><td>Tungsten / Incandescent</td><td>3200K</td><td>Under warm household bulbs — removes the orange</td></tr>
+  <tr><td>Fluorescent</td><td>4000K</td><td>Office / store lighting — cuts the green cast</td></tr>
+  <tr><td>Daylight</td><td>5200K</td><td>Direct sun, midday — neutral baseline</td></tr>
+  <tr><td>Flash</td><td>5500K</td><td>Using a flash — matches its color</td></tr>
+  <tr><td>Cloudy</td><td>6000K</td><td>Overcast — adds gentle warmth</td></tr>
+  <tr><td>Shade</td><td>7000K</td><td>Open shade — counters the cool blue</td></tr>
+</table>
+
+<h2>The Kelvin scale, plainly</h2>
+<p><strong>Low Kelvin = warm/orange light; high Kelvin = cool/blue light.</strong> To warm up a photo, set a higher Kelvin number than the actual light; to cool it down, set a lower one. That's the whole trick.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">🔥 Want it warmer?</div><p>Pick <strong>Cloudy or Shade</strong> (or a higher Kelvin). Great for sunsets, skin tones, and cozy interiors.</p></div>
+  <div class="card solid"><div class="ch">❄️ Want it cooler?</div><p>Pick <strong>Tungsten</strong> (or a lower Kelvin). Useful for crisp blue-hour and clean, clinical looks.</p></div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Shoot RAW and stop worrying</div><p>In RAW, white balance is fully adjustable after the fact with zero quality loss. Leave it on Auto, and correct in editing later. JPEG bakes it in — so for JPEG, pick the matching preset in the moment.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Mixed light is the hard case</div><p>Warm lamps and cool window light in one frame can't both be neutral — one will cast. Pick the light on your subject and balance for that, or embrace the contrast as part of the mood. A single dominant light source is always easiest to balance.</p></div>
+
+<h1><span class="n">CARD 7</span>Autofocus</h1>
+<p>Two decisions run your autofocus: the <em>mode</em> (does it lock once or track continuously?) and the <em>area</em> (does the camera pick the spot, or do you?). Match both to your subject and your keeper rate jumps.</p>
+
+<h2>Focus modes — lock vs. track</h2>
+<table>
+  <tr><th>Mode</th><th>Names by brand</th><th>Use for</th></tr>
+  <tr><td>Single</td><td>AF-S / One-Shot</td><td>Still subjects — locks focus once, holds it</td></tr>
+  <tr><td>Continuous</td><td>AF-C / AI Servo</td><td>Moving subjects — refocuses as distance changes</td></tr>
+  <tr><td>Auto</td><td>AF-A / AI Focus</td><td>Unpredictable — switches on its own; continuous is the safer default</td></tr>
+</table>
+
+<h2>Area modes — who picks the spot</h2>
+<table>
+  <tr><th>Area mode</th><th>What it does</th><th>Use for</th></tr>
+  <tr><td>Single-point</td><td>You place one small point exactly</td><td>Portraits, precise focus, off-center subjects</td></tr>
+  <tr><td>Zone / Group</td><td>A cluster of points covers an area</td><td>Erratic but framed action</td></tr>
+  <tr><td>Wide / Auto-area</td><td>Camera chooses across the frame</td><td>Fast, unpredictable subjects; snapshots</td></tr>
+  <tr><td>Eye / Subject detect</td><td>Finds and tracks eyes automatically</td><td>People and animals — the modern default</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The focus-and-recompose trap</div><p>Locking focus, then swinging the camera to reframe can shift the sharp plane off your subject — especially at wide apertures like f/1.8. For close portraits, <strong>move the focus point</strong> to the subject instead of recomposing.</p></div>
+
+<h2>Back-button focus — the pro habit</h2>
+<p>By default the shutter button focuses <em>and</em> fires, and those two jobs fight each other. Back-button focus moves focusing to a rear thumb button (often "AF-ON"), leaving the shutter to only take the picture. Focus once, then fire as many frames as you like without the camera re-hunting.</p>
+
+<ul class="check">
+  <li>Still subject? Single AF (AF-S), single-point on the eye.</li>
+  <li>Moving subject? Continuous AF (AF-C) + burst mode.</li>
+  <li>People or pets? Turn on Eye / Animal detection.</li>
+  <li>Missing focus often? Switch off full-auto area and place the point yourself.</li>
+  <li>Ready to level up? Assign back-button focus and never look back.</li>
+</ul>
+
+<h1><span class="n">CARD 8</span>Composition</h1>
+<p>Settings make a photo sharp and bright; composition makes it worth looking at. Six rules cover the vast majority of strong images. Learn them as defaults, then break them on purpose.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">▦ Rule of thirds</div><p>Place your subject on a third-line or where they cross, not dead center. Turn on the grid to see it.</p></div>
+  <div class="card"><div class="ch">↗️ Leading lines</div><p>Use roads, fences, and shadows to pull the eye toward your subject.</p></div>
+  <div class="card"><div class="ch">🖼️ Framing</div><p>Shoot through a doorway, branch, or arch to wrap the subject and add depth.</p></div>
+  <div class="card"><div class="ch">🦋 Symmetry</div><p>Center a reflection or repeating pattern for calm, deliberate balance.</p></div>
+  <div class="card"><div class="ch">⬜ Negative space</div><p>Leave empty room around the subject to make it feel isolated and strong.</p></div>
+  <div class="card"><div class="ch">🌫️ Depth</div><p>Include a near, middle, and far element so the flat frame feels three-dimensional.</p></div>
+</div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this on your next walk</div><p>Pick one rule and shoot only that for twenty minutes — say, leading lines. Hunting for a single idea trains your eye faster than trying to remember all six at once.</p></div>
+
+<blockquote>Compose first, settings second. A technically perfect photo of a boring frame is still a boring photo.</blockquote>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Watch the edges and the background</div><p>Before you press the shutter, scan the frame's edges for distractions and the background for poles "growing" out of heads. A half-step left or right often cleans up the whole shot.</p></div>
+
+<h1><span class="n">CARD 9</span>Troubleshooting Flowchart</h1>
+<p>Photo came out wrong? Find the symptom, apply the fix. Work top to bottom — the first matching row usually solves it.</p>
+
+<table>
+  <tr><th>If your photo is…</th><th>Do this</th></tr>
+  <tr><td>Too dark</td><td>Slow the shutter, open the aperture (lower f), or raise ISO — in that order for stills. Or nudge exposure compensation +.</td></tr>
+  <tr><td>Too bright</td><td>Speed up the shutter, close the aperture (higher f), or lower ISO. Or nudge exposure compensation −.</td></tr>
+  <tr><td>Blurry (whole frame)</td><td>Camera shake — raise shutter to the handholding rule, add support, turn on stabilization.</td></tr>
+  <tr><td>Blurry (moving subject)</td><td>Subject motion — use Shutter Priority, pick a freezing speed, add continuous AF + burst.</td></tr>
+  <tr><td>Blurry (wrong thing sharp)</td><td>Missed focus — single-point AF on the eye, or turn on Eye-AF.</td></tr>
+  <tr><td>Grainy</td><td>ISO too high — add light, open the aperture, or lower ISO and slow the shutter on support.</td></tr>
+  <tr><td>Wrong colors</td><td>White balance off — match the preset to the light (or shoot RAW and fix later).</td></tr>
+</table>
+
+<h2>The fix, step by step</h2>
+<ol class="steps">
+  <li><span class="sh">Name the problem first.</span> Zoom in on the back of the camera and decide: brightness, sharpness, grain, or color? Don't change settings blindly.</li>
+  <li><span class="sh">Change one thing at a time.</span> Adjust a single control, shoot again, compare. Two changes at once hide which one worked.</li>
+  <li><span class="sh">Protect sharpness above all.</span> If a fix would drop your shutter below the handholding rule, raise ISO instead. Sharp-and-grainy beats clean-and-blurry.</li>
+  <li><span class="sh">Re-check after every fix.</span> One change often shifts the exposure — glance at brightness again before you move on.</li>
+</ol>
+
+<h2>Before-you-shoot checklist</h2>
+<ul class="check">
+  <li>ISO reset to base (100) or Auto with a sensible ceiling</li>
+  <li>Shutter fast enough for the handholding rule and any motion</li>
+  <li>Aperture set for the depth of field you want</li>
+  <li>Focus mode matched to a still or moving subject</li>
+  <li>White balance on Auto or matched to the light</li>
+  <li>Card has space and battery is charged</li>
+  <li>Front element clean and lens cap in your pocket</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Keep this card closest</div><p>Of all the cards in this pack, laminate this one and the recipe card first. Between "what settings?" and "why did that come out wrong?", these two solve nearly every problem you'll hit in the field.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>You don't have to memorize photography — you have to carry the right card and take the next shot, and these cards make sure you always can.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Photography guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Real Estate &amp; Airbnb Video Tours — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #0e7490;
+  --accent2: #06b6d4;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">START A SIDE INCOME</div>
+    <div style="margin-top:auto"></div>
+    <h1>Real Estate &amp; Airbnb Video Tours</h1>
+    <div class="rule"></div>
+    <div class="sub">Film Bright, Sellable Property Walkthroughs for Pay</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$39 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Film Bright, Sellable Property Walkthroughs for Pay. Written for side-hustlers, agents, and hosts filming their own listings.</div>
+  <ol><li><span class="t">Property Video Is a Skill You Can Sell</span></li><li><span class="t">Gear & Camera Settings for Interiors</span></li><li><span class="t">Prep the Property</span></li><li><span class="t">Plan the Flow</span></li><li><span class="t">Smooth Movement Through Rooms</span></li><li><span class="t">Nail Exposure & White Balance With Windows</span></li><li><span class="t">Exteriors & Amenities</span></li><li><span class="t">The Edit</span></li><li><span class="t">Delivery & Specs</span></li><li><span class="t">The Business</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Property Video Is a Skill You Can Sell</h1>
+<p class="lead-in">A listing with a smooth, bright video tour books more showings and gets more Airbnb clicks than one with a phone-snapshot slideshow — and the person who films it gets paid. You already know how to walk through a house. This guide teaches you to film that walk so it looks professional, sells the property, and earns you money doing it.</p>
+
+<p>Here is the honest pitch: <strong>real estate video is one of the most learnable, most sellable video skills there is.</strong> The subject holds still, the lighting is fixed, nobody is running. Your whole job is to move a camera smoothly through a space, expose it well, and cut it to music — three things you can master into a service agents and hosts pay for again and again.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Keep it steady, keep it bright, keep it flowing in a logical path — and property video sells the space instead of documenting it.</p></div>
+
+<h2>What a good tour actually does</h2>
+<p>A buyer or guest cannot walk the property, so your video is the walk. A good tour answers their questions in the order they'd ask them: <em>What does it look like from the street? How does it feel to walk in? How do the rooms connect? Is it bright? What is the view?</em> Answer those and you shorten the distance between "scrolling" and "booking."</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🏡 Sells the listing</div><p>Homes marketed with video get noticeably more inquiries and showings than photo-only listings. Motion shows flow and scale that stills can't.</p></div>
+  <div class="card"><div class="ch">🛏️ Books the stay</div><p>Airbnb and VRBO guests trust a place they've "walked." A 60-second tour cuts cancellations and no-shows from mismatched expectations.</p></div>
+  <div class="card"><div class="ch">💵 Pays you</div><p>Agents and hosts don't want to film their own. A repeatable half-day shoot at a fair rate is a real, ongoing side income.</p></div>
+</div>
+
+<h2>How to use this guide</h2>
+<p>Read Chapters 2 through 6 in order — they build the technical craft: gear, prep, flow, movement, and exposure. Chapters 7 through 9 cover exteriors, editing, and delivery. The last chapter is the business: what to charge, who to sell to, and a shoot-day checklist you can run every single time.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with what you own</div><p>Everything here applies to a mirrorless camera, a DSLR, an action cam, or a recent phone. You do not need cinema gear to shoot a sellable tour. You need a wide lens, something to steady the camera, and the discipline in these pages.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>Gear &amp; Camera Settings for Interiors</h1>
+<p>Interiors are a specific filming problem: rooms are small, so you need a <strong>wide lens</strong> to show them without backing through a wall. Light is limited and mixed, so you protect image quality. And every clip must be steady, because shake is the number-one thing that makes property video look amateur. Get the kit and the settings right once and you stop thinking about them.</p>
+
+<h2>The lens is the most important choice</h2>
+<p>Shoot rooms at a <strong>full-frame-equivalent 16&ndash;24mm</strong>. Wider than that and walls bow and rooms look cartoonishly stretched; narrower and a normal bedroom feels like a closet. On a crop-sensor camera that means roughly a 10&ndash;16mm lens; on a phone, use the main wide camera (not the ultra-wide, which distorts) or its 0.5&times; only for a deliberate establishing shot.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't over-wide it</div><p>The ultra-wide "everything looks huge" look is a trap. It misrepresents the space, bends vertical lines, and reads as a gimmick. Buyers feel deceived when they arrive and the room is half the size. Keep verticals straight and rooms honest.</p></div>
+
+<h2>Frame rate and shutter</h2>
+<p>Film at <strong>24 or 30fps</strong> for the tour itself — that is the cinematic, natural-motion look. Set your <strong>shutter speed to roughly double your frame rate</strong> (the 180° rule): 1/50s at 24fps, 1/60s at 30fps. This gives motion a smooth, natural blur. A shutter that is too fast makes walking footage look stuttery and jarring.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Shoot slow-mo b-roll at 60fps</div><p>For detail shots — water in a pool, a curtain moving, a coffee pour on the counter — bump to 60fps and slow it down in the edit for a premium feel. Keep the main walkthrough at 24 or 30 so it feels grounded.</p></div>
+
+<h2>Keep ISO low, control exposure with the tripod</h2>
+<p>Because your camera is on a tripod or a slow-moving gimbal, you can afford a <strong>low ISO</strong> and let a slightly longer exposure do the work — noise is the enemy of a clean, "expensive" look. Keep ISO as low as the room allows (100&ndash;800 in daylight; only climb higher in genuinely dark rooms). Turn lights on, open blinds, and you rarely need to push it.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Interior walkthrough &mdash; starting settings</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Lens <b>16&ndash;24mm eq.</b></span><span class="chip">Frame rate <b>24 / 30fps</b></span><span class="chip">Shutter <b>1/50&ndash;1/60s</b></span><span class="chip">ISO <b>100&ndash;800</b></span><span class="chip">Aperture <b>f/4&ndash;f/8</b></span><span class="chip">WB <b>manual, ~5000K</b></span></div>
+    <p class="small">Aperture around f/5.6 keeps a whole room in focus. Set white balance manually so it doesn't shift from room to room. Adjust ISO first when a room is dark, aperture second.</p>
+  </div>
+</div>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>The two-item stabilization kit</div><p>A <strong>gimbal</strong> for moving shots and a <strong>tripod</strong> (or a levelled monopod) for locked-off establishing frames. If you buy one thing, buy the gimbal — smooth motion is what separates paid work from home video. A phone gimbal is a legitimate starting point.</p></div>
+
+<h2>Lock these before you walk in</h2>
+<ul class="check">
+  <li>Manual exposure (or aperture priority with exposure locked) so brightness doesn't jump between rooms.</li>
+  <li>Manual white balance, set once, held all shoot.</li>
+  <li>Manual focus or a wide aperture and single-focus lock — no hunting mid-move.</li>
+  <li>Image stabilization on for handheld/gimbal; off when locked on a tripod.</li>
+  <li>Enough battery and card space for the whole property, plus a spare of each.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 3</span>Prep the Property</h1>
+<p>The best camera work in the world can't save a cluttered, dim room. On a property shoot, <strong>preparation is half the job</strong> — and it's the half most beginners skip. Walk the whole place before you power on the camera and set the stage.</p>
+
+<h2>Every light on, every time</h2>
+<p>Turn on <strong>every light in the house</strong> — overheads, lamps, under-cabinet, closet lights, the range hood light. Warm, lit rooms read as inviting; dark rooms read as small and grim. Yes, mixed light sources complicate white balance (Chapter 6 handles that), but a bright, alive-looking home always wins.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Don't film a cluttered space</div><p>Cords, dish soap, trash bins, personal photos, pet bowls, a phone charger on the counter — the camera sees all of it, and clutter is the fastest way to make a nice home look cheap. Ten minutes of tidying does more than any editing trick.</p></div>
+
+<h2>The declutter and stage pass</h2>
+<ul class="check">
+  <li>Clear all countertops in the kitchen and bathrooms to near-empty.</li>
+  <li>Make every bed; square the pillows; straighten throws.</li>
+  <li>Hide bins, cords, chargers, remotes, cleaning supplies, and pet gear.</li>
+  <li>Open blinds and curtains for light; align them evenly.</li>
+  <li>Remove or turn down family photos and personal items (buyers picture themselves there).</li>
+  <li>Raise all toilet seat lids down; close them fully.</li>
+  <li>Add a few staged touches: fresh towels, a bowl of fruit, a plant, a set table.</li>
+  <li>Wipe mirrors and glass — the camera catches every smudge and, worse, your reflection.</li>
+</ul>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Watch your own reflection</div><p>Mirrors, TVs, shower glass, and windows will show you and your tripod. Before each shot, check the frame for reflections and shift your position or angle down slightly to hide.</p></div>
+
+<h2>Make a plan before you film</h2>
+<p>Do a full slow lap of the property with your phone, noting the order you'll shoot and any problem rooms (too dark, too tight, bad reflections). Decide your path now — Chapter 4 — so the shoot itself is calm and mechanical instead of improvised.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Photograph the "before"</div><p>Snap quick phone photos of each room as you stage it. If a host asks you to reset the space or you need to return an item, you have a reference. It also documents your prep for the client.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>Plan the Flow</h1>
+<p>A tour is a story with a fixed structure, and buyers understand it instinctively because it mirrors how you'd actually experience the home: you arrive, you walk in, you move through the living spaces, then the private rooms, then outside. Follow that arc and the video feels effortless to watch. Jump around and it feels confusing and cheap.</p>
+
+<h2>The natural order of a home</h2>
+<ol class="steps">
+  <li><span class="sh">Approach.</span> The exterior from the street or driveway. This sets the scene and orients the viewer.</li>
+  <li><span class="sh">Entry.</span> The front door and foyer — the "welcome" moment. Show the first impression a real visitor gets.</li>
+  <li><span class="sh">Living spaces.</span> Living room, dining, then the kitchen — the heart of most homes, and often the strongest selling room.</li>
+  <li><span class="sh">Bedrooms.</span> Primary bedroom first (biggest selling point), then secondary bedrooms.</li>
+  <li><span class="sh">Bathrooms.</span> Primary/ensuite, then shared baths. Short and clean.</li>
+  <li><span class="sh">Outdoor.</span> Backyard, patio, pool, balcony, view. End on the amenity that sells the lifestyle.</li>
+</ol>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Feature the strongest room</div><p>Not every home follows the standard order. If the kitchen or the view is the headline feature, give it more time and a stronger reveal. Lead your final edit with the property's single best selling point.</p></div>
+
+<h2>Establishing to detail, room by room</h2>
+<p>Within each room, shoot in the same rhythm the whole tour uses: a <strong>wide establishing shot</strong> that shows the room's shape and size, then a <strong>detail shot</strong> or two of what makes it special — the fireplace, the fixtures, the counters, the view out the window. Wide tells the truth about the space; detail sells the finish.</p>
+
+<blockquote>Show the room, then show the reason to want the room.</blockquote>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Shoot doorway connections</div><p>Film the transition <em>through</em> a doorway from one room into the next. Those connecting shots let you cut the tour into one continuous flowing walk instead of disconnected clips, and they show buyers how the home actually lays out.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Smooth Movement Through Rooms</h1>
+<p>This is the chapter that separates paid work from home video. Smooth, deliberate camera movement makes an ordinary house feel expensive; shaky, jerky movement makes even a mansion look like a walkthrough shot by a nervous cousin. The good news: smoothness is technique, not talent, and you can learn it in an afternoon.</p>
+
+<h2>The reveal through a doorway</h2>
+<p>The signature real-estate move is the <strong>doorway reveal</strong>: start with the camera just outside a room, then glide forward through the threshold so the space opens up in front of the viewer. It creates anticipation and shows how rooms connect. Move slowly and keep the camera level.</p>
+
+<h2>Move like you mean it</h2>
+<ol class="steps">
+  <li><span class="sh">Walk heel-to-toe, knees soft.</span> Bend your knees slightly and roll each step from heel to toe. Your legs, not your arms, absorb the bounce. This is the "ninja walk," and it's the whole trick.</li>
+  <li><span class="sh">Keep a constant height.</span> Pick a camera height — usually chest-to-shoulder level — and hold it through the whole shot. Bobbing up and down is the most obvious amateur tell.</li>
+  <li><span class="sh">Keep a constant, slow speed.</span> Start moving before you record and stop after; never accelerate or jerk to a halt mid-clip. Slow and even beats fast every time.</li>
+  <li><span class="sh">Lead with the gimbal, not your wrist.</span> Let the gimbal float; guide it with your whole body turning, not flicks of your hand.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Shaky verticals kill a tour</div><p>Vertical (phone-format) clips shot handheld show every wobble far more than horizontal, because the tall frame exaggerates side-to-side motion. If you're capturing vertical for Reels or TikTok, use the gimbal — never freehand. A shaky vertical is worse than no vertical.</p></div>
+
+<h2>Entering and exiting the frame</h2>
+<p>Give each clip a little <strong>lead-in and lead-out</strong> — start recording a beat before the movement and hold a beat after. Those extra seconds give you clean cut points in the edit and let clips flow into each other. A clip that starts and ends mid-motion is nearly impossible to cut cleanly.</p>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Practice drill: the hallway pass</div><p>Before your first paid shoot, film yourself walking your own hallway ten times with the ninja walk, watching the footage each time. You'll physically feel your bounce disappear. Fifteen minutes here saves you an embarrassing first client.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Slow it down in post</div><p>Shoot your walking moves a touch faster than you want, then slow the clip to 80&ndash;90% speed in the edit. It smooths residual motion and adds a floaty, high-end feel. Just keep frame rate high enough that it stays fluid.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Nail Exposure &amp; White Balance With Windows</h1>
+<p>Windows are the hardest technical problem in interior video, and getting them right is what makes your work look professional. The issue is dynamic range: the bright outdoors is many stops brighter than the shaded interior, so the camera can't hold both. Expose for the room and the windows blow out to white; expose for the windows and the room goes black.</p>
+
+<div class="key"><div class="kt">The window rule</div><p>Expose so the interior looks bright and inviting and the windows are only <em>slightly</em> overexposed — a fully white, blown-out window looks careless, but a dark room looks worse.</p></div>
+
+<h2>Which to protect</h2>
+<p>In most tours, the <strong>room</strong> is the subject, so you expose for the interior and accept that windows go a little bright. But when the <strong>view</strong> is a selling point — an ocean, mountains, a city skyline — you expose for the window and add light to lift the room, so both read.</p>
+
+<div class="cards">
+  <div class="card solid"><div class="ch">🛋️ Room is the subject</div><p>Expose for the interior. Let windows go gently bright. Turn on all lamps so the room can compete with the daylight.</p></div>
+  <div class="card solid"><div class="ch">🌅 View is the subject</div><p>Expose for the window. Add light inside (lamps, a small LED panel) or shoot near golden hour when indoor and outdoor brightness are closer.</p></div>
+</div>
+
+<h2>Ways to blend the two</h2>
+<ol class="steps">
+  <li><span class="sh">Turn on every interior light.</span> Raising the room's brightness narrows the gap between inside and outside — the simplest fix, and free.</li>
+  <li><span class="sh">Shoot on a bright-but-overcast day, or near golden hour.</span> Softer, dimmer outdoor light sits closer to interior levels. Harsh midday sun is the worst case.</li>
+  <li><span class="sh">Angle away from the brightest windows.</span> Compose so windows sit to the side rather than dominating the frame when you can't win the exposure.</li>
+  <li><span class="sh">Shoot in a flat/log profile if your camera has one.</span> It captures more range in highlights and shadows, giving you room to balance the shot in the edit.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Blown-out windows look cheap</div><p>A pure-white rectangle where a window should be reads as sloppy and makes buyers wonder what you're hiding. Pull your exposure down until you can see at least a hint of what's outside, then lift the room with lights. A little detail in the window sells trust.</p></div>
+
+<h2>Consistent white balance, room to room</h2>
+<p>Set white balance <strong>manually and leave it</strong>. If you use auto white balance, the camera re-guesses in every room — a kitchen with warm bulbs, a bathroom with cool ones — and your tour flickers between orange and blue, which looks broken. Pick one value (around 5000K is a safe daylight-ish middle) and hold it all shoot. Small consistency beats perfect-but-shifting color.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Match the mood, not the meter</div><p>A slightly warm white balance makes homes feel cozy and inviting — lean warm rather than clinical. Just make sure it's the <em>same</em> warm in every room so the tour feels like one continuous space.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>Exteriors &amp; Amenities</h1>
+<p>The outside sells the lifestyle. Your establishing exterior orients the viewer and sets the value; your amenity shots — pool, patio, view, neighborhood — are what turn a nice house into a place someone <em>wants</em>. These clips also give your edit its opening and its big finish.</p>
+
+<h2>The establishing exterior</h2>
+<p>Open the tour with a clean, level shot of the property from the street or the best-looking approach. Shoot it in good light — <strong>golden hour</strong> (the hour after sunrise or before sunset) makes any building look its best, with warm light and long soft shadows. Straighten your verticals; a leaning house looks amateur.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Exterior establishing shot</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Time <b>golden hour</b></span><span class="chip">Move <b>slow push-in or reveal</b></span><span class="chip">Aperture <b>f/5.6&ndash;f/8</b></span><span class="chip">ISO <b>as low as possible</b></span><span class="chip">Verticals <b>straight</b></span></div>
+    <p class="small">A slow forward glide up the driveway or a rising reveal over a hedge makes a stronger open than a static frame. Keep the horizon level.</p>
+  </div>
+</div>
+
+<h2>Aerials — drone optional</h2>
+<p>A drone shot that rises to reveal the property, the lot, and the surroundings is the most impressive single clip you can deliver — and a genuine upsell. But it's optional: many great tours never leave the ground.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Fly legal</div><p>Flying a drone for a client is commercial use, which in most countries requires a license or registration (in the US, the FAA Part 107 certificate) and respect for no-fly zones and privacy. Don't fly a paid job until you've checked and met your local rules. When in doubt, deliver a ground tour and add drone later.</p></div>
+
+<h2>Amenity and neighborhood b-roll</h2>
+<p>Collect short detail clips of everything that adds value, and cut them in to punctuate the tour:</p>
+<ul class="check">
+  <li>Pool, hot tub, or water feature — get a low angle across the water.</li>
+  <li>The view — from the balcony, deck, or best window, held steady.</li>
+  <li>Patio, deck, or outdoor kitchen set as if ready to use.</li>
+  <li>Garden, mature trees, landscaping details.</li>
+  <li>Garage, driveway, and parking (buyers care more than you'd think).</li>
+  <li>Neighborhood context for Airbnb: the beach, a nearby cafe, the walkable street, the local landmark.</li>
+</ul>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Sell the stay with lifestyle b-roll</div><p>For Airbnb especially, a few "lifestyle" seconds — coffee steaming on the deck, a towel by the pool, sun through the curtains — sell the <em>feeling</em> of the stay. Guests book emotions, not floor plans.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>The Edit</h1>
+<p>You've captured clean, steady, well-exposed clips in a logical order — the edit is where they become a tour that sells. The good news is that real-estate editing is mostly assembly, not wizardry: put the clips in the right order, cut them to a beat, and keep it tight.</p>
+
+<h2>Order and pacing</h2>
+<p>Follow the flow from Chapter 4: exterior &rarr; entry &rarr; living &rarr; kitchen &rarr; bedrooms &rarr; baths &rarr; outdoor finish. Lead with your single strongest shot to hook the scroll. Keep clips <strong>short — 2 to 4 seconds each</strong>; a tour should feel like it's always moving forward. When in doubt, cut a beat earlier than feels comfortable.</p>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Cut on motion and on the beat</div><p>Cut from one moving clip into another so the energy carries through, and land your cuts on the music's beat. Even rough beat-matching instantly makes an edit feel professional. Most editors let you drop markers on the beats to cut against.</p></div>
+
+<h2>Choosing music</h2>
+<p>Music sets the entire mood, so choose deliberately: upbeat and warm for a family home, sleek and modern for a luxury condo, relaxed and airy for a beach rental. Match the tempo to your cutting pace — faster song, faster cuts.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>License your music</div><p>Never pull a popular song off the internet for a client's video — it can get the listing muted or taken down on social platforms and exposes you to copyright claims. Use a royalty-free or licensed library (many editors include one, or subscribe to a music service) and keep proof of your license.</p></div>
+
+<h2>Length depends on where it's going</h2>
+<table>
+  <tr><th>Destination</th><th>Length</th><th>Feel</th></tr>
+  <tr><td>MLS / full property tour</td><td>60&ndash;120s</td><td>Complete, walks the whole home in order</td></tr>
+  <tr><td>Airbnb / VRBO listing</td><td>45&ndash;90s</td><td>Highlights the stay: spaces, view, amenities</td></tr>
+  <tr><td>Instagram Reel / TikTok</td><td>15&ndash;45s</td><td>Fast, hook in the first second, vertical</td></tr>
+  <tr><td>Facebook / YouTube</td><td>60&ndash;90s</td><td>Horizontal, a little more room to breathe</td></tr>
+</table>
+
+<h2>Vertical cuts for Reels and TikTok</h2>
+<p>Social is where listings get discovered now, and it's vertical. Make a separate <strong>9:16 cut</strong>: pick your best 6&ndash;10 clips, front-load the most eye-catching shot in the first second (the scroll is merciless), and keep it under 45 seconds. If you framed a little loose while shooting, you can reframe horizontal clips to vertical without losing the subject.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Grade for bright and clean</div><p>In color, nudge exposure up so the home feels light and airy, lift shadows so nothing's muddy, and keep whites clean and neutral. Property video should feel <em>bright</em> — err toward slightly overexposed and warm, never dark and moody.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Delivery &amp; Specs</h1>
+<p>How you hand off the finished video is part of the service, and doing it cleanly is what turns a one-off client into a repeat one. Deliver the right formats, sized correctly, on time, and you make the agent or host look good — which is the whole job.</p>
+
+<h2>Resolution and format</h2>
+<p>Deliver in <strong>4K if you shot it and the client can use it; 1080p is the safe universal minimum.</strong> Export as <strong>H.264 MP4</strong> — it plays everywhere, uploads to every platform, and keeps file sizes sane. That single format covers MLS, social, email, and web.</p>
+
+<h2>Give them both orientations</h2>
+<div class="cards">
+  <div class="card solid"><div class="ch">🖥️ Horizontal (16:9)</div><p>The main tour for MLS, YouTube, Facebook, websites, and email. This is the primary deliverable.</p></div>
+  <div class="card solid"><div class="ch">📱 Vertical (9:16)</div><p>The short cut for Instagram Reels, TikTok, and Stories. Increasingly the one that gets the most eyeballs.</p></div>
+</div>
+
+<h2>Delivery checklist</h2>
+<ul class="check">
+  <li>Horizontal full tour, exported 4K or 1080p MP4.</li>
+  <li>Vertical social cut, 9:16 MP4, under 45 seconds.</li>
+  <li>Filenames with the property address so the client can find them.</li>
+  <li>A shared download link (cloud folder or transfer service), not a giant email attachment.</li>
+  <li>Music license reference included if the client will re-post.</li>
+  <li>Delivered by the turnaround you promised — ideally 48 to 72 hours.</li>
+</ul>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Branding — theirs, then maybe yours</div><p>Add the agent's or host's branding if they want it (logo, contact, listing details) — the video markets <em>them</em>. Keep your own credit tasteful: a small end card or nothing at all. The work should sell you; a loud watermark just gets in the client's way.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Fast turnaround wins repeat clients</div><p>In real estate, timing is money — a listing needs its video the day it goes live. Reliable 48&ndash;72 hour delivery is a bigger competitive edge than being 10% better with a camera. Be the person who's fast <em>and</em> good.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>The Business</h1>
+<p>Everything so far was craft. This chapter is how the craft pays. Real estate and short-term-rental video is a genuinely repeatable service business: the same skills, the same shoot-day routine, the same deliverables — sold over and over to people who always need more. Here's how to price it, find clients, and run a shoot every time.</p>
+
+<h2>What to charge</h2>
+<p>Pricing <strong>varies enormously by market</strong> — a video in a major metro with million-dollar listings commands far more than one in a small town, and you should research what local shooters charge before you set rates. The tiers below are a sensible starting framework, not fixed prices; adjust to your area and your speed.</p>
+
+<table>
+  <tr><th>Package</th><th>What's included</th><th>Typical range*</th></tr>
+  <tr><td>Basic tour</td><td>60&ndash;90s horizontal walkthrough, edited to music, 1080p</td><td>$150&ndash;$300</td></tr>
+  <tr><td>Standard</td><td>Full tour + vertical social cut + b-roll, 4K</td><td>$300&ndash;$600</td></tr>
+  <tr><td>Premium</td><td>Everything + drone aerials + extra amenity/lifestyle clips</td><td>$600&ndash;$1,200+</td></tr>
+</table>
+<p><em>*Ranges vary widely by market, property value, and your experience — treat them as a starting point and price to your local rates.</em></p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Bundle with photos, or partner with a photographer</div><p>Agents want stills and video from one visit. If you shoot both, bundle them at a premium. If you only do video, partner with a real-estate photographer and refer clients to each other — it's the fastest way to a steady pipeline.</p></div>
+
+<h2>Finding agents and hosts</h2>
+<ol class="steps">
+  <li><span class="sh">Start with people you know.</span> Film one property free or cheap for an agent or host friend, and use that video as your portfolio. One great sample sells the next ten jobs.</li>
+  <li><span class="sh">Target active local agents.</span> Look up who has the most listings in your area on the big real-estate sites — those are the people shooting the most video and most likely to hire out.</li>
+  <li><span class="sh">Pitch Airbnb superhosts directly.</span> Hosts with multiple properties or premium listings understand that better video books more nights, and they pay for it.</li>
+  <li><span class="sh">Post your work where clients look.</span> A simple Instagram or local business page of your tours, tagged to neighborhoods, becomes your storefront and your proof.</li>
+  <li><span class="sh">Ask every happy client for a referral.</span> Real estate is a referral business; one satisfied agent introduces you to their whole office.</li>
+</ol>
+
+<h2>Your repeatable shoot-day checklist</h2>
+<p>Run this exact sequence every job. A checklist is what makes you look like a pro on your fifth shoot instead of your fiftieth.</p>
+<ul class="check">
+  <li>Confirm address, time, access, and what the client wants captured.</li>
+  <li>Charge batteries, format cards, pack gimbal, tripod, spare battery, spare card.</li>
+  <li>On arrival: full walk-through, note your path and problem rooms.</li>
+  <li>Turn on every light; open blinds; do the declutter and staging pass.</li>
+  <li>Lock exposure, white balance, frame rate, and shutter before filming.</li>
+  <li>Shoot the exterior in the best light (return for golden hour if you can).</li>
+  <li>Film room by room in order: wide establishing, then details.</li>
+  <li>Capture doorway connections and amenity/lifestyle b-roll.</li>
+  <li>Check reflections and blown windows on the spot; reshoot anything soft.</li>
+  <li>Back up footage before you leave the property.</li>
+  <li>Edit horizontal + vertical; deliver within your promised turnaround.</li>
+  <li>Ask for a testimonial and a referral.</li>
+</ul>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Your first move this week</div><p>Message one agent or Airbnb host you already know and offer to film their next listing for your cost or free, in exchange for using it as your portfolio and a referral. That single video is the seed of the whole business — go plant it.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Property video is a learnable, repeatable, sellable skill — keep it steady, bright, and flowing, and you're not just filming rooms, you're selling homes and booking stays for pay.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

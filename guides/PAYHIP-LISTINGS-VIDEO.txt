@@ -1,0 +1,242 @@
+========================================================================
+ PAYHIP UPLOAD PACK - VIDEOGRAPHY GUIDES  (Story Mode Guy)
+========================================================================
+
+HOW TO USE THIS FILE
+--------------------
+In Payhip: Products -> Add new product -> Digital product.
+For each guide below, copy the four blocks:
+  - TITLE
+  - SHORT DESCRIPTION
+  - FULL DESCRIPTION
+  - TAGS
+Upload the matching PDF, set the PRICE, and use the matching cover image.
+Cover images are thumb-guide-11.jpg ... thumb-guide-20.jpg (bundle = bundle-cover-video.jpg).
+
+After uploading, send me the 11 URLs (they look like https://payhip.com/b/XXXXX)
+and I'll wire each into the website's Videography section and the blog CTAs.
+
+
+========================================================================
+ 1)  MAKE YOUR VIDEOS LOOK CINEMATIC
+========================================================================
+PRICE:  $29
+PDF FILE:  v01-cinematic-look.pdf
+COVER IMAGE:  thumb-guide-11.jpg
+
+TITLE:
+Make Your Videos Look Cinematic
+
+SHORT DESCRIPTION:
+Camera settings and habits that kill the "home-video" look - the cinematic starting point.
+
+FULL DESCRIPTION:
+Ever wonder why your footage looks like a home video and theirs looks like a film? It's not the camera - it's a handful of settings and habits. This 21-page guide covers the 180-degree shutter rule and frame rate, resolution and codecs, picture profiles and log, the cinematic depth look, white balance, exposure tools (zebras, false color, ND filters), and framing for motion - plus an anti-"video-look" checklist. Works with any camera or phone. Instant PDF download.
+
+TAGS:
+cinematic video, how to make videos look cinematic, filmmaking, video settings, shutter rule, videography guide
+
+
+========================================================================
+ 2)  SHOOT BETTER VIDEO ON YOUR PHONE
+========================================================================
+PRICE:  $29
+PDF FILE:  v02-phone-video.pdf
+COVER IMAGE:  thumb-guide-12.jpg
+
+TITLE:
+Shoot Better Video on Your Phone
+
+SHORT DESCRIPTION:
+Pro-looking footage from the phone in your pocket - iPhone & Android.
+
+FULL DESCRIPTION:
+Your phone shoots better video than you think - you just have to stop letting it decide everything. This 21-page guide covers the settings that matter (resolution, frame rate, format), locking focus and exposure, holding it steady, native vs. pro camera apps, working with light, fixing the weak link (phone audio), a simple mobile edit, and the gear that actually helps. Works on iPhone and Android. Instant PDF download.
+
+TAGS:
+iphone video, phone videography, mobile filmmaking, smartphone video, content creator, video tips
+
+
+========================================================================
+ 3)  THE VIDEO EDITING BLUEPRINT
+========================================================================
+PRICE:  $37
+PDF FILE:  v03-editing-blueprint.pdf
+COVER IMAGE:  thumb-guide-13.jpg
+
+TITLE:
+The Video Editing Blueprint
+
+SHORT DESCRIPTION:
+A repeatable editing workflow for Premiere, DaVinci & CapCut - from footage to final export.
+
+FULL DESCRIPTION:
+Stop staring at a timeline you don't know how to start. This 22-page blueprint gives you a repeatable order-of-operations: project setup and import, culling, the assembly edit, rough-to-fine cutting, pacing and cutting on motion, music and sound, titles and captions, a light color polish, and export settings for YouTube, Reels/TikTok, and client delivery. Written software-agnostic with concrete notes for Adobe Premiere Pro, DaVinci Resolve (free), and CapCut. Instant PDF download.
+
+TAGS:
+video editing, how to edit videos, premiere pro, davinci resolve, capcut, editing workflow
+
+
+========================================================================
+ 4)  COLOR GRADING DEMYSTIFIED
+========================================================================
+PRICE:  $34
+PDF FILE:  v04-color-grading.pdf
+COVER IMAGE:  thumb-guide-14.jpg
+
+TITLE:
+Color Grading Demystified
+
+SHORT DESCRIPTION:
+Log, LUTs & the filmic look - without the guesswork.
+
+FULL DESCRIPTION:
+Flat, grey footage isn't broken - it's waiting to be graded. This 22-page guide separates color correction from color grading and walks you through both: reading scopes, fixing exposure and white balance, understanding log and LUTs (and why a LUT alone fails), the primary grade, protecting skin tones, selective color and power windows, matching shots across a scene, and exporting in Rec.709 so it doesn't look washed out after upload. Built around DaVinci Resolve (free) with Premiere notes. Instant PDF download.
+
+TAGS:
+color grading, davinci resolve, log footage, luts, color correction, video color
+
+
+========================================================================
+ 5)  FIX YOUR AUDIO
+========================================================================
+PRICE:  $24
+PDF FILE:  v05-audio-for-video.pdf
+COVER IMAGE:  thumb-guide-15.jpg
+
+TITLE:
+Fix Your Audio
+
+SHORT DESCRIPTION:
+Clean, professional sound for any video - diagnose the problem, fix the cause.
+
+FULL DESCRIPTION:
+Viewers forgive bad video. They click away from bad audio. This 22-page fix-it guide covers why your built-in mic fails, which mic to use when (lav, shotgun, USB), the golden rule of mic distance, taming echoey rooms, setting levels and monitoring, recording and syncing options, and rescuing sound in post with noise reduction, EQ, compression, and loudness for platforms. Real numbers (dBFS, LUFS), any gear. Instant PDF download.
+
+TAGS:
+video audio, how to get good audio, microphone for video, sound recording, audio for youtube, video sound
+
+
+========================================================================
+ 6)  LIGHTING FOR VIDEO
+========================================================================
+PRICE:  $27
+PDF FILE:  v06-video-lighting.pdf
+COVER IMAGE:  thumb-guide-16.jpg
+
+TITLE:
+Lighting for Video
+
+SHORT DESCRIPTION:
+From one light to a full setup that looks great - interviews, talking-head, product.
+
+FULL DESCRIPTION:
+Good lighting is the difference between "amateur" and "professional," and it's more about understanding than gear. This 23-page guide covers soft vs. hard light, direction and the key light, one-light setups that look great, three-point lighting, using windows for free, background separation and depth, color temperature and mixed light, avoiding flicker, and ready-to-copy setups for interviews, YouTube, and product video. Instant PDF download.
+
+TAGS:
+video lighting, three point lighting, interview lighting, youtube lighting, lighting setup, videography
+
+
+========================================================================
+ 7)  B-ROLL & VISUAL STORYTELLING
+========================================================================
+PRICE:  $27
+PDF FILE:  v07-broll-storytelling.pdf
+COVER IMAGE:  thumb-guide-17.jpg
+
+TITLE:
+B-roll & Visual Storytelling
+
+SHORT DESCRIPTION:
+Turn flat clips into videos people watch to the end.
+
+FULL DESCRIPTION:
+If your videos feel boring or aimless, the fix isn't a better camera - it's b-roll and structure. This 23-page guide covers what b-roll is and why it saves every edit, thinking in sequences (wide/medium/tight), the 5-shot method, building a shot list, matching action and motivated cuts, story structure without a script, getting enough coverage, and pacing with music. A repeatable workflow you can run on any shoot. Instant PDF download.
+
+TAGS:
+b-roll, visual storytelling, how to shoot b-roll, video storytelling, filmmaking, shot list
+
+
+========================================================================
+ 8)  SMOOTH, CINEMATIC CAMERA MOVEMENT
+========================================================================
+PRICE:  $24
+PDF FILE:  v08-camera-movement.pdf
+COVER IMAGE:  thumb-guide-18.jpg
+
+TITLE:
+Smooth, Cinematic Camera Movement
+
+SHORT DESCRIPTION:
+Handheld & gimbal moves that look intentional, not shaky.
+
+FULL DESCRIPTION:
+Shaky, aimless footage screams amateur; smooth, motivated movement reads as cinema. This 19-page guide covers why handheld looks shaky and how to fix it with no gear, the core gimbal moves (reveal, orbit, push-in, follow, low-mode), balancing a gimbal right, matching movement to shutter and frame rate, when NOT to move, other tools (sliders, monopods), and stabilizing in post - with movement recipes by shot. Instant PDF download.
+
+TAGS:
+camera movement, gimbal, smooth video, cinematic shots, handheld video, gimbal moves
+
+
+========================================================================
+ 9)  REAL ESTATE & AIRBNB VIDEO TOURS
+========================================================================
+PRICE:  $39
+PDF FILE:  v09-real-estate-video.pdf
+COVER IMAGE:  thumb-guide-19.jpg
+
+TITLE:
+Real Estate & Airbnb Video Tours
+
+SHORT DESCRIPTION:
+Film bright, sellable property walkthroughs - and get paid for them.
+
+FULL DESCRIPTION:
+Property video sells listings and books stays - and it's a real side income. This 23-page guide covers gear and settings for bright interiors, prepping the property, planning the walkthrough flow, smooth movement through rooms, nailing exposure and white balance with windows, exteriors and drone-optional b-roll, the edit and music, delivery specs for MLS and social, and the business side - what to charge and how to find clients. Instant PDF download.
+
+TAGS:
+real estate video, property video, airbnb video, real estate videography, side income, video tours
+
+
+========================================================================
+ 10)  THE VIDEOGRAPHER'S CHEAT-SHEET PACK
+========================================================================
+PRICE:  $17
+PDF FILE:  v10-video-cheat-sheet.pdf
+COVER IMAGE:  thumb-guide-20.jpg
+
+TITLE:
+The Videographer's Cheat-Sheet Pack
+
+SHORT DESCRIPTION:
+Grab-and-go printable cards - frame rates, audio, lighting, movement, export.
+
+FULL DESCRIPTION:
+A deck of printable field cards for the moment you're actually shooting. This 20-page pack includes a frame-rate & shutter-angle table, resolution/bitrate/codec card, picture-profile quick-set, an ND and exposure-tools card, audio levels and mic checklist, lighting quick-reference, the 5-shot and b-roll shot list, a camera-movement cheat card, and export-settings cards for YouTube, vertical social, and client delivery - plus a pre-shoot checklist. Print it, keep it in the bag. Instant PDF download.
+
+TAGS:
+videography cheat sheet, camera settings, frame rate chart, export settings, printable, video reference
+
+
+========================================================================
+ *  BUNDLE - THE COMPLETE VIDEOGRAPHY LIBRARY
+========================================================================
+PRICE:  $99
+PDF FILE:  upload all 10 PDFs (or a single combined zip)
+COVER IMAGE:  bundle-cover-video.jpg
+
+TITLE:
+The Complete Videography Library
+
+SHORT DESCRIPTION:
+All 10 videography guides - 216 pages - from your first cinematic shot to a paid property tour.
+
+FULL DESCRIPTION:
+The whole videography library in one download: cinematic camera settings, phone video, the editing blueprint, color grading, audio, lighting, b-roll & storytelling, camera movement, real estate video tours, and the cheat-sheet pack. Ten guides, 216 pages, everything you need to go from "home-video" footage to work you're proud to charge for - for less than the price of four guides a la carte. Instant PDF download.
+
+TAGS:
+videography bundle, video course, filmmaking guides, learn videography, video editing, content creator
+
+
+========================================================================
+ END - 10 guides + 1 bundle.  Send me the 11 Payhip URLs when done.
+========================================================================

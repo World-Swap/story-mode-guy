@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Cinematic Drone Moves — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #4f46e5;
+  --accent2: #818cf8;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">THE SIGNATURE SHOTS</div>
+    <div style="margin-top:auto"></div>
+    <h1>Cinematic Drone Moves</h1>
+    <div class="rule"></div>
+    <div class="sub">The Aerial Shots That Make Footage Look Like a Film</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$29 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">The Aerial Shots That Make Footage Look Like a Film. Written for pilots whose footage is steady but boring.</div>
+  <ol><li><span class="t">Steady Isn't the Same as Cinematic</span></li><li><span class="t">Movement With Intention</span></li><li><span class="t">The #1 Skill: Smooth Sticks</span></li><li><span class="t">The Reveal</span></li><li><span class="t">The Orbit / Point of Interest</span></li><li><span class="t">The Flyover & Top-Down</span></li><li><span class="t">The Dronie & Fly-Away</span></li><li><span class="t">The Fly-Through & Tracking Shot</span></li><li><span class="t">Speed, Altitude & Framing for a Cinematic Feel</span></li><li><span class="t">Combining Moves & Matching the Move to the Scene</span></li><li><span class="t">A Cinematic-Moves Practice Plan</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>Steady Isn't the Same as Cinematic</h1>
+<p class="lead-in">Your footage is smooth. The horizon is level, the exposure is clean, nothing wobbles. And it is completely forgettable. The gap between a clip that looks like B-roll and a clip that looks like a film is not your drone — it is what the drone <em>does</em> while it flies. This guide teaches the handful of deliberate moves that turn a stable hover into a shot with a story.</p>
+
+<p>Here is the thing nobody tells new pilots: a drone that just hangs in the air pointed at a nice view is the aerial equivalent of a webcam. It records. It doesn't <em>direct</em>. Cinema is motion with intention — a camera that arrives somewhere, reveals something, or chases a feeling. That intention is a learnable set of stick moves, and none of them require an expensive aircraft. A cheap mini drone flown with slow, patient hands beats a flagship flown like a nervous teenager every time.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Cinematic footage isn't about flying somewhere impressive — it's about moving the camera slowly and on purpose so every shot feels like it means something.</p></div>
+
+<h2>How to use this guide</h2>
+<p>Read Chapter 2 before anything else — smooth stick control is the foundation that every move in this book is built on, and skipping it is why most pilots stay stuck at "steady but boring." After that, work through the moves in order. Each one is a recipe you can fly on your next battery. The final chapter is a structured practice plan that stitches them into muscle memory.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with any drone</div><p>Everything here is gear-agnostic. Whether you fly a sub-250g mini, a mid-tier folding drone, or a cinema rig, the moves are identical — only the top speed and camera quality change. We describe what to look for in your controller and app rather than exact menu paths, because those get renamed with every firmware update.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Fly legal, fly safe, first</div><p>Everything in this guide assumes you are flying within your local rules — registered if required, below the legal altitude ceiling, in line of sight, away from people and airports. Cinematic ambition never overrides airspace law or basic safety. A grounded drone films nothing.</p></div>
+
+<h1><span class="n">CHAPTER 1</span>Movement With Intention</h1>
+<p>Before we touch a single move, you need to understand the mindset that separates cinematic pilots from everyone else. It isn't a setting. It's a question you ask before you take off: <em>what is this shot supposed to make someone feel?</em></p>
+
+<p>A boring clip has no answer. It exists because the view was pretty and the drone was in the air. A cinematic clip has a job — reveal the scale of a canyon, follow a car down a coast road, lift away from two people until they're specks in a landscape. The move serves the feeling. Fly with that question in your head and you stop drifting, start composing in time.</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🎬 Reveal</div><p>Hide something, then show it. Tilt up over a ridge, pull back past a tree. The delay is the drama.</p></div>
+  <div class="card"><div class="ch">🛰️ Scale</div><p>Make the viewer feel size. Rise, orbit, or fly over to show how small a subject is against the world.</p></div>
+  <div class="card"><div class="ch">🏃 Momentum</div><p>Chase energy. Track a moving subject or fly through a gap so the viewer feels carried along.</p></div>
+</div>
+
+<h2>The three ingredients of a cinematic move</h2>
+<ol class="steps">
+  <li><span class="sh">A clear start and end.</span> Every good shot begins on one composition and lands on another. Know both before you launch. Aimless flying reads as aimless footage.</li>
+  <li><span class="sh">Slow, constant speed.</span> The camera should glide at one unhurried pace from start to finish — no acceleration wobble, no last-second corrections.</li>
+  <li><span class="sh">A single dominant motion.</span> One move per clip. A pull-back, or an orbit, or a rise — not all three fighting each other. Combine moves across a sequence, not within one shot.</li>
+</ol>
+
+<blockquote>Boring footage is a hover with a nice view. Cinematic footage is a camera going somewhere on purpose.</blockquote>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Try this before you read on</div><p>Watch thirty seconds of any film's aerial shot with the sound off. The camera is <em>always</em> moving slowly, and always toward or around something specific. It never just sits there. That patience is the whole game.</p></div>
+
+<h1><span class="n">CHAPTER 2</span>The #1 Skill: Smooth Sticks</h1>
+<p>If you learn nothing else from this guide, learn this chapter. Every cinematic move is just smooth stick control applied in a shape. Jerky footage isn't a hardware flaw — it's a hand that stabs the sticks instead of easing them. The single biggest upgrade to your footage costs nothing and lives entirely in your thumbs.</p>
+
+<h2>Small inputs, held gently</h2>
+<p>New pilots push the sticks a long way and let go abruptly. That gives you a lurch at the start and a snap at the end — the two ugliest frames in any clip. Cinematic flying is the opposite: nudge the stick a <strong>tiny</strong> distance from center and hold it perfectly still. The drone eases into motion, glides, and then you ease the stick back to center just as gently. Think of the stick as the throttle of a slow train, not the trigger of a gun.</p>
+
+<div class="key"><div class="kt">The core habit</div><p>Move the sticks a quarter of the way at most, hold them dead still, and release them as slowly as you pushed them. Slow hands make cinematic footage. Every time.</p></div>
+
+<h2>Two-handed control</h2>
+<p>Fly with a thumb <em>and</em> a finger on each stick — thumb on top, index finger pinching the base from the side. This "pinch grip" gives far finer control than a thumb alone, because the two fingers brace against each other and meter out microscopic input. Almost every pro flies this way. It feels awkward for one flight and natural forever after.</p>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Turn down your stick sensitivity</div><p>Somewhere in your controller settings is a sensitivity, gain, or "EXP" (exponential) curve for each axis. Lower the sensitivity and add exponential, and the area around center becomes gentle and forgiving — a big physical stick movement produces a small drone response. This is the fastest way to buy yourself smoother footage in software. Set it once and leave it.</p></div>
+
+<h2>The two habits that ruin clips</h2>
+<div class="cards">
+  <div class="card solid"><div class="ch">🛑 The abrupt stop</div><p>Chopping the stick back to center makes the drone jerk to a halt. Ease off over a full second so the move settles instead of slamming.</p></div>
+  <div class="card solid"><div class="ch">🔀 The double input</div><p>Correcting mid-move — a little left, then oops, a little right — creates visible wobble. Commit to one smooth input and let small imperfections ride.</p></div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Record longer than you need</div><p>Start recording several seconds before the move and keep rolling several seconds after. The steady hover on either side gives you clean in and out points to trim to, and hides the tiny wobble when you first touch or release the sticks.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>The smoothness drill</div><p>Hover at a safe height and fly straight sideways as <em>slowly</em> as the drone will go for a full ten seconds, then ease to a stop over two seconds. If you can do that with no visible jerk on playback, you have the only skill that matters. Everything else is this move in a different shape.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>The Reveal</h1>
+<p>The reveal is the most cinematic move you can learn, and one of the easiest to fly. It works on a simple principle of tension: you hide the good stuff, then show it. The half-second of anticipation before the payoff is what makes an audience lean in. There are two flavors, and both are just slow, single-axis moves.</p>
+
+<h2>The tilt-up reveal</h2>
+<p>Start with the camera pointed <strong>down</strong> at something ordinary and close — grass, sand, a rooftop, a path. Then slowly tilt the gimbal up while creeping the drone forward, until the camera rises to reveal the landscape or subject beyond. The foreground wipes out of frame and the world opens up. It's the aerial equivalent of raising your eyes.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Tilt-up reveal</span><span class="tag">SETTINGS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Speed <b>slow / cine mode</b></span><span class="chip">Altitude <b>low start, 5&ndash;30 m</b></span><span class="chip">Gimbal <b>&minus;90&deg; &rarr; horizon</b></span></div>
+    <p class="small">Fly forward at a gentle crawl while easing the gimbal wheel from straight-down to level. Match the two speeds so the reveal lands as you reach the edge of the foreground.</p>
+  </div>
+</div>
+
+<h2>The pull-back reveal</h2>
+<p>Frame tight on your subject — a person, a car, a cabin — then fly slowly <em>backward</em>. As you retreat, more of the world enters the frame and your subject shrinks into an epic landscape. It's the classic "and they were all alone out here" ending shot. Flying backward, you can't see where you're going, so it demands the safety habits below.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Flying backward is blind flying</div><p>Your drone's main obstacle sensors usually face forward, not back. Before any backward reveal, physically walk the path the drone will travel and confirm it's clear of trees, wires, and poles. Keep the aircraft in your direct line of sight the whole way and start high enough to clear anything behind you.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Combine the two for a signature reveal</div><p>The most dramatic version pulls back <em>and</em> tilts up at the same time — retreating from a subject while lifting the camera to show the sky and horizon behind them. It's two smooth inputs at once, so master each alone first, then layer them on a wide-open, obstacle-free field.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>The Orbit / Point of Interest</h1>
+<p>The orbit circles the camera around a fixed subject, keeping it centered while the background sweeps past behind it. It's the move that says "this is important" — it isolates a subject and reveals it in three dimensions. You can fly it by hand for full control, or let an automated mode fly the circle for you.</p>
+
+<h2>The manual orbit</h2>
+<p>A hand-flown orbit is two synchronized inputs: push one stick sideways to fly the drone in a circle, while feeding in yaw with the other stick to keep the nose and camera pointed at the subject the whole way around. It sounds like rubbing your belly and patting your head, and at first it is. But manual orbits give you speed changes and tightening arcs no automated mode can match.</p>
+
+<ol class="steps">
+  <li><span class="sh">Set your radius and altitude.</span> Position the drone off to one side of the subject at the distance and height you want, camera framed on the subject.</li>
+  <li><span class="sh">Begin the sideways slide.</span> Ease the right stick gently left or right to start the drone arcing around the subject. Tiny input &mdash; this sets your orbit speed.</li>
+  <li><span class="sh">Feed in matching yaw.</span> With the left stick, add a trickle of yaw in the same rotational direction to keep the nose swinging to stay locked on the subject.</li>
+  <li><span class="sh">Micro-correct the framing.</span> As you circle, nudge the yaw a hair more or less to keep the subject dead center. Small, constant corrections &mdash; never a big grab.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Learn it on a small radius first</div><p>Practice tight orbits &mdash; a few meters &mdash; around a lone tree or cone in an open field. A small circle forces faster, more obvious corrections, so you build the coordination quickly. Then widen out. Big, slow orbits are far more forgiving once your hands understand the two-stick dance.</p></div>
+
+<h2>The automated orbit (Point of Interest)</h2>
+<p>Nearly every modern drone has an automated circling mode &mdash; often called Point of Interest or Orbit. You mark the subject, set a radius, and the drone flies a perfect circle at constant speed while keeping the camera locked on. It produces flawlessly smooth circles that are hard to fly by hand, which makes it a genuine cinematic tool, not a cheat.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Point-of-interest orbit</span><span class="tag">SETTINGS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Speed <b>slowest that looks alive</b></span><span class="chip">Altitude <b>10&ndash;40 m</b></span><span class="chip">Gimbal <b>angled down onto subject</b></span></div>
+    <p class="small">Pick the slowest orbit speed that still shows the background moving. Too fast looks frantic; a stately circle looks expensive. Angle the gimbal down slightly so the subject sits in the lower third with sky above.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Rise while you orbit</div><p>The most cinematic circles aren't flat. During an automated orbit, gently add a touch of throttle to climb as you circle, or tilt the gimbal down a hair as you go. That subtle spiral adds a second dimension of motion and turns a good orbit into a great one. Only add one small extra input &mdash; let the mode handle the circle.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>The Flyover & Top-Down</h1>
+<p>Pointing the camera straight down unlocks a whole visual language &mdash; abstract, graphic, God's-eye. Roads become lines, crowds become texture, coastlines become paintings. Two moves live here: pushing the camera forward over a subject, and descending straight down onto it.</p>
+
+<h2>The flyover (push-over)</h2>
+<p>Point the gimbal fully down, fly forward at a steady speed, and let subjects pass beneath you &mdash; a car on a road, a person on a beach, a boat cutting a wake. The magic is the top-down perspective flattening the world into shapes. Keep speed constant and let the subject drift from the top of the frame to the bottom.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Top-down flyover</span><span class="tag">SETTINGS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Speed <b>steady, moderate</b></span><span class="chip">Altitude <b>15&ndash;50 m</b></span><span class="chip">Gimbal <b>&minus;90&deg; straight down</b></span></div>
+    <p class="small">Higher altitude turns the ground more abstract; lower gives you speed and detail. Fly a dead-straight line and resist the urge to yaw &mdash; top-down shots live and die on a locked, drifting frame.</p>
+  </div>
+</div>
+
+<h2>The God's-eye descent</h2>
+<p>Camera straight down, hold your horizontal position, and descend slowly. A pattern that read as abstract from high up resolves into a recognizable subject as you drop &mdash; a lone figure in a field, a car in a lot, a swimmer in a pool. It's a top-down reveal, and it's mesmerizing.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Vertical descents are risky descents</div><p>Descending straight down, your camera is pointed at the ground, not below the props &mdash; you're partly blind to what you're settling onto. Worse, dropping fast pulls the drone into its own turbulent downwash and can make it unstable or wobbly. Descend <strong>slowly</strong>, keep plenty of clearance, and never descend blind onto or near people.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Add a slow rotation</div><p>During a top-down descent or hover, feed in a whisper of yaw so the whole frame rotates gently around its center. That slow spin over a symmetrical subject &mdash; a roundabout, a spiral staircase, a fountain &mdash; is hypnotic and takes almost no skill beyond a light touch on the yaw stick.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>The Dronie & Fly-Away</h1>
+<p>This is the "epic loneliness" shot: the camera starts close on a subject and retreats backward and upward at once, until the subject is a tiny speck in a vast landscape. It's the Chapter 3 reveal at its grandest scale, and the single most shared type of drone clip for a reason &mdash; it makes anything look monumental.</p>
+
+<h2>Flying it by hand</h2>
+<ol class="steps">
+  <li><span class="sh">Frame tight on the subject.</span> Get low and close &mdash; the subject filling a good part of the frame &mdash; so the reveal has somewhere dramatic to go.</li>
+  <li><span class="sh">Pull back and climb together.</span> Ease the drone backward while adding a steady trickle of throttle to rise. The subject shrinks as the world grows around and below it.</li>
+  <li><span class="sh">Keep the subject centered.</span> Small gimbal or framing tweaks keep them anchored in the middle while everything expands.</li>
+  <li><span class="sh">Hold the ending wide.</span> Let it settle on the final vast composition and keep rolling &mdash; that last held frame is often the shot you actually use.</li>
+</ol>
+
+<div class="recipe">
+  <div class="rh"><span>Dronie / fly-away</span><span class="tag">SETTINGS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Speed <b>slow, constant</b></span><span class="chip">Altitude <b>low start &rarr; high finish</b></span><span class="chip">Gimbal <b>level or slight down</b></span></div>
+    <p class="small">The backward-and-up combination is the whole move. Match the climb rate to the pull-back so the subject stays framed. An open field with clear airspace behind and above is mandatory.</p>
+  </div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>The automated version</div><p>Most drones have an automated Dronie or fly-away mode that flies this exact combination for you at the tap of a button &mdash; great when you're the subject and can't hold the controller. It's reliable and smooth, but a hand-flown version lets you control the exact speed and framing, which is worth learning once you're comfortable.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Backward and blind, again</div><p>Like every pull-back, this move flies the drone into space it can't see. Clear the airspace behind and above before you launch, watch your battery &mdash; you'll be far from home at the end &mdash; and keep the aircraft in sight the entire way out.</p></div>
+
+<h1><span class="n">CHAPTER 7</span>The Fly-Through & Tracking Shot</h1>
+<p>These are the momentum moves &mdash; the ones that put the viewer <em>in</em> the action. A fly-through sends the camera through a gap or opening; a tracking shot follows a moving subject. Both create energy, and both carry the most risk in this guide, so they demand the most respect.</p>
+
+<h2>The tracking shot</h2>
+<p>Fly alongside, behind, or ahead of a moving subject &mdash; a runner, a cyclist, a car, a boat &mdash; keeping pace so they stay framed while the world streams past. It's the aerial version of a camera car. You can fly it manually by matching the subject's speed, or use your drone's automated subject-tracking mode.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Tracking shot</span><span class="tag">SETTINGS</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Speed <b>match the subject</b></span><span class="chip">Altitude <b>subject height &ndash; 20 m</b></span><span class="chip">Gimbal <b>level, subject in frame</b></span></div>
+    <p class="small">Flying to the side gives the most dramatic sense of speed as the background sweeps by. Flying behind feels like a chase. Pick one and hold your relative position steady.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Automated tracking is your co-pilot, not your pilot</div><p>Follow or active-track modes let the drone lock onto and chase a subject automatically while you concentrate on the environment. They're excellent &mdash; but they will happily fly your drone straight into a tree behind the subject, because they're watching the target, not the obstacles. Only use tracking in wide-open space, and keep a thumb ready to take over instantly.</p></div>
+
+<h2>The fly-through</h2>
+<p>Threading the drone through a gap &mdash; a doorway, an arch, a gap in the trees, under a bridge &mdash; is the most exhilarating move and the one most likely to end in a crash. Proximity flying leaves no margin for a gust of wind or a moment's inattention.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Proximity flying: earn it slowly</div><p>Obstacle sensors <strong>cannot be trusted</strong> near a gap &mdash; they may try to stop the drone mid-threshold, so pilots often fly these manually with sensing off, which removes your safety net entirely. Start with gaps far larger than the drone, in dead-calm air, at slow speed, flown line-of-sight. Never fly through anything you haven't walked up to and eyeballed. If there's any wind, don't.</p></div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Build up to it</div><p>Before you thread a real gap, rehearse the exact line at a safe altitude with nothing around, several times, until the path is automatic. Then fly it for real, slowly, on a calm day. Confidence on a fly-through comes from repetition, not bravery.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Speed, Altitude & Framing for a Cinematic Feel</h1>
+<p>The same move can look amateur or cinematic depending on three dials: how fast you fly, how high you are, and how you frame. Get these right and even a simple sideways glide looks like a million dollars.</p>
+
+<h2>Speed: slower than feels right</h2>
+<p>The number-one mistake is flying too fast. Speed that feels painfully slow while flying almost always looks perfect on playback; speed that feels "normal" looks frantic. Cinematic drones crawl. If your drone has a cine or tripod mode that caps top speed and softens the stick response, use it &mdash; it's a smoothness cheat code built for exactly this.</p>
+
+<div class="key"><div class="kt">The speed rule</div><p>Whatever speed feels right, go slower. Almost no drone shot was ever ruined by being too smooth and too slow &mdash; and almost all of them are ruined by being too fast.</p></div>
+
+<h2>Altitude: lower is more cinematic than you think</h2>
+<p>New pilots fly high because it feels safe and the view is big. But height flattens everything and kills the sense of speed and scale. Flying <strong>low</strong> &mdash; skimming just above a field, a road, the water &mdash; gives you foreground rushing past, real depth, and drama. Reserve high altitude for the top-down and grand-reveal shots that need it.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">🛬 Low &amp; close</div><p>Speed, depth, foreground drama. Best for tracking, fly-throughs, and reveals. Riskier &mdash; demands clear space and attention.</p></div>
+  <div class="card"><div class="ch">🛫 High &amp; wide</div><p>Scale, geometry, safety. Best for top-downs, orbits, and epic fly-aways. Easy and forgiving, but flat if overused.</p></div>
+</div>
+
+<h2>Framing: compose in motion</h2>
+<ul class="check">
+  <li>Use the rule of thirds &mdash; turn on your app's grid overlay and keep horizons off the dead center.</li>
+  <li>Keep the horizon level and let it drift into place, not snap.</li>
+  <li>Give a moving subject space to move <em>into</em> &mdash; lead room in front of them, not behind.</li>
+  <li>Find a strong foreground element to pass &mdash; a tree, a rock, a rooftop &mdash; so the motion has something to measure against.</li>
+  <li>Leave headroom above tall subjects and breathing room around the edges for a stabilizing crop in editing.</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Shoot flat, grade later</div><p>If your drone offers a flat or D-log color profile and a high frame rate, use them. A flat profile holds more detail in bright skies and dark shadows to color-grade afterward, and a higher frame rate lets you slow the footage down in editing &mdash; and slowing a clip to half speed is the ultimate smoothness fix, hiding any last tremor in your flying.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>Combining Moves & Matching the Move to the Scene</h1>
+<p>One move makes a shot. A sequence of well-chosen moves makes a film. The art is picking the right move for what's in front of you, then cutting several together into something that feels composed rather than collected.</p>
+
+<h2>Match the move to the scene</h2>
+<table>
+  <tr><th>The scene</th><th>The move that fits</th><th>Why</th></tr>
+  <tr><td>Person alone in a landscape</td><td>Dronie / fly-away</td><td>Retreat and rise makes them small and the world vast</td></tr>
+  <tr><td>A landmark or building</td><td>Orbit / point of interest</td><td>Circling shows it in three dimensions and says "look here"</td></tr>
+  <tr><td>A road, river, or coastline</td><td>Low tracking or top-down flyover</td><td>Follows the line and gives the eye a path to travel</td></tr>
+  <tr><td>A grand view hidden behind terrain</td><td>Tilt-up reveal</td><td>The delay before the payoff creates the drama</td></tr>
+  <tr><td>A moving car, boat, or runner</td><td>Tracking shot</td><td>Matched speed puts the viewer in the action</td></tr>
+  <tr><td>A symmetrical pattern from above</td><td>Top-down descent with slow spin</td><td>Abstract resolving into subject is hypnotic</td></tr>
+</table>
+
+<h2>Building a sequence that flows</h2>
+<ol class="steps">
+  <li><span class="sh">Open wide to establish.</span> Start with a big reveal or high orbit so the viewer understands where they are.</li>
+  <li><span class="sh">Move in for detail.</span> Cut to a low tracking or fly-through shot that gets close and adds energy.</li>
+  <li><span class="sh">Vary the direction of motion.</span> If one shot moves left, let the next move right or push in &mdash; matching directions across a cut feels monotonous.</li>
+  <li><span class="sh">End on the biggest gesture.</span> Close with a fly-away or grand reveal so the sequence lands on a high note.</li>
+</ol>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>One move per clip, one idea per sequence</div><p>Resist cramming an orbit, a rise, and a push into a single shot &mdash; it reads as busy and confused. Keep each clip to one clean move, and let variety come from cutting <em>different</em> single-move shots together. Restraint is what separates a showreel from a highlight-dump.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Shoot your shot list, not the whole flight</div><p>Before you launch, decide on three or four specific shots you want from this battery. Fly each one deliberately, reset, and fly the next. You'll come home with four usable clips instead of eight minutes of aimless hovering you have to dig through.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>A Cinematic-Moves Practice Plan</h1>
+<p>Cinematic flying is muscle memory, and muscle memory only comes from reps. Here's a plan to take you from smooth-but-boring to deliberate. Work through it in an open, legal, wind-free space, one focus per session, and don't rush to the next until the current one feels automatic.</p>
+
+<h2>The moves at a glance</h2>
+<table>
+  <tr><th>Move</th><th>Core inputs</th><th>Best for</th></tr>
+  <tr><td>Tilt-up reveal</td><td>Forward + gimbal up</td><td>Hidden vistas</td></tr>
+  <tr><td>Pull-back reveal</td><td>Backward, level</td><td>Subject in landscape</td></tr>
+  <tr><td>Orbit</td><td>Sideways + matched yaw</td><td>Landmarks, subjects</td></tr>
+  <tr><td>Flyover</td><td>Forward, gimbal down</td><td>Roads, patterns</td></tr>
+  <tr><td>God's-eye descent</td><td>Slow drop, gimbal down</td><td>Top-down reveals</td></tr>
+  <tr><td>Dronie / fly-away</td><td>Backward + climb</td><td>Epic scale</td></tr>
+  <tr><td>Tracking shot</td><td>Match subject speed</td><td>Moving subjects</td></tr>
+  <tr><td>Fly-through</td><td>Slow forward, precise line</td><td>Energy, immersion</td></tr>
+</table>
+
+<h2>Your five-session plan</h2>
+<ol class="steps">
+  <li><span class="sh">Session 1 &mdash; Smooth sticks only.</span> No moves. Just fly slow, straight lines and gentle stops with the two-handed pinch grip until you can start and stop with zero visible jerk. This is the foundation; don't skip it.</li>
+  <li><span class="sh">Session 2 &mdash; Reveals.</span> Fly tilt-up and pull-back reveals over safe, open ground. Focus on matching your forward or backward speed to your gimbal tilt so the reveal lands cleanly.</li>
+  <li><span class="sh">Session 3 &mdash; Orbits.</span> Fly manual orbits around a lone object, tight then wide, until the two-stick coordination clicks. Then compare against your drone's automated orbit mode.</li>
+  <li><span class="sh">Session 4 &mdash; Top-down &amp; fly-away.</span> Practice flyovers and slow God's-eye descents, then the backward-and-up fly-away. Feel how slow you have to descend to stay stable.</li>
+  <li><span class="sh">Session 5 &mdash; Tracking &amp; sequences.</span> Track a walking friend, then shoot a deliberate three-shot sequence &mdash; establish, move in, fly away &mdash; and cut it together at home.</li>
+</ol>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>The one-battery challenge</div><p>Once you've done all five sessions, give yourself this test: on a single battery, fly four different named moves from this guide, cleanly, in one outing. If all four are smooth and usable, you're no longer a steady-but-boring pilot &mdash; you're directing.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Every session starts with the same checklist</div><p>Batteries charged and warm, firmware and props checked, airspace confirmed legal, weather calm, aircraft in line of sight, and a mental note of where you'll land. Cinematic ambition never comes before a safe, legal flight. Skip the checklist and the best move you'll fly is the walk of shame to find your drone in a tree.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>The camera doesn't become cinematic when you fly somewhere impressive &mdash; it becomes cinematic the moment your hands slow down and every move means something.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

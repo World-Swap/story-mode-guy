@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The Drone Pilot&#x27;s Cheat-Sheet Pack — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #334155;
+  --accent2: #64748b;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">FIELD REFERENCE</div>
+    <div style="margin-top:auto"></div>
+    <h1>The Drone Pilot&#x27;s Cheat-Sheet Pack</h1>
+    <div class="rule"></div>
+    <div class="sub">Grab-and-Go Cards for Pre-Flight, Settings &amp; Safety</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$17 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">Grab-and-Go Cards for Pre-Flight, Settings &amp; Safety. Written for new pilots who want a printable field reference.</div>
+  <ol><li><span class="t">How to Use This Pack</span></li><li><span class="t">Pre-Flight Checklist</span></li><li><span class="t">Post-Flight Checklist</span></li><li><span class="t">Camera Settings & ND Quick-Set</span></li><li><span class="t">Legal Quick-Reference (US / FAA)</span></li><li><span class="t">Cinematic Moves Shot List</span></li><li><span class="t">Wind & Weather Go/No-Go</span></li><li><span class="t">Battery & Return-to-Home</span></li><li><span class="t">Emergency Card</span></li><li><span class="t">Export & Pack-Up</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>How to Use This Pack</h1>
+<p class="lead-in">These are print-and-keep field cards, not a manual you read once and forget. Each card is dense, self-contained, and built to live in your drone bag — so when you're standing in a field with props in your hand and a gusty sky overhead, you pull the right card and run the check instead of trusting your memory.</p>
+
+<p>Every card that follows stands on its own. There's a card for pre-flight and one for post-flight, a card for camera settings and ND filters, a legal quick-reference, a shot list of cinematic moves, a wind go/no-go table, a battery and return-to-home card, an emergency card, and an export-and-pack-up card. Nothing depends on anything else — grab the one the moment demands.</p>
+
+<div class="key"><div class="kt">How to get the most from this pack</div><p>Print each card, laminate the pre-flight and emergency cards first, and run the pre-flight card <strong>every single flight</strong> — the routine is what keeps a $1,500 aircraft out of a tree.</p></div>
+
+<h2>Three ways to use these cards</h2>
+<div class="cards three">
+  <div class="card"><div class="ch">🖨️ Print &amp; laminate</div><p>Each <strong>card starts on its own page</strong>, sized to trim down and slip into your case lid. Laminate them so they survive dew, mud, and the bottom of the bag.</p></div>
+  <div class="card"><div class="ch">📱 Keep on your phone</div><p>Save the PDF to your controller phone or tablet. When you're on-site and unsure, the go/no-go and emergency cards are two taps away.</p></div>
+  <div class="card"><div class="ch">🔁 Run it every time</div><p>The pilots who never lose a drone are the ones who run the same checklist on flight one and flight one thousand. Repetition, not talent, keeps you flying.</p></div>
+</div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with any modern drone</div><p>These cards apply to DJI, Autel, and most consumer camera drones. Where a feature has different names by brand, both are given (for example, "Return-to-Home (RTH / Go Home)"). Treat every number as a <em>starting point</em> — your aircraft's manual and your local rules always win.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Rules change — these cards don't</div><p>Airspace, registration thresholds, and local ordinances change and vary by country. The legal card here covers <strong>US/FAA fundamentals only</strong>. Verify the current rules and your specific airspace <em>before every flight</em>. A printed card is a memory aid, not legal authority.</p></div>
+
+<h1><span class="n">CARD 1</span>Pre-Flight Checklist</h1>
+<p>Run this top to bottom before you ever spin the props. Most flyaways and crashes trace back to a skipped line on a card exactly like this one. Two minutes here saves you a very bad afternoon.</p>
+
+<h2>At home / before you leave</h2>
+<ul class="check">
+  <li>Aircraft <strong>firmware</strong> and controller firmware updated and matching</li>
+  <li><strong>Batteries charged</strong> — aircraft and controller — and phone/tablet at 80%+</li>
+  <li><strong>SD card</strong> inserted, formatted, and with free space (format in-camera, not on a computer)</li>
+  <li>Props inspected for chips, cracks, or stress lines — spares packed</li>
+  <li>Weather and wind checked for your window; airspace checked (see Card 4)</li>
+  <li>ND filters, spare props, and a landing pad or mat in the bag</li>
+</ul>
+
+<h2>On-site, before takeoff</h2>
+<ol class="steps">
+  <li><span class="sh">Inspect the airframe.</span> Props seated and tight, arms locked, gimbal clamp removed, lens wiped clean, body free of cracks. Give each prop a gentle spin.</li>
+  <li><span class="sh">Seat the battery firmly.</span> Listen for the click. A partially seated battery is a top cause of mid-air power loss.</li>
+  <li><span class="sh">Power up in order.</span> Controller first, then aircraft. Let it boot fully and connect before you touch the sticks.</li>
+  <li><span class="sh">Wait for a strong GPS lock.</span> Do not launch until the app reports enough satellites and a "Home Point Updated" / "Home Point Recorded" confirmation.</li>
+  <li><span class="sh">Confirm the home point is where YOU are.</span> Check it on the map. A wrong home point sends the drone "home" to the wrong place on RTH.</li>
+  <li><span class="sh">Set RTH altitude above the tallest obstacle.</span> See Card 7 for the rule. Do this before takeoff, every time.</li>
+  <li><span class="sh">Check compass &amp; IMU status.</span> No calibration warnings. Calibrate only if the app asks, and away from metal, cars, and rebar.</li>
+  <li><span class="sh">Clear the area.</span> No people within ~25 ft of takeoff, no overhead lines, a clean vertical escape path.</li>
+</ol>
+
+<div class="recipe">
+  <div class="rh"><span>The 60-second launch flow</span><span class="tag">EVERY FLIGHT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">1. Airframe &amp; props</span><span class="chip">2. Battery seated</span><span class="chip">3. Controller → aircraft on</span><span class="chip">4. GPS lock &amp; home point</span><span class="chip">5. RTH altitude set</span><span class="chip">6. Area clear</span></div>
+    <p class="small">Say each step out loud. Spoken checklists catch the item your eyes skim past.</p>
+  </div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Never skip the home point</div><p>If you take off before "Home Point Updated" appears, an automatic Return-to-Home may fly the aircraft to an old or default location — sometimes the last place it locked GPS. Confirm the home point on the map <em>every</em> flight.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Hover test</div><p>After takeoff, hover at eye level for 5–10 seconds. Listen for odd prop noise, watch for drift, and nudge each stick. If anything feels off, land and diagnose on the ground — not at 300 ft.</p></div>
+
+<h1><span class="n">CARD 2</span>Post-Flight Checklist</h1>
+<p>The flight isn't over when you land — it's over when the gear is safe and logged. Skipping post-flight is how batteries die early and small damage becomes a mid-air failure next week.</p>
+
+<h2>Right after landing</h2>
+<ol class="steps">
+  <li><span class="sh">Power down in order.</span> Aircraft first, then controller. Let the gimbal settle before you cut power.</li>
+  <li><span class="sh">Let batteries cool before charging.</span> A battery that's warm from flight should rest <strong>20–30 minutes</strong> and return to near room temperature before it goes on the charger.</li>
+  <li><span class="sh">Inspect the aircraft.</span> Props for new chips, gimbal for free movement, body for cracks, motors for grit or a gritty feel when spun.</li>
+  <li><span class="sh">Wipe it down.</span> Lens, sensors, and body. Dust on obstacle sensors causes false warnings and bad avoidance next time.</li>
+  <li><span class="sh">Log the flight.</span> Date, location, battery cycles used, anything that felt off. Your log is how you spot a failing battery before it fails.</li>
+</ol>
+
+<h2>Storage &amp; battery care</h2>
+<ul class="check">
+  <li>Reinstall the gimbal clamp before packing</li>
+  <li>Store batteries at <strong>storage charge (~50–60%)</strong> if not flying within ~2 days — most smart batteries self-discharge to this over a set number of days</li>
+  <li>Never store batteries fully charged or fully drained long-term — both shorten their life</li>
+  <li>Store in a cool, dry place, out of direct sun and away from a hot car</li>
+  <li>Back up footage off the SD card, then re-format in-camera before the next flight</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Battery lifespan habit</div><p>Lithium batteries hate two extremes: sitting full and sitting empty. Fly them down to ~20–30%, let them cool, and if they'll sit more than a couple of days, leave them near storage charge. This one habit adds dozens of healthy cycles.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Cold weather note</div><p>Cold batteries lose voltage fast and can trigger sudden low-power warnings. Warm them to room temperature before flying, keep spares in an inside pocket, and expect shorter flight times below ~40&deg;F / 5&deg;C.</p></div>
+
+<h1><span class="n">CARD 3</span>Camera Settings &amp; ND Quick-Set</h1>
+<p>The look of cinematic drone footage comes from one rule: keep the shutter near <strong>double the frame rate</strong> (the 180&deg; shutter rule) for natural motion blur. In daylight that means an ND filter, because you can't slow the shutter enough on your own. This card sets both.</p>
+
+<h2>ND filter by light condition</h2>
+<table>
+  <tr><th>Light condition</th><th>ND strength</th><th>Roughly cuts</th><th>Target shutter (24–30 fps)</th></tr>
+  <tr><td>Overcast / heavy cloud</td><td>ND4</td><td>2 stops</td><td>1/50s – 1/60s</td></tr>
+  <tr><td>Bright cloud / golden hour</td><td>ND8</td><td>3 stops</td><td>1/50s – 1/60s</td></tr>
+  <tr><td>Hazy sun / partial cloud</td><td>ND16</td><td>4 stops</td><td>1/50s – 1/60s</td></tr>
+  <tr><td>Bright direct sun</td><td>ND32</td><td>5 stops</td><td>1/50s – 1/60s</td></tr>
+  <tr><td>Harsh sun / snow / water glare</td><td>ND64</td><td>6 stops</td><td>1/50s – 1/60s</td></tr>
+</table>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>The 180&deg; shutter rule</div><p>Set shutter to about <strong>1 / (2 &times; fps)</strong>. At 24 fps aim for 1/48–1/50s; at 30 fps aim for 1/60s; at 60 fps aim for 1/120s. The ND filter is simply how you hold that shutter without blowing out the sky.</p></div>
+
+<h2>Frame rate &amp; shutter pairings</h2>
+<table>
+  <tr><th>Frame rate</th><th>Use for</th><th>Target shutter</th></tr>
+  <tr><td>24 fps</td><td>Cinematic / film look</td><td>1/48 – 1/50s</td></tr>
+  <tr><td>30 fps</td><td>Standard, social, real-time</td><td>1/60s</td></tr>
+  <tr><td>60 fps</td><td>Smooth motion, 2&times; slow-mo</td><td>1/120s</td></tr>
+  <tr><td>120 fps</td><td>Dramatic slow motion</td><td>1/240s</td></tr>
+</table>
+
+<div class="recipe">
+  <div class="rh"><span>Cinematic daylight baseline</span><span class="tag">STARTING POINT</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Resolution <b>4K</b></span><span class="chip">FPS <b>24–30</b></span><span class="chip">Shutter <b>1/50–1/60s</b></span><span class="chip">ISO <b>100</b></span><span class="chip">ND <b>match light</b></span><span class="chip">Profile <b>D-Log / flat</b></span></div>
+    <p class="small">Shoot RAW/DNG photos and a flat/log video profile for the most editing latitude. Keep ISO at base and let the ND control exposure.</p>
+  </div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Expose for the sky</div><p>Bright skies blow out fast and can't be recovered. Set exposure so the brightest clouds keep detail, then lift the shadows in editing. A flat/log profile makes that recovery far easier.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Fixed shutter, swap the ND</div><p>Lock your shutter at the 180&deg; value and never touch it. When the light changes, change the ND filter instead of the shutter. That keeps motion blur consistent across every clip in a sequence.</p></div>
+
+<h1><span class="n">CARD 4</span>Legal Quick-Reference (US / FAA)</h1>
+<p>This card covers US/FAA fundamentals for camera drones. It is a memory aid, not legal advice — rules change and airspace varies by exact location. Read the reminder box, then verify before you fly.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Verify locally before every flight</div><p>Airspace class, temporary flight restrictions (TFRs), local ordinances, and registration thresholds change. Check current FAA rules and your <strong>exact location's airspace</strong> in an official app (like B4UFLY or a LAANC provider) <em>before every flight</em>. This card does not replace that check.</p></div>
+
+<h2>The fundamentals</h2>
+<table>
+  <tr><th>Topic</th><th>US / FAA fundamental</th></tr>
+  <tr><td>Registration</td><td>Register with the FAA if your drone weighs <strong>0.55 lb (250 g) or more</strong>. Sub-250 g may be exempt for recreational flight — verify.</td></tr>
+  <tr><td>Recreational vs. Part 107</td><td>Flying for fun = recreational rules + <strong>TRUST</strong> test. Any commercial/paid work = <strong>Part 107</strong> certificate required.</td></tr>
+  <tr><td>Maximum altitude</td><td>Stay at or below <strong>400 ft</strong> above ground level in uncontrolled (Class G) airspace.</td></tr>
+  <tr><td>Visual line of sight</td><td>Keep the aircraft in <strong>VLOS</strong> — your own eyes, or a visual observer beside you — at all times.</td></tr>
+  <tr><td>Controlled airspace</td><td>Near airports (Class B/C/D/E) you need authorization, typically via <strong>LAANC</strong>, before you fly.</td></tr>
+  <tr><td>People &amp; vehicles</td><td>Don't fly over people or moving vehicles unless your operation and aircraft specifically permit it.</td></tr>
+  <tr><td>Remote ID</td><td>Most drones that require registration must also <strong>broadcast Remote ID</strong>. Confirm yours complies.</td></tr>
+  <tr><td>Night &amp; special ops</td><td>Night flight, flight over people, and beyond-VLOS have specific requirements — know them before attempting.</td></tr>
+</table>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Marking your drone</div><p>Registered drones must display the registration number on the exterior. Keep proof of registration (and your Part 107 or TRUST completion) with you when you fly.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>When in doubt, don't</div><p>No signal on whether an area is legal is itself an answer: don't fly. National parks, many state parks, stadiums, and TFRs (around events, wildfires, VIP movement) are common no-fly surprises. Check first.</p></div>
+
+<h1><span class="n">CARD 5</span>Cinematic Moves Shot List</h1>
+<p>Great aerial footage is a handful of deliberate moves, flown slowly and smoothly. Fly each one <em>gently</em> — the smooth, boring-feeling speed is almost always the cinematic one. Work down this list on a shoot and you'll come home with a full sequence.</p>
+
+<div class="cards">
+  <div class="card"><div class="ch">📤 The Reveal</div><p>Rise from behind an object — a ridge, tree line, or building — to unveil the scene beyond it. Slow ascent, steady.</p></div>
+  <div class="card"><div class="ch">🚀 Fly-Through / Push-In</div><p>Move forward past a foreground element toward your subject. Foreground gives the shot depth and scale.</p></div>
+  <div class="card"><div class="ch">🔄 Orbit / Point of Interest</div><p>Circle a subject while keeping it centered. Use the auto POI/Orbit mode for a perfectly smooth arc.</p></div>
+  <div class="card"><div class="ch">⬇️ Top-Down / Bird's Eye</div><p>Gimbal at 90&deg; straight down. Turns roads, coastline, and crowds into graphic patterns.</p></div>
+  <div class="card"><div class="ch">↩️ Fly-Away Reveal</div><p>Start close on a subject, then fly backward and up to reveal how small they are in the landscape.</p></div>
+  <div class="card"><div class="ch">🎯 Tracking / Follow</div><p>Follow a moving subject — car, boat, runner — keeping a steady distance. Use ActiveTrack / Follow mode.</p></div>
+  <div class="card"><div class="ch">🌀 Vortex / Spiral</div><p>Orbit while rising and pushing in. Combines rotation and altitude for a dramatic corkscrew.</p></div>
+  <div class="card"><div class="ch">🎬 Dolly Zoom-ish Pull</div><p>Fly backward while zooming/pushing to compress or stretch depth. Subtle, but striking.</p></div>
+</div>
+
+<h2>Shoot-the-scene checklist</h2>
+<ul class="check">
+  <li>One Reveal to open the sequence</li>
+  <li>One Orbit around the hero subject</li>
+  <li>One Top-Down for a graphic beat</li>
+  <li>One Fly-Away to establish scale</li>
+  <li>One Tracking shot if anything is moving</li>
+  <li>Two or three seconds of clean hover before and after each move (editing handles)</li>
+</ul>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Slow is cinematic</div><p>Turn on your controller's smooth/cine mode to soften stick response, and fly every move slower than feels natural. Jerky, fast footage reads as amateur; slow and deliberate reads as film. When in doubt, halve your speed.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Let each clip breathe</div><p>Hold still for a beat before you start a move and after you finish. Those still handles at each end give your editor clean cut points and make every transition land.</p></div>
+
+<h1><span class="n">CARD 6</span>Wind &amp; Weather Go/No-Go</h1>
+<p>Wind is the quiet killer — it drains batteries, pushes the aircraft off course, and can win a fight against the motors on the way home. Check the wind <em>at altitude</em>, which is usually stronger than at ground level, and use this table before every flight.</p>
+
+<table>
+  <tr><th>Condition</th><th>Fly</th><th>Caution</th><th>No-Fly</th></tr>
+  <tr><td>Wind speed</td><td>Under ~15 mph</td><td>~15–24 mph</td><td>Over ~24 mph (or above your drone's rated max)</td></tr>
+  <tr><td>Gusts</td><td>Light, steady</td><td>Gusty, variable</td><td>Strong sudden gusts</td></tr>
+  <tr><td>Rain / snow</td><td>None</td><td>Light mist (most drones NOT waterproof)</td><td>Any real rain or snow</td></tr>
+  <tr><td>Visibility / fog</td><td>Clear, full VLOS</td><td>Hazy but VLOS holds</td><td>Fog, cloud, or lost VLOS</td></tr>
+  <tr><td>Temperature</td><td>~40–104&deg;F</td><td>Near-freezing (short flights)</td><td>Below freezing extremes / extreme heat</td></tr>
+  <tr><td>Lightning</td><td>None nearby</td><td>Distant, moving away</td><td>Any storm within ~10 miles</td></tr>
+  <tr><td>Sun position</td><td>Sun behind/beside you</td><td>Low sun in frame</td><td>Blinding glare, can't see aircraft</td></tr>
+</table>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Know your aircraft's wind rating</div><p>Small drones (sub-250 g) get shoved around at wind speeds a heavier drone shrugs off. Check your model's <strong>maximum wind resistance</strong> spec and treat the table above as a general guide, not a guarantee. When gusts approach that number, land.</p></div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Fly out into the wind first</div><p>Fly your outbound leg <em>into</em> the wind so the trip home is wind-assisted. Fighting a headwind on a low battery is how drones don't make it back. If you feel the aircraft struggling to hold position, come home now.</p></div>
+
+<h1><span class="n">CARD 7</span>Battery &amp; Return-to-Home</h1>
+<p>Two habits prevent most dead-battery losses: the 30% rule and a correct RTH altitude. Burn both into muscle memory and you dramatically shrink your odds of ever losing an aircraft.</p>
+
+<div class="key"><div class="kt">The 30% habit</div><p>Start heading home at <strong>30% battery</strong> — not 10%, not when the app screams. Wind, distance, and cold all eat reserve faster than the percentage suggests. 30% is your "turn back now" line.</p></div>
+
+<h2>Battery reserve, by situation</h2>
+<table>
+  <tr><th>Situation</th><th>Start return at</th></tr>
+  <tr><td>Close, calm, warm</td><td>25–30%</td></tr>
+  <tr><td>Windy or flying far out</td><td>35–40%</td></tr>
+  <tr><td>Cold weather</td><td>40%+ (voltage drops fast)</td></tr>
+  <tr><td>Land before</td><td>Never fly below ~15%</td></tr>
+</table>
+
+<h2>Return-to-Home altitude rule</h2>
+<p>RTH climbs to a preset altitude, then flies in a straight line home. If that altitude is <em>below</em> something between the drone and you — a tree, a building, a hill — RTH flies straight into it. Set the RTH altitude <strong>above the tallest obstacle</strong> in your entire flight area, before takeoff.</p>
+
+<ul class="check">
+  <li>RTH altitude set higher than the tallest tree, tower, or building around you</li>
+  <li>Home point confirmed at your actual location (see Card 1)</li>
+  <li>You know how to <strong>cancel RTH</strong> and fly manually if its path looks wrong</li>
+  <li>Obstacle avoidance on — but never trusted blindly (it can miss thin branches and wires)</li>
+</ul>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>RTH is not a magic button</div><p>Return-to-Home flies a straight line at a fixed height. It does not route around obstacles below its set altitude, and avoidance sensors miss wires, netting, and thin branches. If you can still see and control the aircraft, flying it home manually is often safer.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Know your real range on this battery</div><p>Advertised range assumes calm air and a fresh battery. Your usable there-and-back distance is far shorter — especially into wind. Log how far out you were when the 30% warning hit, and let that real number set your limits next time.</p></div>
+
+<h1><span class="n">CARD 8</span>Emergency Card</h1>
+<p>When something goes wrong, panic costs aircraft. Find the situation, run the numbered steps in order, calmly. Keep this card laminated and near the top of your bag.</p>
+
+<h2>Flyaway (drone drifts off, not responding)</h2>
+<ol class="steps">
+  <li><span class="sh">Don't yank the sticks.</span> Center them and give it a second — sudden inputs during a GPS glitch make it worse.</li>
+  <li><span class="sh">Trigger Return-to-Home.</span> Hit the RTH button on the controller or in the app.</li>
+  <li><span class="sh">If RTH fails, switch to ATTI / manual.</span> Fly it back by hand using your visual on the aircraft, nose pointed back toward you.</li>
+  <li><span class="sh">Reduce altitude to re-establish control.</span> Lower, closer air often restores a clean signal and orientation.</li>
+  <li><span class="sh">If it's truly lost, note last position &amp; heading.</span> Screenshot the map and the last coordinates for recovery.</li>
+</ol>
+
+<h2>Signal loss (video/control drops out)</h2>
+<ol class="steps">
+  <li><span class="sh">Stop and hold position.</span> Most drones auto-hover or auto-RTH on signal loss — let the failsafe work.</li>
+  <li><span class="sh">Raise the controller and antennas.</span> Point antennas <em>broadside</em> (not tips) at the aircraft; get clear of buildings and your own body.</li>
+  <li><span class="sh">Walk toward its last known position.</span> Closing distance and clearing obstructions usually restores the link.</li>
+  <li><span class="sh">Wait for RTH to bring it home.</span> If your failsafe is set to RTH, it should climb and return — keep eyes up to take over.</li>
+</ol>
+
+<h2>Low battery (warning fires mid-flight)</h2>
+<ol class="steps">
+  <li><span class="sh">Turn toward home immediately.</span> Don't finish the shot. The clock is real.</li>
+  <li><span class="sh">Descend as you approach.</span> Lower altitude uses less power for the last leg and shortens the trip down.</li>
+  <li><span class="sh">Take the nearest safe landing spot.</span> A safe landing in the wrong field beats a dead drone reaching for the right one.</li>
+  <li><span class="sh">Let auto-land finish.</span> If the critical warning triggers auto-landing, don't fight it — guide it laterally to clear ground and let it set down.</li>
+</ol>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Protect people first, aircraft second</div><p>If the choice is a hard landing or flying over a crowd, take the hard landing. A replaced drone is cheap; an injured person is not. Steer away from people, roads, and water in every emergency.</p></div>
+
+<h1><span class="n">CARD 9</span>Export &amp; Pack-Up</h1>
+<p>The last card closes the loop: get the footage out at the right settings, then pack the gear so it's ready for next time. These export recipes are starting points — match resolution and frame rate to how you shot.</p>
+
+<h2>Export recipes</h2>
+<div class="recipe">
+  <div class="rh"><span>YouTube / landscape</span><span class="tag">16:9</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Res <b>3840&times;2160 (4K)</b></span><span class="chip">FPS <b>match source</b></span><span class="chip">Codec <b>H.264 / H.265</b></span><span class="chip">Bitrate <b>~45–65 Mbps (4K)</b></span></div>
+    <p class="small">Export at your capture frame rate. Higher bitrate holds up better against YouTube's re-compression.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Vertical / Reels &amp; Shorts</span><span class="tag">9:16</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Res <b>1080&times;1920</b></span><span class="chip">FPS <b>30</b></span><span class="chip">Codec <b>H.264</b></span><span class="chip">Length <b>&lt; 60s</b></span></div>
+    <p class="small">Reframe from your 4K source so you can crop to vertical without losing resolution. Keep the subject in the center-safe zone.</p>
+  </div>
+</div>
+
+<div class="recipe">
+  <div class="rh"><span>Client delivery</span><span class="tag">MASTER</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Res <b>4K</b></span><span class="chip">FPS <b>match source</b></span><span class="chip">Codec <b>H.265 / ProRes</b></span><span class="chip">Bitrate <b>high / near-lossless</b></span></div>
+    <p class="small">Deliver a high-bitrate master plus a compressed review copy. Include a color-graded version and, if asked, the flat/log originals.</p>
+  </div>
+</div>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Shoot 4K even for 1080p delivery</div><p>Capturing in 4K and delivering 1080p lets you crop, reframe, and stabilize in the edit with room to spare — and the downscaled result looks sharper than native 1080p.</p></div>
+
+<h2>Final pack-up checklist</h2>
+<ul class="check">
+  <li>Footage backed up off the SD card (two copies before you delete anything)</li>
+  <li>Gimbal clamp on, props inspected one last time</li>
+  <li>Batteries at storage charge if not flying soon; cooled before packing</li>
+  <li>Controller sticks stowed, cables coiled, spare props and NDs accounted for</li>
+  <li>Flight logged; anything odd noted for next time</li>
+  <li>Bag zipped, nothing left in the field (props and prop guards go missing fast)</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Two cards to keep closest</div><p>Of the whole pack, laminate the <strong>pre-flight</strong> and <strong>emergency</strong> cards first and keep them at the top of your bag. One prevents the disaster; the other saves the day when it happens anyway.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>The pilots who never lose a drone aren't the most talented — they're the ones who ran the pre-flight card before every single flight, so make sure you're ready before you fly.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>

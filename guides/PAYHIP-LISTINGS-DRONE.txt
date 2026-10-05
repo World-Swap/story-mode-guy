@@ -1,0 +1,296 @@
+========================================================================
+ PAYHIP UPLOAD PACK - DRONE GUIDES (INDIVIDUAL PRODUCTS)
+========================================================================
+The 13 drone guides, one Payhip product each - so people can buy just the one
+they need. (You can ALSO sell them together with the two bundle listings:
+PAYHIP-DRONE-BUNDLE.txt and PAYHIP-COMPLETE-BUNDLE.txt.)
+
+For each: Products -> Add new product -> Digital product. Upload the PDF, set
+the price, use the cover image, paste TITLE / SHORT / FULL / TAGS.
+Covers are thumb-guide-21.jpg ... thumb-guide-33.jpg in the repo root.
+Send me the 13 URLs and I'll point each guide's /learn page straight at it.
+
+
+========================================================================
+ 1)  DRONE FLYING FOR BEGINNERS      PRICE: $27
+ PDF: d01-drone-beginners.pdf    COVER: thumb-guide-21.jpg
+========================================================================
+TITLE:
+Drone Flying for Beginners - From Unboxing to a Confident First Flight
+
+SHORT DESCRIPTION:
+Nervous about your first flight? The calm, step-by-step way to take off, hover,
+and land your drone with confidence.
+
+FULL DESCRIPTION:
+Your first flight shouldn't be scary. This 20-page guide walks you from unboxing
+to a confident first flight: your controller and flight modes, the pre-flight
+checklist, calibration and GPS lock, your first hover and basic maneuvers,
+reading your telemetry, battery and range basics, and landing every time.
+Written for brand-new pilots. Instant PDF download.
+
+TAGS:
+drone for beginners, how to fly a drone, first drone flight, beginner drone, drone tips
+
+
+========================================================================
+ 2)  DRONE LAWS, REGISTRATION & PART 107      PRICE: $34
+ PDF: d02-drone-laws-part107.pdf    COVER: thumb-guide-22.jpg
+========================================================================
+TITLE:
+Drone Laws, Registration & Part 107 - Fly Legally and Get Paid
+
+SHORT DESCRIPTION:
+US drone rules in plain English - registration, the recreational test, and the
+Part 107 path to flying for money.
+
+FULL DESCRIPTION:
+Stop guessing what's legal. This 21-page guide explains the US/FAA drone system
+in plain English: recreational vs. commercial, the registration threshold, the
+recreational knowledge test, controlled airspace and LAANC, the core flight
+rules, and the Part 107 certificate that unlocks paid work. Educational, not
+legal advice - always verify current rules with your aviation authority before
+flying. Instant PDF download.
+
+TAGS:
+drone laws, part 107, drone registration, faa drone rules, fly drone legally
+
+
+========================================================================
+ 3)  CINEMATIC DRONE MOVES      PRICE: $29
+ PDF: d03-cinematic-drone-moves.pdf    COVER: thumb-guide-23.jpg
+========================================================================
+TITLE:
+Cinematic Drone Moves - The Shots That Make Footage Look Like a Film
+
+SHORT DESCRIPTION:
+The signature aerial moves - reveal, orbit, flyover, top-down, dronie - and how
+to fly each one smoothly.
+
+FULL DESCRIPTION:
+Steady footage is good; cinematic footage sells. This 21-page guide teaches the
+core moves - the reveal, orbit, flyover, top-down, dronie, fly-through and
+tracking shot - plus the smooth-stick control, speed and altitude that make them
+look intentional, and how to match the move to the scene. Instant PDF download.
+
+TAGS:
+cinematic drone shots, drone moves, drone video, how to film with a drone, aerial video
+
+
+========================================================================
+ 4)  DRONE CAMERA SETTINGS FOR VIDEO      PRICE: $27
+ PDF: d04-drone-camera-settings.pdf    COVER: thumb-guide-24.jpg
+========================================================================
+TITLE:
+Drone Camera Settings for Video - Smooth, Cinematic Aerials
+
+SHORT DESCRIPTION:
+Frame rate, ND filters, and the settings that stop your aerial footage looking
+juddery, over-sharp, or flat.
+
+FULL DESCRIPTION:
+Aerial footage lives or dies on settings. This 22-page guide covers frame rate
+and the shutter rule in the air, why ND filters are the aerial must-have,
+resolution and codecs, flat/D-Log profiles, white balance, exposure tools, and
+settings recipes for common scenes. Instant PDF download.
+
+TAGS:
+drone camera settings, drone nd filter, drone video settings, aerial video, dji settings
+
+
+========================================================================
+ 5)  EDITING & GRADING DRONE FOOTAGE      PRICE: $29
+ PDF: d05-editing-drone-footage.pdf    COVER: thumb-guide-25.jpg
+========================================================================
+TITLE:
+Editing & Grading Drone Footage - Make Aerials Match Your Edit
+
+SHORT DESCRIPTION:
+Stabilize, fix rolling shutter, color-grade, and make your aerial clips match
+the rest of your video.
+
+FULL DESCRIPTION:
+Aerial clips that don't match kill an edit. This 22-page guide covers organizing
+footage, fixing rolling shutter and jello, speed ramps and reveals, color
+correction and grading, matching air to ground footage, and export - with notes
+for DaVinci Resolve (free), Premiere, and CapCut. Instant PDF download.
+
+TAGS:
+edit drone footage, color grade drone video, drone editing, davinci resolve, aerial editing
+
+
+========================================================================
+ 6)  ADD DRONE SHOTS TO YOUR VIDEOS      PRICE: $27
+ PDF: d06-add-drone-to-videos.pdf    COVER: thumb-guide-26.jpg
+========================================================================
+TITLE:
+Add Drone Shots to Your Videos - Turn Aerial Clips Into a Story
+
+SHORT DESCRIPTION:
+Great aerial clips but flat videos? Use drone shots as b-roll that holds
+attention - the missing piece is structure.
+
+FULL DESCRIPTION:
+This 20-page guide is the bridge between your aerial clips and a finished video:
+what aerial b-roll is for, the shot list for a ground story, cutting between
+ground and air, motivated transitions, pacing and music, and building a sequence
+with a beginning, middle and end. Instant PDF download.
+
+TAGS:
+how to use drone footage in videos, drone b-roll, aerial b-roll, video editing, storytelling
+
+
+========================================================================
+ 7)  REAL ESTATE & PROPERTY DRONE VIDEO      PRICE: $39
+ PDF: d07-real-estate-drone.pdf    COVER: thumb-guide-27.jpg
+========================================================================
+TITLE:
+Real Estate & Property Drone Video - Film Sellable Aerial Tours for Pay
+
+SHORT DESCRIPTION:
+Film bright, sellable aerial property tours - and the business system to get
+paid for them.
+
+FULL DESCRIPTION:
+Property video is a real side income. This 23-page guide covers the legal
+must-dos for paid work (Part 107), gear and settings for property, the exterior
+shot list, the signature reveal and orbit, privacy, pairing aerials with ground
+video, the delivery edit, and what to charge. Instant PDF download.
+
+TAGS:
+real estate drone, property drone video, aerial real estate, drone side income, real estate videography
+
+
+========================================================================
+ 8)  DRONE PHOTOGRAPHY      PRICE: $29
+ PDF: d08-drone-photography.pdf    COVER: thumb-guide-28.jpg
+========================================================================
+TITLE:
+Drone Photography - Striking Aerial Photos, Top-Down, Panos & Golden Hour
+
+SHORT DESCRIPTION:
+Aerial stills, not just video - top-down composition, panoramas, HDR, and
+golden-hour light from above.
+
+FULL DESCRIPTION:
+The sky is a whole new set of compositions. This 21-page guide covers top-down
+composition, panoramas and stitching, HDR and bracketing for high-contrast
+scenes, shooting RAW, golden-hour aerials, the settings for tack-sharp shots,
+and a quick editing pass. Instant PDF download.
+
+TAGS:
+drone photography, aerial photography, top down photography, drone panorama, aerial stills
+
+
+========================================================================
+ 9)  FLY SAFE: AVOID CRASHES & FLYAWAYS      PRICE: $24
+ PDF: d09-fly-safe-no-crash.pdf    COVER: thumb-guide-29.jpg
+========================================================================
+TITLE:
+Fly Safe: Avoid Crashes & Flyaways - The Habits That Keep Your Drone in the Air
+
+SHORT DESCRIPTION:
+Terrified of losing an expensive drone? Most crashes and flyaways are prevented
+on the ground. Here's how.
+
+FULL DESCRIPTION:
+This 20-page fix-it guide covers the real causes of crashes and flyaways: wind
+and weather limits, GPS and compass interference, battery discipline, setting
+Return-to-Home correctly, obstacle-avoidance blind spots, signal loss, and a
+pre-flight safety checklist. Fly with confidence. Instant PDF download.
+
+TAGS:
+drone flyaway, how to not crash a drone, drone safety, return to home, drone crash prevention
+
+
+========================================================================
+ 10)  THE DRONE PILOT'S CHEAT-SHEET PACK      PRICE: $17
+ PDF: d10-drone-cheat-sheet.pdf    COVER: thumb-guide-30.jpg
+========================================================================
+TITLE:
+The Drone Pilot's Cheat-Sheet Pack - Pre-Flight, Settings & Safety Cards
+
+SHORT DESCRIPTION:
+Grab-and-go printable cards - pre-flight checklist, camera settings, legal
+quick-reference, and emergency steps.
+
+FULL DESCRIPTION:
+Print-and-keep field cards for the moment you're flying. This 21-page pack
+includes pre-flight and post-flight checklists, a camera-settings and ND
+quick-set, a legal quick-reference, a cinematic-moves shot list, a wind/weather
+go-no-go card, a battery and Return-to-Home card, and an emergency card. Instant
+PDF download.
+
+TAGS:
+drone checklist, pre-flight checklist, drone cheat sheet, camera settings, printable
+
+
+========================================================================
+ 11)  FPV DRONE FLYING FOR BEGINNERS      PRICE: $29
+ PDF: d11-fpv-flying.pdf    COVER: thumb-guide-31.jpg
+========================================================================
+TITLE:
+FPV Drone Flying for Beginners - Gear, Modes & First Flights
+
+SHORT DESCRIPTION:
+The immersive side of drones - goggles, gear, flight modes, and how to start
+without crashing everything.
+
+FULL DESCRIPTION:
+FPV feels like flying. This 21-page guide covers the mindset shift from GPS
+drones, the gear (goggles, radio, drone types, analog vs. digital), flight modes
+from angle to acro, why you start in a simulator, safe first flights with a
+spotter, basic acro, cinematic FPV, and maintenance. Instant PDF download.
+
+TAGS:
+fpv drone, fpv for beginners, fpv flying, drone racing, cinewhoop
+
+
+========================================================================
+ 12)  THE DRONE BUSINESS PLAYBOOK      PRICE: $37
+ PDF: d12-drone-business.pdf    COVER: thumb-guide-32.jpg
+========================================================================
+TITLE:
+The Drone Business Playbook - Turn Your Drone Into a Paid Side Income
+
+SHORT DESCRIPTION:
+The services that sell, how to price them, and the legal step you need first -
+turn flying into income.
+
+FULL DESCRIPTION:
+This 22-page playbook covers getting legal (Part 107 and insurance), the services
+that actually sell (real estate, inspection, events, social content), how to
+price your work, the gear that pays for itself, finding your first clients, the
+client workflow, and a launch checklist. Realistic ranges, not income promises.
+Instant PDF download.
+
+TAGS:
+drone business, get paid to fly, drone side hustle, part 107 jobs, make money with a drone
+
+
+========================================================================
+ 13)  DRONE MAPPING & SURVEYING      PRICE: $39
+ PDF: d13-drone-mapping.pdf    COVER: thumb-guide-33.jpg
+========================================================================
+TITLE:
+Drone Mapping & Surveying - From Flight Plan to Orthomosaic & 3D Model
+
+SHORT DESCRIPTION:
+Photogrammetry fundamentals - overlap, GSD, ground control - to produce accurate
+maps, models and point clouds.
+
+FULL DESCRIPTION:
+This 22-page guide teaches drone mapping fundamentals: how photogrammetry works,
+GSD and overlap, nadir vs. oblique, planning a mission, ground control points and
+accuracy, flying the mission, processing to orthomosaics/DEMs/3D models, and the
+deliverables and use cases. Commercial work needs certification. Instant PDF
+download.
+
+TAGS:
+drone mapping, drone surveying, photogrammetry, orthomosaic, drone 3d model
+
+
+========================================================================
+ DONE - 13 individual drone products. Send me the 13 URLs and I'll wire each
+ into its /learn page. (Bundles are in PAYHIP-DRONE-BUNDLE.txt / PAYHIP-COMPLETE-BUNDLE.txt.)
+========================================================================

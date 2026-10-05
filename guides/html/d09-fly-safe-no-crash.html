@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Fly Safe: Avoid Crashes &amp; Flyaways — Story Mode Guy</title>
+<style>
+:root{
+  --accent: #15803d;
+  --accent2: #4ade80;
+  --ink:#1c1e21;
+  --muted:#5b6470;
+  --line:#e3e7ec;
+  --bg-tint:#f6f8fa;
+}
+*{box-sizing:border-box}
+@page{ size:letter; margin:22mm 18mm 20mm; }
+@page:first{ margin:0; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{
+  font-family:"Bitstream Charter","Charter","Liberation Serif",Georgia,serif;
+  font-size:10.6pt; line-height:1.58; color:var(--ink); margin:0;
+  text-rendering:optimizeLegibility;
+}
+p{ margin:0 0 .72em; }
+strong{ color:#101317; }
+em{ color:#2a2d31; }
+a{ color:var(--accent); text-decoration:none; }
+.sans{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+
+/* ---------- COVER ---------- */
+.cover{
+  position:relative; width:100%; height:279.4mm; page-break-after:always;
+  color:#fff; overflow:hidden;
+  background:linear-gradient(150deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 55%, #05070a) 100%);
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+}
+.cover .wm{
+  position:absolute; right:-30mm; top:-30mm; width:150mm; height:150mm;
+  border-radius:50%; background:var(--accent2); opacity:.16;
+}
+.cover .wm2{
+  position:absolute; left:-40mm; bottom:-50mm; width:150mm; height:150mm;
+  border-radius:50%; border:2mm solid rgba(255,255,255,.10);
+}
+.cover-inner{ position:absolute; inset:0; padding:26mm 22mm; display:flex; flex-direction:column; }
+.cover .kicker{
+  font-size:11pt; letter-spacing:.32em; font-weight:700; text-transform:uppercase;
+  color:var(--accent2); filter:brightness(1.5); margin-bottom:auto;
+}
+.cover .badge{
+  display:inline-block; margin-bottom:auto; padding:5px 12px; border:1.5px solid rgba(255,255,255,.5);
+  border-radius:40px; font-size:9pt; letter-spacing:.28em; font-weight:700;
+}
+.cover h1{
+  font-size:41pt; line-height:1.04; font-weight:800; letter-spacing:-.5px; margin:0 0 10mm;
+  font-family:"Bitstream Charter","Liberation Serif",Georgia,serif;
+  color:#fff; page-break-before:avoid;
+}
+.cover h1::after{ display:none; }
+.cover .sub{ font-size:15pt; font-weight:400; line-height:1.4; opacity:.94; max-width:150mm; }
+.cover .rule{ width:56mm; height:3px; background:var(--accent2); margin:9mm 0; filter:brightness(1.3); }
+.cover .foot{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; font-size:10pt; }
+.cover .foot .brand{ font-size:13pt; font-weight:800; letter-spacing:.02em; }
+.cover .foot .brand span{ opacity:.7; font-weight:400; display:block; font-size:9pt; letter-spacing:.2em; margin-top:2px; }
+.cover .price{ text-align:right; opacity:.85; font-size:9.5pt; line-height:1.6; }
+
+/* ---------- CONTENTS ---------- */
+.toc{ page-break-after:always; padding-top:4mm; }
+.toc h2{ font-size:24pt; margin:0 0 8mm; }
+.toc ol{ list-style:none; margin:0; padding:0; counter-reset:t; }
+.toc li{ counter-increment:t; display:flex; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line); font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11pt; }
+.toc li::before{ content:counter(t,decimal-leading-zero); color:var(--accent); font-weight:800; width:14mm; font-size:12pt; }
+.toc li .t{ font-weight:600; }
+.toc .lead{ font-size:11pt; color:var(--muted); font-family:"Bitstream Charter",serif; margin:0 0 10mm; max-width:150mm; }
+
+/* ---------- HEADINGS ---------- */
+h1{
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif;
+  font-size:23pt; font-weight:800; letter-spacing:-.4px; line-height:1.12;
+  color:#12151a; margin:0 0 5mm; padding-top:2mm; page-break-before:always; page-break-after:avoid;
+}
+h1:first-of-type{ page-break-before:avoid; }
+h1 .n{ display:block; font-size:11pt; letter-spacing:.28em; color:var(--accent); margin-bottom:3mm; font-weight:800; }
+h1::after{ content:""; display:block; width:26mm; height:3px; background:var(--accent); margin-top:5mm; }
+h2{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:14.5pt; font-weight:700; color:#171a1f; margin:8mm 0 3mm; page-break-after:avoid; }
+h3{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:11.6pt; font-weight:700; color:var(--accent); margin:6mm 0 2mm; page-break-after:avoid; letter-spacing:.01em; }
+ul,ol{ margin:0 0 .8em; padding-left:5.5mm; }
+li{ margin:.28em 0; }
+
+/* ---------- CALLOUTS ---------- */
+.callout{ border:1px solid var(--line); border-left:4px solid var(--accent); background:var(--bg-tint);
+  border-radius:7px; padding:10px 14px 10px 14px; margin:5mm 0; page-break-inside:avoid; font-size:10.2pt; }
+.callout .ct{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10pt;
+  margin-bottom:3px; display:flex; align-items:center; gap:7px; color:#14171c; }
+.callout .ct .ico{ font-size:12.5pt; }
+.callout p:last-child{ margin-bottom:0; }
+.callout.tip{ --accent:#0f766e; border-left-color:#0f766e; background:#f0faf7; }
+.callout.warn{ border-left-color:#c2410c; background:#fff6ef; }
+.callout.note{ border-left-color:#475569; background:#f4f6f8; }
+.callout.pro{ border-left-color:#7e22ce; background:#faf5ff; }
+.callout.try{ border-left-color:#0e7490; background:#eefafe; }
+.callout.gear{ border-left-color:#a16207; background:#fefbeb; }
+
+/* ---------- KEY TAKEAWAY ---------- */
+.key{ background:linear-gradient(135deg, var(--accent), color-mix(in srgb,var(--accent) 60%, #05070a));
+  color:#fff; border-radius:9px; padding:14px 18px; margin:6mm 0; page-break-inside:avoid;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; }
+.key .kt{ font-size:8.6pt; letter-spacing:.24em; text-transform:uppercase; opacity:.8; font-weight:700; margin-bottom:4px; }
+.key p{ margin:0; font-size:12.5pt; line-height:1.4; font-weight:600; }
+
+/* ---------- STEPS ---------- */
+ol.steps{ list-style:none; counter-reset:s; padding:0; margin:5mm 0; }
+ol.steps>li{ counter-increment:s; position:relative; padding:0 0 5mm 15mm; page-break-inside:avoid; }
+ol.steps>li::before{ content:counter(s); position:absolute; left:0; top:-1mm; width:10mm; height:10mm;
+  background:var(--accent); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:12pt; }
+ol.steps>li>.sh{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:11pt; display:block; margin-bottom:1mm; color:#14171c; }
+
+/* ---------- CHECKLIST ---------- */
+ul.check{ list-style:none; padding:0; margin:4mm 0; }
+ul.check li{ position:relative; padding:4px 0 4px 9mm; font-size:10.4pt; page-break-inside:avoid; }
+ul.check li::before{ content:""; position:absolute; left:0; top:3px; width:5mm; height:5mm; border:1.6px solid var(--accent); border-radius:3px; }
+ul.check li::after{ content:"\2713"; position:absolute; left:.7mm; top:1.5px; color:var(--accent); font-weight:800; font-size:10pt; }
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe{ border:1px solid var(--line); border-radius:9px; overflow:hidden; margin:5mm 0; page-break-inside:avoid; }
+.recipe .rh{ background:var(--accent); color:#fff; padding:7px 13px; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700; font-size:10.6pt; display:flex; justify-content:space-between; align-items:center; }
+.recipe .rh .tag{ font-size:8pt; letter-spacing:.16em; opacity:.85; font-weight:700; }
+.recipe .rb{ padding:10px 13px; font-size:10pt; }
+.chips{ display:flex; flex-wrap:wrap; gap:6px; margin:0 0 7px; }
+.chip{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:9pt; font-weight:600; background:var(--bg-tint);
+  border:1px solid var(--line); border-radius:30px; padding:3px 10px; color:#22262c; }
+.chip b{ color:var(--accent); }
+
+/* ---------- CARD GRID (cheat cards) ---------- */
+.cards{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:5mm 0; }
+.cards.three{ grid-template-columns:1fr 1fr 1fr; }
+.card{ border:1px solid var(--line); border-radius:9px; padding:11px 13px; page-break-inside:avoid; background:#fff; }
+.card .ch{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:10.4pt; color:var(--accent); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.card ul{ margin:0; padding-left:4.5mm; font-size:9.6pt; }
+.card p{ font-size:9.6pt; margin:0; }
+.card.solid{ background:var(--bg-tint); }
+
+/* ---------- TABLE ---------- */
+table{ width:100%; border-collapse:collapse; margin:5mm 0; font-size:9.8pt; page-break-inside:avoid; }
+th{ background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:700;
+  text-align:left; padding:7px 10px; font-size:9.4pt; }
+td{ padding:6px 10px; border-bottom:1px solid var(--line); vertical-align:top; }
+tr:nth-child(even) td{ background:var(--bg-tint); }
+
+/* ---------- MISC ---------- */
+blockquote{ margin:5mm 0; padding:2mm 0 2mm 6mm; border-left:3px solid var(--accent2); font-style:italic; color:#33373d; font-size:11pt; }
+hr{ border:none; border-top:1px solid var(--line); margin:7mm 0; }
+.lead-in{ font-size:12pt; color:var(--muted); line-height:1.5; margin:0 0 5mm; }
+.small{ font-size:8.8pt; color:var(--muted); }
+.mono{ font-family:"DejaVu Sans Mono","Liberation Mono",monospace; font-size:9pt; }
+.center{ text-align:center; }
+.pill{ display:inline-block; background:var(--accent); color:#fff; font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-size:8.4pt; font-weight:700; letter-spacing:.08em; padding:2px 9px; border-radius:20px; text-transform:uppercase; }
+.end{ text-align:center; margin:14mm 0 0; page-break-inside:avoid; }
+.end .mark{ font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif; font-weight:800; font-size:13pt; color:var(--accent); }
+.end .sub{ color:var(--muted); font-size:10pt; margin-top:2mm; }
+</style></head>
+<body>
+<div class="cover">
+  <div class="wm"></div><div class="wm2"></div>
+  <div class="cover-inner">
+    <div class="kicker">DON&#x27;T CRASH IT</div>
+    <div style="margin-top:auto"></div>
+    <h1>Fly Safe: Avoid Crashes &amp; Flyaways</h1>
+    <div class="rule"></div>
+    <div class="sub">The Habits That Keep Your Drone in the Air</div>
+    <div class="foot">
+      <div class="brand">Story Mode Guy<span>storymodeguy.com</span></div>
+      <div class="price">Reader's Edition · 2026<br>$24 value</div>
+    </div>
+  </div>
+</div>
+<div class="toc">
+  <h2>What's Inside</h2>
+  <div class="lead">The Habits That Keep Your Drone in the Air. Written for pilots terrified of crashing or losing an expensive drone.</div>
+  <ol><li><span class="t">The Fear Is Rational — and Preventable</span></li><li><span class="t">The Top Causes of Crashes & Flyaways</span></li><li><span class="t">Wind & Weather — A Go/No-Go You Can Trust</span></li><li><span class="t">GPS, Compass & Interference — Preventing the Flyaway</span></li><li><span class="t">Battery Discipline — The Quiet Killer</span></li><li><span class="t">Return-to-Home, Set Up Right</span></li><li><span class="t">Obstacle Avoidance & Its Blind Spots</span></li><li><span class="t">Signal Loss — What Actually Happens</span></li><li><span class="t">When Things Go Wrong — Emergency Habits</span></li><li><span class="t">The Safety Pre-Flight Checklist</span></li></ol>
+</div>
+<h1><span class="n">START HERE</span>The Fear Is Rational — and Preventable</h1>
+<p class="lead-in">You paid real money for a machine that hovers hundreds of feet over concrete, water, and other people's cars — and the little voice that says "what if I lose it" is not paranoia. It is your survival instinct working correctly. This guide takes that fear and turns it into a set of habits so reliable that flying stops feeling like gambling and starts feeling like driving.</p>
+
+<p>Here is the truth almost nobody tells new pilots: <strong>drones very rarely fail on their own.</strong> When a drone crashes or flies away, there is almost always a cause you could have seen coming from the ground — a wind gust the aircraft couldn't fight, a compass corrupted by a rebar-filled patio, a battery too cold to deliver power, a Return-to-Home altitude set below the trees. Every one of those is preventable.</p>
+
+<div class="key"><div class="kt">The whole guide in one sentence</div><p>Crashes and flyaways have named, physical causes — and every one of them is defeated by a habit you perform before or during the flight, not by luck.</p></div>
+
+<h2>Who this guide is for</h2>
+<p>It's for the pilot whose stomach drops every time the aircraft gets small in the sky — the one who has watched flyaway videos and now hesitates to fly at all. Good: that caution is an asset. We are going to give it structure so it protects you instead of paralyzing you.</p>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Works with any drone</div><p>Everything here is gear-agnostic. Whether you fly a tiny sub-250-gram model or a heavy prosumer rig, the physics of wind, magnetism, cold batteries, and radio signal are identical. Where a feature has different names by brand, we describe what it does so you can find it in your own app or manual.</p></div>
+
+<h2>How to read this</h2>
+<p>Chapter 2 is the short list — the handful of causes behind almost every lost aircraft. Read it first. Then work through the chapters that address your specific fear. The final chapter is a printable pre-flight checklist; screenshot it and run it every single time, no exceptions, even on flight number five hundred.</p>
+
+<h1><span class="n">CHAPTER 2</span>The Top Causes of Crashes &amp; Flyaways</h1>
+<p>Before you can prevent a disaster, you need to know what actually causes them. The list is shorter than you'd think. Nearly every destroyed or lost drone traces back to one of these six causes — and often to two of them stacking up at once.</p>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🌬️ Wind Over Limit</div><p>Gusts exceed the drone's max speed. It gets pushed downwind faster than it can fly home, drains the battery fighting, and comes down where it runs out.</p></div>
+  <div class="card"><div class="ch">🧭 Compass / GPS Error</div><p>Magnetic interference or too few satellites corrupts the drone's sense of "where and which way." The classic flyaway — it flies off in a straight line believing it's holding still.</p></div>
+  <div class="card"><div class="ch">🔋 Battery Failure</div><p>A cold, old, or over-drained battery sags under load and the aircraft drops out of the sky — or triggers a forced landing over water or road.</p></div>
+</div>
+
+<div class="cards three">
+  <div class="card"><div class="ch">🏠 Wrong RTH Altitude</div><p>Return-to-Home set below the treeline. The drone turns for home and flies horizontally straight into an obstacle it never climbed above.</p></div>
+  <div class="card"><div class="ch">🌲 Obstacle Blind Spots</div><p>Thin branches, wires, and anything behind the aircraft. Obstacle sensors miss what they can't see, and the drone flies confidently into it.</p></div>
+  <div class="card"><div class="ch">📡 Signal Loss</div><p>The controller link drops. What happens next is entirely determined by settings you chose — or didn't — before takeoff.</p></div>
+</div>
+
+<div class="key"><div class="kt">The pattern behind all six</div><p>Not one of these is a random act of God. Each is a condition you can detect on the ground or a setting you configure before launch. The rest of this guide is how.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Causes stack</div><p>The worst incidents are rarely one failure — cold battery <em>plus</em> strong wind, low satellite count <em>plus</em> a hurried takeoff near a metal railing. When two yellow flags appear together, treat it as one red flag and don't fly.</p></div>
+
+<h1><span class="n">CHAPTER 3</span>Wind &amp; Weather — A Go/No-Go You Can Trust</h1>
+<p>Wind is the single most underestimated killer of drones, because on the ground it feels mild while a hundred feet up it is often twice as strong and gusting hard. Your aircraft can only fly so fast; when the wind moves faster than that, physics wins and your drone becomes a leaf.</p>
+
+<h2>Know your aircraft's wind resistance number</h2>
+<p>Every drone publishes a <strong>maximum wind resistance</strong> or a <strong>maximum horizontal speed</strong> — often expressed as a level on the Beaufort scale. That number is your ceiling, and you should fly well under it, not at it. A drone rated for roughly 22&nbsp;mph of wind should not be flown in 20&nbsp;mph gusts. The margin between "rated" and "safe" is where you live.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Wind is faster up high</div><p>Surface wind is slowed by trees, buildings, and terrain. At altitude there's nothing to slow it. A calm-feeling 8&nbsp;mph at your feet can be a punishing 20&nbsp;mph gusting 30 at 200 feet. Never judge the wind aloft by the wind on your face — check a forecast that gives wind <em>at altitude</em>, and watch how hard the drone tilts to hold position.</p></div>
+
+<h2>The go/no-go table</h2>
+<table>
+  <tr><th>Sustained wind</th><th>Gusts</th><th>Decision</th></tr>
+  <tr><td>0–10 mph</td><td>Under 15 mph</td><td><strong>GO</strong> — comfortable for most consumer drones</td></tr>
+  <tr><td>10–18 mph</td><td>15–22 mph</td><td><strong>CAUTION</strong> — experienced pilots only, fly low and close, sub-250g drones struggle here</td></tr>
+  <tr><td>18–25 mph</td><td>22–30 mph</td><td><strong>NO-GO</strong> for most drones — only heavy rigs with margin to spare</td></tr>
+  <tr><td>25 mph+</td><td>30 mph+</td><td><strong>GROUNDED</strong> — no consumer drone belongs in this</td></tr>
+</table>
+<p class="small">Shift every row one level stricter for a sub-250-gram drone, at high altitude/elevation where the air is thinner, or if your battery is cold. These are starting points, not permissions.</p>
+
+<h2>Reading the sky for other threats</h2>
+<div class="cards">
+  <div class="card solid"><div class="ch">🌧️ Moisture</div><p>Consumer drones are not waterproof. Rain, heavy fog, wet snow, and even flying through a cloud can short electronics mid-air. If you can feel dampness, don't launch. Sea spray and mist near waterfalls count too.</p></div>
+  <div class="card solid"><div class="ch">🥶 Cold</div><p>Below roughly 5°C / 40°F, battery chemistry slows and voltage sags under load. The drone may report full charge, then drop power the instant you demand a hard maneuver. See Chapter 5.</p></div>
+  <div class="card solid"><div class="ch">🌡️ Heat &amp; Density Altitude</div><p>Hot days and high elevation both thin the air. Props bite less, motors work harder, flight time and wind-fighting ability both fall. Expect noticeably less performance.</p></div>
+  <div class="card solid"><div class="ch">⛈️ Instability</div><p>Distant thunder, fast-building clouds, or sudden temperature shifts signal turbulent, unpredictable air. Land before the front arrives, not as it hits.</p></div>
+</div>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>The hover test</div><p>Before committing to a flight, take off and hover at about 30–50 feet for ten seconds. Watch how much the drone tilts and drifts to hold its spot. If it's fighting visibly hard down low where wind is weakest, it will be overwhelmed higher up. Bring it home and wait. This ten-second check has saved more drones than any forecast app.</p></div>
+
+<h1><span class="n">CHAPTER 4</span>GPS, Compass &amp; Interference — Preventing the Flyaway</h1>
+<p>This is the chapter that addresses the nightmare: the drone that ignores your sticks and sails off in a straight line until it's a dot, then gone. That is almost always a <strong>compass or GPS error</strong>, and it is almost always seeded on the ground, in the seconds before takeoff. Get this chapter right and you eliminate the scariest failure in the hobby.</p>
+
+<h2>How a flyaway actually happens</h2>
+<p>Your drone holds position by fusing two things: GPS tells it <em>where</em> it is, the compass tells it <em>which way</em> it's pointing. If the compass is corrupted by nearby metal, the drone thinks north is somewhere it isn't. So when it tries to hold still against a breeze, it corrects in the wrong direction — and the harder it "corrects," the faster it flies away. From its point of view it is holding position. From yours, it is escaping.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The takeoff surface is the usual culprit</div><p>Launching from a car hood, a manhole cover, a metal table, a concrete slab with rebar, a rooftop with ductwork, or near a chain-link fence can throw the compass off before you ever leave the ground. Rebar-reinforced concrete is a silent, invisible magnet field. This one mistake causes more flyaways than any hardware defect.</p></div>
+
+<h2>Calibrate away from metal — the right way</h2>
+<ol class="steps">
+  <li><span class="sh">Choose open ground.</span> Grass, dirt, or a wooden deck, well away from cars, buildings, power lines, cell towers, and speakers. Take a few steps away from your own gear bag if it has magnets or metal.</li>
+  <li><span class="sh">Empty your pockets of magnets.</span> Keys, phones, magnetic clasps, and Bluetooth earbuds near the aircraft during calibration will corrupt it. Set them down and step back.</li>
+  <li><span class="sh">Calibrate only when the app asks.</span> Modern drones don't need calibration before every flight — over-calibrating in a bad spot causes more problems than it solves. Do it when you travel a long distance, after a firmware update, or when the app prompts a compass error.</li>
+  <li><span class="sh">Watch for the error to clear.</span> If it re-prompts immediately, you are standing somewhere magnetic. Move fifty feet and try again. Do not "force" past a persistent compass warning.</li>
+</ol>
+
+<div class="key"><div class="kt">The non-negotiable</div><p>Never take off with an active compass or GPS warning on your screen. That warning is the aircraft telling you, in advance, that it does not know where or which way it is. Wait until it's green.</p></div>
+
+<h2>Watch the satellite count</h2>
+<p>Before you launch, your app shows how many GPS satellites the drone has locked. This number is your permission slip. Too few, and the drone falls back to a "no-position" mode where it will drift with any breeze and cannot return home on its own.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Satellite count go/no-go</span><span class="tag">BEFORE EVERY LAUNCH</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Under 8 → <b>DO NOT FLY</b></span><span class="chip">8–11 → <b>WAIT for more</b></span><span class="chip">12+ → <b>Strong lock, GO</b></span></div>
+    <p class="small">Give it 30–60 seconds after powering on to acquire satellites before you launch. Rushing this step is rushing straight into a drift or flyaway.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Confirm the Home Point recorded</div><p>Return-to-Home only works if the drone recorded an accurate home point at launch — which needs a solid satellite lock. Wait for the app to confirm "Home Point updated" or "Home Point set" and verify it's actually at your feet on the map, not a block away. A home point recorded with a weak lock can send the drone "home" to the wrong location.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Interference in the air</div><p>Flying near cell towers, high-voltage lines, large steel structures, or radio transmitters can disrupt both compass and signal mid-flight. If your drone suddenly reports errors or behaves erratically over such a spot, calmly fly it away from the source — often the readings recover once it's clear.</p></div>
+
+<h1><span class="n">CHAPTER 5</span>Battery Discipline — The Quiet Killer</h1>
+<p>Wind and flyaways get the scary headlines, but a huge share of ordinary crashes come down to something mundane: the battery ran out, sagged, or died faster than the pilot expected. Batteries are the most consumable, most abused, and least understood part of your aircraft. Respect them and a whole category of crashes disappears.</p>
+
+<h2>The ~30% return habit</h2>
+<p>Do not fly your battery to empty. Adopt a hard personal rule: <strong>when the battery hits about 30%, you are already flying home.</strong> Not thinking about it — doing it. That buffer covers the extra power a headwind demands on the way back, the climb to clear obstacles, and the careful landing. Batteries also sag hardest at low charge, so the last 20% is far less reliable than the first.</p>
+
+<div class="key"><div class="kt">The one battery rule to tattoo on your brain</div><p>At 30%, you head home. Full stop. "One more pass" at 15% is how good pilots lose drones over water and rooftops.</p></div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Percentage is not distance</div><p>A battery reading 40% with the drone a mile downwind in a headwind may not make it back. The number on your screen is charge remaining, not flight remaining. Fighting wind on the return trip can double your power draw. Turn for home earlier when you're far out or fighting weather.</p></div>
+
+<h2>Cold batteries are dangerous batteries</h2>
+<p>Lithium batteries lose voltage capacity in the cold, and they sag sharply under the sudden load of a hard maneuver. A cold pack can show a healthy percentage on the ground, then plummet the instant you throttle up — triggering a low-voltage forced landing far from home, or simply dropping the aircraft.</p>
+<ol class="steps">
+  <li><span class="sh">Warm packs before flight.</span> Keep them in an inside pocket or a warm bag until launch. Aim to start with the battery near room temperature.</li>
+  <li><span class="sh">Let it warm in a gentle hover.</span> After takeoff on a cold day, hover for 30–60 seconds before demanding hard flying, letting internal warmth build.</li>
+  <li><span class="sh">Cut your flight time expectations.</span> In real cold, plan for noticeably shorter flights and return with more reserve than usual.</li>
+</ol>
+
+<h2>Battery health over the long run</h2>
+<ul class="check">
+  <li>Store packs at roughly half charge, not full — long-term full storage degrades them and can cause swelling.</li>
+  <li>Never fly a puffy or swollen battery. A visible bulge means retire it, permanently.</li>
+  <li>Watch the charge-cycle count; performance falls off as packs age, and old packs sag worst under load.</li>
+  <li>Avoid charging or flying a hot battery straight off the charger or out of a hot car — let it settle to normal temperature.</li>
+  <li>Inspect contacts for corrosion or damage before seating a pack; a poor connection can cut power mid-flight.</li>
+</ul>
+
+<div class="callout gear"><div class="ct"><span class="ico">🛠️</span>Retire on a schedule, not on a failure</div><p>Batteries are the cheapest insurance in this hobby. A worn pack that fails at altitude costs you the whole aircraft. When a battery visibly swells, holds noticeably less charge, or throws voltage warnings, replace it. Do not "get a few more flights" out of it.</p></div>
+
+<h1><span class="n">CHAPTER 6</span>Return-to-Home, Set Up Right</h1>
+<p>Return-to-Home is the feature that's supposed to save you. It is also, set up wrong, a feature that flies your drone straight into a tree at full speed. Understanding one setting — the RTH altitude — is the difference between a rescue and a wreck.</p>
+
+<h2>How RTH works, and where it goes wrong</h2>
+<p>When RTH triggers — from low battery, signal loss, or your command — most drones do the same thing: they <strong>climb to a preset altitude, fly in a straight line back to the home point, then descend.</strong> The fatal flaw is that middle step. If your preset altitude is lower than something between the drone and home, it flies horizontally straight into it, because on the return leg it is often flying "blind," trusting altitude alone to clear obstacles.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>The mistake that destroys drones</div><p>Factory default RTH altitude is frequently set low — sometimes 100 feet or less. If you fly among trees, buildings, or on a slope, that default will send your returning drone straight into the tallest thing in its path. This single misconfiguration is behind an enormous share of "the RTH crashed my drone" stories.</p></div>
+
+<h2>Set RTH altitude above your tallest obstacle</h2>
+<p>Before you fly a new location, set the RTH altitude <strong>higher than the tallest obstacle</strong> anywhere between you and the far edge of where you'll fly — trees, towers, buildings, terrain rise — plus a comfortable margin on top.</p>
+
+<div class="recipe">
+  <div class="rh"><span>Setting RTH altitude</span><span class="tag">PER LOCATION</span></div>
+  <div class="rb">
+    <div class="chips"><span class="chip">Open field → <b>tallest thing + 30 ft</b></span><span class="chip">Trees / suburb → <b>above canopy + 50 ft</b></span><span class="chip">City / hills → <b>above everything + generous margin</b></span></div>
+    <p class="small">When unsure, set it higher. Extra altitude on the return costs a little battery. Too little altitude costs the whole aircraft.</p>
+  </div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Reset it every new spot</div><p>RTH altitude is not "set once and forget." The right height for an open beach is suicidal in a forest. Make checking and setting RTH altitude part of your per-location routine, right alongside checking the wind and the satellite count.</p></div>
+
+<h2>Know what triggers RTH and how to take back control</h2>
+<ul class="check">
+  <li>Understand your three triggers: you press the button, the battery hits its return threshold, or the signal drops (if configured to RTH on signal loss).</li>
+  <li>Know how to <strong>cancel</strong> RTH instantly — you can regain manual control if the automatic path looks wrong, then fly home yourself with eyes on the aircraft.</li>
+  <li>If home is very close, some drones descend from where they are rather than climbing — know your model's behavior so a nearby RTH doesn't surprise you.</li>
+  <li>Verify the home point is accurate before relying on RTH to bring the drone to <em>you</em> and not to where it launched, if you've moved.</li>
+</ul>
+
+<h1><span class="n">CHAPTER 7</span>Obstacle Avoidance &amp; Its Blind Spots</h1>
+<p>Obstacle-avoidance sensors feel like a safety net, and they've prevented countless crashes. But pilots who trust them completely are the ones who crash — because these systems have specific, predictable blind spots, and knowing them is what keeps you safe.</p>
+
+<div class="key"><div class="kt">The core truth</div><p>Obstacle avoidance is a backup, not a pilot. It sees some things reliably, some things poorly, and some things not at all. Fly as if it isn't there, and be grateful when it saves you.</p></div>
+
+<h2>What the sensors miss</h2>
+<div class="cards">
+  <div class="card solid"><div class="ch">🌿 Thin branches &amp; twigs</div><p>Sensors need a surface of some size to detect. Bare branches, twigs, and reeds are often invisible to them — and a single twig in a prop brings the whole aircraft down.</p></div>
+  <div class="card solid"><div class="ch">🔌 Wires &amp; cables</div><p>Power lines, guy-wires, clotheslines, and fences are the classic killers. Thin, high-contrast against the sky, and frequently undetected. Assume every wire is invisible to the drone.</p></div>
+  <div class="card solid"><div class="ch">↩️ Behind the aircraft</div><p>Many drones have <strong>no rear sensors</strong>. Flying backward — a favorite for cinematic reveals — points the drone at a world it cannot see. This causes a shocking number of crashes.</p></div>
+  <div class="card solid"><div class="ch">🪟 Glass, water &amp; low light</div><p>Reflective, transparent, or featureless surfaces confuse optical sensors. So does dim light, fog, and shooting toward the sun — the very conditions where you most want the net.</p></div>
+</div>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Never fly backward blind</div><p>If your drone has no rear sensors, treat any backward movement as fully manual and fully your responsibility. Plan the reveal by flying forward into the position first, checking what's behind, then flying the shot backward slowly with the whole path already in your memory.</p></div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Slow down to let sensors work</div><p>Obstacle avoidance needs time to detect, decide, and stop the aircraft. At high speed the drone simply outruns its own sensors and hits the thing before the system can react. In tight or cluttered spaces, fly slowly and deliberately — speed defeats the very system you're relying on.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>Keep line of sight</div><p>The oldest safety net still beats the newest sensor: your own eyes on the aircraft. Maintaining visual line of sight lets you see the wire, the branch, the crane the drone can't — and it's the law in most places for good reason.</p></div>
+
+<h1><span class="n">CHAPTER 8</span>Signal Loss — What Actually Happens</h1>
+<p>The controller link drops and your video feed freezes. Your heart stops. Here's the calming truth: <strong>signal loss is not loss of the drone.</strong> A well-configured aircraft handles a dropped link gracefully — but only if you set it up beforehand and don't panic in the moment.</p>
+
+<h2>What the drone does when the link drops</h2>
+<p>On losing signal, your drone follows a pre-set behavior you chose in advance — almost always one of three: <strong>Return-to-Home</strong> (climb to RTH altitude and fly back), <strong>Hover</strong> (hold position and wait for reconnection), or <strong>Land</strong> (come straight down where it is). For most pilots, RTH-on-signal-loss is the correct default, because it brings the aircraft back toward you where the link will likely restore.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>"Land" over water is a death sentence</div><p>If your signal-loss behavior is set to Land and you lose signal over a lake, river, or road, the drone descends straight down into it. For nearly everyone, RTH is the safer choice. Check which behavior yours is set to before you fly anywhere with water or traffic below.</p></div>
+
+<h2>Preventing the drop in the first place</h2>
+<ol class="steps">
+  <li><span class="sh">Keep the controller antennas oriented correctly.</span> Point the flat face of the antennas toward the drone — not the tips. The strongest signal comes off the broad side, and aiming the tips at the aircraft is a common, invisible mistake.</li>
+  <li><span class="sh">Keep line of sight.</span> Radio signal wants an unobstructed path. Buildings, hills, trees, and even your own body between you and the drone attenuate the link. Don't let the aircraft fly behind a solid obstacle.</li>
+  <li><span class="sh">Avoid interference sources.</span> Flying near cell towers, Wi-Fi-dense areas, and other transmitters raises the noise floor. If your signal-strength bars are dropping, fly back toward clear air before you lose it entirely.</li>
+  <li><span class="sh">Don't fly to the edge of range.</span> Advertised range numbers assume perfect conditions you'll never have. Fly at a fraction of the maximum so you're never one hill away from a dropout.</li>
+</ol>
+
+<div class="callout tip"><div class="ct"><span class="ico">💡</span>Reconnection often just works</div><p>If you lose signal, the fastest fix is usually to raise your controller higher, step to clear ground, and point the antennas at the drone's last position. As the aircraft returns via RTH it climbs and closes distance — the link commonly restores on its own within seconds. Don't do anything drastic in that window.</p></div>
+
+<h1><span class="n">CHAPTER 9</span>When Things Go Wrong — Emergency Habits</h1>
+<p>Preparation prevents most incidents. But someday something will still go sideways in the air, and what you do in those ten seconds decides whether you land safely or make it worse. The overwhelming lesson from real incidents is simple: <strong>panic causes more crashes than the original problem does.</strong></p>
+
+<div class="key"><div class="kt">The emergency mantra</div><p>Breathe. Level off. Let the automatic systems do their job. Most in-flight scares resolve themselves if you don't fight them.</p></div>
+
+<h2>Don't panic-throttle</h2>
+<p>The instinct when a drone drifts or behaves oddly is to slam the sticks — full throttle, hard turns, wild inputs. This is the worst thing you can do. Aggressive input drains the battery fastest, fights the stabilization trying to recover, and turns a recoverable drift into a real emergency. <strong>Release the sticks. Let the drone stabilize itself.</strong> A modern drone left alone with a GPS lock will stop and hover.</p>
+
+<div class="callout warn"><div class="ct"><span class="ico">⚠️</span>Let RTH work — don't fight it</div><p>If RTH engages and the drone starts climbing and flying home, resist the urge to grab control unless you can see it's heading into danger. It is executing exactly the plan you configured. Fighting it mid-return is how people override a perfectly good rescue into a crash. Hands off; watch; take over only with a clear, better plan.</p></div>
+
+<h2>A calm response playbook</h2>
+<div class="cards">
+  <div class="card"><div class="ch">🧭 Drone drifting / flyaway starting</div><p>Release the sticks and let it stabilize. If it won't hold, trigger RTH. If RTH fails on a bad compass, switch to a non-GPS/manual mode and fly it back by sight, nose pointed toward you.</p></div>
+  <div class="card"><div class="ch">📉 Sudden low battery warning</div><p>Point it home immediately and descend on the way. Don't climb, don't sightsee. A controlled early landing beats a forced one over the wrong spot.</p></div>
+  <div class="card"><div class="ch">📡 Signal lost</div><p>Stay put, raise the controller, aim antennas at its last position, and let RTH bring it back. Don't wander off — it's coming to the home point.</p></div>
+  <div class="card"><div class="ch">⚠️ Erratic behavior over a spot</div><p>Likely local interference. Calmly fly it away from towers, wires, or steel. Readings often clear once it's over open ground.</p></div>
+</div>
+
+<div class="callout pro"><div class="ct"><span class="ico">🎓</span>Know your manual escape hatch</div><p>Learn, before you ever need it, how to switch your drone into a mode that ignores GPS and flies purely on your stick inputs. In a true compass-driven flyaway, this manual mode is what lets you fly the aircraft home by eye when the automatics are lying to it. Practice a gentle version of it on a calm day so it's muscle memory, not a scramble.</p></div>
+
+<div class="callout note"><div class="ct"><span class="ico">📷</span>An orderly landing beats a perfect spot</div><p>If you must put it down away from home — over grass, in a field, anywhere safe — do it. A drone landed intact in a stranger's yard is recoverable. A drone flown to the last second chasing the ideal landing spot is often lost. Prioritize getting it on the ground safely over getting it back to your feet.</p></div>
+
+<h1><span class="n">CHAPTER 10</span>The Safety Pre-Flight Checklist</h1>
+<p>Screenshot this. Run it before every single flight. Almost every crash and flyaway in this guide is caught by one of these lines — which is the whole point. The disaster you prevent on the ground is the one that never happens in the air.</p>
+
+<h2>Before you leave home</h2>
+<ul class="check">
+  <li>Batteries charged, warm, and not swollen — drone, controller, and phone/tablet.</li>
+  <li>Propellers inspected for cracks, chips, and secure attachment.</li>
+  <li>Firmware up to date, and you've flown this version before or read what changed.</li>
+  <li>Checked the weather forecast for wind <em>at altitude</em>, not just the ground.</li>
+  <li>Confirmed the location is legal to fly and clear of restricted airspace.</li>
+</ul>
+
+<h2>At the launch site</h2>
+<ul class="check">
+  <li>Launch surface is open, non-metallic ground — not a car, rebar slab, or near a fence.</li>
+  <li>Wind assessed against the go/no-go table; ran the ten-second hover test if in doubt.</li>
+  <li>Compass and GPS status are green — no active warnings on screen.</li>
+  <li>Waited for a strong satellite lock (12+) before launching.</li>
+  <li>Home Point confirmed set and shown at your actual location on the map.</li>
+</ul>
+
+<h2>Settings confirmed for this location</h2>
+<ul class="check">
+  <li>RTH altitude set above the tallest obstacle between you and the flight area, plus margin.</li>
+  <li>Signal-loss behavior set to RTH (not Land) — especially over water or roads.</li>
+  <li>Obstacle avoidance on, and you know its blind spots for today's scene.</li>
+  <li>Battery return threshold understood — you'll turn for home at ~30%.</li>
+  <li>You know how to cancel RTH and how to switch to manual mode if needed.</li>
+</ul>
+
+<h2>In the air — the running habits</h2>
+<ul class="check">
+  <li>Maintain visual line of sight; don't let obstacles come between you and the drone.</li>
+  <li>Watch battery percentage against distance and wind, not just the number.</li>
+  <li>Fly slowly near obstacles; never fly backward into unseen space.</li>
+  <li>Turn for home at 30%, with extra reserve if it's cold, windy, or far.</li>
+  <li>If anything feels wrong: release the sticks, breathe, and let the systems recover.</li>
+</ul>
+
+<div class="callout try"><div class="ct"><span class="ico">🎯</span>Make it a ritual, not a chore</div><p>The pilots who never lose drones aren't luckier or more talented — they simply never skip the checklist, even when they're in a hurry, even on a familiar field, even on their thousandth flight. Run it out loud the first dozen times until it's automatic. Two minutes on the ground buys you a whole aircraft in the air.</p></div>
+
+<div class="key"><div class="kt">Remember</div><p>Most crashes are prevented on the ground, before takeoff — in the wind you chose not to fight, the compass you kept green, the battery you warmed, and the RTH altitude you set above the trees.</p></div>
+<div class="end"><div class="mark">Story Mode Guy</div><div class="sub">Guides for people who treat everything like it has a plot. · storymodeguy.com</div></div>
+
+</body></html>
