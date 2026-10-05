@@ -28,8 +28,9 @@ def fit(im, long_edge):
 
 def process(src, n):
     im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
-    fit(im.copy(), 1920).save(ROOT / f"photo-{n}.jpg", "JPEG", quality=85, optimize=True, progressive=True)
-    fit(im.copy(), 800).save(ROOT / f"thumb-photo-{n}.jpg", "JPEG", quality=82, optimize=True, progressive=True)
+    # zero-pad to >= 2 digits to match existing files (photo-01.jpg ...)
+    fit(im.copy(), 1920).save(ROOT / f"photo-{n:02d}.jpg", "JPEG", quality=85, optimize=True, progressive=True)
+    fit(im.copy(), 800).save(ROOT / f"thumb-photo-{n:02d}.jpg", "JPEG", quality=82, optimize=True, progressive=True)
 
 
 def main():
