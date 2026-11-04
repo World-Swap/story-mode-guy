@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Color Grade Video: Correct First, Then Style — Story Mode Guy</title>
+<meta name="description" content="Flat, grey footage isn&#x27;t broken — it&#x27;s ungraded. Here&#x27;s the difference between color correction and grading, and a simple order that works every time.">
+<meta name="keywords" content="how to color grade video, color grading, log footage, luts, davinci resolve color, video color correction">
+<link rel="canonical" href="https://storymodeguy.com/blog/how-to-color-grade-video.html">
+<link rel="icon" type="image/png" href="/smg-logo.png">
+<link rel="alternate" type="application/rss+xml" title="Story Mode Guy — Journal" href="/blog/feed.xml">
+<meta property="og:type" content="article"><meta property="og:title" content="How to Color Grade Video: Correct First, Then Style">
+<meta property="og:description" content="Flat, grey footage isn&#x27;t broken — it&#x27;s ungraded. Here&#x27;s the difference between color correction and grading, and a simple order that works every time.">
+<meta property="og:url" content="https://storymodeguy.com/blog/how-to-color-grade-video.html">
+<meta property="og:image" content="https://storymodeguy.com/photo-20.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff;--parch:#fefffc;--linen:#f9faf7;--ink:#1b1b20;--char:#3a3a40;--ash:#6a6a72;
+--fog:#b4b8b4;--mist:#e3e6ea;--blue:#41a1cf;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--char);background:var(--parch);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:14px;justify-content:center;
+background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--mist);padding:12px 16px}
+.nav .brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-size:17px;color:var(--ink)}
+.nav .brand img{width:30px;height:30px;border-radius:50%}
+.nav .sp{flex:1}
+.nav .lnk{font-size:14px;font-weight:500;color:var(--char)}
+.wrap{max-width:720px;margin:0 auto;padding:44px 22px 30px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px}
+.meta{font-size:14px;color:var(--ash);margin-bottom:26px}
+.hero{width:100%;border-radius:14px;border:1px solid var(--mist);margin:8px 0 30px;aspect-ratio:16/9;object-fit:cover}
+article h2{font-family:var(--serif);font-weight:600;font-size:27px;color:var(--ink);margin:34px 0 10px}
+article h3{font-size:19px;font-weight:600;color:var(--ink);margin:24px 0 6px}
+article p{margin:0 0 16px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}article li{margin:6px 0}
+article strong{color:var(--ink)}
+.cta{background:linear-gradient(135deg,var(--blue),#0081c0);color:#fff;border-radius:14px;padding:22px 24px;margin:30px 0;text-align:center}
+.cta h3{color:#fff;font-family:var(--serif);font-weight:600;font-size:23px;margin-bottom:6px}
+.cta p{color:rgba(255,255,255,.92);margin-bottom:14px;font-size:15px}
+.cta a.btn{display:inline-block;background:#fff;color:#0b5675;font-weight:600;padding:11px 22px;border-radius:40px;font-size:15px}
+.cta a.btn:hover{text-decoration:none;filter:brightness(.97)}
+.related{border-top:1px solid var(--mist);margin-top:36px;padding-top:22px}
+.related h4{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:10px}
+.related a{display:block;padding:5px 0}
+.foot{border-top:1px solid var(--mist);margin-top:30px;padding:26px 22px;text-align:center;font-size:13px;color:var(--fog);max-width:720px;margin-left:auto;margin-right:auto}
+.foot a{color:var(--ash)}
+/* index */
+.cards{display:grid;gap:18px;margin-top:8px}
+.pcard{display:block;border:1px solid var(--mist);border-radius:14px;overflow:hidden;background:#fff;transition:transform .15s}
+.pcard:hover{transform:translateY(-2px);text-decoration:none}
+.pcard img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.pcard .b{padding:16px 18px}
+.pcard h2{font-family:var(--serif);font-size:22px;color:var(--ink);margin:0 0 6px}
+.pcard p{color:var(--ash);font-size:15px;margin:0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Color Grade Video: Correct First, Then Style", "description": "Flat, grey footage isn't broken \u2014 it's ungraded. Here's the difference between color correction and grading, and a simple order that works every time.", "image": "https://storymodeguy.com/photo-20.jpg", "datePublished": "2026-09-29", "dateModified": "2026-09-29", "author": {"@type": "Organization", "name": "Story Mode Guy", "@id": "https://storymodeguy.com/#org"}, "publisher": {"@id": "https://storymodeguy.com/#org"}, "mainEntityOfPage": "https://storymodeguy.com/blog/how-to-color-grade-video.html"}</script>
+</head><body>
+<div class="nav">
+  <a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a>
+  <span class="sp"></span>
+  <a class="lnk" href="/#shop">Shop</a><a class="lnk" href="/learn/">Guides</a><a class="lnk" href="/gallery.html">Gallery</a>
+</div>
+<main class="wrap">
+<div class="eyebrow">Journal</div>
+<h1>How to Color Grade Video: Correct First, Then Style</h1>
+<div class="meta">Story Mode Guy · September 29, 2026</div>
+<img class="hero" src="/photo-20.jpg" alt="A richly colored golden-hour coastal photograph">
+<article><p>If you're wondering how to color grade video, start with this reassurance: flat, grey, washed-out footage isn't broken. It's ungraded. Cameras that record in log or flat profiles are doing it on purpose, holding onto as much highlight and shadow detail as possible. Your job in color grading is to bring that image back to life, and the order you work in matters far more than any plugin or preset.</p>
+
+<h2>Color correction vs. color grading</h2>
+<p>People use these terms interchangeably, but they're two different jobs, and mixing them up is where most grades go wrong.</p>
+<ul>
+<li><strong>Color correction</strong> is technical. You fix exposure, set the white balance, and make sure skin tones look natural and clips match each other. The goal is accuracy.</li>
+<li><strong>Color grading</strong> is creative. You choose a mood: warm and nostalgic, cool and moody, bright and punchy. The goal is feeling.</li>
+</ul>
+<p>Correct first, then style. If you try to add a look on top of a badly exposed, off-balance shot, you'll fight it the whole way through.</p>
+
+<h2>A simple order that works every time</h2>
+<p>I use the same sequence on almost every project, whether it's a wedding clip or a coastal drone reel. In DaVinci Resolve's Color page, it maps neatly onto a chain of nodes.</p>
+<ol>
+<li><strong>Convert log to normal contrast.</strong> Apply a technical conversion LUT or use color management so the footage lands in a standard viewing space.</li>
+<li><strong>Fix exposure.</strong> Use the waveform, not just your eyes. Put the darkest shadows near the bottom and highlights just below the top, without clipping.</li>
+<li><strong>Set white balance.</strong> Find something that should be neutral, like a white shirt or grey wall, and adjust temperature and tint until it reads clean.</li>
+<li><strong>Check skin tones.</strong> Open the vectorscope and look for the skin tone line. Faces should sit along it, regardless of the person's complexion.</li>
+<li><strong>Match your shots.</strong> Make clips from the same scene feel like they were shot at the same moment.</li>
+<li><strong>Add the look.</strong> Only now do you push contrast, shift colors, add a LUT, or give shadows and highlights different tints.</li>
+</ol>
+
+<h2>Understand what log footage and LUTs actually do</h2>
+<p>Log profiles compress a wide dynamic range into a low-contrast image. That's why they look dull. A LUT, or lookup table, is simply a saved set of color instructions that remaps one set of colors to another. There are two kinds you'll run into:</p>
+<ul>
+<li><strong>Technical LUTs</strong> convert log footage into a standard look so you have a proper starting point.</li>
+<li><strong>Creative LUTs</strong> apply a style, like a film emulation or a teal-and-orange look.</li>
+</ul>
+<p>A LUT is a starting point, not a finish line. Drop one on, then reduce its strength to 30 to 60 percent and adjust underneath it. Every shot is lit differently, so no single LUT fits them all.</p>
+
+<div class="cta">
+<h3>Grade with confidence, not guesswork</h3>
+<p>A clear, practical workflow for correcting and styling your footage in DaVinci Resolve, with no confusing jargon.</p>
+<a class="btn" href="https://payhip.com/b/QtcBz">Get the Color Grading guide ($34) →</a>
+</div>
+
+<h2>Tools to learn first in DaVinci Resolve</h2>
+<p>Resolve's free version is remarkably capable. You don't need every panel, just these:</p>
+<ul>
+<li><strong>Primary wheels (Lift, Gamma, Gain):</strong> shadows, midtones, and highlights. This is where most of your work happens.</li>
+<li><strong>Scopes:</strong> waveform for exposure, vectorscope for color, parade to check balance between red, green, and blue.</li>
+<li><strong>Curves:</strong> fine control over contrast and individual colors.</li>
+<li><strong>Qualifier and power windows:</strong> isolate a face or a sky and adjust only that.</li>
+</ul>
+<p>Trust the scopes. Monitors differ, rooms differ, and your eyes adapt quickly. If a grade looks great on your laptop but too dark on your phone, the scopes will usually show why.</p>
+
+<h2>Common mistakes to avoid</h2>
+<ol>
+<li><strong>Over-saturating.</strong> Pushing color feels exciting at first and looks fake a day later. Pull it back.</li>
+<li><strong>Crushing blacks and clipping highlights.</strong> Once detail is gone, it's gone.</li>
+<li><strong>Ignoring skin tones.</strong> Viewers forgive an odd sky long before an odd face.</li>
+<li><strong>Grading shot by shot with no reference.</strong> Compare against neighboring clips so the scene stays consistent.</li>
+<li><strong>Stacking too many effects.</strong> A good grade is usually a handful of small, deliberate moves.</li>
+</ol>
+
+<h2>Practice on footage you care about</h2>
+<p>Pick a short sequence you shot, such as a sunset at Natural Bridges with strong warm light, and grade it twice: once for accuracy, once for mood. Seeing both side by side teaches more than any tutorial.</p>
+
+<p>Nail the order, correct first and then style, and grading stops feeling like guesswork. For a full walkthrough with a repeatable workflow, take a look at my <a href="https://payhip.com/b/QtcBz">Color Grading guide</a>.</p>
+</article>
+<div class="related"><h4>More from the journal</h4><a href="/blog/how-to-take-sharp-night-photos.html">How to Take Sharp Photos at Night (Without a Flash)</a><a href="/blog/how-to-photograph-the-milky-way.html">How to Photograph the Milky Way With the Camera You Already Own</a><a href="/blog/how-to-fly-a-drone-for-beginners.html">How to Fly a Drone for Beginners (Your First Flight, Step by Step)</a></div>
+</main>
+<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> ·
+<a href="/blog/">Journal</a> · <a href="/privacy.html">Privacy</a></div>
+</body></html>

@@ -1,6 +1,16 @@
 {
  "articles": [
   {
+   "slug": "how-to-take-sharp-night-photos",
+   "title": "How to Take Sharp Photos at Night (Without a Flash)",
+   "description": "Night photos don't have to be a blurry, grainy mess. Here's how to get clean, sharp shots after dark using shutter speed, ISO, focus, and a steady base.",
+   "keywords": "night photography, how to take photos at night, sharp night photos, low light photography, night photography settings",
+   "hero": "photo-53.jpg",
+   "hero_alt": "Boardwalk lights glowing at blue dusk",
+   "date": "2026-11-04",
+   "date_h": "November 4, 2026"
+  },
+  {
    "slug": "how-to-photograph-the-milky-way",
    "title": "How to Photograph the Milky Way With the Camera You Already Own",
    "description": "You don't need a telescope to shoot the Milky Way — just a dark sky, a tripod, and the right settings. Here's the beginner-friendly starting point.",
@@ -9,6 +19,36 @@
    "hero_alt": "A dark, star-filled night sky over the coast",
    "date": "2026-11-03",
    "date_h": "November 3, 2026"
+  },
+  {
+   "slug": "how-to-fly-a-drone-for-beginners",
+   "title": "How to Fly a Drone for Beginners (Your First Flight, Step by Step)",
+   "description": "Nervous about your first flight? Here's the calm, step-by-step way to take off, hover, and land your drone with confidence.",
+   "keywords": "how to fly a drone, drone for beginners, first drone flight, drone flying tips, beginner drone",
+   "hero": "photo-14.jpg",
+   "hero_alt": "Open sky over the Santa Cruz coast",
+   "date": "2026-11-01",
+   "date_h": "November 1, 2026"
+  },
+  {
+   "slug": "why-does-my-video-audio-sound-bad",
+   "title": "Why Does My Video Audio Sound Bad? (And How to Fix It)",
+   "description": "Echoey, hollow, or hissy sound comes down to three things: mic distance, the room, and your levels. Here's how to get clean, professional audio.",
+   "keywords": "why does my video sound bad, how to get good audio for video, video audio tips, microphone for video, fix echo audio",
+   "hero": "photo-30.jpg",
+   "hero_alt": "A quiet coastal scene at golden hour",
+   "date": "2026-10-29",
+   "date_h": "October 29, 2026"
+  },
+  {
+   "slug": "iphone-photography-tips-that-actually-work",
+   "title": "7 iPhone Photography Tips That Actually Make a Difference",
+   "description": "Your phone is a better camera than you think. Seven practical tips — light, gridlines, focus lock, and editing — that instantly upgrade your iPhone photos.",
+   "keywords": "iphone photography tips, phone photography, how to take better iphone photos, mobile photography, iphone camera tips",
+   "hero": "photo-30.jpg",
+   "hero_alt": "A crisp coastal scene shot on a phone",
+   "date": "2026-10-27",
+   "date_h": "October 27, 2026"
   },
   {
    "slug": "what-is-blue-hour-photography",
@@ -21,6 +61,46 @@
    "date_h": "October 24, 2026"
   },
   {
+   "slug": "cinematic-drone-shots-for-beginners",
+   "title": "5 Cinematic Drone Shots Any Beginner Can Fly",
+   "description": "The reveal, the orbit, the flyover, the top-down, and the dronie - the signature moves that make aerial footage look like a film, and how to fly each smoothly.",
+   "keywords": "cinematic drone shots, drone moves for beginners, drone video, how to film with a drone, aerial shots",
+   "hero": "photo-05.jpg",
+   "hero_alt": "A sweeping coastal vista",
+   "date": "2026-10-21",
+   "date_h": "October 21, 2026"
+  },
+  {
+   "slug": "best-camera-settings-for-video",
+   "title": "The Best Camera Settings for Video (Frame Rate, Shutter & More)",
+   "description": "A plain-English starting point for video: what frame rate to pick, the shutter rule that kills the 'video look,' resolution, and picture profiles.",
+   "keywords": "best camera settings for video, frame rate for video, shutter speed for video, 24fps vs 30fps vs 60fps, video settings",
+   "hero": "photo-18.jpg",
+   "hero_alt": "A wide, well-exposed coastal landscape",
+   "date": "2026-10-18",
+   "date_h": "October 18, 2026"
+  },
+  {
+   "slug": "how-to-not-crash-your-drone",
+   "title": "How to Not Crash Your Drone: 7 Habits That Keep It in the Air",
+   "description": "Most crashes and flyaways are preventable on the ground. Wind limits, GPS, battery discipline, and the Return-to-Home setting that saves drones.",
+   "keywords": "how to not crash a drone, drone flyaway, drone safety, return to home, drone crash prevention",
+   "hero": "photo-30.jpg",
+   "hero_alt": "Calm skies over the coast",
+   "date": "2026-10-15",
+   "date_h": "October 15, 2026"
+  },
+  {
+   "slug": "best-drone-camera-settings",
+   "title": "The Best Drone Camera Settings for Smooth, Cinematic Video",
+   "description": "Frame rate, the shutter rule, and why ND filters are the aerial must-have. The settings that stop your drone footage looking juddery or flat.",
+   "keywords": "best drone camera settings, drone nd filters, drone video settings, drone shutter speed, cinematic drone",
+   "hero": "photo-18.jpg",
+   "hero_alt": "A wide aerial-style coastal landscape",
+   "date": "2026-10-13",
+   "date_h": "October 13, 2026"
+  },
+  {
    "slug": "how-to-edit-photos-in-lightroom",
    "title": "How to Edit Photos in Lightroom: A Simple Order of Operations",
    "description": "Editing gets easy when you stop shoving sliders around and follow a repeatable order. Here's the sequence I use to take a flat RAW file to a finished photo.",
@@ -29,6 +109,46 @@
    "hero_alt": "A richly edited golden-hour coastal photograph",
    "date": "2026-10-10",
    "date_h": "October 10, 2026"
+  },
+  {
+   "slug": "how-to-shoot-better-video-on-your-phone",
+   "title": "How to Shoot Better Video on Your Phone",
+   "description": "Your phone shoots better video than you think. Lock focus and exposure, pick the right frame rate, hold it steady, and fix the audio — here's how.",
+   "keywords": "how to shoot video on phone, iphone video tips, phone videography, smartphone video, better phone video",
+   "hero": "photo-12.jpg",
+   "hero_alt": "A coastal scene framed for video",
+   "date": "2026-10-07",
+   "date_h": "October 7, 2026"
+  },
+  {
+   "slug": "how-to-edit-drone-footage",
+   "title": "How to Edit Drone Footage So It Matches the Rest of Your Video",
+   "description": "Stabilize the jello, fix the color, add speed ramps, and make your aerials match your ground footage - a simple order that works in any editor.",
+   "keywords": "how to edit drone footage, drone video editing, color grade drone footage, stabilize drone video, drone editing",
+   "hero": "photo-12.jpg",
+   "hero_alt": "A richly colored coastal scene",
+   "date": "2026-10-04",
+   "date_h": "October 4, 2026"
+  },
+  {
+   "slug": "how-to-add-drone-shots-to-your-videos",
+   "title": "How to Add Drone Shots to Your Videos (Without It Feeling Random)",
+   "description": "Aerials are b-roll with a job. Here's how to use them as establishing shots, cut between ground and air, and build a sequence that holds attention.",
+   "keywords": "how to use drone footage in videos, drone b-roll, adding aerial shots, drone video editing, establishing shot",
+   "hero": "photo-08.jpg",
+   "hero_alt": "A sweeping view of the coastline",
+   "date": "2026-10-01",
+   "date_h": "October 1, 2026"
+  },
+  {
+   "slug": "how-to-color-grade-video",
+   "title": "How to Color Grade Video: Correct First, Then Style",
+   "description": "Flat, grey footage isn't broken — it's ungraded. Here's the difference between color correction and grading, and a simple order that works every time.",
+   "keywords": "how to color grade video, color grading, log footage, luts, davinci resolve color, video color correction",
+   "hero": "photo-20.jpg",
+   "hero_alt": "A richly colored golden-hour coastal photograph",
+   "date": "2026-09-29",
+   "date_h": "September 29, 2026"
   },
   {
    "slug": "how-to-make-videos-look-cinematic",
@@ -41,6 +161,36 @@
    "date_h": "September 26, 2026"
   },
   {
+   "slug": "real-estate-drone-video-tips",
+   "title": "Real Estate Drone Video: How to Film Sellable Property Tours",
+   "description": "Bright, smooth aerial tours that sell listings - the shot list, the reveal and orbit, the legal must-dos, and what to charge. (Paid work needs Part 107 in the US.)",
+   "keywords": "real estate drone video, property drone video, real estate videography, drone real estate, aerial property tour",
+   "hero": "photo-22.jpg",
+   "hero_alt": "A bright coastal property view",
+   "date": "2026-09-23",
+   "date_h": "September 23, 2026"
+  },
+  {
+   "slug": "how-to-pose-people-for-natural-portraits",
+   "title": "How to Pose People for Natural-Looking Portraits",
+   "description": "Nobody wants to look stiff. A few simple posing cues — and the right light — make anyone look relaxed and flattering in a portrait, on any camera.",
+   "keywords": "how to pose for portraits, posing guide, natural portrait poses, portrait photography tips, how to pose people",
+   "hero": "photo-25.jpg",
+   "hero_alt": "Soft natural light along the coast",
+   "date": "2026-09-20",
+   "date_h": "September 20, 2026"
+  },
+  {
+   "slug": "drone-photography-tips",
+   "title": "Drone Photography Tips: Striking Aerial Photos, Not Just Video",
+   "description": "Top-down composition, panoramas, HDR for high-contrast scenes, and golden-hour light from above - how to make aerial stills that stop the scroll.",
+   "keywords": "drone photography, aerial photography, drone photo tips, top down photography, drone panorama",
+   "hero": "photo-05.jpg",
+   "hero_alt": "A dramatic aerial-style coastal vista",
+   "date": "2026-09-17",
+   "date_h": "September 17, 2026"
+  },
+  {
    "slug": "real-estate-photography-tips",
    "title": "Real Estate Photography Tips for Bright, Sellable Interiors",
    "description": "Dark, crooked interior photos kill listings. Here's how to shoot bright, straight, sellable rooms — and turn it into a paid side income.",
@@ -51,6 +201,16 @@
    "date_h": "September 12, 2026"
   },
   {
+   "slug": "how-to-get-smooth-cinematic-video",
+   "title": "How to Get Smooth, Cinematic Video (Handheld or Gimbal)",
+   "description": "Shaky footage reads as amateur; smooth, motivated movement reads as film. Here's how to steady your shots — with or without a gimbal.",
+   "keywords": "how to get smooth video, cinematic camera movement, gimbal moves, stabilize video, smooth handheld video",
+   "hero": "photo-08.jpg",
+   "hero_alt": "A steady, sweeping view of the coast",
+   "date": "2026-09-09",
+   "date_h": "September 9, 2026"
+  },
+  {
    "slug": "do-i-need-a-license-to-fly-a-drone",
    "title": "Do I Need a License to Fly a Drone? (US Rules, Explained Simply)",
    "description": "Registration, the recreational test, and Part 107 for paid work - the US drone rules in plain English. Always verify current rules with the FAA before flying.",
@@ -59,6 +219,86 @@
    "hero_alt": "A wide coastal landscape",
    "date": "2026-09-05",
    "date_h": "September 5, 2026"
+  },
+  {
+   "slug": "how-to-make-money-with-a-drone",
+   "title": "How to Make Money With a Drone (A Realistic Starting Point)",
+   "description": "Real estate, inspections, events, and social content - the services that sell, how to price them, and the legal step you need first.",
+   "keywords": "how to make money with a drone, drone business, get paid to fly, drone side hustle, part 107 jobs",
+   "hero": "photo-30.jpg",
+   "hero_alt": "Open sky over the Santa Cruz coast",
+   "date": "2026-09-02",
+   "date_h": "September 2, 2026"
+  },
+  {
+   "slug": "product-photography-at-home",
+   "title": "Product Photography at Home: A $30 Setup That Looks Expensive",
+   "description": "You don't need a studio to make products look premium. Here's a cheap home setup and the settings that turn a kitchen table into a storefront.",
+   "keywords": "product photography at home, diy product photography, etsy product photos, how to photograph products, small business photography",
+   "hero": "photo-15.jpg",
+   "hero_alt": "Clean, well-lit still-life composition",
+   "date": "2026-08-29",
+   "date_h": "August 29, 2026"
+  },
+  {
+   "slug": "what-is-the-exposure-triangle",
+   "title": "The Exposure Triangle, Explained Without the Jargon",
+   "description": "Aperture, shutter speed, ISO — three dials that control every photo. Here's what each one actually does and how they trade off, in plain English.",
+   "keywords": "exposure triangle, aperture shutter speed iso, what is the exposure triangle, manual mode explained, photography basics",
+   "hero": "photo-18.jpg",
+   "hero_alt": "A balanced, well-exposed coastal landscape",
+   "date": "2026-08-26",
+   "date_h": "August 26, 2026"
+  },
+  {
+   "slug": "free-santa-cruz-desktop-wallpapers",
+   "title": "Where to Find Beautiful Santa Cruz Desktop Wallpapers",
+   "description": "Want the Santa Cruz coast on your screen? Here's what makes a great desktop wallpaper — and where to get a whole 4K collection of the California coast.",
+   "keywords": "santa cruz wallpaper, california coast wallpaper, desktop wallpaper 4k, santa cruz desktop background, ocean wallpaper",
+   "hero": "photo-01.jpg",
+   "hero_alt": "A wide Santa Cruz coastline at sunset",
+   "date": "2026-08-22",
+   "date_h": "August 22, 2026"
+  },
+  {
+   "slug": "how-to-shoot-in-manual-mode",
+   "title": "How to Shoot in Manual Mode (and Finally Get Off Auto)",
+   "description": "Manual mode isn't hard — it's three dials and a light meter. Here's a step-by-step way to take control of your camera and stop letting Auto guess.",
+   "keywords": "how to shoot in manual mode, manual mode photography, get off auto, manual camera settings, learn manual mode",
+   "hero": "photo-08.jpg",
+   "hero_alt": "A sharp, deliberately exposed coastal photo",
+   "date": "2026-08-18",
+   "date_h": "August 18, 2026"
+  },
+  {
+   "slug": "best-time-of-day-for-photos",
+   "title": "The Best Time of Day to Take Photos (and Why)",
+   "description": "Light is everything. Here's a quick tour of what each part of the day gives you — golden hour, blue hour, harsh noon — and when to shoot what.",
+   "keywords": "best time of day for photos, golden hour, best lighting for photography, when to take photos, natural light photography",
+   "hero": "photo-20.jpg",
+   "hero_alt": "Warm directional light across the coast",
+   "date": "2026-08-14",
+   "date_h": "August 14, 2026"
+  },
+  {
+   "slug": "how-to-photograph-waves",
+   "title": "How to Photograph Ocean Waves (Freeze the Spray or Blur It Silky)",
+   "description": "Crashing surf or silky-smooth water? It comes down to shutter speed. Here's how to shoot the ocean both ways — and stay safe doing it.",
+   "keywords": "how to photograph waves, ocean photography, long exposure water, wave photography, seascape photography",
+   "hero": "photo-02.jpg",
+   "hero_alt": "Waves breaking along the Santa Cruz coast",
+   "date": "2026-08-08",
+   "date_h": "August 8, 2026"
+  },
+  {
+   "slug": "how-to-photograph-fog",
+   "title": "How to Photograph Fog and Moody Coastal Weather",
+   "description": "Fog turns an ordinary scene into something cinematic. Here's how to meter for it, keep it moody, and come home with atmosphere instead of grey mush.",
+   "keywords": "how to photograph fog, foggy photography, moody landscape photography, misty photos, coastal fog",
+   "hero": "photo-07.jpg",
+   "hero_alt": "Fog rolling across the coastline",
+   "date": "2026-08-04",
+   "date_h": "August 4, 2026"
   },
   {
    "slug": "best-sunset-spots-santa-cruz",
@@ -89,6 +329,86 @@
    "hero_alt": "Warm golden-hour light over the Santa Cruz coast",
    "date": "2026-08-01",
    "date_h": "August 1, 2026"
+  },
+  {
+   "slug": "what-lens-should-i-buy-first",
+   "title": "What Lens Should You Buy First? (Prime vs Zoom, Plain English)",
+   "description": "Kit lens feeling limiting? Here's how to pick your next lens — primes vs zooms, focal lengths, and what actually matters for the photos you want to make.",
+   "keywords": "what lens should i buy first, prime vs zoom, best beginner lens, camera lens guide, which lens to buy",
+   "hero": "photo-11.jpg",
+   "hero_alt": "A crisp coastal scene",
+   "date": "2026-07-28",
+   "date_h": "July 28, 2026"
+  },
+  {
+   "slug": "raw-vs-jpeg",
+   "title": "RAW vs JPEG: Which Should You Actually Shoot?",
+   "description": "RAW gives you room to recover highlights and fix color; JPEG is smaller and done in-camera. Here's when each one makes sense — and why I shoot RAW.",
+   "keywords": "raw vs jpeg, should i shoot raw, raw or jpeg, raw files explained, jpeg vs raw photography",
+   "hero": "photo-16.jpg",
+   "hero_alt": "A detailed golden-hour coastal photograph",
+   "date": "2026-07-21",
+   "date_h": "July 21, 2026"
+  },
+  {
+   "slug": "photography-composition-tips",
+   "title": "Composition Tips That Instantly Improve Your Photos",
+   "description": "Rule of thirds, leading lines, foreground, and negative space — the composition habits that turn a snapshot into a photograph, on any camera.",
+   "keywords": "photography composition, composition tips, rule of thirds, leading lines, how to compose a photo",
+   "hero": "photo-19.jpg",
+   "hero_alt": "A well-composed coastal landscape",
+   "date": "2026-07-14",
+   "date_h": "July 14, 2026"
+  },
+  {
+   "slug": "how-to-photograph-pets",
+   "title": "How to Photograph Pets: Sharp Shots of a Moving Target",
+   "description": "Pets never hold still. Here's how to nail focus, freeze motion, get down to their level, and actually get the eyes sharp.",
+   "keywords": "how to photograph pets, pet photography, dog photography tips, photographing dogs, pet photos",
+   "hero": "photo-26.jpg",
+   "hero_alt": "Soft natural light along the coast",
+   "date": "2026-07-07",
+   "date_h": "July 7, 2026"
+  },
+  {
+   "slug": "how-to-shoot-silhouettes",
+   "title": "How to Shoot Striking Silhouettes at Sunset",
+   "description": "A silhouette is the easiest dramatic shot there is — if you expose for the sky, not the subject. Here's the whole technique in a few minutes.",
+   "keywords": "how to shoot silhouettes, silhouette photography, sunset silhouette, how to photograph silhouettes, silhouette settings",
+   "hero": "photo-03.jpg",
+   "hero_alt": "A sunset silhouette on the Santa Cruz coast",
+   "date": "2026-06-30",
+   "date_h": "June 30, 2026"
+  },
+  {
+   "slug": "understanding-depth-of-field",
+   "title": "Depth of Field, Explained: How to Control Background Blur",
+   "description": "That creamy blurred background isn't magic — it's aperture, distance, and focal length. Here's how depth of field actually works and how to control it.",
+   "keywords": "depth of field, how to blur background, bokeh, aperture and depth of field, shallow depth of field",
+   "hero": "photo-09.jpg",
+   "hero_alt": "Shallow depth of field on the coast",
+   "date": "2026-06-23",
+   "date_h": "June 23, 2026"
+  },
+  {
+   "slug": "b-roll-ideas-for-better-video",
+   "title": "B-Roll Ideas That Make Any Video Better",
+   "description": "B-roll is what makes a video feel professional. Here are the shots I always get — and how to film them so they actually cut together.",
+   "keywords": "b-roll ideas, what is b-roll, b-roll shots, how to film b-roll, cinematic b-roll",
+   "hero": "photo-06.jpg",
+   "hero_alt": "A cinematic coastal scene",
+   "date": "2026-06-16",
+   "date_h": "June 16, 2026"
+  },
+  {
+   "slug": "how-to-film-a-vlog",
+   "title": "How to Film a Vlog That People Actually Watch",
+   "description": "Good vlogs aren't about gear — they're about audio, light, and pacing. Here's how to shoot a watchable vlog with the camera or phone you've got.",
+   "keywords": "how to film a vlog, vlogging tips, how to vlog, vlog setup, vlogging for beginners",
+   "hero": "photo-10.jpg",
+   "hero_alt": "A coastal scene framed for video",
+   "date": "2026-06-09",
+   "date_h": "June 9, 2026"
   }
  ]
 }
