@@ -11,6 +11,21 @@ ROOT = pathlib.Path("/home/user/story-mode-guy")
 G = ROOT / "guides"
 OUT = ROOT / "learn"; OUT.mkdir(exist_ok=True)
 M = json.loads((G / "manifest.json").read_text())
+# Unique long-form landing content per guide (intro + sections + FAQ), if built.
+CONTENT = {}
+_cf = G / "learn-content.json"
+if _cf.exists():
+    CONTENT = json.loads(_cf.read_text())
+
+
+def paras(text):
+    """Split plain text on blank lines into escaped <p> blocks."""
+    out = []
+    for blk in str(text).split("\n\n"):
+        blk = blk.strip()
+        if blk:
+            out.append("<p>" + html.escape(blk) + "</p>")
+    return "".join(out)
 
 # guide id -> live Payhip product URL (photo + video). Drone = bundle CTA.
 PAY = {
@@ -104,6 +119,12 @@ ul.inside li::before{content:"";position:absolute;left:2px;top:12px;width:14px;h
 .gcard img{width:100%;aspect-ratio:3/4;object-fit:cover}
 .gcard .b{padding:12px 14px}.gcard h3{font-family:var(--serif);font-size:17px;color:var(--ink);margin:0 0 4px}
 .gcard p{font-size:13px;color:var(--ash);margin:0}
+section p{margin-bottom:14px}section p:last-child{margin-bottom:0}
+.intro{margin-top:30px}.intro p{font-size:18px;color:var(--char)}
+.faq .qa{border-top:1px solid var(--mist);padding:16px 0}
+.faq .qa:first-of-type{border-top:none;padding-top:4px}
+.faq .qa h3{font-family:var(--sans);font-weight:600;font-size:17px;color:var(--ink);margin-bottom:6px}
+.faq .qa p{font-size:16px;color:var(--char)}
 """
 
 NAV = """<div class="nav"><a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a>
@@ -126,6 +147,24 @@ def page(g, related):
     else:
         price_line = f'<div class="price">Included in <b>The Complete Drone Library ($79)</b> &amp; the Everything bundle</div>'
     inside = "".join(f"<li>{html.escape(c)}</li>" for c in chapters)
+    # unique long-form content (intro + sections + FAQ)
+    c = CONTENT.get(gid, {})
+    intro_html = f'<div class="intro">{paras(c["intro"])}</div>' if c.get("intro") else ""
+    secs_html = "".join(
+        f'<section><h2>{html.escape(s["h"])}</h2>{paras(s["body"])}</section>'
+        for s in c.get("sections", []))
+    faq = c.get("faq", [])
+    faq_html = ""
+    faq_ld = ""
+    if faq:
+        qas = "".join(
+            f'<div class="qa"><h3>{html.escape(q["q"])}</h3>{paras(q["a"])}</div>' for q in faq)
+        faq_html = f'<section class="faq"><h2>Common questions</h2>{qas}</section>'
+        fld = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+               {"@type":"Question","name":q["q"],
+                "acceptedAnswer":{"@type":"Answer","text":q["a"]}} for q in faq]}
+        faq_ld = f'\n<script type="application/ld+json">{json.dumps(fld)}</script>'
+    meta_desc = html.escape((g['subtitle'] + ". " + (c.get("intro","") or lead).replace("\n"," "))[:155].rsplit(" ",1)[0])
     ld={"@context":"https://schema.org","@type":"Product","name":g["title"],
         "description":g["subtitle"],"image":f"https://storymodeguy.com/{thumb}",
         "brand":{"@type":"Brand","name":"Story Mode Guy"},
@@ -136,7 +175,7 @@ def page(g, related):
     return f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{html.escape(g['title'])} — {html.escape(g['subtitle'])} | Story Mode Guy</title>
-<meta name="description" content="{html.escape(g['subtitle'])}. {html.escape(lead[:120])}">
+<meta name="description" content="{meta_desc}">
 <link rel="canonical" href="https://storymodeguy.com/learn/{gid}.html">
 <link rel="icon" type="image/png" href="/smg-logo.png">
 <meta property="og:type" content="product"><meta property="og:title" content="{html.escape(g['title'])}">
@@ -147,7 +186,7 @@ def page(g, related):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>{CSS.replace("__ACCENT__", g["accent"])}</style>
-<script type="application/ld+json">{json.dumps(ld)}</script>
+<script type="application/ld+json">{json.dumps(ld)}</script>{faq_ld}
 </head><body>
 {NAV}
 {FREEBAR}
@@ -162,16 +201,17 @@ def page(g, related):
   </div>
   <div class="cover"><img src="/{thumb}" alt="{html.escape(g['title'])} guide cover"></div>
 </div>
-
+{intro_html}
 <section>
   <h2>Who it's for</h2>
   <p>{html.escape(g['reader'])}. {html.escape(lead)}</p>
 </section>
-
+{secs_html}
 <section>
   <h2>What's inside</h2>
   <ul class="inside">{inside}</ul>
 </section>
+{faq_html}
 
 <div class="cta">
   <h3>{html.escape(g['title'])}</h3>

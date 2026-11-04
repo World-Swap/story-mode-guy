@@ -1,0 +1,1157 @@
+{
+ "01-iphone-photography": {
+  "intro": "Most people searching for how to take better photos with an iPhone assume the fix is a newer phone. It usually is not. The camera in your pocket is already good enough for gallery-quality work, and the difference between a snapshot and a keeper comes down to a few decisions you make before you press the shutter.\n\nThose decisions are which lens you pick, where the light is falling, what you tapped on the screen, and what is sitting behind your subject. Below are the habits that make the biggest visible difference on an iPhone, and nearly all of them carry over to Android too.",
+  "sections": [
+   {
+    "h": "How to get sharper iPhone photos with the right lens and zoom",
+    "body": "Your phone's rear cluster is not one camera at different magnifications. The ultra-wide (0.5x) is for tight interiors and big landscapes but distorts faces up close. The main lens (1x) has the biggest sensor, so it is sharpest and best in dim light. The telephoto flatters faces and isolates subjects. When in doubt, shoot on the main lens.\n\nOnly zoom to stops your phone has real glass for: 0.5x, 1x, and 2x, 3x, or 5x depending on the model. Anything between those numbers is digital zoom, which is just cropping and enlarging pixels, and it looks soft. Shoot at the nearest optical stop and crop later, or better, walk closer. And wipe the lens with your shirt before anything important. A fingerprint smear causes more hazy, low-contrast phone photos than any setting does."
+   },
+   {
+    "h": "How to fix dark or blown-out photos with tap, drag, and lock",
+    "body": "Tap your subject on the screen to tell the phone where to focus and what to expose for. A small sun icon appears beside the box; drag it down to darken or up to brighten. If a scene has a bright sky and a darker subject, pull the exposure down until the brightest important area still shows detail. You can lift shadows in an edit, but a pure white sky is gone for good.\n\nThe phone re-guesses focus and exposure whenever you recompose, so press and hold on your subject until AE/AF LOCK appears. Now you can shift the frame, putting a person off-center in a doorway for example, and they stay correctly exposed. For night scenes, use Night mode on the main lens, brace against a wall, and keep still until the full 2 to 3 second capture finishes. Moving subjects will ghost."
+   },
+   {
+    "h": "The light and composition habits that make phone photos look professional",
+    "body": "Light matters more than the lens. Put a person or a plate of food beside a large window and turn off the ceiling lights, which cast shadows under the eyes and clash in color with daylight. Shoot the hour after sunrise or before sunset when you can. In harsh midday sun, step your subject into open shade. With the sun behind them, tap the face and drag exposure up. Leave the LED flash off.\n\nThen fix the frame. Turn on the grid and place subjects on a line or intersection instead of dead center. Use roads, fences, and railings as lines that lead to the subject. Crouch for a lower angle, move closer until the subject fills the frame, and take one step sideways to get that trash can out from behind someone's head. Shoot in 4:3 and crop afterward so you keep the most information."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Why do my iPhone photos look blurry or hazy?",
+    "a": "Check the lens first. Pockets and hands leave a film on the glass that causes haze, especially around lights at night. Next, avoid digital zoom between lens stops, since it only crops the image. Finally, in low light hold still, brace against something, and let Night mode finish its full capture before you lower the phone."
+   },
+   {
+    "q": "Should I use the 0.5x, 1x, or telephoto lens?",
+    "a": "Use 1x as your default because it has the biggest sensor and the best low-light performance. Use 0.5x for tight spaces and sweeping landscapes, but not for close-ups of faces, which it distorts. Use the telephoto for portraits, food, and isolating a subject from its background."
+   },
+   {
+    "q": "How do I stop the iPhone from changing exposure while I frame the shot?",
+    "a": "Press and hold on your subject until AE/AF LOCK appears. That pins focus and brightness so they stay put as you move the frame. You can still drag the sun icon to fine-tune brightness. Tap anywhere else on the screen to release the lock."
+   },
+   {
+    "q": "Do I need a new phone to take professional-looking photos?",
+    "a": "No. Light, lens choice, exposure, and composition account for most of the gap between a snapshot and a strong photo, and none of that depends on the model. A recent phone helps in low light, but even a phone with just a main and ultra-wide lens can produce excellent work."
+   }
+  ]
+ },
+ "02-lightroom-blueprint": {
+  "intro": "If your RAW files look flat, gray, and muddy in Lightroom, nothing is wrong with your camera or your files. The punchy preview on the back of the camera was a finished JPEG the camera processed for you, while the RAW is the unprocessed data with every bit of latitude still waiting to be used.\n\nThe edits that look clean and consistent usually come from a repeatable process, not inspiration. Photographers who get reliable results work through the same moves in the same order on every file. Here is how that order works, how to rescue skies and shadows, and how to add color without it looking fake. It applies to Lightroom Classic, the cloud version, and Lightroom Mobile.",
+  "sections": [
+   {
+    "h": "The Lightroom editing order that stops muddy, inconsistent edits",
+    "body": "Work in this sequence: crop and straighten, white balance, exposure and tone, presence (Texture, Clarity, Dehaze), color, detail (sharpening and noise reduction), local adjustments, then export. Each step sets up the next. Crop first so you are grading the frame you will keep. Fix white balance early because a color cast skews every judgment about tone and saturation that follows.\n\nThe order matters because moves interact. Boost saturation before correcting a warm cast and you amplify the cast. Sharpen and then lift shadows and you have amplified the noise you just sharpened. When an edit turns muddy, the cause is usually crushed midtones from lifting Shadows and Blacks too far while also pushing Clarity. Set tone before presence and most of that mud clears without extra effort."
+   },
+   {
+    "h": "How to recover a blown sky or a dark subject in a RAW file",
+    "body": "For a bright sky, pull Highlights down first, somewhere around -40 to -80. If the edges of the brightest clouds still glow, ease Whites down 10 to 20 points, then add a little Dehaze (+5 to +15) to restore the contrast that recovery flattens. Check the histogram: data jammed against the right wall means clipped highlights.\n\nFor an underexposed subject, raise Exposure by roughly 0.3 to 0.8, lift Shadows by 30 to 60, then pull Blacks down 5 to 15 so the image does not go gray. That last nudge on Blacks is the anti-mud move. Be careful on high-ISO files that are badly underexposed, because heavy shadow lifting drags up noise and color blotches. A modest Exposure bump plus a moderate Shadows lift beats one slider slammed to the end."
+   },
+   {
+    "h": "How to get rich color in Lightroom without it looking fake",
+    "body": "Use Vibrance instead of Saturation for most photos. Saturation raises every color equally and can turn skin orange, while Vibrance favors muted colors and protects skin tones. Roughly +10 to +25 Vibrance looks lively but believable. If you are past +40 Saturation, the real problem is probably white balance or one specific color you should handle in HSL.\n\nThe HSL (Color Mixer in the cloud app) panel gives you Hue, Saturation, and Luminance per color. For a deeper blue sky, raise Blue Saturation +15 to +30 and drop Blue Luminance -15 to -30, with a small Aqua Luminance reduction too. Skin lives in the Orange and Red channels, so you can lower Orange Saturation to fix sunburnt skin or raise Orange Luminance slightly to brighten a dull face, without touching the rest of the photo. Use the targeted adjustment tool to drag directly on the color you want to change."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Why do my RAW photos look worse in Lightroom than on my camera screen?",
+    "a": "The camera screen shows a JPEG processed with the body's contrast, saturation, and sharpening settings. The RAW file has none of that baked in, so it looks flat by comparison. It holds more recoverable detail, but you have to apply tone, color, and sharpening yourself."
+   },
+   {
+    "q": "What is the best order to edit a photo in Lightroom?",
+    "a": "Crop, white balance, exposure and tone, presence, color, detail, local adjustments, then export. Doing global fixes before local ones, and tone before color, keeps adjustments from fighting each other and helps your edits stay consistent from photo to photo."
+   },
+   {
+    "q": "Should I use Vibrance or Saturation?",
+    "a": "Reach for Vibrance first. It boosts muted colors more than already vivid ones and shields skin tones. Saturation lifts everything equally, which tends to blow out strong colors and make skin look orange. Use per-color HSL adjustments when only one color needs help."
+   },
+   {
+    "q": "How do I make Lightroom skin tones look natural?",
+    "a": "Set white balance first, using the eyedropper on something neutral, and lean a touch warm because slightly warm skin reads healthier than cool skin. Then use the Orange and Red channels in HSL to tame sunburn or blotchy patches. Adjust Tint if faces look green or too pink."
+   }
+  ]
+ },
+ "03-product-photography": {
+  "intro": "If your product photos look dull next to the competition on Etsy, Shopify, or Amazon, the problem is almost never your camera. A shopper cannot pick up your item, so a small image on a phone screen is doing all the selling, and it gets a couple of seconds to look trustworthy.\n\nYou can fix this at home with a window, a piece of white foam board, and a tripod, for roughly $30 in total. Here is what to set up, how to light a product so it looks expensive, and how to shoot the clean white-background image that marketplaces expect.",
+  "sections": [
+   {
+    "h": "How to set up a home product photography studio for about $30",
+    "body": "You need four things: a window with bright, indirect daylight, a white bounce card (foam board or poster board), a sweep of white paper curving from table to wall so there is no horizon line, and a cheap tripod. Put a table beside the window, with the window to the side of the product, not behind the camera. A tripod lets you use low ISO and shoot every item from the same height and angle.\n\nSkip ring lights, which leave a donut reflection on shiny items, and cheap LED panels, which often carry a green or magenta cast. Novelty backdrops look cheap on camera. A collapsible lightbox is worth considering only if you shoot many small items like jewelry and want fast, consistent catalog shots. It will not help with styled lifestyle photos, and anything bigger than a shoebox is better shot at the window."
+   },
+   {
+    "h": "How to light products so they look expensive",
+    "body": "The larger and softer the light source relative to the product, the better it looks. A window a few feet from a small item is enormous by comparison, which is why it works. Place it 45 to 90 degrees to one side to reveal texture and shape, then put the white card on the opposite side to bounce light into the shadows. Slide the card closer for brighter fill, farther for more drama.\n\nIf direct sun is hitting the product, hang a white sheer curtain, tracing paper, or a thin sheet over the window. Then turn off every room light. Mixing daylight with a yellow bulb gives the product two color temperatures that cannot be corrected together. Do not chase a shadowless look either. A gentle gradient from bright side to softer side is what makes an object look three-dimensional and premium."
+   },
+   {
+    "h": "The camera settings and white-background method for sharp, accurate products",
+    "body": "For a camera on a tripod, use Aperture Priority around f/8 at base ISO (100 on most bodies). Go to f/11 for deeper items, but avoid f/16 and beyond, where diffraction softens the frame. Use the 2-second self-timer so pressing the shutter does not shake anything, and shoot RAW so you can fix color later. On a phone, turn off Portrait mode, lock focus and exposure, use the main 1x lens, and move the phone rather than pinch-zooming.\n\nFor the white background, remember that cameras try to average a scene to gray, so a white backdrop comes out dull. Add roughly +1 to +1.7 stops of exposure compensation while watching that the product itself does not blow out. Amazon's main image requirement is pure white (RGB 255, 255, 255) with the product filling about 85% of the frame, so confirm that in editing. Include a gray or white card in your first frame to set accurate color."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Do I need a professional camera to photograph products for Etsy?",
+    "a": "No. A modern smartphone works well when it is paired with good light and a tripod. Light and setup account for most of the quality. Use the main lens, turn off Portrait mode, lock focus and exposure, and use a timer to avoid shake."
+   },
+   {
+    "q": "What is the best light for product photography at home?",
+    "a": "A large window with bright, indirect daylight, positioned to one side of the product, with a white card bouncing light onto the shadow side. Diffuse direct sun with a sheer curtain and switch off all room lights to avoid mixed color temperatures."
+   },
+   {
+    "q": "What aperture should I use for product photos?",
+    "a": "Around f/8 for most items, because it keeps the whole product sharp without much diffraction softening. Use f/11 for deeper or very small items. Wide apertures like f/1.8 blur parts of the product, which looks like a focus mistake on a listing."
+   },
+   {
+    "q": "How do I get a pure white background for Amazon?",
+    "a": "Overexpose slightly using exposure compensation, about +1 to +1.7 stops, so the white backdrop does not render gray. Protect detail on the product, then clean up in editing until the background reads RGB 255, 255, 255. Amazon also expects the product to fill about 85% of the frame."
+   }
+  ]
+ },
+ "04-exposure-manual-mode": {
+  "intro": "Learning manual mode feels hard because three separate controls all change brightness, and each also changes something else in the picture. Auto handles the brightness, but it also decides whether your background is blurry, whether motion is frozen, and whether the file is grainy. Those are the choices that separate a snapshot from a photograph.\n\nIf you want to get off auto on your DSLR or mirrorless camera, the exposure triangle is the place to start. Here is what aperture, shutter speed, and ISO each actually do, why a smaller f-number means a bigger opening, and how to trade one against another to keep your exposure steady.",
+  "sections": [
+   {
+    "h": "What the exposure triangle actually means",
+    "body": "Exposure is how much light reaches the sensor. Aperture is the size of the opening in the lens, shutter speed is how long it stays open, and ISO is how much the signal is amplified afterward. Each one also has a side effect: aperture changes depth of field, shutter speed changes how motion looks, and ISO changes how noisy the image is. Whenever you change one for brightness, you get its side effect too.\n\nLight is measured in stops, and one stop is a doubling or halving. Open the aperture one stop, slow the shutter one stop, or raise ISO one stop, and the image gets twice as bright. Because they share this unit, you can trade between them. Speed the shutter up a stop to freeze motion, open the aperture a stop to pay the light back, and the overall exposure stays level. That trade is the core skill of manual shooting."
+   },
+   {
+    "h": "Why a small f-number means a bigger opening, and how that shapes the background",
+    "body": "An f-number is a fraction: focal length divided by the diameter of the opening. So f/2 is a bigger hole than f/16, just as one half is bigger than one sixteenth. Small number, big opening, more light, blurrier background. Big number, small opening, less light, more in focus.\n\nFor portraits, food, and single objects, shoot wide, around f/1.8 to f/4, and nail focus on the eye because the sharp zone can be thinner than a face. Focus on the near eye at f/1.8 and the far eye may go soft, so stop down to f/2.8 to f/4 for breathing room. For landscapes and group shots, use f/8 to f/16. Most lenses are sharpest two or three stops from wide open, typically f/5.6 to f/8, and past f/16 diffraction softens the whole frame, so do not go further than you need."
+   },
+   {
+    "h": "A simple way to move from auto to manual without frustration",
+    "body": "You do not have to jump straight to full manual. Start in Aperture Priority (A or Av) when depth of field is your priority, or Shutter Priority (S or Tv) when motion is. You choose the setting that matters creatively, and the camera picks the rest. Many photographers stay in these modes for months, and that is a perfectly respectable place to work.\n\nWhen you are ready for full manual, learn to read the built-in light meter, which shows whether the camera thinks you are over or under exposed. Pick the setting that matters for your subject first, then adjust the other two until the meter sits near the middle, and check the result on the screen. A reasonable portrait starting point outdoors in good light is f/2.8, 1/250s, ISO 200. Treat starting points as a place to begin, then adjust from what you see."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is the exposure triangle in simple terms?",
+    "a": "It is the relationship between aperture, shutter speed, and ISO. All three control how bright the photo is, and each also changes one other thing: depth of field, motion blur, or noise. Changing one means you may need to adjust another to keep the brightness the same."
+   },
+   {
+    "q": "What does a stop of light mean?",
+    "a": "A stop is a doubling or halving of light. Opening the aperture one stop, slowing the shutter one stop, or raising ISO one stop each makes the image twice as bright. Because the units match, you can trade stops between controls and keep the exposure the same."
+   },
+   {
+    "q": "Is aperture priority or manual mode better for beginners?",
+    "a": "Aperture Priority is a good starting point because you control the background blur and the camera chooses the shutter speed. Shutter Priority works the same way for motion. Move to full manual once you can read the meter and know what each change will do."
+   },
+   {
+    "q": "Why are my wide-aperture photos not sharp?",
+    "a": "At f/1.8 the in-focus zone can be thinner than a face, so a small focus error shows up as softness. Lenses also tend to be less sharp wide open. Try f/2.8 to f/4 and focus carefully on the near eye. For maximum sharpness, f/5.6 to f/8 is usually best."
+   }
+  ]
+ },
+ "05-why-blurry": {
+  "intro": "When photos come out blurry, the first instinct is to blame the camera or the lens. In most cases the cause is one of three things: the camera moved, the subject moved, or the lens focused on the wrong spot. Each leaves a different fingerprint in the image, which means you can usually tell which one it was by looking at the photo at 100%.\n\nOnce you can name the type of blur, the fix is specific. Below is the quick diagnosis, the shutter speed rules for handholding, and what to do when the subject itself is moving. It applies to DSLRs, mirrorless cameras, and phones.",
+  "sections": [
+   {
+    "h": "How to tell camera shake, subject motion, and missed focus apart",
+    "body": "Zoom in to 100% and ask three questions. Is anything in the frame perfectly sharp? If yes, your camera was still and focus worked, so the culprit is subject motion: the background is crisp and the moving thing is streaked. If nothing is sharp, is the whole frame evenly soft or smeared in one direction? That is camera shake. If something is sharp but it is the wrong thing, like the ear instead of the eye or the fence behind the face, you missed focus.\n\nThe fastest tell is bright pinpoints such as catchlights or streetlights. A sharp image keeps them as dots. Camera shake stretches every one into a short line. Subject motion streaks only the moving object's highlights while the background keeps its dots. A uniformly hazy, low-contrast image with nothing crisp points to a dirty lens, diffraction from an extremely small aperture, or poor glass."
+   },
+   {
+    "h": "What shutter speed stops camera shake when handholding",
+    "body": "The reciprocal rule says your shutter speed should be at least 1 divided by your focal length: 1/50s at 50mm, 1/200s at 200mm. On a crop-sensor body, multiply the focal length by the crop factor first (1.5x for most brands, 1.6x for Canon), so a 50mm lens behaves like 75mm and wants about 1/80s. Round up when unsure. People breathe and sway, so for portraits use at least 1/125s.\n\nWhen the light is too low for a fast shutter, work through three options in order. Open the aperture, since a cheap f/1.8 prime is one of the best anti-blur upgrades. Raise ISO, because a grainy sharp photo beats a clean blurry one. Add support by bracing on a wall or planting your elbows. Tuck your elbows in, cradle the lens from underneath, and squeeze the shutter at the bottom of a slow exhale. Turn stabilization off when on a tripod."
+   },
+   {
+    "h": "How to photograph moving kids, pets, and sports without blur",
+    "body": "Subject motion is cured only by a faster shutter. Starting points: 1/250s for walking kids, 1/500s for playing pets, 1/1000s for running and sports, and 1/2000s for birds and cars. Motion across the frame needs a faster shutter than motion coming toward you, so a car passing left to right smears much more than one driving at you.\n\nA reliable setup is Shutter Priority (S or Tv) with the freezing speed set, Auto ISO with a ceiling such as 6400 so noise cannot run away, continuous autofocus (AF-C or AI Servo) to track the subject, and burst mode so you can pick the peak frame. If the light will not allow a fast enough shutter, panning is a good fallback. Use a slow shutter around 1/30s and swing the camera with the subject, which keeps it sharp while the background turns into speed lines."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Why are my photos blurry even though my camera is expensive?",
+    "a": "Gear is rarely the cause. The usual reasons are a shutter speed too slow for your focal length or subject, focus landing on the wrong spot, or a dirty lens. Zoom to 100% and check whether anything is sharp. That tells you which problem to fix."
+   },
+   {
+    "q": "How do I know if blur is from camera shake or a moving subject?",
+    "a": "If the background is sharp but the subject is streaked, the subject moved. If the entire frame is soft, and bright highlights have turned into short lines, the camera moved. A faster shutter fixes both, but how fast depends on the cause."
+   },
+   {
+    "q": "What is the minimum shutter speed for handheld photos?",
+    "a": "Use 1 over your focal length as a baseline, so 1/50s at 50mm, and multiply the focal length by the crop factor on crop-sensor cameras. For portraits of people who may sway or blink, go to 1/125s or faster. Image stabilization helps with shake but not subject motion."
+   },
+   {
+    "q": "Is it better to raise ISO or accept a slower shutter in low light?",
+    "a": "Raise ISO. Some noise at a high setting such as ISO 3200 is usually usable, while motion blur cannot be fixed afterward. Open the aperture first if you can, then raise ISO, and use Auto ISO with a ceiling so the camera keeps your shutter speed."
+   }
+  ]
+ },
+ "06-real-estate-photography": {
+  "intro": "If you want to learn real estate photography, or you just need your Airbnb listing to stop looking dark and cramped, the good news is that interior work is mostly method, not talent. Rooms do not move, so you can lock your settings, put the camera on a tripod, and repeat the same steps in every room.\n\nA buyer scrolling a listing app decides in a couple of seconds whether to tap, and a guest booking a stay does the same thing. Bright, straight, well-exposed rooms with a real view out the window are what get the click, and they are also a skill agents and hosts will pay for. Here is how the pros actually get that look.",
+  "sections": [
+   {
+    "h": "What camera settings should I use for interior real estate photos?",
+    "body": "Interiors are the easy part of the technical side. Put the camera on a tripod, set ISO 100 (or your base ISO), pick an aperture around f/8, and shoot in RAW. At f/7.1 to f/9 you get the whole room sharp from the near wall to the far one. Do not go past f/11, because diffraction starts softening the frame without adding any useful depth of field in a room-sized space.\n\nLet the shutter be whatever it needs to be. On a tripod, a slow shutter is a feature, since it gathers window and lamp light at a clean ISO. Use Aperture Priority at f/8 and let the camera choose, then fire with the 2-second timer or a remote so your finger does not add vibration. Switch off in-body or lens stabilization once the camera is locked down, because it can hunt for movement that is not there and add a faint blur."
+   },
+   {
+    "h": "How do I stop windows from blowing out in room photos?",
+    "body": "A camera cannot hold the bright view outside and the shadowed room inside in a single exposure the way your eyes do. A white, featureless window is the biggest giveaway of an amateur interior shot. There are three ways around it. The beginner method is to expose for the room, push it a touch brighter than correct, and pull the window highlights back in editing. That works well when windows are a small part of the frame.\n\nThe pro method is flash and ambient blending. Expose one frame for the window, then take a second identical frame with a hotshoe flash bounced off the ceiling, and blend them. The third option is HDR bracketing: 3 to 5 frames about 2 stops apart, changing only shutter speed and never aperture. Whatever you choose, aim for realism. If a viewer can tell you blended the frames, you overdid it."
+   },
+   {
+    "h": "Where should I stand and how high should the camera be for room photos?",
+    "body": "Shoot from roughly chest height, about 48 to 55 inches off the floor. Higher shrinks the room and shows too much floor, and lower exaggerates the foreground. Then stand in or near a corner and aim across the room so two walls are visible. Pointing straight at one flat wall makes a room look shallow, while the two-wall angle shows depth and how the space flows.\n\nKeep the camera perfectly level so door frames and corners stay vertical, and use your digital level on every frame. Stay around 18 to 22mm full-frame equivalent for most rooms. Going ultra-wide stretches the edges and makes rooms look dishonestly large. Before you shoot, walk the property, open all blinds, turn on every light, close toilet lids, hide cords, and check mirrors so you and the tripod are not in the reflection."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Do I need a professional camera to shoot real estate photos?",
+    "a": "No. A crop-sensor camera with a 10-18mm lens and a sturdy tripod is a workable starter kit, and a modern phone with an ultra-wide lens can handle entry-level Airbnb work. What matters most is a wide lens, a tripod, and a consistent method. Phones struggle more with straight verticals and low-light files."
+   },
+   {
+    "q": "What is the best lens focal length for interior photography?",
+    "a": "On full frame, about 16 to 24mm, or 10 to 16mm on a crop-sensor body. Most rooms look best around 18 to 22mm equivalent. Save the widest end for tight spaces like bathrooms, since ultra-wide angles bow straight lines and make rooms look unrealistically large."
+   },
+   {
+    "q": "How many photos should a real estate listing have?",
+    "a": "A typical listing needs about 20 to 35 strong photos, not 200 mediocre ones. Pick the best frame of each angle, cull fast, edit one hero shot, sync those adjustments across the set, then fine-tune. Consistent white balance and brightness make the whole listing look cohesive."
+   },
+   {
+    "q": "What is a twilight exterior and why do agents pay extra for it?",
+    "a": "A twilight shot is taken in the 20 to 30 minutes after sunset, when the sky is deep blue and the home's lights glow warmly against it. Use a tripod, f/8, ISO 100, a long shutter, and bracket every few minutes. It looks aspirational, which is why it is a premium add-on."
+   }
+  ]
+ },
+ "07-natural-light-portraits": {
+  "intro": "If you are trying to figure out how to take better portraits with natural light, start by ignoring your gear. Portraits come down to two things: where you stand your subject, and whether they feel at ease. A phone in portrait mode, used in good light with a relaxed subject, will beat an expensive camera used carelessly.\n\nThe frustrating part is that most flattering-light advice stops at \"shoot at golden hour.\" Real sessions happen at noon, under trees, and in kitchens with ugly ceiling bulbs. Below are the practical moves that work in those conditions, plus the lens, aperture, and posing choices that make faces look their best.",
+  "sections": [
+   {
+    "h": "What is the best natural light for portraits?",
+    "body": "Soft, directional light. The easiest source is open shade: the shadowed area beside a building, under an awning, or on the shady side of a street, where your subject faces big open sky that acts like a giant softbox. An overcast day does the same thing everywhere, though flat gray light can look lifeless, so stand your subject near a doorway or wall that blocks light from one side to restore shape.\n\nA large window with no direct sun is a studio you already own. Turn the room lights off, place your subject at about 45 degrees to the glass, two to four feet away, and bounce fill from a white foam board on the shadow side. Golden hour, the hour after sunrise and before sunset, gives low, warm, flattering light. Check the eyes for catchlights, the small reflections that make a face look alive."
+   },
+   {
+    "h": "How do I fix harsh midday sun or dappled shade in portraits?",
+    "body": "Move the subject rather than fighting the light. For harsh midday sun, walk them into open shade. If there is none, turn them so the sun hits the back of their head and expose for the shaded face. That trades squinting and raccoon-eye shadows for a soft backlit look. For backlight, spot meter on the cheek or add +1 to +2 stops of exposure compensation, and let the background go bright.\n\nDappled light from tree leaves leaves blotches across the face. The messy zone is the edge of the tree's shadow, so walk your subject 5 to 10 feet deeper into solid shade, or fully out of it. Indoors, turn off overhead bulbs and use a window instead, since ceiling light digs shadows into the eye sockets. A collapsible 5-in-1 reflector costs under $25 and bounces fill, softens sun, and shades your lens."
+   },
+   {
+    "h": "What lens and aperture should I use for flattering portraits?",
+    "body": "Focal length changes the shape of a face. Wide lenses under about 35mm exaggerate whatever is closest to the camera, so a close headshot makes the nose balloon. Use 50mm or longer and back up. 85mm is the classic head-and-shoulders lens, and 105 to 135mm gives maximum flattery and background blur. On a phone, use the 2x or 3x telephoto lens instead of the main wide camera.\n\nFor aperture, f/1.8 to f/2.8 melts the background. Wide open, the sharp zone can be thinner than a face, so focus on the near eye. Use f/2.8 to f/4 for two people and f/5.6 or more for a group of five. Keep your shutter at 1/125s or faster for posed portraits and 1/250s with kids. If light drops, raise ISO before you let the shutter slow, because a little grain beats a soft face."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Why do my portraits look flat or unflattering outdoors?",
+    "a": "Usually the light is hitting the face from the wrong direction or is too hard. Move the subject into open shade, or turn them so light comes from the side and slightly in front. Turning the face slightly away so the shadow falls on the side nearer the camera slims it."
+   },
+   {
+    "q": "What is the best focal length for portraits?",
+    "a": "85mm is the classic choice for head-and-shoulders portraits, with 50mm good for half and full-length shots. Longer lenses compress features flatteringly, while anything under about 35mm distorts a face if you shoot close. Back up and use 50mm or longer."
+   },
+   {
+    "q": "How do I get my subject to relax in front of the camera?",
+    "a": "Give specific physical directions instead of saying \"be natural,\" such as turning shoulders or shifting weight to the back foot. Keep talking, ask questions about their life, and shoot during the conversation. Asking for a deliberately fake laugh often tips into a real one a couple of seconds later."
+   },
+   {
+    "q": "How do I expose a backlit portrait so the face isn't dark?",
+    "a": "Meter off the face, not the sky. Use spot metering on the cheek, or add +1 to +2 stops of exposure compensation. On a phone, tap the face and drag the exposure up. A bright, slightly glowing background is the look, and a reflector can lift the shaded face."
+   }
+  ]
+ },
+ "08-astrophotography": {
+  "intro": "If you want to learn how to photograph the Milky Way, the obstacle is rarely your camera. Almost any DSLR or mirrorless body from the last fifteen years can do it. What goes wrong is planning, focusing in the dark, and not knowing which settings to dial in when you cannot see your screen.\n\nA wide, fast lens, a solid tripod, and a dark sky get you most of the way. The rest is a repeatable routine: pick the right night, lock focus on a star, set a shutter time the Earth's rotation allows, and give the sky something to stand over. This is how that routine works for a first successful night out.",
+  "sections": [
+   {
+    "h": "When and where can I photograph the Milky Way?",
+    "body": "Four things need to line up: the galactic core is up, the moon is down, the sky is dark, and the clouds cooperate. In the northern hemisphere the core is visible roughly February to October, with the best views in summer. In deep winter it sits below the horizon during darkness, though you can still shoot star fields and constellations.\n\nPlan around the new moon. Even a half moon washes out faint structure, but you only need a moonless window, not a moonless night. Use the Bortle scale to judge darkness: aim for Bortle 4 or darker, because Bortle 6 to 9 skies lose the core to glow. A light-pollution map finds the nearest dark zone, which for many people is a one to two hour drive. Check an astronomy cloud forecast, use PhotoPills or Stellarium to see where the core rises, and scout your foreground in daylight."
+   },
+   {
+    "h": "How do I focus on stars at night?",
+    "body": "Autofocus has nothing to lock onto in a dim star field, so switch the lens and camera to manual focus. Open the aperture fully and temporarily raise ISO to something like 12800 so live view is brighter. Point at the brightest star or planet, magnify the live-view display to 100 percent, and turn the focus ring slowly until the star shrinks to the smallest pinpoint. Go past the sweet spot in both directions to confirm.\n\nDo not trust the infinity mark on the barrel, since most lenses focus past true infinity. Once sharp, put a strip of gaffer tape across the ring so it cannot drift, then drop ISO back to your shooting value. If the sky is hazy, focus on a distant light hundreds of yards away. Take a test frame and zoom to 100 percent, and recheck after any zoom change, because shifting focal length can move focus."
+   },
+   {
+    "h": "What are the best camera settings for the Milky Way?",
+    "body": "Start with the widest aperture you have, such as f/2.8, ISO 3200 to 6400, manual white balance around 3900 to 4200K, and RAW. For shutter, use the 500 rule: 500 divided by focal length gives the longest exposure before stars trail. A 20mm lens on full frame gives about 25 seconds. On a crop sensor, or a high-resolution body, use 300 instead, which gives roughly 15 seconds at 20mm full frame.\n\nIf corners show smeared, comet-shaped stars, close the aperture a third to two thirds of a stop. Fire with the 2-second timer or a remote so the shutter press does not shake the camera. Read the histogram instead of the rear screen, which looks misleadingly bright in the dark. Push the data comfortably off the left edge. If a single frame is noisy, shoot 8 to 15 identical frames and stack them in free software like Sequator or Starry Landscape Stacker."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What lens is best for photographing the Milky Way?",
+    "a": "A fast, wide lens: f/2.8 or faster and roughly 14 to 24mm on full frame. A 14mm f/2.8 or 20mm f/1.8 is near-perfect. A kit zoom at f/3.5 to 5.6 still works, but you will have to push ISO higher and accept more noise."
+   },
+   {
+    "q": "What is the 500 rule in astrophotography?",
+    "a": "It is a guideline for the longest shutter before stars visibly trail: 500 divided by your focal length in seconds. At 20mm that is about 25 seconds. On crop sensors or high-resolution cameras, use 300 instead for tighter stars, and shorten the shutter while raising ISO if in doubt."
+   },
+   {
+    "q": "Can I photograph the Milky Way with a phone or without a tripod?",
+    "a": "You need a stable support, because exposures run 15 to 25 seconds and any movement ruins them. The guide covers interchangeable-lens cameras with manual controls. A sturdy tripod is essential, and a cheap wobbly one will quietly soften every frame."
+   },
+   {
+    "q": "Do I need a star tracker to start?",
+    "a": "No. A tracker is a next step for longer exposures and deep-sky targets. For wide nightscapes with a fast lens, a tripod is enough. Master focusing, the 500 rule, and stacking first, since a tracker adds polar alignment and foreground-blending complexity."
+   }
+  ]
+ },
+ "09-low-light-night": {
+  "intro": "Why are my low light photos blurry or grainy? Because after dark your camera has less light to work with, and every setting becomes a trade. Open the aperture and you lose depth of field. Slow the shutter and you risk blur. Raise ISO and you get grain. The camera did not fail, you are just on a tight light budget.\n\nThe fix is knowing which compromise to accept for each scene. A sharp photo with some noise is a keeper, while a clean blurry one gets deleted. These are the handheld, autofocus, noise, and tripod techniques that work for restaurants, receptions, city streets, and concerts.",
+  "sections": [
+   {
+    "h": "What are the best settings for handheld low light photography?",
+    "body": "Open your aperture all the way, because it is the cheapest light you can buy. A 50mm f/1.8 gathers about three stops more than a typical f/5.6 kit zoom, roughly eight times the light. Then choose a minimum shutter speed: at least 1 divided by your focal length, with crop sensors multiplying focal length by 1.5 (1.6 on Canon). Anything with a person in it needs 1/125s or faster.\n\nThe professional setup is Aperture Priority at f/1.8 or f/2.8, with Auto ISO capped near 6400 and a minimum shutter speed of 1/125s. The camera raises ISO instead of letting the shutter drop, so you stop re-metering as the light changes. Stabilization helps with your shake but does nothing for a moving subject. Brace with elbows tucked in, lean on a wall, exhale, and squeeze the shutter."
+   },
+   {
+    "h": "How do I make autofocus work in the dark?",
+    "body": "Autofocus relies on contrast, and dim scenes have little, so the lens hunts. Switch to single-point AF and place the point deliberately on the highest-contrast edge near your subject, such as a lit face against a dark background. For people, aim at the near eye's catchlight, often the brightest spot on the face. Streetlamps, neon signs, and candle flames at the subject's distance also make easy targets.\n\nThe AF-assist lamp reaches only a few meters and should be off at concerts and ceremonies. When the lens will not lock, go manual, using focus peaking or magnified live view. Back-button focus helps too: assign focus to a thumb button like AF-ON so the shutter only fires. Lock on a lit edge once, then shoot a burst without the camera re-hunting between frames."
+   },
+   {
+    "h": "How do I reduce noise in night photos?",
+    "body": "Stop being afraid of high ISO. Modern sensors give usable results at ISO 3200 to 6400 and often 12800, and darkness itself creates noise, which a high ISO simply makes visible. The better cure is more light: a wider aperture, or a tripod and base ISO 100 with a long shutter for static scenes. An 8-second cityscape at ISO 100 is virtually noise-free.\n\nExpose to the right. Brighten the capture as far as you can without clipping highlights, then pull it down in editing, because a bright file pulled darker is cleaner than a dark one pushed brighter. Read the histogram, since the rear screen looks brighter than it is. Shoot RAW so you can denoise in software, which beats in-camera noise reduction. Stop pushing exposure the moment neon or stage lights hit the right edge."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What shutter speed should I use for low light without a tripod?",
+    "a": "At least 1 divided by your focal length, and 1/125s or faster for people. At a party or reception, 1/125s to 1/160s is a sensible floor. Raise ISO before you slow the shutter, since stabilization will not freeze a moving subject."
+   },
+   {
+    "q": "What aperture is best for night cityscapes on a tripod?",
+    "a": "Generally f/8 to f/11 at ISO 100 with shutter times of 2 to 15 seconds. That range gives deep sharpness and turns streetlights into starbursts. Beyond f/16, diffraction softens the whole frame. Use a 2-second timer and turn stabilization off."
+   },
+   {
+    "q": "How do I photograph neon signs without blowing them out?",
+    "a": "Meter on the sign with spot or center-weighted metering and dial in -1 to -2 stops of exposure compensation. The camera sees all that black and tries to brighten everything. Keep the surrounding night truly dark and check the histogram so the sign's brightest color nears but does not hit the right edge."
+   },
+   {
+    "q": "What are good settings for concert photography?",
+    "a": "Roughly f/2.8 or wider, a minimum 1/250s shutter (1/500s for energetic acts), Auto ISO up to about 12800, and spot metering on the performer's face. Use negative exposure compensation under hard spots, shoot RAW for red washes, and never use flash."
+   }
+  ]
+ },
+ "10-cheat-sheet-pack": {
+  "intro": "If you keep forgetting what settings to use when a good scene shows up, a photography cheat sheet is the fastest fix. Photography has a handful of ideas you need at your fingertips, and recalling them under pressure is the hard part. A printed reference card in your bag answers the question before the moment passes.\n\nThis pack is nine single-topic cards: the exposure triangle, scene recipes, aperture, shutter, ISO, white balance, autofocus, composition, and a troubleshooting chart. Each stands alone, so you can pull the one you need. Here is what such cards cover and how to use them out in the field.",
+  "sections": [
+   {
+    "h": "What should a photography cheat sheet include?",
+    "body": "The core is the exposure triangle: aperture controls depth of field, shutter controls motion blur, and ISO controls noise. A stop is a doubling or halving of light, so opening the aperture one stop lets you use a shutter twice as fast or an ISO half as high. Decide what matters in the scene first. If motion matters, set shutter first; if background blur does, set aperture first; let Auto ISO handle the rest.\n\nThen add quick lookups. A recipe card for portraits, landscapes, sports, parties, sunsets, night city, waterfalls, product shots, and pets gives you starting settings, such as f/2.8 at 1/200s for a portrait or f/8 to f/11 for landscapes. Add a shutter-speed chart for freezing subjects, a white balance table with Kelvin values, an autofocus mode guide, six composition rules, and a troubleshooting card for when a shot comes out wrong."
+   },
+   {
+    "h": "How do I use camera settings cards in the field?",
+    "body": "Treat every number as a starting point, not a law. Pick the scene on the recipe card, dial in the settings, take a test shot, check the brightness, and nudge. Build the habit of a three-second glance before each shot: is the shutter fast enough to be sharp, is the aperture giving enough in focus, and is ISO as low as the light allows?\n\nFor scenes not on the card, ask three questions in order. Is anything moving, so set the shutter to freeze it? How much needs to be in focus, so set the aperture? Is it bright enough, so raise ISO last? Print the cards, laminate them to survive rain and the bottom of a bag, and keep the PDF on your phone. After a few outings the numbers live in your hands and you will need the card less."
+   },
+   {
+    "h": "Why are my photos blurry, dark, grainy, or the wrong color?",
+    "body": "Name the symptom first, then change one thing at a time. If the photo is too dark, slow the shutter, open the aperture, or raise ISO, in that order for stills. Too bright is the reverse. A blurry whole frame is camera shake, so raise the shutter to at least 1 divided by focal length, add support, or turn stabilization on. A blurry moving subject needs a faster shutter, continuous AF, and burst mode.\n\nIf the wrong thing is sharp, focus missed, so use single-point AF on the eye or turn on Eye-AF. Grain means ISO is too high, so add light or open the aperture. Wrong colors mean white balance is off, so match the preset to the light or shoot RAW and fix it later. If a fix would push the shutter below your handholding limit, raise ISO instead, since sharp and grainy beats clean and blurry."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What are good starting camera settings for portraits?",
+    "a": "Around f/2.8, 1/200s, and ISO 100 to 400, with single-point or Eye AF on the near eye. Go to f/4 for two people so both stay sharp. These are starting points, so check the shot and adjust to your light."
+   },
+   {
+    "q": "What shutter speed should I use to freeze motion?",
+    "a": "As a guide: 1/125s for a still portrait, 1/250s for walking, 1/500s for kids and pets, 1/1000s for running or sport, and 1/2000s for birds and cars. Motion across the frame needs a faster shutter than motion coming toward you."
+   },
+   {
+    "q": "What is the sharpest aperture on most lenses?",
+    "a": "Most lenses are sharpest around f/5.6 to f/8. Avoid f/22, because diffraction softens the whole image. For more depth of field without stopping down too far, step back from the subject or focus about a third of the way into the scene."
+   },
+   {
+    "q": "Should I use auto white balance or a preset?",
+    "a": "Auto works for most scenes. If you shoot RAW, leave it on Auto and correct later with no quality loss. For JPEG, pick the preset that matches the light, such as Tungsten under warm bulbs or Cloudy for gentle warmth. Mixed light is the hard case."
+   }
+  ]
+ },
+ "v01-cinematic-look": {
+  "intro": "If your footage looks like a home video, the camera is almost never the reason. Searching for how to make videos look cinematic usually ends in a shopping list, but the real culprits are a handful of settings that Auto mode picks for you: shutter speed, frame rate, white balance, exposure and aperture.\n\nThe good news is that each one can be fixed in a single sitting, on a mirrorless camera, an action cam or a phone. Below are the three changes that do the most work, in the order I would make them, plus the answers to the questions that come up every time someone tries this for the first time.",
+  "sections": [
+   {
+    "h": "What shutter speed makes video look cinematic?",
+    "body": "Set your shutter speed to roughly double your frame rate. That is the 180 degree shutter rule, and it reproduces the amount of motion blur film has. At 24fps use 1/48s, or 1/50s if that is the nearest option on your camera. At 30fps use 1/60s, at 60fps use 1/120s, and at 120fps use 1/240s. Close is fine, the effect is forgiving.\n\nWhen the shutter is far faster than that, say 1/500s at 24fps, every frame is a razor-sharp snapshot and motion strobes. That stutter is one of the loudest amateur tells, and Auto mode produces it in bright light. The test is easy: film someone walking past at 1/50s and again at 1/500s, both at 24fps, and watch them on a big screen. The first flows. The second judders. Once you have seen it, you will not leave the shutter on Auto again."
+   },
+   {
+    "h": "How do I keep a slow shutter in bright sunlight?",
+    "body": "This is where most people give up on the 180 degree rule. In sunshine, 1/50s overexposes badly, so the tempting fix is to crank the shutter to 1/1000s, which brings the choppy look straight back. The other tempting fix, stopping down to f/16, costs you your depth control and softens the image through diffraction.\n\nThe correct answer is an ND filter, which is basically sunglasses for your lens. It cuts light without changing color, so you keep 1/50s and the aperture you chose. A variable ND covering roughly 2 to 5 stops is the most convenient, but buy a decent one, because cheap variables can add a color cast or an X-shaped shadow at the extremes. Match the thread size printed on your lens. Practice outdoors: set 24fps and 1/50s, note how blown out it looks, then dial the ND until exposure is right without touching the shutter."
+   },
+   {
+    "h": "Should I shoot 24fps or 60fps for a film look?",
+    "body": "Shoot 24fps for the cinematic feel and 60fps only when you plan to slow the footage down. Delivering 60fps at full speed is the fastest route to the soap-opera, live-TV look, because the motion is smoother than our eyes associate with film. 30fps sits in between and suits news-style or online content.\n\nThe slow motion workflow is simple. Shoot at 60fps with a 1/120s shutter, drop the clip onto a 24fps timeline and slow it to about 40 percent. You get smooth slow motion that still follows the shutter rule, and you can cut it against your normal 24fps shots. Pick one frame rate per project, because mixing 24 and 30 in one edit makes motion stutter. Also shoot 4K and deliver 1080p if you can; the downsample hides noise and gives you room to punch in for a second angle."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Why does my video look like a home video even on an expensive camera?",
+    "a": "Because expensive cameras on Auto make the same choices a cheap one does. The usual causes are a shutter much faster than double the frame rate, 60fps played back at full speed, drifting auto white balance, blown highlights, and constant handheld movement. Fix those five and a modest camera will look more filmic than a pricey one left on Auto."
+   },
+   {
+    "q": "Is log footage better for a cinematic look?",
+    "a": "Only if you will color grade it. Log records a very wide range of light but looks flat and grey until you add contrast and color back. Expose it about a stop bright to keep shadows clean. If you post straight from the camera with no grade, use a Standard or flat profile instead."
+   },
+   {
+    "q": "Do I need a shallow depth of field to look cinematic?",
+    "a": "No. Blurred backgrounds help, and you get them with a wide aperture like f/2.8, a longer lens in the 50 to 85mm range, and distance between subject and background. But wide establishing shots often want f/5.6 to f/8. Cinematic means intentional depth, not maximum blur everywhere."
+   },
+   {
+    "q": "What bitrate should I record at?",
+    "a": "Under 50 Mbps is fine for casual use but struggles under heavy grading. Around 100 Mbps or more is the sweet spot for most creators. If your camera offers 10-bit 4:2:2, use it for the biggest jump in grading flexibility. Make sure your card is fast enough, such as V30 or better, to avoid dropped frames."
+   }
+  ]
+ },
+ "v02-phone-video": {
+  "intro": "Phone video looks like phone video because of habits, not hardware. The sensor in your pocket is good enough for festival films and ad campaigns. What gives it away is a picture that keeps refocusing, a shaky frame, a face lost in a dim room, and a voice that sounds like it was recorded in a bathroom.\n\nIf you are searching for how to shoot better video on your phone, start with the cheap, free fixes in this order: a few settings you change once, locking focus and exposure, using window light, and getting a microphone near the mouth. None of it needs a new phone, and all of it works on iPhone and Android.",
+  "sections": [
+   {
+    "h": "What are the best video settings for iPhone and Android?",
+    "body": "Set them once and forget them. Shoot 4K, pick 24 or 30fps, and use the High Efficiency (HEVC) format. 4K matters even if the video ends up on Instagram, because the extra pixels let you crop, straighten a horizon or punch in for a tighter shot without going soft. A wide 4K interview gives you a free close-up in a 1080p edit.\n\nUse 24fps for story and mood, 30fps for tutorials and talking-head work, and 60fps only for clips you will slow down. Shooting everything at 60 makes video look like live TV and doubles file sizes. Commit to one frame rate per project, since mixing 24 and 30 makes motion stutter. ProRes and log modes exist, but they produce huge files and flat footage that needs grading, so most creators are better off staying on HEVC."
+   },
+   {
+    "h": "How do I stop my phone video from changing focus and brightness?",
+    "body": "That pulsing is the biggest amateur giveaway on a phone, and the fix is free. Frame your shot, then tap and hold on your subject until the lock appears. On iPhone it says AE/AF Lock, on Android you usually see a lock icon. Focus and exposure are now frozen and will not drift when someone walks through the frame or a cloud passes.\n\nAfter locking, slide the exposure control up or down to taste. When in doubt go slightly darker: a face that is a touch dim can be lifted in the edit, but a blown window is gone for good. Remember that locked focus means locked distance, so if you step closer or farther the subject softens. Re-lock at the new position, or use a pro app such as Blackmagic Camera if you need to pull focus smoothly."
+   },
+   {
+    "h": "How can I get steady, well-lit phone footage without a gimbal?",
+    "body": "Your body is a tripod you already own. Hold the phone with both hands, tuck your elbows into your ribs, exhale as you start and lean on a wall or doorframe when you can. For a pan, plant your feet, lock the phone to your chest and rotate from the hips rather than twisting your wrists. Leave standard stabilization on, but switch heavy modes like Action or Super Steady off when you are on a tripod, since they crop in and can add a floaty wobble.\n\nThen fix the light, because phones hate dim rooms. Face your subject toward a big window, never with the window behind them, and soften harsh sun with a sheer curtain. Turn off overhead lights, which carve shadows into eye sockets. A $15 to $40 LED panel or ring light placed in front and slightly above eye level handles everything else."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Is it worth using a pro camera app instead of the stock camera?",
+    "a": "Sometimes. The native app is excellent for talking-head, social and product video once you lock focus and exposure. Reach for an app like Blackmagic Camera or Filmic Pro when you need manual shutter and white balance, focus pulls, zebras and peaking, or log recording. Otherwise the stock app wins on speed and reliability."
+   },
+   {
+    "q": "What should I buy first to improve phone video?",
+    "a": "Buy in this order: a tripod or phone grip, then an external microphone, then a small LED light, and only later a gimbal. A tripod removes shake from every static shot, and a lav or wireless mic fixes your weakest link. Clip-on phone lenses mostly add flare and softness, so skip those."
+   },
+   {
+    "q": "Should I film vertical or horizontal?",
+    "a": "Frame for where the video will live. Use 9:16 for Reels, TikTok, Shorts and Stories, and 16:9 for YouTube and websites. If you are unsure, shoot horizontal in 4K. The resolution leaves enough pixels to crop a clean vertical version in editing, so one shoot can feed both."
+   },
+   {
+    "q": "Why does my phone video sound so bad?",
+    "a": "The built-in mic is tiny, omnidirectional and usually far from the speaker, so it captures room echo and background noise as much as the voice. Distance is the enemy. Get a clip-on or wireless lav a few inches from the mouth, record in a soft room, and play back ten seconds before the real take."
+   }
+  ]
+ },
+ "v03-editing-blueprint": {
+  "intro": "Most people who stall at the timeline are not short on talent. They are trying to trim, pick music, fix color and rewrite the story all at once. If you have searched for how to edit a video and still do not know where to start, the answer is not a new editor, it is an order of operations.\n\nThe workflow below is the same in Premiere Pro, DaVinci Resolve and CapCut: set up, cull, assemble, tighten, pace, mix, add text, correct color, export. Here are three of the stages where beginners lose the most time, explained so you can use them on your next project today.",
+  "sections": [
+   {
+    "h": "How do I set up a video editing project so it does not lag or lose files?",
+    "body": "Build the folders before you import anything. A simple structure of 01_FOOTAGE, 02_AUDIO, 03_MUSIC, 04_GRAPHICS, 05_PROJECT and 06_EXPORTS prevents the dreaded media offline message, because editors store links to your files, not the files themselves. Copy footage off the card to your computer, then copy it again to a second drive or the cloud before you format anything.\n\nNext, match the timeline to the footage. If you shot 4K at 24fps, make a 3840 by 2160, 24fps sequence. The easy way is to drag your first clip onto the new-item area in Premiere, or onto an empty timeline in Resolve. If playback stutters, you probably do not need a faster computer. Generate proxies, which are small stand-ins that play smoothly while the full-quality files wait for export, and start them the moment import finishes so they are ready by the time you finish culling."
+   },
+   {
+    "h": "How do I make my cuts feel smooth and professional?",
+    "body": "Cut on action. Place the edit in the middle of a movement, such as a reach for a door or a turn of the head, and the motion carries the viewer across the cut so it almost disappears. Then use J-cuts and L-cuts so sound and picture do not change at the same instant. In a J-cut the next clip's audio starts before its picture, and in an L-cut the current audio continues over the next shot, which is the backbone of interview b-roll. To build one, unlink or separately trim the audio and video edit points.\n\nAlso trim every clip's head and tail. Cut the wind-up, the trailing pause and the um. Use ripple delete so gaps close automatically. Vary shot length on purpose: quick cuts build energy and a held shot afterward lands with weight. If you are unsure whether to keep a shot, cut it. Edits almost always improve by being shorter."
+   },
+   {
+    "h": "What export settings should I use for YouTube and Instagram?",
+    "body": "Start from your editor's preset, since presets get you most of the way, then check three things: resolution, codec and bitrate. Export at the same frame rate as your timeline, because upping 24 to 60 on export cannot add smoothness that was never shot. Use H.264 in an MP4 for nearly everything, with AAC audio at 48 kHz.\n\nThe guide's starting recipes are roughly 12 to 16 Mbps for YouTube 1080p, 35 to 50 Mbps for YouTube 4K, and 8 to 12 Mbps for vertical Instagram or TikTok at 1080 by 1920. Client deliveries can run 40 to 80 Mbps, or ProRes. Aim for about minus 14 LUFS loudness so platforms do not turn you down. Finally, watch the entire export in a normal media player before uploading. Missing audio, a dropped title or the wrong aspect ratio only show up there."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What order should I edit a video in?",
+    "a": "Set up and import, cull the keepers, build an assembly edit in story order, tighten to a fine cut, work on pacing, mix music and sound, add titles and captions, do a light color correction, and export. Skipping ahead, like polishing color on an unlocked cut, is the main reason edits balloon."
+   },
+   {
+    "q": "What is an assembly edit?",
+    "a": "It is the first pass on the timeline, where your only job is getting the story in the right order. It will be long and rough, and that is correct. For talking content, write a paper edit first and check that the audio alone tells the story, like a radio show, before you lay b-roll over it."
+   },
+   {
+    "q": "What audio levels should I mix to?",
+    "a": "As starting points, keep dialogue peaks around minus 6 to minus 12 dB, background music around minus 18 to minus 24 dB, and never exceed 0 dB. Target roughly minus 14 LUFS overall. Duck the music under speech with your editor's auto-duck or keyframes so words always cut through."
+   },
+   {
+    "q": "Do I need to learn Premiere, Resolve and CapCut separately?",
+    "a": "No. The workflow is software-agnostic, so once you know what to do at each stage you can switch editors in an afternoon. Resolve has a capable free version, CapCut is quick for social and captions, and Premiere is a standard in many studios. Pick one and learn it well."
+   }
+  ]
+ },
+ "v04-color-grading": {
+  "intro": "You switched to log, dropped a LUT on the clip, and now it looks grey, green or worse than before. That is the classic first week of color grading, and it is not your camera or your eye. It is that color happens in two stages, correction and then grading, and most tutorials skip the first.\n\nIf you are searching for how to color grade log footage, the fix is to measure the image rather than guess. Scopes show what your eyes and an uncalibrated laptop screen hide. The three sections below cover reading scopes, handling log and LUTs in the right order, and building a base look that keeps skin looking human.",
+  "sections": [
+   {
+    "h": "How do I read the waveform, parade and vectorscope?",
+    "body": "Your eyes adapt to a color cast within about thirty seconds, so use the scopes. The waveform maps brightness: bottom is black, top is white. Aim for blacks around 5 to 10 IRE, skin and midtones around 50 to 70, and highlights topping out near 90 to 100, with clipping reserved for light sources. Do not slam blacks to zero, because you lose shadow detail you cannot recover.\n\nThe RGB parade shows red, green and blue side by side. On a white wall or grey road the three should line up, and if blue sits higher in the shadows you have a blue cast. The vectorscope shows hue and saturation, and it includes a skin-tone line along which correctly balanced skin of every complexion falls. Keep the parade open permanently. Balance Lift, Gamma and Gain separately in Resolve to align the channels in shadows, mids and highlights, which cleans up mixed lighting."
+   },
+   {
+    "h": "How do I use LUTs on log footage without it looking wrong?",
+    "body": "There are two kinds of LUT and mixing them up causes most of the frustration. A conversion LUT, such as S-Log3 to Rec.709, undoes your camera's log curve and must match your exact camera and profile. A look LUT adds a creative mood and expects a normal image beneath it. Dropping a look LUT onto raw log forces it to style a flat, lifted, desaturated image, which gives muddy shadows and green skin.\n\nThe order is: convert to Rec.709 (or use Resolve's Color Space Transform or project color management), correct exposure and white balance shot by shot, and only then grade or apply a look. Even then, pull the LUT's intensity back to roughly 40 to 70 percent, since look LUTs are nearly always too strong at full. Treat a LUT as a starting point, not a finished grade, and keep each job on its own node so you can fix one stage without untangling the rest."
+   },
+   {
+    "h": "How do I build a natural-looking base grade and fix skin tones?",
+    "body": "Once the image is neutral, shape it with Lift for shadows, Gamma for midtones and Gain for highlights. A safe recipe for people and daylight is a faintly cool Lift, neutral to slightly warm Gamma, slightly warm Gain, and saturation up by 5 to 15. You should barely see the wheels leave center. Add contrast with a gentle S-curve rather than a contrast slider, and let highlights roll off instead of hitting a wall, since that soft shoulder is much of the filmic feel.\n\nCheck faces on the vectorscope. If the skin trace drifts off the skin-tone line, people look unwell. Faintly green faces are the usual log tell, and removing a little green from the midtones, which means adding magenta, often snaps skin back. Do not fix skin by piling on orange, and go easy on the orange and teal split. Cutting it by half usually reads as taste."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is the difference between color correction and color grading?",
+    "a": "Correction makes the image accurate: neutral exposure, correct white balance, proper black and white points and believable skin. Grading adds the creative mood on top. Always correct first, because a look is designed to sit on a normal image, and the same LUT behaves very differently on corrected versus uncorrected footage."
+   },
+   {
+    "q": "Why does my footage look washed out after I upload it?",
+    "a": "Usually a color space mismatch or a missed conversion. Grade, monitor and export in Rec.709 for normal web video, and make sure your log-to-Rec.709 step is active on the render, not just in the viewer. Also use a healthy bitrate to avoid banding, and test on a phone before publishing."
+   },
+   {
+    "q": "Do I need to shoot in log to color grade?",
+    "a": "No. Log gives the most latitude but needs careful exposure and a mandatory grade. If you will not grade, a standard or flat profile is a better choice. A flat profile sits between the two, giving more room than standard with less hassle than log."
+   },
+   {
+    "q": "Is DaVinci Resolve free good enough for grading?",
+    "a": "Yes. The free version of Resolve includes the scopes, wheels, curves, qualifiers, power windows and tracking covered here, and its color tools are an industry standard. Premiere's Lumetri panel does the same jobs under different names, so the method carries over."
+   }
+  ]
+ },
+ "v05-audio-for-video": {
+  "intro": "Viewers forgive soft focus and a shaky pan, but they leave when they have to strain to understand someone. If your video looks fine and sounds hollow, hissy or echoey, you are probably losing people in the first few seconds without anyone telling you why.\n\nWhen you search for how to fix bad audio in video, the answer is almost never a plugin. Nearly every problem comes down to three things: the mic is too far from the mouth, the room is bouncing your voice back, or the levels are wrong. Here is how to deal with each one at the source, before you ever open an editor.",
+  "sections": [
+   {
+    "h": "Why does my voice sound echoey and distant on camera?",
+    "body": "Two reasons. First, distance: each time you double the gap between mic and mouth, the voice drops to about a quarter of its strength, so the camera raises gain to compensate and amplifies the air conditioner and room along with it. Second, built-in mics are usually omnidirectional, so they hear the room as well as you. A directional mic such as a cardioid or shotgun helps, but it is not a zoom lens. Even a shotgun sounds best a foot or two from the mouth.\n\nThen deal with the room. Hard, parallel surfaces make your voice arrive at the mic several times. Do the clap test: clap once where you record, and if you hear a ring or slap, treat it. Hang blankets, add a rug or curtains, pick the bedroom over the kitchen, and get closer to the mic, which shifts the balance toward direct voice and away from reverb for free."
+   },
+   {
+    "h": "What is the best microphone placement for interviews and vlogs?",
+    "body": "Match the mic to the job. For seated interviews, a shotgun on a boom pole just out of frame, angled down at the mouth from 6 to 18 inches, sounds cinematic, and a lav clipped six to eight inches below the chin is the alternative. For seated talking-head work, a USB or lav mic sits 6 to 12 inches away, just below the frame and slightly off-axis so plosives on p and b pass across the capsule instead of into it. For vlogs and run-and-gun, a wireless lav clipped high on the chest at 6 to 8 inches is hard to beat.\n\nPlace lavs on a lapel or collar edge where fabric will not brush them, loop the cable into a small P shape and tape it behind the clip as strain relief. Let the camera record a scratch track too, as a sync reference and a backup if the wireless drops."
+   },
+   {
+    "h": "What audio levels should I record and export at?",
+    "body": "Record so that peaks land between minus 12 and minus 6 dBFS, with your average voice around minus 18 to minus 12. That leaves at least 6 dB of headroom for a laugh or an emphasized word. Set gain from a real test line at your true speaking volume, not a timid test, test. Turn off auto-gain, because it pumps the noise floor up and down. Clipping at 0 dBFS slices the peaks flat and cannot be repaired, so when in doubt record a little quieter.\n\nAlways monitor with headphones plugged into the recording device. Meters show level, but only your ears catch rustle, dropouts, buzz and the AC kicking on. For delivery, aim near minus 14 LUFS with true peaks at minus 1 dBTP or lower. In the edit, run noise reduction first, then EQ with a cut below about 80 to 100 Hz, then compression, a de-esser if needed, and normalization last."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is the best microphone for video?",
+    "a": "It depends on how you shoot. A lavalier suits interviews and anyone who moves, a shotgun suits scenes and off-camera dialogue, and a cardioid USB mic suits seated voiceover and tutorials. For most creators, a wireless lav kit is the highest-impact purchase because it keeps a mic near the speaker's mouth."
+   },
+   {
+    "q": "Can I fix bad audio in editing?",
+    "a": "Partly. Noise reduction, EQ, compression and de-essing improve clean recordings, and a light touch on noise reduction avoids a watery, robotic voice. But editing cannot undo clipping, heavy reverb or a voice buried in noise. Those are recording problems, so treat post as the last ten percent."
+   },
+   {
+    "q": "How loud should background music be under dialogue?",
+    "a": "Roughly 15 to 20 dB below the voice, quiet enough that you notice it only if it stops. Use ducking so the music drops automatically while someone speaks and rises in the gaps. Check the mix on earbuds and a phone speaker, where music masks speech most easily."
+   },
+   {
+    "q": "What is room tone and why record it?",
+    "a": "Room tone is two seconds or so of silence from the actual location, recorded with everyone quiet. Noise-reduction tools use it as a sample of what to remove, and editors use it to patch gaps between cuts so the background does not drop to dead silence."
+   }
+  ]
+ },
+ "v06-video-lighting": {
+  "intro": "Most people who search for how to light a video are really asking why their footage looks cheap when the camera is fine. The answer is almost never the camera. Your eyes quietly even out shadows and color casts, but the sensor records exactly what hits it, so a dim room with one overhead bulb looks flat, orange, and amateur on playback.\n\nGood video lighting comes down to three decisions: how soft the light is, which direction it comes from, and what color it is. You can make all three work with a single lamp, a bedsheet, and a window. Below are the specific moves that matter most for interviews, talking-head clips, and indoor video, starting with the one that changes your footage fastest.",
+  "sections": [
+   {
+    "h": "How do I make video light softer?",
+    "body": "Softness depends on the size of the light source relative to your subject, not on how bright it is. A bare LED or direct sun is a small source and throws hard, sharp-edged shadows that exaggerate skin texture. The same light pushed through a large diffuser becomes a large source with a gentle, feathered shadow edge. You have two dials: make the source physically bigger, or move it closer. A softbox across the room acts small again; bring it in until it is just outside the frame.\n\nTry the bedsheet test. Hang a white sheet or shower curtain about a foot in front of a work lamp or a window with direct sun and watch the shadow on a face go from harsh to flattering. Expect to lose a stop or two of brightness to diffusion. Make it up by moving the light closer, raising ISO slightly, or opening the aperture. Soft and dimmer beats hard and bright on faces."
+   },
+   {
+    "h": "Where should I put the key light for an interview?",
+    "body": "Not next to the camera. Light from the lens position fills every shadow, and shadows are how viewers read depth, so frontal light makes a face look like a pancake. Start with the 45/45 position: about 45 degrees to one side of the subject and about 45 degrees above eye line, angled down, just outside the frame. Adjust until the nose shadow is a small soft triangle on the cheek that stops near the corner of the mouth, not a long streak down to the lip.\n\nPut the key on the short side, meaning the side of the face turned away from the camera. It slims and sculpts. Then control the dark side without a second light: a white foam board gives bounce fill, a black one gives negative fill for more contrast. For a standard interview, aim for roughly a 2:1 key-to-fill ratio and keep the subject five or six feet off the background."
+   },
+   {
+    "h": "Why does my indoor video look orange on one side and blue on the other?",
+    "body": "You are mixing color temperatures. Household tungsten bulbs sit around 2700 to 3200K and read orange, while daylight and most daylight LEDs sit near 5600K and read blue by comparison. The camera can white-balance for only one, so a warm lamp on one side of a face and a window on the other splits the skin into two colors that are very hard to fix in editing.\n\nPick one color world. Turn off the room lamps when you use a window, or gel the odd light out: CTO warms a daylight source to match tungsten, CTB cools tungsten to match daylight. Then set white balance manually to a fixed Kelvin value or a gray card reading. Auto white balance re-guesses between shots and will make your clips drift. Also set shutter to 1/60 in 60Hz countries or 1/50 in 50Hz countries to reduce LED flicker."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Can I light a talking-head video with just one light?",
+    "a": "Yes. A single soft key at roughly 45 degrees to the side and above eye level, plus a white foam board on the shadow side, looks better than most home-office setups. Sit your subject three to four feet off the wall so the background falls darker. Add a fill or back light only after this works."
+   },
+   {
+    "q": "What is the 2:1 lighting ratio?",
+    "a": "It means the lit side of the face is twice as bright as the shadow side. It gives gentle, natural shadow and suits friendly interviews and YouTube. 4:1 adds clearer definition for documentary portraits, and 8:1 or more gets moody and dramatic. Set it by eye: start with fill off, then bring it up until shadows show detail but still read as shadow."
+   },
+   {
+    "q": "Is window light good enough for video?",
+    "a": "A window out of direct sun is a large soft source and one of the best you can use. Seat the subject three to five feet from the glass at about 45 degrees and add a white board on the shadow side. The catch is that sun and clouds shift, so exposure and color drift over long takes. Diffuse the window heavily or shoot quickly."
+   },
+   {
+    "q": "Why do my videos show flickering bands from LED lights?",
+    "a": "Cheap LEDs pulse faster than your eye can see, and your shutter catches it when it does not align with the pulse. Match shutter speed to local mains power: 1/60 or 1/120 at 60Hz, 1/50 or 1/100 at 50Hz. If you plan to shoot slow motion at high frame rates, record a test first, because flicker that is invisible at 24fps can strobe at 120fps."
+   }
+  ]
+ },
+ "v07-broll-storytelling": {
+  "intro": "If your videos feel boring and people drop off before the end, the usual cause is not your delivery. It is that the viewer only ever had one thing to look at. A single unbroken clip of someone talking gives the eye nothing to discover, and it leaves you nothing to cut to when you need to tighten a rambling take.\n\nB-roll fixes that, but only if it is planned. This is how working shooters think about B-roll and visual storytelling: what it actually does in an edit, how to shoot a subject as a sequence instead of one clip, and how to give a video a shape without writing a script. None of it depends on camera gear. A shot list on your phone helps more than a new lens.",
+  "sections": [
+   {
+    "h": "What is B-roll and what is it actually for?",
+    "body": "A-roll is the footage carrying your message, such as a person talking to camera or an interview. B-roll is everything you cut away to: hands working, the room, the product, a reaction. It does three jobs in the edit. It covers cuts, because laying a shot over a seam hides the jump cut when you splice two takes of your talking. It adds proof, because when you say you roasted beans this morning, showing the roaster and the timer beats describing them. And it controls pace, since quiet shots let a point land and quick tight shots add energy.\n\nThe common mistake is shooting random pretty scenery. Good B-roll is motivated: it illustrates the exact idea on screen at that moment. When you are tightening a rambling line, ask what the viewer could be looking at instead of your face right there. That shot is your cover, and you should have filmed it before you left."
+   },
+   {
+    "h": "How do I shoot a scene so it cuts together?",
+    "body": "Stop filming a thing and film a sequence about the thing. Use four shot sizes: wide to show where we are, medium as the conversational workhorse, tight where emotion and intent live, and detail for the drip, the switch, the label. For someone making coffee that means the kitchen with the person entering, the counter at waist-up, hands tamping the portafilter, and the first drip hitting the cup.\n\nWhen you need a never-fail checklist, use the 5-shot method: close-up on the hands, close-up on the face, a wide shot, an over-the-shoulder, and one unusual angle such as low across the bench. They answer what is happening, who is doing it, and where we are. Get all five before you move. Hold each clip well past when it feels done, at least ten seconds for a shot you will use for three, and have the person repeat the full action from each angle so the editor can cut on matching movement."
+   },
+   {
+    "h": "How do I tell a story with no script?",
+    "body": "Use a simple shape: beginning, middle, end. At the beginning, set up who and where and pose a question or promise, such as making the best coffee of your life. In the middle, show the process and let some friction in, a problem or a not-sure-this-will-work moment, because a video where nothing is at stake is the boring one. At the end, deliver on the promise so the viewer feels it was worth it. Open a loop early and close it late.\n\nThe structure also writes your shot list. You need establishing shots for the start, process and detail shots for the middle, and a reveal for the finish. Earn the first five seconds by opening on the most interesting image or the promise itself, not a slow logo. If you cannot write your clip in three lines, promise, friction, payoff, you have found the shots you still need to go get."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is the difference between A-roll and B-roll?",
+    "a": "A-roll is your main footage that carries the message, usually someone talking to camera or an interview. B-roll is the supporting footage you cut away to, such as hands at work, locations, products, and reactions. Together they let you hide edits, show proof of what is said, and control pacing."
+   },
+   {
+    "q": "How long should I hold each B-roll shot?",
+    "a": "Longer than feels natural. A clip you will use for three seconds should be recorded for at least ten, with a beat before the action starts and after it ends. Those handles give the editor room to trim and overlap audio. Quick two-second grabs are usually too short to cut and too shaky to use."
+   },
+   {
+    "q": "What is a J-cut and an L-cut?",
+    "a": "Both let audio and picture change at different moments. In a J-cut you hear the next scene's sound before you see it. In an L-cut the current scene's audio keeps playing over the next shot. Overlapping sound and picture this way makes edits feel smooth and is used in nearly every polished cut."
+   },
+   {
+    "q": "What should I put on a B-roll shot list?",
+    "a": "Log a shot number, the size (wide, medium, tight, or detail), the subject and action, and why you need it, meaning which line or beat it covers. Add three or four atmosphere shots of the location for pacing and openers. Write the video's one-sentence subject first so every shot serves it."
+   }
+  ]
+ },
+ "v08-camera-movement": {
+  "intro": "Footage that drifts, wobbles, and wanders feels nervous, as if the operator was not sure why the camera was moving. Footage where the camera moves with purpose feels directed. If your gimbal or handheld shots look amateur, the problem is usually not the stabilizer. It is that the move had no reason, was too fast, or was fighting your own body.\n\nHere is how to make camera movement look intentional: why handheld shakes, how to walk so you do not bounce, the core gimbal moves, and when to stop moving altogether. The test before any move is simple. Where does it start, where does it end, and what does the ending show that the start did not? If you cannot answer in one breath, lock the camera down.",
+  "sections": [
+   {
+    "h": "Why does my handheld footage look so shaky?",
+    "body": "Shake is a stack of three things: micro-jitter from muscle tremor and breathing, step bounce every time your foot lands, and slow drift as your arms tire and the horizon tilts. Longer lenses make all of it worse, because a telephoto magnifies your shake by exactly as much as it magnifies the subject. Going wider is the cheapest stabilizer there is. Shooting around 16 to 24mm instead of 50mm shrinks every wobble.\n\nFix it at the body first. Keep both elbows locked to your ribs so your torso becomes the tripod, and start a shot at the bottom of an exhale. Pan from the hips and feet, not the arms. Brace on walls, pillars, and railings. A neck strap pulled taut against your neck damps vertical bounce. A gimbal handles jitter well, but it works best when it is handed a body that is already doing the work."
+   },
+   {
+    "h": "How do I walk smoothly with a gimbal?",
+    "body": "The step bounce comes from your heels slamming down. Bend your knees deep and stay low, roll each foot heel to toe and place it rather than drop it, and keep your upper body a floating platform, like carrying a full cup of coffee you refuse to spill. Film yourself walking toward a doorway once normally and once in that crouch; the second clip will look like it came off a rig.\n\nBalance the gimbal before you power it on, with the camera fully built: lens, battery, card, and filters. Balance tilt, then roll, then pan, then run calibration. Leave it in pan-follow for most shots, switching to lock mode for a straight push-in. For an orbit, clear your path first, use pan-follow, and crab-walk the curve slowly. A clean five-second orbit beats a fifteen-second one that stumbles."
+   },
+   {
+    "h": "What settings make movement look cinematic?",
+    "body": "Move slower than feels natural, roughly half of your instinct. A push-in should ooze forward and an orbit should feel almost meditative. If you are slightly bored by your own speed, it is probably right. Then pair the movement with 24fps and a shutter near 1/50, the 180-degree rule, which gives natural motion blur that smears small jitters into something the eye forgives.\n\nIn daylight that shutter overexposes, so use an ND filter rather than raising the shutter. A fast shutter like 1/500 makes every frame razor-sharp, and that includes every tiny jitter, producing a stuttery security-camera look. If a move must be fast, such as a whip-pan or a running follow, shoot it at 60 or 120fps and slow it down in post. Also make about every third shot completely static; movement lands harder when it is rare."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Why is my gimbal footage still shaky?",
+    "a": "Common causes are an unbalanced rig, a long telephoto lens, and your own walking. Balance every axis with the power off, using the exact lens and accessories you will shoot with, then calibrate. Go wider, bend your knees, walk heel to toe, and move slower. A gimbal cannot fully cancel the magnification of a long lens."
+   },
+   {
+    "q": "What are the core gimbal moves?",
+    "a": "The reveal, orbit or arc, push-in and pull-out, follow or tracking shot, low-mode move near the ground, and the crane or boom. Everything fancier is a combination. Pros often layer a small secondary move over a primary one for parallax, but you should master each one alone first."
+   },
+   {
+    "q": "What is the 180-degree shutter rule?",
+    "a": "Set shutter speed to about double your frame rate. At 24fps that is roughly 1/50s. It produces the amount of motion blur the eye reads as film. Breaking the rule with a very fast shutter makes motion look choppy. In bright light, add an ND filter instead of speeding up the shutter."
+   },
+   {
+    "q": "When should I not move the camera?",
+    "a": "Lock off for dialogue and interviews, where a drifting camera distracts from the words, and for beautiful compositions that do not need help. You can also let the subject move inside a static frame. Constant motion is tiring to watch, so stillness gives your moving shots weight."
+   }
+  ]
+ },
+ "v09-real-estate-video": {
+  "intro": "A listing with a smooth, bright video tour gets more attention than one with a phone-snapshot slideshow, and the person filming it can get paid. Property video is one of the more learnable video jobs: the subject holds still, the lighting is fixed, and nobody is running. Your job is to move a steady camera through a space in a logical order and expose it well.\n\nThis covers how to film a real estate or Airbnb walkthrough from the settings to the edit: the lens and camera settings for interiors, how to handle bright windows, the order a buyer expects to see a home, and how to move through rooms without bounce. Whether you are filming your own listing or planning to charge agents and hosts, the technical craft is the same.",
+  "sections": [
+   {
+    "h": "What camera settings should I use for a property walkthrough?",
+    "body": "Shoot rooms at a full-frame-equivalent 16 to 24mm. Wider bows the walls and makes a bedroom look cartoonishly large, which leaves buyers feeling deceived at the showing. Narrower makes a normal room feel like a closet. Film at 24 or 30fps with the shutter at about double the frame rate, 1/50 or 1/60. Keep ISO low, roughly 100 to 800, and use an aperture around f/5.6 so a whole room stays sharp.\n\nLock things before you walk in: manual exposure so brightness does not jump between rooms, manual white balance around 5000K held for the entire shoot, and focus locked rather than hunting mid-move. Turn image stabilization on for handheld or gimbal and off on a tripod. If you buy one stabilizer, make it a gimbal. Shoot detail shots like a curtain moving or a coffee pour at 60fps and slow them down for a premium feel."
+   },
+   {
+    "h": "How do I film rooms with bright windows?",
+    "body": "Windows are the hardest exposure problem in interiors, because the outdoors can be many stops brighter than the room and the camera cannot hold both. In most tours the room is the subject, so expose for the interior and let windows go gently bright. A pure white rectangle looks careless; pull exposure down until you see a hint of what is outside, then lift the room with lights.\n\nThe cheapest fix is turning on every lamp, overhead, and under-cabinet light, which narrows the gap. Shoot on a bright overcast day or near golden hour instead of harsh midday sun. When the view is the selling point, such as an ocean or skyline, expose for the window and add light inside. Shooting in a flat or log profile gives you more highlight room to balance in the edit. Keep white balance fixed so rooms do not flicker between orange and blue."
+   },
+   {
+    "h": "What order should I shoot a house tour in?",
+    "body": "Follow the order a visitor would experience it: approach from the street, entry and foyer, living spaces ending in the kitchen, the primary bedroom first, then other bedrooms, bathrooms, and finally the outdoor amenity that sells the lifestyle. Within each room, shoot a wide establishing shot to show shape and size, then a detail of the reason to want the room, such as the fireplace, counters, or the view. If the kitchen or view is the headline, give it more time.\n\nFilm the doorway transitions too. The signature move is the doorway reveal, gliding through a threshold so the room opens up, and it lets you cut one continuous walk. Before filming, declutter, make beds, clear counters, and check mirrors for your own reflection. Edit clips to 2 to 4 seconds, cut on the music beat, and export a 9:16 social cut under 45 seconds alongside the horizontal tour."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What lens is best for real estate video?",
+    "a": "Aim for a full-frame-equivalent 16 to 24mm, which is roughly 10 to 16mm on a crop sensor. That shows the room without stretching it. Ultra-wide lenses bend vertical lines and make rooms look bigger than they are, which can disappoint buyers when they visit."
+   },
+   {
+    "q": "Should I use a gimbal or tripod for property tours?",
+    "a": "Use both. A gimbal gives the smooth moving shots that separate paid work from home video, while a tripod or levelled monopod handles locked-off establishing frames. If you can only buy one, buy the gimbal. A phone gimbal works for vertical or social clips."
+   },
+   {
+    "q": "How long should a real estate video be?",
+    "a": "It depends on the destination. A full MLS-style tour runs around 60 to 120 seconds, an Airbnb or VRBO listing 45 to 90 seconds, and an Instagram Reel or TikTok 15 to 45 seconds in vertical with a hook in the first second."
+   },
+   {
+    "q": "Do I need a license to use a drone for property video?",
+    "a": "Flying for a client is commercial use, which in most countries requires a license or registration. In the US that is the FAA Part 107 certificate. You also need to respect no-fly zones and privacy rules. Drone shots are optional, so skip them until you meet your local requirements."
+   }
+  ]
+ },
+ "v10-video-cheat-sheet": {
+  "intro": "Most bad footage is not a talent problem. It is a forgotten setting: the wrong shutter speed for the frame rate, audio peaking into the red, or a timeline that does not match the clip. When you are on location with the light fading and a client watching, you do not want to reason it out from scratch. You want a card in your bag.\n\nA field reference works by putting the numbers you always second-guess in one place. Below is what a good set of printable video cheat cards should cover and how to use them on a shoot, using frame rates, audio levels, ND filters, and export settings as examples. The point is a three-second check before you hit record, not memorizing everything.",
+  "sections": [
+   {
+    "h": "What settings should a videography cheat sheet cover?",
+    "body": "The cards that earn their place are the ones tied to mistakes you cannot fix afterward. Frame rate and shutter come first: shutter is roughly double the frame rate, so 1/50 at 24 or 25fps, 1/60 at 30fps, 1/120 at 60fps. Slow-motion math belongs there too, since 120fps played on a 24fps timeline runs five times slower. Next are resolution, codec, and bitrate, including why 10-bit matters for grading and why your card's sustained write speed must match your bitrate.\n\nAdd a picture profile card covering Standard, Flat, and Log, with the reminder to expose Log slightly bright and respect its base ISO. An exposure card should list ND strengths: ND8 is 3 stops, ND16 is 4, ND64 is 6, ND1000 is 10. Zebras at about 70 percent help hold skin tones. Audio, lighting, movement, and shot-list cards finish the set."
+   },
+   {
+    "h": "What audio levels and checks should I follow on a shoot?",
+    "body": "Viewers forgive rough footage but switch off bad audio fast. Set gain so normal speech averages around minus 12 dBFS and the loudest peaks stay below minus 6. Zero dBFS is clipping, and clipped audio cannot be repaired. Recording around minus 20 means you will raise noise when you boost it later. Distance matters more than price: a modest mic 30cm from the mouth beats an expensive one two meters away.\n\nUse a checklist rather than memory: headphones plugged in, meters actually moving, a windscreen outdoors, fresh batteries in mics and transmitters, room tone recorded at each location, and noisy fridges or A/C turned off. For delivery, loudness targets are a separate job. A reference card would list minus 14 LUFS for YouTube and Instagram or TikTok, minus 16 for spoken-word and podcasts, and minus 23 for broadcast under EBU R128."
+   },
+   {
+    "h": "How do I use quick-reference cards on location?",
+    "body": "Treat them as a pre-roll ritual. Before you hit record, run a three-second check: frame rate matches the project, shutter is double the frame rate, and audio meters are moving. Keep printed cards laminated in the camera bag, with a PDF copy on your phone for when you are unsure. Pick one frame rate per project, say 24 for cinematic or 30 for web, and only leave it for deliberate slow-mo clips.\n\nThe closing cards are a pack-and-shoot checklist and export recipes. Check batteries for camera, mic, monitor, and gimbal, formatted cards, an ND filter, a white balance set to the dominant light, and a printed shot list. For exports, match frame rate end to end, use H.264 MP4 for YouTube and vertical 1080x1920 at 10 to 15 Mbps for Instagram or TikTok, and keep a higher-quality master for clients."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What shutter speed should I use for 24fps video?",
+    "a": "Use about 1/48s, which most cameras round to 1/50s. The rule is to set shutter to roughly double your frame rate, the 180-degree shutter angle. That gives natural motion blur. For 30fps use 1/60, and for 60fps use 1/120."
+   },
+   {
+    "q": "How do I calculate slow motion?",
+    "a": "Divide the capture frame rate by the playback rate. Shooting 120fps on a 24fps timeline gives 5x slower, 240fps to 24fps gives 10x, and 60fps to 30fps gives 2x. Keep the timeline at your project frame rate and note that high frame rates need more light."
+   },
+   {
+    "q": "Which ND filter do I need for sunny days?",
+    "a": "ND8 (3 stops) suits overcast or golden hour, ND16 (4 stops) bright but not harsh daylight, and ND64 (6 stops) full sun. ND1000 (10 stops) is for very bright sun at wide apertures. A quality variable ND covers most daylight work with one filter."
+   },
+   {
+    "q": "What export settings work for YouTube?",
+    "a": "Export H.264 MP4 at your project frame rate. For 1080p use about 16 Mbps, and for 4K about 45 Mbps, with AAC audio at 320 kbps. YouTube re-compresses everything, so exporting at decent quality preserves detail. Mix loudness near minus 14 LUFS."
+   }
+  ]
+ },
+ "d01-drone-beginners": {
+  "intro": "Standing in a field with a brand-new drone and a racing heart is normal. Most people picture the same thing: it shoots off sideways, hits a tree, and the whole thing is over in three seconds. Learning how to fly a drone for beginners is much less dramatic than that, because a modern GPS drone mostly flies itself. With the sticks centered it stops, holds position, and waits for you.\n\nThis page covers the parts of a first flight that actually decide whether it goes well: what each stick does, a pre-flight routine that keeps drones out of trees, how GPS lock and the home point work, and a calm first hover. The goal for day one is not a great photo. It is a machine that goes up, obeys you, and comes home with battery to spare. Before you fly, check the drone rules where you live with your aviation authority, since they differ by country and region.",
+  "sections": [
+   {
+    "h": "What do the drone controller sticks do?",
+    "body": "Nearly every consumer drone ships in Mode 2, and it splits the work cleanly. The left stick handles the air column: push it up or pull it down to climb or descend, and push it left or right to yaw, which spins the drone in place like turning your head. The right stick handles travel across the ground: up and down fly forward and back, left and right slide the drone sideways without turning it.\n\nThe pair beginners mix up is yaw and roll. Left-stick sideways turns the nose to face a new direction. Right-stick sideways shoves the whole body to the side while the nose keeps pointing the same way. Say it out loud: left is altitude and spin, right is travel.\n\nLearn the safety net before you take off. On a GPS drone, letting go of both sticks lets them spring to center, and the aircraft brakes and hovers. If you are ever overwhelmed in the air, thumbs off. The drone stops and waits while you work out what happened."
+   },
+   {
+    "h": "What should I check before every drone flight?",
+    "body": "Experienced pilots run the same boring checklist in the same order every time, because boring is what keeps drones out of trees. Update firmware at home on Wi-Fi, never on low battery. Look over each propeller for nicks, cracks, or bends, since a chipped prop causes harsh vibration, and wiggle each one to confirm it is locked on. Push the battery in until it clicks, then give it a light tug. Put an SD card in if you want to record, and pull the gimbal guard off before you power up.\n\nThen pick your spot. You want a wide-open park or empty field with no trees, buildings, or power lines nearby, no people or roads underneath, a flat launch surface, and open sky overhead so GPS can lock. Skip your first flight if flags are snapping or treetops are whipping. Wind is always stronger up high than it feels on the ground, and calm, dry, bright weather is beginner weather."
+   },
+   {
+    "h": "How do I take off and hover a drone for the first time?",
+    "body": "Wait for a solid GPS lock before anything else. Set the drone down in the clearest patch of sky you can find and watch the satellite count climb. Most systems want roughly ten or more and show a green or Ready to Go status. When it locks, the drone records its home point, the spot it returns to if you press Return-to-Home or lose signal. Note that this is where it launched, not where you are standing.\n\nStand behind the drone so the nose points the same way you face, which keeps the controls matching your view. Use the one-tap auto-takeoff if your model has it, or ease the left stick up smoothly to about head height and center it. Then just watch it hover for a full minute. If it drifts in a breeze, make a small right-stick correction and return to center. Beginners get into trouble by shoving the stick, then shoving back the other way."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Is it hard to learn to fly a drone?",
+    "a": "Not on a modern GPS drone. It holds its position on its own whenever the sticks are centered, so you are only learning gentle inputs, not balancing the aircraft. Most people are comfortable with basic moves after a few short sessions of hovering, sliding, climbing, and turning in an open area, one control at a time."
+   },
+   {
+    "q": "What should I do if my drone starts drifting?",
+    "a": "Stay calm and make a small correction with the right stick, then let it return to center. Overcorrecting is the usual mistake: a big shove, then a big shove back, and the drone starts to oscillate. If you feel overwhelmed, take both thumbs off the sticks and the GPS drone will stop and hover."
+   },
+   {
+    "q": "Why won't my drone take off or show a GPS lock?",
+    "a": "Common causes are too few satellites, a battery not fully clicked in, or a gimbal guard still on the camera. Move to open sky away from trees and tall buildings and wait for the satellite count to climb. Follow any compass calibration prompt in the app, and do it away from metal structures or your car."
+   },
+   {
+    "q": "Do I need to register my drone or check the laws before my first flight?",
+    "a": "Possibly. Registration, no-fly zones, and altitude limits vary by country and region, and the rules change. Check with the FAA if you fly in the United States, or your own national aviation authority elsewhere, before you fly. This page is educational, not legal advice."
+   }
+  ]
+ },
+ "d02-drone-laws-part107": {
+  "intro": "If you are not sure whether your drone flight is legal, you are asking the right question. In the United States, the rules mostly come down to two goals: keep drones from hitting aircraft, and keep them from hurting people on the ground. Once you see them that way, drone laws, registration, and Part 107 stop feeling like red tape and start looking like a checklist you can run before each flight.\n\nThis page walks through the US FAA framework: whether your flight counts as recreational or commercial, when registration is needed, how to check airspace, and what the Part 107 certificate is for. It is educational information, not legal advice. Rules change and vary by country, state, and even city park, so always verify the current requirements with the FAA, or your national aviation authority if you fly outside the US, before you fly.",
+  "sections": [
+   {
+    "h": "Do I need Part 107 or just TRUST to fly my drone?",
+    "body": "In the US system, the purpose of the flight decides which rules apply, not the size of the drone or the quality of the footage. Flying purely for personal enjoyment falls under the recreational exception, which asks you to pass a free online safety test called TRUST and carry your certificate. Flying for compensation, or to further a business, is commercial and falls under Part 107, which requires the Remote Pilot Certificate from a proctored knowledge exam.\n\nThe FAA reads compensation broadly. Shooting a friend's shop opening for free still furthers a business, and so can trading footage for product or monetizing a YouTube channel. When you are unsure, the safe approach is to treat the flight as commercial. TRUST is not a pilot's license, and passing it does not authorize a single paid flight. Confirm the current definitions and requirements on the FAA website before you decide which path fits you."
+   },
+   {
+    "h": "Do I have to register my drone with the FAA?",
+    "body": "The number to remember is 250 grams, about 0.55 lb. For recreational flying, a drone under that takeoff weight generally does not need registration, while one at or above it must be registered before outdoor flights. Commercial flying under Part 107 removes the weight break, so even a tiny sub-250g drone has to be registered if you fly it for work.\n\nWeigh the drone exactly as it flies, with battery, prop guards, and any accessory attached. A drone that is 249g bare can cross the line once you add guards or a larger battery. Registration is done on the official FAA DroneZone site for a small fee, the number must be readable on the outside of the aircraft, and you should carry proof while flying. Most registered drones also need to broadcast Remote ID, either built in or through an add-on module, so check what your model supports. Fees and details can change, so confirm on the FAA site."
+   },
+   {
+    "h": "How do I check where I can legally fly a drone?",
+    "body": "The sky is divided into layers of airspace. Uncontrolled Class G airspace covers most rural and suburban ground away from airports, and flying there is generally allowed up to 400 feet above ground level, still following all other rules. Controlled airspace (Classes B, C, D, and E) surrounds airports, and you need authorization before flying there. LAANC, the Low Altitude Authorization and Notification Capability, can grant that authorization quickly through FAA-approved apps, up to the altitude ceiling shown on a grid over each airport.\n\nDo not guess from the ground. A small regional airport can put controlled airspace over a quiet town, while a dense city block may sit in open Class G. Temporary Flight Restrictions can appear over stadiums, wildfires, or VIP movements on the same day you planned to fly. Check an official or approved airspace app at your actual launch spot on the day, and verify the current rules with the FAA before flying."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is the difference between TRUST and Part 107?",
+    "a": "TRUST is a free, online safety test for recreational flyers, and it cannot be failed. Part 107 is the Remote Pilot Certificate, earned by passing a proctored aeronautical knowledge exam, and it is required for flights that are compensated or further a business. Verify current requirements with the FAA."
+   },
+   {
+    "q": "Can I fly my drone over people or cars?",
+    "a": "Generally no. The core rules say not to fly over people who are not part of your operation or over moving vehicles unless you specifically meet the conditions that permit it, which depend on your drone category and safety features. Check the current FAA rules before any flight near crowds or roads."
+   },
+   {
+    "q": "Is 400 feet measured from where I launched?",
+    "a": "No. The 400 foot limit in uncontrolled airspace is above ground level, measured from the ground directly beneath the drone. Flying toward a hill or cliff, the terrain can rise so you exceed 400 feet AGL even if your app shows a lower climb from takeoff. Controlled airspace ceilings can be lower."
+   },
+   {
+    "q": "Is this page legal advice?",
+    "a": "No. It is an educational overview of US FAA fundamentals as commonly understood. Regulations are updated often and differ by country, state, and local park rules. Before every flight, verify the current requirements with the FAA, or your own national aviation authority if you fly outside the United States."
+   }
+  ]
+ },
+ "d03-cinematic-drone-moves": {
+  "intro": "Your drone footage is steady, level, and cleanly exposed, and it still looks like stock B-roll. That gap between smooth and cinematic is rarely about the aircraft. It is about what the camera does while it flies. A drone hovering at a nice view is basically a webcam in the sky. It records, but it does not direct.\n\nCinematic drone shots come from a short list of deliberate moves flown slowly and on purpose: the reveal, the orbit, the flyover, the top-down descent. None of them need an expensive drone. A cheap mini flown with patient thumbs beats a cinema rig flown carelessly. Below are the stick habits and recipes that matter most. Fly within your local rules, which means registered if required, under the legal ceiling, in line of sight, and away from people and airports.",
+  "sections": [
+   {
+    "h": "How do I get smooth cinematic drone footage?",
+    "body": "Jerky footage is almost never hardware. It is a hand that stabs the sticks instead of easing them. Push a stick no more than a quarter of the way, hold it dead still, and release it as slowly as you pushed it. The two ugliest frames in any clip are the lurch at the start and the snap at the end, and slow hands remove both.\n\nFly with a pinch grip, thumb on top of each stick and index finger bracing the base from the side, which gives much finer control than a thumb alone. Then lower your stick sensitivity and add an exponential curve in the controller settings, so the area around center is gentle and a big physical movement produces a small drone response. Set it once and leave it. For practice, fly sideways as slowly as the drone allows for ten seconds, then ease to a stop over two. If playback shows no jerk, you have the skill everything else is built on."
+   },
+   {
+    "h": "How do I fly a reveal shot with a drone?",
+    "body": "A reveal works on tension: hide the good stuff, then show it. The half second of anticipation before the payoff is what makes viewers lean in. One version flies slowly forward over a ridge or past an obstacle while the gimbal tilts up, so the landscape opens beyond it. The other is the pull-back, where you fly slowly backward and the subject shrinks into an epic landscape, the classic and-they-were-all-alone-out-here ending.\n\nUse one dominant motion per clip and know where the shot starts and ends before you launch. Flying backward is blind flying, because obstacle sensors usually face forward. Walk the path first, confirm it is clear of trees, wires, and poles, and keep the drone in direct line of sight the whole way. Once each axis is smooth on its own, you can layer a pull-back with a tilt up for a signature reveal. Start recording several seconds early so you have clean in and out points."
+   },
+   {
+    "h": "What is the best way to do a drone orbit?",
+    "body": "An orbit circles the camera around a fixed subject while the background sweeps past, which isolates the subject and shows it in three dimensions. You can fly it by hand with two synchronized inputs: ease the right stick sideways to arc around the subject, and feed in a trickle of yaw from the left stick so the nose stays locked on it. Practice a tight orbit of a few meters around a lone tree or cone, because a small circle forces fast corrections and builds coordination.\n\nMost modern drones also have an automated mode, often called Point of Interest or Orbit, which flies a flawless circle at constant speed. Choose the slowest speed that still shows the background moving, fly roughly 10 to 40 meters up, and angle the gimbal down so the subject sits in the lower third. For extra polish, add a touch of throttle to climb as you circle. Change only one thing at a time, so the orbit stays clean."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Do I need an expensive drone for cinematic shots?",
+    "a": "No. The moves are gear-agnostic: a sub-250g mini, a mid-tier folding drone, and a cinema rig all fly them identically. Only top speed and image quality change. Slow, patient stick control and a clear start and end for each shot matter far more than the aircraft."
+   },
+   {
+    "q": "What speed should I fly for cinematic drone footage?",
+    "a": "Slow and constant. The camera should glide at one unhurried pace from start to finish, with no acceleration wobble or last-second corrections. Use small stick inputs, hold them steady, and ease off over a full second at the end instead of snapping the stick back to center."
+   },
+   {
+    "q": "Why does my top-down drone shot look boring?",
+    "a": "Top-down shots rely on a locked, drifting frame. Point the gimbal straight down, fly a dead-straight line at a steady, moderate speed, and avoid yawing mid-shot. Roughly 15 to 50 meters up works well, with higher altitude giving a more abstract look and lower giving more speed and detail."
+   },
+   {
+    "q": "Is it safe to descend straight down onto a subject?",
+    "a": "Be careful. With the camera pointed down you are partly blind to what you are settling onto, and a fast drop can pull the drone into its own turbulent downwash and make it wobble. Descend slowly, make sure the area below is clear, and keep the aircraft in your line of sight."
+   }
+  ]
+ },
+ "d04-drone-camera-settings": {
+  "intro": "The drone flies beautifully, yet the footage stutters in pans, looks crunchy and over-sharpened, or comes off the card gray and lifeless. The aircraft is almost never the problem. Drone camera settings for video ship configured for snapshots, and every fix is something you can set on the ground before takeoff.\n\nThe core of smooth aerial video is one chain: pick a frame rate, lock your shutter speed to twice that number, and use an ND filter to hold that slow shutter in bright light. Everything else, from resolution and bitrate to picture profile, is refinement on top of that. This page walks through the shutter rule, how to choose an ND filter by sky, and the quality settings worth changing. Menu names differ between brands, so look for the function rather than an exact path.",
+  "sections": [
+   {
+    "h": "What shutter speed should I use for drone video?",
+    "body": "Use the 180-degree shutter rule: set shutter speed to roughly twice your frame rate. That means 1/50s at 24 or 25fps, 1/60s at 30fps, 1/120s at 60fps, and 1/240s at 120fps. Most cameras have no exact 1/48s, so 1/50s is the accepted stand-in. This gives each frame the right amount of motion blur, enough to blend frames into smooth motion without smearing.\n\nLeft on Auto, the camera raises the shutter far past 1/1000s in bright light to protect exposure, and that is the number-one cause of juddery aerials. Each frame freezes hard, and pans strobe. Switch to manual or shutter priority and lock the speed yourself. To see the difference on the ground, shoot five seconds of passing cars at 1/1000s and again at 1/50s. The fast clip stutters and the slow one glides. Too slow causes its own problem, with smeared motion and visible vibration, which usually happens at dusk if you forget to remove the ND filter."
+   },
+   {
+    "h": "Which ND filter do I need for drone video?",
+    "body": "A slow shutter in bright sun lets in far too much light, so an ND filter acts as sunglasses for the lens. Each step up in number blocks one more stop: ND4 is 2 stops, ND8 is 3, ND16 is 4, ND32 is 5, and ND64 is 6. As starting points, use ND4 to 8 for overcast, ND8 to 16 for cloudy-bright, ND16 for hazy sun, ND32 for full sun, and ND64 for midday glare, snow, water, or beach.\n\nTo choose in the field, set your frame rate, lock the shutter to twice it, set ISO to base (usually 100), then look at the exposure. If it is too bright, add a stronger ND until it sits correctly with the shutter still locked. Re-check every time the light changes. An ND64 left on into golden hour pushes your ISO up and adds noise, while an ND4 at noon puts you back in fast-shutter judder. Buy a matched set of ND8, 16, 32, and 64, and favor color-neutral filters."
+   },
+   {
+    "h": "What resolution, bitrate, and picture profile should I use?",
+    "body": "Shoot 4K when you can. It gives you a sharp master and room to crop, reframe, or stabilize while still delivering a clean 1080p final. Use the highest bitrate available, and H.265 (HEVC) if your editing computer can handle it, since it holds more quality per megabit and keeps skies cleaner. H.264 is more compatible and easier on older machines. Use a fast microSD card rated for sustained video, such as V30 or higher, and reformat it in the drone before a shoot.\n\nPicture profile is a real tradeoff. A normal profile looks finished straight from the card but bakes in contrast and color permanently, leaving less room to recover highlights. A flat or log profile like D-Log keeps maximum latitude but looks gray until graded. Pick normal if you need to deliver fast or are still learning, and flat if you will color grade every clip."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Why does my drone video look choppy when I pan?",
+    "a": "Almost always the shutter speed is too fast, usually because the camera is on Auto in bright light with no ND filter. Each frame freezes sharp, so motion strobes. Lock the shutter to twice your frame rate, such as 1/60s at 30fps, and add an ND filter to control exposure."
+   },
+   {
+    "q": "What frame rate is best for drone footage?",
+    "a": "It depends on the look. 24fps gives a filmic feel, 30fps is a smooth standard for real estate and social, and 60fps or 120fps are for shots you plan to slow down. Decide your project's base rate first, then shoot slow-motion shots at a higher rate."
+   },
+   {
+    "q": "Do I really need ND filters on a drone?",
+    "a": "If you want smooth motion in daylight, yes. The correct video shutter is slow, and in bright sun that slow shutter would overexpose without a filter. Without ND you are forced into a fast shutter, which is what makes aerials judder. A matched set covers a full day of changing light."
+   },
+   {
+    "q": "Should I shoot D-Log or the normal profile?",
+    "a": "Shoot normal if you want to deliver quickly or do not plan to grade, since it looks good with no work. Choose a flat profile like D-Log only if you will color grade, because it looks washed out straight off the card but gives you more latitude to adjust exposure and color."
+   }
+  ]
+ },
+ "d05-editing-drone-footage": {
+  "intro": "You flew a clean reveal over the coast with a dead-level horizon, then dropped it in the timeline and it looks like it belongs to a different film. It is too flat, too green, a little wobbly, and somehow both too smooth and too jittery next to your ground footage. Editing drone footage is mostly about fixing that mismatch, and the mismatch has a simple cause: drone clips arrive deliberately unfinished.\n\nFlat profiles record a dull image on purpose so you can grade it, rolling shutter smears fast vibration into jello, and even a good gimbal leaves some drift. The fix is a fixed order of work: organize, repair motion, set timing, correct to neutral, grade the look, then match air to ground. The ideas below apply in DaVinci Resolve, Premiere Pro, and CapCut, though tool names vary.",
+  "sections": [
+   {
+    "h": "How do I fix jello and stabilize drone footage?",
+    "body": "Treat these as two separate problems. Jello is a warp: straight lines wobble like gelatin because a rolling-shutter sensor reads top to bottom while the drone vibrates. Instability is drift or jitter across the whole frame. Fix jello first with a rolling-shutter repair tool, such as Premiere's Rolling Shutter Repair effect or the rolling-shutter control in Resolve's stabilization panel, raising the correction only until lines look straight. Stabilizing a warped frame pushes the warp through your shot and makes it worse.\n\nThen stabilize, gently. Warp Stabilizer and Resolve's stabilizer track points and crop in to hide the correction, so every bit of smoothing costs resolution. A gimbal is already stable, so you are polishing, not rescuing: keep smoothness low, roughly 8 to 15 percent, and use stabilize-only crop. It struggles with shots that have no static reference, like clouds or flat water. Next time, balanced clean props prevent most jello at the source."
+   },
+   {
+    "h": "How do I color correct and grade D-Log drone footage?",
+    "body": "Correct first, then grade. Correction means accurate exposure, neutral white balance, and sane contrast. Use scopes, not your eyes: set exposure on the Waveform without clipping highlights like clouds and sun on water, and neutralize white balance on the Parade by finding something that should be gray, like concrete or a roof. Drone footage often lands cool, green, and hazy, so a gentle contrast boost and a touch of dehaze helps.\n\nFlat footage must be converted to a normal image before you style it. Either use a color-managed pipeline, telling the editor the clip is DJI D-Log, or apply the manufacturer's technical LUT to Rec.709. That is a correction, not a look. A LUT alone can crush shadows on a clip that is a stop off, so fix exposure first. Then add a creative look at partial strength, around 40 to 70 percent, and grade sky and land separately with a mask or qualifier."
+   },
+   {
+    "h": "How do I make drone footage match my ground footage?",
+    "body": "Matching is the deliberate step that solves the clash. Pick the hero ground shot that sets the mood for the whole piece and pin it as your reference. Correct every clip to neutral on its own first, since two clips from the same flight can differ if the sun moved. Then bring the aerials toward the reference using scopes: align overall brightness, white balance, and contrast, and compare against a still of the reference in your viewer.\n\nMatch motion too. Perfectly smooth aerials can look fake beside handheld ground clips that breathe a little, so aim for a similar amount of life in both. Match frame rate and timeline settings early, and use speed ramps with eased keyframes rather than steps, since a linear ramp reads as a glitch. Slow only as far as your frames allow: 60p footage in a 24p timeline plays cleanly at about 40 percent."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What should I do first when editing drone footage?",
+    "a": "Copy the original files off the SD card into a dated folder and keep the card untouched until the project is exported. Note each clip's color profile, cull junk like takeoffs and landings, and trim to the stable middle of each clip. Work from the original file, not a re-compressed export."
+   },
+   {
+    "q": "Why does my drone footage look green and flat?",
+    "a": "Flat or D-Log profiles record low contrast on purpose, and drone footage often skews cool and green from flat-profile color and atmospheric haze. Convert the log footage to a standard space using color management or a technical LUT, then correct exposure and white balance using scopes."
+   },
+   {
+    "q": "Can I slow down drone footage smoothly?",
+    "a": "Yes, if you shot enough frames. 4K 60p footage in a 24p timeline plays cleanly down to about 40 percent, and in 30p down to 50 percent. Below that the editor invents frames. Optical flow can help, but check detailed areas like tree canopies and waves at 100 percent for artifacts."
+   },
+   {
+    "q": "Do I need DaVinci Resolve to grade drone footage?",
+    "a": "No. The workflow works in Resolve, Premiere Pro, and CapCut. Resolve and Premiere include scopes for precise correction, while CapCut does not, so there you correct by eye against a known-good reference frame. The order of work stays the same in every app."
+   }
+  ]
+ },
+ "d06-add-drone-to-videos": {
+  "intro": "Your aerial clips are good. The light was nice and the moves were smooth, yet the finished video feels like a slideshow of pretty shots that never adds up to anything. If you are wondering how to add drone footage to your videos so it holds attention, the answer is almost never in the footage. It is in the structure around it.\n\nAerials do not carry a video on their own. They are B-roll in service of a ground-level story, and they have one main job: the establishing shot that tells viewers where they are and how big the place is. This page covers what aerials are for, which handful of shots a story needs, how to cut between air and ground, and how long to hold each one. The ideas work in Premiere, Resolve, Final Cut, CapCut, or a phone app.",
+  "sections": [
+   {
+    "h": "Where should I use drone shots in a video?",
+    "body": "Think in terms of A-roll and B-roll. A-roll is your spine: the person, the action, the thing the video is about. Almost all drone footage is B-roll that supports it. Its strongest job is establishing: a wide aerial answers where we are, what this place is, and how big it is in the first seconds of a scene. That is why your best wide shot belongs near the start of a section, and why an aerial dropped into an intimate ground scene feels like the video lost its train of thought.\n\nAerials also signal a change of place or time, reveal something the ground view hid, give the eye a wide breath between tight shots, and bookend a piece with arrival or departure. They do poorly at carrying emotion, showing fine detail, or sustaining interest alone. Before keeping any aerial, ask what it tells viewers that the previous shot did not. If the only answer is that it looks cool, you have found a cut."
+   },
+   {
+    "h": "How do I cut between drone footage and ground footage?",
+    "body": "Use a rhythm of wide to close and back. Open on a wide aerial to establish, land on a ground shot of the actual subject, stay on the ground for several shots where the story lives, then return to the air when you need to change location, compress time, or let the viewer breathe. Avoid stacking three or more aerials in a row, because the video floats away from the human thread.\n\nThe cleanest cuts are linked by something the eye can follow: the same subject, the same direction of motion, a specific place, or matching light. An aerial following a car down a coast road cuts naturally to a shot inside that car. A left-to-right drone move cuts well into a subject also moving left to right. Cut during motion rather than on a static hold, since the brain is busy tracking movement. Pick one or two transition styles and repeat them consistently."
+   },
+   {
+    "h": "How long should drone shots stay on screen?",
+    "body": "Aerials read slowly, so duration matters. As starting points, hold an establisher for 4 to 8 seconds, a reveal for 4 to 7, a follow shot for 3 to 6, a detail push for 2 to 4, and a top-down accent for 1.5 to 3. Wider and more complex shots need longer to be understood, while tight or fast-moving ones can be quick. When trimming, cut from the front and back rather than the middle, since the strongest part of a move is usually the center.\n\nLet music shape the structure. Mark the quiet intro, the build, the drop, and the resolution before placing shots, and land your biggest aerial on the first big swell. Cut faster during builds and use long wide aerials during the calm. Save one pull-back or rise for the final beat. When you shoot, record each clip three to five seconds longer than you think you need on both ends, so you have handles."
+   }
+  ],
+  "faq": [
+   {
+    "q": "How many drone shots should a video have?",
+    "a": "Fewer than most creators use. A handful of aerials, each with a clear job such as establishing, revealing, following, or transitioning, usually beats a long chain of flyovers. One top-down shot per video is often enough. Keep the ground footage as the story and use aerials as punctuation."
+   },
+   {
+    "q": "What drone shots do I need for a ground-based story?",
+    "a": "Six types cover most needs: an establisher, a follow shot, a reveal, a detail push, an orbit, and a top-down. Capture at least one wide establisher held 8 to 10 seconds, plus clips moving left to right and right to left for cutting flexibility."
+   },
+   {
+    "q": "Why does my drone footage feel disconnected from the rest of my video?",
+    "a": "Usually the aerial has no link to the ground shots around it. Connect the cut through a shared subject, direction of motion, location, or light. If the only reason for a shot is that it looks impressive, it is padding, and cutting it often improves the video."
+   },
+   {
+    "q": "Which editing software should I use to mix drone and ground footage?",
+    "a": "Any of them. The concepts are the same in Premiere, Resolve, Final Cut, CapCut, and phone editors, because they are about structure, timing, and motion, not buttons. Choose whichever editor you already know and focus on how each aerial shot earns its place."
+   }
+  ]
+ },
+ "d07-real-estate-drone": {
+  "intro": "A single smooth aerial reveal of a house can sell a listing before anyone reads the description, and agents, rental hosts, and sellers will pay for it. If you own a modern camera drone, real estate drone video is one of the few paid niches where the barrier is skill rather than budget. The flying itself is the easy part. What you are really selling is legal compliance, consistent smooth moves, a shot list that covers a property completely, and a tight edit.\n\nThis page covers the foundations of property aerials: the legal groundwork you need before any paid flight, a repeatable exterior shot list, and the signature reveal and orbit that make a tour feel premium. Commercial drone rules differ by country, so verify current requirements with your national aviation authority, such as the FAA in the US, before accepting any paid job.",
+  "sections": [
+   {
+    "h": "Do I need a license to shoot real estate with a drone?",
+    "body": "In most countries, flying for a business purpose, including a listing or a rental promotion, requires a commercial remote pilot certification. In the US that is the FAA Part 107 Remote Pilot Certificate, earned by passing a knowledge test. Other places have their own paths: the UK CAA, Transport Canada, EASA countries, and Australia's CASA each set their own registration and credential rules. Treat any list like this as a starting map, not legal advice, and confirm the current requirement with your aviation authority before your first paid flight.\n\nBeyond certification, check airspace at every property, because homes can sit within a few miles of airports, heliports, or hospitals. Where authorization is needed, get it before flying and stay under its ceiling. Carry liability insurance, since some clients ask for proof. Never fly over people who are not part of the shoot or over moving traffic, and keep the drone in visual line of sight."
+   },
+   {
+    "h": "What shots should I include in a property drone video?",
+    "body": "Work from a repeatable exterior shot list so no property goes uncovered. Start with the establishing shot, high and pulled back, showing the home in its setting. Add the front-of-home hero, a clean straight-on or gently angled view of the facade, and the approach, a slow forward push down the driveway toward the front door. Then cover the lot boundaries, the backyard and outdoor living areas like pool, deck, and patio, a high-angle pass of the roofline and condition, and a tasteful neighborhood context shot showing nearby parks or water.\n\nKeep the composition centered on the client's property. Sweeping wide to show the whole street films other people's homes, which raises privacy issues, so avoid hovering over or pointing the camera into a neighbor's yard, pool, or windows. Practice the full list on your own home or a friend's with permission, then cut a 30-second tour. You will quickly learn which shots you are missing."
+   },
+   {
+    "h": "How do I film a cinematic house reveal and orbit?",
+    "body": "The rise-and-reveal is the most reliable crowd-pleaser. Start low behind a hedge, tree, or fence with the gimbal tilted up, then rise straight up while slowly tilting the camera down, so the house appears over the obstacle and fills the frame. Two alternatives are the pull-back reveal, starting tight on the front door and flying backward and up, and the foreground wipe, where a tree or roofline passes close through the frame before the house appears.\n\nFor the orbit, use your drone's automated Point of Interest mode if it has one. Set a wide enough radius that the drone stays well away from the roofline, trees, and wires on the far side, and rehearse the circle first. Pick the slowest speed that fits your battery window, and position so the sun rakes across the house rather than blowing out one side. Beginners fly too fast, so cut your speed roughly in half and use gradual starts and stops. Golden-hour light helps a lot."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Can I fly a drone for a real estate listing as a hobbyist?",
+    "a": "Generally no. A flight that supports a listing or rental promotion is commercial, and most countries require commercial certification for it. In the US that means FAA Part 107. Verify the current rules with the FAA or your national aviation authority before any paid or business-related flight."
+   },
+   {
+    "q": "What camera settings work for property aerial video?",
+    "a": "A reliable daylight starting point is 4K at 30fps, shutter at 1/60s, ISO 100, and white balance locked to a sunny preset. Lock exposure so brightness does not jump over dark treelines, and use a normal color profile if you are not confident grading flat footage."
+   },
+   {
+    "q": "Do I need ND filters for real estate drone video?",
+    "a": "They are the highest-impact accessory after the drone. In daylight, holding a 1/60s shutter lets in too much light, so an ND filter cuts it and keeps motion smooth. A small kit of ND8, ND16, and ND32 covers most conditions, with ND16 a good all-day-sun default."
+   },
+   {
+    "q": "What is the best time of day to film a property with a drone?",
+    "a": "The golden hours: the first hour after sunrise and the last hour before sunset. They give warm, directional light that flatters most homes. Midday sun is harsh, flattens the scene, and casts hard shadows. Position your orbit so the light rakes across the house."
+   }
+  ]
+ },
+ "d08-drone-photography": {
+  "intro": "Most people buy a drone and shoot video, then scroll back through the clips and realize the best moments were single frames. Drone photography is the practice of flying to make those frames on purpose: sharp, high-resolution stills that print large and hold detail a video screenshot never will.\n\nThe view from above is a different visual language. The horizon can vanish, foreground and background collapse into one plane, and the landscape turns into lines, shapes, patterns, and texture. Below are the core habits for better aerial photos: how to compose a top-down shot, how to stitch a panorama that actually lines up, and how to expose for the harsh light you get in the sky.",
+  "sections": [
+   {
+    "h": "How do you compose a top-down drone photo?",
+    "body": "The straight-down shot, with the gimbal pitched to -90 degrees, removes the horizon and turns the ground into a flat graphic surface, so your usual instincts stop working. Start by finding one strong element: a single road, a lone boat, a solitary tree. Turn on the rule-of-thirds grid and line up dominant edges so roads run true, because crooked geometry reads as a mistake from up there.\n\nThen decide on purpose. Either fill the frame edge to edge with pattern, or let a small subject float in negative space. The weak middle, where a subject neither fills nor floats, is what ruins most top-down shots. Look for repetition plus one interruption, like a single red car in a lot of gray ones. Since everything is at roughly the same focus distance, depth of field is a non-issue: a starting point of f/4 to f/5.6, 1/500s or faster, ISO 100, RAW. Scan the corners for your own drone's shadow before you press the shutter."
+   },
+   {
+    "h": "How do you shoot a drone panorama that stitches cleanly?",
+    "body": "Stitching software needs two things: overlap and consistency. Overlap every frame by 30 to 50 percent so the software has matching detail to blend in the seams. Then lock everything. Use manual exposure so shutter, aperture, and ISO stay the same across the sweep, set focus to infinity, and fix white balance to a preset like Daylight. Auto white balance re-reads the sky each frame and leaves you cyan on one edge and warm on the other.\n\nThere are three useful types: a wide pano (one row of frames, great for coastlines and skylines), a grid pano (multiple rows for huge resolution), and a sphere (a full 360 you can flatten into a tiny planet). If you fly one by hand, hover in one spot and only yaw between frames, which keeps parallax low. The onboard auto-stitch tends to flatten the file, so for print-size results keep the individual RAW frames and stitch them in your editor."
+   },
+   {
+    "h": "How do you expose aerial photos in harsh light?",
+    "body": "Shoot RAW, not JPEG. A JPEG throws away most of the sensor data, and aerial scenes with a bright sky over dark land need all of it. Do not trust the controller screen, which looks too dark in daylight and tempts you to overexpose. Read the histogram and watch the right edge: if it slams against the wall, the highlights are clipped and a blown sky is gone for good. Turn on the highlight warning and protect the highlights first, since shadows lift cleanly in editing.\n\nWhen the scene truly exceeds one frame, use auto exposure bracketing: 3 shots for normal contrast, 5 for a brutal sunrise, spaced about 0.7 to 1 stop apart, merged later. Bracket only in calm air, because drift between frames causes ghosting on hard edges. Skip it on flat overcast light or most top-downs. A single RAW from a decent sensor often holds enough range that you never need to bracket."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What camera settings are best for drone photography?",
+    "a": "A solid starting point is RAW format, ISO 100, aperture around f/4 to f/5.6, and a shutter of 1/500s or faster for straight-down shots. Use Daylight white balance instead of Auto, and judge exposure with the histogram rather than the screen. Adjust from there for wind, light, and your sensor size."
+   },
+   {
+    "q": "When is the best time of day for aerial photos?",
+    "a": "The hour after sunrise and before sunset. A low sun throws long shadows that reveal texture and shape from above, while midday light flattens the land. Blue hour, the 20 to 30 minutes around sunrise and sunset, suits cities with glowing windows, but you need steady air for the longer exposures."
+   },
+   {
+    "q": "Do I need HDR bracketing for every drone photo?",
+    "a": "No. A single RAW file from a decent sensor can hold 11 to 14 stops of range, often enough to recover highlights and lift shadows. Bracket only when the histogram shows a scene, like a backlit sunrise, exceeds one frame, and only when the air is calm enough for the drone to hold still."
+   },
+   {
+    "q": "Do I need a license to sell my drone photos?",
+    "a": "Often yes. In the US, paid drone work generally falls under FAA Part 107 rather than the recreational rules. This is general information, not legal advice. Verify current requirements with the FAA, or your national aviation authority, and check airspace and altitude limits before every flight."
+   }
+  ]
+ },
+ "d09-fly-safe-no-crash": {
+  "intro": "If your stomach drops every time your drone gets small in the sky, that instinct is useful. Drones rarely fail on their own. Almost every crash or flyaway traces back to a named, physical cause you could have spotted from the ground: wind beyond the aircraft's limit, a corrupted compass, a cold battery, or a return-to-home altitude set below the trees.\n\nThis page covers how to avoid drone crashes and flyaways with habits instead of luck. We look at how a flyaway really starts, how to make a wind go/no-go call you can trust, and how battery and return-to-home settings decide whether a bad moment becomes a lost aircraft.",
+  "sections": [
+   {
+    "h": "Why do drones fly away, and how do you prevent it?",
+    "body": "A drone holds position by fusing GPS, which says where it is, with the compass, which says which way it points. If nearby metal corrupts the compass, the drone thinks north is somewhere it isn't. When it tries to hold still against a breeze it corrects in the wrong direction, and the harder it corrects the faster it leaves. From its point of view it is holding position. From yours, it is escaping.\n\nThe seed is usually planted on the ground. Launching from a car hood, a manhole cover, a metal table, or a rebar-reinforced slab can throw the compass off before takeoff. Calibrate only when the app asks, on open grass or dirt, away from vehicles, power lines, and magnets in your pockets. Never take off with an active compass or GPS warning, and wait for a strong satellite lock: under 8 means do not fly, 8 to 11 means wait, 12 or more is a go. Confirm the home point on the map."
+   },
+   {
+    "h": "How much wind is too much for a drone?",
+    "body": "Wind is the most underestimated cause of lost drones because it feels mild on the ground while being far stronger at 200 feet. Find your aircraft's published wind resistance and stay well under it, not at it. As a rough guide: sustained wind of 0 to 10 mph with gusts under 15 is comfortable for most consumer drones, 10 to 18 mph is caution for experienced pilots, 18 to 25 mph is a no-go for most drones, and above that the drone stays home. Shift each row stricter for sub-250-gram drones, thin air at altitude, or a cold battery.\n\nBefore committing, do the hover test: hover at 30 to 50 feet for ten seconds and watch how hard the drone tilts and drifts to hold its spot. If it is struggling low, where wind is weakest, it will be overwhelmed higher up. Land and wait. Also skip flights in rain, fog, or sea spray, since consumer drones are not waterproof."
+   },
+   {
+    "h": "How do you set battery limits and return-to-home so a problem does not become a loss?",
+    "body": "Adopt a hard rule: at about 30 percent battery, you are already flying home. Percentage is charge, not distance, so a drone a mile downwind in a headwind may not make it back at 40 percent. Cold makes it worse. Below roughly 5 C or 40 F a pack can show healthy charge on the ground and sag the moment you demand power, so warm batteries in an inside pocket and hover gently for 30 to 60 seconds after takeoff. Retire any swollen pack permanently.\n\nReturn-to-home is only as good as its altitude setting. Most drones climb to a preset height, fly a straight line home, then descend, so if that height is below a tree or building in between, the drone flies straight into it. Set RTH above the tallest obstacle in your whole flight area before takeoff, every time. Also remember that obstacle sensors can miss thin branches and wires."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is the most common cause of drone crashes?",
+    "a": "There is no single cause, but the usual suspects are wind beyond the drone's limit, compass or GPS errors, battery failure, a return-to-home altitude set too low, obstacles the sensors miss, and signal loss. Many serious incidents stack two of these, like a cold battery plus strong wind."
+   },
+   {
+    "q": "What should I do if my drone starts flying away?",
+    "a": "Stay calm and avoid yanking the sticks, since sudden inputs during a GPS glitch can make it worse. Center the sticks, give it a second, then trigger return-to-home if your altitude is set correctly. If you can see it and control it, flying manually back is sometimes safer."
+   },
+   {
+    "q": "How many GPS satellites do I need before takeoff?",
+    "a": "As a working rule, fewer than 8 means do not fly, 8 to 11 means wait for more, and 12 or more is a strong lock. Give the drone 30 to 60 seconds after power-on, and confirm the home point recorded at your actual location before launching."
+   },
+   {
+    "q": "Is it safe to fly a drone in the cold?",
+    "a": "It can be, with care. Below about 40 F or 5 C, batteries lose capacity and sag under load. Keep packs warm until launch, hover briefly after takeoff, expect shorter flights, and return with more reserve than usual. Always check your manufacturer's operating temperature range."
+   }
+  ]
+ },
+ "d10-drone-cheat-sheet": {
+  "intro": "Standing in a field with props in your hand and a gusty sky overhead is the worst time to rely on memory. A drone cheat sheet solves that: dense, one-topic reference cards you can pull from your bag and run in order, so a skipped step does not turn into a lost aircraft.\n\nThis page explains what a good printable drone pilot cheat sheet pack should cover and how to use quick-reference cards in the field. We walk through the pre-flight and emergency cards, the camera and ND filter card, and the wind and battery cards, plus how to print, laminate, and keep them on your phone so they actually get used on flight one and flight one thousand.",
+  "sections": [
+   {
+    "h": "What should a drone pre-flight checklist card include?",
+    "body": "A pre-flight card works because most crashes trace to one skipped line. Split it in two. At home: update aircraft and controller firmware, charge everything, format the SD card in-camera, inspect props for chips or stress lines, and check wind and airspace for your window. On site: confirm props are tight and the gimbal clamp is off, seat the battery until it clicks, power on the controller first and then the aircraft, and wait for a strong GPS lock and a Home Point Updated message.\n\nThen check three things people skim past: the home point is where you actually stand, the RTH altitude is above the tallest obstacle, and there are no compass or IMU warnings. Clear about 25 feet around takeoff and overhead lines. A good card boils this to a six-step launch flow you say out loud, because spoken checklists catch what eyes skip. After takeoff, hover at eye level for 5 to 10 seconds and listen for odd prop noise before climbing."
+   },
+   {
+    "h": "How do you use a camera settings and ND filter quick-reference card?",
+    "body": "Cinematic drone video comes from one rule: keep shutter speed near double the frame rate, the 180-degree shutter rule. At 24 fps that is about 1/48 to 1/50s, at 30 fps 1/60s, at 60 fps 1/120s. In daylight you cannot slow the shutter that far on your own, so ND filters do it. A card maps light to filter: ND4 for overcast, ND8 for bright cloud or golden hour, ND16 for hazy sun, ND32 for bright direct sun, ND64 for harsh sun, snow, or water glare.\n\nThe practical trick is to lock the shutter and swap the filter, never the shutter, so motion blur stays consistent across every clip. Keep ISO at base, shoot a flat or log profile, and expose for the sky so clouds keep detail, since shadows are easier to lift than highlights. A card like this saves you from standing in bright sun doing math with your thumbs."
+   },
+   {
+    "h": "What belongs on a drone emergency, wind, and battery card?",
+    "body": "These are the cards you laminate first. The wind card gives you a fly, caution, or no-fly call at a glance: roughly under 15 mph is fly, 15 to 24 caution, over about 24 or above your drone's rating is no-fly, with gusts, rain, fog, cold, and nearby lightning all pushing you toward the ground. Fly your outbound leg into the wind so the trip home is wind-assisted.\n\nThe battery card carries the 30 percent habit: start home at 25 to 30 percent when calm and close, 35 to 40 percent when windy or far, 40 percent or more in cold, and never go below about 15. It also reminds you that RTH flies a straight line at a fixed height and can miss wires and thin branches. The emergency card lists numbered steps for situations like a flyaway, so you follow a script instead of panicking."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Should I print drone cheat sheets or keep them on my phone?",
+    "a": "Both. Print and laminate the pre-flight and emergency cards so they survive dew and the bottom of the bag. Save the PDF to your controller phone or tablet so the wind and legal cards are a couple of taps away on site."
+   },
+   {
+    "q": "Does a cheat sheet replace my drone's manual or local rules?",
+    "a": "No. A card is a memory aid. Treat every number as a starting point, since your aircraft's manual and your local rules always win. For legal items like registration, Remote ID, and airspace, verify current rules with the FAA or your national authority before flying."
+   },
+   {
+    "q": "How often should I run the pre-flight checklist?",
+    "a": "Every flight, including flight number five hundred. The pilots who rarely lose aircraft are the ones who run the same routine each time. A short spoken checklist takes about a minute and catches the skipped step that causes most crashes."
+   },
+   {
+    "q": "Do these cards work for any drone brand?",
+    "a": "Mostly, yes. The concepts apply to DJI, Autel, and most consumer camera drones, though menu names differ by brand. Check your own model's wind rating, battery behavior, and return-to-home options, and adjust the card to match your aircraft."
+   }
+  ]
+ },
+ "d11-fpv-flying": {
+  "intro": "FPV, or first-person view, puts a live camera feed in goggles so you see what the drone sees while you fly it by hand. There is no hover-in-place safety net and usually no return-to-home in manual modes. That is exactly why it feels like real flight, and why the way you start matters.\n\nIf you want to learn FPV drone flying as a beginner, this page covers the order that saves props and money: how the gear chain fits together, how the flight modes work as a learning ladder, and why a simulator comes before your first real flight. It assumes you are curious, patient, and willing to crash small before you crash big.",
+  "sections": [
+   {
+    "h": "What gear do you need to start flying FPV?",
+    "body": "Four pieces make it work: a drone with a forward camera, a video link, goggles, and a radio. The radio and goggles outlive individual drones, so spend there first. Before anything else, buy a radio that plugs into your computer as a USB controller, because it runs a simulator with the same sticks you will fly for real.\n\nThe drone classes suit different goals. A tiny whoop is palm-sized with ducted props and is a good first real drone indoors. A cinewhoop carries an action camera for smooth close-up video. A freestyle quad is the fast 5-inch for tricks and dives, and long-range builds are tuned to fly far on a charge. For video you choose analog or digital HD. Analog is cheaper and fades to static as signal weakens, which gives a warning. Digital is crisper but pricier and heavier. Either teaches you to fly. Budget for extra batteries and a proper charger too."
+   },
+   {
+    "h": "What are angle, horizon, and acro modes in FPV?",
+    "body": "These modes decide how much the drone helps you. Angle self-levels and limits tilt, so releasing the sticks brings the drone back to level, like a camera drone. Horizon self-levels at center but lets you push over into flips and rolls. Acro, also called rate or manual, has no leveling at all: the drone holds whatever attitude you last commanded and keeps its momentum.\n\nAcro is the destination, because every smooth dive and clean flip you admire was flown in it. It also has no altitude hold, no position hold, and typically no GPS rescue, so if you let go of the sticks the drone does not hover, it falls. The common path is to learn acro in the simulator where crashes are free, use angle on your first real drone as a safety blanket while you get used to the goggle view, then move to acro as soon as the sim says you are ready."
+   },
+   {
+    "h": "Why practice in an FPV simulator before your first real flight?",
+    "body": "A simulator uses the same radio and stick inputs you fly for real, so the muscle memory transfers almost directly. Every sim crash is free; every real crash costs props, time, and sometimes the aircraft. A common benchmark is ten-plus hours of sim time before the maiden flight, spread over a couple of weeks.\n\nPractice in order. Hold a hover in acro, which teaches the throttle-and-correction dance. Fly figure-eights to build coordinated yaw and roll. Practice a controlled dive and recovery, the base of most cinematic and freestyle moves. Then deliberately get disoriented and learn to find level and throttle up. When you do fly for real, pick an open field with no people, roads, or power lines, bring a spotter because goggles hide the world around the drone, and fly low and close, since a crash from two feet is cheap. Check local rules first."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Is FPV harder than flying a regular camera drone?",
+    "a": "It is different rather than simply harder. A GPS camera drone hovers and holds altitude for you. In manual FPV nothing does, so you fly every second. The learning curve is real but manageable if you start in a simulator and build up in order."
+   },
+   {
+    "q": "Do I need a simulator to learn FPV?",
+    "a": "It is not legally required, but it is the best advice for beginners. Sim crashes cost nothing, and the stick skills transfer to a real drone. Buy a radio that connects to your computer over USB and log your hours in acro before your first real flight."
+   },
+   {
+    "q": "Should I start with analog or digital FPV?",
+    "a": "Either works. Analog is cheaper, lighter, and degrades gracefully into static, giving you a warning as signal fades. Digital HD looks far better and suits footage you keep, but costs more. Pick what your budget allows and check the latency spec."
+   },
+   {
+    "q": "Can I fly FPV without a spotter?",
+    "a": "It is risky and may be against the rules where you live. In goggles you cannot see people, animals, or obstacles around the drone. A spotter watches the aircraft and surroundings. In the US, verify current FAA requirements for your type of flying before you go."
+   }
+  ]
+ },
+ "d12-drone-business": {
+  "intro": "Flying a drone for money is a real side income, but it is a small business, not a lottery ticket. The pilots who get paid do three unglamorous things first: they get legal, they pick one service, and they build a small book of repeat clients. Your drone is rarely the limiting factor.\n\nThis page is an educational overview of how to start a drone business as a side income, written around US/FAA rules. It is not legal or business advice. Rules, thresholds, and fees change, so verify current requirements with the FAA, or your own national aviation authority, before you accept paid work. Here are the parts that decide whether jobs actually come in.",
+  "sections": [
+   {
+    "h": "What do you need to legally make money with a drone in the US?",
+    "body": "In the United States, flying for compensation or business purposes generally falls under FAA Part 107 and the Remote Pilot Certificate, not the free recreational TRUST test. You earn it by passing a multiple-choice aeronautical knowledge exam at an approved testing center, with no flight test for the initial certificate. Figures such as the age requirement, question count, pass mark, fee, and 24-month recurrency change, so confirm them on the official FAA site.\n\nPart 107 operations typically involve daylight or civil twilight with proper lighting, staying below 400 feet, keeping the aircraft in visual line of sight, avoiding people not involved in the operation, and getting authorization to fly in controlled airspace, often through LAANC. Some limits can be waived. You also need aircraft registration, a Remote ID-compliant aircraft, and an airspace check before every flight. Most clients will ask for liability insurance as well, commonly around $1M, and on-demand policies let you buy coverage per job. Never claim credentials you do not hold."
+   },
+   {
+    "h": "What drone services actually sell and how should you price them?",
+    "body": "Don't offer aerial photography to everyone. Lead with one service. Real estate is the usual first steady income: agents need aerial stills and short clips and become repeat clients. Roof and structure inspection pays for speed and safety, though you document condition rather than certify it unless you are qualified. Construction progress is valuable because it recurs, one signed project can mean a monthly shoot for a year. Events and social content round things out.\n\nOn pricing, choose a structure: a day or half-day rate, a fixed per-project package, a monthly retainer, or usage licensing for ads and broadcast. Illustrative ranges only, which vary widely by market: real estate packages around $150 to $400, inspections $150 to $500 or more, event coverage $500 to $2,000 or more. Quote the finished result, not the fifteen minutes of airtime, because you are pricing travel, planning, insurance, editing, and revisions. Offering three tiers, good, better, best, keeps you from negotiating against yourself."
+   },
+   {
+    "h": "How do you find your first drone clients?",
+    "body": "You don't need a marketing budget. You need a small portfolio and the nerve to message people. Spend your first weeks legally shooting three anchor pieces: a property, a business, and a landscape or landmark, with the owner's permission. Edit them to a professional finish, because a few fully graded pieces beat fifty raw clips. Put them on a simple one-page site or clean profile.\n\nThen do outreach in one niche. Message local real estate agents, roofers, builders, restaurants, gyms, or wedding photographers who need aerials they cannot shoot. A first-week drill: shoot one great sample, then contact ten local prospects with a short personal note and the link. Repeat weekly. Referrals become your cheapest clients, and they come from being the reliable, insured, easy-to-work-with pilot. Carry spare batteries, cards, and props, and buy ND filters before expensive gear. The edit often decides whether a job pays $150 or $500."
+   }
+  ],
+  "faq": [
+   {
+    "q": "Do I need a license to make money with my drone?",
+    "a": "In the US, paid or business drone flying generally requires an FAA Part 107 Remote Pilot Certificate, not just the recreational TRUST test. Rules differ by country and change over time, so verify current requirements with the FAA or your national aviation authority before taking paid work."
+   },
+   {
+    "q": "How much can a part-time drone pilot earn?",
+    "a": "It varies widely by market, niche, and effort. Most part-time operators add a few hundred to a few thousand dollars a month alongside another job rather than replacing a salary. Treat any pricing numbers as illustrative, not guaranteed, and expect early months to be mostly unpaid setup."
+   },
+   {
+    "q": "Do I need drone insurance for commercial work?",
+    "a": "Often clients expect it, and a mistake can cost more than a year of profit. Liability covers damage or injury to others, hull covers your own aircraft. On-demand policies can cover individual jobs. Confirm requirements and coverage details with an insurance provider."
+   },
+   {
+    "q": "What drone service should I start with?",
+    "a": "Many part-time pilots begin with real estate because demand is steady and agents rebook, then add inspection, construction progress, or social content. Pick one niche, get excellent at it, and expand to adjacent services for clients who already trust you."
+   }
+  ]
+ },
+ "d13-drone-mapping": {
+  "intro": "Drone mapping turns a stack of overlapping photos into a measurable, geo-located map you can take distances, areas, and volumes from. The pretty aerial picture is a byproduct. The accurate data is the product, and it is what construction, agriculture, and land clients pay for.\n\nThat makes mapping a different discipline from cinematic flying, one that rewards planning over instinct. This page covers how photogrammetry works in plain terms, how ground sample distance and overlap drive your flight plan, and what ground control and RTK/PPK do for accuracy. Commercial mapping is regulated work, so verify certification, registration, and airspace rules with the FAA or your national authority before any paid job.",
+  "sections": [
+   {
+    "h": "How does drone photogrammetry turn photos into a map?",
+    "body": "The key idea is parallax: the same point on the ground looks shifted when seen from two camera positions. The software detects thousands of distinctive features in each image, matches them across overlapping photos, and solves for where each photo was taken and where each point sits in 3D. This structure-from-motion step produces a sparse point cloud, then densification computes millions of points, which become a mesh with the photos draped on as texture and flattened into a top-down orthomosaic.\n\nIt also explains why mapping flights look redundant. A point seen in only two photos is weakly triangulated; one seen in nine is locked down. It also shows where it fails: calm water, fresh snow, plain sand, glass, wet roads, moving traffic, swaying canopy, and changing light from racing clouds. Skimp on coverage and the software fills gaps with confident guesses, so a map is only as honest as the overlap behind it."
+   },
+   {
+    "h": "What GSD and overlap settings should you use for mapping?",
+    "body": "Ground sample distance is the real-world size of one pixel. A 2 cm/px GSD means each pixel covers a 2 by 2 cm square. Altitude sets it: for a typical mapping camera, roughly 40 m gives about 1.1 cm/px, 80 m about 2.2, and 120 m about 3.3. Your flight app calculates the exact number for your sensor. Work backward from the deliverable: if a client must see small cracks, fly low; for topography over hundreds of acres, a coarser GSD covers more per battery.\n\nFor overlap, a standard baseline is 75 percent frontlap and 65 percent sidelap on flat, textured ground. Push to about 80 and 70 for vegetation, 80 to 85 and 70 to 75 for low-texture surfaces, and 85 percent or more for dense urban areas or 3D building models. Overlap is cheap; a failed reconstruction costs a return trip. Use nadir photos for orthomosaics and elevation models, and add 45-degree obliques or a double grid for building facades."
+   },
+   {
+    "h": "Do you need ground control points or RTK for accurate drone maps?",
+    "body": "It depends on which accuracy the client needs. Relative accuracy is how correct measurements are within the model, and good overlap can deliver it. Absolute accuracy is how correctly the whole model sits on Earth, and a drone's bare GPS can be meters off. For survey deliverables you need ground control points, RTK, or PPK.\n\nGCPs are marked targets whose coordinates you measure with a survey-grade GNSS receiver. A practical minimum is around five, near the corners and center, spread across the elevation range. RTK streams corrections live; PPK logs raw data and corrects it afterward, which is more robust at remote sites. Either can reduce the number of GCPs you need. Even then, hold back a few measured checkpoints that are not used in processing, then compare the model to the surveyed truth. GCPs anchor the model; checkpoints prove it. That comparison is the accuracy statement you can put in a report."
+   }
+  ],
+  "faq": [
+   {
+    "q": "What is an orthomosaic?",
+    "a": "An orthomosaic is a top-down map stitched from many overlapping drone photos and corrected for perspective, so distances and areas can be measured on it. It is built from mostly nadir images and is a core deliverable alongside elevation models and 3D meshes."
+   },
+   {
+    "q": "How much overlap do I need for drone mapping?",
+    "a": "A common baseline is 75 percent frontlap and 65 percent sidelap for flat, textured ground. Raise it to about 80 and 70 for vegetation, and to 85 percent or more for dense urban areas or 3D models. More overlap costs little battery and improves reliability."
+   },
+   {
+    "q": "What kind of computer do I need to process drone maps?",
+    "a": "Photogrammetry is demanding. For local processing, a modern multi-core CPU, a strong dedicated GPU, and about 32 GB of RAM, or 64 GB for large jobs, is a practical floor. Cloud processing avoids a workstation but adds ongoing cost and large uploads."
+   },
+   {
+    "q": "Do I need a license to do paid drone mapping?",
+    "a": "Paid drone work is regulated. In the US it generally requires an FAA Part 107 certificate, aircraft registration, and airspace authorization where needed, and clients often expect insurance. This is not legal advice, so verify current rules with the FAA or your national authority."
+   }
+  ]
+ }
+}
