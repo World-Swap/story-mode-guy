@@ -8,7 +8,7 @@ OUT = ROOT / "promo/pinterest/pins"; OUT.mkdir(parents=True, exist_ok=True)
 W, H = 1000, 1500
 FSER = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
 FSANS = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-LINK = "https://storymodeguy.com/#prints"
+LINK = "https://storymodeguy.com/#shop"
 
 tiles = re.findall(r'data-full="(photo-\d+\.jpg)"[^>]*data-cap="([^"]+)"', (ROOT/"gallery.html").read_text())
 

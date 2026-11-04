@@ -56,7 +56,7 @@ article strong{color:var(--ink)}
 NAV = """<div class="nav">
   <a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a>
   <span class="sp"></span>
-  <a class="lnk" href="/#prints">Prints</a><a class="lnk" href="/#guides">Guides</a><a class="lnk" href="/gallery.html">Gallery</a>
+  <a class="lnk" href="/#shop">Shop</a><a class="lnk" href="/learn/">Guides</a><a class="lnk" href="/gallery.html">Gallery</a>
 </div>"""
 
 FOOT = """<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> ·

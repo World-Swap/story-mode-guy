@@ -107,7 +107,7 @@ ul.inside li::before{content:"";position:absolute;left:2px;top:12px;width:14px;h
 """
 
 NAV = """<div class="nav"><a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a>
-<span class="sp"></span><a class="lnk" href="/#guides">Guides</a><a class="lnk" href="/learn/">Learn</a><a class="lnk" href="/blog/">Journal</a></div>"""
+<span class="sp"></span><a class="lnk" href="/#shop">Shop</a><a class="lnk" href="/learn/">Learn</a><a class="lnk" href="/blog/">Journal</a></div>"""
 FOOT = """<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> · <a href="/learn/">All guides</a> · <a href="/blog/">Journal</a></div>"""
 
 def buy_for(g):
