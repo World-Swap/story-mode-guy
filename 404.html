@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Story Mode Guy</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://storymodeguy.com/404.html">
+<link rel="icon" type="image/png" href="/smg-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parchment:#fefffc; --graphite:#2c2c2c; --charcoal:#444141; --ash:#646464;
+  --mist:#dee2de; --signal-blue:#41a1cf;
+  --serif:'Fraunces', Georgia, serif; --sans:'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  background:var(--parchment); color:var(--charcoal);
+  font-family:var(--sans); padding:24px; text-align:center;
+}
+.wrap{ max-width:560px; }
+.logo{ width:72px; height:72px; border-radius:50%; object-fit:cover; margin-bottom:28px; box-shadow:rgba(0,0,0,.12) 0 4px 14px; }
+.code{ font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--signal-blue); }
+h1{ font-family:var(--serif); font-weight:500; font-size:clamp(32px,7vw,48px); color:var(--graphite); margin:12px 0 16px; line-height:1.1; }
+p{ font-size:17px; line-height:1.6; color:var(--ash); margin-bottom:32px; }
+.actions{ display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+.btn{ display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:8px; font-weight:600; font-size:15px; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease; }
+.btn-primary{ background:var(--signal-blue); color:#fff; }
+.btn-secondary{ background:transparent; color:var(--graphite); border:1px solid var(--mist); }
+.btn:hover{ transform:translateY(-2px); box-shadow:rgba(0,0,0,.1) 0 6px 16px; }
+.links{ margin-top:28px; font-size:14px; color:var(--ash); }
+.links a{ color:var(--charcoal); text-decoration:none; border-bottom:1px solid var(--mist); }
+.links a:hover{ color:var(--signal-blue); border-color:var(--signal-blue); }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <img class="logo" src="/smg-logo.png" alt="Story Mode Guy">
+    <p class="code">404 · Page not found</p>
+    <h1>This frame got away.</h1>
+    <p>The page you were after doesn't exist (or moved). The good stuff is still here — the full photo gallery, the shop, and the latest captures.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/">Back home →</a>
+      <a class="btn btn-secondary" href="/gallery.html">The gallery</a>
+      <a class="btn btn-secondary" href="/#shop">The shop</a>
+    </div>
+    <p class="links">Or grab the <a href="https://payhip.com/b/aUu78" target="_blank" rel="noopener">free Field Cheat Sheet</a> while you're here.</p>
+  </main>
+</body>
+</html>
