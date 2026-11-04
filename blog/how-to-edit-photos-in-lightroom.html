@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Edit Photos in Lightroom: A Simple Order of Operations — Story Mode Guy</title>
+<meta name="description" content="Editing gets easy when you stop shoving sliders around and follow a repeatable order. Here&#x27;s the sequence I use to take a flat RAW file to a finished photo.">
+<meta name="keywords" content="how to edit photos in lightroom, lightroom editing, lightroom workflow, photo editing steps, lightroom for beginners">
+<link rel="canonical" href="https://storymodeguy.com/blog/how-to-edit-photos-in-lightroom.html">
+<link rel="icon" type="image/png" href="/smg-logo.png">
+<link rel="alternate" type="application/rss+xml" title="Story Mode Guy — Journal" href="/blog/feed.xml">
+<meta property="og:type" content="article"><meta property="og:title" content="How to Edit Photos in Lightroom: A Simple Order of Operations">
+<meta property="og:description" content="Editing gets easy when you stop shoving sliders around and follow a repeatable order. Here&#x27;s the sequence I use to take a flat RAW file to a finished photo.">
+<meta property="og:url" content="https://storymodeguy.com/blog/how-to-edit-photos-in-lightroom.html">
+<meta property="og:image" content="https://storymodeguy.com/photo-12.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff;--parch:#fefffc;--linen:#f9faf7;--ink:#1b1b20;--char:#3a3a40;--ash:#6a6a72;
+--fog:#b4b8b4;--mist:#e3e6ea;--blue:#41a1cf;--serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--char);background:var(--parch);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:14px;justify-content:center;
+background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--mist);padding:12px 16px}
+.nav .brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-size:17px;color:var(--ink)}
+.nav .brand img{width:30px;height:30px;border-radius:50%}
+.nav .sp{flex:1}
+.nav .lnk{font-size:14px;font-weight:500;color:var(--char)}
+.wrap{max-width:720px;margin:0 auto;padding:44px 22px 30px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px}
+.meta{font-size:14px;color:var(--ash);margin-bottom:26px}
+.hero{width:100%;border-radius:14px;border:1px solid var(--mist);margin:8px 0 30px;aspect-ratio:16/9;object-fit:cover}
+article h2{font-family:var(--serif);font-weight:600;font-size:27px;color:var(--ink);margin:34px 0 10px}
+article h3{font-size:19px;font-weight:600;color:var(--ink);margin:24px 0 6px}
+article p{margin:0 0 16px}
+article ul,article ol{margin:0 0 18px;padding-left:22px}article li{margin:6px 0}
+article strong{color:var(--ink)}
+.cta{background:linear-gradient(135deg,var(--blue),#0081c0);color:#fff;border-radius:14px;padding:22px 24px;margin:30px 0;text-align:center}
+.cta h3{color:#fff;font-family:var(--serif);font-weight:600;font-size:23px;margin-bottom:6px}
+.cta p{color:rgba(255,255,255,.92);margin-bottom:14px;font-size:15px}
+.cta a.btn{display:inline-block;background:#fff;color:#0b5675;font-weight:600;padding:11px 22px;border-radius:40px;font-size:15px}
+.cta a.btn:hover{text-decoration:none;filter:brightness(.97)}
+.related{border-top:1px solid var(--mist);margin-top:36px;padding-top:22px}
+.related h4{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:10px}
+.related a{display:block;padding:5px 0}
+.foot{border-top:1px solid var(--mist);margin-top:30px;padding:26px 22px;text-align:center;font-size:13px;color:var(--fog);max-width:720px;margin-left:auto;margin-right:auto}
+.foot a{color:var(--ash)}
+/* index */
+.cards{display:grid;gap:18px;margin-top:8px}
+.pcard{display:block;border:1px solid var(--mist);border-radius:14px;overflow:hidden;background:#fff;transition:transform .15s}
+.pcard:hover{transform:translateY(-2px);text-decoration:none}
+.pcard img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.pcard .b{padding:16px 18px}
+.pcard h2{font-family:var(--serif);font-size:22px;color:var(--ink);margin:0 0 6px}
+.pcard p{color:var(--ash);font-size:15px;margin:0}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Edit Photos in Lightroom: A Simple Order of Operations", "description": "Editing gets easy when you stop shoving sliders around and follow a repeatable order. Here's the sequence I use to take a flat RAW file to a finished photo.", "image": "https://storymodeguy.com/photo-12.jpg", "datePublished": "2026-10-10", "dateModified": "2026-10-10", "author": {"@type": "Organization", "name": "Story Mode Guy", "@id": "https://storymodeguy.com/#org"}, "publisher": {"@id": "https://storymodeguy.com/#org"}, "mainEntityOfPage": "https://storymodeguy.com/blog/how-to-edit-photos-in-lightroom.html"}</script>
+</head><body>
+<div class="nav">
+  <a class="brand" href="/"><img src="/smg-logo.png" alt="Story Mode Guy">Story Mode Guy</a>
+  <span class="sp"></span>
+  <a class="lnk" href="/#shop">Shop</a><a class="lnk" href="/learn/">Guides</a><a class="lnk" href="/gallery.html">Gallery</a>
+</div>
+<main class="wrap">
+<div class="eyebrow">Journal</div>
+<h1>How to Edit Photos in Lightroom: A Simple Order of Operations</h1>
+<div class="meta">Story Mode Guy · October 10, 2026</div>
+<img class="hero" src="/photo-12.jpg" alt="A richly edited golden-hour coastal photograph">
+<article><p>Most bad Lightroom edits aren't caused by a wrong slider value. They're caused by doing the right moves in the wrong order. You boost saturation, then fix the color cast, and now you're fighting your own edit. You sharpen, then lift the shadows, and you've amplified the noise you just sharpened.</p>
+
+<p>The fix is boring and it works: edit every photo in the same order. Here's the sequence I use, why each step sits where it does, and what to watch for at each one.</p>
+
+<h2>Why your RAW looks flat to begin with</h2>
+<p>If you shoot RAW, the file on your computer looks duller than the preview on the back of your camera. That's not a problem with the file. The camera's screen shows a JPEG it processed with contrast and color baked in. The RAW is the unprocessed data, and your job in Lightroom is to spend that latitude on purpose.</p>
+<p>Everything below works in Lightroom Classic, the cloud version of Lightroom, and Lightroom Mobile. The sliders have the same names in all of them.</p>
+
+<h2>The order, step by step</h2>
+
+<h3>1. Crop and straighten first</h3>
+<p>Fix the composition before you grade. There's no point balancing tones in edges you're about to throw away, and a crooked horizon will make every other decision feel off.</p>
+
+<h3>2. White balance</h3>
+<p>Set your neutral reference before anything else, because a color cast bends every judgment you make afterward about brightness and saturation. Two sliders do the work: Temp (blue to yellow) and Tint (green to magenta). Click the white balance eyedropper on something that should be neutral, like a gray wall or a white shirt, then adjust by eye. Warm it slightly for golden-hour mood, cool it for clean and crisp. On portraits, a hair warm usually reads healthier than cool.</p>
+
+<h3>3. Exposure and tone</h3>
+<p>This is the foundation. Set overall brightness with Exposure, overall punch with Contrast, then sculpt with Highlights, Shadows, Whites, and Blacks.</p>
+<ul>
+  <li><strong>Highlights:</strong> pull down to recover a bright sky.</li>
+  <li><strong>Shadows:</strong> lift to open up a face in shade.</li>
+  <li><strong>Whites:</strong> push up to just before clipping for sparkle.</li>
+  <li><strong>Blacks:</strong> pull down slightly to anchor the deep tones.</li>
+</ul>
+<p>Watch the histogram while you do it. Data piled against the right wall is blown highlights, and against the left wall is crushed shadows. A healthy edit usually spreads across the width without stacking up on either edge, unless you want a deliberately dark or bright look.</p>
+
+<div class="cta">
+  <h3>Same edit, every time</h3>
+  <p>The Lightroom Blueprint lays out the full repeatable workflow: the order of operations, starting values for each step, HSL and masking moves, presets, batch editing, and export settings.</p>
+  <a class="btn" href="https://payhip.com/b/1gXQa">Get the Lightroom Blueprint ($37) →</a>
+</div>
+
+<h3>4. Presence</h3>
+<p>Texture, Clarity, and Dehaze add midtone punch and cut haze. They come after tone because they change contrast themselves. If you reach for Clarity first, you end up compensating with tone sliders afterward.</p>
+<p>This is also where "muddy" edits are born. Muddy usually means crushed midtones, from lifting Shadows and Blacks hard while also cranking Clarity. Set tone first, keep presence modest, and the mud mostly clears up by itself.</p>
+
+<h3>5. Color: Vibrance, then HSL</h3>
+<p>Saturation boosts every color equally, which blows out colors that are already strong and can push skin toward orange. Vibrance lifts the muted colors more and goes easier on skin. For most photos I reach for Vibrance and leave Saturation nearly alone. If you're pushing Saturation hard, the real problem is usually white balance or one specific color.</p>
+<p>For that one color, use the HSL panel (called Color Mixer in the cloud app). Each color has Hue, Saturation, and Luminance.</p>
+<ul>
+  <li><strong>Deeper blue sky:</strong> lower blue Luminance and raise blue Saturation a little. Nudge Aqua too, since skies often sit between the two.</li>
+  <li><strong>Skin:</strong> lives mostly in the Orange and Red channels, so you can correct it without touching the rest of the frame. Too orange, ease Orange Saturation down. Dull, raise Orange Luminance a few points.</li>
+</ul>
+<p>The little targeted-adjustment tool in that panel lets you click and drag directly on the color in the photo. It's the fastest way to fix one stubborn color.</p>
+
+<h3>6. Detail: sharpening and noise reduction</h3>
+<p>These are finishing moves. Judge them at 100% zoom, because at fit-to-screen you can't see what you're doing. Hold Alt (Option on Mac) while dragging the sharpening Masking slider and the photo goes black and white: white areas get sharpened, black areas are protected. On portraits, drag until only edges like eyes and lashes are white and the skin goes black.</p>
+<p>For noise, Luminance noise reduction smooths grit but turns skin plastic if you overdo it. Color noise reduction removes colored speckles with little downside. Lightroom's AI Denoise does better than the manual sliders on very noisy high-ISO files, so save it for the worst ones.</p>
+<p>Be honest about the limits here. Sharpening adds edge contrast. It can't rescue a shot that missed focus or was smeared by motion.</p>
+
+<h3>7. Local adjustments</h3>
+<p>Now you edit parts of the photo instead of the whole thing. Open the Masking panel and start with Select Subject or Select Sky, which handle most jobs in a click. Then use brushes and gradients for the rest.</p>
+<ul>
+  <li>Darken a sky from the top with a linear gradient or Select Sky.</li>
+  <li>Brighten eyes with a small brush and a touch of Exposure.</li>
+  <li>Dodge and burn: brighten what should advance, darken what should recede.</li>
+  <li>Drop a radial gradient over your subject and pull the surroundings down slightly.</li>
+</ul>
+<p>Keep the feather high so edges blend. If a mask is obvious, it's too strong or too hard-edged. After Select Sky, check building edges and hair, where it tends to bleed, and use Subtract to clean it up. Local work assumes the global edit is already right, which is why it goes near the end.</p>
+
+<h3>8. Export for the destination</h3>
+<p>A great edit exported wrong looks dull on someone else's screen. For web and social, export JPEG in sRGB with the long edge around 2048px and sharpening set for Screen. Exporting for the web in a wider color space like Adobe RGB is a classic mistake: browsers assume sRGB, so the photo comes out flat and you blame the edit. For print, export at full size and 300 ppi, with paper-appropriate sharpening, and ask your lab which color space they want.</p>
+
+<h2>Turn the order into a speed advantage</h2>
+<p>Once the sequence is automatic, you can batch. Edit one frame fully, save a preset built around the look (tone, presence, color, curve), and sync it to the rest of the shoot. Leave exposure and white balance out of the preset, because every frame differs. Then walk through and nudge those two on each photo. A hundred-frame shoot goes from a slog to an evening.</p>
+<p>To see where this ends up in practice, browse <a href="/gallery.html">the gallery</a>. Everything in there went through the same order of operations.</p>
+
+<h2>A drill for this week</h2>
+<p>Take one flat RAW and edit it strictly in order: crop, white balance, tone, presence, color, detail, local, export. Say each step out loud as you do it. Then do a second photo the same way, then a third. By then the order stops being something you remember and becomes how you edit.</p>
+<p>If you want the full version with starting values, curve work, masking walkthroughs, and export presets, that's what <a href="/learn/02-lightroom-blueprint.html">the Lightroom Blueprint</a> is for.</p>
+</article>
+<div class="related"><h4>More from the journal</h4><a href="/blog/how-to-photograph-the-milky-way.html">How to Photograph the Milky Way With the Camera You Already Own</a><a href="/blog/what-is-blue-hour-photography.html">Blue Hour: The Best 20 Minutes of Light Most People Miss</a><a href="/blog/how-to-make-videos-look-cinematic.html">How to Make Your Videos Look Cinematic (It&#x27;s Mostly 3 Settings)</a></div>
+</main>
+<div class="foot">© 2026 Story Mode Guy · <a href="/">storymodeguy.com</a> ·
+<a href="/blog/">Journal</a> · <a href="/privacy.html">Privacy</a></div>
+</body></html>

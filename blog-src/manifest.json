@@ -1,34 +1,94 @@
 {
-  "articles": [
-    {
-      "slug": "best-sunset-spots-santa-cruz",
-      "title": "The Best Sunset Spots in Santa Cruz (From Someone Who Shoots Them)",
-      "description": "Seven of the best places to watch and photograph the sunset in Santa Cruz, California — plus the timing, parking, and light notes I've learned shooting them for years.",
-      "keywords": "santa cruz sunset, best sunset spots santa cruz, where to watch sunset santa cruz, west cliff drive sunset, natural bridges sunset, santa cruz photography",
-      "hero": "photo-01.jpg",
-      "hero_alt": "Sunset over the Santa Cruz coastline",
-      "date": "2026-08-01",
-      "date_h": "August 1, 2026"
-    },
-    {
-      "slug": "why-are-my-photos-blurry",
-      "title": "Why Are My Photos Blurry? The 3 Real Causes (and the Fix for Each)",
-      "description": "Almost every blurry photo comes down to one of three causes: camera shake, subject motion, or missed focus. Here's how to tell them apart and fix each one for good.",
-      "keywords": "why are my photos blurry, blurry photos, how to fix blurry photos, sharp photos, camera shake, focus problems, shutter speed for sharp photos",
-      "hero": "photo-08.jpg",
-      "hero_alt": "A sharp, crisp coastal photograph at golden hour",
-      "date": "2026-08-01",
-      "date_h": "August 1, 2026"
-    },
-    {
-      "slug": "camera-settings-for-golden-hour",
-      "title": "The Best Camera Settings for Golden Hour (a Simple Starting Point)",
-      "description": "A no-nonsense starting point for golden hour: the aperture, shutter speed, ISO, white balance, and metering choices that get you a keeper, plus how to adjust as the light drops.",
-      "keywords": "golden hour camera settings, best settings for sunset photos, aperture for golden hour, iso for sunset, white balance golden hour, manual mode sunset",
-      "hero": "photo-20.jpg",
-      "hero_alt": "Warm golden-hour light over the Santa Cruz coast",
-      "date": "2026-08-01",
-      "date_h": "August 1, 2026"
-    }
-  ]
+ "articles": [
+  {
+   "slug": "how-to-photograph-the-milky-way",
+   "title": "How to Photograph the Milky Way With the Camera You Already Own",
+   "description": "You don't need a telescope to shoot the Milky Way — just a dark sky, a tripod, and the right settings. Here's the beginner-friendly starting point.",
+   "keywords": "how to photograph the milky way, astrophotography for beginners, milky way camera settings, night sky photography, star photography",
+   "hero": "photo-40.jpg",
+   "hero_alt": "A dark, star-filled night sky over the coast",
+   "date": "2026-11-03",
+   "date_h": "November 3, 2026"
+  },
+  {
+   "slug": "what-is-blue-hour-photography",
+   "title": "Blue Hour: The Best 20 Minutes of Light Most People Miss",
+   "description": "The window just after sunset — blue hour — gives you deep skies, glowing lights, and glassy reflections. Here's how to catch it and shoot it.",
+   "keywords": "blue hour photography, what is blue hour, blue hour settings, twilight photography, dusk photography tips",
+   "hero": "photo-53.jpg",
+   "hero_alt": "Deep blue sky over lit boardwalk at dusk",
+   "date": "2026-10-24",
+   "date_h": "October 24, 2026"
+  },
+  {
+   "slug": "how-to-edit-photos-in-lightroom",
+   "title": "How to Edit Photos in Lightroom: A Simple Order of Operations",
+   "description": "Editing gets easy when you stop shoving sliders around and follow a repeatable order. Here's the sequence I use to take a flat RAW file to a finished photo.",
+   "keywords": "how to edit photos in lightroom, lightroom editing, lightroom workflow, photo editing steps, lightroom for beginners",
+   "hero": "photo-12.jpg",
+   "hero_alt": "A richly edited golden-hour coastal photograph",
+   "date": "2026-10-10",
+   "date_h": "October 10, 2026"
+  },
+  {
+   "slug": "how-to-make-videos-look-cinematic",
+   "title": "How to Make Your Videos Look Cinematic (It's Mostly 3 Settings)",
+   "description": "The difference between home-video footage and cinematic footage isn't the camera — it's frame rate, shutter, and a flat picture profile. Here's the simple starting point.",
+   "keywords": "how to make videos look cinematic, cinematic camera settings, cinematic video, 180 degree shutter rule, filmic look",
+   "hero": "photo-05.jpg",
+   "hero_alt": "A cinematic, moody Santa Cruz coastal scene",
+   "date": "2026-09-26",
+   "date_h": "September 26, 2026"
+  },
+  {
+   "slug": "real-estate-photography-tips",
+   "title": "Real Estate Photography Tips for Bright, Sellable Interiors",
+   "description": "Dark, crooked interior photos kill listings. Here's how to shoot bright, straight, sellable rooms — and turn it into a paid side income.",
+   "keywords": "real estate photography, how to photograph interiors, airbnb photography, real estate photo tips, interior photography settings",
+   "hero": "photo-22.jpg",
+   "hero_alt": "Bright, airy coastal scene",
+   "date": "2026-09-12",
+   "date_h": "September 12, 2026"
+  },
+  {
+   "slug": "do-i-need-a-license-to-fly-a-drone",
+   "title": "Do I Need a License to Fly a Drone? (US Rules, Explained Simply)",
+   "description": "Registration, the recreational test, and Part 107 for paid work - the US drone rules in plain English. Always verify current rules with the FAA before flying.",
+   "keywords": "do i need a license to fly a drone, drone registration, part 107, drone laws, faa drone rules",
+   "hero": "photo-22.jpg",
+   "hero_alt": "A wide coastal landscape",
+   "date": "2026-09-05",
+   "date_h": "September 5, 2026"
+  },
+  {
+   "slug": "best-sunset-spots-santa-cruz",
+   "title": "The Best Sunset Spots in Santa Cruz (From Someone Who Shoots Them)",
+   "description": "Seven of the best places to watch and photograph the sunset in Santa Cruz, California — plus the timing, parking, and light notes I've learned shooting them for years.",
+   "keywords": "santa cruz sunset, best sunset spots santa cruz, where to watch sunset santa cruz, west cliff drive sunset, natural bridges sunset, santa cruz photography",
+   "hero": "photo-01.jpg",
+   "hero_alt": "Sunset over the Santa Cruz coastline",
+   "date": "2026-08-01",
+   "date_h": "August 1, 2026"
+  },
+  {
+   "slug": "why-are-my-photos-blurry",
+   "title": "Why Are My Photos Blurry? The 3 Real Causes (and the Fix for Each)",
+   "description": "Almost every blurry photo comes down to one of three causes: camera shake, subject motion, or missed focus. Here's how to tell them apart and fix each one for good.",
+   "keywords": "why are my photos blurry, blurry photos, how to fix blurry photos, sharp photos, camera shake, focus problems, shutter speed for sharp photos",
+   "hero": "photo-08.jpg",
+   "hero_alt": "A sharp, crisp coastal photograph at golden hour",
+   "date": "2026-08-01",
+   "date_h": "August 1, 2026"
+  },
+  {
+   "slug": "camera-settings-for-golden-hour",
+   "title": "The Best Camera Settings for Golden Hour (a Simple Starting Point)",
+   "description": "A no-nonsense starting point for golden hour: the aperture, shutter speed, ISO, white balance, and metering choices that get you a keeper, plus how to adjust as the light drops.",
+   "keywords": "golden hour camera settings, best settings for sunset photos, aperture for golden hour, iso for sunset, white balance golden hour, manual mode sunset",
+   "hero": "photo-20.jpg",
+   "hero_alt": "Warm golden-hour light over the Santa Cruz coast",
+   "date": "2026-08-01",
+   "date_h": "August 1, 2026"
+  }
+ ]
 }
