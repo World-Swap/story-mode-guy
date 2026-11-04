@@ -165,6 +165,13 @@ feed = f"""<?xml version="1.0" encoding="UTF-8"?>
 (OUT / "feed.xml").write_text(feed)
 print("  wrote blog/feed.xml")
 
+# compact JSON for the homepage "Journal" section (newest first). The homepage
+# reads this at load so the featured posts stay current without editing index.html.
+posts = [{"slug": a["slug"], "title": a["title"], "description": a["description"],
+          "hero": a["hero"], "date_h": a.get("date_h", "")} for a in arts]
+(OUT / "posts.json").write_text(json.dumps(posts, ensure_ascii=False))
+print("  wrote blog/posts.json")
+
 # sitemap injection
 sm = ROOT / "sitemap.xml"
 if sm.exists():
