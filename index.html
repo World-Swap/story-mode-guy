@@ -462,6 +462,19 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 .shopcard.feature{ background:linear-gradient(135deg,#f3f8fb,#eef4f8); border-color:#bfdcea; }
 @media (max-width:720px){ .shop-cats{ grid-template-columns:1fr; } }
 
+/* ---- Journal cards ---- */
+.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.jcard{display:block;border:1px solid var(--mist);border-radius:var(--r-card);overflow:hidden;background:var(--paper);box-shadow:var(--sh-card);transition:transform .18s ease, box-shadow .18s ease}
+.jcard:hover{transform:translateY(-3px);box-shadow:rgba(0,0,0,0.1) 0px 10px 24px;text-decoration:none}
+.jcover{aspect-ratio:16/9;overflow:hidden;background:var(--linen)}
+.jcover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.jcard:hover .jcover img{transform:scale(1.04)}
+.jbody{padding:15px 18px 18px}
+.jbody h3{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.22;color:var(--graphite);margin-bottom:7px}
+.jbody p{font-family:var(--sans);font-size:14px;color:var(--ash);line-height:1.5}
+@media (max-width:860px){.journal-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.journal-grid{grid-template-columns:1fr}}
+
 .feed{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:16px; }
 .social{
   position:relative;
@@ -719,11 +732,39 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
   </div>
 </section>
 
-<!-- ========================= CH.03 THE FEED ========================= -->
+<!-- ========================= CH.03 THE JOURNAL ========================= -->
+<section class="chapter alt" id="journal">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Chapter 03 — The Journal</p>
+      <h2>From the journal</h2>
+      <p>Stories, how-tos, and field notes — photography, video, and drone work from the Santa Cruz coast. New posts going up regularly.</p>
+    </div>
+    <div class="journal-grid" id="journalGrid">
+      <a class="jcard" href="/blog/how-to-photograph-the-milky-way.html">
+        <div class="jcover"><img src="/photo-40.jpg" alt="How to Photograph the Milky Way With the Camera You Already Own" loading="lazy"></div>
+        <div class="jbody"><h3>How to Photograph the Milky Way With the Camera You Already Own</h3><p>You don't need a telescope to shoot the Milky Way — just a dark sky, a tripod, and the right settings.</p></div>
+      </a>
+      <a class="jcard" href="/blog/what-is-blue-hour-photography.html">
+        <div class="jcover"><img src="/photo-53.jpg" alt="Blue Hour: The Best 20 Minutes of Light Most People Miss" loading="lazy"></div>
+        <div class="jbody"><h3>Blue Hour: The Best 20 Minutes of Light Most People Miss</h3><p>The window just after sunset gives you deep skies, glowing lights, and glassy reflections — here's how to catch it.</p></div>
+      </a>
+      <a class="jcard" href="/blog/how-to-edit-photos-in-lightroom.html">
+        <div class="jcover"><img src="/photo-12.jpg" alt="How to Edit Photos in Lightroom: A Simple Order of Operations" loading="lazy"></div>
+        <div class="jbody"><h3>How to Edit Photos in Lightroom: A Simple Order of Operations</h3><p>Editing gets easy when you stop shoving sliders around and follow a repeatable order.</p></div>
+      </a>
+    </div>
+    <div class="gallery-foot">
+      <a class="btn btn-primary" href="/blog/">Read the journal <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CH.04 THE FEED ========================= -->
 <section class="chapter" id="feed">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Chapter 03 — The Feed</p>
+      <p class="eyebrow">Chapter 04 — The Feed</p>
       <h2>Where the story continues</h2>
       <p>New scenes daily. Follow along for the video side of the work across every platform.</p>
     </div>
@@ -977,6 +1018,21 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
 t.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});
 n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');t.setAttribute('aria-expanded','false');});});
 document.addEventListener('click',function(e){if(!n.contains(e.target)){n.classList.remove('open');t.setAttribute('aria-expanded','false');}});
+})();
+</script>
+<script>
+(function(){
+  var grid=document.getElementById('journalGrid');
+  if(!grid||!window.fetch) return;
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  fetch('/blog/posts.json').then(function(r){return r.ok?r.json():null;}).then(function(posts){
+    if(!posts||!posts.length) return;
+    grid.innerHTML=posts.slice(0,3).map(function(p){
+      return '<a class="jcard" href="/blog/'+p.slug+'.html">'+
+        '<div class="jcover"><img src="/'+p.hero+'" alt="'+esc(p.title)+'" loading="lazy"></div>'+
+        '<div class="jbody"><h3>'+esc(p.title)+'</h3><p>'+esc(p.description)+'</p></div></a>';
+    }).join('');
+  }).catch(function(){});
 })();
 </script>
 </body>
