@@ -51,7 +51,7 @@
   "n": 127,
   "cap": "Fire in the morning sky",
   "best": 0,
-  "slide": 1
+  "slide": 0
  },
  {
   "n": 126,
@@ -75,7 +75,7 @@
   "n": 123,
   "cap": "Mackerel sky off West Cliff",
   "best": 0,
-  "slide": 5
+  "slide": 0
  },
  {
   "n": 122,
@@ -111,7 +111,7 @@
   "n": 117,
   "cap": "Palms against the burn",
   "best": 0,
-  "slide": 12
+  "slide": 0
  },
  {
   "n": 116,
@@ -141,7 +141,7 @@
   "n": 112,
   "cap": "Wildfire sky over the boardwalk",
   "best": 0,
-  "slide": 4
+  "slide": 0
  },
  {
   "n": 111,
@@ -249,7 +249,7 @@
   "n": 94,
   "cap": "The glow after sundown",
   "best": 0,
-  "slide": 11
+  "slide": 0
  },
  {
   "n": 93,
@@ -273,7 +273,7 @@
   "n": 90,
   "cap": "The sky catches fire",
   "best": 0,
-  "slide": 6
+  "slide": 0
  },
  {
   "n": 89,
@@ -345,7 +345,7 @@
   "n": 78,
   "cap": "Purple sunset over the glowing boardwalk",
   "best": 0,
-  "slide": 7
+  "slide": 0
  },
  {
   "n": 77,
@@ -417,7 +417,7 @@
   "n": 66,
   "cap": "Blazing dusk behind the ferris wheel",
   "best": 0,
-  "slide": 8
+  "slide": 0
  },
  {
   "n": 65,
@@ -435,7 +435,7 @@
   "n": 63,
   "cap": "Pink dawn above the quiet pool",
   "best": 0,
-  "slide": 13
+  "slide": 0
  },
  {
   "n": 62,
@@ -597,7 +597,7 @@
   "n": 36,
   "cap": "Sunrise over the pool",
   "best": 0,
-  "slide": 14
+  "slide": 0
  },
  {
   "n": 35,
@@ -735,7 +735,7 @@
   "n": 13,
   "cap": "Crimson over the bay",
   "best": 0,
-  "slide": 3
+  "slide": 0
  },
  {
   "n": 12,
@@ -753,7 +753,7 @@
   "n": 10,
   "cap": "Magenta over the coaster",
   "best": 0,
-  "slide": 9
+  "slide": 0
  },
  {
   "n": 9,
@@ -795,7 +795,7 @@
   "n": 3,
   "cap": "Walton Lighthouse, burning sky",
   "best": 0,
-  "slide": 10
+  "slide": 0
  },
  {
   "n": 2,
@@ -807,6 +807,6 @@
   "n": 1,
   "cap": "Red sky over the boardwalk",
   "best": 0,
-  "slide": 2
+  "slide": 0
  }
 ]
