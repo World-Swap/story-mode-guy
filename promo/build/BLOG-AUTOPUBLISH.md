@@ -1,8 +1,9 @@
 # Blog auto-publish runbook (for the scheduled session)
 
 This is the standalone procedure a scheduled Routine follows to publish ONE new
-SEO article to storymodeguy.com without any human involvement. It is written so a
-fresh session that just cloned `main` can execute it top to bottom.
+SEO article to storymodeguy.com without any human involvement. The scheduled
+session starts with **no repository attached**, so Step 0 attaches it before
+anything else. Everything after that assumes you are inside the cloned repo.
 
 **Goal:** keep the site publishing genuinely useful, keyword-targeted photography
 articles that rank in Google and funnel readers to the Payhip products. One article
@@ -10,6 +11,18 @@ per run. Additive only — never touch anything outside `blog/`, `blog-src/`, an
 `sitemap.xml`.
 
 ## Steps
+
+0. **Attach and enter the repo — DO THIS FIRST.** The scheduled session boots with
+   no git repo, so you must attach it yourself before any file work:
+   - Call `add_repo` for owner `world-swap`, repo `story-mode-guy`, access `push`.
+   - Run the exact clone command it returns, then `cd` into the clone. Call
+     `register_repo_root` if the tool tells you to.
+   - Confirm you're really in the repo: `blog-src/backlog.json` and
+     `promo/build/blog.py` must exist.
+   - **If you cannot attach or clone the repo** (access denied, clone fails, tools
+     missing), STOP and **message the user** that the weekly autopublish could not
+     access the repo and no post was published. Do NOT end the run silently — a
+     silent "success" with no repo is the exact bug this step exists to prevent.
 
 1. **Pick the next topic.** Open `blog-src/backlog.json`. Take the **first** entry in
    `topics`. That's the article to write this run. (If `topics` is empty, STOP and
@@ -70,6 +83,11 @@ per run. Additive only — never touch anything outside `blog/`, `blog-src/`, an
    not message the user unless something failed. End the run.
 
 ## Guardrails
+- **Every run must end in exactly one of three states** — (a) one new post published
+  and pushed to `main`, (b) the backlog was empty so you appended fresh topics and
+  pushed, or (c) you messaged the user about a failure (no repo, build error, push
+  rejected). NEVER finish a run having done none of these, and never report success
+  without actually verifying the push landed.
 - One article per run. Never rewrite or delete existing articles.
 - Never modify `index.html`, `gallery.html`, `guides.html`, products, or photos.
 - If the build or push fails, leave the repo clean and report the error; don't retry
