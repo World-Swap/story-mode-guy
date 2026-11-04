@@ -35,14 +35,15 @@ def slides_html(items):
 
 
 def bestof_html(items):
+    # Rendered as a slideshow (same slide markup as Newest Captures).
     rows = []
-    for m in items:
+    for i, m in enumerate(items):
         n, cap = m["n"], m["cap"]
-        rows.append(f'      <a class="scard" href="gallery.html" aria-label="{A(cap)}">\n'
-                    f'        <img src="photo-{fn(n)}.jpg" alt="{A(cap)}" loading="lazy">\n'
-                    f'        <span class="scap">{T(cap)}</span>\n'
-                    f'      </a>')
-    return "\n" + "\n".join(rows) + "\n    "
+        active = " is-active" if i == 0 else ""
+        lazy = "" if i == 0 else ' loading="lazy"'
+        rows.append(f'        <figure class="slide{active}"><img src="photo-{fn(n)}.jpg" '
+                    f'alt="{A(cap)}"{lazy}><figcaption>{T(cap)}</figcaption></figure>')
+    return "\n" + "\n".join(rows) + "\n      "
 
 
 def grid_html(items):
@@ -78,6 +79,7 @@ idx = (ROOT / "index.html").read_text(encoding="utf-8")
 idx = replace_region(idx, "NEWEST", slides_html(newest))
 idx = replace_region(idx, "COUNT", str(len(newest)))
 idx = replace_region(idx, "BESTOF", bestof_html(best))
+idx = replace_region(idx, "BESTCOUNT", str(len(best)))
 (ROOT / "index.html").write_text(idx, encoding="utf-8")
 
 gal = (ROOT / "gallery.html").read_text(encoding="utf-8")

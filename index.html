@@ -650,40 +650,29 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
       <h2>A few favorites</h2>
       <p>Some of the frames I keep coming back to. The full archive — every sunset, every quiet morning, every detour inland — lives in the gallery.</p>
     </div>
-    <div class="showcase-grid"><!--PHOTOS:BESTOF-->
-      <a class="scard" href="gallery.html" aria-label="Sunrise through the palms">
-        <img src="photo-118.jpg" alt="Sunrise through the palms" loading="lazy">
-        <span class="scap">Sunrise through the palms</span>
-      </a>
-      <a class="scard" href="gallery.html" aria-label="Cotton candy sky">
-        <img src="photo-12.jpg" alt="Cotton candy sky" loading="lazy">
-        <span class="scap">Cotton candy sky</span>
-      </a>
-      <a class="scard" href="gallery.html" aria-label="Orange dawn on a glassy sea">
-        <img src="photo-64.jpg" alt="Orange dawn on a glassy sea" loading="lazy">
-        <span class="scap">Orange dawn on a glassy sea</span>
-      </a>
-      <a class="scard" href="gallery.html" aria-label="Gold on the coast">
-        <img src="photo-98.jpg" alt="Gold on the coast" loading="lazy">
-        <span class="scap">Gold on the coast</span>
-      </a>
-      <a class="scard" href="gallery.html" aria-label="Silver surf at sunset">
-        <img src="photo-22.jpg" alt="Silver surf at sunset" loading="lazy">
-        <span class="scap">Silver surf at sunset</span>
-      </a>
-      <a class="scard" href="gallery.html" aria-label="Crescent moon above the amber horizon">
-        <img src="photo-69.jpg" alt="Crescent moon above the amber horizon" loading="lazy">
-        <span class="scap">Crescent moon above the amber horizon</span>
-      </a>
-      <a class="scard" href="gallery.html" aria-label="Amber twilight over rolling surf">
-        <img src="photo-68.jpg" alt="Amber twilight over rolling surf" loading="lazy">
-        <span class="scap">Amber twilight over rolling surf</span>
-      </a>
-      <a class="scard" href="gallery.html" aria-label="Amber afterglow over the pier">
-        <img src="photo-60.jpg" alt="Amber afterglow over the pier" loading="lazy">
-        <span class="scap">Amber afterglow over the pier</span>
-      </a>
-    <!--/PHOTOS:BESTOF--></div>
+    <div class="slideshow" id="favShow">
+      <div class="slides" id="favSlides"><!--PHOTOS:BESTOF-->
+        <figure class="slide is-active"><img src="photo-118.jpg" alt="Sunrise through the palms"><figcaption>Sunrise through the palms</figcaption></figure>
+        <figure class="slide"><img src="photo-12.jpg" alt="Cotton candy sky" loading="lazy"><figcaption>Cotton candy sky</figcaption></figure>
+        <figure class="slide"><img src="photo-64.jpg" alt="Orange dawn on a glassy sea" loading="lazy"><figcaption>Orange dawn on a glassy sea</figcaption></figure>
+        <figure class="slide"><img src="photo-98.jpg" alt="Gold on the coast" loading="lazy"><figcaption>Gold on the coast</figcaption></figure>
+        <figure class="slide"><img src="photo-22.jpg" alt="Silver surf at sunset" loading="lazy"><figcaption>Silver surf at sunset</figcaption></figure>
+        <figure class="slide"><img src="photo-69.jpg" alt="Crescent moon above the amber horizon" loading="lazy"><figcaption>Crescent moon above the amber horizon</figcaption></figure>
+        <figure class="slide"><img src="photo-68.jpg" alt="Amber twilight over rolling surf" loading="lazy"><figcaption>Amber twilight over rolling surf</figcaption></figure>
+        <figure class="slide"><img src="photo-60.jpg" alt="Amber afterglow over the pier" loading="lazy"><figcaption>Amber afterglow over the pier</figcaption></figure>
+      <!--/PHOTOS:BESTOF--></div>
+
+      <button class="nav-arrow prev" id="favPrev" aria-label="Previous photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button class="nav-arrow next" id="favNext" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+      <div class="counter"><span id="favCounterNow">1</span> / <!--PHOTOS:BESTCOUNT-->8<!--/PHOTOS:BESTCOUNT--></div>
+    </div>
+
+    <div class="dots" id="favDots" role="tablist" aria-label="Choose a favorite"></div>
     <div class="gallery-foot">
       <a class="btn btn-primary" href="gallery.html">Browse the full gallery <span class="arrow">→</span></a>
     </div>
@@ -920,6 +909,49 @@ a:focus-visible,.btn:focus-visible{ outline:2px solid var(--signal-blue); outlin
     x0 = null; start();
   }, {passive:true});
 
+  start();
+})();
+
+/* ---------- Favorites slideshow (Chapter 01, best-of) ---------- */
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('#favSlides .slide'));
+  if(!slides.length) return;
+  var dotsWrap = document.getElementById('favDots');
+  var counterNow = document.getElementById('favCounterNow');
+  var show = document.getElementById('favShow');
+  var i = 0, timer = null, DELAY = 5500;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  slides.forEach(function(_, n){
+    var b = document.createElement('button');
+    b.className = 'dot' + (n === 0 ? ' is-active' : '');
+    b.setAttribute('aria-label', 'Favorite ' + (n+1));
+    b.addEventListener('click', function(){ go(n); restart(); });
+    dotsWrap.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+  function go(n){
+    slides[i].classList.remove('is-active'); dots[i].classList.remove('is-active');
+    i = (n + slides.length) % slides.length;
+    slides[i].classList.add('is-active'); dots[i].classList.add('is-active');
+    counterNow.textContent = i + 1;
+  }
+  function next(){ go(i+1); }
+  function prev(){ go(i-1); }
+  function start(){ if(!reduce) timer = setInterval(next, DELAY); }
+  function stop(){ clearInterval(timer); }
+  function restart(){ stop(); start(); }
+  document.getElementById('favNext').addEventListener('click', function(){ next(); restart(); });
+  document.getElementById('favPrev').addEventListener('click', function(){ prev(); restart(); });
+  show.addEventListener('mouseenter', stop);
+  show.addEventListener('mouseleave', start);
+  var x0 = null;
+  show.addEventListener('touchstart', function(e){ x0 = e.changedTouches[0].clientX; stop(); }, {passive:true});
+  show.addEventListener('touchend', function(e){
+    if(x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if(Math.abs(dx) > 40){ dx < 0 ? next() : prev(); }
+    x0 = null; start();
+  }, {passive:true});
   start();
 })();
 
