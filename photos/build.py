@@ -64,6 +64,11 @@ def replace_region(text, name, new_inner):
 
 
 newest = MAN[:NEWEST_COUNT]
+# Slideshow: if any items carry a "slide" rank, use those (in rank order) as a
+# curated hero set; otherwise fall back to the newest NEWEST_COUNT photos.
+slide_items = sorted([m for m in MAN if m.get("slide")], key=lambda m: m["slide"])
+if slide_items:
+    newest = slide_items
 # best-of band: items with a truthy integer "best" rank, shown in rank order
 # (1 = featured, big tile). Kept separate from "newest" so it showcases the
 # whole archive instead of repeating the latest uploads.
