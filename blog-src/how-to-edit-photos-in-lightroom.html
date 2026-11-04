@@ -1,0 +1,70 @@
+<p>Most bad Lightroom edits aren't caused by a wrong slider value. They're caused by doing the right moves in the wrong order. You boost saturation, then fix the color cast, and now you're fighting your own edit. You sharpen, then lift the shadows, and you've amplified the noise you just sharpened.</p>
+
+<p>The fix is boring and it works: edit every photo in the same order. Here's the sequence I use, why each step sits where it does, and what to watch for at each one.</p>
+
+<h2>Why your RAW looks flat to begin with</h2>
+<p>If you shoot RAW, the file on your computer looks duller than the preview on the back of your camera. That's not a problem with the file. The camera's screen shows a JPEG it processed with contrast and color baked in. The RAW is the unprocessed data, and your job in Lightroom is to spend that latitude on purpose.</p>
+<p>Everything below works in Lightroom Classic, the cloud version of Lightroom, and Lightroom Mobile. The sliders have the same names in all of them.</p>
+
+<h2>The order, step by step</h2>
+
+<h3>1. Crop and straighten first</h3>
+<p>Fix the composition before you grade. There's no point balancing tones in edges you're about to throw away, and a crooked horizon will make every other decision feel off.</p>
+
+<h3>2. White balance</h3>
+<p>Set your neutral reference before anything else, because a color cast bends every judgment you make afterward about brightness and saturation. Two sliders do the work: Temp (blue to yellow) and Tint (green to magenta). Click the white balance eyedropper on something that should be neutral, like a gray wall or a white shirt, then adjust by eye. Warm it slightly for golden-hour mood, cool it for clean and crisp. On portraits, a hair warm usually reads healthier than cool.</p>
+
+<h3>3. Exposure and tone</h3>
+<p>This is the foundation. Set overall brightness with Exposure, overall punch with Contrast, then sculpt with Highlights, Shadows, Whites, and Blacks.</p>
+<ul>
+  <li><strong>Highlights:</strong> pull down to recover a bright sky.</li>
+  <li><strong>Shadows:</strong> lift to open up a face in shade.</li>
+  <li><strong>Whites:</strong> push up to just before clipping for sparkle.</li>
+  <li><strong>Blacks:</strong> pull down slightly to anchor the deep tones.</li>
+</ul>
+<p>Watch the histogram while you do it. Data piled against the right wall is blown highlights, and against the left wall is crushed shadows. A healthy edit usually spreads across the width without stacking up on either edge, unless you want a deliberately dark or bright look.</p>
+
+<div class="cta">
+  <h3>Same edit, every time</h3>
+  <p>The Lightroom Blueprint lays out the full repeatable workflow: the order of operations, starting values for each step, HSL and masking moves, presets, batch editing, and export settings.</p>
+  <a class="btn" href="https://payhip.com/b/1gXQa">Get the Lightroom Blueprint ($37) →</a>
+</div>
+
+<h3>4. Presence</h3>
+<p>Texture, Clarity, and Dehaze add midtone punch and cut haze. They come after tone because they change contrast themselves. If you reach for Clarity first, you end up compensating with tone sliders afterward.</p>
+<p>This is also where "muddy" edits are born. Muddy usually means crushed midtones, from lifting Shadows and Blacks hard while also cranking Clarity. Set tone first, keep presence modest, and the mud mostly clears up by itself.</p>
+
+<h3>5. Color: Vibrance, then HSL</h3>
+<p>Saturation boosts every color equally, which blows out colors that are already strong and can push skin toward orange. Vibrance lifts the muted colors more and goes easier on skin. For most photos I reach for Vibrance and leave Saturation nearly alone. If you're pushing Saturation hard, the real problem is usually white balance or one specific color.</p>
+<p>For that one color, use the HSL panel (called Color Mixer in the cloud app). Each color has Hue, Saturation, and Luminance.</p>
+<ul>
+  <li><strong>Deeper blue sky:</strong> lower blue Luminance and raise blue Saturation a little. Nudge Aqua too, since skies often sit between the two.</li>
+  <li><strong>Skin:</strong> lives mostly in the Orange and Red channels, so you can correct it without touching the rest of the frame. Too orange, ease Orange Saturation down. Dull, raise Orange Luminance a few points.</li>
+</ul>
+<p>The little targeted-adjustment tool in that panel lets you click and drag directly on the color in the photo. It's the fastest way to fix one stubborn color.</p>
+
+<h3>6. Detail: sharpening and noise reduction</h3>
+<p>These are finishing moves. Judge them at 100% zoom, because at fit-to-screen you can't see what you're doing. Hold Alt (Option on Mac) while dragging the sharpening Masking slider and the photo goes black and white: white areas get sharpened, black areas are protected. On portraits, drag until only edges like eyes and lashes are white and the skin goes black.</p>
+<p>For noise, Luminance noise reduction smooths grit but turns skin plastic if you overdo it. Color noise reduction removes colored speckles with little downside. Lightroom's AI Denoise does better than the manual sliders on very noisy high-ISO files, so save it for the worst ones.</p>
+<p>Be honest about the limits here. Sharpening adds edge contrast. It can't rescue a shot that missed focus or was smeared by motion.</p>
+
+<h3>7. Local adjustments</h3>
+<p>Now you edit parts of the photo instead of the whole thing. Open the Masking panel and start with Select Subject or Select Sky, which handle most jobs in a click. Then use brushes and gradients for the rest.</p>
+<ul>
+  <li>Darken a sky from the top with a linear gradient or Select Sky.</li>
+  <li>Brighten eyes with a small brush and a touch of Exposure.</li>
+  <li>Dodge and burn: brighten what should advance, darken what should recede.</li>
+  <li>Drop a radial gradient over your subject and pull the surroundings down slightly.</li>
+</ul>
+<p>Keep the feather high so edges blend. If a mask is obvious, it's too strong or too hard-edged. After Select Sky, check building edges and hair, where it tends to bleed, and use Subtract to clean it up. Local work assumes the global edit is already right, which is why it goes near the end.</p>
+
+<h3>8. Export for the destination</h3>
+<p>A great edit exported wrong looks dull on someone else's screen. For web and social, export JPEG in sRGB with the long edge around 2048px and sharpening set for Screen. Exporting for the web in a wider color space like Adobe RGB is a classic mistake: browsers assume sRGB, so the photo comes out flat and you blame the edit. For print, export at full size and 300 ppi, with paper-appropriate sharpening, and ask your lab which color space they want.</p>
+
+<h2>Turn the order into a speed advantage</h2>
+<p>Once the sequence is automatic, you can batch. Edit one frame fully, save a preset built around the look (tone, presence, color, curve), and sync it to the rest of the shoot. Leave exposure and white balance out of the preset, because every frame differs. Then walk through and nudge those two on each photo. A hundred-frame shoot goes from a slog to an evening.</p>
+<p>To see where this ends up in practice, browse <a href="/gallery.html">the gallery</a>. Everything in there went through the same order of operations.</p>
+
+<h2>A drill for this week</h2>
+<p>Take one flat RAW and edit it strictly in order: crop, white balance, tone, presence, color, detail, local, export. Say each step out loud as you do it. Then do a second photo the same way, then a third. By then the order stops being something you remember and becomes how you edit.</p>
+<p>If you want the full version with starting values, curve work, masking walkthroughs, and export presets, that's what <a href="/learn/02-lightroom-blueprint.html">the Lightroom Blueprint</a> is for.</p>
